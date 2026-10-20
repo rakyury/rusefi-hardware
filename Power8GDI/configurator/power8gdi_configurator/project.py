@@ -8,6 +8,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 import json
 import math
+import tempfile
 from typing import Any
 
 FORMAT_VERSION = 2
@@ -46,6 +47,9 @@ class CalibrationTable:
     safety_class: str = 'calibration'
 
     def validate(self) -> None:
+        for key in ('name', 'description', 'x_label', 'y_label', 'value_unit'):
+            if not isinstance(getattr(self, key), str):
+                raise ValueError(f'{key} must be text')
         if not self.name or self.safety_class not in ('calibration', 'safety_critical'):
             raise ValueError('Invalid name or safety class')
         self.x_bins = _axis(self.x_bins, 'X axis')
@@ -121,6 +125,9 @@ class CalibrationTable4D:
     safety_class: str = 'calibration'
 
     def validate(self) -> None:
+        for key in ('name', 'description', 'x_label', 'y_label', 'z_label', 'value_unit'):
+            if not isinstance(getattr(self, key), str):
+                raise ValueError(f'{key} must be text')
         if not self.name or self.safety_class not in ('calibration', 'safety_critical'):
             raise ValueError('Invalid map name or safety class')
         self.x_bins = _axis(self.x_bins, 'X axis')
@@ -240,10 +247,19 @@ class CalibrationProject:
     def save(self, path: Path | str) -> None:
         path=Path(path)
         path.parent.mkdir(parents=True,exist_ok=True)
-        # Atomic replacement protects existing calibration file on write failures.
-        temp=path.with_name(path.name+'.tmp')
-        temp.write_text(json.dumps(self.to_dict(),indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
-        temp.replace(path)
+        payload=json.dumps(self.to_dict(),indent=2,ensure_ascii=False)+'\n'
+        # A unique sibling permits atomic replacement without consuming another
+        # window's temporary file or an existing user recovery sidecar.
+        temp=None
+        try:
+            with tempfile.NamedTemporaryFile(mode='w',encoding='utf-8',dir=path.parent,
+                    prefix=path.name+'.',suffix='.tmp',delete=False) as stream:
+                temp=Path(stream.name)
+                stream.write(payload)
+            temp.replace(path)
+        finally:
+            if temp is not None:
+                temp.unlink(missing_ok=True)
 
     @classmethod
     def load(cls, path: Path | str) -> 'CalibrationProject':

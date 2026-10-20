@@ -4,10 +4,12 @@ on:
     branches: [power8gdi-rev-a]
     paths:
       - 'Power8GDI/**'
+      - 'GDI-4ch/**'
       - '.github/workflows/power8gdi-host.yml'
   pull_request:
     paths:
       - 'Power8GDI/**'
+      - 'GDI-4ch/**'
       - '.github/workflows/power8gdi-host.yml'
 jobs:
   host-contracts:

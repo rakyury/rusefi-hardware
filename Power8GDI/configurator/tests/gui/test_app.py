@@ -358,14 +358,26 @@ def test_open_dialog_cancel_preserves_dirty_document(window, monkeypatch, dialog
     assert dialogs == []
 
 
-def test_invalid_description_open_preserves_active_document(window, monkeypatch, tmp_path, dialogs):
+@pytest.mark.parametrize('table_name,field', [
+    (MAP, 'description'), (MAP, 'x_label'), (MAP, 'y_label'),
+    (MAP, 'value_unit'), (MAP4D, 'z_label')])
+def test_invalid_text_metadata_open_preserves_active_document(window, monkeypatch, tmp_path, dialogs, table_name, field):
     incoming = default_project().to_dict()
-    incoming['tables'][MAP]['description'] = 123
+    incoming['tables'][table_name][field] = 123
     target = tmp_path / 'invalid-description.json'
     target.write_text(json.dumps(incoming), encoding='utf-8')
     choose_open(monkeypatch, target)
+    path = tmp_path / 'current.json'
+    choose_save(monkeypatch, path)
+    assert window.save_project()
+    type_cell(window, 123)
+    answer_unsaved(monkeypatch, BUTTON.Discard)
     original = window.project
+    history_count = window.undo_stack.count()
     assert window.open_project() is False
     assert window.project is original
-    assert window.path is None
+    assert window.path == path
+    assert window.undo_stack.count() == history_count
+    assert window.project.tables[MAP].values[0][0] == 123
+    assert_clean(window, False)
     assert dialogs[-1][:2] == ('critical', 'Cannot load')
