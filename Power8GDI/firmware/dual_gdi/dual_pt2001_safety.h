@@ -1,0 +1,95 @@
+#pragma once
+// Power8GDI controller-independent global gate for TWO PT2001 devices.
+// Host-testable reference logic. Not connected to any actual GPIO/interrupt.
+// H/W DRVEN must fail low even if CPU locks up. Update MUST be integrated in
+// real-time output path with robust, fresh, atomically captured sensor states.
+// No solenoid current/timing logic is implemented in this file.
+
+#include <cstdint>
+
+namespace power8gdi {
+
+enum class GdiFault : std::uint8_t {
+    None = 0,
+    EmergencyStop,
+    SupplyBad,
+    DriverA,
+    DriverB,
+    DiagnosticsStale,
+    RailA,
+    RailB,
+    OverPressure,
+    SynchronizationLost,
+    ConfigurationInvalid,
+};
+
+enum class GdiState : std::uint8_t {
+    Disarmed = 0,
+    Armed,
+    FaultLatched,
+};
+
+enum class GdiRailTopology : std::uint8_t { Shared = 0, Independent = 1 };
+
+struct PtChipSnapshot {
+    bool ready = false;             // fully initialized/calibrated; current profile verified
+    bool fault = false;             // normalized fault polarity, NOT raw PT2001 FLAG pin
+    bool diagnosticsFresh = false;  // age must be checked by platform independently
+};
+
+struct GdiSafetySnapshot {
+    PtChipSnapshot chip[2];
+    // Immutable, validated calibration for duration of engine operation.
+    // Both PT2001 ICs are ALWAYS required when 8 DI channels are assigned.
+    // Not every engine has two pumps or two rail transducers installed.
+    GdiRailTopology railTopology = GdiRailTopology::Shared;
+    bool pumpConfigured[2] = {false, false};
+    bool railSensorConfigured[2] = {false, false};
+    bool railSensorValid[2] = {false, false};
+    bool railOverPressure = false;
+    bool supplyHealthy = false;
+    bool synchronizationValid = false;
+    bool runRequested = false;
+    bool emergencyStopReleased = false;
+};
+
+struct GdiPermits {
+    bool injectorCommand[8] = {false, false, false, false,
+                               false, false, false, false};
+    bool hpfpCommand[2] = {false, false};
+    bool drvenAllowed[2] = {false, false};
+    bool requestHardwareKill = true;
+    GdiState state = GdiState::Disarmed;
+    GdiFault fault = GdiFault::None;
+};
+
+class DualPt2001Safety final {
+public:
+    // Safe by default: no outputs are enabled until both drivers and rails
+    // are valid, and the synchronized engine has explicitly requested a run.
+    GdiPermits update(const GdiSafetySnapshot& snapshot) noexcept;
+
+    // Explicit recovery ONLY with engine stopped, no run request, E-stop
+    // released, supply good, valid sensors, fresh diagnostics and both PTs
+    // ready/fault free. This resets the software latch, not the external
+    // hardwired fault/enable latch.
+    bool acknowledgeStopped(const GdiSafetySnapshot& snapshot) noexcept;
+
+    GdiState state() const noexcept { return state_; }
+    GdiFault fault() const noexcept { return fault_; }
+
+    // A fault interrupt may invoke this without waiting for periodic update.
+    // Caller MUST also physically assert hardware disable immediately.
+    void latchFault(GdiFault fault) noexcept;
+
+private:
+    static GdiFault prerequisiteFault(const GdiSafetySnapshot& s) noexcept;
+    static bool inputsHealthy(const GdiSafetySnapshot& s) noexcept;
+    static bool configurationValid(const GdiSafetySnapshot& s) noexcept;
+    static std::uint8_t configKey(const GdiSafetySnapshot& s) noexcept;
+    std::uint8_t armedConfigurationKey_ = 0;
+    GdiState state_ = GdiState::Disarmed;
+    GdiFault fault_ = GdiFault::None;
+};
+
+}  // namespace power8gdi

@@ -26,3 +26,10 @@
 - Firmware Power8GDI target build: **NOT RUN / NOT READY**. Existing dual-HPFP module does not implement real scheduling or rail closed-loop control.
 - Device flash/Burn protocol **NOT AVAILABLE**. The GUI is strictly offline and maps are demonstrators, not tuning recommendations.
 - Engine/injector/thermal/EMC/fault-injection physical acceptance tests **NOT RUN**.
+
+## Follow-on F7/GDI safety work
+
+- Added a dual PT2001 global permit state machine and tests; both modules disable on fault or loss of sync and require manual stopped-engine acknowledgment. This is **host-only policy**, not a wired hardware kill circuit.
+- Added a shared-rail/single-pump compatibility mode and separate-rail mode, with configuration freeze while armed.
+- Added resource-budget audit tracking **32 unresolved required MCU-side functions**; `--strict` appropriately fails and therefore manufacturing release stays blocked.
+- STM32F767IIT6 LQFP176 is a **provisional candidate**, not a verified KiCad MCU resource allocation.
