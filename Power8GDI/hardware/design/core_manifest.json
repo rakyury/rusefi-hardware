@@ -1,0 +1,2174 @@
+{
+  "schema_version": 1,
+  "root_uuid": "f4d21065-0a5b-5086-a08e-1af9469f04bd",
+  "project": "Power8GDI_Core",
+  "mcu": "STM32F767IIT6",
+  "qualification": "BLOCKED",
+  "parts": [
+    {
+      "ref": "U101",
+      "value": "STM32F767IIT6",
+      "footprint": "Package_QFP:LQFP-176_24x24mm_P0.5mm",
+      "pins": {
+        "48": "GND",
+        "171": "+3V3",
+        "38": "+3V3_A",
+        "81": "MCU_VCAP_1",
+        "125": "MCU_VCAP_2",
+        "6": "+3V3",
+        "15": "+3V3",
+        "23": "+3V3",
+        "36": "+3V3",
+        "49": "+3V3",
+        "62": "+3V3",
+        "72": "+3V3",
+        "82": "+3V3",
+        "91": "+3V3",
+        "102": "GND",
+        "113": "GND",
+        "126": "GND",
+        "135": "GND",
+        "14": "GND",
+        "148": "GND",
+        "158": "GND",
+        "22": "GND",
+        "61": "GND",
+        "71": "GND",
+        "90": "GND",
+        "103": "+3V3",
+        "37": "GND",
+        "127": "+3V3",
+        "136": "+3V3",
+        "159": "+3V3",
+        "172": "+3V3",
+        "39": "+3V3_A",
+        "149": "+3V3",
+        "114": "+3V3",
+        "111": "DI1",
+        "112": "DI2",
+        "99": "DI3",
+        "98": "DI4",
+        "97": "DI5",
+        "60": "DI6",
+        "63": "DI7",
+        "64": "DI8",
+        "8": "IGN1",
+        "4": "IGN2",
+        "3": "IGN3",
+        "2": "IGN4",
+        "1": "IGN5",
+        "167": "IGN6",
+        "168": "IGN7",
+        "5": "IGN8",
+        "118": "HPFP1",
+        "100": "HPFP2",
+        "93": "GDI_SPI2_SCK",
+        "94": "GDI_SPI2_MISO",
+        "95": "GDI_SPI2_MOSI",
+        "92": "PTA_CS",
+        "138": "PTB_CS",
+        "75": "PTA_RESET",
+        "77": "PTB_RESET",
+        "76": "PTA_DRVEN",
+        "78": "PTB_DRVEN",
+        "26": "PTA_FLAG",
+        "27": "PTB_FLAG",
+        "115": "DBW_PWM",
+        "116": "DBW_DIR",
+        "101": "DBW_DISABLE",
+        "117": "EWG_PWM",
+        "104": "EWG_DIR",
+        "105": "EWG_DISABLE",
+        "142": "CAN1_RX",
+        "143": "CAN1_TX",
+        "147": "LIN1_TX",
+        "150": "LIN1_RX",
+        "70": "SENT1",
+        "41": "SENT2",
+        "25": "KNOCK1",
+        "21": "KNOCK2",
+        "57": "CRANK",
+        "19": "CAM1",
+        "20": "CAM2",
+        "31": "NRST",
+        "166": "BOOT0",
+        "124": "SWDIO",
+        "137": "SWCLK",
+        "161": "SWO",
+        "29": "MCU_HSE_IN",
+        "43": "CAN1_STB",
+        "44": "LIN1_EN"
+      },
+      "dnp": false,
+      "note": "Provisional industrial -40..85C LQFP176. Unassigned pads are intentionally unused in this candidate, not qualified resources.",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C101",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 15; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C102",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 23; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C103",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 36; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C104",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 49; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C105",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 62; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C106",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 72; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C107",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 82; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C108",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 91; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C109",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 103; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C110",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 127; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C111",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 136; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C112",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 159; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C113",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 172; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C114",
+      "value": "4.7u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Package bulk; effective capacitance >=4.7uF after bias/temp derating",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C115",
+      "value": "2.2u 10V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "MCU_VCAP_1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 pad81; effective2.2uF ESR<2ohm; no external load",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C116",
+      "value": "2.2u 10V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "MCU_VCAP_2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 pad125; effective2.2uF ESR<2ohm; no external load",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C117",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 VDDA39/VREF38",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C118",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 VDDA39/VREF38",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "R101",
+      "value": "0R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "+3V3_A"
+      },
+      "dnp": false,
+      "note": "Analog star feed; ferrite substitution needs transient/ADC review",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C119",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 VDDUSB pad114",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C120",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 VDDUSB pad114",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C121",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 VDDSDMMC pad149",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C122",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 VDDSDMMC pad149",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C123",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "VBAT U101 pad6; no backup battery",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C124",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "NRST",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "DS11532 Fig41 reset filter; connect debugger open-drain reset",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "R102",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "NRST"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "R103",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "BOOT0",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default flash boot; option bytes still require firmware review",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "J101",
+      "value": "SWD 3V3 target reference",
+      "footprint": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical",
+      "pins": {
+        "1": "+3V3",
+        "2": "SWDIO",
+        "3": "GND",
+        "4": "SWCLK",
+        "5": "GND",
+        "6": "SWO",
+        "9": "GND",
+        "10": "NRST"
+      },
+      "dnp": false,
+      "note": "VTREF sense only, not external power input. Pin7 key/unused, pin8 unused; unshrouded header",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "Y101",
+      "value": "ASEM1-8.000MHZ-LC-T",
+      "footprint": "Power8GDI_Core:ASEM_3225",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND",
+        "3": "MCU_HSE_IN",
+        "4": "+3V3"
+      },
+      "dnp": false,
+      "note": "Abracon ASEM RevP p4 actual pins1EN2GND3OUT4VDD; firmware HSE bypass required; PH1 NC",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C129",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Abracon recommends10n between Y101 pins4/2; short return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "U102",
+      "value": "TLV1117LV33DCYR",
+      "footprint": "Package_TO_SOT_SMD:SOT-223-3_TabPin2",
+      "pins": {
+        "3": "+5V_CORE",
+        "2": "+3V3",
+        "1": "GND"
+      },
+      "dnp": false,
+      "note": "TI SBVS160C; industrial candidate, not AEC-Q100; TAB=OUT pad2",
+      "sheet": "core_power"
+    },
+    {
+      "ref": "C125",
+      "value": "4.7u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Effective CIN>=1uF; next to pin3",
+      "sheet": "core_power"
+    },
+    {
+      "ref": "C126",
+      "value": "4.7u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Effective COUT>=1uF; next to pad2; no reverse-power injection",
+      "sheet": "core_power"
+    },
+    {
+      "ref": "U103",
+      "value": "TCAN1042HGVDRQ1",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "1": "CAN1_TX",
+        "4": "CAN1_RX",
+        "8": "CAN1_STB",
+        "7": "CAN1_H",
+        "6": "CAN1_L",
+        "3": "+5V_CORE",
+        "5": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "STB held high at reset; MCU PH2 pad43 may drive low to enable; GPIO firmware pending",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "C127",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "At U103 pin3",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "C128",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "At U103 pin5",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R104",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "CAN1_STB"
+      },
+      "dnp": false,
+      "note": "Fail-closed default: transceiver in standby",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R105",
+      "value": "0R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CAN1_STB",
+        "2": "GND"
+      },
+      "dnp": true,
+      "note": "Test-only normal-mode strap; leave DNP for MCU PH2 control",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R106",
+      "value": "120R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CAN1_H",
+        "2": "CAN1_L"
+      },
+      "dnp": true,
+      "note": "Fit only if ECU is a bus end; do not add third terminator",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "D101",
+      "value": "PESD2CAN",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "CAN1_H",
+        "2": "CAN1_L",
+        "3": "GND"
+      },
+      "dnp": false,
+      "note": "Nexperia Rev2 pinning1/2lines3common; close connector; ground surge return review",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "U104",
+      "value": "TLIN1029ADRQ1",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "1": "LIN1_RX",
+        "4": "LIN1_TX",
+        "2": "LIN1_EN",
+        "6": "LIN1_BUS",
+        "7": "LIN1_VSUP",
+        "5": "GND"
+      },
+      "dnp": false,
+      "note": "TI SLLSFK8A; 4..36V operating, 45V absolute VSUP; A variant avoids original duty-cycle erratum; default sleep",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R107",
+      "value": "4.7k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LIN1_RX"
+      },
+      "dnp": false,
+      "note": "Open-drainRXD must never be pulled toVBAT/5V",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R108",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LIN1_EN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default sleep; MCU PH3 pad44 enables high",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R109",
+      "value": "0R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LIN1_EN"
+      },
+      "dnp": true,
+      "note": "Optionalnormalmode afterphysicalbusreview",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R110",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LIN1_TX"
+      },
+      "dnp": false,
+      "note": "Recessive input during MCUreset",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R111",
+      "value": "0R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VBAT_LOGIC_PROTECTED",
+        "2": "LIN1_VSUP"
+      },
+      "dnp": false,
+      "note": "Requires root SMBJ24CA nominal38.9V clamp <45Vabs; actual pulse energy/overshoot gate remains",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "C130",
+      "value": "100n 50V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "LIN1_VSUP",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "At U104 pin7",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "C131",
+      "value": "1u 50V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "LIN1_VSUP",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "C132",
+      "value": "220p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "LIN1_BUS",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Respondermode buscap TI Fig10-1; busEMC/loadbudget pending",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "U110",
+      "value": "MIC4427YM",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "2": "IGN1",
+        "4": "IGN2",
+        "7": "IGN1_BUFFER",
+        "5": "IGN2_BUFFER",
+        "6": "+5V_CORE",
+        "3": "GND"
+      },
+      "dnp": false,
+      "note": "Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "C140",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Close Udriver pin6/3",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "C141",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R120",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R128",
+      "value": "100R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_BUFFER",
+        "2": "IGN1_LOGIC_OUT"
+      },
+      "dnp": true,
+      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R136",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_LOGIC_OUT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R121",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R129",
+      "value": "100R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_BUFFER",
+        "2": "IGN2_LOGIC_OUT"
+      },
+      "dnp": true,
+      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R137",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_LOGIC_OUT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "U111",
+      "value": "MIC4427YM",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "2": "IGN3",
+        "4": "IGN4",
+        "7": "IGN3_BUFFER",
+        "5": "IGN4_BUFFER",
+        "6": "+5V_CORE",
+        "3": "GND"
+      },
+      "dnp": false,
+      "note": "Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "C142",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Close Udriver pin6/3",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "C143",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R122",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R130",
+      "value": "100R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_BUFFER",
+        "2": "IGN3_LOGIC_OUT"
+      },
+      "dnp": true,
+      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R138",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_LOGIC_OUT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R123",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R131",
+      "value": "100R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_BUFFER",
+        "2": "IGN4_LOGIC_OUT"
+      },
+      "dnp": true,
+      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R139",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_LOGIC_OUT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "U112",
+      "value": "MIC4427YM",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "2": "IGN5",
+        "4": "IGN6",
+        "7": "IGN5_BUFFER",
+        "5": "IGN6_BUFFER",
+        "6": "+5V_CORE",
+        "3": "GND"
+      },
+      "dnp": false,
+      "note": "Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "C144",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Close Udriver pin6/3",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "C145",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R124",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R132",
+      "value": "100R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_BUFFER",
+        "2": "IGN5_LOGIC_OUT"
+      },
+      "dnp": true,
+      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R140",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_LOGIC_OUT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R125",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R133",
+      "value": "100R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_BUFFER",
+        "2": "IGN6_LOGIC_OUT"
+      },
+      "dnp": true,
+      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R141",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_LOGIC_OUT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "U113",
+      "value": "MIC4427YM",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "2": "IGN7",
+        "4": "IGN8",
+        "7": "IGN7_BUFFER",
+        "5": "IGN8_BUFFER",
+        "6": "+5V_CORE",
+        "3": "GND"
+      },
+      "dnp": false,
+      "note": "Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "C146",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Close Udriver pin6/3",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "C147",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R126",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R134",
+      "value": "100R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_BUFFER",
+        "2": "IGN7_LOGIC_OUT"
+      },
+      "dnp": true,
+      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R142",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_LOGIC_OUT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R127",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R135",
+      "value": "100R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_BUFFER",
+        "2": "IGN8_LOGIC_OUT"
+      },
+      "dnp": true,
+      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
+      "sheet": "core_ignition"
+    },
+    {
+      "ref": "R143",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_LOGIC_OUT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
+      "sheet": "core_ignition"
+    }
+  ],
+  "decoupling_placement": [
+    {
+      "reference": "C101",
+      "mcu_pad": "15",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C102",
+      "mcu_pad": "23",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C103",
+      "mcu_pad": "36",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C104",
+      "mcu_pad": "49",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C105",
+      "mcu_pad": "62",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C106",
+      "mcu_pad": "72",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C107",
+      "mcu_pad": "82",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C108",
+      "mcu_pad": "91",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C109",
+      "mcu_pad": "103",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C110",
+      "mcu_pad": "127",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C111",
+      "mcu_pad": "136",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C112",
+      "mcu_pad": "159",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C113",
+      "mcu_pad": "172",
+      "rail": "+3V3"
+    }
+  ],
+  "external_sheets": [
+    {
+      "path": "power_input/power_input.kicad_sch",
+      "instance_uuid": "d420a403-004b-5e7c-9c34-8708b750eadb"
+    },
+    {
+      "path": "gdi/stage_a.kicad_sch",
+      "instance_uuid": "a05bbd47-81aa-5269-b9b3-0a4b9afd615c"
+    },
+    {
+      "path": "gdi/stage_b.kicad_sch",
+      "instance_uuid": "2aa9486d-083b-53a0-b9ea-735fb5a4b253"
+    }
+  ],
+  "added_gpio": [
+    {
+      "port": "PH2",
+      "pad": "43",
+      "net": "CAN1_STB",
+      "mode": "GPIO output; reset high-Z, external pullup"
+    },
+    {
+      "port": "PH3",
+      "pad": "44",
+      "net": "LIN1_EN",
+      "mode": "GPIO output; reset high-Z, external pulldown"
+    }
+  ],
+  "mcu_pins": [
+    {
+      "pad": "1",
+      "name": "PE2",
+      "net": "IGN5"
+    },
+    {
+      "pad": "2",
+      "name": "PE3",
+      "net": "IGN4"
+    },
+    {
+      "pad": "3",
+      "name": "PE4",
+      "net": "IGN3"
+    },
+    {
+      "pad": "4",
+      "name": "PE5",
+      "net": "IGN2"
+    },
+    {
+      "pad": "5",
+      "name": "PE6",
+      "net": "IGN8"
+    },
+    {
+      "pad": "6",
+      "name": "VBAT",
+      "net": "+3V3"
+    },
+    {
+      "pad": "7",
+      "name": "PI8",
+      "net": null
+    },
+    {
+      "pad": "8",
+      "name": "PC13",
+      "net": "IGN1"
+    },
+    {
+      "pad": "9",
+      "name": "PC14",
+      "net": null
+    },
+    {
+      "pad": "10",
+      "name": "PC15",
+      "net": null
+    },
+    {
+      "pad": "11",
+      "name": "PI9",
+      "net": null
+    },
+    {
+      "pad": "12",
+      "name": "PI10",
+      "net": null
+    },
+    {
+      "pad": "13",
+      "name": "PI11",
+      "net": null
+    },
+    {
+      "pad": "14",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "15",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "16",
+      "name": "PF0",
+      "net": null
+    },
+    {
+      "pad": "17",
+      "name": "PF1",
+      "net": null
+    },
+    {
+      "pad": "18",
+      "name": "PF2",
+      "net": null
+    },
+    {
+      "pad": "19",
+      "name": "PF3",
+      "net": "CAM1"
+    },
+    {
+      "pad": "20",
+      "name": "PF4",
+      "net": "CAM2"
+    },
+    {
+      "pad": "21",
+      "name": "PF5",
+      "net": "KNOCK2"
+    },
+    {
+      "pad": "22",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "23",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "24",
+      "name": "PF6",
+      "net": null
+    },
+    {
+      "pad": "25",
+      "name": "PF7",
+      "net": "KNOCK1"
+    },
+    {
+      "pad": "26",
+      "name": "PF8",
+      "net": "PTA_FLAG"
+    },
+    {
+      "pad": "27",
+      "name": "PF9",
+      "net": "PTB_FLAG"
+    },
+    {
+      "pad": "28",
+      "name": "PF10",
+      "net": null
+    },
+    {
+      "pad": "29",
+      "name": "PH0",
+      "net": "MCU_HSE_IN"
+    },
+    {
+      "pad": "30",
+      "name": "PH1",
+      "net": null
+    },
+    {
+      "pad": "31",
+      "name": "NRST",
+      "net": "NRST"
+    },
+    {
+      "pad": "32",
+      "name": "PC0",
+      "net": null
+    },
+    {
+      "pad": "33",
+      "name": "PC1",
+      "net": null
+    },
+    {
+      "pad": "34",
+      "name": "PC2",
+      "net": null
+    },
+    {
+      "pad": "35",
+      "name": "PC3",
+      "net": null
+    },
+    {
+      "pad": "36",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "37",
+      "name": "VSSA",
+      "net": "GND"
+    },
+    {
+      "pad": "38",
+      "name": "VREF+",
+      "net": "+3V3_A"
+    },
+    {
+      "pad": "39",
+      "name": "VDDA",
+      "net": "+3V3_A"
+    },
+    {
+      "pad": "40",
+      "name": "PA0",
+      "net": null
+    },
+    {
+      "pad": "41",
+      "name": "PA1",
+      "net": "SENT2"
+    },
+    {
+      "pad": "42",
+      "name": "PA2",
+      "net": null
+    },
+    {
+      "pad": "43",
+      "name": "PH2",
+      "net": "CAN1_STB"
+    },
+    {
+      "pad": "44",
+      "name": "PH3",
+      "net": "LIN1_EN"
+    },
+    {
+      "pad": "45",
+      "name": "PH4",
+      "net": null
+    },
+    {
+      "pad": "46",
+      "name": "PH5",
+      "net": null
+    },
+    {
+      "pad": "47",
+      "name": "PA3",
+      "net": null
+    },
+    {
+      "pad": "48",
+      "name": "BYPASS_REG",
+      "net": "GND"
+    },
+    {
+      "pad": "49",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "50",
+      "name": "PA4",
+      "net": null
+    },
+    {
+      "pad": "51",
+      "name": "PA5",
+      "net": null
+    },
+    {
+      "pad": "52",
+      "name": "PA6",
+      "net": null
+    },
+    {
+      "pad": "53",
+      "name": "PA7",
+      "net": null
+    },
+    {
+      "pad": "54",
+      "name": "PC4",
+      "net": null
+    },
+    {
+      "pad": "55",
+      "name": "PC5",
+      "net": null
+    },
+    {
+      "pad": "56",
+      "name": "PB0",
+      "net": null
+    },
+    {
+      "pad": "57",
+      "name": "PB1",
+      "net": "CRANK"
+    },
+    {
+      "pad": "58",
+      "name": "PB2",
+      "net": null
+    },
+    {
+      "pad": "59",
+      "name": "PF11",
+      "net": null
+    },
+    {
+      "pad": "60",
+      "name": "PF12",
+      "net": "DI6"
+    },
+    {
+      "pad": "61",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "62",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "63",
+      "name": "PF13",
+      "net": "DI7"
+    },
+    {
+      "pad": "64",
+      "name": "PF14",
+      "net": "DI8"
+    },
+    {
+      "pad": "65",
+      "name": "PF15",
+      "net": null
+    },
+    {
+      "pad": "66",
+      "name": "PG0",
+      "net": null
+    },
+    {
+      "pad": "67",
+      "name": "PG1",
+      "net": null
+    },
+    {
+      "pad": "68",
+      "name": "PE7",
+      "net": null
+    },
+    {
+      "pad": "69",
+      "name": "PE8",
+      "net": null
+    },
+    {
+      "pad": "70",
+      "name": "PE9",
+      "net": "SENT1"
+    },
+    {
+      "pad": "71",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "72",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "73",
+      "name": "PE10",
+      "net": null
+    },
+    {
+      "pad": "74",
+      "name": "PE11",
+      "net": null
+    },
+    {
+      "pad": "75",
+      "name": "PE12",
+      "net": "PTA_RESET"
+    },
+    {
+      "pad": "76",
+      "name": "PE13",
+      "net": "PTA_DRVEN"
+    },
+    {
+      "pad": "77",
+      "name": "PE14",
+      "net": "PTB_RESET"
+    },
+    {
+      "pad": "78",
+      "name": "PE15",
+      "net": "PTB_DRVEN"
+    },
+    {
+      "pad": "79",
+      "name": "PB10",
+      "net": null
+    },
+    {
+      "pad": "80",
+      "name": "PB11",
+      "net": null
+    },
+    {
+      "pad": "81",
+      "name": "VCAP_1",
+      "net": "MCU_VCAP_1"
+    },
+    {
+      "pad": "82",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "83",
+      "name": "PH6",
+      "net": null
+    },
+    {
+      "pad": "84",
+      "name": "PH7",
+      "net": null
+    },
+    {
+      "pad": "85",
+      "name": "PH8",
+      "net": null
+    },
+    {
+      "pad": "86",
+      "name": "PH9",
+      "net": null
+    },
+    {
+      "pad": "87",
+      "name": "PH10",
+      "net": null
+    },
+    {
+      "pad": "88",
+      "name": "PH11",
+      "net": null
+    },
+    {
+      "pad": "89",
+      "name": "PH12",
+      "net": null
+    },
+    {
+      "pad": "90",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "91",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "92",
+      "name": "PB12",
+      "net": "PTA_CS"
+    },
+    {
+      "pad": "93",
+      "name": "PB13",
+      "net": "GDI_SPI2_SCK"
+    },
+    {
+      "pad": "94",
+      "name": "PB14",
+      "net": "GDI_SPI2_MISO"
+    },
+    {
+      "pad": "95",
+      "name": "PB15",
+      "net": "GDI_SPI2_MOSI"
+    },
+    {
+      "pad": "96",
+      "name": "PD8",
+      "net": null
+    },
+    {
+      "pad": "97",
+      "name": "PD9",
+      "net": "DI5"
+    },
+    {
+      "pad": "98",
+      "name": "PD10",
+      "net": "DI4"
+    },
+    {
+      "pad": "99",
+      "name": "PD11",
+      "net": "DI3"
+    },
+    {
+      "pad": "100",
+      "name": "PD12",
+      "net": "HPFP2"
+    },
+    {
+      "pad": "101",
+      "name": "PD13",
+      "net": "DBW_DISABLE"
+    },
+    {
+      "pad": "102",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "103",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "104",
+      "name": "PD14",
+      "net": "EWG_DIR"
+    },
+    {
+      "pad": "105",
+      "name": "PD15",
+      "net": "EWG_DISABLE"
+    },
+    {
+      "pad": "106",
+      "name": "PG2",
+      "net": null
+    },
+    {
+      "pad": "107",
+      "name": "PG3",
+      "net": null
+    },
+    {
+      "pad": "108",
+      "name": "PG4",
+      "net": null
+    },
+    {
+      "pad": "109",
+      "name": "PG5",
+      "net": null
+    },
+    {
+      "pad": "110",
+      "name": "PG6",
+      "net": null
+    },
+    {
+      "pad": "111",
+      "name": "PG7",
+      "net": "DI1"
+    },
+    {
+      "pad": "112",
+      "name": "PG8",
+      "net": "DI2"
+    },
+    {
+      "pad": "113",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "114",
+      "name": "VDDUSB",
+      "net": "+3V3"
+    },
+    {
+      "pad": "115",
+      "name": "PC6",
+      "net": "DBW_PWM"
+    },
+    {
+      "pad": "116",
+      "name": "PC7",
+      "net": "DBW_DIR"
+    },
+    {
+      "pad": "117",
+      "name": "PC8",
+      "net": "EWG_PWM"
+    },
+    {
+      "pad": "118",
+      "name": "PC9",
+      "net": "HPFP1"
+    },
+    {
+      "pad": "119",
+      "name": "PA8",
+      "net": null
+    },
+    {
+      "pad": "120",
+      "name": "PA9",
+      "net": null
+    },
+    {
+      "pad": "121",
+      "name": "PA10",
+      "net": null
+    },
+    {
+      "pad": "122",
+      "name": "PA11",
+      "net": null
+    },
+    {
+      "pad": "123",
+      "name": "PA12",
+      "net": null
+    },
+    {
+      "pad": "124",
+      "name": "PA13",
+      "net": "SWDIO"
+    },
+    {
+      "pad": "125",
+      "name": "VCAP_2",
+      "net": "MCU_VCAP_2"
+    },
+    {
+      "pad": "126",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "127",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "128",
+      "name": "PH13",
+      "net": null
+    },
+    {
+      "pad": "129",
+      "name": "PH14",
+      "net": null
+    },
+    {
+      "pad": "130",
+      "name": "PH15",
+      "net": null
+    },
+    {
+      "pad": "131",
+      "name": "PI0",
+      "net": null
+    },
+    {
+      "pad": "132",
+      "name": "PI1",
+      "net": null
+    },
+    {
+      "pad": "133",
+      "name": "PI2",
+      "net": null
+    },
+    {
+      "pad": "134",
+      "name": "PI3",
+      "net": null
+    },
+    {
+      "pad": "135",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "136",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "137",
+      "name": "PA14",
+      "net": "SWCLK"
+    },
+    {
+      "pad": "138",
+      "name": "PA15",
+      "net": "PTB_CS"
+    },
+    {
+      "pad": "139",
+      "name": "PC10",
+      "net": null
+    },
+    {
+      "pad": "140",
+      "name": "PC11",
+      "net": null
+    },
+    {
+      "pad": "141",
+      "name": "PC12",
+      "net": null
+    },
+    {
+      "pad": "142",
+      "name": "PD0",
+      "net": "CAN1_RX"
+    },
+    {
+      "pad": "143",
+      "name": "PD1",
+      "net": "CAN1_TX"
+    },
+    {
+      "pad": "144",
+      "name": "PD2",
+      "net": null
+    },
+    {
+      "pad": "145",
+      "name": "PD3",
+      "net": null
+    },
+    {
+      "pad": "146",
+      "name": "PD4",
+      "net": null
+    },
+    {
+      "pad": "147",
+      "name": "PD5",
+      "net": "LIN1_TX"
+    },
+    {
+      "pad": "148",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "149",
+      "name": "VDDSDMMC",
+      "net": "+3V3"
+    },
+    {
+      "pad": "150",
+      "name": "PD6",
+      "net": "LIN1_RX"
+    },
+    {
+      "pad": "151",
+      "name": "PD7",
+      "net": null
+    },
+    {
+      "pad": "152",
+      "name": "PG9",
+      "net": null
+    },
+    {
+      "pad": "153",
+      "name": "PG10",
+      "net": null
+    },
+    {
+      "pad": "154",
+      "name": "PG11",
+      "net": null
+    },
+    {
+      "pad": "155",
+      "name": "PG12",
+      "net": null
+    },
+    {
+      "pad": "156",
+      "name": "PG13",
+      "net": null
+    },
+    {
+      "pad": "157",
+      "name": "PG14",
+      "net": null
+    },
+    {
+      "pad": "158",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "159",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "160",
+      "name": "PG15",
+      "net": null
+    },
+    {
+      "pad": "161",
+      "name": "PB3",
+      "net": "SWO"
+    },
+    {
+      "pad": "162",
+      "name": "PB4",
+      "net": null
+    },
+    {
+      "pad": "163",
+      "name": "PB5",
+      "net": null
+    },
+    {
+      "pad": "164",
+      "name": "PB6",
+      "net": null
+    },
+    {
+      "pad": "165",
+      "name": "PB7",
+      "net": null
+    },
+    {
+      "pad": "166",
+      "name": "BOOT0",
+      "net": "BOOT0"
+    },
+    {
+      "pad": "167",
+      "name": "PB8",
+      "net": "IGN6"
+    },
+    {
+      "pad": "168",
+      "name": "PB9",
+      "net": "IGN7"
+    },
+    {
+      "pad": "169",
+      "name": "PE0",
+      "net": null
+    },
+    {
+      "pad": "170",
+      "name": "PE1",
+      "net": null
+    },
+    {
+      "pad": "171",
+      "name": "PDR_ON",
+      "net": "+3V3"
+    },
+    {
+      "pad": "172",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "173",
+      "name": "PI4",
+      "net": null
+    },
+    {
+      "pad": "174",
+      "name": "PI5",
+      "net": null
+    },
+    {
+      "pad": "175",
+      "name": "PI6",
+      "net": null
+    },
+    {
+      "pad": "176",
+      "name": "PI7",
+      "net": null
+    }
+  ],
+  "unassigned_functions": [
+    "SENT3",
+    "SENT4",
+    "LIN2_TX",
+    "LIN2_RX",
+    "CAN2_RX",
+    "CAN2_TX",
+    "PI1",
+    "PI2",
+    "PI3",
+    "PI4",
+    "PI5",
+    "PI6",
+    "PI7",
+    "PI8",
+    "VVT1",
+    "VVT2",
+    "VVT3",
+    "VVT4",
+    "AUX_PWM1",
+    "AUX_PWM2",
+    "AUX_PWM3",
+    "AUX_PWM4",
+    "AUX_PWM5",
+    "AUX_PWM6",
+    "AUX_PWM7",
+    "AUX_PWM8",
+    "LS_AUX1",
+    "LS_AUX2",
+    "LS_AUX3",
+    "LS_AUX4",
+    "CAM3",
+    "CAM4"
+  ]
+}

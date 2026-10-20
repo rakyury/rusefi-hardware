@@ -1,0 +1,87 @@
+ref,value,footprint,dnp,sheet,note
+U101,STM32F767IIT6,Package_QFP:LQFP-176_24x24mm_P0.5mm,False,core_mcu,"Provisional industrial -40..85C LQFP176. Unassigned pads are intentionally unused in this candidate, not qualified resources."
+C101,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 15; short GND return
+C102,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 23; short GND return
+C103,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 36; short GND return
+C104,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 49; short GND return
+C105,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 62; short GND return
+C106,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 72; short GND return
+C107,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 82; short GND return
+C108,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 91; short GND return
+C109,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 103; short GND return
+C110,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 127; short GND return
+C111,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 136; short GND return
+C112,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 159; short GND return
+C113,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 172; short GND return
+C114,4.7u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Package bulk; effective capacitance >=4.7uF after bias/temp derating
+C115,2.2u 10V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 pad81; effective2.2uF ESR<2ohm; no external load
+C116,2.2u 10V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 pad125; effective2.2uF ESR<2ohm; no external load
+C117,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 VDDA39/VREF38
+C118,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 VDDA39/VREF38
+R101,0R,Resistor_SMD:R_0603_1608Metric,False,core_mcu,Analog star feed; ferrite substitution needs transient/ADC review
+C119,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 VDDUSB pad114
+C120,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 VDDUSB pad114
+C121,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 VDDSDMMC pad149
+C122,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 VDDSDMMC pad149
+C123,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,VBAT U101 pad6; no backup battery
+C124,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,DS11532 Fig41 reset filter; connect debugger open-drain reset
+R102,10k,Resistor_SMD:R_0603_1608Metric,False,core_mcu,
+R103,10k,Resistor_SMD:R_0603_1608Metric,False,core_mcu,Default flash boot; option bytes still require firmware review
+J101,SWD 3V3 target reference,Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical,False,core_mcu,"VTREF sense only, not external power input. Pin7 key/unused, pin8 unused; unshrouded header"
+Y101,ASEM1-8.000MHZ-LC-T,Power8GDI_Core:ASEM_3225,False,core_mcu,Abracon ASEM RevP p4 actual pins1EN2GND3OUT4VDD; firmware HSE bypass required; PH1 NC
+C129,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Abracon recommends10n between Y101 pins4/2; short return
+U102,TLV1117LV33DCYR,Package_TO_SOT_SMD:SOT-223-3_TabPin2,False,core_power,"TI SBVS160C; industrial candidate, not AEC-Q100; TAB=OUT pad2"
+C125,4.7u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_power,Effective CIN>=1uF; next to pin3
+C126,4.7u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_power,Effective COUT>=1uF; next to pad2; no reverse-power injection
+U103,TCAN1042HGVDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,core_comms,STB held high at reset; MCU PH2 pad43 may drive low to enable; GPIO firmware pending
+C127,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_comms,At U103 pin3
+C128,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_comms,At U103 pin5
+R104,10k,Resistor_SMD:R_0603_1608Metric,False,core_comms,Fail-closed default: transceiver in standby
+R105,0R DNP,Resistor_SMD:R_0603_1608Metric,True,core_comms,Test-only normal-mode strap; leave DNP for MCU PH2 control
+R106,120R DNP,Resistor_SMD:R_0603_1608Metric,True,core_comms,Fit only if ECU is a bus end; do not add third terminator
+D101,PESD2CAN,Package_TO_SOT_SMD:SOT-23,False,core_comms,Nexperia Rev2 pinning1/2lines3common; close connector; ground surge return review
+U104,TLIN1029ADRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,core_comms,"TI SLLSFK8A; 4..36V operating, 45V absolute VSUP; A variant avoids original duty-cycle erratum; default sleep"
+R107,4.7k,Resistor_SMD:R_0603_1608Metric,False,core_comms,Open-drainRXD must never be pulled toVBAT/5V
+R108,10k,Resistor_SMD:R_0603_1608Metric,False,core_comms,Default sleep; MCU PH3 pad44 enables high
+R109,0R DNP,Resistor_SMD:R_0603_1608Metric,True,core_comms,Optionalnormalmode afterphysicalbusreview
+R110,10k,Resistor_SMD:R_0603_1608Metric,False,core_comms,Recessive input during MCUreset
+R111,0R,Resistor_SMD:R_0603_1608Metric,False,core_comms,Requires root SMBJ24CA nominal38.9V clamp <45Vabs; actual pulse energy/overshoot gate remains
+C130,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_comms,At U104 pin7
+C131,1u 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,core_comms,
+C132,220p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,core_comms,Respondermode buscap TI Fig10-1; busEMC/loadbudget pending
+U110,MIC4427YM,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,core_ignition,Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP
+C140,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_ignition,Close Udriver pin6/3
+C141,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_ignition,
+R120,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Input defaultlow; PC13 load check includes inputI/C andtrace
+R128,100R DNP,Resistor_SMD:R_0603_1608Metric,True,core_ignition,Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed
+R136,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Harnesslogic pulldown; no active drive with DNPserieslink
+R121,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Input defaultlow; PC13 load check includes inputI/C andtrace
+R129,100R DNP,Resistor_SMD:R_0603_1608Metric,True,core_ignition,Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed
+R137,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Harnesslogic pulldown; no active drive with DNPserieslink
+U111,MIC4427YM,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,core_ignition,Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP
+C142,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_ignition,Close Udriver pin6/3
+C143,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_ignition,
+R122,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Input defaultlow; PC13 load check includes inputI/C andtrace
+R130,100R DNP,Resistor_SMD:R_0603_1608Metric,True,core_ignition,Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed
+R138,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Harnesslogic pulldown; no active drive with DNPserieslink
+R123,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Input defaultlow; PC13 load check includes inputI/C andtrace
+R131,100R DNP,Resistor_SMD:R_0603_1608Metric,True,core_ignition,Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed
+R139,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Harnesslogic pulldown; no active drive with DNPserieslink
+U112,MIC4427YM,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,core_ignition,Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP
+C144,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_ignition,Close Udriver pin6/3
+C145,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_ignition,
+R124,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Input defaultlow; PC13 load check includes inputI/C andtrace
+R132,100R DNP,Resistor_SMD:R_0603_1608Metric,True,core_ignition,Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed
+R140,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Harnesslogic pulldown; no active drive with DNPserieslink
+R125,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Input defaultlow; PC13 load check includes inputI/C andtrace
+R133,100R DNP,Resistor_SMD:R_0603_1608Metric,True,core_ignition,Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed
+R141,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Harnesslogic pulldown; no active drive with DNPserieslink
+U113,MIC4427YM,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,core_ignition,Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP
+C146,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_ignition,Close Udriver pin6/3
+C147,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_ignition,
+R126,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Input defaultlow; PC13 load check includes inputI/C andtrace
+R134,100R DNP,Resistor_SMD:R_0603_1608Metric,True,core_ignition,Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed
+R142,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Harnesslogic pulldown; no active drive with DNPserieslink
+R127,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Input defaultlow; PC13 load check includes inputI/C andtrace
+R135,100R DNP,Resistor_SMD:R_0603_1608Metric,True,core_ignition,Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed
+R143,100k,Resistor_SMD:R_0603_1608Metric,False,core_ignition,Harnesslogic pulldown; no active drive with DNPserieslink
