@@ -1,0 +1,53 @@
+function,stm32_pin,mcu_resource,status,notes
+DI1,PG7,GPIO,existing_macro,H144_LS_1; driver control only
+DI2,PG8,GPIO,existing_macro,H144_LS_2; driver control only
+DI3,PD11,GPIO,existing_macro,H144_LS_3; driver control only
+DI4,PD10,GPIO,existing_macro,H144_LS_4; driver control only
+DI5,PD9,GPIO,proposed,H144_LS_5; connector path not validated
+DI6,PF12,GPIO,proposed,H144_LS_6 assigned HPFP in Power4GDI and must move
+DI7,PF13,GPIO,proposed,H144_LS_7 assigned PT DRVEN in Power4GDI and must move
+DI8,PF14,GPIO,proposed,H144_LS_8 assigned PT RESET in Power4GDI and must move
+IGN1,PC13,GPIO,existing_macro,H144_IGN_1
+IGN2,PE5,GPIO,existing_macro,H144_IGN_2
+IGN3,PE4,GPIO,existing_macro,H144_IGN_3
+IGN4,PE3,GPIO,existing_macro,H144_IGN_4
+IGN5,PE2,GPIO,proposed,H144_IGN_5
+IGN6,PB8,GPIO,proposed,H144_IGN_6
+IGN7,PB9,GPIO,proposed,H144_IGN_7
+IGN8,PE6,GPIO,proposed,H144_IGN_8
+HPFP1,PC9,GPIO_TIMED,proposed,Relocated from PF12 to release DI6
+HPFP2,PD12,GPIO_TIMED,proposed,Must not reuse for SENT3 TIM4 input capture
+GDI_SPI2_SCK,PB13,SPI2,existing_macro,H_SPI2_SCK
+GDI_SPI2_MISO,PB14,SPI2,existing_macro,H_SPI2_MISO
+GDI_SPI2_MOSI,PB15,SPI2,existing_macro,H_SPI2_MOSI
+PTA_CS,PB12,GPIO,existing_macro,H_SPI2_CS; board-specific select
+PTB_CS,PA15,GPIO,proposed,Conflicts with H_SPI3_CS if SPI3/terminator uses this pad
+PTA_RESET,PE12,GPIO,proposed,Previously PT reset PF14 now DI8
+PTB_RESET,PE14,GPIO,proposed,Independent power-stage reset
+PTA_DRVEN,PE13,GPIO,proposed,Previously PT driven PF13 now DI7
+PTB_DRVEN,PE15,GPIO,proposed,Independent safety inhibit
+PTA_FLAG,PF8,GPIO_EXTI,proposed,H144_IN_RES3 source PT flag
+PTB_FLAG,PF9,GPIO_EXTI,proposed,H144_IN_RES1 candidate - ADC pin conflicts must be checked
+DBW_PWM,PC6,TIM3_CH1,proposed,First H bridge control
+DBW_DIR,PC7,GPIO,proposed,First H bridge direction
+DBW_DISABLE,PD13,GPIO,proposed,First H bridge disable
+EWG_PWM,PC8,TIM3_CH3,proposed,Second H bridge control
+EWG_DIR,PD14,GPIO,proposed,Second H bridge direction
+EWG_DISABLE,PD15,GPIO,proposed,Second H bridge disable
+CAN1_RX,PD0,CAN1,existing_macro,H144_CAN_RX
+CAN1_TX,PD1,CAN1,existing_macro,H144_CAN_TX
+LIN1_TX,PD5,USART2,proposed,Requires automotive LIN transceiver
+LIN1_RX,PD6,USART2,proposed,Requires automotive LIN transceiver
+SENT1,PE9,TIM1_CH1,proposed,H144_IN_AUX2_DIGITAL
+SENT2,PA1,TIM2_CH2,proposed,H144_IN_O2S2_DIGITAL; ensure not used as lambda analog
+KNOCK1,PF7,ADC3,existing_macro,Knock input analog
+KNOCK2,PF5,ADC3,proposed,Use only if CAM3 and other PF5 uses relocated
+CRANK,PB1,TRIGGER_INPUT,existing_macro,H144_IN_CRANK
+CAM1,PF3,CAM_INPUT,existing_macro,H144_IN_SENS1
+CAM2,PF4,CAM_INPUT,existing_macro,H144_IN_SENS2
+SENT3,UNASSIGNED,TIM4_CAPTURE,unassigned,PD12 presently HPFP2; choose another pin/driver
+SENT4,UNASSIGNED,ICU_CAPTURE,unassigned,Current SENT hardware 1 channel; separate driver needed
+LIN2_TX,UNASSIGNED,USART3_OR_UART4,unassigned,No pin until protocol plan
+LIN2_RX,UNASSIGNED,USART3_OR_UART4,unassigned,No pin until protocol plan
+CAN2_RX,UNASSIGNED,CAN2,unassigned,Pending board use of PB5/PB6 or alternate
+CAN2_TX,UNASSIGNED,CAN2,unassigned,Pending board use of PB5/PB6 or alternate

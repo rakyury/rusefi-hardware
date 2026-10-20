@@ -1,0 +1,26 @@
+name: Power8GDI host-only C++ and Python checks
+on:
+  push:
+    branches: [power8gdi-rev-a]
+    paths:
+      - 'Power8GDI/**'
+      - '.github/workflows/power8gdi-host.yml'
+  pull_request:
+    paths:
+      - 'Power8GDI/**'
+      - '.github/workflows/power8gdi-host.yml'
+jobs:
+  host-contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: C++ host safety and map format tests
+        run: bash Power8GDI/firmware/tests/run_all_host_tests.sh
+      - name: Python offline config and 4D binary tests
+        working-directory: Power8GDI/configurator
+        run: PYTHONPATH=. python -m unittest discover -s tests -v
+      - name: Static interface checks (NOT KiCad ERC/DRC)
+        run: python -m unittest discover -s Power8GDI/tests -v

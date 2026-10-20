@@ -1,0 +1,90 @@
+{
+  "status": "PRELIMINARY_CLEARANCE_ENVELOPE_ONLY",
+  "warning": "Connector representations are NOT manufacturer STEP, and PCB has no copper or finished components.",
+  "units": "mm",
+  "parameters": {
+    "pcb_x": 245.0,
+    "pcb_y": 165.0,
+    "pcb_thickness": 1.6,
+    "housing_x": 265.0,
+    "housing_y": 185.0,
+    "base_z": 42.0,
+    "lid_z": 12.0,
+    "wall": 5.0,
+    "floor": 5.0,
+    "pcb_bottom_z": 11.0,
+    "connector_width": 49.0,
+    "connector_depth": 44.0,
+    "connector_bottom_z": 14.0,
+    "connector_height": 23.0,
+    "connector_x": [
+      -90.0,
+      -30.0,
+      30.0,
+      90.0
+    ],
+    "connector_y": -88.5,
+    "screw_x": 124.0,
+    "screw_y": 84.0,
+    "m3_clearance": 3.4,
+    "concept_only": true
+  },
+  "pcb_mounts": [
+    [
+      -114.0,
+      -74.0
+    ],
+    [
+      -114.0,
+      74.0
+    ],
+    [
+      114.0,
+      -74.0
+    ],
+    [
+      114.0,
+      74.0
+    ]
+  ],
+  "solids": [
+    "Base",
+    "Lid",
+    "PCB",
+    "MCU_F7",
+    "PT2001_A",
+    "PT2001_B",
+    "GDI_BOOST_A",
+    "GDI_BOOST_B",
+    "LOW_SIDE_24",
+    "H_BRIDGE_A",
+    "H_BRIDGE_B",
+    "KNOCK_ANALOG",
+    "POWER_IN",
+    "LIN_CAN",
+    "J_A_34PIN_ENVELOPE",
+    "J_B_34PIN_ENVELOPE",
+    "J_C_34PIN_ENVELOPE",
+    "J_D_34PIN_ENVELOPE"
+  ],
+  "geometry_fidelity": {
+    "Base": "concept CAD",
+    "Lid": "concept CAD",
+    "PCB": "envelope",
+    "MCU_F7": "envelope",
+    "PT2001_A": "envelope",
+    "PT2001_B": "envelope",
+    "GDI_BOOST_A": "envelope",
+    "GDI_BOOST_B": "envelope",
+    "LOW_SIDE_24": "envelope",
+    "H_BRIDGE_A": "envelope",
+    "H_BRIDGE_B": "envelope",
+    "KNOCK_ANALOG": "envelope",
+    "POWER_IN": "envelope",
+    "LIN_CAN": "envelope",
+    "J_A_34PIN_ENVELOPE": "envelope",
+    "J_B_34PIN_ENVELOPE": "envelope",
+    "J_C_34PIN_ENVELOPE": "envelope",
+    "J_D_34PIN_ENVELOPE": "envelope"
+  }
+}
