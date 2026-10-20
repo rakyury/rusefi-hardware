@@ -76,5 +76,35 @@ class Map4DBinaryTests(unittest.TestCase):
         self.assertEqual(raw[:4], (-1000, 1100, 300, 1300))
         self.assertAlmostEqual(decode_map4d(blob).values[0][0][0], -10., places=5)
 
+    def test_repeated_exchange_preserves_limits(self):
+        table = self.example()
+        for _ in range(20):
+            table = decode_map4d(encode_map4d(table))
+            self.assertEqual((table.minimum, table.maximum), (-20, 40))
+
+    def test_wire_scale_is_used_before_quantization(self):
+        table = self.example()
+        # This value straddles a rounding threshold only after scale is stored
+        # as float32. Quantizing with the caller's double gave the wrong cell.
+        scale = .1
+        value = 100.5 * scale + 1e-8
+        table.values[0][0][0] = value
+        blob = encode_map4d(table, scale=scale)
+        self.assertEqual(struct.unpack_from('<h', blob, 72)[0], 100)
+
+    def test_float32_axis_collision_and_scale_underflow(self):
+        table = self.example()
+        table.x_bins = [1., 1. + 1e-8]
+        with self.assertRaises(MapBinaryError):
+            encode_map4d(table)
+        with self.assertRaises(MapBinaryError):
+            encode_map4d(self.example(), scale=1e-100)
+
+    def test_wire_offset_is_used_before_quantization(self):
+        table = CalibrationTable4D('Offset', '', 'X', 'Y', 'Z', 'u',
+                                    [0.], [0.], [0.], [[[1.00000005]]], 0, 2)
+        blob = encode_map4d(table, scale=1e-8, offset=1.00000004)
+        self.assertEqual(struct.unpack_from('<h', blob, 60)[0], 5)
+
 if __name__ == '__main__':
     unittest.main()

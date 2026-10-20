@@ -43,5 +43,22 @@ int main() {
     const float one_value[] = {4.5f};
     Map4DView<float> degenerate{one, one, one, one_value, 1, 1, 1};
     assert(degenerate.evaluate(1.f, 1.f, 1.f, out) && out == 4.5f);
+    // Float32 subtraction previously overflowed this valid axis interval and
+    // silently selected the first cell at its midpoint.
+    const float extreme_axis[] = {-3e38f, 3e38f};
+    const float endpoints[] = {-3e38f, 3e38f};
+    Map4DView<float> extreme{extreme_axis, one, one, endpoints, 2, 1, 1};
+    assert(extreme.evaluate(0.f, 42.f, 42.f, out) && out == 0.f);
+    assert(extreme.evaluate(3e38f, 42.f, 42.f, out) && out == 3e38f);
+    // A nonfinite cell outside the queried slice still invalidates the map.
+    const float invalid_cells[] = {1.f, std::numeric_limits<float>::quiet_NaN()};
+    Map4DView<float> nonfinite{x, one, one, invalid_cells, 2, 1, 1};
+    out = 123.f;
+    assert(!nonfinite.validate());
+    assert(!nonfinite.evaluate(0.f, 42.f, 42.f, out) && out == 123.f);
+    // The final physical value fits even though a float multiply would overflow.
+    const int16_t cancellation_cells[] = {2};
+    Map4DView<int16_t> cancellation{one, one, one, cancellation_cells, 1, 1, 1, 3e38f, -3e38f};
+    assert(cancellation.evaluate(42.f, 42.f, 42.f, out) && out == 3e38f);
     return 0;
 }
