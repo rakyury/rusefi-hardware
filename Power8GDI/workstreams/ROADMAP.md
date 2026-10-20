@@ -29,3 +29,10 @@ None of this substitutes for actual KiCad ERC/DRC, Power8GDI firmware target bui
 
 ## Running agents
 The current connected toolset can write GitHub repository content but has no action to start Copilot background agents. GitHub custom-agent profiles must be invoked by a supported Copilot surface. For GitHub cloud agent, profiles generally need to be merged into the repository default branch. Keep `main` unchanged until review.
+
+## Verified manual integration update — 2026-10-21
+- [Dual PT2001 safety logic and tests](https://github.com/rakyury/rusefi-hardware/commit/673e68b08957ec1e71e9834a8e1dbdc2b51ed0d9) — host only.
+- [MCU resource tracker](https://github.com/rakyury/rusefi-hardware/commit/6abecaa9fff202ef2c4be1cdfec28b6a6ce03b5c) — 32 required allocations remain missing; manufacturing blocked.
+- [Normal stop/synchronization state fix](https://github.com/rakyury/rusefi-hardware/commit/c1def6cb98f45cf590ad178af9761b2a5908d862) — host test passed.
+- 24 offline Python tests, 16 static MCU/connector tests, 6 mechanical envelope tests, and C++ Map4D, P4DM, dual HPFP planning and dual GDI gate host tests pass locally. Real MCU firmware, ERC/DRC, electrical/EMC/thermal validation not complete.
+- **No specialist Codex/Copilot agents have actually been launched by this chat.** Profile definitions are available for later parallel execution.

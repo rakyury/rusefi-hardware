@@ -1,6 +1,6 @@
 # CAD-06 — Mechanical CAD
 
-**Status:** READY / NOT STARTED. Profile exists but no running agent has been launched.
+**Status:** MANUAL DEVELOPMENT IN PROGRESS / agent profile has NOT been launched.
 **Profile:** `.github/agents/mechanical-cad.agent.md`
 **Topic branch:** `power8gdi/cad-06`
 **Owned paths:** Power8GDI/mechanical/ and docs/CAD_*
@@ -16,3 +16,6 @@ Create scoped PR into `power8gdi-rev-a` containing source, reports and explicit 
 - Tests: pending
 - Hardware validation: NOT RUN
 - Manufacturing readiness: NOT APPROVED
+
+## Verified manual progress (2026-10-21)
+Provisional CadQuery enclosure/assembly and STEP + six envelope renders available in developer package; 6 envelope tests PASS. Real TE mating STEP, actual placed PCB, gasket, heat-transfer and tolerance stackup NOT VERIFIED.

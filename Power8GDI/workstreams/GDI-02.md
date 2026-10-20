@@ -1,6 +1,6 @@
 # GDI-02 — GDI power electronics
 
-**Status:** READY / NOT STARTED. Profile exists but no running agent has been launched.
+**Status:** MANUAL DEVELOPMENT IN PROGRESS / agent profile has NOT been launched.
 **Profile:** `.github/agents/gdi-power.agent.md`
 **Topic branch:** `power8gdi/gdi-02`
 **Owned paths:** Power8GDI/hardware/gdi/ and docs/GDI_*
@@ -16,3 +16,6 @@ Create scoped PR into `power8gdi-rev-a` containing source, reports and explicit 
 - Tests: pending
 - Hardware validation: NOT RUN
 - Manufacturing readiness: NOT APPROVED
+
+## Verified manual progress (2026-10-21)
+Dual PT2001 software safety policy committed and host tested; independent hardware drive/kill circuitry, GDI boost supply, analog validation and oscilloscope dummy load NOT BUILT/NOT RUN.
