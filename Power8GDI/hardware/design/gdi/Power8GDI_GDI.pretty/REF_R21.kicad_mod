@@ -1,0 +1,157 @@
+(footprint "REF_R21"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(tags "net tie")
+	(property "Reference" "REF**"
+		(at 0.45 -1.5 0)
+		(layer "F.SilkS")
+		(uuid "61496af1-0922-4255-be25-f5e094da6443")
+		(effects
+			(font
+				(size 0.82 0.82)
+				(thickness 0.17)
+			)
+		)
+	)
+	(property "Value" "0.01"
+		(at -0.05 1.225 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "ed5dfaa8-0fca-4e1d-9e30-e840ed2a1c32")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ae1187da-00d5-4cd6-aae5-3a6e497b2fca")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Shunt resistor"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0357f1f7-3dda-46ef-82be-0021eb119ee1")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC" "C309628"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "220f029f-d173-463c-9509-3f17c572901d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(zone_connect 2)
+	(attr smd)
+	(net_tie_pad_groups "1, 2, 3, 4")
+	(fp_poly
+		(pts
+			(xy -1.55004 -0.075) (xy -0.62504 -0.075) (xy -0.62504 0.075) (xy -1.55004 0.075)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.Cu")
+		(uuid "362d7bf6-44e8-40b2-9762-a8ff5541b050")
+	)
+	(fp_poly
+		(pts
+			(xy 1.56998 0.075) (xy 0.64498 0.075) (xy 0.64498 -0.075) (xy 1.56998 -0.075)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.Cu")
+		(uuid "93a6d29a-22ac-4cd1-88ed-d4fb78c95ea1")
+	)
+	(fp_line
+		(start -0.65 -0.8)
+		(end 0.65 -0.802928)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "53e8046a-1d59-4374-919a-be5f7cc4a4f4")
+	)
+	(fp_line
+		(start -0.65 0.8)
+		(end 0.65 0.8)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b98ff10d-591f-4fd6-bc6c-5200de8ff75b")
+	)
+	(pad "1" smd roundrect
+		(at -1.45002 0 90)
+		(size 1.8 1.15)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.2)
+		(zone_connect 2)
+		(uuid "395a69db-1d4d-4920-be0d-6395f54536d2")
+	)
+	(pad "2" smd roundrect
+		(at -0.6 0 90)
+		(size 0.15 0.15)
+		(layers "F.Cu")
+		(roundrect_rratio 0.2)
+		(zone_connect 2)
+		(uuid "c0e70207-ed91-46fb-a072-10214b6bd602")
+	)
+	(pad "3" smd roundrect
+		(at 0.59998 0 270)
+		(size 0.15 0.15)
+		(layers "F.Cu")
+		(roundrect_rratio 0.2)
+		(zone_connect 2)
+		(uuid "8962f818-87ec-4b8e-9ed5-7b8ea3100bfb")
+	)
+	(pad "4" smd roundrect
+		(at 1.45 0 270)
+		(size 1.8 1.15)
+		(layers "F.Cu" "F.Mask")
+		(roundrect_rratio 0.2)
+		(zone_connect 2)
+		(uuid "96939576-25fa-4ced-825c-16c7747def85")
+	)
+	(embedded_fonts no)
+	(model ":hellen-one-models:1206 resistor.STEP"
+		(offset
+			(xyz 0.050102 0.625046 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 0)
+		)
+	)
+)
