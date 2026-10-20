@@ -151,6 +151,22 @@ int main() {
         assert(allDisabled(safety.update(s)));
         assert(safety.state() == GdiState::Disarmed);
     }
+    // Intentional run-request cancellation is a normal stop, even if the
+    // crank/cam synchronization disappears in that same control cycle.
+    {
+        DualPt2001Safety safety;
+        auto s = good();
+        assert(allAllowed(safety.update(s)));
+        s.runRequested = false;
+        s.synchronizationValid = false;
+        auto p = safety.update(s);
+        assert(allDisabled(p));
+        assert(p.state == GdiState::Disarmed);
+        assert(p.fault == GdiFault::None);
+        s.runRequested = true;
+        s.synchronizationValid = true;
+        assert(allAllowed(safety.update(s)));
+    }
     // Rail topology and installed pump configuration are immutable while armed.
     {
         DualPt2001Safety safety;

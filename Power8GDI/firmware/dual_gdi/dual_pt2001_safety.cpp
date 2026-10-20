@@ -75,7 +75,8 @@ GdiPermits DualPt2001Safety::update(const GdiSafetySnapshot& s) noexcept {
             } else {
                 state_ = GdiState::Disarmed;
             }
-        } else if (state_ == GdiState::Armed && !s.synchronizationValid) {
+        } else if (state_ == GdiState::Armed && s.runRequested &&
+                   !s.synchronizationValid) {
             latchFault(GdiFault::SynchronizationLost);
         } else if (s.runRequested && s.synchronizationValid) {
             if (state_ == GdiState::Disarmed)
