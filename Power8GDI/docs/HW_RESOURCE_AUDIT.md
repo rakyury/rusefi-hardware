@@ -6,15 +6,17 @@ The current draft passes input-structure validation and fails qualification. No 
 
 | Result | Current draft |
 |---|---:|
-| GPIO rows / distinct assigned pins | 52 / 46 |
+| GPIO rows / distinct assigned pins | 78 / 46 |
 | Required functions in the audit scope | 104 |
-| Missing from GPIO allocation | 52 |
-| Explicitly UNASSIGNED | 6 |
+| Missing from GPIO allocation | 26 |
+| Explicitly UNASSIGNED | 32 |
 | Confirmed pin/channel/EXTI/reservation collisions | 0 |
 | Interface conflicts conditional on mode choice | 5 |
 | Missing qualification evidence groups | 13 |
 
-The 52 omissions include 24 PI/VVT/AUX/low-side commands, CAM3/4, eight digital inputs, FLEX_FREQ, and 17 analog/temperature inputs. The six explicit gaps are SENT3/4, LIN2 TX/RX and CAN2 TX/RX. Optional/provisioned channels remain open until a reviewed scope decision. A connector net is a requirement, not a claim that it needs one direct MCU pad; external drivers and frontends still need allocation and capacity review. Dual wideband interfaces are a separate unresolved evidence item.
+After integrating upstream `6abecaa`, 26 former omissions (24 PI/VVT/AUX/low-side commands and CAM3/4) have explicit UNASSIGNED rows. No new pin was assigned. The remaining 26 absent rows cover eight digital inputs, FLEX_FREQ and 17 analog/temperature inputs. The 32 explicit gaps also include SENT3/4, LIN2 TX/RX and CAN2 TX/RX. Optional/provisioned channels remain open until a reviewed scope decision. A connector net is a requirement, not a claim that it needs one direct MCU pad; external drivers and frontends still need allocation and capacity review. Dual wideband interfaces are a separate unresolved evidence item.
+
+The upstream `resource_audit.py` is retained as a narrower logical allocation checker. Its `complete` flag concerns that subset only. This report's `audit_resources.py` includes connector requirements and explicitly blocks qualification even when logical rows are filled.
 
 ## Additional findings from primary sources
 

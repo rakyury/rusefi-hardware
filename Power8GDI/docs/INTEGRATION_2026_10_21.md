@@ -49,8 +49,8 @@ Final integrated evidence including upstream policy fixes is recorded below.
 
 ## Remaining engineering gates
 
-- MCU candidate remains provisional. 52 required functions have no resource row,
-  six existing rows are UNASSIGNED, five conditional conflicts and 13 missing
+- MCU candidate remains provisional. 26 required functions have no resource row,
+  32 existing rows are UNASSIGNED, five conditional conflicts and 13 missing
   evidence groups remain. Structure passes; release validation remains blocked.
 - GDI4 rev.d schematic/PCB and BOM disagree on U1; the old symbol supply name
   disagrees with NXP. Safe levels, package mapping and licensing remain unresolved.
@@ -86,3 +86,8 @@ rendered and closed successfully. The wheel contains no ECU-write implementation
 Initial GitHub CI passed Windows host and Linux CAD jobs; Linux Qt could not
 load `libEGL.so.1`. The workflow now installs `libegl1`. The PR checks and attached
 run artifacts are the authority for subsequent CI results, not this local record.
+
+Upstream `6abecaa9fff202ef2c4be1cdfec28b6a6ce03b5c` subsequently added 26 explicit
+UNASSIGNED rows and five narrower resource-budget tests. The snapshot and its
+regression expectations were regenerated against that source. Static-interface
+coverage is now 22 tests; no additional GPIO allocation or qualification was made.

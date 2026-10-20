@@ -12,8 +12,8 @@ python Power8GDI/hardware/audit_resources.py                  # exits 2 while re
 ```
 
 See [the reproducible audit](HW_RESOURCE_AUDIT.md) and
-`hardware/resource_audit_report.json`: 104 required functions, 52 absent rows,
-six UNASSIGNED, five conditional interface conflicts and 13 missing evidence
+`hardware/resource_audit_report.json`: 104 required functions, 26 absent rows,
+32 UNASSIGNED, five conditional interface conflicts and 13 missing evidence
 groups. A passing structure gate does not qualify the MCU allocation.
 
 

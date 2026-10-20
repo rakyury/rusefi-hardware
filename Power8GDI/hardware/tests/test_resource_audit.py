@@ -30,9 +30,10 @@ class ResourceAuditTests(unittest.TestCase):
         self.assertEqual(report['structure_status'], 'pass')
         self.assertEqual(report['summary']['collision_findings'], 0)
         self.assertFalse(report['release_eligible'])
-        self.assertTrue({'PI1', 'VVT4', 'AUX_PWM1', 'TPS1', 'FRP2', 'CAM4', 'HALL4'} <= set(report['missing_functions']))
-        self.assertEqual(len(report['missing_functions']), 52)
-        self.assertTrue({'SENT3', 'SENT4', 'CAN2_RX', 'LIN2_RX'} <= set(report['unassigned_functions']))
+        self.assertTrue({'TPS1', 'FRP2', 'HALL4'} <= set(report['missing_functions']))
+        self.assertEqual(len(report['missing_functions']), 26)
+        self.assertTrue({'PI1', 'VVT4', 'AUX_PWM1', 'CAM4', 'SENT3', 'SENT4', 'CAN2_RX', 'LIN2_RX'} <= set(report['unassigned_functions']))
+        self.assertEqual(len(report['unassigned_functions']), 32)
         self.assertEqual(report['verification']['DMA_routes'], 'unverified')
 
     def test_shared_peripheral_channel_collision_despite_unique_gpio(self):

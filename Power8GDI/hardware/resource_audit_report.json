@@ -11,11 +11,11 @@
   },
   "errors": [],
   "summary": {
-    "gpio_rows": 52,
+    "gpio_rows": 78,
     "assigned_pins": 46,
     "required_functions": 104,
-    "missing_functions": 52,
-    "unassigned_functions": 6,
+    "missing_functions": 26,
+    "unassigned_functions": 32,
     "collision_findings": 0,
     "conditional_conflicts": 5,
     "qualification_evidence_missing": 13
@@ -23,17 +23,7 @@
   "missing_functions": [
     "AUX_ANALOG1",
     "AUX_ANALOG2",
-    "AUX_PWM1",
-    "AUX_PWM2",
-    "AUX_PWM3",
-    "AUX_PWM4",
-    "AUX_PWM5",
-    "AUX_PWM6",
-    "AUX_PWM7",
-    "AUX_PWM8",
     "BARO_EXT",
-    "CAM3",
-    "CAM4",
     "CLT",
     "DIN5",
     "DIN6",
@@ -50,13 +40,33 @@
     "HALL4",
     "IAT",
     "LPFP_PRESS",
+    "MAP_MAIN",
+    "OIL_PRESS",
+    "OIL_TEMP",
+    "PPS1",
+    "PPS2",
+    "TPS1",
+    "TPS2"
+  ],
+  "unassigned_functions": [
+    "AUX_PWM1",
+    "AUX_PWM2",
+    "AUX_PWM3",
+    "AUX_PWM4",
+    "AUX_PWM5",
+    "AUX_PWM6",
+    "AUX_PWM7",
+    "AUX_PWM8",
+    "CAM3",
+    "CAM4",
+    "CAN2_RX",
+    "CAN2_TX",
+    "LIN2_RX",
+    "LIN2_TX",
     "LS_AUX1",
     "LS_AUX2",
     "LS_AUX3",
     "LS_AUX4",
-    "MAP_MAIN",
-    "OIL_PRESS",
-    "OIL_TEMP",
     "PI1",
     "PI2",
     "PI3",
@@ -65,22 +75,12 @@
     "PI6",
     "PI7",
     "PI8",
-    "PPS1",
-    "PPS2",
-    "TPS1",
-    "TPS2",
+    "SENT3",
+    "SENT4",
     "VVT1",
     "VVT2",
     "VVT3",
     "VVT4"
-  ],
-  "unassigned_functions": [
-    "CAN2_RX",
-    "CAN2_TX",
-    "LIN2_RX",
-    "LIN2_TX",
-    "SENT3",
-    "SENT4"
   ],
   "connector_requirement_coverage": {
     "Analog": {
@@ -104,25 +104,11 @@
     },
     "Aux Low-side": {
       "required": 4,
-      "missing": [
-        "LS_AUX1",
-        "LS_AUX2",
-        "LS_AUX3",
-        "LS_AUX4"
-      ]
+      "missing": []
     },
     "Aux PWM": {
       "required": 8,
-      "missing": [
-        "AUX_PWM1",
-        "AUX_PWM2",
-        "AUX_PWM3",
-        "AUX_PWM4",
-        "AUX_PWM5",
-        "AUX_PWM6",
-        "AUX_PWM7",
-        "AUX_PWM8"
-      ]
+      "missing": []
     },
     "Digital": {
       "required": 8,
@@ -149,16 +135,7 @@
     },
     "Port Injection": {
       "required": 8,
-      "missing": [
-        "PI1",
-        "PI2",
-        "PI3",
-        "PI4",
-        "PI5",
-        "PI6",
-        "PI7",
-        "PI8"
-      ]
+      "missing": []
     },
     "SENT": {
       "required": 4,
@@ -174,12 +151,7 @@
     },
     "VVT": {
       "required": 4,
-      "missing": [
-        "VVT1",
-        "VVT2",
-        "VVT3",
-        "VVT4"
-      ]
+      "missing": []
     }
   },
   "verification": {
@@ -376,17 +348,7 @@
       "functions": [
         "AUX_ANALOG1",
         "AUX_ANALOG2",
-        "AUX_PWM1",
-        "AUX_PWM2",
-        "AUX_PWM3",
-        "AUX_PWM4",
-        "AUX_PWM5",
-        "AUX_PWM6",
-        "AUX_PWM7",
-        "AUX_PWM8",
         "BARO_EXT",
-        "CAM3",
-        "CAM4",
         "CLT",
         "DIN5",
         "DIN6",
@@ -403,29 +365,13 @@
         "HALL4",
         "IAT",
         "LPFP_PRESS",
-        "LS_AUX1",
-        "LS_AUX2",
-        "LS_AUX3",
-        "LS_AUX4",
         "MAP_MAIN",
         "OIL_PRESS",
         "OIL_TEMP",
-        "PI1",
-        "PI2",
-        "PI3",
-        "PI4",
-        "PI5",
-        "PI6",
-        "PI7",
-        "PI8",
         "PPS1",
         "PPS2",
         "TPS1",
-        "TPS2",
-        "VVT1",
-        "VVT2",
-        "VVT3",
-        "VVT4"
+        "TPS2"
       ],
       "source": "project_requirements",
       "blocks_release": true
@@ -435,12 +381,38 @@
       "category": "unassigned_requirement",
       "detail": "Explicit UNASSIGNED rows still need an implementation",
       "functions": [
+        "AUX_PWM1",
+        "AUX_PWM2",
+        "AUX_PWM3",
+        "AUX_PWM4",
+        "AUX_PWM5",
+        "AUX_PWM6",
+        "AUX_PWM7",
+        "AUX_PWM8",
+        "CAM3",
+        "CAM4",
         "CAN2_RX",
         "CAN2_TX",
         "LIN2_RX",
         "LIN2_TX",
+        "LS_AUX1",
+        "LS_AUX2",
+        "LS_AUX3",
+        "LS_AUX4",
+        "PI1",
+        "PI2",
+        "PI3",
+        "PI4",
+        "PI5",
+        "PI6",
+        "PI7",
+        "PI8",
         "SENT3",
-        "SENT4"
+        "SENT4",
+        "VVT1",
+        "VVT2",
+        "VVT3",
+        "VVT4"
       ],
       "source": "project_requirements",
       "blocks_release": true
@@ -703,7 +675,7 @@
     "gpio_csv": {
       "name": "mcu_gpio_draft.csv",
       "canonicalization": "UTF-8 without BOM; LF newlines",
-      "sha256": "5d6221f9b8eb37abd988d5fb6fb509ef8c2dc66ea735d3da64185a0045d65218"
+      "sha256": "e399caffb7e92800fc0376fae90d3931adc5512c4c336f93a6ea24a27aa131a1"
     },
     "connector_csv": {
       "name": "power8gdi_revA_pinout.csv",
