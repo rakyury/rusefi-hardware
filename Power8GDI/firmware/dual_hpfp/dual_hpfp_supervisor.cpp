@@ -61,4 +61,40 @@ SupervisorOutput evaluateDualHpfp(const SupervisorInput& request) {
                             true, false, PumpFault::None};
 }
 
+void DualHpfpSafetySupervisor::latchFault(PumpFault fault) {
+    if (latchedFault_ == PumpFault::None) {
+        latchedFault_ = fault;
+    }
+    state_ = SupervisorState::FaultLatched;
+}
+
+SupervisorOutput DualHpfpSafetySupervisor::update(const SupervisorInput& request) {
+    const auto candidate = evaluateDualHpfp(request);
+    if (candidate.fault != PumpFault::None) {
+        latchFault(candidate.fault);
+    }
+    if (state_ != SupervisorState::Armed) {
+        return reject(latchedFault_);
+    }
+    return candidate;
+}
+
+bool DualHpfpSafetySupervisor::tryRearm(const SupervisorInput& request) {
+    const auto candidate = evaluateDualHpfp(request);
+    if (candidate.fault != PumpFault::None) {
+        latchFault(candidate.fault);
+        return false;
+    }
+    latchedFault_ = PumpFault::None;
+    state_ = SupervisorState::Armed;
+    return true;
+}
+
+SupervisorOutput DualHpfpSafetySupervisor::disarm() {
+    if (state_ == SupervisorState::Armed) {
+        state_ = SupervisorState::Disarmed;
+    }
+    return reject(latchedFault_);
+}
+
 } // namespace power8gdi
