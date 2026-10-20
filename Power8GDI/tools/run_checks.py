@@ -77,6 +77,7 @@ def main(argv=None):
             "map4d-blob": ["tests/test_map4d_blob.cpp"],
             "dual-hpfp": ["dual_hpfp/dual_hpfp_supervisor.cpp", "tests/test_dual_hpfp_supervisor.cpp"],
             "dual-hpfp-safety": ["dual_hpfp/dual_hpfp_supervisor.cpp", "tests/test_dual_hpfp_safety.cpp"],
+            "dual-pt2001-safety": ["dual_gdi/dual_pt2001_safety.cpp", "tests/test_dual_pt2001_safety.cpp"],
         }
         with tempfile.TemporaryDirectory(prefix="power8gdi-host-") as build:
             for name, files in sources.items():
@@ -84,7 +85,7 @@ def main(argv=None):
                     record(f"cpp-{name}-build", blocked=compiler_error)
                     continue
                 exe = Path(build) / (name + (".exe" if os.name == "nt" else ""))
-                if record(f"cpp-{name}-build", [compiler, *flags, "-Iinclude", *files, "-o", str(exe)],
+                if record(f"cpp-{name}-build", [compiler, *flags, "-Iinclude", "-Idual_gdi", *files, "-o", str(exe)],
                           cwd=ROOT / "firmware"):
                     record(f"cpp-{name}", [str(exe)], cwd=ROOT / "firmware")
         if record("qt-runtime", [sys.executable, "-c", "from PyQt6.QtWidgets import QApplication; app=QApplication([])"]):
