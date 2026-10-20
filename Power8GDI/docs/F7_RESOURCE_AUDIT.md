@@ -4,15 +4,20 @@
 
 ## Current logical assignment gaps
 
-The source of truth is `hardware/mcu_gpio_draft.csv`; the parser/consistency checker is `hardware/resource_audit.py`.
+The source of truth is `hardware/mcu_gpio_draft.csv`; the parser/consistency checker is `hardware/audit_resources.py`.
 
 ```bash
-python Power8GDI/hardware/resource_audit.py          # print counts; exits 0 with pending blockers
-python Power8GDI/hardware/resource_audit.py --json   # machine-readable status
-python Power8GDI/hardware/resource_audit.py --strict # exits 2 until every required assignment exists
+python Power8GDI/hardware/audit_resources.py --gate structure # exits 0 for coherent audit inputs
+python Power8GDI/hardware/audit_resources.py                  # exits 2 while release evidence is missing
 ```
 
-The existing draft assigns all 8 DI trigger signals and all 8 IGN by naming Hellen macros, but that is **not evidence that the actual Power8GDI PCB traces or all STM32 alternate functions are correct**. 32 required MCU-side signals remain UNASSIGNED (PI x8, VVT x4, AUX PWM x8, service LS x4, CAM3/4, SENT3/4, LIN2 TX/RX, CAN2 TX/RX). This is a minimum count: an electrical design will need to allocate additional ADCs, clocks, oscillator, USB and safety control, as well as I/O expanders, if used.
+See [the reproducible audit](HW_RESOURCE_AUDIT.md) and
+`hardware/resource_audit_report.json`: 104 required functions, 52 absent rows,
+six UNASSIGNED, five conditional interface conflicts and 13 missing evidence
+groups. A passing structure gate does not qualify the MCU allocation.
+
+
+The existing draft assigns all 8 DI trigger signals and all 8 IGN by naming Hellen macros, but that is **not evidence that the actual Power8GDI PCB traces or all STM32 alternate functions are correct**. The expanded reproducible audit above supersedes the earlier 32-signal minimum list. This is a minimum count: an electrical design will need to allocate additional ADCs, clocks, oscillator, USB and safety control, as well as I/O expanders, if used.
 
 ## Specific verified or visible conflicts
 
@@ -33,4 +38,4 @@ H7 remains deferred. Do not change target MCU family merely to work around incom
 
 ## Release policy
 
-`hardware/resource_audit.py --strict` intentionally fails until complete allocation. Other static tests check only structural consistency and cannot be interpreted as ERC/DRC or product acceptance.
+`hardware/audit_resources.py` intentionally fails until complete allocation. Other static tests check only structural consistency and cannot be interpreted as ERC/DRC or product acceptance.

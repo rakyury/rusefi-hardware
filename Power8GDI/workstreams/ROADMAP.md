@@ -1,31 +1,44 @@
 # Power8GDI task allocation
 
-**Integration branch:** `power8gdi-rev-a`
-**State:** eight reusable GitHub Copilot agent profiles and eight task briefs CREATED; no background agents are running.
-**Issue tracker:** disabled on this GitHub fork (HTTP 410); task briefs tracked in Git.
+**Integration target:** `power8gdi-rev-a`
 
-| Task | Specialist | Independent starting work | Status |
-|---|---|---|---|
-| HW-01 | Hardware schematic | Power8GDI/hardware/ and docs/HW_* | READY |
-| GDI-02 | GDI power electronics | Power8GDI/hardware/gdi/ and docs/GDI_* | READY |
-| FW-03 | STM32F7 ECU firmware | Power8GDI/firmware/ excluding 4D engine files | READY |
-| MAP-04 | 4D maps | Power8GDI/firmware/include/map4d.h, 4D tests and docs/MAP_* | READY |
-| UI-05 | Python PyQt6 configurator | Power8GDI/configurator/ and docs/UI_* | READY |
-| CAD-06 | Mechanical CAD | Power8GDI/mechanical/ and docs/CAD_* | READY |
-| QA-07 | Release validation | Power8GDI/tests/ and docs/RELEASE_* | READY |
-| INT-08 | Integration coordination | Power8GDI/workstreams/ROADMAP.md and docs/INTEGRATION_* | READY |
+**Review branch:** `codex/power8gdi-resume-20261021`
 
-## Parallel waves
-Wave 0 (independent): MCU/pinmux/schematic audit HW; GDI power-stage review GDI; Map4D parity MAP; offline PyQt UI; official connector CAD + envelope CAD; QA design.
-Wave 1: coherent electrical schema ERC; GDI interfaces and F7 dual HPFP firmware; 4D serialization + Python transport; actual PCB-to-case fit.
-Wave 2: laid-out PCB DRC plus fabrication/BOM/CPL, STEP case, reproducible flashed MCU firmware and GUI validation.
-Wave 3: prototypes, bench waveforms and fault injections, thermal/EMC, documented qualified manufacturing release.
+**Review:** https://github.com/rakyury/rusefi-hardware/pull/1 (draft)
+**Checkpoint:** 2026-10-21, offline development; manufacturing release BLOCKED.
 
-## Latest local evidence (2026-10-21)
-C++ host Map4D and dual HPFP supervisor tests passed.
-Python editor 17 tests passed after fixing obsolete expected table count 9 -> 11.
-GPIO/pinout 11 tests and CAD envelope 6 tests passed.
-None of this substitutes for actual KiCad ERC/DRC, Power8GDI firmware target build, MCU-in-loop or hardware validation.
+Seven specialist roles were executed in dedicated worktrees using three actual
+concurrent worker slots, with integration as the eighth role. Roles were queued
+and reused across those workers; seven simultaneous agents were not claimed.
+GitHub Issues are disabled; these briefs remain the task tracker.
 
-## Running agents
-The current connected toolset can write GitHub repository content but has no action to start Copilot background agents. GitHub custom-agent profiles must be invoked by a supported Copilot surface. For GitHub cloud agent, profiles generally need to be merged into the repository default branch. Keep `main` unchanged until review.
+| Task | Delivered checkpoint | Remaining dependency |
+|---|---|---|
+| HW-01 | GPIO/resource audit, 12 tests | Exact MCU/package, complete AF/ADC/DMA/timer allocation, electrical hierarchy/ERC |
+| GDI-02 | Source/hash audit and independent-stage contract, 24 tests | Resolve revision mismatch, safe levels, package mapping and license |
+| FW-03 | Latched dual-HPFP host policy and fault matrix | Pinned rusEFI core, board pins, physical drivers, scheduler and F7 build |
+| MAP-04 | Strict P4DM float32 codec and C++/Python parity | MCU latency/memory qualification and transport |
+| UI-05 | Tested offline lifecycle, full precision edits, search and atomic save | Protocol/signature/persistence validation; no ECU writes enabled |
+| CAD-06 | 18 solids, 5 STEP, 18 STL, 6 views, 14 tests | Vendor connector geometry, actual PCB layout, seal/thermal/physical fit |
+| QA-07 | Independent review, reproduced defects and regression fixes | ERC/DRC, actual MCU build, hardware/EMC/thermal/engine evidence |
+| INT-08 | Isolated contributions integrated in draft PR, portable runner and CI | Review and subsequent engineering milestones |
+
+## Evidence
+
+See [integration record](../docs/INTEGRATION_2026_10_21.md) for exact commands,
+source commits and final results. The concurrently added upstream dual-PT2001
+policy is included in the portable runner alongside the four existing C++ suites.
+Its independent review also fixed missing stopped-engine evidence and incomplete
+independent-rail validation, with dedicated regression coverage.
+
+## Next dependency order
+
+1. Freeze exact MCU order code/package and coherent resource allocation.
+2. Resolve PT2001 revision/electrical evidence; complete protected power and a
+   real electrical hierarchy with independent shutdown paths.
+3. Pin rusEFI core and implement a board target against those reviewed contracts.
+4. Produce routed PCB/ERC/DRC and vendor-based assembly/fit evidence.
+5. Perform dummy-load fault injection, timing, thermal and EMC measurements before
+   an engine or manufacturing release.
+
+Passing structure, host or conceptual CAD checks does not satisfy these gates.

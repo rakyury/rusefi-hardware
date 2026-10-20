@@ -1,8 +1,8 @@
 # GDI-02 — GDI power electronics
 
-**Status:** READY / NOT STARTED. Profile exists but no running agent has been launched.
+**Status:** SOURCE AUDIT DELIVERED; actual stage design BLOCKED.
 **Profile:** `.github/agents/gdi-power.agent.md`
-**Topic branch:** `power8gdi/gdi-02`
+**Topic branch:** `codex/power8gdi-gdi-20261021`
 **Owned paths:** Power8GDI/hardware/gdi/ and docs/GDI_*
 
 ## Assigned task
@@ -12,7 +12,8 @@ Use revision-matched open GDI4 schematic to design 2 independently disabled PT20
 Create scoped PR into `power8gdi-rev-a` containing source, reports and explicit limitations. Report ERC/DRC/firmware build/test results with commands and SHA. Never claim physical tests without data.
 
 ## Evidence
-- PR: pending
-- Tests: pending
+- PR: https://github.com/rakyury/rusefi-hardware/pull/1 (draft integration)
+- Evidence: [report](../docs/GDI_02_SOURCE_AUDIT.md)
+- Tests: 24 contract tests; structure gate 0; qualification gate 2
 - Hardware validation: NOT RUN
 - Manufacturing readiness: NOT APPROVED
