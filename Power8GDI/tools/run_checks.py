@@ -96,6 +96,10 @@ def main(argv=None):
         else:
             record("python-configurator", blocked="Qt runtime unavailable. Install configurator dependencies before testing.")
         record("static-interface", [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"])
+        record("mcu-audit-contracts", [sys.executable, "-m", "unittest", "discover", "-s", "hardware/tests", "-v"])
+        record("mcu-audit-structure", [sys.executable, "hardware/audit_resources.py", "--gate", "structure"])
+        record("gdi-audit-contracts", [sys.executable, "-m", "unittest", "discover", "-s", "hardware/gdi", "-p", "test_*.py", "-v"])
+        record("gdi-audit-structure", [sys.executable, "hardware/gdi/validate_interface_contract.py"])
 
     if args.suite in ("cad", "all"):
         cad_output = args.output / "cad-assets"
