@@ -4,7 +4,7 @@ Offline Python/Qt calibration editor inspired by the architecture of
 [rakyury/racing_dash](https://github.com/rakyury/racing_dash): a versioned document
 model, a responsive editor, UI independent of hardware transports, tests.
 
-**Status: 0.1 developer preview / OFFLINE ONLY.** The map values are examples,
+**Status: 0.1.0.dev1 developer preview / OFFLINE ONLY.** The map values are examples,
 not engine-safe calibrations. There is **no functioning communication with ECU**,
 no Flash/Burn, no rusEFI memory page importer, and no claim of protocol
 compatibility. It cannot be used to operate an engine.
@@ -72,3 +72,12 @@ native rusEFI TunerStudio page or write protocol. See
 
 The PyQt6 editor now supports a Z-layer selector for 4D maps. Editing and
 undo/redo retain the layer identity even after changing the current view.
+
+Use **Ctrl+F** to filter maps by name, description, axis or unit. Filtering
+preserves the selected map, Z layer and undo history. Save/Discard/Cancel
+protect unsaved edits when opening, replacing or closing a document.
+
+The complete editor gate, including real headless Qt widgets and Python/C++
+binary exchange, is `python -m pytest tests -v` after installing `.[dev]`.
+A C++17 compiler is required; the model-only unittest command above does not
+collect the Qt tests under `tests/gui/`.
