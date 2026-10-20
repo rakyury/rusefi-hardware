@@ -1,0 +1,719 @@
+{
+  "schema_version": 1,
+  "structure_status": "pass",
+  "release_eligible": false,
+  "qualification_status": "blocked",
+  "target": {
+    "family": "STM32F767xx",
+    "order_code": null,
+    "package": null,
+    "silicon_revision": null
+  },
+  "errors": [],
+  "summary": {
+    "gpio_rows": 52,
+    "assigned_pins": 46,
+    "required_functions": 104,
+    "missing_functions": 52,
+    "unassigned_functions": 6,
+    "collision_findings": 0,
+    "conditional_conflicts": 5,
+    "qualification_evidence_missing": 13
+  },
+  "missing_functions": [
+    "AUX_ANALOG1",
+    "AUX_ANALOG2",
+    "AUX_PWM1",
+    "AUX_PWM2",
+    "AUX_PWM3",
+    "AUX_PWM4",
+    "AUX_PWM5",
+    "AUX_PWM6",
+    "AUX_PWM7",
+    "AUX_PWM8",
+    "BARO_EXT",
+    "CAM3",
+    "CAM4",
+    "CLT",
+    "DIN5",
+    "DIN6",
+    "DIN7",
+    "DIN8",
+    "EWG_POS",
+    "EXH_PRESS",
+    "FLEX_FREQ",
+    "FRP1",
+    "FRP2",
+    "HALL1",
+    "HALL2",
+    "HALL3",
+    "HALL4",
+    "IAT",
+    "LPFP_PRESS",
+    "LS_AUX1",
+    "LS_AUX2",
+    "LS_AUX3",
+    "LS_AUX4",
+    "MAP_MAIN",
+    "OIL_PRESS",
+    "OIL_TEMP",
+    "PI1",
+    "PI2",
+    "PI3",
+    "PI4",
+    "PI5",
+    "PI6",
+    "PI7",
+    "PI8",
+    "PPS1",
+    "PPS2",
+    "TPS1",
+    "TPS2",
+    "VVT1",
+    "VVT2",
+    "VVT3",
+    "VVT4"
+  ],
+  "unassigned_functions": [
+    "CAN2_RX",
+    "CAN2_TX",
+    "LIN2_RX",
+    "LIN2_TX",
+    "SENT3",
+    "SENT4"
+  ],
+  "connector_requirement_coverage": {
+    "Analog": {
+      "required": 14,
+      "missing": [
+        "AUX_ANALOG1",
+        "AUX_ANALOG2",
+        "BARO_EXT",
+        "EWG_POS",
+        "EXH_PRESS",
+        "FRP1",
+        "FRP2",
+        "LPFP_PRESS",
+        "MAP_MAIN",
+        "OIL_PRESS",
+        "PPS1",
+        "PPS2",
+        "TPS1",
+        "TPS2"
+      ]
+    },
+    "Aux Low-side": {
+      "required": 4,
+      "missing": [
+        "LS_AUX1",
+        "LS_AUX2",
+        "LS_AUX3",
+        "LS_AUX4"
+      ]
+    },
+    "Aux PWM": {
+      "required": 8,
+      "missing": [
+        "AUX_PWM1",
+        "AUX_PWM2",
+        "AUX_PWM3",
+        "AUX_PWM4",
+        "AUX_PWM5",
+        "AUX_PWM6",
+        "AUX_PWM7",
+        "AUX_PWM8"
+      ]
+    },
+    "Digital": {
+      "required": 8,
+      "missing": [
+        "DIN5",
+        "DIN6",
+        "DIN7",
+        "DIN8",
+        "HALL1",
+        "HALL2",
+        "HALL3",
+        "HALL4"
+      ]
+    },
+    "Frequency": {
+      "required": 1,
+      "missing": [
+        "FLEX_FREQ"
+      ]
+    },
+    "Ignition": {
+      "required": 8,
+      "missing": []
+    },
+    "Port Injection": {
+      "required": 8,
+      "missing": [
+        "PI1",
+        "PI2",
+        "PI3",
+        "PI4",
+        "PI5",
+        "PI6",
+        "PI7",
+        "PI8"
+      ]
+    },
+    "SENT": {
+      "required": 4,
+      "missing": []
+    },
+    "Temperature": {
+      "required": 3,
+      "missing": [
+        "CLT",
+        "IAT",
+        "OIL_TEMP"
+      ]
+    },
+    "VVT": {
+      "required": 4,
+      "missing": [
+        "VVT1",
+        "VVT2",
+        "VVT3",
+        "VVT4"
+      ]
+    }
+  },
+  "verification": {
+    "package_pad": "unverified",
+    "alternate_function_numbers": "unverified",
+    "DMA_routes": "unverified",
+    "ADC_channels": "unverified",
+    "electrical": "unverified",
+    "reset_defaults": "unverified",
+    "schematic_ERC": "not_run",
+    "PCB_DRC": "not_run"
+  },
+  "interface_review": [
+    {
+      "mode": "SDMMC1_1bit",
+      "decision": "storage_interface",
+      "pins": [
+        "PC8",
+        "PC12",
+        "PD2"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 pp. 78,80",
+      "coverage": "data0, clock, command only",
+      "selected": false,
+      "overlaps": {
+        "PC8": [
+          "EWG_PWM"
+        ]
+      },
+      "status": "conflict_if_selected"
+    },
+    {
+      "mode": "SDMMC1_4bit",
+      "decision": "storage_interface",
+      "pins": [
+        "PC8",
+        "PC9",
+        "PC10",
+        "PC11",
+        "PC12",
+        "PD2"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 pp. 78,80",
+      "coverage": "signal route only; supply/electrical/AF not qualified",
+      "selected": false,
+      "overlaps": {
+        "PC8": [
+          "EWG_PWM"
+        ],
+        "PC9": [
+          "HPFP1"
+        ]
+      },
+      "status": "conflict_if_selected"
+    },
+    {
+      "mode": "SDMMC2_route_PB14_PB15_PD6",
+      "decision": "storage_interface",
+      "pins": [
+        "PB14",
+        "PB15",
+        "PD6"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 pp. 75,81",
+      "coverage": "partial route: D0/D1/clock only, no complete SDMMC2 pin plan",
+      "selected": false,
+      "overlaps": {
+        "PB14": [
+          "GDI_SPI2_MISO"
+        ],
+        "PB15": [
+          "GDI_SPI2_MOSI"
+        ],
+        "PD6": [
+          "LIN1_RX"
+        ]
+      },
+      "status": "conflict_if_selected"
+    },
+    {
+      "mode": "OTG_HS_embedded_PHY",
+      "decision": "usb_interface",
+      "pins": [
+        "PB14",
+        "PB15"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 p. 75",
+      "coverage": "DM/DP only; not an external ULPI high-speed route",
+      "selected": false,
+      "overlaps": {
+        "PB14": [
+          "GDI_SPI2_MISO"
+        ],
+        "PB15": [
+          "GDI_SPI2_MOSI"
+        ]
+      },
+      "status": "conflict_if_selected"
+    },
+    {
+      "mode": "OTG_FS",
+      "decision": "usb_interface",
+      "pins": [
+        "PA11",
+        "PA12"
+      ],
+      "source": "DS11532",
+      "locator": "Table 12 p. 90",
+      "coverage": "DM/DP only; VBUS/ID/supply/clock still require review",
+      "selected": false,
+      "overlaps": {},
+      "status": "no_listed_pin_overlap_not_qualified"
+    },
+    {
+      "mode": "SWD",
+      "decision": "debug_interface",
+      "pins": [
+        "PA13",
+        "PA14"
+      ],
+      "source": "DS11532",
+      "locator": "Table 12 p. 90",
+      "coverage": "SWD signals; NRST/access/reset sequencing still require review",
+      "selected": false,
+      "overlaps": {},
+      "status": "no_listed_pin_overlap_not_qualified"
+    },
+    {
+      "mode": "JTAG_JTDI",
+      "decision": "debug_interface",
+      "pins": [
+        "PA15"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 p. 80",
+      "coverage": "JTDI subset only; reset-to-GPIO transition not verified",
+      "selected": false,
+      "overlaps": {
+        "PA15": [
+          "PTB_CS"
+        ]
+      },
+      "status": "conflict_if_selected"
+    },
+    {
+      "mode": "HSE_crystal",
+      "decision": "hse_clock",
+      "pins": [
+        "PH0",
+        "PH1"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 pp. 68-69",
+      "coverage": "oscillator pins only; oscillator design not qualified",
+      "selected": false,
+      "overlaps": {},
+      "status": "no_listed_pin_overlap_not_qualified"
+    },
+    {
+      "mode": "LSE_crystal",
+      "decision": "lse_clock",
+      "pins": [
+        "PC14",
+        "PC15"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11; footnote 2 p. 85",
+      "coverage": "oscillator pins only; RTC source undecided",
+      "selected": false,
+      "overlaps": {},
+      "status": "no_listed_pin_overlap_not_qualified"
+    }
+  ],
+  "findings": [
+    {
+      "code": "SHARED_TIMER_TIMEBASE",
+      "category": "unverified_resource",
+      "detail": "TIM3 channels share counter/prescaler/auto-reload; compatible periods/modes not proved",
+      "functions": [
+        "DBW_PWM",
+        "EWG_PWM"
+      ],
+      "source": "RM0410",
+      "blocks_release": true
+    },
+    {
+      "code": "MISSING_FUNCTIONS",
+      "category": "missing_requirement",
+      "detail": "Required functions absent from MCU allocation",
+      "functions": [
+        "AUX_ANALOG1",
+        "AUX_ANALOG2",
+        "AUX_PWM1",
+        "AUX_PWM2",
+        "AUX_PWM3",
+        "AUX_PWM4",
+        "AUX_PWM5",
+        "AUX_PWM6",
+        "AUX_PWM7",
+        "AUX_PWM8",
+        "BARO_EXT",
+        "CAM3",
+        "CAM4",
+        "CLT",
+        "DIN5",
+        "DIN6",
+        "DIN7",
+        "DIN8",
+        "EWG_POS",
+        "EXH_PRESS",
+        "FLEX_FREQ",
+        "FRP1",
+        "FRP2",
+        "HALL1",
+        "HALL2",
+        "HALL3",
+        "HALL4",
+        "IAT",
+        "LPFP_PRESS",
+        "LS_AUX1",
+        "LS_AUX2",
+        "LS_AUX3",
+        "LS_AUX4",
+        "MAP_MAIN",
+        "OIL_PRESS",
+        "OIL_TEMP",
+        "PI1",
+        "PI2",
+        "PI3",
+        "PI4",
+        "PI5",
+        "PI6",
+        "PI7",
+        "PI8",
+        "PPS1",
+        "PPS2",
+        "TPS1",
+        "TPS2",
+        "VVT1",
+        "VVT2",
+        "VVT3",
+        "VVT4"
+      ],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "UNASSIGNED_FUNCTIONS",
+      "category": "unassigned_requirement",
+      "detail": "Explicit UNASSIGNED rows still need an implementation",
+      "functions": [
+        "CAN2_RX",
+        "CAN2_TX",
+        "LIN2_RX",
+        "LIN2_TX",
+        "SENT3",
+        "SENT4"
+      ],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "INTERFACE_PIN_CONFLICT",
+      "category": "conditional_conflict",
+      "detail": "SDMMC1_1bit: PC8=EWG_PWM",
+      "functions": [
+        "EWG_PWM"
+      ],
+      "source": "DS11532",
+      "blocks_release": true
+    },
+    {
+      "code": "INTERFACE_PIN_CONFLICT",
+      "category": "conditional_conflict",
+      "detail": "SDMMC1_4bit: PC8=EWG_PWM, PC9=HPFP1",
+      "functions": [
+        "EWG_PWM",
+        "HPFP1"
+      ],
+      "source": "DS11532",
+      "blocks_release": true
+    },
+    {
+      "code": "INTERFACE_PIN_CONFLICT",
+      "category": "conditional_conflict",
+      "detail": "SDMMC2_route_PB14_PB15_PD6: PB14=GDI_SPI2_MISO, PB15=GDI_SPI2_MOSI, PD6=LIN1_RX",
+      "functions": [
+        "GDI_SPI2_MISO",
+        "GDI_SPI2_MOSI",
+        "LIN1_RX"
+      ],
+      "source": "DS11532",
+      "blocks_release": true
+    },
+    {
+      "code": "INTERFACE_PIN_CONFLICT",
+      "category": "conditional_conflict",
+      "detail": "OTG_HS_embedded_PHY: PB14=GDI_SPI2_MISO, PB15=GDI_SPI2_MOSI",
+      "functions": [
+        "GDI_SPI2_MISO",
+        "GDI_SPI2_MOSI"
+      ],
+      "source": "DS11532",
+      "blocks_release": true
+    },
+    {
+      "code": "INTERFACE_PIN_CONFLICT",
+      "category": "conditional_conflict",
+      "detail": "JTAG_JTDI: PA15=PTB_CS",
+      "functions": [
+        "PTB_CS"
+      ],
+      "source": "DS11532",
+      "blocks_release": true
+    },
+    {
+      "code": "PC13_ELECTRICAL_REVIEW",
+      "category": "unverified_electrical",
+      "detail": "PC13 output restrictions require an external buffer/load/reset-state review; not proof of an invalid coil interface",
+      "functions": [
+        "IGN1"
+      ],
+      "source": "DS11532",
+      "blocks_release": true
+    },
+    {
+      "code": "MCU_SELECTION_OPEN",
+      "category": "unverified_target",
+      "detail": "MCU order_code is unspecified",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MCU_SELECTION_OPEN",
+      "category": "unverified_target",
+      "detail": "MCU package is unspecified",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MCU_SELECTION_OPEN",
+      "category": "unverified_target",
+      "detail": "MCU silicon_revision is unspecified",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MODE_DECISION_OPEN",
+      "category": "unverified_resource",
+      "detail": "storage_interface is undecided",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MODE_DECISION_OPEN",
+      "category": "unverified_resource",
+      "detail": "usb_interface is undecided",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MODE_DECISION_OPEN",
+      "category": "unverified_resource",
+      "detail": "debug_interface is undecided",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MODE_DECISION_OPEN",
+      "category": "unverified_resource",
+      "detail": "hse_clock is undecided",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MODE_DECISION_OPEN",
+      "category": "unverified_resource",
+      "detail": "lse_clock is undecided",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MODE_DECISION_OPEN",
+      "category": "unverified_resource",
+      "detail": "motor_pwm_timebase is undecided",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "AUDIT_STAGE_ONLY",
+      "category": "qualification",
+      "detail": "No evidence acceptance/signoff mechanism exists in this audit stage",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    }
+  ],
+  "qualification_evidence": [
+    {
+      "requirement": "exact_order_code_package_pad_and_silicon_errata_review",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "per_signal_AF_number_and_package_pin_matrix",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "per_transfer_DMA_controller_stream_channel_priority_and_conflict_matrix",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "timer_timebase_capture_and_interrupt_latency_budget",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "ADC_channel_sample_time_trigger_DMA_reference_and_protection",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "input_output_voltage_current_and_load_limits",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "startup_reset_bootloader_brownout_and_external_default_states",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "HSE_LSE_USB_SD_clocks_supply_decoupling_VCAP_NRST_BOOT0_debug",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "port_injection_VVT_AUX_driver_capacity_and_diagnostic_bus_arbitration",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "dual_WBO_frontend_MCU_interface_and_heater_shutdown",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "complete_electrical_schematic_and_reviewed_ERC",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "routed_PCB_DRC_connector_and_power_qualification",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "measured_fault_shutdown_thermal_EMC_and_engine_validation",
+      "status": "unverified",
+      "blocks_release": true
+    }
+  ],
+  "sources": {
+    "DS11532": {
+      "publisher": "STMicroelectronics",
+      "revision": "DS11532 Rev 9, July 2025",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f767zi.pdf",
+      "reviewed_on": "2026-10-21",
+      "evidence": "Primary PDF viewed; source download hash unavailable",
+      "locators": [
+        "Table 11 pp. 68-69: oscillator pins",
+        "Table 11 p. 75: PB14/PB15 SPI2, SDMMC2, OTG_HS",
+        "Table 11 p. 78: PC8/PC9 SDMMC1",
+        "Table 11 pp. 79-80: SWD/JTAG and SDMMC1",
+        "Table 11 footnote 2 p. 85: PC13 output restrictions"
+      ]
+    },
+    "RM0410": {
+      "publisher": "STMicroelectronics",
+      "revision": "RM0410 Rev 5",
+      "url": "https://www.st.com/resource/en/reference_manual/rm0410-stm32f76xxx-and-stm32f77xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
+      "reviewed_on": "2026-10-21",
+      "evidence": "Primary publisher indexed text; full PDF exceeds browser fetch limit",
+      "locators": [
+        "7.2.3-7.2.6: SYSCFG_EXTICR port selection per EXTI line",
+        "26.4.14-26.4.19 pp. 1016-1019: TIM2-5 PSC/ARR shared by CCR1-4"
+      ]
+    },
+    "project_requirements": {
+      "path": "docs/F7_RESOURCE_PLAN.md",
+      "locator": "Working requirements; TIM5/TIM6 reservations"
+    },
+    "connector_requirements": {
+      "path": "pinout/power8gdi_revA_pinout.csv",
+      "locator": "Planned connector functions; not MCU assignments"
+    }
+  },
+  "limitations": [
+    "Listed interface pin facts are partial reviewed facts, not an exhaustive MCU alternate-function database.",
+    "No DMA route allocation exists; this audit does not claim to detect DMA conflicts.",
+    "GPIO_TIMED/TRIGGER_INPUT/CAM_INPUT do not specify a timer/EXTI backend; their conflicts remain unverified.",
+    "Connector signal coverage is not a direct-pin budget: external drivers and analog frontends remain unallocated.",
+    "No fabrication, flashing, powering or hardware tests were performed."
+  ],
+  "inputs": {
+    "gpio_csv": {
+      "name": "mcu_gpio_draft.csv",
+      "canonicalization": "UTF-8 without BOM; LF newlines",
+      "sha256": "5d6221f9b8eb37abd988d5fb6fb509ef8c2dc66ea735d3da64185a0045d65218"
+    },
+    "connector_csv": {
+      "name": "power8gdi_revA_pinout.csv",
+      "canonicalization": "UTF-8 without BOM; LF newlines",
+      "sha256": "27d91cf0f556e44d405b1f46fd5d8f9c09e3fa883eac2720667c83fb8db26551"
+    },
+    "contract": {
+      "name": "resource_contract.json",
+      "canonicalization": "UTF-8 without BOM; LF newlines",
+      "sha256": "7166ae175f9f92ea9c5098f1b8997d4fc3ab6e7363fca96f950d49dffdf96621"
+    }
+  }
+}

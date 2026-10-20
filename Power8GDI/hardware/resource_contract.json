@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "stage": "resource_audit_only",
+  "target": {"family": "STM32F767xx", "order_code": null, "package": null, "silicon_revision": null},
+  "decisions": {"storage_interface": null, "usb_interface": null, "debug_interface": null, "hse_clock": null, "lse_clock": null, "motor_pwm_timebase": null},
+  "sources": {
+    "DS11532": {
+      "publisher": "STMicroelectronics", "revision": "DS11532 Rev 9, July 2025",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f767zi.pdf",
+      "reviewed_on": "2026-10-21", "evidence": "Primary PDF viewed; source download hash unavailable",
+      "locators": ["Table 11 pp. 68-69: oscillator pins", "Table 11 p. 75: PB14/PB15 SPI2, SDMMC2, OTG_HS", "Table 11 p. 78: PC8/PC9 SDMMC1", "Table 11 pp. 79-80: SWD/JTAG and SDMMC1", "Table 11 footnote 2 p. 85: PC13 output restrictions"]
+    },
+    "RM0410": {
+      "publisher": "STMicroelectronics", "revision": "RM0410 Rev 5",
+      "url": "https://www.st.com/resource/en/reference_manual/rm0410-stm32f76xxx-and-stm32f77xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
+      "reviewed_on": "2026-10-21", "evidence": "Primary publisher indexed text; full PDF exceeds browser fetch limit",
+      "locators": ["7.2.3-7.2.6: SYSCFG_EXTICR port selection per EXTI line", "26.4.14-26.4.19 pp. 1016-1019: TIM2-5 PSC/ARR shared by CCR1-4"]
+    },
+    "project_requirements": {"path": "docs/F7_RESOURCE_PLAN.md", "locator": "Working requirements; TIM5/TIM6 reservations"},
+    "connector_requirements": {"path": "pinout/power8gdi_revA_pinout.csv", "locator": "Planned connector functions; not MCU assignments"}
+  },
+  "numbered_requirements": [
+    {"prefix": "DI", "count": 8}, {"prefix": "IGN", "count": 8}, {"prefix": "HPFP", "count": 2},
+    {"prefix": "PI", "count": 8}, {"prefix": "VVT", "count": 4}, {"prefix": "AUX_PWM", "count": 8},
+    {"prefix": "LS_AUX", "count": 4}, {"prefix": "CAM", "count": 4}, {"prefix": "SENT", "count": 4}
+  ],
+  "named_requirements": ["CRANK", "KNOCK1", "KNOCK2", "DBW_PWM", "DBW_DIR", "DBW_DISABLE", "EWG_PWM", "EWG_DIR", "EWG_DISABLE", "GDI_SPI2_SCK", "GDI_SPI2_MISO", "GDI_SPI2_MOSI", "PTA_CS", "PTB_CS", "PTA_RESET", "PTB_RESET", "PTA_DRVEN", "PTB_DRVEN", "PTA_FLAG", "PTB_FLAG", "CAN1_RX", "CAN1_TX", "CAN2_RX", "CAN2_TX", "LIN1_TX", "LIN1_RX", "LIN2_TX", "LIN2_RX"],
+  "direct_connector_groups": ["Ignition", "Port Injection", "VVT", "Aux PWM", "Aux Low-side", "Digital", "Analog", "Temperature", "Frequency", "SENT"],
+  "requirement_policy": "Optional/provisioned functions remain open requirements until a reviewed scope decision; connector labels never establish MCU pins or external-driver capacity.",
+  "interface_pin_facts": [
+    {"mode": "SDMMC1_1bit", "decision": "storage_interface", "pins": ["PC8", "PC12", "PD2"], "source": "DS11532", "locator": "Table 11 pp. 78,80", "coverage": "data0, clock, command only"},
+    {"mode": "SDMMC1_4bit", "decision": "storage_interface", "pins": ["PC8", "PC9", "PC10", "PC11", "PC12", "PD2"], "source": "DS11532", "locator": "Table 11 pp. 78,80", "coverage": "signal route only; supply/electrical/AF not qualified"},
+    {"mode": "SDMMC2_route_PB14_PB15_PD6", "decision": "storage_interface", "pins": ["PB14", "PB15", "PD6"], "source": "DS11532", "locator": "Table 11 pp. 75,81", "coverage": "partial route: D0/D1/clock only, no complete SDMMC2 pin plan"},
+    {"mode": "OTG_HS_embedded_PHY", "decision": "usb_interface", "pins": ["PB14", "PB15"], "source": "DS11532", "locator": "Table 11 p. 75", "coverage": "DM/DP only; not an external ULPI high-speed route"},
+    {"mode": "OTG_FS", "decision": "usb_interface", "pins": ["PA11", "PA12"], "source": "DS11532", "locator": "Table 12 p. 90", "coverage": "DM/DP only; VBUS/ID/supply/clock still require review"},
+    {"mode": "SWD", "decision": "debug_interface", "pins": ["PA13", "PA14"], "source": "DS11532", "locator": "Table 12 p. 90", "coverage": "SWD signals; NRST/access/reset sequencing still require review"},
+    {"mode": "JTAG_JTDI", "decision": "debug_interface", "pins": ["PA15"], "source": "DS11532", "locator": "Table 11 p. 80", "coverage": "JTDI subset only; reset-to-GPIO transition not verified"},
+    {"mode": "HSE_crystal", "decision": "hse_clock", "pins": ["PH0", "PH1"], "source": "DS11532", "locator": "Table 11 pp. 68-69", "coverage": "oscillator pins only; oscillator design not qualified"},
+    {"mode": "LSE_crystal", "decision": "lse_clock", "pins": ["PC14", "PC15"], "source": "DS11532", "locator": "Table 11; footnote 2 p. 85", "coverage": "oscillator pins only; RTC source undecided"}
+  ],
+  "timer_reservations": {"TIM5": "precise event scheduler (project draft)", "TIM6": "ADC scheduler (project draft)"},
+  "qualification_evidence_required": [
+    "exact_order_code_package_pad_and_silicon_errata_review", "per_signal_AF_number_and_package_pin_matrix",
+    "per_transfer_DMA_controller_stream_channel_priority_and_conflict_matrix", "timer_timebase_capture_and_interrupt_latency_budget",
+    "ADC_channel_sample_time_trigger_DMA_reference_and_protection", "input_output_voltage_current_and_load_limits",
+    "startup_reset_bootloader_brownout_and_external_default_states", "HSE_LSE_USB_SD_clocks_supply_decoupling_VCAP_NRST_BOOT0_debug",
+    "port_injection_VVT_AUX_driver_capacity_and_diagnostic_bus_arbitration", "dual_WBO_frontend_MCU_interface_and_heater_shutdown",
+    "complete_electrical_schematic_and_reviewed_ERC", "routed_PCB_DRC_connector_and_power_qualification",
+    "measured_fault_shutdown_thermal_EMC_and_engine_validation"
+  ]
+}
