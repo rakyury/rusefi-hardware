@@ -49,7 +49,9 @@ class Map4DParityTests(unittest.TestCase):
             cls.probe = Path(configured).resolve()
         else:
             cxx = os.environ.get('CXX')
-            compiler = shlex.split(cxx) if cxx else [next(
+            # CXX may be an unquoted Windows executable path containing spaces.
+            resolved = shutil.which(cxx) if cxx else None
+            compiler = ([resolved] if resolved else shlex.split(cxx)) if cxx else [next(
                 (shutil.which(c) for c in ('c++', 'clang++', 'g++') if shutil.which(c)), '')]
             if not compiler[0]:
                 raise RuntimeError('C++17 compiler required for cross-language Map4D gate')

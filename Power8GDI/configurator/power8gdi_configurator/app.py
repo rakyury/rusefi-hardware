@@ -91,10 +91,20 @@ class MainWindow(QMainWindow):
         lv.addSpacing(14)
         tree_label=QLabel('CALIBRATION TREE');tree_label.setObjectName('section')
         lv.addWidget(tree_label)
+        self.map_search=QLineEdit()
+        self.map_search.setPlaceholderText('Find map, axis or unit…  Ctrl+F')
+        self.map_search.setClearButtonEnabled(True)
+        self.map_search.setAccessibleName('Find calibration map')
+        lv.addWidget(self.map_search)
         self.tree=QTreeWidget();self.tree.setHeaderHidden(True)
         self.tree.currentItemChanged.connect(self._tree_clicked)
         self.tree.setIndentation(15)
         lv.addWidget(self.tree)
+        self.map_search.textChanged.connect(self._filter_tree)
+        self.find_action=QAction('Find map',self)
+        self.find_action.setShortcut(QKeySequence('Ctrl+F'))
+        self.find_action.triggered.connect(self._focus_search)
+        self.addAction(self.find_action)
         note=QLabel('Prototype editor · no ECU connection')
         note.setObjectName('warning');note.setWordWrap(True);lv.addWidget(note)
         split.addWidget(left)
@@ -159,6 +169,30 @@ class MainWindow(QMainWindow):
             child=QTreeWidgetItem([leaf]);child.setData(0,Qt.ItemDataRole.UserRole,name)
             parents[group].addChild(child)
         self.tree.expandAll()
+        self._filter_tree(self.map_search.text())
+
+    def _focus_search(self):
+        self.map_search.setFocus()
+        self.map_search.selectAll()
+
+    def _filter_tree(self,query):
+        terms=query.casefold().split()
+        # Filtering only changes navigation visibility, never the active map,
+        # selected Z layer, values, or document undo history.
+        blocker=QSignalBlocker(self.tree)
+        for i in range(self.tree.topLevelItemCount()):
+            group=self.tree.topLevelItem(i)
+            visible=0
+            for j in range(group.childCount()):
+                child=group.child(j)
+                table=self.project.tables[child.data(0,Qt.ItemDataRole.UserRole)]
+                text=' '.join((table.name,table.description,table.x_label,
+                               table.y_label,getattr(table,'z_label',''),table.value_unit)).casefold()
+                matches=all(term in text for term in terms)
+                child.setHidden(not matches)
+                visible+=matches
+            group.setHidden(visible==0)
+        del blocker
 
     def _tree_clicked(self,item,previous):
         if item is None:return

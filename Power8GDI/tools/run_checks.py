@@ -26,6 +26,7 @@ def main(argv=None):
     parser.add_argument("--cxx", help="GCC-compatible compiler executable (or set CXX)")
     parser.add_argument("--sanitizers", action="store_true", help="Enable UBSan on Linux/macOS")
     args = parser.parse_args(argv)
+    args.output = args.output.resolve()
     args.output.mkdir(parents=True, exist_ok=True)
     env = os.environ.copy()
     env["QT_QPA_PLATFORM"] = "offscreen"
@@ -68,13 +69,14 @@ def main(argv=None):
         compiler_error = None if compiler else "Install a C++17 compiler or set CXX to its executable."
         if args.sanitizers and os.name == "nt":
             compiler_error = "--sanitizers requires a Linux/macOS UBSan toolchain."
-        flags = ["-std=c++17", "-O2", "-Wall", "-Wextra", "-Werror", "-pedantic", "-ffp-contract=off"]
+        flags = ["-std=c++17", "-O2", "-Wall", "-Wextra", "-Werror", "-pedantic", "-ffp-contract=off", "-UNDEBUG"]
         if args.sanitizers:
             flags += ["-fsanitize=undefined", "-fno-sanitize-recover=all"]
         sources = {
             "map4d": ["tests/test_map4d.cpp"],
             "map4d-blob": ["tests/test_map4d_blob.cpp"],
             "dual-hpfp": ["dual_hpfp/dual_hpfp_supervisor.cpp", "tests/test_dual_hpfp_supervisor.cpp"],
+            "dual-hpfp-safety": ["dual_hpfp/dual_hpfp_supervisor.cpp", "tests/test_dual_hpfp_safety.cpp"],
         }
         with tempfile.TemporaryDirectory(prefix="power8gdi-host-") as build:
             for name, files in sources.items():
@@ -89,15 +91,18 @@ def main(argv=None):
             if compiler_error:
                 record("python-configurator", blocked="C++ compiler required for cross-language parity tests.")
             else:
-                record("python-configurator", [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"],
+                record("python-configurator", [sys.executable, "-m", "pytest", "tests", "-v"],
                        cwd=ROOT / "configurator")
         else:
             record("python-configurator", blocked="Qt runtime unavailable. Install configurator dependencies before testing.")
         record("static-interface", [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"])
 
     if args.suite in ("cad", "all"):
+        cad_output = args.output / "cad-assets"
+        env["POWER8GDI_CAD_OUTPUT"] = str(cad_output)
         if record("cad-runtime", [sys.executable, "-c", "import cadquery; print(cadquery.__version__)"]):
-            if record("cad-generate", [sys.executable, str(ROOT / "mechanical/build_assembly.py")], timeout=600):
+            if record("cad-generate", [sys.executable, str(ROOT / "mechanical/build_assembly.py"),
+                                      "--output-dir", str(cad_output)], timeout=600):
                 record("cad-contracts", [sys.executable, "-m", "unittest", "discover", "-s", "mechanical/tests", "-v"])
             else:
                 record("cad-contracts", blocked="CAD generation failed; existing exports cannot count as current evidence.")
