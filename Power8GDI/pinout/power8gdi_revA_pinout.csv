@@ -1,0 +1,137 @@
+connector,pin,position,net,group,notes
+A,A01,1,DI1_HIGH,GDI HV,DI1 injector terminal HIGH; electrically validate PT2001 polarity
+A,A02,2,DI1_LOW,GDI HV,DI1 injector terminal LOW; electrically validate PT2001 polarity
+A,A03,3,DI2_HIGH,GDI HV,DI2 injector terminal HIGH; electrically validate PT2001 polarity
+A,A04,4,DI2_LOW,GDI HV,DI2 injector terminal LOW; electrically validate PT2001 polarity
+A,A05,5,DI3_HIGH,GDI HV,DI3 injector terminal HIGH; electrically validate PT2001 polarity
+A,A06,6,DI3_LOW,GDI HV,DI3 injector terminal LOW; electrically validate PT2001 polarity
+A,A07,7,DI4_HIGH,GDI HV,DI4 injector terminal HIGH; electrically validate PT2001 polarity
+A,A08,8,DI4_LOW,GDI HV,DI4 injector terminal LOW; electrically validate PT2001 polarity
+A,A09,9,DI5_HIGH,GDI HV,DI5 injector terminal HIGH; electrically validate PT2001 polarity
+A,A10,10,DI5_LOW,GDI HV,DI5 injector terminal LOW; electrically validate PT2001 polarity
+A,A11,11,DI6_HIGH,GDI HV,DI6 injector terminal HIGH; electrically validate PT2001 polarity
+A,A12,12,DI6_LOW,GDI HV,DI6 injector terminal LOW; electrically validate PT2001 polarity
+A,A13,13,DI7_HIGH,GDI HV,DI7 injector terminal HIGH; electrically validate PT2001 polarity
+A,A14,14,DI7_LOW,GDI HV,DI7 injector terminal LOW; electrically validate PT2001 polarity
+A,A15,15,DI8_HIGH,GDI HV,DI8 injector terminal HIGH; electrically validate PT2001 polarity
+A,A16,16,DI8_LOW,GDI HV,DI8 injector terminal LOW; electrically validate PT2001 polarity
+A,A17,17,HPFP1_HIGH,HPFP,High-pressure pump 1 valve terminal HIGH
+A,A18,18,HPFP1_LOW,HPFP,High-pressure pump 1 valve terminal LOW
+A,A19,19,HPFP2_HIGH,HPFP,High-pressure pump 2 valve terminal HIGH
+A,A20,20,HPFP2_LOW,HPFP,High-pressure pump 2 valve terminal LOW
+A,A21,21,VBAT_GDI_A_1,Power,Separate fused feed provision; current rating TBD
+A,A22,22,VBAT_GDI_A_2,Power,Separate fused feed provision; current rating TBD
+A,A23,23,VBAT_GDI_B_1,Power,Separate fused feed provision; current rating TBD
+A,A24,24,VBAT_GDI_B_2,Power,Separate fused feed provision; current rating TBD
+A,A25,25,PGND_GDI_A_1,Power GND,Power return; grounding scheme pending
+A,A26,26,PGND_GDI_A_2,Power GND,Power return; grounding scheme pending
+A,A27,27,PGND_GDI_B_1,Power GND,Power return; grounding scheme pending
+A,A28,28,PGND_GDI_B_2,Power GND,Power return; grounding scheme pending
+A,A29,29,PGND_MAIN_1,Power GND,Power ground parallel contact; rating pending
+A,A30,30,PGND_MAIN_2,Power GND,Power ground parallel contact; rating pending
+A,A31,31,PGND_MAIN_3,Power GND,Power ground parallel contact; rating pending
+A,A32,32,PGND_MAIN_4,Power GND,Power ground parallel contact; rating pending
+A,A33,33,VBAT_MAIN_2,Power,Main fused power; contact budget pending
+A,A34,34,VBAT_MAIN_3,Power,Main fused power; contact budget pending
+B,B01,1,IGN1,Ignition,5V logic for smart coil; check driver
+B,B02,2,IGN2,Ignition,5V logic for smart coil; check driver
+B,B03,3,IGN3,Ignition,5V logic for smart coil; check driver
+B,B04,4,IGN4,Ignition,5V logic for smart coil; check driver
+B,B05,5,IGN5,Ignition,5V logic for smart coil; check driver
+B,B06,6,IGN6,Ignition,5V logic for smart coil; check driver
+B,B07,7,IGN7,Ignition,5V logic for smart coil; check driver
+B,B08,8,IGN8,Ignition,5V logic for smart coil; check driver
+B,B09,9,PI1,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
+B,B10,10,PI2,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
+B,B11,11,PI3,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
+B,B12,12,PI4,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
+B,B13,13,PI5,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
+B,B14,14,PI6,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
+B,B15,15,PI7,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
+B,B16,16,PI8,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
+B,B17,17,VVT1,VVT,Protected PWM-capable low-side
+B,B18,18,VVT2,VVT,Protected PWM-capable low-side
+B,B19,19,VVT3,VVT,Protected PWM-capable low-side
+B,B20,20,VVT4,VVT,Protected PWM-capable low-side
+B,B21,21,AUX_PWM1,Aux PWM,Protected PWM channel; AUX_PWM1=B58 oil pressure control
+B,B22,22,AUX_PWM2,Aux PWM,Protected PWM channel; AUX_PWM1=B58 oil pressure control
+B,B23,23,AUX_PWM3,Aux PWM,Protected PWM channel; AUX_PWM1=B58 oil pressure control
+B,B24,24,AUX_PWM4,Aux PWM,Protected PWM channel; AUX_PWM1=B58 oil pressure control
+B,B25,25,AUX_PWM5,Aux PWM,Protected PWM channel; AUX_PWM1=B58 oil pressure control
+B,B26,26,AUX_PWM6,Aux PWM,Protected PWM channel; AUX_PWM1=B58 oil pressure control
+B,B27,27,AUX_PWM7,Aux PWM,Protected PWM channel; AUX_PWM1=B58 oil pressure control
+B,B28,28,AUX_PWM8,Aux PWM,Protected PWM channel; AUX_PWM1=B58 oil pressure control
+B,B29,29,LS_AUX1,Aux Low-side,Protected output for relay or low side
+B,B30,30,LS_AUX2,Aux Low-side,Protected output for relay or low side
+B,B31,31,LS_AUX3,Aux Low-side,Protected output for relay or low side
+B,B32,32,LS_AUX4,Aux Low-side,Protected output for relay or low side
+B,B33,33,VBAT_MAIN_1,Power,Main feed: contact current rating pending
+B,B34,34,PGND_MAIN_B,Power GND,Additional power return
+C,C01,1,CRANK_VR_P,Trigger,Dedicated VR conditioner
+C,C02,2,CRANK_VR_N,Trigger,Dedicated VR conditioner
+C,C03,3,CAM1,Trigger,Hall/VR conditioner TBD per channel
+C,C04,4,CAM2,Trigger,Hall/VR conditioner TBD per channel
+C,C05,5,CAM3,Trigger,Hall/VR conditioner TBD per channel
+C,C06,6,CAM4,Trigger,Hall/VR conditioner TBD per channel
+C,C07,7,HALL1,Digital,Digital protected input
+C,C08,8,HALL2,Digital,Digital protected input
+C,C09,9,HALL3,Digital,Digital protected input
+C,C10,10,HALL4,Digital,Digital protected input
+C,C11,11,KNOCK1_SIG,Knock,Dedicated analog knock front-end
+C,C12,12,KNOCK1_RETURN,Knock,Dedicated return; analog grounding TBD
+C,C13,13,KNOCK2_SIG,Knock,Dedicated analog knock front-end
+C,C14,14,KNOCK2_RETURN,Knock,Dedicated return; analog grounding TBD
+C,C15,15,TPS1,Analog,Throttle primary position
+C,C16,16,TPS2,Analog,Throttle secondary position
+C,C17,17,PPS1,Analog,Pedal primary position
+C,C18,18,PPS2,Analog,Pedal secondary position
+C,C19,19,MAP_MAIN,Analog,Engine MAP
+C,C20,20,BARO_EXT,Analog,External baro option
+C,C21,21,CLT,Temperature,Pull-up selectable
+C,C22,22,IAT,Temperature,Pull-up selectable
+C,C23,23,OIL_PRESS,Analog,B58 oil pressure feedback
+C,C24,24,OIL_TEMP,Temperature,B58 oil temp input
+C,C25,25,FRP1,Analog,HPFP/rail pressure 1
+C,C26,26,FRP2,Analog,HPFP/rail pressure 2
+C,C27,27,LPFP_PRESS,Analog,Low side fuel pressure
+C,C28,28,EXH_PRESS,Analog,Exhaust backpressure sensor optional
+C,C29,29,EWG_POS,Analog,Wastegate actuator feedback
+C,C30,30,FLEX_FREQ,Frequency,Ethanol sensor frequency / digital
+C,C31,31,SENSOR_5V_A,5V Sensor Power,Protected 5V rail A
+C,C32,32,SENSOR_5V_B,5V Sensor Power,Protected 5V rail B
+C,C33,33,SENSOR_GND_A,Sensor GND,Sensor ground return
+C,C34,34,SENSOR_GND_B,Sensor GND,Sensor ground return
+D,D01,1,DBW_MOTOR_A,H-Bridge,H-bridge 1 motor terminal A
+D,D02,2,DBW_MOTOR_B,H-Bridge,H-bridge 1 motor terminal B
+D,D03,3,EWG_MOTOR_A,H-Bridge,H-bridge 2 motor terminal A
+D,D04,4,EWG_MOTOR_B,H-Bridge,H-bridge 2 motor terminal B
+D,D05,5,SENT1,SENT,"Automotive-protected input, independent ICU allocation required"
+D,D06,6,SENT2,SENT,"Automotive-protected input, independent ICU allocation required"
+D,D07,7,SENT3,SENT,"Automotive-protected input, independent ICU allocation required"
+D,D08,8,SENT4,SENT,"Automotive-protected input, independent ICU allocation required"
+D,D09,9,LIN1_BUS,LIN,LIN master/slave physical single wire
+D,D10,10,LIN2_BUS,LIN,Provision only; UART second channel TBD
+D,D11,11,CAN1_H,CAN,CAN1 differential high
+D,D12,12,CAN1_L,CAN,CAN1 differential low
+D,D13,13,CAN2_H,CAN,CAN2 differential high
+D,D14,14,CAN2_L,CAN,CAN2 differential low
+D,D15,15,DIN5,Digital,Protected general digital input
+D,D16,16,DIN6,Digital,Protected general digital input
+D,D17,17,DIN7,Digital,Protected general digital input
+D,D18,18,DIN8,Digital,Protected general digital input
+D,D19,19,AUX_ANALOG1,Analog,Spare ADC input
+D,D20,20,AUX_ANALOG2,Analog,Spare ADC input
+D,D21,21,WBO1_CONTACT1,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
+D,D22,22,WBO1_CONTACT2,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
+D,D23,23,WBO1_CONTACT3,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
+D,D24,24,WBO1_CONTACT4,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
+D,D25,25,WBO1_CONTACT5,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
+D,D26,26,WBO1_CONTACT6,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
+D,D27,27,WBO2_CONTACT1,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
+D,D28,28,WBO2_CONTACT2,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
+D,D29,29,WBO2_CONTACT3,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
+D,D30,30,WBO2_CONTACT4,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
+D,D31,31,WBO2_CONTACT5,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
+D,D32,32,WBO2_CONTACT6,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
+D,D33,33,CHASSIS_GND,Chassis,EMC chassis ground; connect policy pending
+D,D34,34,SENSOR_GND_C,Sensor GND,Additional analog ground
