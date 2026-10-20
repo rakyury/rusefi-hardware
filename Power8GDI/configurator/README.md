@@ -16,11 +16,37 @@ python -m pip install -e .
 python -m power8gdi_configurator.app
 ```
 
-## Unit tests (do not require Qt)
+## Model tests (do not require Qt)
 
 ```bash
 python -m unittest discover -s tests -v
 ```
+
+## GUI and complete regression suite
+
+Run from this configurator directory in a Python virtual environment:
+
+```bash
+python -m pip install -e ".[dev]"
+python -m pytest tests -q
+```
+
+GUI tests use real PyQt6 windows, table delegates and keyboard events. They
+select Qt's `offscreen` platform by default and require no display server or
+ECU. Run only these tests with `python -m pytest tests/gui -q`; set
+`QT_QPA_PLATFORM` explicitly to override their headless default.
+
+New, Open and Close offer Save / Discard / Cancel when the document has edits.
+Cancelling Save As or a write failure retains the current document and stops
+the requested replacement/close. Successful saves establish an undo checkpoint:
+undo/redo back to that checkpoint clears the window's modified marker. Save As
+changes the active filename only after the write succeeds. Cell text pending
+in an editor is committed before file actions, including Ctrl+S.
+
+Values requiring more than two decimal places retain their full float text in
+the grid so entering and leaving a cell does not round its stored value.
+The regression scope and remaining limits are recorded in
+[`UI_OFFLINE_EDITOR_VALIDATION.md`](../docs/UI_OFFLINE_EDITOR_VALIDATION.md).
 
 ## Roadmap
 
