@@ -1,0 +1,20 @@
+ref,value,footprint,dnp,note
+D502,SMBJ24CA,Diode_SMD:D_SMB,False,Littelfuse bidirectional 24 V standoff TVS;38.9V rated clamp at25C; pulse energy/fuse coordination and manufacturer grade not frozen
+D501,STPS2H100UY,Diode_SMD:D_SMB,False,100 V 2 A automotive SMB: pin1 cathode to protected rail; pin2 anode to fused input
+C501,2.2u 100V X7R,Capacitor_SMD:C_1210_3225Metric,False,2 parallel input ceramics; require total effective capacitance >=2.2uF across qualified input range
+C502,2.2u 100V X7R,Capacitor_SMD:C_1210_3225Metric,False,
+C503,47u 63V bulk,Capacitor_SMD:CP_Elec_8x10,False,"Provisional 8x10mm aluminum damping capacitor: MPN, ESR, ripple current and -40C impedance require selection"
+U501,LM5164QDDARQ1,Package_SO:HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm_ThermalVias,False,"TI DDA8 + exposed thermal pad9. EP tied GND; use close input/boot loops, Kelvin feedback ground."
+C504,2.2n 50V X7R 5%,Capacitor_SMD:C_0603_1608Metric,False,TI allowable external bootstrap capacitance1.5..2.5nF;5% nominal chosen
+L501,MSS1246T-473MLC,Inductor_SMD:L_Coilcraft_MSS1246T-XXX,False,"47uH20%;2.7A at10% inductance drop,1.5A Irms20C rise at25C per Coilcraft; hot derating pending"
+R501,453k 1%,Resistor_SMD:R_0603_1608Metric,False,
+R502,100k 1%,Resistor_SMD:R_0603_1608Metric,False,
+R503,41.2k 1%,Resistor_SMD:R_0603_1608Metric,False,
+R504,158k 0.1%,Resistor_SMD:R_0603_1608Metric,False,
+R505,49.9k 0.1%,Resistor_SMD:R_0603_1608Metric,False,
+C505,22u 25V X7R,Capacitor_SMD:C_1210_3225Metric,False,Output ceramic voltage derating/MPN must be verified; evaluate load transient with actual effective Cout
+C506,22u 25V X7R,Capacitor_SMD:C_1210_3225Metric,False,
+R506,110k 1%,Resistor_SMD:R_0603_1608Metric,False,
+C507,3.3n 50V C0G 5%,Capacitor_SMD:C_0603_1608Metric,False,
+C508,220p 50V C0G 5%,Capacitor_SMD:C_0603_1608Metric,False,
+R507,47k 1%,Resistor_SMD:R_0603_1608Metric,False,PGOOD open-drain pullup to3.3V; read only when3.3V valid; no automatic power-output enable
