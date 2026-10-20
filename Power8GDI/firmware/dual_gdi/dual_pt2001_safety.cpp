@@ -16,9 +16,10 @@ bool DualPt2001Safety::configurationValid(const GdiSafetySnapshot& s) noexcept {
     if (s.railTopology != GdiRailTopology::Shared &&
         s.railTopology != GdiRailTopology::Independent) return false;
     if (s.railTopology == GdiRailTopology::Independent) {
-        // Each installed pump must have an independently validated feedback sensor.
+        // This gate always permits all eight DI channels together. Without a
+        // channel/rail mask, neither independent rail may be omitted.
         for (unsigned i = 0; i < 2; ++i) {
-            if (s.pumpConfigured[i] && !s.railSensorConfigured[i]) return false;
+            if (!s.pumpConfigured[i] || !s.railSensorConfigured[i]) return false;
         }
     }
     return true;
@@ -100,7 +101,7 @@ GdiPermits DualPt2001Safety::update(const GdiSafetySnapshot& s) noexcept {
 }
 
 bool DualPt2001Safety::acknowledgeStopped(const GdiSafetySnapshot& s) noexcept {
-    if (state_ != GdiState::FaultLatched || s.runRequested ||
+    if (state_ != GdiState::FaultLatched || !s.engineStoppedConfirmed || s.runRequested ||
         s.synchronizationValid || !inputsHealthy(s)) return false;
     // Re-arming occurs only during a subsequent explicit synchronized run.
     state_ = GdiState::Disarmed;
