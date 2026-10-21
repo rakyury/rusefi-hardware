@@ -5,6 +5,7 @@ import argparse
 import csv
 import hashlib
 import json
+import os
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
@@ -26,7 +27,11 @@ def main():
         return r.returncode
     def host(*a):return run([sys.executable,*a])
     def cad(*a,allowed=(0,)):
-        return run(['docker','run','--rm','--network','none','--mount',f'type=bind,source={REPO},target=/src','-w','/src',IMAGE,*a],allowed)
+        # Linux bind mounts retain host ownership; the image's default UID is
+        # not necessarily the CI runner's UID. Windows Docker handles this itself.
+        identity=[] if os.name=='nt' else ['--user',f'{os.getuid()}:{os.getgid()}',
+            '--env','HOME=/tmp','--env','XDG_CONFIG_HOME=/tmp/.config','--env','XDG_CACHE_HOME=/tmp/.cache']
+        return run(['docker','run','--rm','--network','none',*identity,'--mount',f'type=bind,source={REPO},target=/src','-w','/src',IMAGE,*a],allowed)
     out=HERE/'board/review';out.mkdir(exist_ok=True,parents=True)
     summary={'release_status':'BLOCKED','qualification':'INCOMPLETE_ENGINEERING_REVIEW','image':IMAGE,'commands':commands}
     try:
