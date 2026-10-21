@@ -17,3 +17,8 @@ Create scoped PR into `power8gdi-rev-a` containing source, reports and explicit 
 - Tests: 14 geometry/provenance tests; 18 solids, 5 STEP, 18 STL, 6 views
 - Hardware validation: NOT RUN
 - Manufacturing readiness: NOT APPROVED
+
+## Earlier base-branch manual progress (463c8fa)
+
+Historical evidence before the later integration; current results are above.
+Provisional CadQuery enclosure/assembly and STEP + six envelope renders available in developer package; 6 envelope tests PASS. Real TE mating STEP, actual placed PCB, gasket, heat-transfer and tolerance stackup NOT VERIFIED.

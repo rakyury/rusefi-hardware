@@ -17,3 +17,8 @@ Create scoped PR into `power8gdi-rev-a` containing source, reports and explicit 
 - Tests: bidirectional Python/C++ parity and two C++ map suites
 - Hardware validation: NOT RUN
 - Manufacturing readiness: NOT APPROVED
+
+## Earlier base-branch manual progress (463c8fa)
+
+Historical evidence before the later integration; current results are above.
+Map4D trilinear evaluator and P4DM v1 CRC32 binary codec in C++ and Python with offline golden tests. Format NOT wired into live rusEFI INI/configuration pages.
