@@ -19,7 +19,7 @@ driver=box_symbol('Motor_DRV8871DDA',[
     ('1','GND','power_in',-5.08,-17.78,90),('7','PGND','power_in',0,-17.78,90),('9','EP','passive',5.08,-17.78,90),
     ('5','VM','power_in',0,17.78,270),('3','IN1','input',-17.78,7.62,0),('2','IN2','input',-17.78,0,0),
     ('4','ILIM','input',-17.78,-7.62,0),('6','OUT1','output',17.78,5.08,180),('8','OUT2','output',17.78,-5.08,180)],
-    'Package_SO:HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm_ThermalVias',width=30.48,height=30.48)
+    'Power8GDI_Board:HSOP8_EP_ThermalVia0p3',width=30.48,height=30.48)
 gate=box_symbol('Motor_AND_LVC1G08_Q1',[
     ('1','A','input',-10.16,2.54,0),('2','B','input',-10.16,-2.54,0),('4','Y','output',10.16,0,180),
     ('3','GND','power_in',0,-10.16,90),('5','VCC','power_in',0,10.16,270)],'Package_TO_SOT_SMD:SOT-23-5',width=15.24,height=15.24)

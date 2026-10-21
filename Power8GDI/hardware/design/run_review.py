@@ -47,7 +47,7 @@ def main():
         host(BASE+'verify_integration.py')
         for folder in ['core_tests','board/tests']:
             host('-m','unittest','discover','-s',BASE+folder,'-v')
-        for script in ['power_input/check_power_input.py','motor/check_motor.py','safety/test_safety.py','gdi/test_schematic.py']:
+        for script in ['outputs/check_outputs.py','power_input/check_power_input.py','motor/check_motor.py','safety/test_safety.py','gdi/test_schematic.py']:
             host(BASE+script)
         host('-m','unittest','discover','-s','Power8GDI/hardware/tests','-v')
         host('Power8GDI/hardware/audit_resources.py','--gate','structure','--output','Power8GDI/hardware/resource_audit_report.json')

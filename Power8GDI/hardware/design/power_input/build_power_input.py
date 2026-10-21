@@ -40,6 +40,7 @@ s.text('External fuse required. No cold-crank or ISO pulse qualification. Do not
 RFP='Resistor_SMD:R_0603_1608Metric'
 CFP='Capacitor_SMD:C_0603_1608Metric'
 def part(kind, ref, value, x, y, nets, fp=None, note='', dnp=False):
+    if kind == "LM5164DDA": fp="Power8GDI_Board:HSOP8_EP_ThermalVia0p3"
     start=len(s.items)
     s.component(symbols[kind],ref,value,x,y,{str(k):v for k,v in nets.items()},footprint=fp,note=note,dnp=dnp)
     if kind == 'LM5164DDA':

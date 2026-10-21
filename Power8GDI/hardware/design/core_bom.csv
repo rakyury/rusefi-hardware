@@ -256,3 +256,147 @@ C760,1n 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/crank_vr,Differential 
 R792,10k,Resistor_SMD:R_0603_1608Metric,False,io/crank_vr,"Open-drain output toMCU3V3, never5V"
 C761,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/crank_vr,
 C762,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/crank_vr,
+R1101,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1102,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,"Input current/edge damping; direct timing path, not SPI control"
+R1103,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Default high is OFF at TLE input; essential active-low pin polarity
+R1104,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1105,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,"Input current/edge damping; direct timing path, not SPI control"
+R1106,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Default high is OFF at TLE input; essential active-low pin polarity
+R1107,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1108,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,"Input current/edge damping; direct timing path, not SPI control"
+R1109,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Default high is OFF at TLE input; essential active-low pin polarity
+R1110,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1111,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,"Input current/edge damping; direct timing path, not SPI control"
+R1112,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Default high is OFF at TLE input; essential active-low pin polarity
+U1121,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,outputs/ls_bank_1,TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.
+U1101,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,outputs/ls_bank_1,Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.
+R1113,47R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,
+R1114,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Deselected during reset
+R1115,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,"Shared SPI2; high-Z SO while CSN high, 8MHz device maximum"
+R1116,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Dedicated EN physical kill independent of direct IN commands
+R1117,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Default hardware inhibit
+C1101,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_1,
+C1102,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_1,
+C1103,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_1,
+C1104,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_1,
+R1121,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1122,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,"Input current/edge damping; direct timing path, not SPI control"
+R1123,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Default high is OFF at TLE input; essential active-low pin polarity
+R1124,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1125,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,"Input current/edge damping; direct timing path, not SPI control"
+R1126,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Default high is OFF at TLE input; essential active-low pin polarity
+R1127,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1128,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,"Input current/edge damping; direct timing path, not SPI control"
+R1129,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Default high is OFF at TLE input; essential active-low pin polarity
+R1130,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1131,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,"Input current/edge damping; direct timing path, not SPI control"
+R1132,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Default high is OFF at TLE input; essential active-low pin polarity
+U1122,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,outputs/ls_bank_2,TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.
+U1102,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,outputs/ls_bank_2,Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.
+R1133,47R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,
+R1134,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Deselected during reset
+R1135,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,"Shared SPI2; high-Z SO while CSN high, 8MHz device maximum"
+R1136,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Dedicated EN physical kill independent of direct IN commands
+R1137,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Default hardware inhibit
+C1121,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_2,
+C1122,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_2,
+C1123,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_2,
+C1124,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_2,
+R1141,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1142,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,"Input current/edge damping; direct timing path, not SPI control"
+R1143,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Default high is OFF at TLE input; essential active-low pin polarity
+R1144,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1145,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,"Input current/edge damping; direct timing path, not SPI control"
+R1146,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Default high is OFF at TLE input; essential active-low pin polarity
+R1147,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1148,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,"Input current/edge damping; direct timing path, not SPI control"
+R1149,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Default high is OFF at TLE input; essential active-low pin polarity
+R1150,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1151,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,"Input current/edge damping; direct timing path, not SPI control"
+R1152,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Default high is OFF at TLE input; essential active-low pin polarity
+U1123,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,outputs/ls_bank_3,TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.
+U1103,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,outputs/ls_bank_3,Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.
+R1153,47R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,
+R1154,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Deselected during reset
+R1155,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,"Shared SPI2; high-Z SO while CSN high, 8MHz device maximum"
+R1156,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Dedicated EN physical kill independent of direct IN commands
+R1157,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Default hardware inhibit
+C1141,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_3,
+C1142,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_3,
+C1143,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_3,
+C1144,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_3,
+R1161,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1162,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,"Input current/edge damping; direct timing path, not SPI control"
+R1163,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Default high is OFF at TLE input; essential active-low pin polarity
+R1164,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1165,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,"Input current/edge damping; direct timing path, not SPI control"
+R1166,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Default high is OFF at TLE input; essential active-low pin polarity
+R1167,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1168,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,"Input current/edge damping; direct timing path, not SPI control"
+R1169,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Default high is OFF at TLE input; essential active-low pin polarity
+R1170,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1171,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,"Input current/edge damping; direct timing path, not SPI control"
+R1172,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Default high is OFF at TLE input; essential active-low pin polarity
+U1124,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,outputs/ls_bank_4,TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.
+U1104,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,outputs/ls_bank_4,Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.
+R1173,47R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,
+R1174,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Deselected during reset
+R1175,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,"Shared SPI2; high-Z SO while CSN high, 8MHz device maximum"
+R1176,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Dedicated EN physical kill independent of direct IN commands
+R1177,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Default hardware inhibit
+C1161,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_4,
+C1162,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_4,
+C1163,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_4,
+C1164,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_4,
+R1181,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1182,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,"Input current/edge damping; direct timing path, not SPI control"
+R1183,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Default high is OFF at TLE input; essential active-low pin polarity
+R1184,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1185,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,"Input current/edge damping; direct timing path, not SPI control"
+R1186,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Default high is OFF at TLE input; essential active-low pin polarity
+R1187,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1188,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,"Input current/edge damping; direct timing path, not SPI control"
+R1189,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Default high is OFF at TLE input; essential active-low pin polarity
+R1190,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1191,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,"Input current/edge damping; direct timing path, not SPI control"
+R1192,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Default high is OFF at TLE input; essential active-low pin polarity
+U1125,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,outputs/ls_bank_5,TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.
+U1105,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,outputs/ls_bank_5,Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.
+R1193,47R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,
+R1194,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Deselected during reset
+R1195,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,"Shared SPI2; high-Z SO while CSN high, 8MHz device maximum"
+R1196,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Dedicated EN physical kill independent of direct IN commands
+R1197,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Default hardware inhibit
+C1181,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_5,
+C1182,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_5,
+C1183,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_5,
+C1184,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_5,
+R1201,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1202,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,"Input current/edge damping; direct timing path, not SPI control"
+R1203,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Default high is OFF at TLE input; essential active-low pin polarity
+R1204,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1205,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,"Input current/edge damping; direct timing path, not SPI control"
+R1206,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Default high is OFF at TLE input; essential active-low pin polarity
+R1207,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1208,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,"Input current/edge damping; direct timing path, not SPI control"
+R1209,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Default high is OFF at TLE input; essential active-low pin polarity
+R1210,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1211,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,"Input current/edge damping; direct timing path, not SPI control"
+R1212,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Default high is OFF at TLE input; essential active-low pin polarity
+U1126,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,outputs/ls_bank_6,TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.
+U1106,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,outputs/ls_bank_6,Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.
+R1213,47R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,
+R1214,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Deselected during reset
+R1215,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,"Shared SPI2; high-Z SO while CSN high, 8MHz device maximum"
+R1216,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Dedicated EN physical kill independent of direct IN commands
+R1217,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Default hardware inhibit
+C1201,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_6,
+C1202,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_6,
+C1203,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_6,
+C1204,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_6,
+U1140,SN74LVC1G17QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,outputs/ls_control,Noninverting reset buffer; active-high MCU release. Keep low >=10us after VDD5V stable. Firmware must restart reset after either rail fault.
+R1241,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_control,
+R1242,1k 1%,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_control,"6x100uA internal pullups +10uA Ioff =>0.6161V worst-case, below 1V reset-low limit"
+C1241,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_control,
+R1243,33R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_control,Branch damping; validate signal integrity across6drivers and2PT chips
+R1244,33R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_control,
