@@ -1,6 +1,6 @@
 # Power8GDI intervention arbitration (FW-03, host-only)
 
-Status: **host-tested; runs in the rusEFI simulator in shadow mode (compares, does not drive the engine).** No MCU, timer or engine-scheduler calls. Not validated on an engine.
+Status: **host-tested; runs in the rusEFI simulator, in shadow mode and driving the spark angle (apply mode). Not on hardware.** No MCU, timer or engine-scheduler calls. Not validated on an engine.
 
 Source: `firmware/arbitration/`. Tests: `firmware/tests/test_arbitration.cpp`, `bash firmware/tests/run_arbitration_tests.sh`.
 
@@ -36,28 +36,38 @@ The accumulator rejects and counts non-finite or out-of-range requests (`rejecte
 - Owner changes are rate limited by the rate of the selected owner. A rate of 0 means an immediate change. Only the owner's base angle is ramped; corrections are added after the ramp, so a knock retard acts in the same cycle (L1b).
 - A non-finite request is ignored. An invalid configuration, a non-finite table angle or a non-finite dt gives `safeAdvance` and sets `fault`.
 
-## rusEFI simulator, shadow mode
+## rusEFI simulator: shadow and apply modes
 
-Source: `firmware/rusefi_sim/`. rusEFI is not modified: the simulator Makefile includes `$(BOARD_DIR)/board_common.mk`, which adds the arbitration sources and `p8_arbitration_shadow.cpp`.
+Source: `firmware/rusefi_sim/`. rusEFI is not modified: the simulator Makefile includes `$(BOARD_DIR)/board_common.mk`, which adds the arbitration sources and `p8_arbitration_sim.cpp`.
 
-- Hook: `custom_board_getCylinderIgnitionTrim`. rusEFI calls it right after it computes the corrected advance of the cycle. On cylinder 0 the glue runs `IgnitionArbiter` on the same inputs and compares; it returns the stock per-cylinder trim, so rusEFI behaviour is unchanged.
-- Inputs: owner (cranking / anti-lag / launch spark retard / idle / table) with rusEFI's wrapped base advance, knock retard (protective) and the limp/soft-limiter retard. `correctionsApplyMask` covers every owner, because rusEFI applies both retards in every mode (`engine2.cpp`). Expected difference: scaled-channel quantization only (tolerance 0.1 deg).
-- Scenario `P8_SIM_SCENARIO=knock` sends knock events through rusEFI's own `KnockController::onKnockSenseCompleted` (cycles 10-49 while cranking, 600-999 running) and sets aggression 10 %, max retard 8 deg, `knockSuppressMinTps` 0.
-- Run inside WSL: `bash Power8GDI/firmware/rusefi_sim/run_sim_shadow.sh ~/rusefi 15`.
+- Hook: `custom_board_getCylinderIgnitionTrim`. rusEFI calls it right after it computes the corrected advance of the cycle. On cylinder 0 the glue runs `IgnitionArbiter` on the same inputs.
+- Inputs: the angle owner with rusEFI's wrapped base advance, knock retard (protective) and the limp/soft-limiter retard (strategy). Owner order follows rusEFI `getRunningAdvance()`: cranking, launch (returns early), idle / coasting table (replaces the angle, ALS included), ALS correction, table. Coasting with `useIdleAdvanceWhileCoasting` is mapped to the Overrun owner.
+- **Shadow** (default): `correctionsApplyMask` covers every owner, because rusEFI applies both retards in every mode (`engine2.cpp`). The arbiter angle must equal rusEFI's (tolerance 0.1 deg, scaled channels); the stock trim is returned.
+- **Apply** (`P8_SIM_APPLY=1`): the Power8GDI default config, so strategy offsets apply for the table only and the protective retard applies for every owner. The hook returns stock trim + (arbiter − rusEFI), so the arbiter drives the spark angle. On the next cylinder the glue checks rusEFI's final `timingAdvance[0]` against the arbiter angle + trim + spark latency correction.
+- Scenarios (`P8_SIM_SCENARIO`), all through rusEFI's own code paths and configuration:
+  - `knock`: knock events via `KnockController::onKnockSenseCompleted` every 5 cycles from cycle 10 (aggression 10 %, max retard 8 deg, `knockSuppressMinTps` 0).
+  - `owners`: knock as above, soft rev limiter (hard limit 1250 rpm, hysteresis 200, retard 4 deg, about 3 deg at the simulator's 1200 rpm), crank-to-idle taper 10 revolutions, and the engine walked through the owners every 300 cycles: table (TPS 50 %), idle (TPS 0, idle target 1200 rpm), coasting/overrun (idle target 700 rpm), ALS (always on), launch (always active, launch rpm 1000, launch angle 5 deg), table. TPS is a sensor mock (`Sensor::setMockValue`, as the `set_sensor_mock` console command).
+- Run inside WSL: `bash Power8GDI/firmware/rusefi_sim/run_sim_arbitration.sh ~/rusefi 12`. It fails on any mismatch, an owner not reached, knock or limiter retard missing for an owner, a final-angle error, or an apply-mode difference outside the non-table cycles.
 
-Result 2026-10-21, rusEFI master `f911562`, WSL Ubuntu 24.04, 15 s at the simulator's emulated 1200 rpm:
+Result 2026-10-21, rusEFI master `f911562`, WSL Ubuntu 24.04, 12 s per run at the emulated 1200 rpm. Owner cycles are table / overrun / idle / ALS / launch / cranking.
 
-| scenario | cycles | mismatches | max delta | knock cycles | max knock retard | owners seen |
+| mode / scenario | cycles | mismatches | owner cycles | knock / limiter retard seen for | final-angle checks, errors | cycles different from rusEFI |
 |---|---|---|---|---|---|---|
-| none | 3001 | 0 | 0.000 deg | 0 | 0 | cranking 51, table 2950 |
-| knock | 3001 | 0 | 0.017 deg | 1496 | 7.99 deg | knock while cranking and on the table |
+| shadow / none | 2401 | 0 | 2350/0/0/0/0/51 | — | — | 0 |
+| shadow / knock | 2401 | 0 (max 0.015 deg) | 2350/0/0/0/0/51 | knock: cranking, table | — | 0 |
+| shadow / owners | 2401 | 0 (max 0.015 deg) | 1150/300/300/300/300/51 | every owner / every owner | — | 0 |
+| apply / owners | 2401 | 0 | 1150/300/300/300/300/51 | every owner / every owner | 2400, 0 (max 0.010 deg) | 1251 = all non-table cycles |
 
-Limits of this result: idle, overrun, anti-lag and launch owners were not reached by the default simulator setup; the limiter retard stayed 0; the ramp is not compared (rusEFI has none). The Power8GDI default (strategy offsets for the table only, protective retard for every owner) is not driving anything yet: applying the arbiter output through the trim hooks is the next step.
+Example from the apply run, launch owner: launch angle 5.00, knock 7.99, limiter 2.99. rusEFI gives −5.98; Power8GDI gives −2.99 (knock kept, limiter retard not stacked on the launch angle).
 
-Observed in rusEFI while mapping: CLT/IAT timing corrections are skipped during cranking unless `useAdvanceCorrectionsForCranking` is set; knock retard is applied in all modes.
+Limits: the simulator runs at one constant speed (1200 rpm) with a mocked TPS; no load, no real knock signal, no ramp comparison (rusEFI has none). The arbiter covers ignition only: fuel, lambda, boost and cylinder cut are not wired. Simulator only: no F7 target build, no hardware, no engine.
+
+Observed in rusEFI while mapping:
+- CLT/IAT timing corrections are skipped during cranking unless `useAdvanceCorrectionsForCranking` is set; knock retard is applied in all modes.
+- The idle table replaces the angle after the ALS correction is added, so at closed throttle with a separate idle table rusEFI idle silently wins over ALS. Power8GDI makes the owner priority explicit and configurable.
 
 ## Not done yet
 
-- rusEFI integration: mapping onto rusEFI engine modules / limp manager / ignition and fuel computers, and the TunerStudio configuration.
-- Driving the engine from the arbiter output in the simulator; idle/overrun/ALS/launch scenarios.
+- TunerStudio configuration for the arbiter; a real board target instead of the simulator glue.
+- Fuel, lambda, boost and cylinder-cut arbitration wired into rusEFI.
 - Target build for the F7 board, timing measurements, engine validation.
