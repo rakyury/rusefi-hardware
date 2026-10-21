@@ -36,7 +36,7 @@ IgnitionResult IgnitionArbiter::update(const IgnitionInput& in, const Interventi
     if (!configValid_ || !finite(in.tableAdvanceDeg) || !finite(dtSeconds) || dtSeconds < 0.0f) {
         out.fault = true;
         out.advanceDeg = configValid_ ? config_.safeAdvance : 0.0f;
-        lastAdvance_ = out.advanceDeg;
+        lastBase_ = out.advanceDeg;
         initialized_ = true;
         return out;
     }
@@ -57,27 +57,33 @@ IgnitionResult IgnitionArbiter::update(const IgnitionInput& in, const Interventi
         }
     }
 
-    if ((config_.correctionsApplyMask >> static_cast<unsigned>(out.source)) & 1u) {
-        out.correctionDeg = acc.ignitionOffset();
-        target += out.correctionDeg;
-    }
+    // Only the owner's base angle is rate limited; corrections are added after
+    // the ramp so a knock retard is never delayed by a source change.
     target = clampf(target, config_.minAdvance, config_.maxAdvance);
-
-    float angle = target;
+    float base = target;
     if (initialized_ && rate > 0.0f) {
         const float step = rate * dtSeconds;
-        const float delta = target - lastAdvance_;
+        const float delta = target - lastBase_;
         if (delta > step) {
-            angle = lastAdvance_ + step;
+            base = lastBase_ + step;
             out.ramping = true;
         } else if (delta < -step) {
-            angle = lastAdvance_ - step;
+            base = lastBase_ - step;
             out.ramping = true;
         }
     }
+    lastBase_ = base;
+
+    if ((config_.correctionsApplyMask >> static_cast<unsigned>(out.source)) & 1u) {
+        out.correctionDeg = acc.ignitionOffset();
+    } else {
+        // Protective retard (knock, temperatures) applies to every owner.
+        out.correctionDeg = acc.protectiveIgnitionOffset();
+        out.protectiveOnly = true;
+    }
+    const float angle = clampf(base + out.correctionDeg, config_.minAdvance, config_.maxAdvance);
 
     out.advanceDeg = angle;
-    lastAdvance_ = angle;
     initialized_ = true;
     return out;
 }

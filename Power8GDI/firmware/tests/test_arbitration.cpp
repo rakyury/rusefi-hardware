@@ -42,6 +42,7 @@ void accumulatorRules() {
     assert(near(acc.ignitionOffset(), AccumulatorLimits{}.ignitionOffsetMin));
 
     // Lambda: offsets summed, then floor, then ceiling (richer wins on conflict).
+    // EMU_LESSONS.md L2: EMU PRO applies the floor last, so the leaner limit wins.
     assert(acc.addLambda(LambdaSource::ExhaustTemp, -0.05f));
     assert(near(acc.applyLambda(1.0f), 0.95f));
     assert(acc.limitLambdaBelow(LambdaSource::Minimum, 0.97f));
@@ -216,12 +217,14 @@ void ignitionPriority() {
     in.request[static_cast<unsigned>(AngleSource::Overrun)] = {true, 5.0f, 0.0f};
     in.request[static_cast<unsigned>(AngleSource::AntiLag)] = {true, -10.0f, 0.0f};
     r = arb.update(in, acc, 0.01f);
-    // ALS outranks overrun; accumulator corrections not applied to ALS by default.
-    assert(r.source == AngleSource::AntiLag && near(r.advanceDeg, -10.0f) && r.correctionDeg == 0.0f);
+    // ALS outranks overrun; ALS is not in correctionsApplyMask, but the knock
+    // retard is protective and still applies (EMU PRO drops it here).
+    assert(r.source == AngleSource::AntiLag && r.protectiveOnly);
+    assert(near(r.advanceDeg, -13.0f) && near(r.correctionDeg, -3.0f));
 
     in.request[static_cast<unsigned>(AngleSource::Cranking)] = {true, 8.0f, 0.0f};
     r = arb.update(in, acc, 0.01f);
-    assert(r.source == AngleSource::Cranking && near(r.advanceDeg, 8.0f));
+    assert(r.source == AngleSource::Cranking && near(r.advanceDeg, 5.0f));  // 8 + knock -3
 
     // A non-finite request is ignored; the next active source wins.
     in.request[static_cast<unsigned>(AngleSource::Cranking)] = {true, kNaN, 0.0f};
@@ -259,6 +262,58 @@ void ignitionRamp() {
     assert(!r.ramping && near(r.advanceDeg, -10.0f));
 }
 
+// Lesson from the EMU PRO analysis (docs/EMU_LESSONS.md, L1): there the angle
+// corrections, knock included, are dropped whenever launch, anti-lag, idle,
+// overrun or cranking owns the angle.
+void ignitionKnockProtectionForEveryOwner() {
+    IgnitionArbiter arb(IgnitionConfig{});
+    InterventionAccumulator acc;
+    acc.addIgnition(IgnitionSource::Knock, -6.0f);
+    acc.addIgnition(IgnitionSource::CoolantTemp, 2.0f);       // protective source, but advance
+    acc.addIgnition(IgnitionSource::TractionControl, -5.0f);  // strategy, not protective
+    assert(near(acc.protectiveIgnitionOffset(), -4.0f));
+    assert(near(acc.ignitionOffset(), -9.0f));
+
+    const AngleSource owners[] = {AngleSource::Overrun, AngleSource::Idle, AngleSource::AntiLag,
+                                  AngleSource::LaunchControl, AngleSource::Cranking};
+    for (const auto owner : owners) {
+        arb.resetState();
+        auto in = tableOnly(25.0f);
+        in.request[static_cast<unsigned>(owner)] = {true, 10.0f, 0.0f};
+        const auto r = arb.update(in, acc, 0.01f);
+        assert(r.source == owner && r.protectiveOnly);
+        assert(near(r.correctionDeg, -4.0f) && near(r.advanceDeg, 6.0f));
+    }
+
+    // Protective sources never ADD advance to a non-table owner.
+    InterventionAccumulator warm;
+    warm.addIgnition(IgnitionSource::CoolantTemp, 3.0f);
+    assert(warm.protectiveIgnitionOffset() == 0.0f);
+
+    // Protective retard is clamped by the accumulator limit.
+    InterventionAccumulator heavy;
+    heavy.addIgnition(IgnitionSource::Knock, -100.0f);
+    assert(near(heavy.protectiveIgnitionOffset(), AccumulatorLimits{}.ignitionOffsetMin));
+}
+
+// The ramp smooths only the owner's base angle: a knock retard that appears
+// while switching to launch acts in the same cycle.
+void ignitionKnockNotDelayedByRamp() {
+    IgnitionArbiter arb(IgnitionConfig{});
+    InterventionAccumulator acc;
+    auto in = tableOnly(20.0f);
+    arb.update(in, acc, 0.01f);
+    in.request[static_cast<unsigned>(AngleSource::LaunchControl)] = {true, -10.0f, 100.0f};
+    auto r = arb.update(in, acc, 0.01f);
+    assert(r.ramping && near(r.advanceDeg, 19.0f));
+    acc.addIgnition(IgnitionSource::Knock, -8.0f);
+    r = arb.update(in, acc, 0.01f);
+    assert(r.ramping && near(r.advanceDeg, 18.0f - 8.0f));
+    acc.reset();
+    r = arb.update(in, acc, 0.01f);
+    assert(r.ramping && near(r.advanceDeg, 17.0f));
+}
+
 void ignitionFaults() {
     IgnitionConfig bad;
     bad.priority[0] = AngleSource::Table;  // duplicate Table, Cranking missing
@@ -294,6 +349,8 @@ int main() {
     ignitionPriority();
     ignitionCustomConfigAndClamp();
     ignitionRamp();
+    ignitionKnockProtectionForEveryOwner();
+    ignitionKnockNotDelayedByRamp();
     ignitionFaults();
     std::cout << "arbitration (accumulator, task cycle, ignition arbiter) tests: PASS\n";
 }

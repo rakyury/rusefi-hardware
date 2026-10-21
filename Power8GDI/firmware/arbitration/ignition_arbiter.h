@@ -5,10 +5,13 @@
 // Several subsystems may want to OWN the ignition angle at the same time
 // (cranking, launch control, anti-lag, idle, overrun). Exactly one source is
 // selected each cycle by a configurable priority list; the table angle is the
-// always-available fallback. Accumulator offsets (knock, temperature,
-// limiters, traction...) are added only for sources listed in
-// correctionsApplyMask. Source changes are rate limited with the rate of the
-// newly selected source, so the angle does not jump.
+// always-available fallback. All accumulator offsets (knock, temperature,
+// limiters, traction...) are added for sources listed in correctionsApplyMask;
+// every other source still gets the protective retard (knock, coolant and
+// charge temperature), so launch, anti-lag, idle, overrun and cranking never
+// run without knock protection. The owner's base angle is rate limited with
+// the rate of the selected source; corrections are added after the ramp and
+// therefore act immediately.
 //
 // Fail-safe behaviour: a non-finite request is treated as inactive; an invalid
 // configuration or a non-finite table angle produces config.safeAdvance and
@@ -52,6 +55,7 @@ struct IgnitionInput {
 struct IgnitionResult {
     float advanceDeg = 0.0f;
     float correctionDeg = 0.0f;  // accumulator offset actually applied
+    bool protectiveOnly = false; // owner not in correctionsApplyMask: protective retard only
     AngleSource source = AngleSource::Table;
     bool ramping = false;
     bool fault = false;
@@ -70,7 +74,7 @@ private:
     IgnitionConfig config_;
     bool configValid_;
     bool initialized_ = false;
-    float lastAdvance_ = 0.0f;
+    float lastBase_ = 0.0f;  // rate-limited owner angle, before corrections
 };
 
 } // namespace power8gdi

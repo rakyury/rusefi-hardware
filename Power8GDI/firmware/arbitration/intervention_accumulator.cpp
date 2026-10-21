@@ -23,6 +23,7 @@ InterventionAccumulator::InterventionAccumulator(const AccumulatorLimits& limits
 void InterventionAccumulator::reset() {
     fuelFactor_ = 1.0f;
     ignitionSum_ = 0.0f;
+    protectiveSum_ = 0.0f;
     lambdaSum_ = 0.0f;
     lambdaCeiling_ = 0.0f;
     lambdaFloor_ = 0.0f;
@@ -62,6 +63,9 @@ bool InterventionAccumulator::addIgnition(IgnitionSource src, float degrees) {
         return reject();
     }
     ignitionSum_ += degrees;
+    if (limits_.protectiveIgnitionMask & bit(src)) {
+        protectiveSum_ += degrees;
+    }
     if (degrees != 0.0f) {
         ignitionMask_ |= bit(src);
     }
@@ -139,6 +143,10 @@ float InterventionAccumulator::fuelFactor() const {
 
 float InterventionAccumulator::ignitionOffset() const {
     return clampf(ignitionSum_, limits_.ignitionOffsetMin, limits_.ignitionOffsetMax);
+}
+
+float InterventionAccumulator::protectiveIgnitionOffset() const {
+    return clampf(protectiveSum_, limits_.ignitionOffsetMin, 0.0f);
 }
 
 float InterventionAccumulator::applyLambda(float baseLambda) const {

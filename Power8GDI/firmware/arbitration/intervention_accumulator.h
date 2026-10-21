@@ -58,6 +58,12 @@ struct AccumulatorLimits {
     float ignitionOffsetMax = 20.0f;
     float lambdaOffsetAbsMax = 0.5f;   // single request
     float boostFactorMax = 3.0f;
+    // Sources whose RETARD protects the engine. It is applied whatever source
+    // owns the angle (see IgnitionArbiter), unlike the comfort/strategy offsets.
+    std::uint16_t protectiveIgnitionMask =
+        (1u << static_cast<unsigned>(IgnitionSource::Knock)) |
+        (1u << static_cast<unsigned>(IgnitionSource::CoolantTemp)) |
+        (1u << static_cast<unsigned>(IgnitionSource::ChargeTemp));
 };
 
 struct CylinderCut {
@@ -87,6 +93,7 @@ public:
     float fuelFactor() const;                                  // 0 when any cut is active
     bool fuelCutActive() const { return fuelCutMask_ != 0; }
     float ignitionOffset() const;                              // clamped sum
+    float protectiveIgnitionOffset() const;                    // retard-only part of protective sources, <= 0
     float applyLambda(float baseLambda) const;                 // base + offsets, floor, ceiling
     float boostFactor() const;
     CylinderCut cylinderCut() const { return cut_; }
@@ -105,6 +112,7 @@ private:
     AccumulatorLimits limits_;
     float fuelFactor_ = 1.0f;
     float ignitionSum_ = 0.0f;
+    float protectiveSum_ = 0.0f;
     float lambdaSum_ = 0.0f;
     float lambdaCeiling_ = 0.0f;
     float lambdaFloor_ = 0.0f;

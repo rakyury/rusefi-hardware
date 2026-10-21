@@ -4,6 +4,8 @@ Status: **host-tested reference logic, not yet wired into a rusEFI build or the 
 
 Source: `firmware/arbitration/`. Tests: `firmware/tests/test_arbitration.cpp`, `bash firmware/tests/run_arbitration_tests.sh`.
 
+Design lessons from the EMU PRO analysis (problems we avoid): `EMU_LESSONS.md`.
+
 ## Why
 
 Many subsystems want to change fuel, ignition, lambda, boost or cut cylinders at the same time. Examples: limiters, launch, anti-lag, traction, knock, protections, gear shift. All requests go into one accumulator each cycle under fixed rules, so the result never depends on hidden call order. Every active source is visible as a bit mask for logging.
@@ -30,8 +32,8 @@ The accumulator rejects and counts non-finite or out-of-range requests (`rejecte
 ## Ignition source priority (`IgnitionArbiter`)
 
 - Exactly one source owns the angle. The default priority is cranking > launch control > anti-lag > idle > overrun > table. The priority list is configurable and must be a permutation of all sources.
-- Accumulator offsets are applied only to the sources in `correctionsApplyMask`, by default the table only. This is a deliberate default and can be changed in configuration.
-- Source changes are rate limited by the rate of the selected source. A rate of 0 means an immediate change.
+- All accumulator offsets are applied to the sources in `correctionsApplyMask`, by default the table only. Every other owner (launch, anti-lag, idle, overrun, cranking) still gets the **protective retard**: knock, coolant and charge temperature (`protectiveIgnitionMask`), retard only, never advance. EMU PRO drops knock retard in these modes; see `EMU_LESSONS.md` L1.
+- Owner changes are rate limited by the rate of the selected owner. A rate of 0 means an immediate change. Only the owner's base angle is ramped; corrections are added after the ramp, so a knock retard acts in the same cycle (L1b).
 - A non-finite request is ignored. An invalid configuration, a non-finite table angle or a non-finite dt gives `safeAdvance` and sets `fault`.
 
 ## Not done yet
