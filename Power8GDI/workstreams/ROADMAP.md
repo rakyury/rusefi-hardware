@@ -5,7 +5,9 @@
 **Review branch:** `codex/power8gdi-resume-20261021`
 
 **Review:** https://github.com/rakyury/rusefi-hardware/pull/1 (draft)
-**Checkpoint:** 2026-10-21, offline development; manufacturing release BLOCKED.
+**Checkpoint:** 2026-10-21, connected electrical engineering review; manufacturing release BLOCKED.
+
+Latest: [20-sheet / 631-component electrical integration](../docs/INTEGRATION_2026_10_21_ELECTRICAL.md). Actual review PCB: 499 unconnected items, 752 DRC findings; no full-routing claim. Earlier offline milestones below remain historical.
 
 Seven specialist roles were executed in dedicated worktrees using three actual
 concurrent worker slots, with integration as the eighth role. Roles were queued

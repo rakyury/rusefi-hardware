@@ -71,8 +71,8 @@
         "77": "PTB_RESET",
         "76": "PTA_DRVEN",
         "78": "PTB_DRVEN",
-        "26": "PTA_FLAG",
-        "27": "PTB_FLAG",
+        "153": "PTA_FLAG",
+        "152": "PTB_FLAG",
         "115": "DBW_PWM",
         "116": "DBW_DIR",
         "101": "DBW_DISABLE",
@@ -90,14 +90,38 @@
         "57": "CRANK",
         "19": "CAM1",
         "20": "CAM2",
+        "164": "SENT3",
+        "165": "SENT4",
+        "174": "CAM3",
+        "175": "CAM4",
+        "40": "ADC_TPS1",
+        "42": "ADC_TPS2",
+        "47": "ADC_PPS1",
+        "50": "ADC_PPS2",
+        "51": "ADC_MAP_MAIN",
+        "52": "ADC_BARO_EXT",
+        "53": "ADC_CLT",
+        "56": "ADC_IAT",
+        "32": "ADC_OIL_PRESS",
+        "33": "ADC_OIL_TEMP",
+        "34": "ADC_FRP1",
+        "35": "ADC_FRP2",
+        "54": "ADC_LPFP_PRESS",
+        "55": "ADC_EXH_PRESS",
+        "24": "ADC_EWG_POS",
+        "28": "ADC_AUX_ANALOG1",
+        "26": "ADC_AUX_ANALOG2",
+        "43": "CAN1_STB",
+        "44": "LIN1_EN",
+        "45": "SAFETY_HEARTBEAT",
+        "46": "SAFETY_ARM_REQUEST",
+        "83": "SAFETY_FAULT_N",
         "31": "NRST",
         "166": "BOOT0",
         "124": "SWDIO",
         "137": "SWCLK",
         "161": "SWO",
-        "29": "MCU_HSE_IN",
-        "43": "CAN1_STB",
-        "44": "LIN1_EN"
+        "29": "MCU_HSE_IN"
       },
       "dnp": false,
       "note": "Provisional industrial -40..85C LQFP176. Unassigned pads are intentionally unused in this candidate, not qualified resources.",
@@ -716,8 +740,8 @@
       "value": "MIC4427YM",
       "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
       "pins": {
-        "2": "IGN1",
-        "4": "IGN2",
+        "2": "IGN1_GATED",
+        "4": "IGN2_GATED",
         "7": "IGN1_BUFFER",
         "5": "IGN2_BUFFER",
         "6": "+5V_CORE",
@@ -756,11 +780,11 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "IGN1",
+        "1": "IGN1_GATED",
         "2": "GND"
       },
       "dnp": false,
-      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "note": "Buffer input default low after hardware permission gate",
       "sheet": "core_ignition"
     },
     {
@@ -792,11 +816,11 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "IGN2",
+        "1": "IGN2_GATED",
         "2": "GND"
       },
       "dnp": false,
-      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "note": "Buffer input default low after hardware permission gate",
       "sheet": "core_ignition"
     },
     {
@@ -828,8 +852,8 @@
       "value": "MIC4427YM",
       "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
       "pins": {
-        "2": "IGN3",
-        "4": "IGN4",
+        "2": "IGN3_GATED",
+        "4": "IGN4_GATED",
         "7": "IGN3_BUFFER",
         "5": "IGN4_BUFFER",
         "6": "+5V_CORE",
@@ -868,11 +892,11 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "IGN3",
+        "1": "IGN3_GATED",
         "2": "GND"
       },
       "dnp": false,
-      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "note": "Buffer input default low after hardware permission gate",
       "sheet": "core_ignition"
     },
     {
@@ -904,11 +928,11 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "IGN4",
+        "1": "IGN4_GATED",
         "2": "GND"
       },
       "dnp": false,
-      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "note": "Buffer input default low after hardware permission gate",
       "sheet": "core_ignition"
     },
     {
@@ -940,8 +964,8 @@
       "value": "MIC4427YM",
       "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
       "pins": {
-        "2": "IGN5",
-        "4": "IGN6",
+        "2": "IGN5_GATED",
+        "4": "IGN6_GATED",
         "7": "IGN5_BUFFER",
         "5": "IGN6_BUFFER",
         "6": "+5V_CORE",
@@ -980,11 +1004,11 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "IGN5",
+        "1": "IGN5_GATED",
         "2": "GND"
       },
       "dnp": false,
-      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "note": "Buffer input default low after hardware permission gate",
       "sheet": "core_ignition"
     },
     {
@@ -1016,11 +1040,11 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "IGN6",
+        "1": "IGN6_GATED",
         "2": "GND"
       },
       "dnp": false,
-      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "note": "Buffer input default low after hardware permission gate",
       "sheet": "core_ignition"
     },
     {
@@ -1052,8 +1076,8 @@
       "value": "MIC4427YM",
       "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
       "pins": {
-        "2": "IGN7",
-        "4": "IGN8",
+        "2": "IGN7_GATED",
+        "4": "IGN8_GATED",
         "7": "IGN7_BUFFER",
         "5": "IGN8_BUFFER",
         "6": "+5V_CORE",
@@ -1092,11 +1116,11 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "IGN7",
+        "1": "IGN7_GATED",
         "2": "GND"
       },
       "dnp": false,
-      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "note": "Buffer input default low after hardware permission gate",
       "sheet": "core_ignition"
     },
     {
@@ -1128,11 +1152,11 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "IGN8",
+        "1": "IGN8_GATED",
         "2": "GND"
       },
       "dnp": false,
-      "note": "Input defaultlow; PC13 load check includes inputI/C andtrace",
+      "note": "Buffer input default low after hardware permission gate",
       "sheet": "core_ignition"
     },
     {
@@ -1158,6 +1182,2169 @@
       "dnp": false,
       "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
       "sheet": "core_ignition"
+    },
+    {
+      "ref": "R700",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_TPS1",
+        "2": "TPS1_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R701",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "TPS1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C700",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "TPS1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "D701",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "TPS1_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R702",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "TPS1_BUFFER",
+        "2": "ADC_TPS1"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C701",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_TPS1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R703",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_TPS2",
+        "2": "TPS2_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R704",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "TPS2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C702",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "TPS2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "D702",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "TPS2_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R705",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "TPS2_BUFFER",
+        "2": "ADC_TPS2"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C703",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_TPS2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R706",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_PPS1",
+        "2": "PPS1_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R707",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PPS1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C704",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "PPS1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "D703",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "PPS1_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R708",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PPS1_BUFFER",
+        "2": "ADC_PPS1"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C705",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_PPS1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R709",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_PPS2",
+        "2": "PPS2_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R710",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PPS2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C706",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "PPS2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "D704",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "PPS2_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R711",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PPS2_BUFFER",
+        "2": "ADC_PPS2"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C707",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_PPS2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "U701",
+      "value": "TLV9004QPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "4": "+3V3_A",
+        "11": "GND",
+        "3": "TPS1_DIV",
+        "2": "TPS1_BUFFER",
+        "1": "TPS1_BUFFER",
+        "5": "TPS2_DIV",
+        "6": "TPS2_BUFFER",
+        "7": "TPS2_BUFFER",
+        "10": "PPS1_DIV",
+        "9": "PPS1_BUFFER",
+        "8": "PPS1_BUFFER",
+        "12": "PPS2_DIV",
+        "13": "PPS2_BUFFER",
+        "14": "PPS2_BUFFER"
+      },
+      "dnp": false,
+      "note": "Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C740",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C741",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R712",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_MAP_MAIN",
+        "2": "MAP_MAIN_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R713",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "MAP_MAIN_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C708",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "MAP_MAIN_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "D705",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "MAP_MAIN_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R714",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "MAP_MAIN_BUFFER",
+        "2": "ADC_MAP_MAIN"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C709",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_MAP_MAIN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R715",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_BARO_EXT",
+        "2": "BARO_EXT_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R716",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "BARO_EXT_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C710",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "BARO_EXT_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "D706",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "BARO_EXT_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R717",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "BARO_EXT_BUFFER",
+        "2": "ADC_BARO_EXT"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C711",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_BARO_EXT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R718",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CLT",
+        "2": "CLT_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R719",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CLT_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C712",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "CLT_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "D707",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "CLT_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R720",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CLT_BUFFER",
+        "2": "ADC_CLT"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C713",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_CLT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R721",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_IAT",
+        "2": "IAT_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R722",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IAT_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C714",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "IAT_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "D708",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "IAT_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R723",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IAT_BUFFER",
+        "2": "ADC_IAT"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C715",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_IAT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "U702",
+      "value": "TLV9004QPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "4": "+3V3_A",
+        "11": "GND",
+        "3": "MAP_MAIN_DIV",
+        "2": "MAP_MAIN_BUFFER",
+        "1": "MAP_MAIN_BUFFER",
+        "5": "BARO_EXT_DIV",
+        "6": "BARO_EXT_BUFFER",
+        "7": "BARO_EXT_BUFFER",
+        "10": "CLT_DIV",
+        "9": "CLT_BUFFER",
+        "8": "CLT_BUFFER",
+        "12": "IAT_DIV",
+        "13": "IAT_BUFFER",
+        "14": "IAT_BUFFER"
+      },
+      "dnp": false,
+      "note": "Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C742",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C743",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R724",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_OIL_PRESS",
+        "2": "OIL_PRESS_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R725",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "OIL_PRESS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C716",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "OIL_PRESS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "D709",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "OIL_PRESS_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R726",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "OIL_PRESS_BUFFER",
+        "2": "ADC_OIL_PRESS"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C717",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_OIL_PRESS",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R727",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_OIL_TEMP",
+        "2": "OIL_TEMP_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R728",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "OIL_TEMP_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C718",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "OIL_TEMP_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "D710",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "OIL_TEMP_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R729",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "OIL_TEMP_BUFFER",
+        "2": "ADC_OIL_TEMP"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C719",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_OIL_TEMP",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R730",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_FRP1",
+        "2": "FRP1_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R731",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "FRP1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C720",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "FRP1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "D711",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "FRP1_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R732",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "FRP1_BUFFER",
+        "2": "ADC_FRP1"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C721",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_FRP1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R733",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_FRP2",
+        "2": "FRP2_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R734",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "FRP2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C722",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "FRP2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "D712",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "FRP2_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R735",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "FRP2_BUFFER",
+        "2": "ADC_FRP2"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C723",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_FRP2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "U703",
+      "value": "TLV9004QPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "4": "+3V3_A",
+        "11": "GND",
+        "3": "OIL_PRESS_DIV",
+        "2": "OIL_PRESS_BUFFER",
+        "1": "OIL_PRESS_BUFFER",
+        "5": "OIL_TEMP_DIV",
+        "6": "OIL_TEMP_BUFFER",
+        "7": "OIL_TEMP_BUFFER",
+        "10": "FRP1_DIV",
+        "9": "FRP1_BUFFER",
+        "8": "FRP1_BUFFER",
+        "12": "FRP2_DIV",
+        "13": "FRP2_BUFFER",
+        "14": "FRP2_BUFFER"
+      },
+      "dnp": false,
+      "note": "Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C744",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C745",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R736",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_LPFP_PRESS",
+        "2": "LPFP_PRESS_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R737",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LPFP_PRESS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C724",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "LPFP_PRESS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "D713",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "LPFP_PRESS_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R738",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LPFP_PRESS_BUFFER",
+        "2": "ADC_LPFP_PRESS"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C725",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_LPFP_PRESS",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R739",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_EXH_PRESS",
+        "2": "EXH_PRESS_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R740",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "EXH_PRESS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C726",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "EXH_PRESS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "D714",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "EXH_PRESS_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R741",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "EXH_PRESS_BUFFER",
+        "2": "ADC_EXH_PRESS"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C727",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_EXH_PRESS",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R742",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_EWG_POS",
+        "2": "EWG_POS_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R743",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "EWG_POS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C728",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "EWG_POS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "D715",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "EWG_POS_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R744",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "EWG_POS_BUFFER",
+        "2": "ADC_EWG_POS"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C729",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_EWG_POS",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R745",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_AUX_ANALOG1",
+        "2": "AUX_ANALOG1_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R746",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_ANALOG1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C730",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "AUX_ANALOG1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "D716",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "AUX_ANALOG1_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R747",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_ANALOG1_BUFFER",
+        "2": "ADC_AUX_ANALOG1"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C731",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_AUX_ANALOG1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "U704",
+      "value": "TLV9004QPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "4": "+3V3_A",
+        "11": "GND",
+        "3": "LPFP_PRESS_DIV",
+        "2": "LPFP_PRESS_BUFFER",
+        "1": "LPFP_PRESS_BUFFER",
+        "5": "EXH_PRESS_DIV",
+        "6": "EXH_PRESS_BUFFER",
+        "7": "EXH_PRESS_BUFFER",
+        "10": "EWG_POS_DIV",
+        "9": "EWG_POS_BUFFER",
+        "8": "EWG_POS_BUFFER",
+        "12": "AUX_ANALOG1_DIV",
+        "13": "AUX_ANALOG1_BUFFER",
+        "14": "AUX_ANALOG1_BUFFER"
+      },
+      "dnp": false,
+      "note": "Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C746",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C747",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R748",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_AUX_ANALOG2",
+        "2": "AUX_ANALOG2_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "R749",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_ANALOG2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "C732",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "AUX_ANALOG2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "D717",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "AUX_ANALOG2_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "R750",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_ANALOG2_BUFFER",
+        "2": "ADC_AUX_ANALOG2"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "C733",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_AUX_ANALOG2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "U705",
+      "value": "TLV9004QPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "4": "+3V3_A",
+        "11": "GND",
+        "3": "AUX_ANALOG2_DIV",
+        "2": "AUX_ANALOG2_BUFFER",
+        "1": "AUX_ANALOG2_BUFFER",
+        "5": "GND",
+        "6": "ADC_UNUSED_18",
+        "7": "ADC_UNUSED_18",
+        "10": "GND",
+        "9": "ADC_UNUSED_19",
+        "8": "ADC_UNUSED_19",
+        "12": "GND",
+        "13": "ADC_UNUSED_20",
+        "14": "ADC_UNUSED_20"
+      },
+      "dnp": false,
+      "note": "Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "C748",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "C749",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "R751",
+      "value": "2.49k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_CLT"
+      },
+      "dnp": true,
+      "note": "Optional NTC bias. Fit only after sensor curve, supply/reference and short-to-battery review",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "R752",
+      "value": "2.49k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_IAT"
+      },
+      "dnp": true,
+      "note": "Optional NTC bias. Fit only after sensor curve, supply/reference and short-to-battery review",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "R753",
+      "value": "2.49k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_OIL_TEMP"
+      },
+      "dnp": true,
+      "note": "Optional NTC bias. Fit only after sensor curve, supply/reference and short-to-battery review",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "R760",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CAM1",
+        "2": "CAM1_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R761",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CAM1_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C750",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "CAM1_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "D730",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "CAM1_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R762",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_CAM1"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R763",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CAM2",
+        "2": "CAM2_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R764",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CAM2_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C751",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "CAM2_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "D731",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "CAM2_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R765",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_CAM2"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R766",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CAM3",
+        "2": "CAM3_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R767",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CAM3_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C752",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "CAM3_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "D732",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "CAM3_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R768",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_CAM3"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R769",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CAM4",
+        "2": "CAM4_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R770",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CAM4_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C753",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "CAM4_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "D733",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "CAM4_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R771",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_CAM4"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R772",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_SENT1",
+        "2": "SENT1_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R773",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SENT1_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C754",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SENT1_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "D734",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "SENT1_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R774",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_SENT1"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R775",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_SENT2",
+        "2": "SENT2_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R776",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SENT2_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C755",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SENT2_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "D735",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "SENT2_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R777",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_SENT2"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "U721",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "1": "CAM1_FILTERED",
+        "2": "CAM1",
+        "3": "CAM2_FILTERED",
+        "4": "CAM2",
+        "5": "CAM3_FILTERED",
+        "6": "CAM3",
+        "9": "CAM4_FILTERED",
+        "8": "CAM4",
+        "11": "SENT1_FILTERED",
+        "10": "SENT1",
+        "13": "SENT2_FILTERED",
+        "12": "SENT2"
+      },
+      "dnp": false,
+      "note": "Hex inverter,2..3.6V supply,5.5V tolerant inputs; unused inputsGND, outputsNC",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C758",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R778",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_SENT3",
+        "2": "SENT3_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "R779",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SENT3_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "C756",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SENT3_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "D736",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "SENT3_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "R780",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_SENT3"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "R781",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_SENT4",
+        "2": "SENT4_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "R782",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SENT4_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "C757",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SENT4_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "D737",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "SENT4_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "R783",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_SENT4"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "U722",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "1": "SENT3_FILTERED",
+        "2": "SENT3",
+        "3": "SENT4_FILTERED",
+        "4": "SENT4",
+        "5": "GND",
+        "9": "GND",
+        "11": "GND",
+        "13": "GND"
+      },
+      "dnp": false,
+      "note": "Hex inverter,2..3.6V supply,5.5V tolerant inputs; unused inputsGND, outputsNC",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "C759",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "U731",
+      "value": "MAX9924UAUB/V+",
+      "footprint": "Package_SO:MSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "VR_CRANK_P_FILT",
+        "2": "VR_CRANK_N_FILT",
+        "4": "GND",
+        "5": "GND",
+        "6": "GND",
+        "7": "CRANK",
+        "9": "GND",
+        "10": "+5V_CORE"
+      },
+      "dnp": false,
+      "note": "Rev5 Table1 ModeA2: ZERO_EN=GND,INT_THRS=GND,BIAS=GND; EXT NC. Do not infer from mode pin names",
+      "sheet": "io/crank_vr"
+    },
+    {
+      "ref": "R790",
+      "value": "10k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CRANK_VR_P",
+        "2": "VR_CRANK_P_FILT"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/crank_vr"
+    },
+    {
+      "ref": "R791",
+      "value": "10k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CRANK_VR_N",
+        "2": "VR_CRANK_N_FILT"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/crank_vr"
+    },
+    {
+      "ref": "C760",
+      "value": "1n 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "VR_CRANK_P_FILT",
+        "2": "VR_CRANK_N_FILT"
+      },
+      "dnp": false,
+      "note": "Differential filter from manufacturerFig3; actual tooth amplitude/frequency pending",
+      "sheet": "io/crank_vr"
+    },
+    {
+      "ref": "R792",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "CRANK"
+      },
+      "dnp": false,
+      "note": "Open-drain output toMCU3V3, never5V",
+      "sheet": "io/crank_vr"
+    },
+    {
+      "ref": "C761",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/crank_vr"
+    },
+    {
+      "ref": "C762",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/crank_vr"
     }
   ],
   "decoupling_placement": [
@@ -1239,6 +3426,22 @@
     {
       "path": "gdi/stage_b.kicad_sch",
       "instance_uuid": "2aa9486d-083b-53a0-b9ea-735fb5a4b253"
+    },
+    {
+      "path": "safety/safety_gate.kicad_sch",
+      "instance_uuid": "d3688535-de83-5779-ad3b-0e54c99cc6b1"
+    },
+    {
+      "path": "motor/dbw_driver.kicad_sch",
+      "instance_uuid": "a94361be-a999-5467-91e7-db9050858e28"
+    },
+    {
+      "path": "motor/ewg_driver.kicad_sch",
+      "instance_uuid": "98411c65-d6e9-551f-ab9e-b123f778692f"
+    },
+    {
+      "path": "board/connectors.kicad_sch",
+      "instance_uuid": "df0c5f3e-1ee1-56be-91e2-4072c6105289"
     }
   ],
   "added_gpio": [
@@ -1374,7 +3577,7 @@
     {
       "pad": "24",
       "name": "PF6",
-      "net": null
+      "net": "ADC_EWG_POS"
     },
     {
       "pad": "25",
@@ -1384,17 +3587,17 @@
     {
       "pad": "26",
       "name": "PF8",
-      "net": "PTA_FLAG"
+      "net": "ADC_AUX_ANALOG2"
     },
     {
       "pad": "27",
       "name": "PF9",
-      "net": "PTB_FLAG"
+      "net": null
     },
     {
       "pad": "28",
       "name": "PF10",
-      "net": null
+      "net": "ADC_AUX_ANALOG1"
     },
     {
       "pad": "29",
@@ -1414,22 +3617,22 @@
     {
       "pad": "32",
       "name": "PC0",
-      "net": null
+      "net": "ADC_OIL_PRESS"
     },
     {
       "pad": "33",
       "name": "PC1",
-      "net": null
+      "net": "ADC_OIL_TEMP"
     },
     {
       "pad": "34",
       "name": "PC2",
-      "net": null
+      "net": "ADC_FRP1"
     },
     {
       "pad": "35",
       "name": "PC3",
-      "net": null
+      "net": "ADC_FRP2"
     },
     {
       "pad": "36",
@@ -1454,7 +3657,7 @@
     {
       "pad": "40",
       "name": "PA0",
-      "net": null
+      "net": "ADC_TPS1"
     },
     {
       "pad": "41",
@@ -1464,7 +3667,7 @@
     {
       "pad": "42",
       "name": "PA2",
-      "net": null
+      "net": "ADC_TPS2"
     },
     {
       "pad": "43",
@@ -1479,17 +3682,17 @@
     {
       "pad": "45",
       "name": "PH4",
-      "net": null
+      "net": "SAFETY_HEARTBEAT"
     },
     {
       "pad": "46",
       "name": "PH5",
-      "net": null
+      "net": "SAFETY_ARM_REQUEST"
     },
     {
       "pad": "47",
       "name": "PA3",
-      "net": null
+      "net": "ADC_PPS1"
     },
     {
       "pad": "48",
@@ -1504,37 +3707,37 @@
     {
       "pad": "50",
       "name": "PA4",
-      "net": null
+      "net": "ADC_PPS2"
     },
     {
       "pad": "51",
       "name": "PA5",
-      "net": null
+      "net": "ADC_MAP_MAIN"
     },
     {
       "pad": "52",
       "name": "PA6",
-      "net": null
+      "net": "ADC_BARO_EXT"
     },
     {
       "pad": "53",
       "name": "PA7",
-      "net": null
+      "net": "ADC_CLT"
     },
     {
       "pad": "54",
       "name": "PC4",
-      "net": null
+      "net": "ADC_LPFP_PRESS"
     },
     {
       "pad": "55",
       "name": "PC5",
-      "net": null
+      "net": "ADC_EXH_PRESS"
     },
     {
       "pad": "56",
       "name": "PB0",
-      "net": null
+      "net": "ADC_IAT"
     },
     {
       "pad": "57",
@@ -1669,7 +3872,7 @@
     {
       "pad": "83",
       "name": "PH6",
-      "net": null
+      "net": "SAFETY_FAULT_N"
     },
     {
       "pad": "84",
@@ -2014,12 +4217,12 @@
     {
       "pad": "152",
       "name": "PG9",
-      "net": null
+      "net": "PTB_FLAG"
     },
     {
       "pad": "153",
       "name": "PG10",
-      "net": null
+      "net": "PTA_FLAG"
     },
     {
       "pad": "154",
@@ -2074,12 +4277,12 @@
     {
       "pad": "164",
       "name": "PB6",
-      "net": null
+      "net": "SENT3"
     },
     {
       "pad": "165",
       "name": "PB7",
-      "net": null
+      "net": "SENT4"
     },
     {
       "pad": "166",
@@ -2124,12 +4327,12 @@
     {
       "pad": "174",
       "name": "PI5",
-      "net": null
+      "net": "CAM3"
     },
     {
       "pad": "175",
       "name": "PI6",
-      "net": null
+      "net": "CAM4"
     },
     {
       "pad": "176",
@@ -2138,8 +4341,6 @@
     }
   ],
   "unassigned_functions": [
-    "SENT3",
-    "SENT4",
     "LIN2_TX",
     "LIN2_RX",
     "CAN2_RX",
@@ -2167,8 +4368,110 @@
     "LS_AUX1",
     "LS_AUX2",
     "LS_AUX3",
-    "LS_AUX4",
-    "CAM3",
-    "CAM4"
+    "LS_AUX4"
+  ],
+  "analog_channels": [
+    {
+      "function": "TPS1",
+      "port": "PA0",
+      "pad": "40",
+      "adc": "ADC1_IN0"
+    },
+    {
+      "function": "TPS2",
+      "port": "PA2",
+      "pad": "42",
+      "adc": "ADC1_IN2"
+    },
+    {
+      "function": "PPS1",
+      "port": "PA3",
+      "pad": "47",
+      "adc": "ADC1_IN3"
+    },
+    {
+      "function": "PPS2",
+      "port": "PA4",
+      "pad": "50",
+      "adc": "ADC1_IN4"
+    },
+    {
+      "function": "MAP_MAIN",
+      "port": "PA5",
+      "pad": "51",
+      "adc": "ADC1_IN5"
+    },
+    {
+      "function": "BARO_EXT",
+      "port": "PA6",
+      "pad": "52",
+      "adc": "ADC1_IN6"
+    },
+    {
+      "function": "CLT",
+      "port": "PA7",
+      "pad": "53",
+      "adc": "ADC1_IN7"
+    },
+    {
+      "function": "IAT",
+      "port": "PB0",
+      "pad": "56",
+      "adc": "ADC1_IN8"
+    },
+    {
+      "function": "OIL_PRESS",
+      "port": "PC0",
+      "pad": "32",
+      "adc": "ADC1_IN10"
+    },
+    {
+      "function": "OIL_TEMP",
+      "port": "PC1",
+      "pad": "33",
+      "adc": "ADC1_IN11"
+    },
+    {
+      "function": "FRP1",
+      "port": "PC2",
+      "pad": "34",
+      "adc": "ADC1_IN12"
+    },
+    {
+      "function": "FRP2",
+      "port": "PC3",
+      "pad": "35",
+      "adc": "ADC1_IN13"
+    },
+    {
+      "function": "LPFP_PRESS",
+      "port": "PC4",
+      "pad": "54",
+      "adc": "ADC1_IN14"
+    },
+    {
+      "function": "EXH_PRESS",
+      "port": "PC5",
+      "pad": "55",
+      "adc": "ADC1_IN15"
+    },
+    {
+      "function": "EWG_POS",
+      "port": "PF6",
+      "pad": "24",
+      "adc": "ADC3_IN4"
+    },
+    {
+      "function": "AUX_ANALOG1",
+      "port": "PF10",
+      "pad": "28",
+      "adc": "ADC3_IN8"
+    },
+    {
+      "function": "AUX_ANALOG2",
+      "port": "PF8",
+      "pad": "26",
+      "adc": "ADC3_IN6"
+    }
   ]
 }

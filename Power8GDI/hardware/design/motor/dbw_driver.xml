@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/src/Power8GDI/hardware/design/motor/dbw_driver.kicad_sch</source>
+    <date>2026-10-21T05:20:00+0000</date>
+    <tool>Eeschema 9.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>DBW provisional H-bridge and hardware gating</title>
+        <company/>
+        <rev>Engineering draft 0.1</rev>
+        <date/>
+        <source>dbw_driver.kicad_sch</source>
+        <comment number="1" value="UNQUALIFIED: no manufacturing or engine approval"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C901">
+      <value>100n 50V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">At driverVM/PGND; short switching-current loop</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="At driverVM/PGND; short switching-current loop"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>70f1ee49-58e9-5422-a855-8feae04d621b</tstamps>
+    </comp>
+    <comp ref="C902">
+      <value>2.2u 50V X7R</value>
+      <footprint>Capacitor_SMD:C_1210_3225Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_1210_3225Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>43e74cf1-790c-5e4d-a225-8e2251146a78</tstamps>
+    </comp>
+    <comp ref="C903">
+      <value>100u 50V bulk</value>
+      <footprint>Capacitor_SMD:CP_Elec_10x10</footprint>
+      <fields>
+        <field name="Design note">Provisional footprint and capacitance; select MPN/ESR/ripple rating after motor inductance and regeneration analysis</field>
+        <field name="Footprint">Capacitor_SMD:CP_Elec_10x10</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C_Polarized" description="Polarized capacitor"/>
+      <property name="Design note" value="Provisional footprint and capacitance; select MPN/ESR/ripple rating after motor inductance and regeneration analysis"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="CP_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2586a852-e2f8-563c-b92b-4e6598ab50a6</tstamps>
+    </comp>
+    <comp ref="C910">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Locallogicdecoupling atVCC/GND</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="Locallogicdecoupling atVCC/GND"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0c8ebbfd-c2ce-580a-ae0b-badd771e06bb</tstamps>
+    </comp>
+    <comp ref="C911">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Locallogicdecoupling atVCC/GND</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="Locallogicdecoupling atVCC/GND"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ac36a098-5193-55c3-85e8-ddd6311e2ad1</tstamps>
+    </comp>
+    <comp ref="C912">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Locallogicdecoupling atVCC/GND</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="Locallogicdecoupling atVCC/GND"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1ca323e0-1bb5-5560-8cd0-a8e96dd7b1c2</tstamps>
+    </comp>
+    <comp ref="C913">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Locallogicdecoupling atVCC/GND</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="Locallogicdecoupling atVCC/GND"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a2289361-7006-5fef-800a-e61c48aa2755</tstamps>
+    </comp>
+    <comp ref="C914">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Locallogicdecoupling atVCC/GND</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="Locallogicdecoupling atVCC/GND"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>78b4d3df-2c17-5adb-aa7c-80596e63dd08</tstamps>
+    </comp>
+    <comp ref="C915">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Locallogicdecoupling atVCC/GND</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="Locallogicdecoupling atVCC/GND"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6da6e3ce-9583-5ce4-a681-a30069144c9e</tstamps>
+    </comp>
+    <comp ref="D901">
+      <value>STPS2H100UY</value>
+      <footprint>Diode_SMD:D_SMB</footprint>
+      <fields>
+        <field name="Design note">Separate motor-feed reverse diode; cathode1 protected, anode2 fused raw. 2A rating requires thermal review.</field>
+        <field name="Footprint">Diode_SMD:D_SMB</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="D_Schottky" description="Schottky diode"/>
+      <property name="Design note" value="Separate motor-feed reverse diode; cathode1 protected, anode2 fused raw. 2A rating requires thermal review."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="diode Schottky"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5439aa8d-3210-5674-9a0d-81a10ddc98be</tstamps>
+    </comp>
+    <comp ref="D902">
+      <value>SMBJ24CA</value>
+      <footprint>Diode_SMD:D_SMB</footprint>
+      <fields>
+        <field name="Design note">Afterreverseblockingdiode so clampcanabsorbregeneration; energy/hotclamp/fusecoordinationnotqualified</field>
+        <field name="Footprint">Diode_SMD:D_SMB</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="D_TVS" description="Bidirectional transient-voltage-suppression diode"/>
+      <property name="Design note" value="Afterreverseblockingdiode so clampcanabsorbregeneration; energy/hotclamp/fusecoordinationnotqualified"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="diode TVS thyrector"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>80676e33-d4b3-51a6-8aa1-2daeae565684</tstamps>
+    </comp>
+    <comp ref="R901">
+      <value>36.5k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Nominal1.753A,currentconstant59..69kV gives1.600..1.909A with1%R; no short-circuit or thermal qualification</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Nominal1.753A,currentconstant59..69kV gives1.600..1.909A with1%R; no short-circuit or thermal qualification"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d200edc4-dd08-5a3a-b417-4d1db0ab3017</tstamps>
+    </comp>
+    <comp ref="R902">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">MCUresetdefaultnoPWM</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="MCUresetdefaultnoPWM"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8fc8a56c-d326-5caf-93f6-ad6bf09eb9dc</tstamps>
+    </comp>
+    <comp ref="R903">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0ae86d7a-1a8d-5814-9686-3d2e952ffaed</tstamps>
+    </comp>
+    <comp ref="R904">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">MCUresetdefaultdisabled</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="MCUresetdefaultdisabled"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6c5c25d3-e363-5209-a66c-3ef648abe05b</tstamps>
+    </comp>
+    <comp ref="R905">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">HardwarepermissiondefaultsOFFifsourceopen</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="HardwarepermissiondefaultsOFFifsourceopen"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e79d721c-f398-5128-bef1-2b442e1e56d8</tstamps>
+    </comp>
+    <comp ref="R906">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Steadypoweroffleakage11uA*10k&lt;0.5VVIL; dynamicpowersequencingunqualified</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Steadypoweroffleakage11uA*10k&lt;0.5VVIL; dynamicpowersequencingunqualified"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6612a177-b8cb-5324-a44d-5704dba5fac8</tstamps>
+    </comp>
+    <comp ref="R907">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Steadypoweroffleakage11uA*10k&lt;0.5VVIL; dynamicpowersequencingunqualified</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Steadypoweroffleakage11uA*10k&lt;0.5VVIL; dynamicpowersequencingunqualified"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>513638ca-dcfa-5131-b70b-56944d5cf50b</tstamps>
+    </comp>
+    <comp ref="U901">
+      <value>DRV8871DDAR</value>
+      <footprint>Package_SO:HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm_ThermalVias</footprint>
+      <fields>
+        <field name="Design note">Industrial driver candidate, not AEC-Q100. Bothinputs0=&gt;coast/sleep. Automaticfaultretry; nofaultoutput/currenttelemetry.</field>
+        <field name="Footprint">Package_SO:HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm_ThermalVias</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Motor_DRV8871DDA" description=""/>
+      <property name="Design note" value="Industrial driver candidate, not AEC-Q100. Bothinputs0=&gt;coast/sleep. Automaticfaultretry; nofaultoutput/currenttelemetry."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>91210546-b895-597f-acdd-c1c511f02405</tstamps>
+    </comp>
+    <comp ref="U910">
+      <value>SN74LVC1G08QDBVRQ1</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="Design note">Independent latched hardware permission AND MCU notdisabled</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Motor_AND_LVC1G08_Q1" description=""/>
+      <property name="Design note" value="Independent latched hardware permission AND MCU notdisabled"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8a5558a1-3a37-5f49-8d9f-7fc5290129a9</tstamps>
+    </comp>
+    <comp ref="U911">
+      <value>SN74LVC1G08QDBVRQ1</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="Design note">PWM blocked by either disable source</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Motor_AND_LVC1G08_Q1" description=""/>
+      <property name="Design note" value="PWM blocked by either disable source"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2fabe68d-01b8-5a4a-86f3-637f870fc594</tstamps>
+    </comp>
+    <comp ref="U912">
+      <value>SN74LVC1G08QDBVRQ1</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="Design note">Forward PWM only</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Motor_AND_LVC1G08_Q1" description=""/>
+      <property name="Design note" value="Forward PWM only"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f4d781d5-308f-57cf-8025-ea1f8a4ba7f5</tstamps>
+    </comp>
+    <comp ref="U913">
+      <value>SN74LVC1G08QDBVRQ1</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="Design note">Reverse PWM only</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Motor_AND_LVC1G08_Q1" description=""/>
+      <property name="Design note" value="Reverse PWM only"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f90832ce-0925-5ad8-973b-c2cc84317b4a</tstamps>
+    </comp>
+    <comp ref="U914">
+      <value>SN74LVC1G04QDBVRQ1</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="Design note">Invert MCU active-high disable</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Motor_NOT_LVC1G04_Q1" description=""/>
+      <property name="Design note" value="Invert MCU active-high disable"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0ead7e09-0ffa-55e2-ab17-2e7d2976b581</tstamps>
+    </comp>
+    <comp ref="U915">
+      <value>SN74LVC1G04QDBVRQ1</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="Design note">Direction complement</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Motor_NOT_LVC1G04_Q1" description=""/>
+      <property name="Design note" value="Direction complement"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="dbw_driver.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6873b8c8-f8fb-5172-a345-f85289dfd9d0</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Power8GDI_Core" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="C_Polarized">
+      <description>Polarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Polarized</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Polarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="D_Schottky">
+      <description>Schottky diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Schottky</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Schottky diode</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="D_TVS">
+      <description>Bidirectional transient-voltage-suppression diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_TVS</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Bidirectional transient-voltage-suppression diode</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A1" type="passive"/>
+        <pin num="2" name="A2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="Motor_AND_LVC1G08_Q1">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Motor_AND_LVC1G08_Q1</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="input"/>
+        <pin num="2" name="B" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="Y" type="output"/>
+        <pin num="5" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="Motor_DRV8871DDA">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Motor_DRV8871DDA</field>
+        <field name="Footprint">Package_SO:HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm_ThermalVias</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="GND" type="power_in"/>
+        <pin num="2" name="IN2" type="input"/>
+        <pin num="3" name="IN1" type="input"/>
+        <pin num="4" name="ILIM" type="input"/>
+        <pin num="5" name="VM" type="power_in"/>
+        <pin num="6" name="OUT1" type="output"/>
+        <pin num="7" name="PGND" type="power_in"/>
+        <pin num="8" name="OUT2" type="output"/>
+        <pin num="9" name="EP" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="Motor_NOT_LVC1G04_Q1">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Motor_NOT_LVC1G04_Q1</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="NC" type="no_connect"/>
+        <pin num="2" name="A" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="Y" type="output"/>
+        <pin num="5" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Power8GDI_Core">
+      <uri>/src/Power8GDI/hardware/design/motor/motor.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3" class="Default">
+      <node ref="C910" pin="1" pintype="passive"/>
+      <node ref="C911" pin="1" pintype="passive"/>
+      <node ref="C912" pin="1" pintype="passive"/>
+      <node ref="C913" pin="1" pintype="passive"/>
+      <node ref="C914" pin="1" pintype="passive"/>
+      <node ref="C915" pin="1" pintype="passive"/>
+      <node ref="R904" pin="1" pintype="passive"/>
+      <node ref="U910" pin="5" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U911" pin="5" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U912" pin="5" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U913" pin="5" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U914" pin="5" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U915" pin="5" pinfunction="VCC" pintype="power_in"/>
+    </net>
+    <net code="2" name="DBW_DIR" class="Default">
+      <node ref="R903" pin="1" pintype="passive"/>
+      <node ref="U913" pin="2" pinfunction="B" pintype="input"/>
+      <node ref="U915" pin="2" pinfunction="A" pintype="input"/>
+    </net>
+    <net code="3" name="DBW_DIR_N" class="Default">
+      <node ref="U912" pin="2" pinfunction="B" pintype="input"/>
+      <node ref="U915" pin="4" pinfunction="Y" pintype="output"/>
+    </net>
+    <net code="4" name="DBW_DISABLE" class="Default">
+      <node ref="R904" pin="2" pintype="passive"/>
+      <node ref="U914" pin="2" pinfunction="A" pintype="input"/>
+    </net>
+    <net code="5" name="DBW_ENABLE" class="Default">
+      <node ref="U910" pin="4" pinfunction="Y" pintype="output"/>
+      <node ref="U911" pin="2" pinfunction="B" pintype="input"/>
+    </net>
+    <net code="6" name="DBW_ILIM" class="Default">
+      <node ref="R901" pin="1" pintype="passive"/>
+      <node ref="U901" pin="4" pinfunction="ILIM" pintype="input"/>
+    </net>
+    <net code="7" name="DBW_IN1_GATED" class="Default">
+      <node ref="R906" pin="1" pintype="passive"/>
+      <node ref="U901" pin="3" pinfunction="IN1" pintype="input"/>
+      <node ref="U912" pin="4" pinfunction="Y" pintype="output"/>
+    </net>
+    <net code="8" name="DBW_IN2_GATED" class="Default">
+      <node ref="R907" pin="1" pintype="passive"/>
+      <node ref="U901" pin="2" pinfunction="IN2" pintype="input"/>
+      <node ref="U913" pin="4" pinfunction="Y" pintype="output"/>
+    </net>
+    <net code="9" name="DBW_MOTOR_A" class="Default">
+      <node ref="U901" pin="6" pinfunction="OUT1" pintype="output"/>
+    </net>
+    <net code="10" name="DBW_MOTOR_B" class="Default">
+      <node ref="U901" pin="8" pinfunction="OUT2" pintype="output"/>
+    </net>
+    <net code="11" name="DBW_NOT_DISABLED" class="Default">
+      <node ref="U910" pin="2" pinfunction="B" pintype="input"/>
+      <node ref="U914" pin="4" pinfunction="Y" pintype="output"/>
+    </net>
+    <net code="12" name="DBW_PWM" class="Default">
+      <node ref="R902" pin="1" pintype="passive"/>
+      <node ref="U911" pin="1" pinfunction="A" pintype="input"/>
+    </net>
+    <net code="13" name="DBW_PWM_ENABLED" class="Default">
+      <node ref="U911" pin="4" pinfunction="Y" pintype="output"/>
+      <node ref="U912" pin="1" pinfunction="A" pintype="input"/>
+      <node ref="U913" pin="1" pinfunction="A" pintype="input"/>
+    </net>
+    <net code="14" name="DBW_VM" class="Default">
+      <node ref="C901" pin="1" pintype="passive"/>
+      <node ref="C902" pin="1" pintype="passive"/>
+      <node ref="C903" pin="1" pintype="passive"/>
+      <node ref="D901" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D902" pin="1" pinfunction="A1" pintype="passive"/>
+      <node ref="U901" pin="5" pinfunction="VM" pintype="power_in"/>
+    </net>
+    <net code="15" name="GND" class="Default">
+      <node ref="C901" pin="2" pintype="passive"/>
+      <node ref="C902" pin="2" pintype="passive"/>
+      <node ref="C903" pin="2" pintype="passive"/>
+      <node ref="C910" pin="2" pintype="passive"/>
+      <node ref="C911" pin="2" pintype="passive"/>
+      <node ref="C912" pin="2" pintype="passive"/>
+      <node ref="C913" pin="2" pintype="passive"/>
+      <node ref="C914" pin="2" pintype="passive"/>
+      <node ref="C915" pin="2" pintype="passive"/>
+      <node ref="D902" pin="2" pinfunction="A2" pintype="passive"/>
+      <node ref="R901" pin="2" pintype="passive"/>
+      <node ref="R902" pin="2" pintype="passive"/>
+      <node ref="R903" pin="2" pintype="passive"/>
+      <node ref="R905" pin="2" pintype="passive"/>
+      <node ref="R906" pin="2" pintype="passive"/>
+      <node ref="R907" pin="2" pintype="passive"/>
+      <node ref="U901" pin="1" pinfunction="GND" pintype="power_in"/>
+      <node ref="U901" pin="7" pinfunction="PGND" pintype="power_in"/>
+      <node ref="U901" pin="9" pinfunction="EP" pintype="passive"/>
+      <node ref="U910" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="U911" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="U912" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="U913" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="U914" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="U915" pin="3" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="16" name="HW_ACTUATOR_ENABLE" class="Default">
+      <node ref="R905" pin="1" pintype="passive"/>
+      <node ref="U910" pin="1" pinfunction="A" pintype="input"/>
+    </net>
+    <net code="17" name="VBAT_DBW_FUSED" class="Default">
+      <node ref="D901" pin="2" pinfunction="A" pintype="passive"/>
+    </net>
+  </nets>
+</export>

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "design_origin": "Project-authored safety interconnect and symbols; schlib.py adapted from project core_schlib.py, not GDI4 source",
+  "manufacturer_sources": [
+    {
+      "id": "TPS3431-Q1",
+      "url": "https://www.ti.com/lit/ds/symlink/tps3431-q1.pdf",
+      "reviewed_revision": "SNVSB67A, October 2021",
+      "retrieved_utc_date": "2026-10-21",
+      "sha256": "b1ef215d12d1baa0e779b4f797509f55a87c30a62e5e7ed26a3826c5db2e284e",
+      "bytes": 1968754,
+      "evidence": "pin functions p3; timing pp6,14; ENOUT wiring p1; DRB package land pattern",
+      "license_note": "Manufacturer copyrighted datasheet; PDF not committed; factual pin/parameter transcription only."
+    },
+    {
+      "id": "TPS3808-Q1",
+      "url": "https://www.ti.com/lit/ds/symlink/tps3808-q1.pdf",
+      "reviewed_revision": "SBVS085J, June 2017",
+      "retrieved_utc_date": "2026-10-21",
+      "sha256": "878d1dfe86ddc9da705fa77ee4fdbca73c96298e11c32e5a9fe6c50f1beea49a",
+      "bytes": 1537744,
+      "evidence": "pin functions p3; 3.07 V G33 threshold; CT open 20 ms; open-drain reset, MR",
+      "license_note": "Manufacturer copyrighted datasheet; PDF not committed; factual pin/parameter transcription only."
+    },
+    {
+      "id": "SN74LVC1G17-Q1",
+      "url": "https://www.ti.com/lit/ds/symlink/sn74lvc1g17-q1.pdf",
+      "reviewed_revision": "SCES663E, October 2025",
+      "retrieved_utc_date": "2026-10-21",
+      "sha256": "74fe3f387a755d503af2e7c9430a7133b52ffff7ca3870e62570aabff855200e",
+      "bytes": 2026007,
+      "evidence": "DBV pin map p3; Schmitt and Ioff; orderable DBV and package outline",
+      "license_note": "Manufacturer copyrighted datasheet; PDF not committed; factual pin/parameter transcription only."
+    },
+    {
+      "id": "SN74LVC2G74-Q1",
+      "url": "https://www.ti.com/lit/ds/symlink/sn74lvc2g74-q1.pdf",
+      "reviewed_revision": "SCES563C, April 2008",
+      "retrieved_utc_date": "2026-10-21",
+      "sha256": "d2e8f45be0ddf94dea3a4ad6882b300c55918d601f3e827e9579d6c03cc137c1",
+      "bytes": 887431,
+      "evidence": "pins p1; Qbar=3, Q=5; function table p2; input transition limits p4; DCU package",
+      "license_note": "Manufacturer copyrighted datasheet; PDF not committed; factual pin/parameter transcription only."
+    },
+    {
+      "id": "SN74LVC244A-Q1",
+      "url": "https://www.ti.com/lit/ds/symlink/sn74lvc244a-q1.pdf?ts=1776262857322",
+      "reviewed_revision": "SCAS790D, February 2026",
+      "retrieved_utc_date": "2026-10-21",
+      "sha256": "1a25aa04afd33db57b3f4ae51111aee157913274dfd908f4b48fe87a01419ca7",
+      "bytes": 2106763,
+      "evidence": "pin table pp3-4; Ioff and IOZ p7; OE pullup p11; truth table p12; PW0020A package",
+      "license_note": "Manufacturer copyrighted datasheet; PDF not committed; factual pin/parameter transcription only."
+    }
+  ],
+  "footprints": {
+    "source": "Official KiCad 9.0.9 Docker library; installed files hashed in footprint_manifest.json",
+    "license": "CC-BY-SA-4.0 with KiCad Libraries Exception",
+    "license_url": "https://www.kicad.org/libraries/license/",
+    "redistribution": "Only footprint IDs/hashes/pad identifiers committed in this increment; no footprint files copied"
+  },
+  "container": {
+    "image": "kicad/kicad:9.0",
+    "verified_version": "9.0.9",
+    "digest": "sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729"
+  },
+  "release_status": "BLOCKED",
+  "no_hardware_action": true
+}

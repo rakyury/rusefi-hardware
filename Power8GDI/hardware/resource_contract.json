@@ -1,51 +1,383 @@
 {
   "schema_version": 1,
   "stage": "resource_audit_only",
-  "target": {"family": "STM32F767xx", "order_code": null, "package": null, "silicon_revision": null},
-  "decisions": {"storage_interface": null, "usb_interface": null, "debug_interface": null, "hse_clock": null, "lse_clock": null, "motor_pwm_timebase": null},
+  "target": {
+    "family": "STM32F767xx",
+    "order_code": "STM32F767IIT6 (provisional)",
+    "package": "LQFP176 (provisional)",
+    "silicon_revision": null
+  },
+  "decisions": {
+    "storage_interface": null,
+    "usb_interface": null,
+    "debug_interface": "SWD",
+    "hse_clock": "HSE_bypass_8MHz",
+    "lse_clock": null,
+    "motor_pwm_timebase": null
+  },
   "sources": {
     "DS11532": {
-      "publisher": "STMicroelectronics", "revision": "DS11532 Rev 9, July 2025",
+      "publisher": "STMicroelectronics",
+      "revision": "DS11532 Rev 9, July 2025",
       "url": "https://www.st.com/resource/en/datasheet/stm32f767zi.pdf",
-      "reviewed_on": "2026-10-21", "evidence": "Primary PDF viewed; source download hash unavailable",
-      "locators": ["Table 11 pp. 68-69: oscillator pins", "Table 11 p. 75: PB14/PB15 SPI2, SDMMC2, OTG_HS", "Table 11 p. 78: PC8/PC9 SDMMC1", "Table 11 pp. 79-80: SWD/JTAG and SDMMC1", "Table 11 footnote 2 p. 85: PC13 output restrictions"]
+      "reviewed_on": "2026-10-21",
+      "evidence": "Primary PDF viewed; source download hash unavailable",
+      "locators": [
+        "Table 11 pp. 68-69: oscillator pins",
+        "Table 11 p. 75: PB14/PB15 SPI2, SDMMC2, OTG_HS",
+        "Table 11 p. 78: PC8/PC9 SDMMC1",
+        "Table 11 pp. 79-80: SWD/JTAG and SDMMC1",
+        "Table 11 footnote 2 p. 85: PC13 output restrictions",
+        "Table11 pp68-84: 17 ADC package pads; PG9/PG10 GPIO; PI5/PI6 TIM8; PB6/PB7 TIM4",
+        "Table13 pp90,100: PB6/PB7 AF2 and PI5/PI6 AF3"
+      ]
     },
     "RM0410": {
-      "publisher": "STMicroelectronics", "revision": "RM0410 Rev 5",
+      "publisher": "STMicroelectronics",
+      "revision": "RM0410 Rev 5",
       "url": "https://www.st.com/resource/en/reference_manual/rm0410-stm32f76xxx-and-stm32f77xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
-      "reviewed_on": "2026-10-21", "evidence": "Primary publisher indexed text; full PDF exceeds browser fetch limit",
-      "locators": ["7.2.3-7.2.6: SYSCFG_EXTICR port selection per EXTI line", "26.4.14-26.4.19 pp. 1016-1019: TIM2-5 PSC/ARR shared by CCR1-4"]
+      "reviewed_on": "2026-10-21",
+      "evidence": "Primary publisher indexed text; full PDF exceeds browser fetch limit",
+      "locators": [
+        "7.2.3-7.2.6: SYSCFG_EXTICR port selection per EXTI line",
+        "26.4.14-26.4.19 pp. 1016-1019: TIM2-5 PSC/ARR shared by CCR1-4"
+      ]
     },
-    "project_requirements": {"path": "docs/F7_RESOURCE_PLAN.md", "locator": "Working requirements; TIM5/TIM6 reservations"},
-    "connector_requirements": {"path": "pinout/power8gdi_revA_pinout.csv", "locator": "Planned connector functions; not MCU assignments"}
+    "project_requirements": {
+      "path": "docs/F7_RESOURCE_PLAN.md",
+      "locator": "Working requirements; TIM5/TIM6 reservations"
+    },
+    "connector_requirements": {
+      "path": "pinout/power8gdi_revA_pinout.csv",
+      "locator": "Planned connector functions; not MCU assignments"
+    }
   },
   "numbered_requirements": [
-    {"prefix": "DI", "count": 8}, {"prefix": "IGN", "count": 8}, {"prefix": "HPFP", "count": 2},
-    {"prefix": "PI", "count": 8}, {"prefix": "VVT", "count": 4}, {"prefix": "AUX_PWM", "count": 8},
-    {"prefix": "LS_AUX", "count": 4}, {"prefix": "CAM", "count": 4}, {"prefix": "SENT", "count": 4}
+    {
+      "prefix": "DI",
+      "count": 8
+    },
+    {
+      "prefix": "IGN",
+      "count": 8
+    },
+    {
+      "prefix": "HPFP",
+      "count": 2
+    },
+    {
+      "prefix": "PI",
+      "count": 8
+    },
+    {
+      "prefix": "VVT",
+      "count": 4
+    },
+    {
+      "prefix": "AUX_PWM",
+      "count": 8
+    },
+    {
+      "prefix": "LS_AUX",
+      "count": 4
+    },
+    {
+      "prefix": "CAM",
+      "count": 4
+    },
+    {
+      "prefix": "SENT",
+      "count": 4
+    }
   ],
-  "named_requirements": ["CRANK", "KNOCK1", "KNOCK2", "DBW_PWM", "DBW_DIR", "DBW_DISABLE", "EWG_PWM", "EWG_DIR", "EWG_DISABLE", "GDI_SPI2_SCK", "GDI_SPI2_MISO", "GDI_SPI2_MOSI", "PTA_CS", "PTB_CS", "PTA_RESET", "PTB_RESET", "PTA_DRVEN", "PTB_DRVEN", "PTA_FLAG", "PTB_FLAG", "CAN1_RX", "CAN1_TX", "CAN2_RX", "CAN2_TX", "LIN1_TX", "LIN1_RX", "LIN2_TX", "LIN2_RX"],
-  "direct_connector_groups": ["Ignition", "Port Injection", "VVT", "Aux PWM", "Aux Low-side", "Digital", "Analog", "Temperature", "Frequency", "SENT"],
+  "named_requirements": [
+    "CRANK",
+    "KNOCK1",
+    "KNOCK2",
+    "DBW_PWM",
+    "DBW_DIR",
+    "DBW_DISABLE",
+    "EWG_PWM",
+    "EWG_DIR",
+    "EWG_DISABLE",
+    "GDI_SPI2_SCK",
+    "GDI_SPI2_MISO",
+    "GDI_SPI2_MOSI",
+    "PTA_CS",
+    "PTB_CS",
+    "PTA_RESET",
+    "PTB_RESET",
+    "PTA_DRVEN",
+    "PTB_DRVEN",
+    "PTA_FLAG",
+    "PTB_FLAG",
+    "CAN1_RX",
+    "CAN1_TX",
+    "CAN2_RX",
+    "CAN2_TX",
+    "LIN1_TX",
+    "LIN1_RX",
+    "LIN2_TX",
+    "LIN2_RX",
+    "CAN1_STB",
+    "LIN1_EN",
+    "SAFETY_HEARTBEAT",
+    "SAFETY_ARM_REQUEST",
+    "SAFETY_FAULT_N"
+  ],
+  "direct_connector_groups": [
+    "Ignition",
+    "Port Injection",
+    "VVT",
+    "Aux PWM",
+    "Aux Low-side",
+    "Digital",
+    "Analog",
+    "Temperature",
+    "Frequency",
+    "SENT"
+  ],
   "requirement_policy": "Optional/provisioned functions remain open requirements until a reviewed scope decision; connector labels never establish MCU pins or external-driver capacity.",
   "interface_pin_facts": [
-    {"mode": "SDMMC1_1bit", "decision": "storage_interface", "pins": ["PC8", "PC12", "PD2"], "source": "DS11532", "locator": "Table 11 pp. 78,80", "coverage": "data0, clock, command only"},
-    {"mode": "SDMMC1_4bit", "decision": "storage_interface", "pins": ["PC8", "PC9", "PC10", "PC11", "PC12", "PD2"], "source": "DS11532", "locator": "Table 11 pp. 78,80", "coverage": "signal route only; supply/electrical/AF not qualified"},
-    {"mode": "SDMMC2_route_PB14_PB15_PD6", "decision": "storage_interface", "pins": ["PB14", "PB15", "PD6"], "source": "DS11532", "locator": "Table 11 pp. 75,81", "coverage": "partial route: D0/D1/clock only, no complete SDMMC2 pin plan"},
-    {"mode": "OTG_HS_embedded_PHY", "decision": "usb_interface", "pins": ["PB14", "PB15"], "source": "DS11532", "locator": "Table 11 p. 75", "coverage": "DM/DP only; not an external ULPI high-speed route"},
-    {"mode": "OTG_FS", "decision": "usb_interface", "pins": ["PA11", "PA12"], "source": "DS11532", "locator": "Table 12 p. 90", "coverage": "DM/DP only; VBUS/ID/supply/clock still require review"},
-    {"mode": "SWD", "decision": "debug_interface", "pins": ["PA13", "PA14"], "source": "DS11532", "locator": "Table 12 p. 90", "coverage": "SWD signals; NRST/access/reset sequencing still require review"},
-    {"mode": "JTAG_JTDI", "decision": "debug_interface", "pins": ["PA15"], "source": "DS11532", "locator": "Table 11 p. 80", "coverage": "JTDI subset only; reset-to-GPIO transition not verified"},
-    {"mode": "HSE_crystal", "decision": "hse_clock", "pins": ["PH0", "PH1"], "source": "DS11532", "locator": "Table 11 pp. 68-69", "coverage": "oscillator pins only; oscillator design not qualified"},
-    {"mode": "LSE_crystal", "decision": "lse_clock", "pins": ["PC14", "PC15"], "source": "DS11532", "locator": "Table 11; footnote 2 p. 85", "coverage": "oscillator pins only; RTC source undecided"}
+    {
+      "mode": "SDMMC1_1bit",
+      "decision": "storage_interface",
+      "pins": [
+        "PC8",
+        "PC12",
+        "PD2"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 pp. 78,80",
+      "coverage": "data0, clock, command only"
+    },
+    {
+      "mode": "SDMMC1_4bit",
+      "decision": "storage_interface",
+      "pins": [
+        "PC8",
+        "PC9",
+        "PC10",
+        "PC11",
+        "PC12",
+        "PD2"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 pp. 78,80",
+      "coverage": "signal route only; supply/electrical/AF not qualified"
+    },
+    {
+      "mode": "SDMMC2_route_PB14_PB15_PD6",
+      "decision": "storage_interface",
+      "pins": [
+        "PB14",
+        "PB15",
+        "PD6"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 pp. 75,81",
+      "coverage": "partial route: D0/D1/clock only, no complete SDMMC2 pin plan"
+    },
+    {
+      "mode": "OTG_HS_embedded_PHY",
+      "decision": "usb_interface",
+      "pins": [
+        "PB14",
+        "PB15"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 p. 75",
+      "coverage": "DM/DP only; not an external ULPI high-speed route"
+    },
+    {
+      "mode": "OTG_FS",
+      "decision": "usb_interface",
+      "pins": [
+        "PA11",
+        "PA12"
+      ],
+      "source": "DS11532",
+      "locator": "Table 12 p. 90",
+      "coverage": "DM/DP only; VBUS/ID/supply/clock still require review"
+    },
+    {
+      "mode": "SWD",
+      "decision": "debug_interface",
+      "pins": [
+        "PA13",
+        "PA14"
+      ],
+      "source": "DS11532",
+      "locator": "Table 12 p. 90",
+      "coverage": "SWD signals; NRST/access/reset sequencing still require review"
+    },
+    {
+      "mode": "JTAG_JTDI",
+      "decision": "debug_interface",
+      "pins": [
+        "PA15"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 p. 80",
+      "coverage": "JTDI subset only; reset-to-GPIO transition not verified"
+    },
+    {
+      "mode": "HSE_crystal",
+      "decision": "hse_clock",
+      "pins": [
+        "PH0",
+        "PH1"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 pp. 68-69",
+      "coverage": "oscillator pins only; oscillator design not qualified"
+    },
+    {
+      "mode": "LSE_crystal",
+      "decision": "lse_clock",
+      "pins": [
+        "PC14",
+        "PC15"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11; footnote 2 p. 85",
+      "coverage": "oscillator pins only; RTC source undecided"
+    }
   ],
-  "timer_reservations": {"TIM5": "precise event scheduler (project draft)", "TIM6": "ADC scheduler (project draft)"},
+  "timer_reservations": {
+    "TIM5": "precise event scheduler (project draft)",
+    "TIM6": "ADC scheduler (project draft)"
+  },
   "qualification_evidence_required": [
-    "exact_order_code_package_pad_and_silicon_errata_review", "per_signal_AF_number_and_package_pin_matrix",
-    "per_transfer_DMA_controller_stream_channel_priority_and_conflict_matrix", "timer_timebase_capture_and_interrupt_latency_budget",
-    "ADC_channel_sample_time_trigger_DMA_reference_and_protection", "input_output_voltage_current_and_load_limits",
-    "startup_reset_bootloader_brownout_and_external_default_states", "HSE_LSE_USB_SD_clocks_supply_decoupling_VCAP_NRST_BOOT0_debug",
-    "port_injection_VVT_AUX_driver_capacity_and_diagnostic_bus_arbitration", "dual_WBO_frontend_MCU_interface_and_heater_shutdown",
-    "complete_electrical_schematic_and_reviewed_ERC", "routed_PCB_DRC_connector_and_power_qualification",
+    "exact_order_code_package_pad_and_silicon_errata_review",
+    "per_signal_AF_number_and_package_pin_matrix",
+    "per_transfer_DMA_controller_stream_channel_priority_and_conflict_matrix",
+    "timer_timebase_capture_and_interrupt_latency_budget",
+    "ADC_channel_sample_time_trigger_DMA_reference_and_protection",
+    "input_output_voltage_current_and_load_limits",
+    "startup_reset_bootloader_brownout_and_external_default_states",
+    "HSE_LSE_USB_SD_clocks_supply_decoupling_VCAP_NRST_BOOT0_debug",
+    "port_injection_VVT_AUX_driver_capacity_and_diagnostic_bus_arbitration",
+    "dual_WBO_frontend_MCU_interface_and_heater_shutdown",
+    "complete_electrical_schematic_and_reviewed_ERC",
+    "routed_PCB_DRC_connector_and_power_qualification",
     "measured_fault_shutdown_thermal_EMC_and_engine_validation"
-  ]
+  ],
+  "candidate_pin_evidence": {
+    "scope": "Provisional schematic candidate; package/source review is not DMA/timing/electrical qualification",
+    "analog": [
+      {
+        "function": "TPS1",
+        "port": "PA0",
+        "pad": "40",
+        "adc": "ADC1_IN0"
+      },
+      {
+        "function": "TPS2",
+        "port": "PA2",
+        "pad": "42",
+        "adc": "ADC1_IN2"
+      },
+      {
+        "function": "PPS1",
+        "port": "PA3",
+        "pad": "47",
+        "adc": "ADC1_IN3"
+      },
+      {
+        "function": "PPS2",
+        "port": "PA4",
+        "pad": "50",
+        "adc": "ADC1_IN4"
+      },
+      {
+        "function": "MAP_MAIN",
+        "port": "PA5",
+        "pad": "51",
+        "adc": "ADC1_IN5"
+      },
+      {
+        "function": "BARO_EXT",
+        "port": "PA6",
+        "pad": "52",
+        "adc": "ADC1_IN6"
+      },
+      {
+        "function": "CLT",
+        "port": "PA7",
+        "pad": "53",
+        "adc": "ADC1_IN7"
+      },
+      {
+        "function": "IAT",
+        "port": "PB0",
+        "pad": "56",
+        "adc": "ADC1_IN8"
+      },
+      {
+        "function": "OIL_PRESS",
+        "port": "PC0",
+        "pad": "32",
+        "adc": "ADC1_IN10"
+      },
+      {
+        "function": "OIL_TEMP",
+        "port": "PC1",
+        "pad": "33",
+        "adc": "ADC1_IN11"
+      },
+      {
+        "function": "FRP1",
+        "port": "PC2",
+        "pad": "34",
+        "adc": "ADC1_IN12"
+      },
+      {
+        "function": "FRP2",
+        "port": "PC3",
+        "pad": "35",
+        "adc": "ADC1_IN13"
+      },
+      {
+        "function": "LPFP_PRESS",
+        "port": "PC4",
+        "pad": "54",
+        "adc": "ADC1_IN14"
+      },
+      {
+        "function": "EXH_PRESS",
+        "port": "PC5",
+        "pad": "55",
+        "adc": "ADC1_IN15"
+      },
+      {
+        "function": "EWG_POS",
+        "port": "PF6",
+        "pad": "24",
+        "adc": "ADC3_IN4"
+      },
+      {
+        "function": "AUX_ANALOG1",
+        "port": "PF10",
+        "pad": "28",
+        "adc": "ADC3_IN8"
+      },
+      {
+        "function": "AUX_ANALOG2",
+        "port": "PF8",
+        "pad": "26",
+        "adc": "ADC3_IN6"
+      }
+    ],
+    "flags": {
+      "PTA_FLAG": "PG10 / EXTI10 / pad153",
+      "PTB_FLAG": "PG9 / EXTI9 / pad152"
+    },
+    "capture": {
+      "CAM3": "PI5 / AF3 TIM8_CH1 / pad174",
+      "CAM4": "PI6 / AF3 TIM8_CH2 / pad175",
+      "SENT3": "PB6 / AF2 TIM4_CH1 / pad164",
+      "SENT4": "PB7 / AF2 TIM4_CH2 / pad165"
+    }
+  }
 }

@@ -1,0 +1,436 @@
+[
+  {
+    "ref": "U801",
+    "value": "TPS3431SQDRBRQ1",
+    "footprint": "Package_SON:VSON-8-1EP_3x3mm_P0.65mm_EP1.6x2.4mm",
+    "pins": {
+      "1": "+3V3",
+      "2": "WD_CWD",
+      "3": "+3V3",
+      "5": "+3V3",
+      "6": "SAFETY_HEARTBEAT",
+      "7": "SAFETY_FAULT_N",
+      "8": "SAFETY_FAULT_N",
+      "4": "GND",
+      "9": "GND"
+    },
+    "dnp": false,
+    "note": "ENOUT tied to WDO as explicitly allowed by TI; SET1/EN hardwired enabled",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "U802",
+    "value": "TPS3808G33QDBVRQ1",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+    "pins": {
+      "6": "+3V3",
+      "5": "+3V3",
+      "3": "HW_KILL_N",
+      "4": null,
+      "1": "SAFETY_FAULT_N",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "CT intentionally open: 20 ms nominal reset delay; 3.07 V nominal monitor",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "U803",
+    "value": "SN74LVC1G17QDBVRQ1",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+    "pins": {
+      "5": "+3V3",
+      "2": "SAFETY_FAULT_N",
+      "1": null,
+      "4": "SAFETY_CLEAR_N",
+      "3": "GND"
+    },
+    "dnp": false,
+    "note": "Schmitt edge conditioning for asynchronous clear",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "U804",
+    "value": "SN74LVC2G74QDCURQ1",
+    "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+    "pins": {
+      "8": "+3V3",
+      "1": "SAFETY_ARM_REQUEST",
+      "2": "+3V3",
+      "6": "SAFETY_CLEAR_N",
+      "7": "+3V3",
+      "5": "HW_ACTUATOR_ENABLE",
+      "3": "HW_ACTUATOR_ENABLE_N",
+      "4": "GND"
+    },
+    "dnp": false,
+    "note": "Fresh rising edge after fault release; D=1, PRE inactive high",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "U805",
+    "value": "SN74LVC244AQPWRQ1",
+    "footprint": "Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm",
+    "pins": {
+      "20": "+3V3",
+      "1": "HW_ACTUATOR_ENABLE_N",
+      "19": "HW_ACTUATOR_ENABLE_N",
+      "10": "GND",
+      "2": "IGN1",
+      "18": "IGN1_GATED",
+      "4": "IGN2",
+      "16": "IGN2_GATED",
+      "6": "IGN3",
+      "14": "IGN3_GATED",
+      "8": "IGN4",
+      "12": "IGN4_GATED",
+      "11": "IGN5",
+      "9": "IGN5_GATED",
+      "13": "IGN6",
+      "7": "IGN6_GATED",
+      "15": "IGN7",
+      "5": "IGN7_GATED",
+      "17": "IGN8",
+      "3": "IGN8_GATED"
+    },
+    "dnp": false,
+    "note": "Both OE default disabled; gated output pulldowns; source-level candidate",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R801",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "SAFETY_FAULT_N",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R802",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "HW_KILL_N",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R803",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "SAFETY_HEARTBEAT",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R804",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "SAFETY_ARM_REQUEST",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R805",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "HW_ACTUATOR_ENABLE_N",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R806",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "HW_ACTUATOR_ENABLE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R811",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN1",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R812",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN2",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R813",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R814",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN4",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R815",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN5",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R816",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN6",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R817",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN7",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R818",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN8",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R821",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN1_GATED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R822",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN2_GATED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R823",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN3_GATED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R824",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN4_GATED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R825",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN5_GATED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R826",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN6_GATED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R827",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN7_GATED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R828",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "IGN8_GATED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "C801",
+    "value": "100nF 25V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "C802",
+    "value": "100nF 25V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "C803",
+    "value": "100nF 25V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "C804",
+    "value": "100nF 25V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "C805",
+    "value": "100nF 25V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "C806",
+    "value": "120pF 50V C0G 1%",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "WD_CWD",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  }
+]

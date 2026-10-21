@@ -5,48 +5,31 @@
   "qualification_status": "blocked",
   "target": {
     "family": "STM32F767xx",
-    "order_code": null,
-    "package": null,
+    "order_code": "STM32F767IIT6 (provisional)",
+    "package": "LQFP176 (provisional)",
     "silicon_revision": null
   },
   "errors": [],
   "summary": {
-    "gpio_rows": 78,
-    "assigned_pins": 46,
-    "required_functions": 104,
-    "missing_functions": 26,
-    "unassigned_functions": 32,
+    "gpio_rows": 100,
+    "assigned_pins": 72,
+    "required_functions": 109,
+    "missing_functions": 9,
+    "unassigned_functions": 28,
     "collision_findings": 0,
     "conditional_conflicts": 5,
     "qualification_evidence_missing": 13
   },
   "missing_functions": [
-    "AUX_ANALOG1",
-    "AUX_ANALOG2",
-    "BARO_EXT",
-    "CLT",
     "DIN5",
     "DIN6",
     "DIN7",
     "DIN8",
-    "EWG_POS",
-    "EXH_PRESS",
     "FLEX_FREQ",
-    "FRP1",
-    "FRP2",
     "HALL1",
     "HALL2",
     "HALL3",
-    "HALL4",
-    "IAT",
-    "LPFP_PRESS",
-    "MAP_MAIN",
-    "OIL_PRESS",
-    "OIL_TEMP",
-    "PPS1",
-    "PPS2",
-    "TPS1",
-    "TPS2"
+    "HALL4"
   ],
   "unassigned_functions": [
     "AUX_PWM1",
@@ -57,8 +40,6 @@
     "AUX_PWM6",
     "AUX_PWM7",
     "AUX_PWM8",
-    "CAM3",
-    "CAM4",
     "CAN2_RX",
     "CAN2_TX",
     "LIN2_RX",
@@ -75,8 +56,6 @@
     "PI6",
     "PI7",
     "PI8",
-    "SENT3",
-    "SENT4",
     "VVT1",
     "VVT2",
     "VVT3",
@@ -85,22 +64,7 @@
   "connector_requirement_coverage": {
     "Analog": {
       "required": 14,
-      "missing": [
-        "AUX_ANALOG1",
-        "AUX_ANALOG2",
-        "BARO_EXT",
-        "EWG_POS",
-        "EXH_PRESS",
-        "FRP1",
-        "FRP2",
-        "LPFP_PRESS",
-        "MAP_MAIN",
-        "OIL_PRESS",
-        "PPS1",
-        "PPS2",
-        "TPS1",
-        "TPS2"
-      ]
+      "missing": []
     },
     "Aux Low-side": {
       "required": 4,
@@ -143,11 +107,7 @@
     },
     "Temperature": {
       "required": 3,
-      "missing": [
-        "CLT",
-        "IAT",
-        "OIL_TEMP"
-      ]
+      "missing": []
     },
     "VVT": {
       "required": 4,
@@ -279,7 +239,7 @@
       "source": "DS11532",
       "locator": "Table 12 p. 90",
       "coverage": "SWD signals; NRST/access/reset sequencing still require review",
-      "selected": false,
+      "selected": true,
       "overlaps": {},
       "status": "no_listed_pin_overlap_not_qualified"
     },
@@ -342,36 +302,41 @@
       "blocks_release": true
     },
     {
+      "code": "SHARED_TIMER_TIMEBASE",
+      "category": "unverified_resource",
+      "detail": "TIM4 channels share counter/prescaler/auto-reload; compatible periods/modes not proved",
+      "functions": [
+        "SENT3",
+        "SENT4"
+      ],
+      "source": "RM0410",
+      "blocks_release": true
+    },
+    {
+      "code": "SHARED_TIMER_TIMEBASE",
+      "category": "unverified_resource",
+      "detail": "TIM8 channels share counter/prescaler/auto-reload; compatible periods/modes not proved",
+      "functions": [
+        "CAM3",
+        "CAM4"
+      ],
+      "source": "RM0410",
+      "blocks_release": true
+    },
+    {
       "code": "MISSING_FUNCTIONS",
       "category": "missing_requirement",
       "detail": "Required functions absent from MCU allocation",
       "functions": [
-        "AUX_ANALOG1",
-        "AUX_ANALOG2",
-        "BARO_EXT",
-        "CLT",
         "DIN5",
         "DIN6",
         "DIN7",
         "DIN8",
-        "EWG_POS",
-        "EXH_PRESS",
         "FLEX_FREQ",
-        "FRP1",
-        "FRP2",
         "HALL1",
         "HALL2",
         "HALL3",
-        "HALL4",
-        "IAT",
-        "LPFP_PRESS",
-        "MAP_MAIN",
-        "OIL_PRESS",
-        "OIL_TEMP",
-        "PPS1",
-        "PPS2",
-        "TPS1",
-        "TPS2"
+        "HALL4"
       ],
       "source": "project_requirements",
       "blocks_release": true
@@ -389,8 +354,6 @@
         "AUX_PWM6",
         "AUX_PWM7",
         "AUX_PWM8",
-        "CAM3",
-        "CAM4",
         "CAN2_RX",
         "CAN2_TX",
         "LIN2_RX",
@@ -407,8 +370,6 @@
         "PI6",
         "PI7",
         "PI8",
-        "SENT3",
-        "SENT4",
         "VVT1",
         "VVT2",
         "VVT3",
@@ -484,22 +445,6 @@
     {
       "code": "MCU_SELECTION_OPEN",
       "category": "unverified_target",
-      "detail": "MCU order_code is unspecified",
-      "functions": [],
-      "source": "project_requirements",
-      "blocks_release": true
-    },
-    {
-      "code": "MCU_SELECTION_OPEN",
-      "category": "unverified_target",
-      "detail": "MCU package is unspecified",
-      "functions": [],
-      "source": "project_requirements",
-      "blocks_release": true
-    },
-    {
-      "code": "MCU_SELECTION_OPEN",
-      "category": "unverified_target",
       "detail": "MCU silicon_revision is unspecified",
       "functions": [],
       "source": "project_requirements",
@@ -522,17 +467,17 @@
       "blocks_release": true
     },
     {
-      "code": "MODE_DECISION_OPEN",
+      "code": "MODE_SELECTION_UNREVIEWED",
       "category": "unverified_resource",
-      "detail": "debug_interface is undecided",
+      "detail": "debug_interface=SWD: selection is not qualification evidence",
       "functions": [],
       "source": "project_requirements",
       "blocks_release": true
     },
     {
-      "code": "MODE_DECISION_OPEN",
+      "code": "MODE_SELECTION_UNREVIEWED",
       "category": "unverified_resource",
-      "detail": "hse_clock is undecided",
+      "detail": "hse_clock=HSE_bypass_8MHz: selection is not qualification evidence",
       "functions": [],
       "source": "project_requirements",
       "blocks_release": true
@@ -641,7 +586,9 @@
         "Table 11 p. 75: PB14/PB15 SPI2, SDMMC2, OTG_HS",
         "Table 11 p. 78: PC8/PC9 SDMMC1",
         "Table 11 pp. 79-80: SWD/JTAG and SDMMC1",
-        "Table 11 footnote 2 p. 85: PC13 output restrictions"
+        "Table 11 footnote 2 p. 85: PC13 output restrictions",
+        "Table11 pp68-84: 17 ADC package pads; PG9/PG10 GPIO; PI5/PI6 TIM8; PB6/PB7 TIM4",
+        "Table13 pp90,100: PB6/PB7 AF2 and PI5/PI6 AF3"
       ]
     },
     "RM0410": {
@@ -675,7 +622,7 @@
     "gpio_csv": {
       "name": "mcu_gpio_draft.csv",
       "canonicalization": "UTF-8 without BOM; LF newlines",
-      "sha256": "e399caffb7e92800fc0376fae90d3931adc5512c4c336f93a6ea24a27aa131a1"
+      "sha256": "eb97833c1e30d955c1882bcfa648dca98c376ee190ea9d23910b2c0ae7f98590"
     },
     "connector_csv": {
       "name": "power8gdi_revA_pinout.csv",
@@ -685,7 +632,7 @@
     "contract": {
       "name": "resource_contract.json",
       "canonicalization": "UTF-8 without BOM; LF newlines",
-      "sha256": "7166ae175f9f92ea9c5098f1b8997d4fc3ab6e7363fca96f950d49dffdf96621"
+      "sha256": "26551937f07c9c7aecea79b36a95fc10d40ea20026129aa37026a2eb38418ec7"
     }
   }
 }

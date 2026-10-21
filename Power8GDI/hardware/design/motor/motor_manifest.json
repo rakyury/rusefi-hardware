@@ -1,0 +1,670 @@
+{
+  "schema_version": 1,
+  "qualification": "BLOCKED_LOAD_SELECTION_AND_VALIDATION",
+  "root_uuid": "f4d21065-0a5b-5086-a08e-1af9469f04bd",
+  "parts": [
+    {
+      "ref": "D901",
+      "value": "STPS2H100UY",
+      "footprint": "Diode_SMD:D_SMB",
+      "pins": {
+        "1": "DBW_VM",
+        "2": "VBAT_DBW_FUSED"
+      },
+      "dnp": false,
+      "note": "Separate motor-feed reverse diode; cathode1 protected, anode2 fused raw. 2A rating requires thermal review.",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "D902",
+      "value": "SMBJ24CA",
+      "footprint": "Diode_SMD:D_SMB",
+      "pins": {
+        "1": "DBW_VM",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Afterreverseblockingdiode so clampcanabsorbregeneration; energy/hotclamp/fusecoordinationnotqualified",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "C901",
+      "value": "100n 50V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "DBW_VM",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "At driverVM/PGND; short switching-current loop",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "C902",
+      "value": "2.2u 50V X7R",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pins": {
+        "1": "DBW_VM",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "C903",
+      "value": "100u 50V bulk",
+      "footprint": "Capacitor_SMD:CP_Elec_10x10",
+      "pins": {
+        "1": "DBW_VM",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Provisional footprint and capacitance; select MPN/ESR/ripple rating after motor inductance and regeneration analysis",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "U901",
+      "value": "DRV8871DDAR",
+      "footprint": "Package_SO:HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm_ThermalVias",
+      "pins": {
+        "1": "GND",
+        "7": "GND",
+        "9": "GND",
+        "5": "DBW_VM",
+        "3": "DBW_IN1_GATED",
+        "2": "DBW_IN2_GATED",
+        "4": "DBW_ILIM",
+        "6": "DBW_MOTOR_A",
+        "8": "DBW_MOTOR_B"
+      },
+      "dnp": false,
+      "note": "Industrial driver candidate, not AEC-Q100. Bothinputs0=>coast/sleep. Automaticfaultretry; nofaultoutput/currenttelemetry.",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "R901",
+      "value": "36.5k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "DBW_ILIM",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal1.753A,currentconstant59..69kV gives1.600..1.909A with1%R; no short-circuit or thermal qualification",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "U914",
+      "value": "SN74LVC1G04QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "2": "DBW_DISABLE",
+        "4": "DBW_NOT_DISABLED",
+        "3": "GND",
+        "5": "+3V3"
+      },
+      "dnp": false,
+      "note": "Invert MCU active-high disable",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "C914",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Locallogicdecoupling atVCC/GND",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "U910",
+      "value": "SN74LVC1G08QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "DBW_NOT_DISABLED",
+        "4": "DBW_ENABLE",
+        "3": "GND",
+        "5": "+3V3"
+      },
+      "dnp": false,
+      "note": "Independent latched hardware permission AND MCU notdisabled",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "C910",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Locallogicdecoupling atVCC/GND",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "U911",
+      "value": "SN74LVC1G08QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "1": "DBW_PWM",
+        "2": "DBW_ENABLE",
+        "4": "DBW_PWM_ENABLED",
+        "3": "GND",
+        "5": "+3V3"
+      },
+      "dnp": false,
+      "note": "PWM blocked by either disable source",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "C911",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Locallogicdecoupling atVCC/GND",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "U915",
+      "value": "SN74LVC1G04QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "2": "DBW_DIR",
+        "4": "DBW_DIR_N",
+        "3": "GND",
+        "5": "+3V3"
+      },
+      "dnp": false,
+      "note": "Direction complement",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "C915",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Locallogicdecoupling atVCC/GND",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "U912",
+      "value": "SN74LVC1G08QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "1": "DBW_PWM_ENABLED",
+        "2": "DBW_DIR_N",
+        "4": "DBW_IN1_GATED",
+        "3": "GND",
+        "5": "+3V3"
+      },
+      "dnp": false,
+      "note": "Forward PWM only",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "C912",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Locallogicdecoupling atVCC/GND",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "U913",
+      "value": "SN74LVC1G08QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "1": "DBW_PWM_ENABLED",
+        "2": "DBW_DIR",
+        "4": "DBW_IN2_GATED",
+        "3": "GND",
+        "5": "+3V3"
+      },
+      "dnp": false,
+      "note": "Reverse PWM only",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "C913",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Locallogicdecoupling atVCC/GND",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "R902",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "DBW_PWM",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCUresetdefaultnoPWM",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "R903",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "DBW_DIR",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "R904",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "DBW_DISABLE"
+      },
+      "dnp": false,
+      "note": "MCUresetdefaultdisabled",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "R905",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "HardwarepermissiondefaultsOFFifsourceopen",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "R906",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "DBW_IN1_GATED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Steadypoweroffleakage11uA*10k<0.5VVIL; dynamicpowersequencingunqualified",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "R907",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "DBW_IN2_GATED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Steadypoweroffleakage11uA*10k<0.5VVIL; dynamicpowersequencingunqualified",
+      "sheet": "motor/dbw_driver"
+    },
+    {
+      "ref": "D951",
+      "value": "STPS2H100UY",
+      "footprint": "Diode_SMD:D_SMB",
+      "pins": {
+        "1": "EWG_VM",
+        "2": "VBAT_EWG_FUSED"
+      },
+      "dnp": false,
+      "note": "Separate motor-feed reverse diode; cathode1 protected, anode2 fused raw. 2A rating requires thermal review.",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "D952",
+      "value": "SMBJ24CA",
+      "footprint": "Diode_SMD:D_SMB",
+      "pins": {
+        "1": "EWG_VM",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Afterreverseblockingdiode so clampcanabsorbregeneration; energy/hotclamp/fusecoordinationnotqualified",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "C951",
+      "value": "100n 50V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "EWG_VM",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "At driverVM/PGND; short switching-current loop",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "C952",
+      "value": "2.2u 50V X7R",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pins": {
+        "1": "EWG_VM",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "C953",
+      "value": "100u 50V bulk",
+      "footprint": "Capacitor_SMD:CP_Elec_10x10",
+      "pins": {
+        "1": "EWG_VM",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Provisional footprint and capacitance; select MPN/ESR/ripple rating after motor inductance and regeneration analysis",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "U951",
+      "value": "DRV8871DDAR",
+      "footprint": "Package_SO:HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm_ThermalVias",
+      "pins": {
+        "1": "GND",
+        "7": "GND",
+        "9": "GND",
+        "5": "EWG_VM",
+        "3": "EWG_IN1_GATED",
+        "2": "EWG_IN2_GATED",
+        "4": "EWG_ILIM",
+        "6": "EWG_MOTOR_A",
+        "8": "EWG_MOTOR_B"
+      },
+      "dnp": false,
+      "note": "Industrial driver candidate, not AEC-Q100. Bothinputs0=>coast/sleep. Automaticfaultretry; nofaultoutput/currenttelemetry.",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "R951",
+      "value": "36.5k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "EWG_ILIM",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal1.753A,currentconstant59..69kV gives1.600..1.909A with1%R; no short-circuit or thermal qualification",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "U964",
+      "value": "SN74LVC1G04QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "2": "EWG_DISABLE",
+        "4": "EWG_NOT_DISABLED",
+        "3": "GND",
+        "5": "+3V3"
+      },
+      "dnp": false,
+      "note": "Invert MCU active-high disable",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "C964",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Locallogicdecoupling atVCC/GND",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "U960",
+      "value": "SN74LVC1G08QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "EWG_NOT_DISABLED",
+        "4": "EWG_ENABLE",
+        "3": "GND",
+        "5": "+3V3"
+      },
+      "dnp": false,
+      "note": "Independent latched hardware permission AND MCU notdisabled",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "C960",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Locallogicdecoupling atVCC/GND",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "U961",
+      "value": "SN74LVC1G08QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "1": "EWG_PWM",
+        "2": "EWG_ENABLE",
+        "4": "EWG_PWM_ENABLED",
+        "3": "GND",
+        "5": "+3V3"
+      },
+      "dnp": false,
+      "note": "PWM blocked by either disable source",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "C961",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Locallogicdecoupling atVCC/GND",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "U965",
+      "value": "SN74LVC1G04QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "2": "EWG_DIR",
+        "4": "EWG_DIR_N",
+        "3": "GND",
+        "5": "+3V3"
+      },
+      "dnp": false,
+      "note": "Direction complement",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "C965",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Locallogicdecoupling atVCC/GND",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "U962",
+      "value": "SN74LVC1G08QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "1": "EWG_PWM_ENABLED",
+        "2": "EWG_DIR_N",
+        "4": "EWG_IN1_GATED",
+        "3": "GND",
+        "5": "+3V3"
+      },
+      "dnp": false,
+      "note": "Forward PWM only",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "C962",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Locallogicdecoupling atVCC/GND",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "U963",
+      "value": "SN74LVC1G08QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "1": "EWG_PWM_ENABLED",
+        "2": "EWG_DIR",
+        "4": "EWG_IN2_GATED",
+        "3": "GND",
+        "5": "+3V3"
+      },
+      "dnp": false,
+      "note": "Reverse PWM only",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "C963",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Locallogicdecoupling atVCC/GND",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "R952",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "EWG_PWM",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCUresetdefaultnoPWM",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "R953",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "EWG_DIR",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "R954",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "EWG_DISABLE"
+      },
+      "dnp": false,
+      "note": "MCUresetdefaultdisabled",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "R955",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "HardwarepermissiondefaultsOFFifsourceopen",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "R956",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "EWG_IN1_GATED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Steadypoweroffleakage11uA*10k<0.5VVIL; dynamicpowersequencingunqualified",
+      "sheet": "motor/ewg_driver"
+    },
+    {
+      "ref": "R957",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "EWG_IN2_GATED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Steadypoweroffleakage11uA*10k<0.5VVIL; dynamicpowersequencingunqualified",
+      "sheet": "motor/ewg_driver"
+    }
+  ],
+  "control": "HW_ENABLE & !DISABLE gates encodedPWM/direction; noPTenableconnection",
+  "current_limit_a": {
+    "nominal": 1.7534246575342465,
+    "calculated_min": 1.60043401600434,
+    "calculated_max": 1.9095060190950603
+  },
+  "motor_models": null,
+  "continuous_current_rating_a": null,
+  "limitations": [
+    "industrialDRV8871candidate",
+    "actualmotorcurrent/thermal/speedunknown",
+    "regeneration/fuse/TVSunqualified",
+    "noindependentmotorcurrentmeasurement",
+    "noHbridgedriverfaulttelemetry",
+    "not single-fault tolerant",
+    "closed-loopDBW/EWGsoftwareandfeedbackvalidationunfinished"
+  ]
+}

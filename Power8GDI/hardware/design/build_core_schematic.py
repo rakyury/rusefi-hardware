@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from core_schlib import Sheet, Symbol, box_symbol, child, children, dump, parse, q, uid
+from build_core_io import ANALOG, make_io
 
 HERE=Path(__file__).resolve().parent
 HARDWARE=HERE.parent
@@ -29,7 +30,7 @@ def generate():
     mcu_symbol=syms["STM32F767IIT6"]
     assert len(mcu_symbol.pins)==176 and set(mcu_symbol.pins)=={str(i) for i in range(1,177)}
     r,c=syms["R"],syms["C"]
-    root=Sheet("Power8GDI_Core","Power8GDI core and interfaces")
+    root=Sheet("Power8GDI_Core","Power8GDI core and interfaces",paper="A1")
     mcu=Sheet("core_mcu","MCU, power decoupling and debug",root=ROOT_ID,paper="A2")
     power=Sheet("core_power","3V3 logic post-regulator",root=ROOT_ID)
     comm=Sheet("core_comms","CAN1 and LIN1 physical interfaces",root=ROOT_ID,paper="A2")
@@ -53,10 +54,10 @@ def generate():
         if row["stm32_pin"]!="UNASSIGNED":
             n=pin_by_name[row["stm32_pin"]]
             if n in nets: raise ValueError("GPIO collides with core: "+row["function"])
-            nets[n]=row["function"]
+            nets[n]=("ADC_" if row["function"] in {x[0] for x in ANALOG} else "")+row["function"]
     for name,net in {"NRST":"NRST","BOOT0":"BOOT0","PA13":"SWDIO","PA14":"SWCLK","PB3":"SWO","PH0":"MCU_HSE_IN","PH2":"CAN1_STB","PH3":"LIN1_EN"}.items():
         n=pin_by_name[name]
-        if n in nets: raise ValueError("Core pin already assigned: "+name)
+        if n in nets and nets[n]!=net: raise ValueError("Core pin already assigned: "+name)
         nets[n]=net
     mcu.hport("+3V3",25.4,25.4)
     mcu.hport("GND",25.4,33.02)
@@ -89,7 +90,7 @@ def generate():
     mcu.component(swd,"J101","SWD 3V3 target reference",440,310,
                   {"1":"+3V3","2":"SWDIO","3":"GND","4":"SWCLK","5":"GND","6":"SWO","9":"GND","10":"NRST"},
                   note="VTREF sense only, not external power input. Pin7 key/unused, pin8 unused; unshrouded header")
-    mcu.text("BLOCKED: independent kill/watchdog, crank/analog frontends, 26+ unmapped outputs/inputs.\nIGN1=PC13 remains draft: low-drive restrictions require high-impedance buffer.\nNo MCU output is connected directly to a coil, injector, solenoid or vehicle wire.",250,355)
+    mcu.text("Safety, crank and analog frontends are connected; remaining output domains and timing need review.\nIGN1=PC13 remains draft: low-drive restrictions require high-impedance buffer.\nNo MCU output is connected directly to a coil, injector, solenoid or vehicle wire.",250,355)
     oscillator=box_symbol("ASEM1_8MHz",[("1","EN","input",-10.16,5.08,0),("3","OUT","output",10.16,0,180),
                          ("4","VDD","power_in",0,10.16,270),("2","GND","power_in",0,-10.16,90)],
                          "Power8GDI_Core:ASEM_3225",width=15.24,height=15.24,prefix="Y")
@@ -150,45 +151,58 @@ def generate():
         x=120+(pair%2)*260
         y=85+(pair//2)*170
         ign.component(driver,"U"+str(110+pair),"MIC4427YM",x,y,
-                      {"2":f"IGN{a}","4":f"IGN{b}","7":f"IGN{a}_BUFFER","5":f"IGN{b}_BUFFER","6":"+5V_CORE","3":"GND"},
+                      {"2":f"IGN{a}_GATED","4":f"IGN{b}_GATED","7":f"IGN{a}_BUFFER","5":f"IGN{b}_BUFFER","6":"+5V_CORE","3":"GND"},
                       note="Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP")
         cap(ign,"C"+str(140+2*pair),"100n 16V X7R",x+65,y-30,"+5V_CORE","Close Udriver pin6/3")
         cap(ign,"C"+str(141+2*pair),"1u 16V X7R",x+110,y-30,"+5V_CORE")
         for index,channel in enumerate([a,b]):
-            res(ign,"R"+str(120+channel-1),"100k",x-65,y-20+index*60,f"IGN{channel}","GND","Input defaultlow; PC13 load check includes inputI/C andtrace")
+            res(ign,"R"+str(120+channel-1),"100k",x-65,y-20+index*60,f"IGN{channel}_GATED","GND","Buffer input default low after hardware permission gate")
             res(ign,"R"+str(128+channel-1),"100R DNP",x+65,y+25+index*50,f"IGN{channel}_BUFFER",f"IGN{channel}_LOGIC_OUT",
                 "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",dnp=True)
             res(ign,"R"+str(136+channel-1),"100k",x+110,y+25+index*50,f"IGN{channel}_LOGIC_OUT","GND","Harnesslogic pulldown; no active drive with DNPserieslink")
-    ign.text("All eight output series links R128..R135 are DNP: coil model, polarity, 5V current and independent kill unresolved.\nMIC4427 is a candidate buffer, not a qualified automotive ignition driver. No coils or loads may be attached.\nThe MCU-side names IGN1..8 are distinct from harness-side IGN1_LOGIC_OUT..8.\nPC13 load must remain below ST restrictions; MIC input typ6pF/max1uA, 100k pulldown adds33uA at3.3V.",25.4,375)
+    ign.text("All eight output series links R128..R135 are DNP: coil model, polarity, 5V current and maximum dwell protection unresolved.\nMIC4427 is a candidate buffer, not a qualified automotive ignition driver. No coils or loads may be attached.\nThe MCU-side names IGN1..8 are distinct from harness-side IGN1_LOGIC_OUT..8.\nPC13 load must remain below ST restrictions; MIC input typ6pF/max1uA, 100k pulldown adds33uA at3.3V.",25.4,375)
 
-    root.text("Power8GDI electrical candidate / NOT RELEASED\nReal MCU/power/CAN connectivity; GDI and input protection integrated as separate source-owned sheets.\nMapped signal names denote 3V3 logic only. Unmapped channels and electrical frontends remain blocked.",25.4,20)
-    root.add_child(power,60,65,ports=[("+5V_CORE","input"),("+3V3","output"),("GND","input")])
-    root.add_child(mcu,180,65,ports=[("+3V3","input"),("GND","input")])
-    root.add_child(comm,300,65,ports=[("+3V3","input"),("+5V_CORE","input"),("GND","input")])
-    root.add_child(ign,180,165,ports=[("+5V_CORE","input"),("GND","input")])
+    root.text("Power8GDI electrical candidate / NOT RELEASED\nConnected hierarchy: MCU, input supply, two GDI stages, safety, motor candidates, sensor frontends and harness.\nOutstanding channels and load qualification are tracked in INTEGRATION_2026_10_21_ELECTRICAL.md.",25.4,20)
+    io_sheets=make_io(syms,ROOT_ID)
+    sheets.extend(io_sheets)
+    leaves=[power,mcu,comm,ign]+io_sheets
     external=[]
-    for name,title,x,y,instance in [
-        ("power_input/power_input","Protected logic battery input",60,215,None),
-        ("gdi/stage_a","GDI bank A reference candidate",300,165,"a05bbd47-81aa-5269-b9b3-0a4b9afd615c"),
-        ("gdi/stage_b","GDI bank B reference candidate",300,225,"2aa9486d-083b-53a0-b9ea-735fb5a4b253"),
+    for name,title,instance in [
+        ("power_input/power_input","Protected logic battery input",None),
+        ("gdi/stage_a","GDI bank A reference candidate","a05bbd47-81aa-5269-b9b3-0a4b9afd615c"),
+        ("gdi/stage_b","GDI bank B reference candidate","2aa9486d-083b-53a0-b9ea-735fb5a4b253"),
+        ("safety/safety_gate","Latched hardware permission","d3688535-de83-5779-ad3b-0e54c99cc6b1"),
+        ("motor/dbw_driver","DBW H-bridge candidate",None),
+        ("motor/ewg_driver","EWG H-bridge candidate",None),
+        ("board/connectors","Four TE34 harness connectors",None),
     ]:
-        # These leaves are owned/generated by their specialists. Never rewrite them here.
         if not (HERE/(name+".kicad_sch")).exists():
             raise FileNotFoundError("Integrated source-owned leaf required: "+name)
         leaf=Sheet(name,title,root=ROOT_ID)
         if instance: leaf.sheet_id=instance
-        root.add_child(leaf,x,y)
+        leaves.append(leaf)
         external.append({"path":name+".kicad_sch","instance_uuid":leaf.sheet_id})
-    root.text("Root supply port +5V_CORE requires root-owned power_input sheet.\nNo PWR_FLAG or ERC exclusion is added to conceal missing supply evidence.\nU101 unused pins are explicitly NC; these do not satisfy outstanding functional requirements.",25.4,135)
+    ports={power.name:[("+5V_CORE","input"),("+3V3","output"),("GND","input")],
+           mcu.name:[("+3V3","input"),("GND","input")],
+           comm.name:[("+3V3","input"),("+5V_CORE","input"),("GND","input")],
+           ign.name:[("+5V_CORE","input"),("GND","input")]}
+    for i,leaf in enumerate(leaves):
+        root.add_child(leaf,50+190*(i%4),75+90*(i//4),width=135,height=55,ports=ports.get(leaf.name,[]))
+    root.text("Each sheet uses explicit global net names. HARNESS names remain separate from MCU logic.\nNo ERC exclusions or power flags conceal missing supplies. DNP assembly flags must be preserved.\nGDI enable, injector/pump models, missing domains and full routing remain release blockers.",25.4,545)
     for sheet in sheets: sheet.write(HERE)
     all_symbols={n:s for sheet in sheets for n,s in sheet.symbols.items()}
-    source=parse((HERE/"power_input/power_input.kicad_sym").read_text(encoding="utf-8"))
-    for expr in children(source,"symbol"):
-        name=str(expr[1]).split(":")[-1]
-        if name not in all_symbols:
-            all_symbols[name]=Symbol(name,dump(expr))
+    for library in ["power_input/power_input.kicad_sym","motor/motor.kicad_sym"]:
+        source=parse((HERE/library).read_text(encoding="utf-8"))
+        for expr in children(source,"symbol"):
+            name=str(expr[1]).split(":")[-1]
+            if name not in all_symbols:
+                all_symbols[name]=Symbol(name,dump(expr))
     (HERE/"Power8GDI_Core.kicad_sym").write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor")\n'+"\n".join(s.body.replace(q("Power8GDI_Core:"+s.name),q(s.name),1) for s in all_symbols.values())+')\n',encoding="utf-8")
     (HERE/"sym-lib-table").write_text('(sym_lib_table (version 7) (lib (name "Power8GDI_Core")(type "KiCad")(uri "${KIPRJMOD}/Power8GDI_Core.kicad_sym")(options "")(descr "Source-derived Power8GDI core symbols")) (lib (name "Power8GDI_GDI")(type "KiCad")(uri "${KIPRJMOD}/gdi/Power8GDI_GDI.kicad_sym")(options "")(descr "GDI reference-derived symbols")))\n',encoding="utf-8")
+    table=(HERE/"sym-lib-table").read_text(encoding="utf-8").rstrip()
+    (HERE/"sym-lib-table").write_text(table[:-1]+' (lib (name "Power8GDI_Safety")(type "KiCad")(uri "${KIPRJMOD}/safety/Power8GDI_Safety.kicad_sym")(options "")(descr "Hardware permission candidate")))\n',encoding="utf-8")
+    table=(HERE/"sym-lib-table").read_text(encoding="utf-8").rstrip()
+    (HERE/"sym-lib-table").write_text(table[:-1]+' (lib (name "Power8GDI_Board")(type "KiCad")(uri "${KIPRJMOD}/board/Power8GDI_Board.kicad_sym")(options "")(descr "TE harness connectors")))\n',encoding="utf-8")
     (HERE/"Power8GDI_Core.kicad_pro").write_text('{"meta":{"filename":"Power8GDI_Core.kicad_pro","version":1}}\n',encoding="utf-8")
     footprint_dir=HERE/"Power8GDI_Core.pretty"
     footprint_dir.mkdir(exist_ok=True)
@@ -197,11 +211,14 @@ def generate():
         pads.append(f'(pad "{n}" smd rect (at {x} {y}) (size 0.9 0.9) (layers "F.Cu" "F.Paste" "F.Mask"))')
     (footprint_dir/"ASEM_3225.kicad_mod").write_text('(footprint "ASEM_3225" (version 20241229) (generator "pcbnew") (layer "F.Cu") (descr "Abracon ASEM RevP p4 land pattern; verification pending assembly review") (attr smd) (fp_text reference "REF**" (at 0 -2.2) (layer "F.SilkS") (effects (font (size 1 1)(thickness 0.15)))) (fp_text value "ASEM_3225" (at 0 2.2) (layer "F.Fab") (effects (font (size 1 1)(thickness 0.15)))) (fp_rect (start -1.6 -1.25)(end 1.6 1.25)(stroke (width 0.1)(type default))(fill none)(layer "F.Fab")) (fp_rect (start -1.85 -1.65)(end 1.85 1.65)(stroke (width 0.05)(type default))(fill none)(layer "F.CrtYd")) (fp_circle(center -1.5 1.6)(end -1.4 1.6)(stroke(width 0.15)(type default))(fill none)(layer "F.SilkS"))\n'+"\n".join(pads)+')\n',encoding="utf-8")
     (HERE/"fp-lib-table").write_text('(fp_lib_table (version 7) (lib (name "Power8GDI_Core")(type "KiCad")(uri "${KIPRJMOD}/Power8GDI_Core.pretty")(options "")(descr "Source-derived core footprints")) (lib (name "Power8GDI_GDI")(type "KiCad")(uri "${KIPRJMOD}/gdi/Power8GDI_GDI.pretty")(options "")(descr "GDI source-derived footprints")))\n',encoding="utf-8")
+    table=(HERE/"fp-lib-table").read_text(encoding="utf-8").rstrip()
+    (HERE/"fp-lib-table").write_text(table[:-1]+' (lib (name "Power8GDI_Board")(type "KiCad")(uri "${KIPRJMOD}/board/Power8GDI_Board.pretty")(options "")(descr "TE34 land pattern candidate")))\n',encoding="utf-8")
     manifest={"schema_version":1,"root_uuid":ROOT_ID,"project":"Power8GDI_Core","mcu":"STM32F767IIT6","qualification":"BLOCKED",
               "parts":[p for s in sheets for p in s.parts],"decoupling_placement":decoupling,"external_sheets":external,
               "added_gpio":[{"port":"PH2","pad":"43","net":"CAN1_STB","mode":"GPIO output; reset high-Z, external pullup"},{"port":"PH3","pad":"44","net":"LIN1_EN","mode":"GPIO output; reset high-Z, external pulldown"}],
               "mcu_pins":[{"pad":n,"name":p["name"],"net":nets.get(n)} for n,p in sorted(mcu_symbol.pins.items(),key=lambda x:int(x[0]))],
               "unassigned_functions":[x["function"] for x in gpio if x["stm32_pin"]=="UNASSIGNED"]}
+    manifest["analog_channels"]=[dict(zip(["function","port","pad","adc"],row)) for row in ANALOG]
     (HERE/"core_manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
     with (HERE/"core_bom.csv").open("w",encoding="utf-8",newline="") as stream:
         writer=csv.DictWriter(stream,fieldnames=["ref","value","footprint","dnp","sheet","note"],extrasaction="ignore")

@@ -26,8 +26,8 @@ PTA_RESET,PE12,GPIO,proposed,Previously PT reset PF14 now DI8
 PTB_RESET,PE14,GPIO,proposed,Independent power-stage reset
 PTA_DRVEN,PE13,GPIO,proposed,Previously PT driven PF13 now DI7
 PTB_DRVEN,PE15,GPIO,proposed,Independent safety inhibit
-PTA_FLAG,PF8,GPIO_EXTI,proposed,H144_IN_RES3 source PT flag
-PTB_FLAG,PF9,GPIO_EXTI,proposed,H144_IN_RES1 candidate - ADC pin conflicts must be checked
+PTA_FLAG,PG10,GPIO_EXTI,proposed,Moved from PF8 to preserve ADC3_IN6; LQFP176 pad153 EXTI10; polarity/voltage pending
+PTB_FLAG,PG9,GPIO_EXTI,proposed,Moved from PF9 to preserve ADC3_IN7; LQFP176 pad152 EXTI9; polarity/voltage pending
 DBW_PWM,PC6,TIM3_CH1,proposed,First H bridge control
 DBW_DIR,PC7,GPIO,proposed,First H bridge direction
 DBW_DISABLE,PD13,GPIO,proposed,First H bridge disable
@@ -42,11 +42,11 @@ SENT1,PE9,TIM1_CH1,proposed,H144_IN_AUX2_DIGITAL
 SENT2,PA1,TIM2_CH2,proposed,H144_IN_O2S2_DIGITAL; ensure not used as lambda analog
 KNOCK1,PF7,ADC3,existing_macro,Knock input analog
 KNOCK2,PF5,ADC3,proposed,Use only if CAM3 and other PF5 uses relocated
-CRANK,PB1,TRIGGER_INPUT,existing_macro,H144_IN_CRANK
-CAM1,PF3,CAM_INPUT,existing_macro,H144_IN_SENS1
-CAM2,PF4,CAM_INPUT,existing_macro,H144_IN_SENS2
-SENT3,UNASSIGNED,TIM4_CAPTURE,unassigned,PD12 presently HPFP2; choose another pin/driver
-SENT4,UNASSIGNED,ICU_CAPTURE,unassigned,Current SENT hardware 1 channel; separate driver needed
+CRANK,PB1,GPIO_EXTI,proposed,MAX9924 open-drain 3V3; EXTI1 timestamp on TIM5 scheduler; interrupt budget pending
+CAM1,PF3,GPIO_EXTI,proposed,Hall receiver inverted; EXTI3; no VR sensor compatibility claim
+CAM2,PF4,GPIO_EXTI,proposed,Hall receiver inverted; EXTI4; no VR sensor compatibility claim
+SENT3,PB6,TIM4_CH1,proposed,DS11532 Table13 AF2; LQFP176 pad164; inverted receiver; HPFP2 PD12 must stay GPIO not TIM4_AF
+SENT4,PB7,TIM4_CH2,proposed,DS11532 Table13 AF2; LQFP176 pad165; inverted receiver; shared TIM4 timebase/DMA pending
 LIN2_TX,UNASSIGNED,USART3_OR_UART4,unassigned,No pin until protocol plan
 LIN2_RX,UNASSIGNED,USART3_OR_UART4,unassigned,No pin until protocol plan
 CAN2_RX,UNASSIGNED,CAN2,unassigned,Pending board use of PB5/PB6 or alternate
@@ -75,5 +75,27 @@ LS_AUX1,UNASSIGNED,PROTECTED_LS,unassigned,Service main relay fuel pump fan cont
 LS_AUX2,UNASSIGNED,PROTECTED_LS,unassigned,Service main relay fuel pump fan control
 LS_AUX3,UNASSIGNED,PROTECTED_LS,unassigned,Service main relay fuel pump fan control
 LS_AUX4,UNASSIGNED,PROTECTED_LS,unassigned,Service main relay fuel pump fan control
-CAM3,UNASSIGNED,INPUT_CAPTURE,unassigned,Cam Hall/VR frontend and trigger event
-CAM4,UNASSIGNED,INPUT_CAPTURE,unassigned,Cam Hall/VR frontend and trigger event
+CAM3,PI5,TIM8_CH1,proposed,DS11532 Table13 AF3; LQFP176 pad174; inverted Hall frontend; timer/DMA budget pending
+CAM4,PI6,TIM8_CH2,proposed,DS11532 Table13 AF3; LQFP176 pad175; inverted Hall frontend; shared TIM8 timebase pending
+TPS1,PA0,ADC1_IN0,proposed,DS11532 Table11; LQFP176 pad40; buffered divide-by-2 input ADC_TPS1; sample-time/calibration pending
+TPS2,PA2,ADC1_IN2,proposed,DS11532 Table11; LQFP176 pad42; buffered divide-by-2 input ADC_TPS2; sample-time/calibration pending
+PPS1,PA3,ADC1_IN3,proposed,DS11532 Table11; LQFP176 pad47; buffered divide-by-2 input ADC_PPS1; sample-time/calibration pending
+PPS2,PA4,ADC1_IN4,proposed,DS11532 Table11; LQFP176 pad50; buffered divide-by-2 input ADC_PPS2; sample-time/calibration pending
+MAP_MAIN,PA5,ADC1_IN5,proposed,DS11532 Table11; LQFP176 pad51; buffered divide-by-2 input ADC_MAP_MAIN; sample-time/calibration pending
+BARO_EXT,PA6,ADC1_IN6,proposed,DS11532 Table11; LQFP176 pad52; buffered divide-by-2 input ADC_BARO_EXT; sample-time/calibration pending
+CLT,PA7,ADC1_IN7,proposed,DS11532 Table11; LQFP176 pad53; buffered divide-by-2 input ADC_CLT; sample-time/calibration pending
+IAT,PB0,ADC1_IN8,proposed,DS11532 Table11; LQFP176 pad56; buffered divide-by-2 input ADC_IAT; sample-time/calibration pending
+OIL_PRESS,PC0,ADC1_IN10,proposed,DS11532 Table11; LQFP176 pad32; buffered divide-by-2 input ADC_OIL_PRESS; sample-time/calibration pending
+OIL_TEMP,PC1,ADC1_IN11,proposed,DS11532 Table11; LQFP176 pad33; buffered divide-by-2 input ADC_OIL_TEMP; sample-time/calibration pending
+FRP1,PC2,ADC1_IN12,proposed,DS11532 Table11; LQFP176 pad34; buffered divide-by-2 input ADC_FRP1; sample-time/calibration pending
+FRP2,PC3,ADC1_IN13,proposed,DS11532 Table11; LQFP176 pad35; buffered divide-by-2 input ADC_FRP2; sample-time/calibration pending
+LPFP_PRESS,PC4,ADC1_IN14,proposed,DS11532 Table11; LQFP176 pad54; buffered divide-by-2 input ADC_LPFP_PRESS; sample-time/calibration pending
+EXH_PRESS,PC5,ADC1_IN15,proposed,DS11532 Table11; LQFP176 pad55; buffered divide-by-2 input ADC_EXH_PRESS; sample-time/calibration pending
+EWG_POS,PF6,ADC3_IN4,proposed,DS11532 Table11; LQFP176 pad24; buffered divide-by-2 input ADC_EWG_POS; sample-time/calibration pending
+AUX_ANALOG1,PF10,ADC3_IN8,proposed,DS11532 Table11; LQFP176 pad28; buffered divide-by-2 input ADC_AUX_ANALOG1; sample-time/calibration pending
+AUX_ANALOG2,PF8,ADC3_IN6,proposed,DS11532 Table11; LQFP176 pad26; buffered divide-by-2 input ADC_AUX_ANALOG2; sample-time/calibration pending
+CAN1_STB,PH2,GPIO,proposed,pad43; default high standby
+LIN1_EN,PH3,GPIO,proposed,pad44; default low sleep
+SAFETY_HEARTBEAT,PH4,GPIO,proposed,"pad45; external watchdog pulse, timing pending"
+SAFETY_ARM_REQUEST,PH5,GPIO,proposed,pad46; explicit rising edge to rearm hardware permission
+SAFETY_FAULT_N,PH6,GPIO_EXTI,proposed,pad83; active-low open-drain hardware supervisor fault EXTI6

@@ -1,0 +1,51 @@
+ref,value,footprint,dnp,note
+D901,STPS2H100UY,Diode_SMD:D_SMB,False,"Separate motor-feed reverse diode; cathode1 protected, anode2 fused raw. 2A rating requires thermal review."
+D902,SMBJ24CA,Diode_SMD:D_SMB,False,Afterreverseblockingdiode so clampcanabsorbregeneration; energy/hotclamp/fusecoordinationnotqualified
+C901,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,At driverVM/PGND; short switching-current loop
+C902,2.2u 50V X7R,Capacitor_SMD:C_1210_3225Metric,False,
+C903,100u 50V bulk,Capacitor_SMD:CP_Elec_10x10,False,Provisional footprint and capacitance; select MPN/ESR/ripple rating after motor inductance and regeneration analysis
+U901,DRV8871DDAR,Package_SO:HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm_ThermalVias,False,"Industrial driver candidate, not AEC-Q100. Bothinputs0=>coast/sleep. Automaticfaultretry; nofaultoutput/currenttelemetry."
+R901,36.5k 1%,Resistor_SMD:R_0603_1608Metric,False,"Nominal1.753A,currentconstant59..69kV gives1.600..1.909A with1%R; no short-circuit or thermal qualification"
+U914,SN74LVC1G04QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,Invert MCU active-high disable
+C914,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,Locallogicdecoupling atVCC/GND
+U910,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,Independent latched hardware permission AND MCU notdisabled
+C910,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,Locallogicdecoupling atVCC/GND
+U911,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,PWM blocked by either disable source
+C911,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,Locallogicdecoupling atVCC/GND
+U915,SN74LVC1G04QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,Direction complement
+C915,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,Locallogicdecoupling atVCC/GND
+U912,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,Forward PWM only
+C912,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,Locallogicdecoupling atVCC/GND
+U913,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,Reverse PWM only
+C913,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,Locallogicdecoupling atVCC/GND
+R902,100k,Resistor_SMD:R_0603_1608Metric,False,MCUresetdefaultnoPWM
+R903,100k,Resistor_SMD:R_0603_1608Metric,False,
+R904,10k,Resistor_SMD:R_0603_1608Metric,False,MCUresetdefaultdisabled
+R905,100k,Resistor_SMD:R_0603_1608Metric,False,HardwarepermissiondefaultsOFFifsourceopen
+R906,10k,Resistor_SMD:R_0603_1608Metric,False,Steadypoweroffleakage11uA*10k<0.5VVIL; dynamicpowersequencingunqualified
+R907,10k,Resistor_SMD:R_0603_1608Metric,False,Steadypoweroffleakage11uA*10k<0.5VVIL; dynamicpowersequencingunqualified
+D951,STPS2H100UY,Diode_SMD:D_SMB,False,"Separate motor-feed reverse diode; cathode1 protected, anode2 fused raw. 2A rating requires thermal review."
+D952,SMBJ24CA,Diode_SMD:D_SMB,False,Afterreverseblockingdiode so clampcanabsorbregeneration; energy/hotclamp/fusecoordinationnotqualified
+C951,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,At driverVM/PGND; short switching-current loop
+C952,2.2u 50V X7R,Capacitor_SMD:C_1210_3225Metric,False,
+C953,100u 50V bulk,Capacitor_SMD:CP_Elec_10x10,False,Provisional footprint and capacitance; select MPN/ESR/ripple rating after motor inductance and regeneration analysis
+U951,DRV8871DDAR,Package_SO:HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm_ThermalVias,False,"Industrial driver candidate, not AEC-Q100. Bothinputs0=>coast/sleep. Automaticfaultretry; nofaultoutput/currenttelemetry."
+R951,36.5k 1%,Resistor_SMD:R_0603_1608Metric,False,"Nominal1.753A,currentconstant59..69kV gives1.600..1.909A with1%R; no short-circuit or thermal qualification"
+U964,SN74LVC1G04QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,Invert MCU active-high disable
+C964,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,Locallogicdecoupling atVCC/GND
+U960,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,Independent latched hardware permission AND MCU notdisabled
+C960,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,Locallogicdecoupling atVCC/GND
+U961,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,PWM blocked by either disable source
+C961,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,Locallogicdecoupling atVCC/GND
+U965,SN74LVC1G04QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,Direction complement
+C965,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,Locallogicdecoupling atVCC/GND
+U962,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,Forward PWM only
+C962,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,Locallogicdecoupling atVCC/GND
+U963,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,Reverse PWM only
+C963,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,Locallogicdecoupling atVCC/GND
+R952,100k,Resistor_SMD:R_0603_1608Metric,False,MCUresetdefaultnoPWM
+R953,100k,Resistor_SMD:R_0603_1608Metric,False,
+R954,10k,Resistor_SMD:R_0603_1608Metric,False,MCUresetdefaultdisabled
+R955,100k,Resistor_SMD:R_0603_1608Metric,False,HardwarepermissiondefaultsOFFifsourceopen
+R956,10k,Resistor_SMD:R_0603_1608Metric,False,Steadypoweroffleakage11uA*10k<0.5VVIL; dynamicpowersequencingunqualified
+R957,10k,Resistor_SMD:R_0603_1608Metric,False,Steadypoweroffleakage11uA*10k<0.5VVIL; dynamicpowersequencingunqualified

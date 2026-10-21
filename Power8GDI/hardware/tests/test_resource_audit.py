@@ -30,10 +30,12 @@ class ResourceAuditTests(unittest.TestCase):
         self.assertEqual(report['structure_status'], 'pass')
         self.assertEqual(report['summary']['collision_findings'], 0)
         self.assertFalse(report['release_eligible'])
-        self.assertTrue({'TPS1', 'FRP2', 'HALL4'} <= set(report['missing_functions']))
-        self.assertEqual(len(report['missing_functions']), 26)
-        self.assertTrue({'PI1', 'VVT4', 'AUX_PWM1', 'CAM4', 'SENT3', 'SENT4', 'CAN2_RX', 'LIN2_RX'} <= set(report['unassigned_functions']))
-        self.assertEqual(len(report['unassigned_functions']), 32)
+        self.assertTrue({'FLEX_FREQ', 'DIN8', 'HALL4'} <= set(report['missing_functions']))
+        self.assertEqual(len(report['missing_functions']), 9)
+        self.assertTrue({'PI1', 'VVT4', 'AUX_PWM1', 'CAN2_RX', 'LIN2_RX'} <= set(report['unassigned_functions']))
+        self.assertEqual(len(report['unassigned_functions']), 28)
+        self.assertNotIn('TPS1', report['missing_functions'])
+        self.assertNotIn('SENT3', report['unassigned_functions'])
         self.assertEqual(report['verification']['DMA_routes'], 'unverified')
 
     def test_shared_peripheral_channel_collision_despite_unique_gpio(self):
@@ -46,10 +48,10 @@ class ResourceAuditTests(unittest.TestCase):
         self.assertTrue(any(f['code'] == 'RESOURCE_COLLISION' and 'pin PG7' in f['detail'] for f in self.report()['findings']))
 
     def test_exti_port_alias_collision(self):
-        self.row('PTB_FLAG')['stm32_pin'] = 'PA8'  # Different pin, same EXTI8 as PF8.
+        self.row('PTB_FLAG')['stm32_pin'] = 'PA10'  # Different pin, same EXTI10 as PG10.
         findings = self.report()['findings']
-        self.assertTrue(any(f['code'] == 'RESOURCE_COLLISION' and 'exti_line 8' in f['detail'] for f in findings))
-        self.assertFalse(any('pin PA8' in f['detail'] for f in findings))
+        self.assertTrue(any(f['code'] == 'RESOURCE_COLLISION' and 'exti_line 10' in f['detail'] for f in findings))
+        self.assertFalse(any('pin PA10' in f['detail'] for f in findings))
 
     def test_scheduler_timer_reservation(self):
         for resource in ('TIM5_CH1', 'TIM5_CAPTURE', 'TIM6'):

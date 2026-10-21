@@ -46,8 +46,10 @@ follows from preserved geometry or matching pad numbers.
 references. No applicable GDI4 board license was found. The power topology,
 symbols and footprint geometry are **derived from that source**, not independently
 authored. The NXP evaluation schematic SPF-29357 was read only: its explicit use
-restriction prevented copying its power circuit into this design. No public
-redistribution, upstream edit or physical hardware action occurred in this task.
+restriction prevented copying its power circuit into this design. No upstream
+source edit or physical hardware action occurred in this task. Derived review
+artifacts are integrated into the existing project fork; that integration does
+not resolve the source board's redistribution/license uncertainty.
 
 ## Interfaces and local supplies
 

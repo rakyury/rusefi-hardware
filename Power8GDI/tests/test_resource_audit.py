@@ -25,7 +25,8 @@ class ResourceAuditContract(unittest.TestCase):
         self.assertFalse(r['complete'])
         self.assertGreater(len(r['unassigned_required']), 10)
         self.assertIn('PI1', r['unassigned_required'])
-        self.assertIn('SENT3', r['unassigned_required'])
+        self.assertIn('CAN2_RX', r['unassigned_required'])
+        self.assertNotIn('SENT3', r['unassigned_required'])
         self.assertIn('AUX_PWM8', r['unassigned_required'])
 
     def test_mcu_collision_detected(self):

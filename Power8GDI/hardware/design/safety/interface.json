@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "release_status": "BLOCKED",
+  "sheet_file": "safety_gate.kicad_sch",
+  "sheet_uuid": "eded34d9-2614-5eea-9c99-f04c697d2107",
+  "root_instance_uuid": "d3688535-de83-5779-ad3b-0e54c99cc6b1",
+  "root_uuid": "f4d21065-0a5b-5086-a08e-1af9469f04bd",
+  "project": "Power8GDI_Core",
+  "power": "+3V3",
+  "ground": "GND",
+  "inputs": [
+    "SAFETY_HEARTBEAT",
+    "SAFETY_ARM_REQUEST",
+    "HW_KILL_N",
+    "IGN1",
+    "IGN2",
+    "IGN3",
+    "IGN4",
+    "IGN5",
+    "IGN6",
+    "IGN7",
+    "IGN8"
+  ],
+  "outputs": [
+    "SAFETY_FAULT_N",
+    "HW_ACTUATOR_ENABLE",
+    "HW_ACTUATOR_ENABLE_N",
+    "IGN1_GATED",
+    "IGN2_GATED",
+    "IGN3_GATED",
+    "IGN4_GATED",
+    "IGN5_GATED",
+    "IGN6_GATED",
+    "IGN7_GATED",
+    "IGN8_GATED"
+  ],
+  "pt_drven_connected": false,
+  "watchdog_ms": {
+    "nominal": 64.288,
+    "ideal_cap_min": 58.18064,
+    "ideal_cap_max": 70.39536,
+    "with_cap_tolerance_min": 58.0965836,
+    "with_cap_tolerance_max": 70.4970636,
+    "capacitor_pf": 120,
+    "capacitor_tolerance_percent": 1
+  },
+  "part_count": 33
+}
