@@ -19,6 +19,7 @@ import pcbnew as p
 from build_connector import make_footprint, vec
 from copper_transfer import audited_copper
 from net_contract import read_netlists, compare_pad_assignments
+from board_cleanup import arrange_references, remove_dangling, Spatial
 
 HERE = Path(__file__).resolve().parent
 
@@ -154,14 +155,27 @@ def project_file(path):
            'min_hole_clearance':.25,'min_copper_edge_clearance':.5}
     classes=[]
     for name,width,clearance in [('Default',.25,.2),('Power',.6,.3),('GDI_HV',.8,.6),('Logic',.25,.2)]:
-        classes.append({'name':name,'clearance':clearance,'track_width':width,'via_diameter':.65,'via_drill':.3,
+        classes.append({'name':name,'priority':{'Default':2147483647,'GDI_HV':0,'Power':1,'Logic':2}[name],
+                        'clearance':clearance,'track_width':width,'via_diameter':.65,'via_drill':.3,
                         'microvia_diameter':.3,'microvia_drill':.1,'diff_pair_width':.2,'diff_pair_gap':.2,
                         'diff_pair_via_gap':.25,'wire_width':6,'bus_width':12,'line_style':0,'pcb_color':'rgba(0,0,0,0)',
                         'schematic_color':'rgba(0,0,0,0)','description':'Provisional engineering rule; fabrication and current/thermal approval pending'})
-    doc={'meta':{'filename':path.name,'version':1},'board':{'design_settings':{'rules':rules,'drc_exclusions':[]}},
-         'net_settings':{'classes':classes,'netclass_assignments':{},'netclass_patterns':[{'pattern':'PT*_Vdrive*','netclass':'GDI_HV'},
+    doc={'meta':{'filename':path.name,'version':1},'board':{'design_settings':{
+         'meta':{'filename':'board_design_settings.json','version':2},'rules':rules,'drc_exclusions':[]}},
+         'net_settings':{'meta':{'version':4},'classes':classes,'netclass_assignments':{},'netclass_patterns':[{'pattern':'PT*_Vdrive*','netclass':'GDI_HV'},
+                         {'pattern':'PT*_VBOOST','netclass':'GDI_HV'},
                          {'pattern':'VBAT*','netclass':'Power'},{'pattern':'+5V*','netclass':'Power'},{'pattern':'+3V3*','netclass':'Power'}]}}
     path.write_text(json.dumps(doc,indent=2)+'\n')
+    # Explicit equivalent rules make these safety-relevant classes auditable
+    # even in CLI consumers that fail to resolve project pattern assignments.
+    high=['PT'+s+n for s in ('A','B') for n in ('_VBOOST','_Vdrive_coil','_Vdrive_shunt')]
+    supplies=['+3V3','+3V3_A','+5V_CORE','+5V_GDI_A','+5V_GDI_B',
+              'VBAT_MAIN_FUSED','VBAT_LOGIC_PROTECTED','VBAT_GDI_A','VBAT_GDI_B','VBAT_DBW_FUSED','VBAT_EWG_FUSED']
+    rules_text=['(version 1)']
+    for label,names,clearance in [('Power clearance',supplies,.3),('GDI high voltage clearance',high,.6)]:
+        condition=' || '.join("A.NetName == '"+name+"'" for name in names)
+        rules_text.append(f'(rule "{label}" (condition "{condition}") (constraint clearance (min {clearance}mm)))')
+    path.with_suffix('.kicad_dru').write_text('\n'.join(rules_text)+'\n')
 
 
 def place_candidate_domains(board, footprints, pending):
@@ -176,16 +190,16 @@ def place_candidate_domains(board, footprints, pending):
         return (p.ToMM(b.GetX()),p.ToMM(b.GetY()),p.ToMM(b.GetRight()),p.ToMM(b.GetBottom()))
     def overlap(a,b):
         return a[0]<b[2] and a[2]>b[0] and a[1]<b[3] and a[3]>b[1]
-    occupied=[]
+    occupied=Spatial()
     # Through vias are copper on both sides even when their traces are on top.
     for item in board.GetTracks():
         if isinstance(item,p.PCB_VIA) or item.GetLayer()==p.B_Cu:
             box=item.GetBoundingBox()
-            occupied.append((p.ToMM(box.GetX()),p.ToMM(box.GetY()),p.ToMM(box.GetRight()),p.ToMM(box.GetBottom())))
+            occupied.add((p.ToMM(box.GetX()),p.ToMM(box.GetY()),p.ToMM(box.GetRight()),p.ToMM(box.GetBottom())))
     for ref,fp in footprints.items():
         if ref in pending:continue
         if fp.GetLayer()==p.B_Cu or any(q.GetAttribute()==p.PAD_ATTRIB_PTH for q in fp.Pads()):
-            occupied.append(bounds(fp))
+            occupied.add(bounds(fp))
     for ref in pending:
         fp=footprints[ref]
         if fp.GetLayer()!=p.B_Cu:fp.Flip(fp.GetPosition(),False)
@@ -194,15 +208,74 @@ def place_candidate_domains(board, footprints, pending):
         fp=footprints[ref]; fp.SetPosition(vec(0,0)); b=bounds(fp)
         width,height=b[2]-b[0],b[3]-b[1]
         found=False
-        for yi in range(94,142):
-            for xi in range(6,150):
-                candidate=(xi-.35,yi-.35,xi+width+.35,yi+height+.35)
-                if candidate[2]>151 or candidate[3]>143:continue
-                if any(overlap(candidate,item) for item in occupied):continue
-                fp.SetPosition(vec(xi-b[0],yi-b[1]));occupied.append(candidate);found=True;break
+        for x0,y0,x1,y1 in [(6,94,151,143),(156,94,239,141)]:
+            for yi in range(y0,y1):
+                for xi in range(x0,x1):
+                    candidate=(xi-.35,yi-.35,xi+width+.35,yi+height+.35)
+                    if candidate[2]>x1 or candidate[3]>y1:continue
+                    if occupied.collides(candidate):continue
+                    fp.SetPosition(vec(xi-b[0],yi-b[1]));occupied.add(candidate);found=True;break
+                if found:break
             if found:break
-        if not found:raise ValueError('Quiet backside placement region exhausted at '+ref)
+        if not found:raise ValueError('Diagnostic backside staging regions exhausted at '+ref+'; functional floorplan redesign required')
     return ordered
+
+
+def place_output_banks(board,footprints):
+    """Keep each four-output bank together on the lower right backside.
+
+    The group is a placement candidate, not a thermal or current qualification.
+    Reject a group when its actual body/pad boxes collide; don't silently fall
+    back to scattering the driver's decoupling and gate resistors across board.
+    """
+    banks=[];allrefs=set()
+    for bank in range(6):
+        if f'U{1101+bank}' not in footprints:continue
+        base=1100+bank*20
+        layout={f'U{1101+bank}':(18,8.5),f'U{1121+bank}':(5,9)}
+        sites=[(x,y) for y in (1,3.5) for x in (2,5,8,11)]
+        sites += [(11,y) for y in (6,8.5,11,13.5)]
+        sites += [(x,16) for x in (2,5,8,11,14)]
+        for i,site in enumerate(sites,1):layout[f'R{base+i}']=site
+        for i,site in enumerate([(17,16),(20,16),(23,16),(23,13.5)],1):layout[f'C{base+i}']=site
+        banks.append(layout);allrefs.update(layout)
+    if not banks:return set(),[]
+    occupied=Spatial()
+    for t in board.GetTracks():
+        if isinstance(t,p.PCB_VIA) or t.GetLayer()==p.B_Cu:
+            b=t.GetBoundingBox();occupied.add((p.ToMM(b.GetX())-.3,p.ToMM(b.GetY())-.3,p.ToMM(b.GetRight())+.3,p.ToMM(b.GetBottom())+.3))
+    for ref,fp in footprints.items():
+        if ref in allrefs:continue
+        # Parts still at origin have not been placed yet.
+        if mm(fp.GetPosition())==[0.,0.]:continue
+        if fp.GetLayer()==p.B_Cu or any(q.GetAttribute()==p.PAD_ATTRIB_PTH for q in fp.Pads()):
+            b=fp.GetBoundingBox(False,False);occupied.add((p.ToMM(b.GetX())-.3,p.ToMM(b.GetY())-.3,p.ToMM(b.GetRight())+.3,p.ToMM(b.GetBottom())+.3))
+    result=[]
+    for index,layout in enumerate(banks,1):
+        offsets={}
+        for ref,(x,y) in layout.items():
+            fp=footprints[ref]
+            if fp.GetLayer()!=p.B_Cu:fp.Flip(fp.GetPosition(),False)
+            fp.SetOrientationDegrees(0);fp.SetPosition(vec(x,y))
+            b=fp.GetBoundingBox(False,False)
+            offsets[ref]=(p.ToMM(b.GetX())-.25,p.ToMM(b.GetY())-.25,p.ToMM(b.GetRight())+.25,p.ToMM(b.GetBottom())+.25)
+        # Keep 0.5 mm to the logic-domain boundary and the connector pad field.
+        found=None
+        for oy in range(95,123):
+            for ox in range(156,215):
+                boxes=[(a+ox,b+oy,c+ox,d+oy) for a,b,c,d in offsets.values()]
+                if any(c>239 or d>141 for a,b,c,d in boxes):continue
+                if any(occupied.collides(box) for box in boxes):continue
+                found=(ox,oy,boxes);break
+            if found:break
+        if found is None:
+            raise ValueError(f'Four-channel LS bank {index} cannot fit the reserved B.Cu region x156..239/y95..141 with existing GDI copper. Keep outline/clearances; floorplan redesign required.')
+        ox,oy,boxes=found
+        for ref,(x,y) in layout.items():footprints[ref].SetPosition(vec(x+ox,y+oy))
+        for bounds in boxes:occupied.add(bounds)
+        result.append({'bank':index,'origin_mm':[ox,oy],'references':sorted(layout),
+                       'qualification':'Grouped placement candidate; through-pad F.Cu/thermal review and DRC required'})
+    return allrefs,result
 
 
 def insert_stackup(path):
@@ -309,6 +382,8 @@ def build(args):
            'C398':(37,109,0),'C399':(44,106,0),'R398':(49,104,90)}
     for ref,(x,y,a) in fixed.items():
         if ref in footprints:footprints[ref].SetPosition(vec(x,y));footprints[ref].SetOrientationDegrees(a);placed.add(ref)
+    bank_refs,bank_placements=place_output_banks(board,footprints) if args.grouped_outputs else (set(),[])
+    placed|=bank_refs
     unplaced=place_candidate_domains(board,footprints,set(components)-placed)
     add_plane(board,nets)
     title=board.GetTitleBlock();title.SetTitle('Power8GDI routed subdomains / INCOMPLETE ENGINEERING REVIEW');title.SetRevision('A engineering candidate')
@@ -320,6 +395,7 @@ def build(args):
             if pad.GetNumber(): actual[(fp.GetReference(),pad.GetNumber())].append(pad.GetNetname())
     errors=compare_pad_assignments(assignments,actual)
     if errors:raise ValueError('\n'.join(errors))
+    silk_report=arrange_references(board)
     dest=out/'Power8GDI_Review.kicad_pcb';p.SaveBoard(str(dest),board);insert_stackup(dest);project_file(dest.with_suffix('.kicad_pro'))
     libs={'Power8GDI_Board':HERE/'Power8GDI_Board.pretty','Power8GDI_Core':design/'Power8GDI_Core.pretty','Power8GDI_GDI':design/'gdi/Power8GDI_GDI.pretty'}
     for comp in components.values():
@@ -332,7 +408,12 @@ def build(args):
     (out/'fp-lib-table').write_text('(fp_lib_table(version 7)'+''.join(entries)+')\n')
     print('Filling zones',flush=True)
     board=p.LoadBoard(str(dest));board.BuildConnectivity();p.ZONE_FILLER(board).Fill(board.Zones());board.BuildConnectivity()
+    cleanup_report=remove_dangling(board)
     p.SaveBoard(str(dest),board)
+    # SaveBoard persists the in-process project cache, which began with default
+    # rules before our generated .pro existed. Write the authoritative project
+    # AFTER the final save; otherwise KiCad overwrites .2 mm with its 0 mm default.
+    project_file(dest.with_suffix('.kicad_pro'))
     report={'kicad_version':p.GetBuildVersion(),'qualification':'INCOMPLETE_ENGINEERING_REVIEW_DO_NOT_FABRICATE',
             'outline_mm':[245,165],'copper_layers':4,'thickness_mm':1.6,'source_netlists':sources,
             'source_reference_pcb_sha256':digest(args.source_board),'source_reference_mapping_sha256':digest(design/'gdi/reference_mapping.json'),
@@ -340,7 +421,8 @@ def build(args):
             'assigned_component_pins':len(assignments),'pad_net_mismatches':errors,'tracks_vias':len(list(board.GetTracks())),
             'zones':len(list(board.Zones())),'unconnected_count':board.GetConnectivity().GetUnconnectedCount(False),
             'dnp_references':sorted(ref for ref,comp in components.items() if comp['dnp']),
-            'staged_unreviewed_placements':unplaced,'reference_copper':audit}
+            'staged_unreviewed_placements':unplaced,'reference_copper':audit,
+            'silkscreen_geometry':silk_report,'copper_cleanup':cleanup_report,'output_bank_placement':bank_placements}
     (out/'board_report.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({k:v for k,v in report.items() if k not in ('reference_copper','source_netlists','staged_unreviewed_placements')},indent=2))
 
@@ -351,4 +433,5 @@ if __name__=='__main__':
     parser.add_argument('--source-board',type=Path,default=HERE.parents[3]/'GDI-4ch/GDI-4ch.kicad_pcb')
     parser.add_argument('--pinout',type=Path,default=HERE.parents[2]/'pinout/power8gdi_revA_pinout.csv')
     parser.add_argument('--output-dir',type=Path,default=HERE/'review')
+    parser.add_argument('--grouped-outputs',action='store_true',help='Require four-channel LS banks to fit together; fail on current geometry conflicts')
     build(parser.parse_args())

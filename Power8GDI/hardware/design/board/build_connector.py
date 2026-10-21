@@ -54,7 +54,9 @@ def make_footprint():
         for a,b in [((x0,y0),(x1,y0)),((x1,y0),(x1,y1)),((x1,y1),(x0,y1)),((x0,y1),(x0,y0))]:
             line(a,b,layer,0.05 if layer == p.F_CrtYd else 0.1)
     # Only on-board silhouette on silkscreen; front envelope remains on Fab.
-    for a,b in [((-22.75,-3.5),(22.75,-3.5)),((-22.75,3.5),(22.75,3.5)),((-22.75,-3.5),(-22.75,3.5)),((22.75,-3.5),(22.75,3.5))]:
+    # The header origin is 3.5 mm behind the board edge. Leave 0.30 mm
+    # clearance to that edge (0.225 mm after half the silk stroke).
+    for a,b in [((-22.75,-3.5),(22.75,-3.5)),((-22.75,3.2),(22.75,3.2)),((-22.75,-3.5),(-22.75,3.2)),((22.75,-3.5),(22.75,3.2))]:
         line(a,b,p.F_SilkS,0.15)
     fp.Reference().SetPosition(vec(0,-19)); fp.Reference().SetTextSize(vec(1,1))
     fp.Value().SetPosition(vec(0,6)); fp.Value().SetLayer(p.F_Fab)

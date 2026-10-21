@@ -20,6 +20,8 @@ if __name__=='__main__':
     with tempfile.TemporaryDirectory(prefix='power8gdi-drc-') as temporary:
         target=Path(temporary);project=board.with_suffix('.kicad_pro')
         shutil.copy2(board,target/board.name);shutil.copy2(project,target/project.name)
+        custom_rules=board.with_suffix('.kicad_dru')
+        if custom_rules.exists():shutil.copy2(custom_rules,target/custom_rules.name)
         table=(board.parent/'fp-lib-table').read_text()
         def localize(match):
             uri=match.group(1)
@@ -34,6 +36,7 @@ if __name__=='__main__':
         completed=subprocess.run(command,check=False)
         metadata={'board_sha256':hashlib.sha256(board.read_bytes()).hexdigest(),
                   'project_sha256':hashlib.sha256(project.read_bytes()).hexdigest(),
+                  'custom_rules_sha256':hashlib.sha256(custom_rules.read_bytes()).hexdigest() if custom_rules.exists() else None,
                   'command':command,'returncode':completed.returncode,'rule_exclusions_added':False}
         output.with_suffix('.provenance.json').write_text(json.dumps(metadata,indent=2)+'\n')
         raise SystemExit(completed.returncode)
