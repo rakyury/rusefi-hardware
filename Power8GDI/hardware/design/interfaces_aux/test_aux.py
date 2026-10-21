@@ -1,11 +1,15 @@
 """Actual KiCad XML verification, independent pin assertions, mutation regressions."""
 from pathlib import Path
 from copy import deepcopy
-import hashlib,json,unittest
+import argparse,hashlib,json,unittest
 import xml.etree.ElementTree as ET
 HERE=Path(__file__).resolve().parent
+NETLIST=None
 
 def load():
+    if NETLIST:
+        tree=ET.parse(NETLIST)
+        return {s['name']:tree for s in json.loads((HERE/'interface.json').read_text())['sheets']}
     return {s['name']:ET.parse(HERE/(s['name']+'.xml')) for s in json.loads((HERE/'interface.json').read_text())['sheets']}
 def lookup(tree):return {(p.attrib['ref'],p.attrib['pin']):n.attrib['name'] for n in tree.findall('.//nets/net') for p in n.findall('node')}
 def isolation_errors(pinmaps):
@@ -86,4 +90,7 @@ class AuxTests(unittest.TestCase):
             raw=(HERE.parents[3]/item['path']).read_bytes()
             self.assertEqual(hashlib.sha256(raw).hexdigest(),item['sha256'])
 
-if __name__=='__main__':unittest.main(verbosity=2)
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();parser.add_argument('--netlist',type=Path)
+    args,remaining=parser.parse_known_args();NETLIST=args.netlist
+    unittest.main(argv=['test_aux.py',*remaining],verbosity=2)
