@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/src/Power8GDI/hardware/design/interfaces/comms2.kicad_sch</source>
+    <date>2026-10-21T05:55:19+0000</date>
+    <tool>Eeschema 9.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>CAN2 and LIN2 physical interfaces</title>
+        <company/>
+        <rev>Engineering draft 0.1</rev>
+        <date/>
+        <source>comms2.kicad_sch</source>
+        <comment number="1" value="UNQUALIFIED: no manufacturing or engine approval"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1501">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">At U1501 pin3</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="At U1501 pin3"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>834da366-02f1-5079-ab5e-f7eb67ac81b0</tstamps>
+    </comp>
+    <comp ref="C1502">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">At U1501 pin5</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="At U1501 pin5"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0c734816-3cdb-5e94-8db8-f42156107746</tstamps>
+    </comp>
+    <comp ref="C1503">
+      <value>100n 50V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>edca5bba-0381-58b8-88bb-cbda5491e93c</tstamps>
+    </comp>
+    <comp ref="C1504">
+      <value>1u 50V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>21df429c-0a29-530c-80bf-57b53bf08eb0</tstamps>
+    </comp>
+    <comp ref="C1505">
+      <value>220p 100V C0G</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>20e120af-1792-536a-a014-381e38554722</tstamps>
+    </comp>
+    <comp ref="D1501">
+      <value>PESD2CAN</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="PESD2CAN" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bf84dbe2-08f0-5b14-affe-811460cf4be6</tstamps>
+    </comp>
+    <comp ref="D1502">
+      <value>BAS21,215 DNP</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <fields>
+        <field name="Design note">Optional commander pullup; anode toward VSUP. Both D1502/R1507 DNP in responder mode</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Interface_BAS21" description=""/>
+      <property name="Design note" value="Optional commander pullup; anode toward VSUP. Both D1502/R1507 DNP in responder mode"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <property name="dnp"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f74b45fc-24ae-5a06-99e9-aaedfe26c186</tstamps>
+    </comp>
+    <comp ref="R1501">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a276254b-60e2-5b3a-937f-796d52341f81</tstamps>
+    </comp>
+    <comp ref="R1502">
+      <value>120R DNP</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Only fit at a bus end after topology review</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Only fit at a bus end after topology review"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <property name="dnp"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3e0e259c-dafa-5134-82d2-552eed26f6f5</tstamps>
+    </comp>
+    <comp ref="R1503">
+      <value>4.7k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">RXD open-drain; pull only to3V3</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="RXD open-drain; pull only to3V3"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9921ac20-568f-5d7f-a50f-cd1fdadcde07</tstamps>
+    </comp>
+    <comp ref="R1504">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c8d9f2eb-ac7d-5777-ace3-a7b607be2e5f</tstamps>
+    </comp>
+    <comp ref="R1505">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f40fe503-23a0-56c0-b38e-af75e45753c0</tstamps>
+    </comp>
+    <comp ref="R1506">
+      <value>0R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Requires root SMBJ24CA; 38.9V rated clamp is not pulse qualification</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Requires root SMBJ24CA; 38.9V rated clamp is not pulse qualification"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6361a47f-4e00-538c-8a16-e1cf04c25c25</tstamps>
+    </comp>
+    <comp ref="R1507">
+      <value>1k DNP</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <property name="dnp"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>90a04ea2-ea97-5e95-a8f0-d2a0eeff6420</tstamps>
+    </comp>
+    <comp ref="U1501">
+      <value>TCAN1042HGVDRQ1</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <fields>
+        <field name="Design note">TI SLLSES9D; STB pullup disables transmitter at MCU reset. PB5/PB6 AF9, PG12 standby.</field>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="TCAN1042HGV_Q1" description=""/>
+      <property name="Design note" value="TI SLLSES9D; STB pullup disables transmitter at MCU reset. PB5/PB6 AF9, PG12 standby."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>381f14ab-53d0-52d1-a79c-0a7d3d7909d8</tstamps>
+    </comp>
+    <comp ref="U1502">
+      <value>TLIN1029ADRQ1</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <fields>
+        <field name="Design note">TI SLLSFK8A A variant. VSUP 4..36V operating, 45V abs; pull-down EN gives sleep</field>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="TLIN1029A_Q1" description=""/>
+      <property name="Design note" value="TI SLLSFK8A A variant. VSUP 4..36V operating, 45V abs; pull-down EN gives sleep"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="comms2.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2af30d5f-691e-512d-8b31-1478c93e66d1</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Power8GDI_Core" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="Interface_BAS21">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">Interface_BAS21</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="NC" type="no_connect"/>
+        <pin num="3" name="K" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="PESD2CAN">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">PESD2CAN</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="CANH" type="passive"/>
+        <pin num="2" name="CANL" type="passive"/>
+        <pin num="3" name="COMMON" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="TCAN1042HGV_Q1">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TCAN1042HGV_Q1</field>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="TXD" type="input"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="VCC" type="power_in"/>
+        <pin num="4" name="RXD" type="output"/>
+        <pin num="5" name="VIO" type="power_in"/>
+        <pin num="6" name="CANL" type="bidirectional"/>
+        <pin num="7" name="CANH" type="bidirectional"/>
+        <pin num="8" name="STB" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="TLIN1029A_Q1">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TLIN1029A_Q1</field>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="RXD" type="open_collector"/>
+        <pin num="2" name="EN" type="input"/>
+        <pin num="3" name="NC" type="no_connect"/>
+        <pin num="4" name="TXD" type="input"/>
+        <pin num="5" name="GND" type="power_in"/>
+        <pin num="6" name="LIN" type="bidirectional"/>
+        <pin num="7" name="VSUP" type="power_in"/>
+        <pin num="8" name="NC" type="no_connect"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Power8GDI_Core">
+      <uri>/src/Power8GDI/hardware/design/interfaces/interfaces.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3" class="Default">
+      <node ref="C1502" pin="1" pintype="passive"/>
+      <node ref="R1501" pin="1" pintype="passive"/>
+      <node ref="R1503" pin="1" pintype="passive"/>
+      <node ref="R1505" pin="1" pintype="passive"/>
+      <node ref="U1501" pin="5" pinfunction="VIO" pintype="power_in"/>
+    </net>
+    <net code="2" name="+5V_CORE" class="Default">
+      <node ref="C1501" pin="1" pintype="passive"/>
+      <node ref="U1501" pin="3" pinfunction="VCC" pintype="power_in"/>
+    </net>
+    <net code="3" name="CAN2_H" class="Default">
+      <node ref="D1501" pin="1" pinfunction="CANH" pintype="passive"/>
+      <node ref="R1502" pin="1" pintype="passive"/>
+      <node ref="U1501" pin="7" pinfunction="CANH" pintype="bidirectional"/>
+    </net>
+    <net code="4" name="CAN2_L" class="Default">
+      <node ref="D1501" pin="2" pinfunction="CANL" pintype="passive"/>
+      <node ref="R1502" pin="2" pintype="passive"/>
+      <node ref="U1501" pin="6" pinfunction="CANL" pintype="bidirectional"/>
+    </net>
+    <net code="5" name="CAN2_RX" class="Default">
+      <node ref="U1501" pin="4" pinfunction="RXD" pintype="output"/>
+    </net>
+    <net code="6" name="CAN2_STB" class="Default">
+      <node ref="R1501" pin="2" pintype="passive"/>
+      <node ref="U1501" pin="8" pinfunction="STB" pintype="input"/>
+    </net>
+    <net code="7" name="CAN2_TX" class="Default">
+      <node ref="U1501" pin="1" pinfunction="TXD" pintype="input"/>
+    </net>
+    <net code="8" name="GND" class="Default">
+      <node ref="C1501" pin="2" pintype="passive"/>
+      <node ref="C1502" pin="2" pintype="passive"/>
+      <node ref="C1503" pin="2" pintype="passive"/>
+      <node ref="C1504" pin="2" pintype="passive"/>
+      <node ref="C1505" pin="2" pintype="passive"/>
+      <node ref="D1501" pin="3" pinfunction="COMMON" pintype="passive"/>
+      <node ref="R1504" pin="2" pintype="passive"/>
+      <node ref="U1501" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1502" pin="5" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="9" name="LIN2_BUS" class="Default">
+      <node ref="C1505" pin="1" pintype="passive"/>
+      <node ref="R1507" pin="2" pintype="passive"/>
+      <node ref="U1502" pin="6" pinfunction="LIN" pintype="bidirectional"/>
+    </net>
+    <net code="10" name="LIN2_COMMANDER_DIODE" class="Default">
+      <node ref="D1502" pin="3" pinfunction="K" pintype="passive"/>
+      <node ref="R1507" pin="1" pintype="passive"/>
+    </net>
+    <net code="11" name="LIN2_EN" class="Default">
+      <node ref="R1504" pin="1" pintype="passive"/>
+      <node ref="U1502" pin="2" pinfunction="EN" pintype="input"/>
+    </net>
+    <net code="12" name="LIN2_RX" class="Default">
+      <node ref="R1503" pin="2" pintype="passive"/>
+      <node ref="U1502" pin="1" pinfunction="RXD" pintype="open_collector"/>
+    </net>
+    <net code="13" name="LIN2_TX" class="Default">
+      <node ref="R1505" pin="2" pintype="passive"/>
+      <node ref="U1502" pin="4" pinfunction="TXD" pintype="input"/>
+    </net>
+    <net code="14" name="LIN2_VSUP" class="Default">
+      <node ref="C1503" pin="1" pintype="passive"/>
+      <node ref="C1504" pin="1" pintype="passive"/>
+      <node ref="D1502" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="R1506" pin="2" pintype="passive"/>
+      <node ref="U1502" pin="7" pinfunction="VSUP" pintype="power_in"/>
+    </net>
+    <net code="15" name="VBAT_LOGIC_PROTECTED" class="Default">
+      <node ref="R1506" pin="1" pintype="passive"/>
+    </net>
+  </nets>
+</export>

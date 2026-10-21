@@ -1,0 +1,139 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-21T05:54:40+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/cc9b57cc-a198-50f6-8c59-7b63a72c556b",
+            "violations": [
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1501 Pin 1 [TXD, Input, Line]",
+                            "pos": {
+                                "x": 1.1176,
+                                "y": 0.8255
+                            },
+                            "uuid": "1a3b3940-b2d3-574a-b84e-f538ccfb524e"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1501 Pin 3 [VCC, Power input, Line]",
+                            "pos": {
+                                "x": 1.2192,
+                                "y": 0.7493
+                            },
+                            "uuid": "118d821f-14ad-5264-bad2-9c526258e218"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1501 Pin 5 [VIO, Power input, Line]",
+                            "pos": {
+                                "x": 1.27,
+                                "y": 0.7493
+                            },
+                            "uuid": "6ef87b92-fb05-5ae3-b0a8-2e2acb2d9694"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1501 Pin 2 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.2446,
+                                "y": 1.0541
+                            },
+                            "uuid": "cda9a57f-fe3c-5289-a2a5-dd234c265093"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1502 Pin 7 [VSUP, Power input, Line]",
+                            "pos": {
+                                "x": 4.2545,
+                                "y": 0.7493
+                            },
+                            "uuid": "a206497b-05e9-5a70-97c6-b730678d9629"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'CAN2_TX'",
+                            "pos": {
+                                "x": 1.0414,
+                                "y": 0.8255
+                            },
+                            "uuid": "9b41e474-ff17-52b9-8e75-aaf67fa5f816"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'CAN2_RX'",
+                            "pos": {
+                                "x": 1.0414,
+                                "y": 0.9017
+                            },
+                            "uuid": "9d2bc6ac-91c9-5f52-bd6d-615e962bc68e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'VBAT_LOGIC_PROTECTED'",
+                            "pos": {
+                                "x": 4.445,
+                                "y": 1.5367
+                            },
+                            "uuid": "e68c389f-9e06-5aef-8964-cc2de1205e38"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "comms2.kicad_sch"
+}

@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/src/Power8GDI/hardware/design/interfaces/digital_aux_2.kicad_sch</source>
+    <date>2026-10-21T05:55:37+0000</date>
+    <tool>Eeschema 9.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Additional Hall, flex and digital inputs bank 2</title>
+        <company/>
+        <rev>Engineering draft 0.1</rev>
+        <date/>
+        <source>digital_aux_2.kicad_sch</source>
+        <comment number="1" value="UNQUALIFIED: no manufacturing or engine approval"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1606">
+      <value>47p 100V C0G</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e8720b71-76b9-5fca-8966-fa20bf77722a</tstamps>
+    </comp>
+    <comp ref="C1607">
+      <value>47p 100V C0G</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0c3d73f3-0ed0-5dcb-8094-9ac29bf4d09b</tstamps>
+    </comp>
+    <comp ref="C1608">
+      <value>47p 100V C0G</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>93cc1b3d-fc64-586f-89ee-b545d1a7b490</tstamps>
+    </comp>
+    <comp ref="C1611">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1452834c-cc14-5d90-8c2b-4324eb5bb2b7</tstamps>
+    </comp>
+    <comp ref="D1606">
+      <value>BAT54S,215</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <fields>
+        <field name="Design note">Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="BAT54S" description=""/>
+      <property name="Design note" value="Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>11463c42-25de-5a5d-9263-3977e0d567ef</tstamps>
+    </comp>
+    <comp ref="D1607">
+      <value>BAT54S,215</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <fields>
+        <field name="Design note">Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="BAT54S" description=""/>
+      <property name="Design note" value="Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4ecee7b9-9311-5a0a-bd56-283318e4baad</tstamps>
+    </comp>
+    <comp ref="D1608">
+      <value>BAT54S,215</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <fields>
+        <field name="Design note">Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="BAT54S" description=""/>
+      <property name="Design note" value="Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>90d9d0a4-f508-5d0c-8a99-38c6be5a13ec</tstamps>
+    </comp>
+    <comp ref="R1618">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Current limit only, no automotive pulse rating claim</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Current limit only, no automotive pulse rating claim"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a3f6302b-6c26-5a5c-8e49-4f1a5e8f260b</tstamps>
+    </comp>
+    <comp ref="R1619">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6f671400-7385-54ab-b1bd-bc2ec0d73f7a</tstamps>
+    </comp>
+    <comp ref="R1620">
+      <value>10k DNP</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Optional open-drain sensor pullup; fit only after sensor/wiring review</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Optional open-drain sensor pullup; fit only after sensor/wiring review"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <property name="dnp"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fdcfb124-0265-5ff5-91f6-015287196ed5</tstamps>
+    </comp>
+    <comp ref="R1621">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Current limit only, no automotive pulse rating claim</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Current limit only, no automotive pulse rating claim"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c46a0195-296c-5d9b-a95e-41b0bc8ae50b</tstamps>
+    </comp>
+    <comp ref="R1622">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d6a83a8e-7cbd-559d-a440-8ca87edccbb6</tstamps>
+    </comp>
+    <comp ref="R1623">
+      <value>10k DNP</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Optional open-drain sensor pullup; fit only after sensor/wiring review</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Optional open-drain sensor pullup; fit only after sensor/wiring review"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <property name="dnp"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>73a0d26d-5f6f-589c-95ec-05fc72c9ef1c</tstamps>
+    </comp>
+    <comp ref="R1624">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Current limit only, no automotive pulse rating claim</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Current limit only, no automotive pulse rating claim"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2f932909-32a0-5439-8d3a-4e89c9ef575c</tstamps>
+    </comp>
+    <comp ref="R1625">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>dc398d87-8534-56e7-bffc-4457b7bac26c</tstamps>
+    </comp>
+    <comp ref="R1626">
+      <value>10k DNP</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Optional open-drain sensor pullup; fit only after sensor/wiring review</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Optional open-drain sensor pullup; fit only after sensor/wiring review"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <property name="dnp"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>aaf1b17b-2df4-5d0f-b65d-94cd92ce70f1</tstamps>
+    </comp>
+    <comp ref="U1601">
+      <value>SN74LVC14AQPWRQ1</value>
+      <footprint>Package_SO:TSSOP-14_4.4x5mm_P0.65mm</footprint>
+      <fields>
+        <field name="Design note">2..3.6V supply,5.5V tolerant inputs, all channels INVERT. Unused inputsGND and outputsNC</field>
+        <field name="Footprint">Package_SO:TSSOP-14_4.4x5mm_P0.65mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="SN74LVC14A_Q1" description=""/>
+      <property name="Design note" value="2..3.6V supply,5.5V tolerant inputs, all channels INVERT. Unused inputsGND and outputsNC"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="digital_aux_2.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7f3bf677-9325-55e9-b436-b106d98b8e65</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Power8GDI_Core" part="BAT54S">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">BAT54S</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="A1" type="passive"/>
+        <pin num="2" name="K2" type="passive"/>
+        <pin num="3" name="K1_A2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="SN74LVC14A_Q1">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SN74LVC14A_Q1</field>
+        <field name="Footprint">Package_SO:TSSOP-14_4.4x5mm_P0.65mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1A" type="input"/>
+        <pin num="2" name="1Y_INV" type="output"/>
+        <pin num="3" name="2A" type="input"/>
+        <pin num="4" name="2Y_INV" type="output"/>
+        <pin num="5" name="3A" type="input"/>
+        <pin num="6" name="3Y_INV" type="output"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="4Y_INV" type="output"/>
+        <pin num="9" name="4A" type="input"/>
+        <pin num="10" name="5Y_INV" type="output"/>
+        <pin num="11" name="5A" type="input"/>
+        <pin num="12" name="6Y_INV" type="output"/>
+        <pin num="13" name="6A" type="input"/>
+        <pin num="14" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Power8GDI_Core">
+      <uri>/src/Power8GDI/hardware/design/interfaces/interfaces.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3" class="Default">
+      <node ref="C1611" pin="1" pintype="passive"/>
+      <node ref="U1601" pin="14" pinfunction="VCC" pintype="power_in"/>
+    </net>
+    <net code="2" name="+5V_CORE" class="Default">
+      <node ref="D1606" pin="2" pinfunction="K2" pintype="passive"/>
+      <node ref="D1607" pin="2" pinfunction="K2" pintype="passive"/>
+      <node ref="D1608" pin="2" pinfunction="K2" pintype="passive"/>
+      <node ref="R1620" pin="1" pintype="passive"/>
+      <node ref="R1623" pin="1" pintype="passive"/>
+      <node ref="R1626" pin="1" pintype="passive"/>
+    </net>
+    <net code="3" name="DIN6" class="Default">
+      <node ref="U1601" pin="2" pinfunction="1Y_INV" pintype="output"/>
+    </net>
+    <net code="4" name="DIN6_FILTERED" class="Default">
+      <node ref="C1606" pin="1" pintype="passive"/>
+      <node ref="D1606" pin="3" pinfunction="K1_A2" pintype="passive"/>
+      <node ref="R1618" pin="2" pintype="passive"/>
+      <node ref="R1619" pin="1" pintype="passive"/>
+      <node ref="U1601" pin="1" pinfunction="1A" pintype="input"/>
+    </net>
+    <net code="5" name="DIN7" class="Default">
+      <node ref="U1601" pin="4" pinfunction="2Y_INV" pintype="output"/>
+    </net>
+    <net code="6" name="DIN7_FILTERED" class="Default">
+      <node ref="C1607" pin="1" pintype="passive"/>
+      <node ref="D1607" pin="3" pinfunction="K1_A2" pintype="passive"/>
+      <node ref="R1621" pin="2" pintype="passive"/>
+      <node ref="R1622" pin="1" pintype="passive"/>
+      <node ref="U1601" pin="3" pinfunction="2A" pintype="input"/>
+    </net>
+    <net code="7" name="DIN8" class="Default">
+      <node ref="U1601" pin="6" pinfunction="3Y_INV" pintype="output"/>
+    </net>
+    <net code="8" name="DIN8_FILTERED" class="Default">
+      <node ref="C1608" pin="1" pintype="passive"/>
+      <node ref="D1608" pin="3" pinfunction="K1_A2" pintype="passive"/>
+      <node ref="R1624" pin="2" pintype="passive"/>
+      <node ref="R1625" pin="1" pintype="passive"/>
+      <node ref="U1601" pin="5" pinfunction="3A" pintype="input"/>
+    </net>
+    <net code="9" name="GND" class="Default">
+      <node ref="C1606" pin="2" pintype="passive"/>
+      <node ref="C1607" pin="2" pintype="passive"/>
+      <node ref="C1608" pin="2" pintype="passive"/>
+      <node ref="C1611" pin="2" pintype="passive"/>
+      <node ref="D1606" pin="1" pinfunction="A1" pintype="passive"/>
+      <node ref="D1607" pin="1" pinfunction="A1" pintype="passive"/>
+      <node ref="D1608" pin="1" pinfunction="A1" pintype="passive"/>
+      <node ref="R1619" pin="2" pintype="passive"/>
+      <node ref="R1622" pin="2" pintype="passive"/>
+      <node ref="R1625" pin="2" pintype="passive"/>
+      <node ref="U1601" pin="11" pinfunction="5A" pintype="input"/>
+      <node ref="U1601" pin="13" pinfunction="6A" pintype="input"/>
+      <node ref="U1601" pin="7" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1601" pin="9" pinfunction="4A" pintype="input"/>
+    </net>
+    <net code="10" name="HARNESS_DIN6" class="Default">
+      <node ref="R1618" pin="1" pintype="passive"/>
+      <node ref="R1620" pin="2" pintype="passive"/>
+    </net>
+    <net code="11" name="HARNESS_DIN7" class="Default">
+      <node ref="R1621" pin="1" pintype="passive"/>
+      <node ref="R1623" pin="2" pintype="passive"/>
+    </net>
+    <net code="12" name="HARNESS_DIN8" class="Default">
+      <node ref="R1624" pin="1" pintype="passive"/>
+      <node ref="R1626" pin="2" pintype="passive"/>
+    </net>
+  </nets>
+</export>

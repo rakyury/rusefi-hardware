@@ -1,0 +1,94 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-21T05:55:05+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/0537d8aa-314a-5d6f-9b8c-694224cd4821",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1601 Pin 14 [VCC, Power input, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 0.6985
+                            },
+                            "uuid": "18f1dea0-ea70-5067-8e25-8ab9632729be"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1601 Pin 7 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 1.2065
+                            },
+                            "uuid": "5bb6e4a2-b1a4-5ad8-9379-6b97a0eb15a6"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'DIN6'",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 0.762
+                            },
+                            "uuid": "3792b1eb-cc2b-5b52-8cd3-2d427588e679"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'DIN7'",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 0.8382
+                            },
+                            "uuid": "1c523d91-d5b2-5f94-9557-7a6fd081a669"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'DIN8'",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 0.9144
+                            },
+                            "uuid": "68599332-7dc7-5b7e-8378-2aea638a1f55"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "digital_aux_2.kicad_sch"
+}

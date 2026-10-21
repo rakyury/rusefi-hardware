@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/src/Power8GDI/hardware/design/interfaces/sd_spi.kicad_sch</source>
+    <date>2026-10-21T05:55:28+0000</date>
+    <tool>Eeschema 9.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>microSD SPI3 logging candidate</title>
+        <company/>
+        <rev>Engineering draft 0.1</rev>
+        <date/>
+        <source>sd_spi.kicad_sch</source>
+        <comment number="1" value="UNQUALIFIED: no manufacturing or engine approval"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1520">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>76517920-6937-5476-9528-2f9afac79b0c</tstamps>
+    </comp>
+    <comp ref="C1521">
+      <value>10u 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ca9b88b3-77ec-512e-9a75-117011d47869</tstamps>
+    </comp>
+    <comp ref="C1522">
+      <value>1n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Card detect debounce is firmware polling, no EXTI reservation</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="Card detect debounce is firmware polling, no EXTI reservation"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5e97d8cf-9ee5-55dc-aca4-976a40aa1411</tstamps>
+    </comp>
+    <comp ref="D1520">
+      <value>USBLC6-2SC6</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
+      <fields>
+        <field name="Design note">ESD steering reference at3V3, below specified5.25V leakage test voltage; rail injection/clamping and actual system validation pending</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Interface_USBLC6_2SC6" description=""/>
+      <property name="Design note" value="ESD steering reference at3V3, below specified5.25V leakage test voltage; rail injection/clamping and actual system validation pending"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>34a23ad4-5a1b-50f5-91f1-0b8e273f164b</tstamps>
+    </comp>
+    <comp ref="D1521">
+      <value>USBLC6-2SC6</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
+      <fields>
+        <field name="Design note">ESD steering reference at3V3, below specified5.25V leakage test voltage; rail injection/clamping and actual system validation pending</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Interface_USBLC6_2SC6" description=""/>
+      <property name="Design note" value="ESD steering reference at3V3, below specified5.25V leakage test voltage; rail injection/clamping and actual system validation pending"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8e136a42-6908-518b-87b0-486bf4f88d4d</tstamps>
+    </comp>
+    <comp ref="J1502">
+      <value>Molex 1040310811</value>
+      <footprint>Connector_Card:microSD_HC_Molex_104031-0811</footprint>
+      <fields>
+        <field name="Design note">Molex SD-104031-001: CD switch closes with card; official footprint numbers9/10 switch and11 shell. Card choice/load unspecified</field>
+        <field name="Footprint">Connector_Card:microSD_HC_Molex_104031-0811</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Interface_Molex104031" description=""/>
+      <property name="Design note" value="Molex SD-104031-001: CD switch closes with card; official footprint numbers9/10 switch and11 shell. Card choice/load unspecified"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>278add6b-fb9f-5111-85b9-4560b3147c69</tstamps>
+    </comp>
+    <comp ref="R1520">
+      <value>0R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Current measurement link; no power switching or hot-plug inrush limit</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Current measurement link; no power switching or hot-plug inrush limit"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ad774a28-fd55-52d9-8122-009a953e782b</tstamps>
+    </comp>
+    <comp ref="R1521">
+      <value>22R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Provisional source series damping, tune only from SI evidence</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Provisional source series damping, tune only from SI evidence"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>62e1692d-d7a2-5227-b3ed-095f9cb04845</tstamps>
+    </comp>
+    <comp ref="R1522">
+      <value>22R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Provisional source series damping</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Provisional source series damping"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4df57db0-9c71-5444-8ff6-00de64809b50</tstamps>
+    </comp>
+    <comp ref="R1523">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">SPI startup/unused data pullup; no clock pullup</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="SPI startup/unused data pullup; no clock pullup"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5fad2b9c-6938-53f0-a380-95bf162419e9</tstamps>
+    </comp>
+    <comp ref="R1524">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">SPI startup/unused data pullup; no clock pullup</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="SPI startup/unused data pullup; no clock pullup"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>956525d5-b783-51b8-8f04-5bec6ddc1d50</tstamps>
+    </comp>
+    <comp ref="R1525">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">SPI startup/unused data pullup; no clock pullup</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="SPI startup/unused data pullup; no clock pullup"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7b307641-699d-5efa-8abe-10ff80ede4b2</tstamps>
+    </comp>
+    <comp ref="R1526">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">SPI startup/unused data pullup; no clock pullup</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="SPI startup/unused data pullup; no clock pullup"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6370ebb1-ffb1-5b8f-b12b-8e119670ca00</tstamps>
+    </comp>
+    <comp ref="R1527">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">SPI startup/unused data pullup; no clock pullup</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="SPI startup/unused data pullup; no clock pullup"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8d5165cd-4fcc-55ad-a407-dd3d96cb5029</tstamps>
+    </comp>
+    <comp ref="R1528">
+      <value>47k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">SPI startup/unused data pullup; no clock pullup</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="SPI startup/unused data pullup; no clock pullup"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sd_spi.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cef5e570-35f0-582d-a6c2-4381107d1632</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Power8GDI_Core" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="Interface_Molex104031">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Interface_Molex104031</field>
+        <field name="Footprint">Connector_Card:microSD_HC_Molex_104031-0811</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="DAT2" type="passive"/>
+        <pin num="2" name="DAT3_CS" type="passive"/>
+        <pin num="3" name="CMD_MOSI" type="passive"/>
+        <pin num="4" name="VDD" type="passive"/>
+        <pin num="5" name="CLK" type="passive"/>
+        <pin num="6" name="VSS" type="passive"/>
+        <pin num="7" name="DAT0_MISO" type="passive"/>
+        <pin num="8" name="DAT1" type="passive"/>
+        <pin num="9" name="CD_SWITCH" type="passive"/>
+        <pin num="10" name="CD_DETECT" type="passive"/>
+        <pin num="11" name="SHELL" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="Interface_USBLC6_2SC6">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">Interface_USBLC6_2SC6</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="IO1A" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="IO2A" type="passive"/>
+        <pin num="4" name="IO2B" type="passive"/>
+        <pin num="5" name="VBUS" type="passive"/>
+        <pin num="6" name="IO1B" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Power8GDI_Core">
+      <uri>/src/Power8GDI/hardware/design/interfaces/interfaces.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3" class="Default">
+      <node ref="R1520" pin="1" pintype="passive"/>
+    </net>
+    <net code="2" name="GND" class="Default">
+      <node ref="C1520" pin="2" pintype="passive"/>
+      <node ref="C1521" pin="2" pintype="passive"/>
+      <node ref="C1522" pin="2" pintype="passive"/>
+      <node ref="D1520" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="D1521" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J1502" pin="10" pinfunction="CD_DETECT" pintype="passive"/>
+      <node ref="J1502" pin="11" pinfunction="SHELL" pintype="passive"/>
+      <node ref="J1502" pin="6" pinfunction="VSS" pintype="passive"/>
+    </net>
+    <net code="3" name="SD_3V3" class="Default">
+      <node ref="C1520" pin="1" pintype="passive"/>
+      <node ref="C1521" pin="1" pintype="passive"/>
+      <node ref="D1520" pin="5" pinfunction="VBUS" pintype="passive"/>
+      <node ref="D1521" pin="5" pinfunction="VBUS" pintype="passive"/>
+      <node ref="J1502" pin="4" pinfunction="VDD" pintype="passive"/>
+      <node ref="R1520" pin="2" pintype="passive"/>
+      <node ref="R1523" pin="1" pintype="passive"/>
+      <node ref="R1524" pin="1" pintype="passive"/>
+      <node ref="R1525" pin="1" pintype="passive"/>
+      <node ref="R1526" pin="1" pintype="passive"/>
+      <node ref="R1527" pin="1" pintype="passive"/>
+      <node ref="R1528" pin="1" pintype="passive"/>
+    </net>
+    <net code="4" name="SD_CD" class="Default">
+      <node ref="C1522" pin="1" pintype="passive"/>
+      <node ref="J1502" pin="9" pinfunction="CD_SWITCH" pintype="passive"/>
+      <node ref="R1528" pin="2" pintype="passive"/>
+    </net>
+    <net code="5" name="SD_CS" class="Default">
+      <node ref="D1521" pin="1" pinfunction="IO1A" pintype="passive"/>
+      <node ref="D1521" pin="6" pinfunction="IO1B" pintype="passive"/>
+      <node ref="J1502" pin="2" pinfunction="DAT3_CS" pintype="passive"/>
+      <node ref="R1523" pin="2" pintype="passive"/>
+    </net>
+    <net code="6" name="SD_DAT1" class="Default">
+      <node ref="J1502" pin="8" pinfunction="DAT1" pintype="passive"/>
+      <node ref="R1526" pin="2" pintype="passive"/>
+    </net>
+    <net code="7" name="SD_DAT2" class="Default">
+      <node ref="J1502" pin="1" pinfunction="DAT2" pintype="passive"/>
+      <node ref="R1527" pin="2" pintype="passive"/>
+    </net>
+    <net code="8" name="SD_MOSI_CARD" class="Default">
+      <node ref="D1520" pin="3" pinfunction="IO2A" pintype="passive"/>
+      <node ref="D1520" pin="4" pinfunction="IO2B" pintype="passive"/>
+      <node ref="J1502" pin="3" pinfunction="CMD_MOSI" pintype="passive"/>
+      <node ref="R1522" pin="2" pintype="passive"/>
+      <node ref="R1525" pin="2" pintype="passive"/>
+    </net>
+    <net code="9" name="SD_SCK_CARD" class="Default">
+      <node ref="D1520" pin="1" pinfunction="IO1A" pintype="passive"/>
+      <node ref="D1520" pin="6" pinfunction="IO1B" pintype="passive"/>
+      <node ref="J1502" pin="5" pinfunction="CLK" pintype="passive"/>
+      <node ref="R1521" pin="2" pintype="passive"/>
+    </net>
+    <net code="10" name="SD_SPI3_MISO" class="Default">
+      <node ref="D1521" pin="3" pinfunction="IO2A" pintype="passive"/>
+      <node ref="D1521" pin="4" pinfunction="IO2B" pintype="passive"/>
+      <node ref="J1502" pin="7" pinfunction="DAT0_MISO" pintype="passive"/>
+      <node ref="R1524" pin="2" pintype="passive"/>
+    </net>
+    <net code="11" name="SD_SPI3_MOSI" class="Default">
+      <node ref="R1522" pin="1" pintype="passive"/>
+    </net>
+    <net code="12" name="SD_SPI3_SCK" class="Default">
+      <node ref="R1521" pin="1" pintype="passive"/>
+    </net>
+  </nets>
+</export>

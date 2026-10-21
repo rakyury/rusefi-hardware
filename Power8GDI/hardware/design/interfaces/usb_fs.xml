@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/src/Power8GDI/hardware/design/interfaces/usb_fs.kicad_sch</source>
+    <date>2026-10-21T05:55:23+0000</date>
+    <tool>Eeschema 9.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Self-powered USB FS device: host VBUS never powers ECU</title>
+        <company/>
+        <rev>Engineering draft 0.1</rev>
+        <date/>
+        <source>usb_fs.kicad_sch</source>
+        <comment number="1" value="UNQUALIFIED: no manufacturing or engine approval"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1510">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="usb_fs.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4b00d873-979f-5cc3-adab-8e097ea2c031</tstamps>
+    </comp>
+    <comp ref="C1511">
+      <value>1n 2kV C0G</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <fields>
+        <field name="Design note">Candidate shield HF return, not isolation barrier; shield bonding must be reviewed with enclosure</field>
+        <field name="Footprint">Capacitor_SMD:C_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="Candidate shield HF return, not isolation barrier; shield bonding must be reviewed with enclosure"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="usb_fs.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>784e3270-4d86-557e-9771-f2022815def6</tstamps>
+    </comp>
+    <comp ref="D1510">
+      <value>USBLC6-2SC6</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
+      <fields>
+        <field name="Design note">ST DS4260 Fig1: pins1/6 IO1,3/4 IO2,2GND,5VBUS. Close to connector with continuous GND return</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Interface_USBLC6_2SC6" description=""/>
+      <property name="Design note" value="ST DS4260 Fig1: pins1/6 IO1,3/4 IO2,2GND,5VBUS. Close to connector with continuous GND return"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="usb_fs.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3084da4c-8b74-5293-9fbd-4724f8fdffcd</tstamps>
+    </comp>
+    <comp ref="J1501">
+      <value>Molex 1050170001</value>
+      <footprint>Connector_USB:USB_Micro-B_Molex-105017-0001</footprint>
+      <fields>
+        <field name="Design note">Micro-B device-only; ID NC. Molex SD-105017-001 and official KiCad9 footprint; shell pads6. Not automotive/environmentally qualified</field>
+        <field name="Footprint">Connector_USB:USB_Micro-B_Molex-105017-0001</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Interface_USB_MicroB" description=""/>
+      <property name="Design note" value="Micro-B device-only; ID NC. Molex SD-105017-001 and official KiCad9 footprint; shell pads6. Not automotive/environmentally qualified"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="usb_fs.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e1dddcdd-3888-5f9b-8193-a0811e105339</tstamps>
+    </comp>
+    <comp ref="Q1510">
+      <value>2N7002,215</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <fields>
+        <field name="Design note">AN4879 MOSFET VBUS detector. MCU PA9 regular GPIO active-low; disables native OTG VBUS sensing; no5V on unpowered MCU</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Interface_2N7002" description=""/>
+      <property name="Design note" value="AN4879 MOSFET VBUS detector. MCU PA9 regular GPIO active-low; disables native OTG VBUS sensing; no5V on unpowered MCU"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="usb_fs.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>88e5b7f7-7791-5ca0-b7da-90e6aa5df50e</tstamps>
+    </comp>
+    <comp ref="R1510">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="usb_fs.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ce03d8aa-dee0-56d3-aa4a-6ba6e1581937</tstamps>
+    </comp>
+    <comp ref="R1511">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="usb_fs.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>86f2bf74-aa4a-545f-bdaa-410c12ba2c36</tstamps>
+    </comp>
+    <comp ref="R1512">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="usb_fs.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>291f5344-2d81-5eff-9e03-7c68a09ce854</tstamps>
+    </comp>
+    <comp ref="R1513">
+      <value>0R DNP</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Chassis/shield strategy and ground-loop/EMC review required before fit</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Chassis/shield strategy and ground-loop/EMC review required before fit"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="usb_fs.kicad_sch"/>
+      <property name="dnp"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1ac54828-b926-5c93-baad-9e823d02dc29</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Power8GDI_Core" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="Interface_2N7002">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Interface_2N7002</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="Interface_USBLC6_2SC6">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">Interface_USBLC6_2SC6</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="IO1A" type="passive"/>
+        <pin num="2" name="GND" type="passive"/>
+        <pin num="3" name="IO2A" type="passive"/>
+        <pin num="4" name="IO2B" type="passive"/>
+        <pin num="5" name="VBUS" type="passive"/>
+        <pin num="6" name="IO1B" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="Interface_USB_MicroB">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Interface_USB_MicroB</field>
+        <field name="Footprint">Connector_USB:USB_Micro-B_Molex-105017-0001</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VBUS" type="passive"/>
+        <pin num="2" name="D-" type="passive"/>
+        <pin num="3" name="D+" type="passive"/>
+        <pin num="4" name="ID" type="passive"/>
+        <pin num="5" name="GND" type="passive"/>
+        <pin num="6" name="SHIELD" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Power8GDI_Core">
+      <uri>/src/Power8GDI/hardware/design/interfaces/interfaces.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3" class="Default">
+      <node ref="R1512" pin="1" pintype="passive"/>
+    </net>
+    <net code="2" name="GND" class="Default">
+      <node ref="C1510" pin="2" pintype="passive"/>
+      <node ref="C1511" pin="2" pintype="passive"/>
+      <node ref="D1510" pin="2" pinfunction="GND" pintype="passive"/>
+      <node ref="J1501" pin="5" pinfunction="GND" pintype="passive"/>
+      <node ref="Q1510" pin="2" pinfunction="S" pintype="passive"/>
+      <node ref="R1511" pin="2" pintype="passive"/>
+      <node ref="R1513" pin="2" pintype="passive"/>
+    </net>
+    <net code="3" name="USB_DM" class="Default">
+      <node ref="D1510" pin="3" pinfunction="IO2A" pintype="passive"/>
+      <node ref="D1510" pin="4" pinfunction="IO2B" pintype="passive"/>
+      <node ref="J1501" pin="2" pinfunction="D-" pintype="passive"/>
+    </net>
+    <net code="4" name="USB_DP" class="Default">
+      <node ref="D1510" pin="1" pinfunction="IO1A" pintype="passive"/>
+      <node ref="D1510" pin="6" pinfunction="IO1B" pintype="passive"/>
+      <node ref="J1501" pin="3" pinfunction="D+" pintype="passive"/>
+    </net>
+    <net code="5" name="USB_HOST_VBUS" class="Default">
+      <node ref="C1510" pin="1" pintype="passive"/>
+      <node ref="D1510" pin="5" pinfunction="VBUS" pintype="passive"/>
+      <node ref="J1501" pin="1" pinfunction="VBUS" pintype="passive"/>
+      <node ref="R1510" pin="1" pintype="passive"/>
+    </net>
+    <net code="6" name="USB_SHIELD" class="Default">
+      <node ref="C1511" pin="1" pintype="passive"/>
+      <node ref="J1501" pin="6" pinfunction="SHIELD" pintype="passive"/>
+      <node ref="R1513" pin="1" pintype="passive"/>
+    </net>
+    <net code="7" name="USB_VBUS_GATE" class="Default">
+      <node ref="Q1510" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R1510" pin="2" pintype="passive"/>
+      <node ref="R1511" pin="1" pintype="passive"/>
+    </net>
+    <net code="8" name="USB_VBUS_PRESENT_N" class="Default">
+      <node ref="Q1510" pin="3" pinfunction="D" pintype="passive"/>
+      <node ref="R1512" pin="2" pintype="passive"/>
+    </net>
+  </nets>
+</export>
