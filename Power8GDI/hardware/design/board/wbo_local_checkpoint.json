@@ -177,6 +177,150 @@
   ],
   "local_routes": [
     {
+      "net": "+5V_CORE",
+      "from": "U5604.1",
+      "to": "U5604.2",
+      "distance_mm": 0.5,
+      "layer": "B.Cu",
+      "segments": 1,
+      "length_mm": 0.5
+    },
+    {
+      "net": "+5V_CORE",
+      "from": "U5604.2",
+      "to": "U5604.3",
+      "distance_mm": 0.5,
+      "layer": "B.Cu",
+      "segments": 1,
+      "length_mm": 0.5
+    },
+    {
+      "net": "WBO1_3V3",
+      "from": "U5604.9",
+      "to": "U5604.10",
+      "distance_mm": 0.5,
+      "layer": "B.Cu",
+      "segments": 1,
+      "length_mm": 0.5
+    },
+    {
+      "net": "+5V_CORE",
+      "from": "U5804.1",
+      "to": "U5804.2",
+      "distance_mm": 0.5,
+      "layer": "B.Cu",
+      "segments": 1,
+      "length_mm": 0.5
+    },
+    {
+      "net": "+5V_CORE",
+      "from": "U5804.2",
+      "to": "U5804.3",
+      "distance_mm": 0.5,
+      "layer": "B.Cu",
+      "segments": 1,
+      "length_mm": 0.5
+    },
+    {
+      "net": "WBO2_3V3",
+      "from": "U5804.9",
+      "to": "U5804.10",
+      "distance_mm": 0.5,
+      "layer": "B.Cu",
+      "segments": 1,
+      "length_mm": 0.5
+    },
+    {
+      "net": "WBO1_REF_SET",
+      "from": "U5604.7",
+      "to": "C5660.1",
+      "distance_mm": 2.366,
+      "layer": "B.Cu",
+      "segments": 2,
+      "length_mm": 2.625
+    },
+    {
+      "net": "WBO1_REF_SET",
+      "from": "C5660.1",
+      "to": "R5660.1",
+      "distance_mm": 2.674,
+      "layer": "B.Cu",
+      "segments": 1,
+      "length_mm": 2.674
+    },
+    {
+      "net": "WBO1_3V3",
+      "from": "U5612.6",
+      "to": "C5663.1",
+      "distance_mm": 2.915,
+      "layer": "B.Cu",
+      "segments": 1,
+      "length_mm": 2.915
+    },
+    {
+      "net": "WBO2_3V3",
+      "from": "U5800.4",
+      "to": "C5801.1",
+      "distance_mm": 3.367,
+      "layer": "B.Cu",
+      "segments": 2,
+      "length_mm": 3.625
+    },
+    {
+      "net": "WBO1_3V3",
+      "from": "U5604.10",
+      "to": "C5662.1",
+      "distance_mm": 3.772,
+      "layer": "B.Cu",
+      "segments": 1,
+      "length_mm": 3.772
+    },
+    {
+      "net": "WBO1_3V3",
+      "from": "U5602.17",
+      "to": "C5615.1",
+      "distance_mm": 3.845,
+      "layer": "F.Cu",
+      "segments": 1,
+      "length_mm": 3.845
+    },
+    {
+      "net": "WBO1_REF3V3",
+      "from": "R5663.1",
+      "to": "U5603.2",
+      "distance_mm": 3.926,
+      "layer": "B.Cu",
+      "segments": 3,
+      "length_mm": 5.388
+    },
+    {
+      "net": "WBO1_3V3",
+      "from": "U5600.4",
+      "to": "C5601.1",
+      "distance_mm": 4.008,
+      "layer": "B.Cu",
+      "segments": 1,
+      "length_mm": 4.008
+    },
+    {
+      "net": "WBO1_REF3V3",
+      "from": "U5603.2",
+      "to": "C5664.1",
+      "distance_mm": 4.038,
+      "layer": "B.Cu",
+      "segments": 3,
+      "length_mm": 5.45
+    },
+    {
+      "net": "+5V_CORE",
+      "from": "U5604.1",
+      "to": "C5661.1",
+      "distance_mm": 6.241,
+      "layer": "B.Cu",
+      "segments": 1,
+      "length_mm": 6.241
+    },
+    {
       "net": "WBO1_Vm",
       "from": "U5600.13",
       "to": "U5600.14",
@@ -249,15 +393,6 @@
       "length_mm": 2.265
     },
     {
-      "net": "WBO1_REF3V3",
-      "from": "C5664.1",
-      "to": "U5603.2",
-      "distance_mm": 2.357,
-      "layer": "B.Cu",
-      "segments": 1,
-      "length_mm": 2.357
-    },
-    {
       "net": "WBO1_HEATER_DRIVE_5V",
       "from": "U5611.4",
       "to": "R5641.1",
@@ -274,15 +409,6 @@
       "layer": "F.Cu",
       "segments": 1,
       "length_mm": 2.439
-    },
-    {
-      "net": "WBO2_nRESET",
-      "from": "C5809.1",
-      "to": "U5812.1",
-      "distance_mm": 2.502,
-      "layer": "F.Cu",
-      "segments": 1,
-      "length_mm": 2.502
     },
     {
       "net": "WBO1_Vm",
@@ -304,21 +430,12 @@
     },
     {
       "net": "WBO2_REF_SET",
-      "from": "C5860.1",
+      "from": "R5863.2",
       "to": "R5860.1",
-      "distance_mm": 2.53,
+      "distance_mm": 2.593,
       "layer": "B.Cu",
       "segments": 1,
-      "length_mm": 2.53
-    },
-    {
-      "net": "WBO1_REF_SET",
-      "from": "C5660.1",
-      "to": "R5663.2",
-      "distance_mm": 2.561,
-      "layer": "B.Cu",
-      "segments": 1,
-      "length_mm": 2.561
+      "length_mm": 2.593
     },
     {
       "net": "WBO2_AUTO_Net_2D__28_R621_2D_Pad1_29_",
@@ -337,6 +454,15 @@
       "layer": "F.Cu",
       "segments": 1,
       "length_mm": 2.844
+    },
+    {
+      "net": "WBO1_AUTO_Net_2D__28_U600A_2D__2D__29_",
+      "from": "R5604.2",
+      "to": "U5600.2",
+      "distance_mm": 2.883,
+      "layer": "B.Cu",
+      "segments": 2,
+      "length_mm": 3.962
     },
     {
       "net": "WBO1_AUTO_Net_2D__28_U601_2D__2B__29_",
@@ -402,22 +528,22 @@
       "length_mm": 3.36
     },
     {
-      "net": "WBO1_REF_SET",
-      "from": "C5660.1",
-      "to": "R5660.1",
-      "distance_mm": 3.55,
+      "net": "WBO1_AUTO_Net_2D__28_C603_2D_Pad1_29_",
+      "from": "R5604.1",
+      "to": "U5600.1",
+      "distance_mm": 3.509,
       "layer": "B.Cu",
-      "segments": 3,
-      "length_mm": 6.55
+      "segments": 1,
+      "length_mm": 3.509
     },
     {
-      "net": "WBO1_AUTO_Net_2D__28_U600A_2D__2D__29_",
-      "from": "R5604.2",
-      "to": "U5600.2",
-      "distance_mm": 3.773,
+      "net": "WBO2_AUTO_Net_2D__28_U600D_2D__2B__29_",
+      "from": "C5800.1",
+      "to": "R5801.1",
+      "distance_mm": 4.094,
       "layer": "B.Cu",
-      "segments": 2,
-      "length_mm": 4.962
+      "segments": 1,
+      "length_mm": 4.094
     },
     {
       "net": "WBO1_HEATER_OE_N",
@@ -429,15 +555,6 @@
       "length_mm": 4.112
     },
     {
-      "net": "WBO1_AUTO_Net_2D__28_C603_2D_Pad1_29_",
-      "from": "R5604.1",
-      "to": "U5600.1",
-      "distance_mm": 4.271,
-      "layer": "B.Cu",
-      "segments": 1,
-      "length_mm": 4.271
-    },
-    {
       "net": "WBO1_AUTO_Net_2D__28_U600B_2D__2B__29_",
       "from": "R5619.2",
       "to": "U5600.5",
@@ -445,6 +562,15 @@
       "layer": "B.Cu",
       "segments": 2,
       "length_mm": 6.275
+    },
+    {
+      "net": "WBO2_AUTO_Net_2D__28_C603_2D_Pad1_29_",
+      "from": "C5803.1",
+      "to": "R5804.1",
+      "distance_mm": 4.691,
+      "layer": "B.Cu",
+      "segments": 3,
+      "length_mm": 6.45
     },
     {
       "net": "WBO2_HEATER_OE_N",
@@ -519,6 +645,15 @@
       "length_mm": 7.765
     },
     {
+      "net": "WBO2_nRESET",
+      "from": "C5809.1",
+      "to": "U5812.1",
+      "distance_mm": 6.416,
+      "layer": "F.Cu",
+      "segments": 3,
+      "length_mm": 9.363
+    },
+    {
       "net": "WBO1_AUTO_Net_2D__28_U600A_2D__2B__29_",
       "from": "R5605.2",
       "to": "U5600.3",
@@ -580,18 +715,121 @@
       "layer": "F.Cu",
       "segments": 3,
       "length_mm": 12.04
-    },
-    {
-      "net": "WBO1_REF3V3",
-      "from": "U5603.2",
-      "to": "R5663.1",
-      "distance_mm": 9.933,
-      "layer": "B.Cu",
-      "segments": 3,
-      "length_mm": 15.888
     }
   ],
   "unrouted_local_pairs": [
+    {
+      "net": "+5V_CORE",
+      "from": "U5804.1",
+      "to": "C5861.1",
+      "distance_mm": 2.829,
+      "reason": "opposite sides; intentional via routing pending"
+    },
+    {
+      "net": "WBO1_REF_SET",
+      "from": "U5604.7",
+      "to": "R5663.2",
+      "distance_mm": 4.339,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "+5V_CORE",
+      "from": "U5604.3",
+      "to": "U5604.6",
+      "distance_mm": 4.415,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "+5V_CORE",
+      "from": "U5804.3",
+      "to": "U5804.6",
+      "distance_mm": 4.415,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "WBO2_3V3",
+      "from": "U5810.5",
+      "to": "C5840.1",
+      "distance_mm": 5.148,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "WBO1_3V3",
+      "from": "U5610.5",
+      "to": "C5640.1",
+      "distance_mm": 5.466,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "WBO2_3V3",
+      "from": "U5812.6",
+      "to": "C5863.1",
+      "distance_mm": 5.482,
+      "reason": "opposite sides; intentional via routing pending"
+    },
+    {
+      "net": "+5V_CORE",
+      "from": "U5811.5",
+      "to": "C5841.1",
+      "distance_mm": 6.115,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "WBO2_REF_SET",
+      "from": "U5804.7",
+      "to": "R5863.2",
+      "distance_mm": 6.209,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "WBO2_REF_SET",
+      "from": "U5804.7",
+      "to": "C5860.1",
+      "distance_mm": 6.354,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "WBO2_3V3",
+      "from": "U5804.10",
+      "to": "C5862.1",
+      "distance_mm": 8.869,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "WBO2_REF_SET",
+      "from": "C5860.1",
+      "to": "R5860.1",
+      "distance_mm": 9.476,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "WBO2_3V3",
+      "from": "U5802.17",
+      "to": "C5815.1",
+      "distance_mm": 9.7,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "+5V_CORE",
+      "from": "U5611.5",
+      "to": "C5641.1",
+      "distance_mm": 10.422,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "WBO2_REF3V3",
+      "from": "R5863.1",
+      "to": "U5803.2",
+      "distance_mm": 13.525,
+      "reason": "opposite sides; intentional via routing pending"
+    },
+    {
+      "net": "WBO2_REF3V3",
+      "from": "U5803.2",
+      "to": "C5864.1",
+      "distance_mm": 17.676,
+      "reason": "distance >16 mm"
+    },
     {
       "net": "WBO1_Un_sense",
       "from": "R5623.2",
@@ -614,20 +852,6 @@
       "reason": "opposite sides; intentional via routing pending"
     },
     {
-      "net": "WBO2_AUTO_Net_2D__28_U600D_2D__2B__29_",
-      "from": "R5801.1",
-      "to": "R5800.2",
-      "distance_mm": 3.007,
-      "reason": "opposite sides; intentional via routing pending"
-    },
-    {
-      "net": "WBO2_REF_SET",
-      "from": "C5860.1",
-      "to": "R5863.2",
-      "distance_mm": 3.551,
-      "reason": "all short candidate paths obstructed"
-    },
-    {
       "net": "WBO1_AUTO_Net_2D__28_R610_2D_Pad1_29_",
       "from": "R5610.1",
       "to": "R5611.2",
@@ -646,6 +870,13 @@
       "from": "U5612.1",
       "to": "R5662.1",
       "distance_mm": 4.639,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "WBO2_AUTO_Net_2D__28_U600A_2D__2D__29_",
+      "from": "C5803.2",
+      "to": "R5804.2",
+      "distance_mm": 4.744,
       "reason": "all short candidate paths obstructed"
     },
     {
@@ -681,6 +912,13 @@
       "from": "C5609.1",
       "to": "J5600.3",
       "distance_mm": 5.114,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "WBO2_AUTO_Net_2D__28_U600A_2D__2B__29_",
+      "from": "R5803.1",
+      "to": "R5805.2",
+      "distance_mm": 5.163,
       "reason": "all short candidate paths obstructed"
     },
     {
@@ -740,13 +978,6 @@
       "reason": "opposite sides; intentional via routing pending"
     },
     {
-      "net": "WBO1_REF_SET",
-      "from": "C5660.1",
-      "to": "U5604.7",
-      "distance_mm": 6.144,
-      "reason": "all short candidate paths obstructed"
-    },
-    {
       "net": "WBO1_AUTO_Net_2D__28_Q600_2D_G_29_",
       "from": "Q5600.1",
       "to": "R5622.1",
@@ -759,6 +990,13 @@
       "to": "R5627.2",
       "distance_mm": 6.288,
       "reason": "all short candidate paths obstructed"
+    },
+    {
+      "net": "WBO2_AUTO_Net_2D__28_U600D_2D__2B__29_",
+      "from": "R5801.1",
+      "to": "R5800.2",
+      "distance_mm": 6.379,
+      "reason": "opposite sides; intentional via routing pending"
     },
     {
       "net": "WBO2_AUTO_Net_2D__28_U601_2D__2B__29_",
@@ -780,13 +1018,6 @@
       "to": "R5822.1",
       "distance_mm": 6.673,
       "reason": "opposite sides; intentional via routing pending"
-    },
-    {
-      "net": "WBO2_AUTO_Net_2D__28_U600D_2D__2B__29_",
-      "from": "C5800.1",
-      "to": "R5801.1",
-      "distance_mm": 6.781,
-      "reason": "all short candidate paths obstructed"
     },
     {
       "net": "WBO1_LSU_Un_sense",
@@ -871,13 +1102,6 @@
       "to": "R5816.1",
       "distance_mm": 7.765,
       "reason": "opposite sides; intentional via routing pending"
-    },
-    {
-      "net": "WBO2_REF_SET",
-      "from": "C5860.1",
-      "to": "U5804.7",
-      "distance_mm": 7.776,
-      "reason": "all short candidate paths obstructed"
     },
     {
       "net": "WBO2_Vm",
@@ -971,13 +1195,6 @@
       "reason": "opposite sides; intentional via routing pending"
     },
     {
-      "net": "WBO2_AUTO_Net_2D__28_U600A_2D__2B__29_",
-      "from": "R5803.1",
-      "to": "R5805.2",
-      "distance_mm": 9.978,
-      "reason": "all short candidate paths obstructed"
-    },
-    {
       "net": "WBO1_Boot0",
       "from": "R5625.2",
       "to": "U5602.31",
@@ -1020,6 +1237,20 @@
       "reason": "all short candidate paths obstructed"
     },
     {
+      "net": "WBO2_F042_HEATER_PWM",
+      "from": "R5816.2",
+      "to": "R5817.2",
+      "distance_mm": 11.493,
+      "reason": "opposite sides; intentional via routing pending"
+    },
+    {
+      "net": "WBO2_AUTO_Net_2D__28_D602_2D_K_29_",
+      "from": "D5802.1",
+      "to": "R5827.2",
+      "distance_mm": 11.504,
+      "reason": "all short candidate paths obstructed"
+    },
+    {
       "net": "WBO1_AUTO_Net_2D__28_U601_2D__2D__29_",
       "from": "R5613.1",
       "to": "U5601.4",
@@ -1034,25 +1265,11 @@
       "reason": "all short candidate paths obstructed"
     },
     {
-      "net": "WBO2_F042_HEATER_PWM",
-      "from": "R5817.2",
-      "to": "U5802.13",
-      "distance_mm": 11.914,
-      "reason": "all short candidate paths obstructed"
-    },
-    {
       "net": "WBO2_AUTO_Net_2D__28_D601_2D_K_29_",
       "from": "D5801.1",
       "to": "R5826.2",
       "distance_mm": 12.962,
       "reason": "all short candidate paths obstructed"
-    },
-    {
-      "net": "WBO2_REF3V3",
-      "from": "U5803.2",
-      "to": "R5863.1",
-      "distance_mm": 13.118,
-      "reason": "opposite sides; intentional via routing pending"
     },
     {
       "net": "WBO1_nRESET",
@@ -1076,18 +1293,11 @@
       "reason": "all short candidate paths obstructed"
     },
     {
-      "net": "WBO2_F042_HEATER_PWM",
-      "from": "R5816.2",
-      "to": "R5817.2",
-      "distance_mm": 13.903,
-      "reason": "opposite sides; intentional via routing pending"
-    },
-    {
-      "net": "WBO2_REF3V3",
-      "from": "C5864.1",
-      "to": "U5803.2",
-      "distance_mm": 14.222,
-      "reason": "opposite sides; intentional via routing pending"
+      "net": "WBO2_nRESET",
+      "from": "C5809.1",
+      "to": "J5800.3",
+      "distance_mm": 14.488,
+      "reason": "all short candidate paths obstructed"
     },
     {
       "net": "WBO2_HEATER_OE_BASE",
@@ -1104,46 +1314,11 @@
       "reason": "all short candidate paths obstructed"
     },
     {
-      "net": "WBO2_AUTO_Net_2D__28_U600A_2D__2D__29_",
-      "from": "U5800.2",
-      "to": "R5804.2",
-      "distance_mm": 15.27,
-      "reason": "all short candidate paths obstructed"
-    },
-    {
-      "net": "WBO2_nRESET",
-      "from": "C5809.1",
-      "to": "J5800.3",
-      "distance_mm": 15.424,
-      "reason": "all short candidate paths obstructed"
-    },
-    {
-      "net": "WBO2_AUTO_Net_2D__28_D602_2D_K_29_",
-      "from": "D5802.1",
-      "to": "R5827.2",
-      "distance_mm": 15.787,
-      "reason": "all short candidate paths obstructed"
-    },
-    {
       "net": "WBO1_nRESET",
       "from": "C5609.1",
       "to": "U5612.1",
       "distance_mm": 15.9,
       "reason": "opposite sides; intentional via routing pending"
-    },
-    {
-      "net": "WBO2_AUTO_Net_2D__28_C603_2D_Pad1_29_",
-      "from": "U5800.1",
-      "to": "R5804.1",
-      "distance_mm": 16.187,
-      "reason": "distance >16 mm"
-    },
-    {
-      "net": "WBO2_AUTO_Net_2D__28_U601_2D__2D__29_",
-      "from": "R5813.1",
-      "to": "U5801.4",
-      "distance_mm": 16.385,
-      "reason": "distance >16 mm"
     },
     {
       "net": "WBO2_AUTO_Net_2D__28_U601_2D__2B__29_",
@@ -1153,10 +1328,24 @@
       "reason": "distance >16 mm"
     },
     {
+      "net": "WBO2_F042_HEATER_PWM",
+      "from": "R5817.2",
+      "to": "U5802.13",
+      "distance_mm": 16.455,
+      "reason": "distance >16 mm"
+    },
+    {
       "net": "WBO2_AUTO_Net_2D__28_Q600_2D_G_29_",
       "from": "Q5800.1",
       "to": "R5845.1",
       "distance_mm": 16.523,
+      "reason": "distance >16 mm"
+    },
+    {
+      "net": "WBO2_AUTO_Net_2D__28_U601_2D__2D__29_",
+      "from": "R5813.1",
+      "to": "U5801.4",
+      "distance_mm": 16.57,
       "reason": "distance >16 mm"
     },
     {
@@ -1247,7 +1436,7 @@
       "net": "WBO2_Boot0",
       "from": "R5825.2",
       "to": "U5802.31",
-      "distance_mm": 31.264,
+      "distance_mm": 28.785,
       "reason": "distance >16 mm"
     },
     {
@@ -1261,7 +1450,7 @@
       "net": "WBO2_AUTO_Net_2D__28_D603_2D_A_29_",
       "from": "D5803.2",
       "to": "R5828.1",
-      "distance_mm": 34.228,
+      "distance_mm": 32.243,
       "reason": "distance >16 mm"
     },
     {
@@ -1310,8 +1499,8 @@
     {
       "ref": "U5603",
       "xy_mm": [
-        158.0,
-        79.0
+        165.0,
+        77.0
       ],
       "side": "B.Cu",
       "seed_displacement_mm": 0.0
@@ -1490,11 +1679,11 @@
     {
       "ref": "C5603",
       "xy_mm": [
-        167.37795,
+        168.37795,
         74.575
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 0.5
+      "seed_displacement_mm": 1.118
     },
     {
       "ref": "C5605",
@@ -1643,29 +1832,29 @@
     {
       "ref": "C5660",
       "xy_mm": [
-        160.0,
-        89.0
+        165.5,
+        84.0
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 1.0
+      "seed_displacement_mm": 1.118
     },
     {
       "ref": "C5661",
       "xy_mm": [
         156.0,
-        84.0
+        81.5
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 1.414
+      "seed_displacement_mm": 3.5
     },
     {
       "ref": "C5662",
       "xy_mm": [
-        166.0,
-        85.0
+        164.5,
+        88.5
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 0.0
+      "seed_displacement_mm": 2.121
     },
     {
       "ref": "C5663",
@@ -1679,11 +1868,11 @@
     {
       "ref": "C5664",
       "xy_mm": [
-        155.0,
+        168.0,
         78.0
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 2.0
+      "seed_displacement_mm": 1.0
     },
     {
       "ref": "R5600",
@@ -1724,11 +1913,11 @@
     {
       "ref": "R5604",
       "xy_mm": [
-        169.30295,
+        170.30295,
         74.575
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 0.707
+      "seed_displacement_mm": 1.581
     },
     {
       "ref": "R5605",
@@ -2012,20 +2201,20 @@
     {
       "ref": "R5660",
       "xy_mm": [
-        160.0,
-        92.5
+        168.0,
+        83.0
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 1.5
+      "seed_displacement_mm": 0.0
     },
     {
       "ref": "R5661",
       "xy_mm": [
-        165.0,
-        90.0
+        166.0,
+        91.0
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 0.0
+      "seed_displacement_mm": 1.0
     },
     {
       "ref": "R5662",
@@ -2039,11 +2228,11 @@
     {
       "ref": "R5663",
       "xy_mm": [
-        158.0,
-        89.0
+        163.5,
+        81.0
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 1.0
+      "seed_displacement_mm": 1.803
     },
     {
       "ref": "R5664",
@@ -2093,11 +2282,11 @@
     {
       "ref": "U5803",
       "xy_mm": [
-        203.0,
+        210.0,
         81.0
       ],
       "side": "F.Cu",
-      "seed_displacement_mm": 2.0
+      "seed_displacement_mm": 4.0
     },
     {
       "ref": "U5804",
@@ -2309,11 +2498,11 @@
     {
       "ref": "C5809",
       "xy_mm": [
-        211.0,
+        207.0,
         80.5
       ],
       "side": "F.Cu",
-      "seed_displacement_mm": 9.14
+      "seed_displacement_mm": 10.181
     },
     {
       "ref": "C5810",
@@ -2345,11 +2534,11 @@
     {
       "ref": "C5813",
       "xy_mm": [
-        207.0,
+        204.0,
         80.0
       ],
       "side": "F.Cu",
-      "seed_displacement_mm": 11.875
+      "seed_displacement_mm": 11.688
     },
     {
       "ref": "C5814",
@@ -2372,11 +2561,11 @@
     {
       "ref": "C5816",
       "xy_mm": [
-        200.0,
+        201.0,
         80.5
       ],
       "side": "F.Cu",
-      "seed_displacement_mm": 17.756
+      "seed_displacement_mm": 17.329
     },
     {
       "ref": "C5817",
@@ -2426,29 +2615,29 @@
     {
       "ref": "C5860",
       "xy_mm": [
-        205.0,
-        93.0
+        211.5,
+        85.0
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 5.0
+      "seed_displacement_mm": 2.5
     },
     {
       "ref": "C5861",
       "xy_mm": [
-        199.5,
+        201.0,
         85.0
       ],
       "side": "F.Cu",
-      "seed_displacement_mm": 3.202
+      "seed_displacement_mm": 0.0
     },
     {
       "ref": "C5862",
       "xy_mm": [
-        207.0,
-        85.0
+        211.0,
+        92.5
       ],
-      "side": "F.Cu",
-      "seed_displacement_mm": 4.0
+      "side": "B.Cu",
+      "seed_displacement_mm": 5.5
     },
     {
       "ref": "C5863",
@@ -2462,11 +2651,11 @@
     {
       "ref": "C5864",
       "xy_mm": [
-        200.0,
-        67.5
+        228.0,
+        76.5
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 10.689
+      "seed_displacement_mm": 15.008
     },
     {
       "ref": "R5800",
@@ -2480,11 +2669,11 @@
     {
       "ref": "R5801",
       "xy_mm": [
-        228.07795,
-        76.5125
+        230.07795,
+        70.0125
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 3.905
+      "seed_displacement_mm": 5.701
     },
     {
       "ref": "R5802",
@@ -2507,20 +2696,20 @@
     {
       "ref": "R5804",
       "xy_mm": [
-        211.5,
-        85.0
+        200.0,
+        67.5
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 11.165
+      "seed_displacement_mm": 15.289
     },
     {
       "ref": "R5805",
       "xy_mm": [
-        228.84045,
-        70.625
+        223.5,
+        57.5
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 8.485
+      "seed_displacement_mm": 7.155
     },
     {
       "ref": "R5806",
@@ -2589,10 +2778,10 @@
       "ref": "R5813",
       "xy_mm": [
         221.65295,
-        55.65
+        54.65
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 7.071
+      "seed_displacement_mm": 7.81
     },
     {
       "ref": "R5814",
@@ -2624,11 +2813,11 @@
     {
       "ref": "R5817",
       "xy_mm": [
-        224.20295,
-        57.8875
+        227.20295,
+        54.3875
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 0.707
+      "seed_displacement_mm": 4.61
     },
     {
       "ref": "R5818",
@@ -2696,11 +2885,11 @@
     {
       "ref": "R5825",
       "xy_mm": [
-        203.5,
-        84.5
+        204.0,
+        82.0
       ],
       "side": "F.Cu",
-      "seed_displacement_mm": 16.67
+      "seed_displacement_mm": 14.126
     },
     {
       "ref": "R5826",
@@ -2714,20 +2903,20 @@
     {
       "ref": "R5827",
       "xy_mm": [
-        204.5,
-        87.5
+        207.0,
+        84.0
       ],
       "side": "F.Cu",
-      "seed_displacement_mm": 15.136
+      "seed_displacement_mm": 10.881
     },
     {
       "ref": "R5828",
       "xy_mm": [
-        201.5,
-        88.5
+        206.5,
+        87.0
       ],
       "side": "F.Cu",
-      "seed_displacement_mm": 27.586
+      "seed_displacement_mm": 25.466
     },
     {
       "ref": "R5829",
@@ -2795,20 +2984,20 @@
     {
       "ref": "R5860",
       "xy_mm": [
-        207.0,
-        94.5
+        206.5,
+        93.0
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 4.031
+      "seed_displacement_mm": 11.927
     },
     {
       "ref": "R5861",
       "xy_mm": [
-        210.5,
-        92.5
+        215.5,
+        94.5
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 2.55
+      "seed_displacement_mm": 6.364
     },
     {
       "ref": "R5862",
@@ -2822,11 +3011,11 @@
     {
       "ref": "R5863",
       "xy_mm": [
-        201.5,
-        94.0
+        204.5,
+        93.0
       ],
       "side": "B.Cu",
-      "seed_displacement_mm": 6.185
+      "seed_displacement_mm": 14.116
     },
     {
       "ref": "R5864",
@@ -2923,21 +3112,21 @@
   "original_copper_preserved": true,
   "original_copper_geometry_sha256": "85156ac53400e19c818d8cefdc33057f52dc5c2a3c67cf6cd0d76e2fb434f343",
   "input_board_sha256": "a1e919fd6ab78ba3482a52c7e49fb6cc0dba6e6f6fe0ef6786ac8af731aef197",
-  "output_board_sha256": "230cc552435b272e9db61dbc1d839782c2e3a7817f90cea1c7bf74ba6dd19901",
+  "output_board_sha256": "c830714e72cea01897718f0722feb17e2b136ee35407351aced2d6ecdcd373ad",
   "drc_scope": {
-    "method": "KiCad 9.0.9 actual DRC of isolated diagnostic copy: retain fixed donor/connector/MCU/IGN and all174WBO; remove only other unplaced footprints at (0,0). Full source board untouched. Root rules plus explicit stronger 0.6mm for60 discovered PT switching nets. No rule relaxations/exclusions.",
+    "method": "KiCad9.0.9 on diagnostic copy retaining fixed donor/connector/MCU/IGN and174WBO. Other unplaced footprints removed only on DRC copy. Actual shared project rules, explicit60PT-domain0.6mm, no exclusions/relaxations.",
     "wbo_non_silkscreen_violations": [],
     "whole_diagnostic_copy_counts": {
-      "clearance": 505,
+      "clearance": 504,
       "track_width": 199,
       "track_dangling": 17,
       "via_dangling": 32,
       "text_height": 24,
-      "silk_over_copper": 142,
+      "silk_over_copper": 141,
       "silk_overlap": 199
     },
     "whole_diagnostic_copy_unconnected_items": 499,
-    "drc_json_sha256": "f2989b7cd541dcd575a4beebe7afda39020307fc8dc0c1330d0de34f9cb96e30",
+    "drc_json_sha256": "92a9e30ff74e0073728be48473b63a6a78326c6702ec4ec757ab165109723ce3",
     "not_a_full_board_drc_pass": true
   }
 }

@@ -194,10 +194,10 @@ def place_and_route(board, fps, nets, fixed_references, regions=None):
                              s['source_rotation_degrees'], s['source_layer']=='B.Cu')
         # New supply, reset and heater-inhibit grouped at the source core.
         new = {
-            'U3': (2, 23, 90), 'U4': (5, 29, 0), 'U12': (17, 28, 0), 'Q0': (34, 16, -90),
-            'R60': (4, 35, 90), 'R61': (9, 34, 0), 'R62': (20, 28, 90), 'R63': (2, 32, 90),
-            'C60': (4, 32, 90), 'C61': (1, 27, 90), 'C62': (10, 29, 90),
-            'C63': (17, 31, 0), 'C64': (1, 22, 90),
+            'U3': (9, 21, 90), 'U4': (5, 29, 0), 'U12': (17, 28, 0), 'Q0': (34, 16, -90),
+            'R60': (12, 27, 90), 'R61': (10, 34, 0), 'R62': (20, 28, 90), 'R63': (9, 24, 90),
+            'C60': (9, 27, 90), 'C61': (0, 29, 0), 'C62': (10, 31, 180),
+            'C63': (17, 31, 0), 'C64': (12, 21, 90),
             'U10': (26, 29, 0), 'U11': (32, 29, 0), 'Q20': (32, 34, 0),
             'R40': (23, 32, 90), 'R41': (35, 29, 90), 'R42': (35, 34, 90),
             'R43': (29, 29, 90), 'R44': (25, 24, 0), 'R45': (35, 21, 90), 'R64': (29, 35, 0), 'R65': (32, 37, 0),
@@ -256,14 +256,34 @@ def place_and_route(board, fps, nets, fixed_references, regions=None):
             yield [a,(mx,a[1]),(mx,b[1]),b]
             yield [a,(a[0],my),(b[0],my),b]
     pairs=[]
+    pair_keys=set()
+    def add_pair(a,b,priority=1):
+        if a.GetNetname()!=b.GetNetname():raise ValueError('Critical decoupling pin contract changed')
+        key=tuple(sorted((a.GetParentFootprint().GetReference()+'.'+a.GetNumber(),b.GetParentFootprint().GetReference()+'.'+b.GetNumber())))
+        if key not in pair_keys:
+            pairs.append((priority,math.dist(xy(a),xy(b)),a.GetNetname(),a,b));pair_keys.add(key)
+    def pad(ref,number):
+        return next(q for q in fps[ref].Pads() if q.GetNumber()==str(number))
+    # Explicit high-fanout rail branches are otherwise excluded from the MST.
+    # These actual pin contracts take precedence over general signal routing.
+    for ch in (1,2):
+        n=5600+200*(ch-1)
+        critical=[('U4',1,'C61',1),('U4',1,'U4',2),('U4',2,'U4',3),('U4',3,'U4',6),
+                  ('U4',9,'U4',10),('U4',10,'C62',1),('U4',7,'C60',1),
+                  ('U4',7,'R63',2),('R63',1,'U3',2),('U3',2,'C64',1),
+                  ('C60',1,'R60',1),('U12',6,'C63',1),('U10',5,'C40',1),('U11',5,'C41',1),
+                  ('U0',4,'C1',1),('U2',17,'C15',1)]
+        for ar,ap,br,bp in critical:
+            a=ar[0]+str(n+int(ar[1:]));b=br[0]+str(n+int(br[1:]))
+            add_pair(pad(a,ap),pad(b,bp),0)
     for name,pads in bynet.items():
         if len(pads)>12 or 'HEATER_NEG' in name or 'HEATER_POS' in name:continue
         # Minimum spanning forest; avoid gratuitous redundant copper.
         linked={0}
         while len(linked)<len(pads):
             distance,i,j=min((math.dist(xy(pads[i]),xy(pads[j])),i,j) for i in linked for j in range(len(pads)) if j not in linked)
-            pairs.append((distance,name,pads[i],pads[j]));linked.add(j)
-    for distance,name,a,b in sorted(pairs,key=lambda x:x[0]):
+            add_pair(pads[i],pads[j]);linked.add(j)
+    for priority,distance,name,a,b in sorted(pairs,key=lambda x:(x[0],x[1])):
         endpoint=lambda q:q.GetParentFootprint().GetReference()+'.'+q.GetNumber()
         entry={'net':name,'from':endpoint(a),'to':endpoint(b),'distance_mm':round(distance,3)}
         common=[l for l in (p.F_Cu,p.B_Cu) if a.IsOnLayer(l) and b.IsOnLayer(l)]

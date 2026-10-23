@@ -7,7 +7,7 @@ packing. Exclude returned `placed_references` from subsequent generic packing.
 Both board sides are allowed. Donor footprints and copper must remain fixed.
 
 Dependencies: integration `audit_gdi_voltage_domains.py` (998f104),
-`voltage_domains.py` (5bae432), current WBO manifest/reference and KiCad9 pcbnew.
+`voltage_domains.py` (9efc0cd, including battery aliases), current WBO manifest/reference and KiCad9 pcbnew.
 The caller should configure `voltage_domains` from its actual `core.net` first.
 Standalone use configures the adjacent core.net. Every discovered PT-domain
 node is independently checked against actual footprint pad nets before work.
@@ -15,14 +15,16 @@ node is independently checked against actual footprint pad nets before work.
 The module requires all174 current WBO parts with matching values/pad nets.
 It seeds the pinned Hellen layout at1.5 scale, places actual enlarged bodies,
 and makes limited side/position adjustments around retained donor obstacles.
-New LT3042/reset/inhibit/power parts have explicit placement seeds. It does
+New LT3042/reset/inhibit/power parts have explicit placement seeds. The REF/SET/
+LDO cluster has a second placement pass, and actual pin-to-pin decoupling rail
+branches are routed before general signals. It does
 not copy source copper. Existing power-zone outlines are blocked even before
 zone refill. NPTH hole clearance is checked independently of copper clearance.
 The shared voltage policy reserves0.6mm around all60 discovered PT switching
 nets,2.5mm around ignition collectors and0.3mm around battery supplies.
 
-Checkpoint:174 placed,46 short same-side local pad connections routed at0.2mm;
-98 local pairs intentionally remain unrouted. Global CAN, harness, heater
+Checkpoint:174 placed,60 short same-side local pad connections routed at0.2mm;
+107 local pairs intentionally remain unrouted. Global CAN, harness, heater
 power paths, main-control signals, ground distribution and long rail links
 remain for subsequent routing. This is not complete WBO routing or a supply
 decoupling/thermal approval. In particular, local rail routing and ground vias
