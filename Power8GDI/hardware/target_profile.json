@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "revision": "2026-10-23-huge-gdi8",
+  "supersedes": "Power8GDI_Huge_GDI6_Spec_RU.pdf revision 0.2 channel counts",
+  "user_confirmed": {
+    "gdi_injectors_onboard": 8,
+    "hpfp_control_valves": 2,
+    "port_injectors_high_z": 8,
+    "ignition_channels": 8,
+    "retain_stock_coils_example": "BMW G42 M240i; passive B58 coil variant, exact part confirmation pending",
+    "h_bridges": 4,
+    "h_bridge_roles": ["DBW", "EWG", "MOTOR3_SPARE", "MOTOR4_SPARE"],
+    "wideband_controllers_onboard": 2,
+    "sent_required": true,
+    "lin_required": true,
+    "egt_channels_onboard": 0,
+    "egt_location": "separate module"
+  },
+  "working_architecture": {
+    "sent_inputs": 4,
+    "lin_buses": 2,
+    "can_buses": 2,
+    "can_type": "classic CAN 2.0B",
+    "external_egt_transport": "CAN; node protocol and module selection pending",
+    "vvt_low_sides": 4,
+    "aux_pwm_low_sides": 8,
+    "service_low_sides": 4,
+    "total_low_sides_including_pi": 24,
+    "wideband_sensor": "Bosch LSU4.9",
+    "gdi_driver_banks": 2,
+    "gdi_channels_per_bank": 4,
+    "hpfp_channels_per_bank": 1,
+    "mcu": "STM32F767IIT6",
+    "nominal_battery_v": 12
+  },
+  "unfrozen": [
+    "Injector and HPFP valve models, peak/hold currents and boost target",
+    "Exact stock ignition coil part number and dwell/current profile",
+    "SENT sensor list and electrical/protocol profiles",
+    "LIN node models and message schedules",
+    "Motor actuator loads and simultaneous current budget",
+    "Complete connector allocation after adding motor3/motor4",
+    "PCB size, cooling, environmental and qualification limits"
+  ],
+  "qualification": "development candidate; no hardware or manufacturing qualification"
+}

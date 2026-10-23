@@ -1,0 +1,7936 @@
+{
+  "schema_version": 1,
+  "root_uuid": "f4d21065-0a5b-5086-a08e-1af9469f04bd",
+  "project": "Power8GDI_Core",
+  "mcu": "STM32F767IIT6",
+  "qualification": "BLOCKED",
+  "parts": [
+    {
+      "ref": "U101",
+      "value": "STM32F767IIT6",
+      "footprint": "Package_QFP:LQFP-176_24x24mm_P0.5mm",
+      "pins": {
+        "48": "GND",
+        "171": "+3V3",
+        "38": "+3V3_A",
+        "81": "MCU_VCAP_1",
+        "125": "MCU_VCAP_2",
+        "6": "+3V3",
+        "15": "+3V3",
+        "23": "+3V3",
+        "36": "+3V3",
+        "49": "+3V3",
+        "62": "+3V3",
+        "72": "+3V3",
+        "82": "+3V3",
+        "91": "+3V3",
+        "102": "GND",
+        "113": "GND",
+        "126": "GND",
+        "135": "GND",
+        "14": "GND",
+        "148": "GND",
+        "158": "GND",
+        "22": "GND",
+        "61": "GND",
+        "71": "GND",
+        "90": "GND",
+        "103": "+3V3",
+        "37": "GND",
+        "127": "+3V3",
+        "136": "+3V3",
+        "159": "+3V3",
+        "172": "+3V3",
+        "39": "+3V3_A",
+        "149": "+3V3",
+        "114": "+3V3",
+        "111": "DI1",
+        "112": "DI2",
+        "99": "DI3",
+        "98": "DI4",
+        "97": "DI5",
+        "60": "DI6",
+        "63": "DI7",
+        "64": "DI8",
+        "8": "IGN1",
+        "4": "IGN2",
+        "3": "IGN3",
+        "2": "IGN4",
+        "1": "IGN5",
+        "167": "IGN6",
+        "168": "IGN7",
+        "5": "IGN8",
+        "96": "HPFP1",
+        "100": "HPFP2",
+        "93": "GDI_SPI2_SCK",
+        "94": "GDI_SPI2_MISO",
+        "95": "GDI_SPI2_MOSI",
+        "92": "PTA_CS",
+        "138": "PTB_CS",
+        "75": "PTA_RESET",
+        "77": "PTB_RESET",
+        "76": "PTA_DRVEN",
+        "78": "PTB_DRVEN",
+        "153": "PTA_FLAG",
+        "152": "PTB_FLAG",
+        "115": "DBW_PWM",
+        "133": "DBW_DIR",
+        "101": "DBW_DISABLE",
+        "117": "EWG_PWM",
+        "104": "EWG_DIR",
+        "105": "EWG_DISABLE",
+        "142": "CAN1_RX",
+        "143": "CAN1_TX",
+        "147": "LIN1_TX",
+        "150": "LIN1_RX",
+        "70": "SENT1",
+        "41": "SENT2",
+        "57": "CRANK",
+        "19": "CAM1",
+        "20": "CAM2",
+        "74": "SENT3",
+        "165": "SENT4",
+        "79": "LIN2_TX",
+        "80": "LIN2_RX",
+        "163": "CAN2_RX",
+        "164": "CAN2_TX",
+        "169": "PI1",
+        "170": "PI2",
+        "68": "PI3",
+        "69": "PI4",
+        "73": "PI5",
+        "16": "PI6",
+        "17": "PI7",
+        "18": "PI8",
+        "27": "VVT1",
+        "59": "VVT2",
+        "65": "VVT3",
+        "66": "VVT4",
+        "67": "AUX_PWM1",
+        "106": "AUX_PWM2",
+        "107": "AUX_PWM3",
+        "108": "AUX_PWM4",
+        "109": "AUX_PWM5",
+        "110": "AUX_PWM6",
+        "157": "AUX_PWM7",
+        "160": "AUX_PWM8",
+        "144": "LS_AUX1",
+        "145": "LS_AUX2",
+        "146": "LS_AUX3",
+        "151": "LS_AUX4",
+        "174": "CAM3",
+        "175": "CAM4",
+        "40": "ADC_TPS1",
+        "42": "ADC_TPS2",
+        "47": "ADC_PPS1",
+        "50": "ADC_PPS2",
+        "51": "ADC_MAP_MAIN",
+        "52": "ADC_BARO_EXT",
+        "53": "ADC_CLT",
+        "56": "ADC_IAT",
+        "32": "ADC_OIL_PRESS",
+        "33": "ADC_OIL_TEMP",
+        "34": "ADC_FRP1",
+        "35": "ADC_FRP2",
+        "54": "ADC_LPFP_PRESS",
+        "55": "ADC_EXH_PRESS",
+        "24": "ADC_EWG_POS",
+        "28": "ADC_AUX_ANALOG1",
+        "26": "ADC_AUX_ANALOG2",
+        "43": "CAN1_STB",
+        "44": "LIN1_EN",
+        "45": "SAFETY_HEARTBEAT",
+        "46": "SAFETY_ARM_REQUEST",
+        "83": "SAFETY_FAULT_N",
+        "84": "LS_CS1",
+        "85": "LS_CS2",
+        "86": "LS_CS3",
+        "87": "LS_CS4",
+        "88": "LS_CS5",
+        "89": "LS_CS6",
+        "128": "LS_RESET_RELEASE",
+        "122": "USB_DM",
+        "123": "USB_DP",
+        "120": "USB_VBUS_PRESENT_N",
+        "139": "SD_SPI3_SCK",
+        "140": "SD_SPI3_MISO",
+        "141": "SD_SPI3_MOSI",
+        "119": "SD_CS",
+        "154": "SD_CD",
+        "155": "CAN2_STB",
+        "156": "LIN2_EN",
+        "129": "HALL1",
+        "130": "HALL2",
+        "131": "HALL3",
+        "176": "HALL4",
+        "7": "FLEX_FREQ",
+        "132": "KNOCK_CS_N",
+        "11": "KNOCK_INT_HOLD",
+        "121": "WBO1_HEATER_PWM",
+        "58": "WBO2_HEATER_PWM",
+        "116": "MOTOR3_PWM",
+        "134": "MOTOR3_DIR",
+        "12": "MOTOR3_DISABLE",
+        "118": "MOTOR4_PWM",
+        "173": "MOTOR4_DIR",
+        "13": "MOTOR4_DISABLE",
+        "162": "MOTOR_CS_N",
+        "31": "NRST",
+        "166": "BOOT0",
+        "124": "SWDIO",
+        "137": "SWCLK",
+        "161": "SWO",
+        "29": "MCU_HSE_IN"
+      },
+      "dnp": false,
+      "note": "Provisional industrial -40..85C LQFP176. Unassigned pads are intentionally unused in this candidate, not qualified resources.",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C101",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 15; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C102",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 23; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C103",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 36; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C104",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 49; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C105",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 62; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C106",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 72; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C107",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 82; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C108",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 91; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C109",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 103; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C110",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 127; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C111",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 136; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C112",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 159; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C113",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place directly at U101 VDD pad 172; short GND return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C114",
+      "value": "4.7u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Package bulk; effective capacitance >=4.7uF after bias/temp derating",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C115",
+      "value": "2.2u 10V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "MCU_VCAP_1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 pad81; effective2.2uF ESR<2ohm; no external load",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C116",
+      "value": "2.2u 10V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "MCU_VCAP_2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 pad125; effective2.2uF ESR<2ohm; no external load",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C117",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 VDDA39/VREF38",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C118",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 VDDA39/VREF38",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "R101",
+      "value": "0R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "+3V3_A"
+      },
+      "dnp": false,
+      "note": "Analog star feed; ferrite substitution needs transient/ADC review",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C119",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 VDDUSB pad114",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C120",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 VDDUSB pad114",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C121",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 VDDSDMMC pad149",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C122",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "U101 VDDSDMMC pad149",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C123",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "VBAT U101 pad6; no backup battery",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C124",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "NRST",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "DS11532 Fig41 reset filter; connect debugger open-drain reset",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "R102",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "NRST"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "R103",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "BOOT0",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default flash boot; option bytes still require firmware review",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "J101",
+      "value": "SWD 3V3 target reference",
+      "footprint": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical",
+      "pins": {
+        "1": "+3V3",
+        "2": "SWDIO",
+        "3": "GND",
+        "4": "SWCLK",
+        "5": "GND",
+        "6": "SWO",
+        "9": "GND",
+        "10": "NRST"
+      },
+      "dnp": false,
+      "note": "VTREF sense only, not external power input. Pin7 key/unused, pin8 unused; unshrouded header",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "Y101",
+      "value": "ASEM1-8.000MHZ-LC-T",
+      "footprint": "Power8GDI_Core:ASEM_3225",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND",
+        "3": "MCU_HSE_IN",
+        "4": "+3V3"
+      },
+      "dnp": false,
+      "note": "Abracon ASEM RevP p4 actual pins1EN2GND3OUT4VDD; firmware HSE bypass required; PH1 NC",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "C129",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Abracon recommends10n between Y101 pins4/2; short return",
+      "sheet": "core_mcu"
+    },
+    {
+      "ref": "U103",
+      "value": "TCAN1042HGVDRQ1",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "1": "CAN1_TX",
+        "4": "CAN1_RX",
+        "8": "CAN1_STB",
+        "7": "CAN1_H",
+        "6": "CAN1_L",
+        "3": "+5V_CORE",
+        "5": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "STB held high at reset; MCU PH2 pad43 may drive low to enable; GPIO firmware pending",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "C127",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "At U103 pin3",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "C128",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "At U103 pin5",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R104",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "CAN1_STB"
+      },
+      "dnp": false,
+      "note": "Fail-closed default: transceiver in standby",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R105",
+      "value": "0R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CAN1_STB",
+        "2": "GND"
+      },
+      "dnp": true,
+      "note": "Test-only normal-mode strap; leave DNP for MCU PH2 control",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R106",
+      "value": "120R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CAN1_H",
+        "2": "CAN1_L"
+      },
+      "dnp": true,
+      "note": "Fit only if ECU is a bus end; do not add third terminator",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "D101",
+      "value": "PESD2CAN",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "CAN1_H",
+        "2": "CAN1_L",
+        "3": "GND"
+      },
+      "dnp": false,
+      "note": "Nexperia Rev2 pinning1/2lines3common; close connector; ground surge return review",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "U104",
+      "value": "TLIN1029ADRQ1",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "1": "LIN1_RX",
+        "4": "LIN1_TX",
+        "2": "LIN1_EN",
+        "6": "LIN1_BUS",
+        "7": "LIN1_VSUP",
+        "5": "GND"
+      },
+      "dnp": false,
+      "note": "TI SLLSFK8A; 4..36V operating, 45V absolute VSUP; A variant avoids original duty-cycle erratum; default sleep",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R107",
+      "value": "4.7k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LIN1_RX"
+      },
+      "dnp": false,
+      "note": "Open-drainRXD must never be pulled toVBAT/5V",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R108",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LIN1_EN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default sleep; MCU PH3 pad44 enables high",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R109",
+      "value": "0R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LIN1_EN"
+      },
+      "dnp": true,
+      "note": "Optionalnormalmode afterphysicalbusreview",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R110",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LIN1_TX"
+      },
+      "dnp": false,
+      "note": "Recessive input during MCUreset",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R111",
+      "value": "0R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VBAT_LOGIC_PROTECTED",
+        "2": "LIN1_VSUP"
+      },
+      "dnp": false,
+      "note": "Requires root SMBJ24CA nominal38.9V clamp <45Vabs; actual pulse energy/overshoot gate remains",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "C130",
+      "value": "100n 50V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "LIN1_VSUP",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "At U104 pin7",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "C131",
+      "value": "1u 50V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "LIN1_VSUP",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "C132",
+      "value": "1n 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "LIN1_BUS",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Commander bus capacitance; verify total cable/node capacitance",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "D102",
+      "value": "BAS21,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "LIN1_VSUP",
+        "3": "LIN1_COMMANDER_DIODE"
+      },
+      "dnp": false,
+      "note": "Commander assembly; remove D102 and R112 for responder-only topology",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "R112",
+      "value": "1k 1% 0.5W",
+      "footprint": "Resistor_SMD:R_1206_3216Metric",
+      "pins": {
+        "1": "LIN1_COMMANDER_DIODE",
+        "2": "LIN1_BUS"
+      },
+      "dnp": false,
+      "note": "16V dominant bound0.256W; pulse/voltage derating must be checked",
+      "sheet": "core_comms"
+    },
+    {
+      "ref": "U5400",
+      "value": "SN74LVC1G17QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "2": "IGN_OC_OK",
+        "3": "GND",
+        "4": "IGN_OC_OK_CLEAN",
+        "5": "+3V3"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "U5401",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "GND",
+        "3": "IGN_OC_OK_CLEAN",
+        "4": "IGN_SAFE_EN",
+        "5": "+3V3",
+        "6": "+3V3"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "R5400",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN_OC_OK"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "R5401",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN_SAFE_EN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "3.3mA load; holds driver EN below threshold against internal 200k typical pullups when logic is unpowered.",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5400",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5401",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "U5402",
+      "value": "UCC27524AQDRQ1",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "1": "IGN_SAFE_EN",
+        "2": "IGN1_GUARDED",
+        "3": "GND",
+        "4": "IGN2_GUARDED",
+        "5": "IGN2_DRIVE",
+        "6": "+5V_CORE",
+        "7": "IGN1_DRIVE",
+        "8": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current.",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5402",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5403",
+      "value": "1u 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "U5403",
+      "value": "UCC27524AQDRQ1",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "1": "IGN_SAFE_EN",
+        "2": "IGN3_GUARDED",
+        "3": "GND",
+        "4": "IGN4_GUARDED",
+        "5": "IGN4_DRIVE",
+        "6": "+5V_CORE",
+        "7": "IGN3_DRIVE",
+        "8": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current.",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5404",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5405",
+      "value": "1u 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "U5404",
+      "value": "UCC27524AQDRQ1",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "1": "IGN_SAFE_EN",
+        "2": "IGN5_GUARDED",
+        "3": "GND",
+        "4": "IGN6_GUARDED",
+        "5": "IGN6_DRIVE",
+        "6": "+5V_CORE",
+        "7": "IGN5_DRIVE",
+        "8": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current.",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5406",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5407",
+      "value": "1u 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "U5405",
+      "value": "UCC27524AQDRQ1",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "1": "IGN_SAFE_EN",
+        "2": "IGN7_GUARDED",
+        "3": "GND",
+        "4": "IGN8_GUARDED",
+        "5": "IGN8_DRIVE",
+        "6": "+5V_CORE",
+        "7": "IGN7_DRIVE",
+        "8": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current.",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5408",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5409",
+      "value": "1u 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "U5420",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN1",
+        "2": "GND",
+        "3": "IGN1_SET",
+        "4": "IGN1_DIV",
+        "5": "+3V3",
+        "6": "IGN1_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "U5421",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN1",
+        "2": "GND",
+        "3": "IGN1_WINDOW",
+        "4": "IGN1_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5420",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5421",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5422",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN1_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5423",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5424",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "C5420",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "C5421",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "Q5420",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN1_GATE",
+        "2": "HARNESS_IGN1",
+        "3": "IGN1_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5425",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_DRIVE",
+        "2": "IGN1_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5426",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_GATE",
+        "2": "IGN1_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5427",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN1_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "U5422",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN1_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN1_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5428",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "C5422",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "U5440",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN2",
+        "2": "GND",
+        "3": "IGN2_SET",
+        "4": "IGN2_DIV",
+        "5": "+3V3",
+        "6": "IGN2_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "U5441",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN2",
+        "2": "GND",
+        "3": "IGN2_WINDOW",
+        "4": "IGN2_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5440",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5441",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5442",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN2_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5443",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5444",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "C5440",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "C5441",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "Q5440",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN2_GATE",
+        "2": "HARNESS_IGN2",
+        "3": "IGN2_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5445",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_DRIVE",
+        "2": "IGN2_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5446",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_GATE",
+        "2": "IGN2_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5447",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN2_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "U5442",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN2_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN2_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5448",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "C5442",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "U5460",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN3",
+        "2": "GND",
+        "3": "IGN3_SET",
+        "4": "IGN3_DIV",
+        "5": "+3V3",
+        "6": "IGN3_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "U5461",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN3",
+        "2": "GND",
+        "3": "IGN3_WINDOW",
+        "4": "IGN3_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5460",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5461",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5462",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN3_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5463",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5464",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "C5460",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "C5461",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "Q5460",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN3_GATE",
+        "2": "HARNESS_IGN3",
+        "3": "IGN3_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5465",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_DRIVE",
+        "2": "IGN3_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5466",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_GATE",
+        "2": "IGN3_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5467",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN3_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "U5462",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN3_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN3_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5468",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "C5462",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "U5480",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN4",
+        "2": "GND",
+        "3": "IGN4_SET",
+        "4": "IGN4_DIV",
+        "5": "+3V3",
+        "6": "IGN4_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "U5481",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN4",
+        "2": "GND",
+        "3": "IGN4_WINDOW",
+        "4": "IGN4_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5480",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5481",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5482",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN4_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5483",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5484",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "C5480",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "C5481",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "Q5480",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN4_GATE",
+        "2": "HARNESS_IGN4",
+        "3": "IGN4_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5485",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_DRIVE",
+        "2": "IGN4_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5486",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_GATE",
+        "2": "IGN4_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5487",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN4_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "U5482",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN4_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN4_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5488",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "C5482",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "U5500",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN5",
+        "2": "GND",
+        "3": "IGN5_SET",
+        "4": "IGN5_DIV",
+        "5": "+3V3",
+        "6": "IGN5_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "U5501",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN5",
+        "2": "GND",
+        "3": "IGN5_WINDOW",
+        "4": "IGN5_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5500",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5501",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5502",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN5_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5503",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5504",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "C5500",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "C5501",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "Q5500",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN5_GATE",
+        "2": "HARNESS_IGN5",
+        "3": "IGN5_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5505",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_DRIVE",
+        "2": "IGN5_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5506",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_GATE",
+        "2": "IGN5_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5507",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN5_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "U5502",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN5_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN5_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5508",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "C5502",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "U5520",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN6",
+        "2": "GND",
+        "3": "IGN6_SET",
+        "4": "IGN6_DIV",
+        "5": "+3V3",
+        "6": "IGN6_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "U5521",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN6",
+        "2": "GND",
+        "3": "IGN6_WINDOW",
+        "4": "IGN6_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5520",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5521",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5522",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN6_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5523",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5524",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "C5520",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "C5521",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "Q5520",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN6_GATE",
+        "2": "HARNESS_IGN6",
+        "3": "IGN6_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5525",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_DRIVE",
+        "2": "IGN6_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5526",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_GATE",
+        "2": "IGN6_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5527",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN6_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "U5522",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN6_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN6_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5528",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "C5522",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "U5540",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN7",
+        "2": "GND",
+        "3": "IGN7_SET",
+        "4": "IGN7_DIV",
+        "5": "+3V3",
+        "6": "IGN7_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "U5541",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN7",
+        "2": "GND",
+        "3": "IGN7_WINDOW",
+        "4": "IGN7_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5540",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5541",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5542",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN7_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5543",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5544",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "C5540",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "C5541",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "Q5540",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN7_GATE",
+        "2": "HARNESS_IGN7",
+        "3": "IGN7_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5545",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_DRIVE",
+        "2": "IGN7_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5546",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_GATE",
+        "2": "IGN7_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5547",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN7_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "U5542",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN7_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN7_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5548",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "C5542",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "U5560",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN8",
+        "2": "GND",
+        "3": "IGN8_SET",
+        "4": "IGN8_DIV",
+        "5": "+3V3",
+        "6": "IGN8_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "U5561",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN8",
+        "2": "GND",
+        "3": "IGN8_WINDOW",
+        "4": "IGN8_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5560",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5561",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5562",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN8_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5563",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5564",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "C5560",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "C5561",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "Q5560",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN8_GATE",
+        "2": "HARNESS_IGN8",
+        "3": "IGN8_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5565",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_DRIVE",
+        "2": "IGN8_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5566",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_GATE",
+        "2": "IGN8_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5567",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN8_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "U5562",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN8_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN8_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5568",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "C5562",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R700",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_TPS1",
+        "2": "TPS1_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R701",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "TPS1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C700",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "TPS1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "D701",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "TPS1_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R702",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "TPS1_BUFFER",
+        "2": "ADC_TPS1"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C701",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_TPS1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R703",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_TPS2",
+        "2": "TPS2_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R704",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "TPS2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C702",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "TPS2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "D702",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "TPS2_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R705",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "TPS2_BUFFER",
+        "2": "ADC_TPS2"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C703",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_TPS2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R706",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_PPS1",
+        "2": "PPS1_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R707",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PPS1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C704",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "PPS1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "D703",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "PPS1_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R708",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PPS1_BUFFER",
+        "2": "ADC_PPS1"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C705",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_PPS1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R709",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_PPS2",
+        "2": "PPS2_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R710",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PPS2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C706",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "PPS2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "D704",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "PPS2_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R711",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PPS2_BUFFER",
+        "2": "ADC_PPS2"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C707",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_PPS2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "U701",
+      "value": "TLV9004QPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "4": "+3V3_A",
+        "11": "GND",
+        "3": "TPS1_DIV",
+        "2": "TPS1_BUFFER",
+        "1": "TPS1_BUFFER",
+        "5": "TPS2_DIV",
+        "6": "TPS2_BUFFER",
+        "7": "TPS2_BUFFER",
+        "10": "PPS1_DIV",
+        "9": "PPS1_BUFFER",
+        "8": "PPS1_BUFFER",
+        "12": "PPS2_DIV",
+        "13": "PPS2_BUFFER",
+        "14": "PPS2_BUFFER"
+      },
+      "dnp": false,
+      "note": "Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C740",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "C741",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_1"
+    },
+    {
+      "ref": "R712",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_MAP_MAIN",
+        "2": "MAP_MAIN_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R713",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "MAP_MAIN_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C708",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "MAP_MAIN_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "D705",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "MAP_MAIN_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R714",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "MAP_MAIN_BUFFER",
+        "2": "ADC_MAP_MAIN"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C709",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_MAP_MAIN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R715",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_BARO_EXT",
+        "2": "BARO_EXT_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R716",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "BARO_EXT_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C710",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "BARO_EXT_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "D706",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "BARO_EXT_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R717",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "BARO_EXT_BUFFER",
+        "2": "ADC_BARO_EXT"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C711",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_BARO_EXT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R718",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CLT",
+        "2": "CLT_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R719",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CLT_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C712",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "CLT_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "D707",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "CLT_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R720",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CLT_BUFFER",
+        "2": "ADC_CLT"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C713",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_CLT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R721",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_IAT",
+        "2": "IAT_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R722",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IAT_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C714",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "IAT_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "D708",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "IAT_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R723",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IAT_BUFFER",
+        "2": "ADC_IAT"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C715",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_IAT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "U702",
+      "value": "TLV9004QPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "4": "+3V3_A",
+        "11": "GND",
+        "3": "MAP_MAIN_DIV",
+        "2": "MAP_MAIN_BUFFER",
+        "1": "MAP_MAIN_BUFFER",
+        "5": "BARO_EXT_DIV",
+        "6": "BARO_EXT_BUFFER",
+        "7": "BARO_EXT_BUFFER",
+        "10": "CLT_DIV",
+        "9": "CLT_BUFFER",
+        "8": "CLT_BUFFER",
+        "12": "IAT_DIV",
+        "13": "IAT_BUFFER",
+        "14": "IAT_BUFFER"
+      },
+      "dnp": false,
+      "note": "Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C742",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "C743",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_2"
+    },
+    {
+      "ref": "R724",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_OIL_PRESS",
+        "2": "OIL_PRESS_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R725",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "OIL_PRESS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C716",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "OIL_PRESS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "D709",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "OIL_PRESS_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R726",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "OIL_PRESS_BUFFER",
+        "2": "ADC_OIL_PRESS"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C717",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_OIL_PRESS",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R727",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_OIL_TEMP",
+        "2": "OIL_TEMP_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R728",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "OIL_TEMP_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C718",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "OIL_TEMP_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "D710",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "OIL_TEMP_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R729",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "OIL_TEMP_BUFFER",
+        "2": "ADC_OIL_TEMP"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C719",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_OIL_TEMP",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R730",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_FRP1",
+        "2": "FRP1_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R731",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "FRP1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C720",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "FRP1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "D711",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "FRP1_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R732",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "FRP1_BUFFER",
+        "2": "ADC_FRP1"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C721",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_FRP1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R733",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_FRP2",
+        "2": "FRP2_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R734",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "FRP2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C722",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "FRP2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "D712",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "FRP2_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R735",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "FRP2_BUFFER",
+        "2": "ADC_FRP2"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C723",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_FRP2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "U703",
+      "value": "TLV9004QPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "4": "+3V3_A",
+        "11": "GND",
+        "3": "OIL_PRESS_DIV",
+        "2": "OIL_PRESS_BUFFER",
+        "1": "OIL_PRESS_BUFFER",
+        "5": "OIL_TEMP_DIV",
+        "6": "OIL_TEMP_BUFFER",
+        "7": "OIL_TEMP_BUFFER",
+        "10": "FRP1_DIV",
+        "9": "FRP1_BUFFER",
+        "8": "FRP1_BUFFER",
+        "12": "FRP2_DIV",
+        "13": "FRP2_BUFFER",
+        "14": "FRP2_BUFFER"
+      },
+      "dnp": false,
+      "note": "Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C744",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "C745",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_3"
+    },
+    {
+      "ref": "R736",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_LPFP_PRESS",
+        "2": "LPFP_PRESS_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R737",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LPFP_PRESS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C724",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "LPFP_PRESS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "D713",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "LPFP_PRESS_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R738",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LPFP_PRESS_BUFFER",
+        "2": "ADC_LPFP_PRESS"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C725",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_LPFP_PRESS",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R739",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_EXH_PRESS",
+        "2": "EXH_PRESS_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R740",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "EXH_PRESS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C726",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "EXH_PRESS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "D714",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "EXH_PRESS_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R741",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "EXH_PRESS_BUFFER",
+        "2": "ADC_EXH_PRESS"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C727",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_EXH_PRESS",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R742",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_EWG_POS",
+        "2": "EWG_POS_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R743",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "EWG_POS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C728",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "EWG_POS_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "D715",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "EWG_POS_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R744",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "EWG_POS_BUFFER",
+        "2": "ADC_EWG_POS"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C729",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_EWG_POS",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R745",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_AUX_ANALOG1",
+        "2": "AUX_ANALOG1_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R746",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_ANALOG1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C730",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "AUX_ANALOG1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "D716",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "AUX_ANALOG1_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R747",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_ANALOG1_BUFFER",
+        "2": "ADC_AUX_ANALOG1"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C731",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_AUX_ANALOG1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "U704",
+      "value": "TLV9004QPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "4": "+3V3_A",
+        "11": "GND",
+        "3": "LPFP_PRESS_DIV",
+        "2": "LPFP_PRESS_BUFFER",
+        "1": "LPFP_PRESS_BUFFER",
+        "5": "EXH_PRESS_DIV",
+        "6": "EXH_PRESS_BUFFER",
+        "7": "EXH_PRESS_BUFFER",
+        "10": "EWG_POS_DIV",
+        "9": "EWG_POS_BUFFER",
+        "8": "EWG_POS_BUFFER",
+        "12": "AUX_ANALOG1_DIV",
+        "13": "AUX_ANALOG1_BUFFER",
+        "14": "AUX_ANALOG1_BUFFER"
+      },
+      "dnp": false,
+      "note": "Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C746",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "C747",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_4"
+    },
+    {
+      "ref": "R748",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_AUX_ANALOG2",
+        "2": "AUX_ANALOG2_DIV"
+      },
+      "dnp": false,
+      "note": "Input current limiter; 0603 working/pulse voltage and fault energy must be qualified",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "R749",
+      "value": "100k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_ANALOG2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "C732",
+      "value": "1n 50V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "AUX_ANALOG2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "D717",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+3V3_A",
+        "3": "AUX_ANALOG2_DIV"
+      },
+      "dnp": false,
+      "note": "Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "R750",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_ANALOG2_BUFFER",
+        "2": "ADC_AUX_ANALOG2"
+      },
+      "dnp": false,
+      "note": "Isolates opamp from ADC sampling capacitor; settling budget pending",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "C733",
+      "value": "10n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "ADC_AUX_ANALOG2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "U705",
+      "value": "TLV9004QPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "4": "+3V3_A",
+        "11": "GND",
+        "3": "AUX_ANALOG2_DIV",
+        "2": "AUX_ANALOG2_BUFFER",
+        "1": "AUX_ANALOG2_BUFFER",
+        "5": "GND",
+        "6": "ADC_UNUSED_18",
+        "7": "ADC_UNUSED_18",
+        "10": "GND",
+        "9": "ADC_UNUSED_19",
+        "8": "ADC_UNUSED_19",
+        "12": "GND",
+        "13": "ADC_UNUSED_20",
+        "14": "ADC_UNUSED_20"
+      },
+      "dnp": false,
+      "note": "Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "C748",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "C749",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "R751",
+      "value": "2.49k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_CLT"
+      },
+      "dnp": true,
+      "note": "Optional NTC bias. Fit only after sensor curve, supply/reference and short-to-battery review",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "R752",
+      "value": "2.49k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_IAT"
+      },
+      "dnp": true,
+      "note": "Optional NTC bias. Fit only after sensor curve, supply/reference and short-to-battery review",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "R753",
+      "value": "2.49k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_OIL_TEMP"
+      },
+      "dnp": true,
+      "note": "Optional NTC bias. Fit only after sensor curve, supply/reference and short-to-battery review",
+      "sheet": "io/analog_5"
+    },
+    {
+      "ref": "R760",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CAM1",
+        "2": "CAM1_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R761",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CAM1_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C750",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "CAM1_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "D730",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "CAM1_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R762",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_CAM1"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R763",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CAM2",
+        "2": "CAM2_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R764",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CAM2_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C751",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "CAM2_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "D731",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "CAM2_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R765",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_CAM2"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R766",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CAM3",
+        "2": "CAM3_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R767",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CAM3_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C752",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "CAM3_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "D732",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "CAM3_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R768",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_CAM3"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R769",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CAM4",
+        "2": "CAM4_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R770",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CAM4_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C753",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "CAM4_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "D733",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "CAM4_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R771",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_CAM4"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R772",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_SENT1",
+        "2": "SENT1_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R773",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SENT1_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C754",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SENT1_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "D734",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "SENT1_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R774",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_SENT1"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R775",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_SENT2",
+        "2": "SENT2_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R776",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SENT2_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C755",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SENT2_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "D735",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "SENT2_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R777",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_SENT2"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "U721",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "1": "CAM1_FILTERED",
+        "2": "CAM1",
+        "3": "CAM2_FILTERED",
+        "4": "CAM2",
+        "5": "CAM3_FILTERED",
+        "6": "CAM3",
+        "9": "CAM4_FILTERED",
+        "8": "CAM4",
+        "11": "SENT1_FILTERED",
+        "10": "SENT1",
+        "13": "SENT2_FILTERED",
+        "12": "SENT2"
+      },
+      "dnp": false,
+      "note": "Hex inverter,2..3.6V supply,5.5V tolerant inputs; unused inputsGND, outputsNC",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "C758",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_1"
+    },
+    {
+      "ref": "R778",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_SENT3",
+        "2": "SENT3_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "R779",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SENT3_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "C756",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SENT3_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "D736",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "SENT3_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "R780",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_SENT3"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "R781",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_SENT4",
+        "2": "SENT4_FILTERED"
+      },
+      "dnp": false,
+      "note": "Series current limiting; no automotive pulse qualification",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "R782",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SENT4_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "C757",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SENT4_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "D737",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "SENT4_FILTERED"
+      },
+      "dnp": false,
+      "note": "Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "R783",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_SENT4"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; sensor model and short-to-battery behavior required",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "U722",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "1": "SENT3_FILTERED",
+        "2": "SENT3",
+        "3": "SENT4_FILTERED",
+        "4": "SENT4",
+        "5": "GND",
+        "9": "GND",
+        "11": "GND",
+        "13": "GND"
+      },
+      "dnp": false,
+      "note": "Hex inverter,2..3.6V supply,5.5V tolerant inputs; unused inputsGND, outputsNC",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "C759",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/digital_2"
+    },
+    {
+      "ref": "U731",
+      "value": "MAX9924UAUB/V+",
+      "footprint": "Package_SO:MSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "VR_CRANK_P_FILT",
+        "2": "VR_CRANK_N_FILT",
+        "4": "GND",
+        "5": "GND",
+        "6": "GND",
+        "7": "CRANK",
+        "9": "GND",
+        "10": "+5V_CORE"
+      },
+      "dnp": false,
+      "note": "Rev5 Table1 ModeA2: ZERO_EN=GND,INT_THRS=GND,BIAS=GND; EXT NC. Do not infer from mode pin names",
+      "sheet": "io/crank_vr"
+    },
+    {
+      "ref": "R790",
+      "value": "10k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CRANK_VR_P",
+        "2": "VR_CRANK_P_FILT"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/crank_vr"
+    },
+    {
+      "ref": "R791",
+      "value": "10k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_CRANK_VR_N",
+        "2": "VR_CRANK_N_FILT"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/crank_vr"
+    },
+    {
+      "ref": "C760",
+      "value": "1n 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "VR_CRANK_P_FILT",
+        "2": "VR_CRANK_N_FILT"
+      },
+      "dnp": false,
+      "note": "Differential filter from manufacturerFig3; actual tooth amplitude/frequency pending",
+      "sheet": "io/crank_vr"
+    },
+    {
+      "ref": "R792",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "CRANK"
+      },
+      "dnp": false,
+      "note": "Open-drain output toMCU3V3, never5V",
+      "sheet": "io/crank_vr"
+    },
+    {
+      "ref": "C761",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/crank_vr"
+    },
+    {
+      "ref": "C762",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "io/crank_vr"
+    },
+    {
+      "ref": "R1101",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1102",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI1_INV",
+        "2": "PI1_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1103",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI1_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1104",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1105",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI2_INV",
+        "2": "PI2_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1106",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI2_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1107",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1108",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI3_INV",
+        "2": "PI3_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1109",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI3_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1110",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI4",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1111",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI4_INV",
+        "2": "PI4_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1112",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI4_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "U1121",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "11": "GND",
+        "13": "GND",
+        "1": "PI1",
+        "2": "PI1_INV",
+        "3": "PI2",
+        "4": "PI2_INV",
+        "5": "PI3",
+        "6": "PI3_INV",
+        "9": "PI4",
+        "8": "PI4_INV"
+      },
+      "dnp": false,
+      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "U1101",
+      "value": "TLE9104SHXUMA1",
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "pins": {
+        "2": "GND",
+        "9": "GND",
+        "12": "GND",
+        "19": "GND",
+        "21": "GND",
+        "15": "+3V3",
+        "16": "+5V_CORE",
+        "5": "LS1_SO",
+        "6": "LS_SPI_MOSI",
+        "8": "LS_SPI_SCK",
+        "7": "LS1_CS_N",
+        "13": "LS_RESET_N",
+        "14": "LS1_ENABLE",
+        "3": "PI1_IN_N",
+        "1": "HARNESS_PI1",
+        "18": "PI2_IN_N",
+        "20": "HARNESS_PI2",
+        "4": "PI3_IN_N",
+        "10": "HARNESS_PI3",
+        "17": "PI4_IN_N",
+        "11": "HARNESS_PI4"
+      },
+      "dnp": false,
+      "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1113",
+      "value": "47R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_CS1",
+        "2": "LS1_CS_N"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1114",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS1_CS_N"
+      },
+      "dnp": false,
+      "note": "Deselected during reset",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1115",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS1_SO",
+        "2": "GDI_SPI2_MISO"
+      },
+      "dnp": false,
+      "note": "Shared SPI2; high-Z SO while CSN high, 8MHz device maximum",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1116",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "LS1_ENABLE"
+      },
+      "dnp": false,
+      "note": "Dedicated EN physical kill independent of direct IN commands",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1117",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS1_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default hardware inhibit",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "C1101",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "C1102",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "C1103",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "C1104",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1121",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI5",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1122",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI5_INV",
+        "2": "PI5_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1123",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI5_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1124",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI6",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1125",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI6_INV",
+        "2": "PI6_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1126",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI6_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1127",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI7",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1128",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI7_INV",
+        "2": "PI7_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1129",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI7_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1130",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI8",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1131",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI8_INV",
+        "2": "PI8_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1132",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI8_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "U1122",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "11": "GND",
+        "13": "GND",
+        "1": "PI5",
+        "2": "PI5_INV",
+        "3": "PI6",
+        "4": "PI6_INV",
+        "5": "PI7",
+        "6": "PI7_INV",
+        "9": "PI8",
+        "8": "PI8_INV"
+      },
+      "dnp": false,
+      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "U1102",
+      "value": "TLE9104SHXUMA1",
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "pins": {
+        "2": "GND",
+        "9": "GND",
+        "12": "GND",
+        "19": "GND",
+        "21": "GND",
+        "15": "+3V3",
+        "16": "+5V_CORE",
+        "5": "LS2_SO",
+        "6": "LS_SPI_MOSI",
+        "8": "LS_SPI_SCK",
+        "7": "LS2_CS_N",
+        "13": "LS_RESET_N",
+        "14": "LS2_ENABLE",
+        "3": "PI5_IN_N",
+        "1": "HARNESS_PI5",
+        "18": "PI6_IN_N",
+        "20": "HARNESS_PI6",
+        "4": "PI7_IN_N",
+        "10": "HARNESS_PI7",
+        "17": "PI8_IN_N",
+        "11": "HARNESS_PI8"
+      },
+      "dnp": false,
+      "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1133",
+      "value": "47R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_CS2",
+        "2": "LS2_CS_N"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1134",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS2_CS_N"
+      },
+      "dnp": false,
+      "note": "Deselected during reset",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1135",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS2_SO",
+        "2": "GDI_SPI2_MISO"
+      },
+      "dnp": false,
+      "note": "Shared SPI2; high-Z SO while CSN high, 8MHz device maximum",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1136",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "LS2_ENABLE"
+      },
+      "dnp": false,
+      "note": "Dedicated EN physical kill independent of direct IN commands",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1137",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS2_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default hardware inhibit",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "C1121",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "C1122",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "C1123",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "C1124",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1141",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1142",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT1_INV",
+        "2": "VVT1_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1143",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "VVT1_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1144",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1145",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT2_INV",
+        "2": "VVT2_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1146",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "VVT2_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1147",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1148",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT3_INV",
+        "2": "VVT3_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1149",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "VVT3_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1150",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT4",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1151",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT4_INV",
+        "2": "VVT4_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1152",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "VVT4_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "U1123",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "11": "GND",
+        "13": "GND",
+        "1": "VVT1",
+        "2": "VVT1_INV",
+        "3": "VVT2",
+        "4": "VVT2_INV",
+        "5": "VVT3",
+        "6": "VVT3_INV",
+        "9": "VVT4",
+        "8": "VVT4_INV"
+      },
+      "dnp": false,
+      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "U1103",
+      "value": "TLE9104SHXUMA1",
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "pins": {
+        "2": "GND",
+        "9": "GND",
+        "12": "GND",
+        "19": "GND",
+        "21": "GND",
+        "15": "+3V3",
+        "16": "+5V_CORE",
+        "5": "LS3_SO",
+        "6": "LS_SPI_MOSI",
+        "8": "LS_SPI_SCK",
+        "7": "LS3_CS_N",
+        "13": "LS_RESET_N",
+        "14": "LS3_ENABLE",
+        "3": "VVT1_IN_N",
+        "1": "HARNESS_VVT1",
+        "18": "VVT2_IN_N",
+        "20": "HARNESS_VVT2",
+        "4": "VVT3_IN_N",
+        "10": "HARNESS_VVT3",
+        "17": "VVT4_IN_N",
+        "11": "HARNESS_VVT4"
+      },
+      "dnp": false,
+      "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1153",
+      "value": "47R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_CS3",
+        "2": "LS3_CS_N"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1154",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS3_CS_N"
+      },
+      "dnp": false,
+      "note": "Deselected during reset",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1155",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS3_SO",
+        "2": "GDI_SPI2_MISO"
+      },
+      "dnp": false,
+      "note": "Shared SPI2; high-Z SO while CSN high, 8MHz device maximum",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1156",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "LS3_ENABLE"
+      },
+      "dnp": false,
+      "note": "Dedicated EN physical kill independent of direct IN commands",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1157",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS3_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default hardware inhibit",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "C1141",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "C1142",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "C1143",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "C1144",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1161",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1162",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM1_INV",
+        "2": "AUX_PWM1_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1163",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM1_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1164",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1165",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM2_INV",
+        "2": "AUX_PWM2_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1166",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM2_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1167",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1168",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM3_INV",
+        "2": "AUX_PWM3_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1169",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM3_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1170",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM4",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1171",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM4_INV",
+        "2": "AUX_PWM4_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1172",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM4_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "U1124",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "11": "GND",
+        "13": "GND",
+        "1": "AUX_PWM1",
+        "2": "AUX_PWM1_INV",
+        "3": "AUX_PWM2",
+        "4": "AUX_PWM2_INV",
+        "5": "AUX_PWM3",
+        "6": "AUX_PWM3_INV",
+        "9": "AUX_PWM4",
+        "8": "AUX_PWM4_INV"
+      },
+      "dnp": false,
+      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "U1104",
+      "value": "TLE9104SHXUMA1",
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "pins": {
+        "2": "GND",
+        "9": "GND",
+        "12": "GND",
+        "19": "GND",
+        "21": "GND",
+        "15": "+3V3",
+        "16": "+5V_CORE",
+        "5": "LS4_SO",
+        "6": "LS_SPI_MOSI",
+        "8": "LS_SPI_SCK",
+        "7": "LS4_CS_N",
+        "13": "LS_RESET_N",
+        "14": "LS4_ENABLE",
+        "3": "AUX_PWM1_IN_N",
+        "1": "HARNESS_AUX_PWM1",
+        "18": "AUX_PWM2_IN_N",
+        "20": "HARNESS_AUX_PWM2",
+        "4": "AUX_PWM3_IN_N",
+        "10": "HARNESS_AUX_PWM3",
+        "17": "AUX_PWM4_IN_N",
+        "11": "HARNESS_AUX_PWM4"
+      },
+      "dnp": false,
+      "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1173",
+      "value": "47R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_CS4",
+        "2": "LS4_CS_N"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1174",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS4_CS_N"
+      },
+      "dnp": false,
+      "note": "Deselected during reset",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1175",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS4_SO",
+        "2": "GDI_SPI2_MISO"
+      },
+      "dnp": false,
+      "note": "Shared SPI2; high-Z SO while CSN high, 8MHz device maximum",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1176",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "LS4_ENABLE"
+      },
+      "dnp": false,
+      "note": "Dedicated EN physical kill independent of direct IN commands",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1177",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS4_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default hardware inhibit",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "C1161",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "C1162",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "C1163",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "C1164",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1181",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM5",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1182",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM5_INV",
+        "2": "AUX_PWM5_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1183",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM5_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1184",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM6",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1185",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM6_INV",
+        "2": "AUX_PWM6_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1186",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM6_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1187",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM7",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1188",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM7_INV",
+        "2": "AUX_PWM7_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1189",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM7_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1190",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM8",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1191",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM8_INV",
+        "2": "AUX_PWM8_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1192",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM8_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "U1125",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "11": "GND",
+        "13": "GND",
+        "1": "AUX_PWM5",
+        "2": "AUX_PWM5_INV",
+        "3": "AUX_PWM6",
+        "4": "AUX_PWM6_INV",
+        "5": "AUX_PWM7",
+        "6": "AUX_PWM7_INV",
+        "9": "AUX_PWM8",
+        "8": "AUX_PWM8_INV"
+      },
+      "dnp": false,
+      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "U1105",
+      "value": "TLE9104SHXUMA1",
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "pins": {
+        "2": "GND",
+        "9": "GND",
+        "12": "GND",
+        "19": "GND",
+        "21": "GND",
+        "15": "+3V3",
+        "16": "+5V_CORE",
+        "5": "LS5_SO",
+        "6": "LS_SPI_MOSI",
+        "8": "LS_SPI_SCK",
+        "7": "LS5_CS_N",
+        "13": "LS_RESET_N",
+        "14": "LS5_ENABLE",
+        "3": "AUX_PWM5_IN_N",
+        "1": "HARNESS_AUX_PWM5",
+        "18": "AUX_PWM6_IN_N",
+        "20": "HARNESS_AUX_PWM6",
+        "4": "AUX_PWM7_IN_N",
+        "10": "HARNESS_AUX_PWM7",
+        "17": "AUX_PWM8_IN_N",
+        "11": "HARNESS_AUX_PWM8"
+      },
+      "dnp": false,
+      "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1193",
+      "value": "47R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_CS5",
+        "2": "LS5_CS_N"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1194",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS5_CS_N"
+      },
+      "dnp": false,
+      "note": "Deselected during reset",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1195",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS5_SO",
+        "2": "GDI_SPI2_MISO"
+      },
+      "dnp": false,
+      "note": "Shared SPI2; high-Z SO while CSN high, 8MHz device maximum",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1196",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "LS5_ENABLE"
+      },
+      "dnp": false,
+      "note": "Dedicated EN physical kill independent of direct IN commands",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1197",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS5_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default hardware inhibit",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "C1181",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "C1182",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "C1183",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "C1184",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1201",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1202",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX1_INV",
+        "2": "LS_AUX1_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1203",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS_AUX1_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1204",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1205",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX2_INV",
+        "2": "LS_AUX2_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1206",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS_AUX2_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1207",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1208",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX3_INV",
+        "2": "LS_AUX3_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1209",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS_AUX3_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1210",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX4",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1211",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX4_INV",
+        "2": "LS_AUX4_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1212",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS_AUX4_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "U1126",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "11": "GND",
+        "13": "GND",
+        "1": "LS_AUX1",
+        "2": "LS_AUX1_INV",
+        "3": "LS_AUX2",
+        "4": "LS_AUX2_INV",
+        "5": "LS_AUX3",
+        "6": "LS_AUX3_INV",
+        "9": "LS_AUX4",
+        "8": "LS_AUX4_INV"
+      },
+      "dnp": false,
+      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "U1106",
+      "value": "TLE9104SHXUMA1",
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "pins": {
+        "2": "GND",
+        "9": "GND",
+        "12": "GND",
+        "19": "GND",
+        "21": "GND",
+        "15": "+3V3",
+        "16": "+5V_CORE",
+        "5": "LS6_SO",
+        "6": "LS_SPI_MOSI",
+        "8": "LS_SPI_SCK",
+        "7": "LS6_CS_N",
+        "13": "LS_RESET_N",
+        "14": "LS6_ENABLE",
+        "3": "LS_AUX1_IN_N",
+        "1": "HARNESS_LS_AUX1",
+        "18": "LS_AUX2_IN_N",
+        "20": "HARNESS_LS_AUX2",
+        "4": "LS_AUX3_IN_N",
+        "10": "HARNESS_LS_AUX3",
+        "17": "LS_AUX4_IN_N",
+        "11": "HARNESS_LS_AUX4"
+      },
+      "dnp": false,
+      "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1213",
+      "value": "47R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_CS6",
+        "2": "LS6_CS_N"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1214",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS6_CS_N"
+      },
+      "dnp": false,
+      "note": "Deselected during reset",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1215",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS6_SO",
+        "2": "GDI_SPI2_MISO"
+      },
+      "dnp": false,
+      "note": "Shared SPI2; high-Z SO while CSN high, 8MHz device maximum",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1216",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "LS6_ENABLE"
+      },
+      "dnp": false,
+      "note": "Dedicated EN physical kill independent of direct IN commands",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1217",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS6_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default hardware inhibit",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "C1201",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "C1202",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "C1203",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "C1204",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "U1140",
+      "value": "SN74LVC1G17QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "2": "LS_RESET_RELEASE",
+        "4": "LS_RESET_N",
+        "5": "+3V3",
+        "3": "GND"
+      },
+      "dnp": false,
+      "note": "Noninverting reset buffer; active-high MCU release. Keep low >=10us after VDD5V stable. Firmware must restart reset after either rail fault.",
+      "sheet": "outputs/ls_control"
+    },
+    {
+      "ref": "R1241",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_RESET_RELEASE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_control"
+    },
+    {
+      "ref": "R1242",
+      "value": "1k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_RESET_N",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "6x100uA internal pullups +10uA Ioff =>0.6161V worst-case, below 1V reset-low limit",
+      "sheet": "outputs/ls_control"
+    },
+    {
+      "ref": "C1241",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_control"
+    },
+    {
+      "ref": "R1243",
+      "value": "33R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_SPI2_SCK",
+        "2": "LS_SPI_SCK"
+      },
+      "dnp": false,
+      "note": "Branch damping; validate signal integrity across6drivers and2PT chips",
+      "sheet": "outputs/ls_control"
+    },
+    {
+      "ref": "R1244",
+      "value": "33R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_SPI2_MOSI",
+        "2": "LS_SPI_MOSI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_control"
+    }
+  ],
+  "decoupling_placement": [
+    {
+      "reference": "C101",
+      "mcu_pad": "15",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C102",
+      "mcu_pad": "23",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C103",
+      "mcu_pad": "36",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C104",
+      "mcu_pad": "49",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C105",
+      "mcu_pad": "62",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C106",
+      "mcu_pad": "72",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C107",
+      "mcu_pad": "82",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C108",
+      "mcu_pad": "91",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C109",
+      "mcu_pad": "103",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C110",
+      "mcu_pad": "127",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C111",
+      "mcu_pad": "136",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C112",
+      "mcu_pad": "159",
+      "rail": "+3V3"
+    },
+    {
+      "reference": "C113",
+      "mcu_pad": "172",
+      "rail": "+3V3"
+    }
+  ],
+  "external_sheets": [
+    {
+      "path": "gdi/stage_a.kicad_sch",
+      "instance_uuid": "a05bbd47-81aa-5269-b9b3-0a4b9afd615c"
+    },
+    {
+      "path": "gdi/stage_b.kicad_sch",
+      "instance_uuid": "2aa9486d-083b-53a0-b9ea-735fb5a4b253"
+    },
+    {
+      "path": "safety/safety_gate.kicad_sch",
+      "instance_uuid": "d3688535-de83-5779-ad3b-0e54c99cc6b1"
+    },
+    {
+      "path": "board/connectors.kicad_sch",
+      "instance_uuid": "df0c5f3e-1ee1-56be-91e2-4072c6105289"
+    },
+    {
+      "path": "interfaces/comms2.kicad_sch",
+      "instance_uuid": "aef4a5ed-16a9-5635-82f1-5a0caf432873"
+    },
+    {
+      "path": "interfaces/usb_fs.kicad_sch",
+      "instance_uuid": "55d87602-cdb5-51c1-bf2b-41ce4824de19"
+    },
+    {
+      "path": "interfaces/sd_spi.kicad_sch",
+      "instance_uuid": "781d084e-c831-5e51-829d-b08277f1b02a"
+    },
+    {
+      "path": "interfaces/sensor_power.kicad_sch",
+      "instance_uuid": "a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+    },
+    {
+      "path": "interfaces/digital_aux_1.kicad_sch",
+      "instance_uuid": "7a622c8e-9078-578e-989f-4d863863197b"
+    },
+    {
+      "path": "interfaces_aux/knock_dual.kicad_sch",
+      "instance_uuid": "8965976b-faa0-5281-9f71-542877bfa52b"
+    },
+    {
+      "path": "gdi/protection_a.kicad_sch",
+      "instance_uuid": "60b7457e-0f05-55b9-96ab-6c0b4d8affa4"
+    },
+    {
+      "path": "gdi/protection_b.kicad_sch",
+      "instance_uuid": "53820cc1-2a51-5440-8cbb-507f45b916cc"
+    },
+    {
+      "path": "gdi/permission.kicad_sch",
+      "instance_uuid": "f1648826-eb8b-541e-8f63-d27ae2864f75"
+    },
+    {
+      "path": "wbo/wbo1_analog.kicad_sch",
+      "instance_uuid": "cfa31682-b984-58f0-bfeb-60e967219545"
+    },
+    {
+      "path": "wbo/wbo1_control.kicad_sch",
+      "instance_uuid": "83dd4797-09a9-5962-bfa5-8fc5629e9137"
+    },
+    {
+      "path": "wbo/wbo1_heater_feed.kicad_sch",
+      "instance_uuid": "30a46de9-e11a-54b6-8706-ae1bab93f93c"
+    },
+    {
+      "path": "wbo/wbo2_analog.kicad_sch",
+      "instance_uuid": "852d5cb7-b555-5512-bc7b-6a6a13df9b36"
+    },
+    {
+      "path": "wbo/wbo2_control.kicad_sch",
+      "instance_uuid": "a4442b16-6d3e-55d7-87df-a3bdfaa6c095"
+    },
+    {
+      "path": "wbo/wbo2_heater_feed.kicad_sch",
+      "instance_uuid": "cccd9144-7da5-572f-923b-d8d84647036e"
+    },
+    {
+      "path": "logic_power/logic_5v.kicad_sch",
+      "instance_uuid": "61ce6944-66a3-57e1-9204-f75037bec847"
+    },
+    {
+      "path": "logic_power/logic_3v3.kicad_sch",
+      "instance_uuid": "8693d79f-9e91-570e-9079-3a5aac066d8c"
+    },
+    {
+      "path": "motor4/dbw.kicad_sch",
+      "instance_uuid": "2f292352-1fdf-5f42-825f-c0663cc19609"
+    },
+    {
+      "path": "motor4/ewg.kicad_sch",
+      "instance_uuid": "001b4bf6-7a89-52c1-b644-282f1c625f1a"
+    },
+    {
+      "path": "motor4/motor3.kicad_sch",
+      "instance_uuid": "a1d874ec-6625-54ba-9750-9693738ed94b"
+    },
+    {
+      "path": "motor4/motor4.kicad_sch",
+      "instance_uuid": "fea959af-0a72-5725-83c1-637b9f1048bb"
+    },
+    {
+      "path": "motor4/spi.kicad_sch",
+      "instance_uuid": "653a7828-1657-5b98-8bae-fc4d9e0f409d"
+    },
+    {
+      "path": "motor4/motor13_power.kicad_sch",
+      "instance_uuid": "5fe5f832-a00e-5bb4-8ef3-f4d0733d2003"
+    },
+    {
+      "path": "motor4/motor24_power.kicad_sch",
+      "instance_uuid": "e1c53cf8-3531-5132-a5f0-e5fe28fd72f9"
+    }
+  ],
+  "added_gpio": [
+    {
+      "port": "PH2",
+      "pad": "43",
+      "net": "CAN1_STB",
+      "mode": "GPIO output; reset high-Z, external pullup"
+    },
+    {
+      "port": "PH3",
+      "pad": "44",
+      "net": "LIN1_EN",
+      "mode": "GPIO output; reset high-Z, external pulldown"
+    }
+  ],
+  "mcu_pins": [
+    {
+      "pad": "1",
+      "name": "PE2",
+      "net": "IGN5"
+    },
+    {
+      "pad": "2",
+      "name": "PE3",
+      "net": "IGN4"
+    },
+    {
+      "pad": "3",
+      "name": "PE4",
+      "net": "IGN3"
+    },
+    {
+      "pad": "4",
+      "name": "PE5",
+      "net": "IGN2"
+    },
+    {
+      "pad": "5",
+      "name": "PE6",
+      "net": "IGN8"
+    },
+    {
+      "pad": "6",
+      "name": "VBAT",
+      "net": "+3V3"
+    },
+    {
+      "pad": "7",
+      "name": "PI8",
+      "net": "FLEX_FREQ"
+    },
+    {
+      "pad": "8",
+      "name": "PC13",
+      "net": "IGN1"
+    },
+    {
+      "pad": "9",
+      "name": "PC14",
+      "net": null
+    },
+    {
+      "pad": "10",
+      "name": "PC15",
+      "net": null
+    },
+    {
+      "pad": "11",
+      "name": "PI9",
+      "net": "KNOCK_INT_HOLD"
+    },
+    {
+      "pad": "12",
+      "name": "PI10",
+      "net": "MOTOR3_DISABLE"
+    },
+    {
+      "pad": "13",
+      "name": "PI11",
+      "net": "MOTOR4_DISABLE"
+    },
+    {
+      "pad": "14",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "15",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "16",
+      "name": "PF0",
+      "net": "PI6"
+    },
+    {
+      "pad": "17",
+      "name": "PF1",
+      "net": "PI7"
+    },
+    {
+      "pad": "18",
+      "name": "PF2",
+      "net": "PI8"
+    },
+    {
+      "pad": "19",
+      "name": "PF3",
+      "net": "CAM1"
+    },
+    {
+      "pad": "20",
+      "name": "PF4",
+      "net": "CAM2"
+    },
+    {
+      "pad": "21",
+      "name": "PF5",
+      "net": null
+    },
+    {
+      "pad": "22",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "23",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "24",
+      "name": "PF6",
+      "net": "ADC_EWG_POS"
+    },
+    {
+      "pad": "25",
+      "name": "PF7",
+      "net": null
+    },
+    {
+      "pad": "26",
+      "name": "PF8",
+      "net": "ADC_AUX_ANALOG2"
+    },
+    {
+      "pad": "27",
+      "name": "PF9",
+      "net": "VVT1"
+    },
+    {
+      "pad": "28",
+      "name": "PF10",
+      "net": "ADC_AUX_ANALOG1"
+    },
+    {
+      "pad": "29",
+      "name": "PH0",
+      "net": "MCU_HSE_IN"
+    },
+    {
+      "pad": "30",
+      "name": "PH1",
+      "net": null
+    },
+    {
+      "pad": "31",
+      "name": "NRST",
+      "net": "NRST"
+    },
+    {
+      "pad": "32",
+      "name": "PC0",
+      "net": "ADC_OIL_PRESS"
+    },
+    {
+      "pad": "33",
+      "name": "PC1",
+      "net": "ADC_OIL_TEMP"
+    },
+    {
+      "pad": "34",
+      "name": "PC2",
+      "net": "ADC_FRP1"
+    },
+    {
+      "pad": "35",
+      "name": "PC3",
+      "net": "ADC_FRP2"
+    },
+    {
+      "pad": "36",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "37",
+      "name": "VSSA",
+      "net": "GND"
+    },
+    {
+      "pad": "38",
+      "name": "VREF+",
+      "net": "+3V3_A"
+    },
+    {
+      "pad": "39",
+      "name": "VDDA",
+      "net": "+3V3_A"
+    },
+    {
+      "pad": "40",
+      "name": "PA0",
+      "net": "ADC_TPS1"
+    },
+    {
+      "pad": "41",
+      "name": "PA1",
+      "net": "SENT2"
+    },
+    {
+      "pad": "42",
+      "name": "PA2",
+      "net": "ADC_TPS2"
+    },
+    {
+      "pad": "43",
+      "name": "PH2",
+      "net": "CAN1_STB"
+    },
+    {
+      "pad": "44",
+      "name": "PH3",
+      "net": "LIN1_EN"
+    },
+    {
+      "pad": "45",
+      "name": "PH4",
+      "net": "SAFETY_HEARTBEAT"
+    },
+    {
+      "pad": "46",
+      "name": "PH5",
+      "net": "SAFETY_ARM_REQUEST"
+    },
+    {
+      "pad": "47",
+      "name": "PA3",
+      "net": "ADC_PPS1"
+    },
+    {
+      "pad": "48",
+      "name": "BYPASS_REG",
+      "net": "GND"
+    },
+    {
+      "pad": "49",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "50",
+      "name": "PA4",
+      "net": "ADC_PPS2"
+    },
+    {
+      "pad": "51",
+      "name": "PA5",
+      "net": "ADC_MAP_MAIN"
+    },
+    {
+      "pad": "52",
+      "name": "PA6",
+      "net": "ADC_BARO_EXT"
+    },
+    {
+      "pad": "53",
+      "name": "PA7",
+      "net": "ADC_CLT"
+    },
+    {
+      "pad": "54",
+      "name": "PC4",
+      "net": "ADC_LPFP_PRESS"
+    },
+    {
+      "pad": "55",
+      "name": "PC5",
+      "net": "ADC_EXH_PRESS"
+    },
+    {
+      "pad": "56",
+      "name": "PB0",
+      "net": "ADC_IAT"
+    },
+    {
+      "pad": "57",
+      "name": "PB1",
+      "net": "CRANK"
+    },
+    {
+      "pad": "58",
+      "name": "PB2",
+      "net": "WBO2_HEATER_PWM"
+    },
+    {
+      "pad": "59",
+      "name": "PF11",
+      "net": "VVT2"
+    },
+    {
+      "pad": "60",
+      "name": "PF12",
+      "net": "DI6"
+    },
+    {
+      "pad": "61",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "62",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "63",
+      "name": "PF13",
+      "net": "DI7"
+    },
+    {
+      "pad": "64",
+      "name": "PF14",
+      "net": "DI8"
+    },
+    {
+      "pad": "65",
+      "name": "PF15",
+      "net": "VVT3"
+    },
+    {
+      "pad": "66",
+      "name": "PG0",
+      "net": "VVT4"
+    },
+    {
+      "pad": "67",
+      "name": "PG1",
+      "net": "AUX_PWM1"
+    },
+    {
+      "pad": "68",
+      "name": "PE7",
+      "net": "PI3"
+    },
+    {
+      "pad": "69",
+      "name": "PE8",
+      "net": "PI4"
+    },
+    {
+      "pad": "70",
+      "name": "PE9",
+      "net": "SENT1"
+    },
+    {
+      "pad": "71",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "72",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "73",
+      "name": "PE10",
+      "net": "PI5"
+    },
+    {
+      "pad": "74",
+      "name": "PE11",
+      "net": "SENT3"
+    },
+    {
+      "pad": "75",
+      "name": "PE12",
+      "net": "PTA_RESET"
+    },
+    {
+      "pad": "76",
+      "name": "PE13",
+      "net": "PTA_DRVEN"
+    },
+    {
+      "pad": "77",
+      "name": "PE14",
+      "net": "PTB_RESET"
+    },
+    {
+      "pad": "78",
+      "name": "PE15",
+      "net": "PTB_DRVEN"
+    },
+    {
+      "pad": "79",
+      "name": "PB10",
+      "net": "LIN2_TX"
+    },
+    {
+      "pad": "80",
+      "name": "PB11",
+      "net": "LIN2_RX"
+    },
+    {
+      "pad": "81",
+      "name": "VCAP_1",
+      "net": "MCU_VCAP_1"
+    },
+    {
+      "pad": "82",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "83",
+      "name": "PH6",
+      "net": "SAFETY_FAULT_N"
+    },
+    {
+      "pad": "84",
+      "name": "PH7",
+      "net": "LS_CS1"
+    },
+    {
+      "pad": "85",
+      "name": "PH8",
+      "net": "LS_CS2"
+    },
+    {
+      "pad": "86",
+      "name": "PH9",
+      "net": "LS_CS3"
+    },
+    {
+      "pad": "87",
+      "name": "PH10",
+      "net": "LS_CS4"
+    },
+    {
+      "pad": "88",
+      "name": "PH11",
+      "net": "LS_CS5"
+    },
+    {
+      "pad": "89",
+      "name": "PH12",
+      "net": "LS_CS6"
+    },
+    {
+      "pad": "90",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "91",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "92",
+      "name": "PB12",
+      "net": "PTA_CS"
+    },
+    {
+      "pad": "93",
+      "name": "PB13",
+      "net": "GDI_SPI2_SCK"
+    },
+    {
+      "pad": "94",
+      "name": "PB14",
+      "net": "GDI_SPI2_MISO"
+    },
+    {
+      "pad": "95",
+      "name": "PB15",
+      "net": "GDI_SPI2_MOSI"
+    },
+    {
+      "pad": "96",
+      "name": "PD8",
+      "net": "HPFP1"
+    },
+    {
+      "pad": "97",
+      "name": "PD9",
+      "net": "DI5"
+    },
+    {
+      "pad": "98",
+      "name": "PD10",
+      "net": "DI4"
+    },
+    {
+      "pad": "99",
+      "name": "PD11",
+      "net": "DI3"
+    },
+    {
+      "pad": "100",
+      "name": "PD12",
+      "net": "HPFP2"
+    },
+    {
+      "pad": "101",
+      "name": "PD13",
+      "net": "DBW_DISABLE"
+    },
+    {
+      "pad": "102",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "103",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "104",
+      "name": "PD14",
+      "net": "EWG_DIR"
+    },
+    {
+      "pad": "105",
+      "name": "PD15",
+      "net": "EWG_DISABLE"
+    },
+    {
+      "pad": "106",
+      "name": "PG2",
+      "net": "AUX_PWM2"
+    },
+    {
+      "pad": "107",
+      "name": "PG3",
+      "net": "AUX_PWM3"
+    },
+    {
+      "pad": "108",
+      "name": "PG4",
+      "net": "AUX_PWM4"
+    },
+    {
+      "pad": "109",
+      "name": "PG5",
+      "net": "AUX_PWM5"
+    },
+    {
+      "pad": "110",
+      "name": "PG6",
+      "net": "AUX_PWM6"
+    },
+    {
+      "pad": "111",
+      "name": "PG7",
+      "net": "DI1"
+    },
+    {
+      "pad": "112",
+      "name": "PG8",
+      "net": "DI2"
+    },
+    {
+      "pad": "113",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "114",
+      "name": "VDDUSB",
+      "net": "+3V3"
+    },
+    {
+      "pad": "115",
+      "name": "PC6",
+      "net": "DBW_PWM"
+    },
+    {
+      "pad": "116",
+      "name": "PC7",
+      "net": "MOTOR3_PWM"
+    },
+    {
+      "pad": "117",
+      "name": "PC8",
+      "net": "EWG_PWM"
+    },
+    {
+      "pad": "118",
+      "name": "PC9",
+      "net": "MOTOR4_PWM"
+    },
+    {
+      "pad": "119",
+      "name": "PA8",
+      "net": "SD_CS"
+    },
+    {
+      "pad": "120",
+      "name": "PA9",
+      "net": "USB_VBUS_PRESENT_N"
+    },
+    {
+      "pad": "121",
+      "name": "PA10",
+      "net": "WBO1_HEATER_PWM"
+    },
+    {
+      "pad": "122",
+      "name": "PA11",
+      "net": "USB_DM"
+    },
+    {
+      "pad": "123",
+      "name": "PA12",
+      "net": "USB_DP"
+    },
+    {
+      "pad": "124",
+      "name": "PA13",
+      "net": "SWDIO"
+    },
+    {
+      "pad": "125",
+      "name": "VCAP_2",
+      "net": "MCU_VCAP_2"
+    },
+    {
+      "pad": "126",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "127",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "128",
+      "name": "PH13",
+      "net": "LS_RESET_RELEASE"
+    },
+    {
+      "pad": "129",
+      "name": "PH14",
+      "net": "HALL1"
+    },
+    {
+      "pad": "130",
+      "name": "PH15",
+      "net": "HALL2"
+    },
+    {
+      "pad": "131",
+      "name": "PI0",
+      "net": "HALL3"
+    },
+    {
+      "pad": "132",
+      "name": "PI1",
+      "net": "KNOCK_CS_N"
+    },
+    {
+      "pad": "133",
+      "name": "PI2",
+      "net": "DBW_DIR"
+    },
+    {
+      "pad": "134",
+      "name": "PI3",
+      "net": "MOTOR3_DIR"
+    },
+    {
+      "pad": "135",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "136",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "137",
+      "name": "PA14",
+      "net": "SWCLK"
+    },
+    {
+      "pad": "138",
+      "name": "PA15",
+      "net": "PTB_CS"
+    },
+    {
+      "pad": "139",
+      "name": "PC10",
+      "net": "SD_SPI3_SCK"
+    },
+    {
+      "pad": "140",
+      "name": "PC11",
+      "net": "SD_SPI3_MISO"
+    },
+    {
+      "pad": "141",
+      "name": "PC12",
+      "net": "SD_SPI3_MOSI"
+    },
+    {
+      "pad": "142",
+      "name": "PD0",
+      "net": "CAN1_RX"
+    },
+    {
+      "pad": "143",
+      "name": "PD1",
+      "net": "CAN1_TX"
+    },
+    {
+      "pad": "144",
+      "name": "PD2",
+      "net": "LS_AUX1"
+    },
+    {
+      "pad": "145",
+      "name": "PD3",
+      "net": "LS_AUX2"
+    },
+    {
+      "pad": "146",
+      "name": "PD4",
+      "net": "LS_AUX3"
+    },
+    {
+      "pad": "147",
+      "name": "PD5",
+      "net": "LIN1_TX"
+    },
+    {
+      "pad": "148",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "149",
+      "name": "VDDSDMMC",
+      "net": "+3V3"
+    },
+    {
+      "pad": "150",
+      "name": "PD6",
+      "net": "LIN1_RX"
+    },
+    {
+      "pad": "151",
+      "name": "PD7",
+      "net": "LS_AUX4"
+    },
+    {
+      "pad": "152",
+      "name": "PG9",
+      "net": "PTB_FLAG"
+    },
+    {
+      "pad": "153",
+      "name": "PG10",
+      "net": "PTA_FLAG"
+    },
+    {
+      "pad": "154",
+      "name": "PG11",
+      "net": "SD_CD"
+    },
+    {
+      "pad": "155",
+      "name": "PG12",
+      "net": "CAN2_STB"
+    },
+    {
+      "pad": "156",
+      "name": "PG13",
+      "net": "LIN2_EN"
+    },
+    {
+      "pad": "157",
+      "name": "PG14",
+      "net": "AUX_PWM7"
+    },
+    {
+      "pad": "158",
+      "name": "VSS",
+      "net": "GND"
+    },
+    {
+      "pad": "159",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "160",
+      "name": "PG15",
+      "net": "AUX_PWM8"
+    },
+    {
+      "pad": "161",
+      "name": "PB3",
+      "net": "SWO"
+    },
+    {
+      "pad": "162",
+      "name": "PB4",
+      "net": "MOTOR_CS_N"
+    },
+    {
+      "pad": "163",
+      "name": "PB5",
+      "net": "CAN2_RX"
+    },
+    {
+      "pad": "164",
+      "name": "PB6",
+      "net": "CAN2_TX"
+    },
+    {
+      "pad": "165",
+      "name": "PB7",
+      "net": "SENT4"
+    },
+    {
+      "pad": "166",
+      "name": "BOOT0",
+      "net": "BOOT0"
+    },
+    {
+      "pad": "167",
+      "name": "PB8",
+      "net": "IGN6"
+    },
+    {
+      "pad": "168",
+      "name": "PB9",
+      "net": "IGN7"
+    },
+    {
+      "pad": "169",
+      "name": "PE0",
+      "net": "PI1"
+    },
+    {
+      "pad": "170",
+      "name": "PE1",
+      "net": "PI2"
+    },
+    {
+      "pad": "171",
+      "name": "PDR_ON",
+      "net": "+3V3"
+    },
+    {
+      "pad": "172",
+      "name": "VDD",
+      "net": "+3V3"
+    },
+    {
+      "pad": "173",
+      "name": "PI4",
+      "net": "MOTOR4_DIR"
+    },
+    {
+      "pad": "174",
+      "name": "PI5",
+      "net": "CAM3"
+    },
+    {
+      "pad": "175",
+      "name": "PI6",
+      "net": "CAM4"
+    },
+    {
+      "pad": "176",
+      "name": "PI7",
+      "net": "HALL4"
+    }
+  ],
+  "unassigned_functions": [],
+  "analog_channels": [
+    {
+      "function": "TPS1",
+      "port": "PA0",
+      "pad": "40",
+      "adc": "ADC1_IN0"
+    },
+    {
+      "function": "TPS2",
+      "port": "PA2",
+      "pad": "42",
+      "adc": "ADC1_IN2"
+    },
+    {
+      "function": "PPS1",
+      "port": "PA3",
+      "pad": "47",
+      "adc": "ADC1_IN3"
+    },
+    {
+      "function": "PPS2",
+      "port": "PA4",
+      "pad": "50",
+      "adc": "ADC1_IN4"
+    },
+    {
+      "function": "MAP_MAIN",
+      "port": "PA5",
+      "pad": "51",
+      "adc": "ADC1_IN5"
+    },
+    {
+      "function": "BARO_EXT",
+      "port": "PA6",
+      "pad": "52",
+      "adc": "ADC1_IN6"
+    },
+    {
+      "function": "CLT",
+      "port": "PA7",
+      "pad": "53",
+      "adc": "ADC1_IN7"
+    },
+    {
+      "function": "IAT",
+      "port": "PB0",
+      "pad": "56",
+      "adc": "ADC1_IN8"
+    },
+    {
+      "function": "OIL_PRESS",
+      "port": "PC0",
+      "pad": "32",
+      "adc": "ADC1_IN10"
+    },
+    {
+      "function": "OIL_TEMP",
+      "port": "PC1",
+      "pad": "33",
+      "adc": "ADC1_IN11"
+    },
+    {
+      "function": "FRP1",
+      "port": "PC2",
+      "pad": "34",
+      "adc": "ADC1_IN12"
+    },
+    {
+      "function": "FRP2",
+      "port": "PC3",
+      "pad": "35",
+      "adc": "ADC1_IN13"
+    },
+    {
+      "function": "LPFP_PRESS",
+      "port": "PC4",
+      "pad": "54",
+      "adc": "ADC1_IN14"
+    },
+    {
+      "function": "EXH_PRESS",
+      "port": "PC5",
+      "pad": "55",
+      "adc": "ADC1_IN15"
+    },
+    {
+      "function": "EWG_POS",
+      "port": "PF6",
+      "pad": "24",
+      "adc": "ADC3_IN4"
+    },
+    {
+      "function": "AUX_ANALOG1",
+      "port": "PF10",
+      "pad": "28",
+      "adc": "ADC3_IN8"
+    },
+    {
+      "function": "AUX_ANALOG2",
+      "port": "PF8",
+      "pad": "26",
+      "adc": "ADC3_IN6"
+    }
+  ]
+}

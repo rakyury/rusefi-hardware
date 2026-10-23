@@ -24,9 +24,16 @@
       90.0
     ],
     "connector_y": -88.5,
-    "screw_x": 124.0,
-    "screw_y": 84.0,
+    "screw_x": 128.0,
+    "screw_y": 88.0,
     "m3_clearance": 3.4,
+    "perimeter_boss_radius": 4.5,
+    "pilot_radius": 1.25,
+    "base_pilot_bottom_z": 10.0,
+    "pcb_standoff_radius": 5.0,
+    "pcb_hole_diameter": 3.4,
+    "connector_opening_clearance": 1.0,
+    "boolean_overlap": 0.1,
     "concept_only": true
   },
   "pcb_mounts": [
@@ -47,6 +54,37 @@
       74.0
     ]
   ],
+  "component_envelopes": {
+    "MCU_F7": [23, 23, 3, 0, 22],
+    "PT2001_A": [21, 21, 5, -55, 24],
+    "PT2001_B": [21, 21, 5, 55, 24],
+    "GDI_BOOST_A": [32, 19, 12, -60, 59],
+    "GDI_BOOST_B": [32, 19, 12, 60, 59],
+    "LOW_SIDE_24": [50, 15, 4, 0, 65],
+    "H_BRIDGE_A": [19, 14, 3, -90, 0],
+    "H_BRIDGE_B": [19, 14, 3, 90, 0],
+    "KNOCK_ANALOG": [31, 17, 4, 0, -29],
+    "POWER_IN": [26, 17, 12, 101, 57],
+    "LIN_CAN": [22, 16, 4, 101, -39]
+  },
+  "connector_face_cavities": {
+    "columns": 17,
+    "rows": 2,
+    "width": 1.6,
+    "depth": 3.0,
+    "height": 2.5,
+    "pitch_x": 2.65,
+    "pitch_z": 8.2,
+    "offset_z": 6.2,
+    "front_offset_y": -0.01
+  },
+  "export": {
+    "stl_tolerance_mm": 0.1,
+    "stl_angular_tolerance_rad": 0.1
+  },
+  "validation": {
+    "volume_tolerance_mm3": 0.000001
+  },
   "solids": [
     "Base",
     "Lid",

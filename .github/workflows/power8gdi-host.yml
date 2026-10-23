@@ -1,26 +1,60 @@
-name: Power8GDI host-only C++ and Python checks
+name: Power8GDI offline validation
 on:
   push:
     branches: [power8gdi-rev-a]
     paths:
       - 'Power8GDI/**'
+      - 'GDI-4ch/**'
       - '.github/workflows/power8gdi-host.yml'
   pull_request:
     paths:
       - 'Power8GDI/**'
+      - 'GDI-4ch/**'
       - '.github/workflows/power8gdi-host.yml'
 jobs:
   host-contracts:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install offline editor and test dependencies
+        run: python -m pip install -e "./Power8GDI/configurator[dev]"
+      - name: Install Qt offscreen runtime on Linux
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libegl1
+      - name: C++, Python parity, Qt lifecycle, and static interface checks
+        run: python Power8GDI/tools/run_checks.py --suite host
+      - name: Undefined-behavior checks on Linux
+        if: runner.os == 'Linux'
+        run: python Power8GDI/tools/run_checks.py --suite host --sanitizers --output build/power8gdi-ubsan
+      - name: Preserve exact commands and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: power8gdi-host-${{ matrix.os }}
+          path: build/power8gdi-*
+  mechanical-concepts:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: C++ host safety and map format tests
-        run: bash Power8GDI/firmware/tests/run_all_host_tests.sh
-      - name: Python offline config and 4D binary tests
-        working-directory: Power8GDI/configurator
-        run: PYTHONPATH=. python -m unittest discover -s tests -v
-      - name: Static interface checks (NOT KiCad ERC/DRC)
-        run: python -m unittest discover -s Power8GDI/tests -v
+      - name: Install CAD dependencies
+        run: python -m pip install -r Power8GDI/mechanical/requirements-cad.txt
+      - name: Regenerate and check conceptual CAD from a clean checkout
+        run: python Power8GDI/tools/run_checks.py --suite cad
+      - name: Preserve CAD test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: power8gdi-cad-checks
+          path: build/power8gdi-checks

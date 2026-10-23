@@ -54,7 +54,8 @@ class MainWindow(QMainWindow):
         self.project=default_project();self.path:Path|None=None
         self.active_name='Boost / Target';self._in_update=False
         self.undo_stack=QUndoStack(self)
-        self.setWindowTitle('R2 Power8GDI Configurator  •  OFFLINE')
+        self.undo_stack.cleanChanged.connect(self._clean_changed)
+        self._update_window_title()
         self.resize(1520,910)
         self.setStyleSheet(STYLE)
         self._init_ui()
@@ -73,8 +74,12 @@ class MainWindow(QMainWindow):
         action('Save',self.save_project,'Ctrl+S')
         action('Save as',self.save_as)
         toolbar.addSeparator()
-        action('Undo',self.undo_stack.undo,'Ctrl+Z')
-        action('Redo',self.undo_stack.redo,'Ctrl+Y')
+        self.undo_action=self.undo_stack.createUndoAction(self,'Undo')
+        self.undo_action.setShortcut(QKeySequence('Ctrl+Z'))
+        toolbar.addAction(self.undo_action)
+        self.redo_action=self.undo_stack.createRedoAction(self,'Redo')
+        self.redo_action.setShortcut(QKeySequence('Ctrl+Y'))
+        toolbar.addAction(self.redo_action)
         toolbar.addSeparator()
         off=action('ECU: disconnected',self.offline_notice)
         off.setEnabled(True)
@@ -86,10 +91,20 @@ class MainWindow(QMainWindow):
         lv.addSpacing(14)
         tree_label=QLabel('CALIBRATION TREE');tree_label.setObjectName('section')
         lv.addWidget(tree_label)
+        self.map_search=QLineEdit()
+        self.map_search.setPlaceholderText('Find map, axis or unit…  Ctrl+F')
+        self.map_search.setClearButtonEnabled(True)
+        self.map_search.setAccessibleName('Find calibration map')
+        lv.addWidget(self.map_search)
         self.tree=QTreeWidget();self.tree.setHeaderHidden(True)
-        self.tree.itemClicked.connect(self._tree_clicked)
+        self.tree.currentItemChanged.connect(self._tree_clicked)
         self.tree.setIndentation(15)
         lv.addWidget(self.tree)
+        self.map_search.textChanged.connect(self._filter_tree)
+        self.find_action=QAction('Find map',self)
+        self.find_action.setShortcut(QKeySequence('Ctrl+F'))
+        self.find_action.triggered.connect(self._focus_search)
+        self.addAction(self.find_action)
         note=QLabel('Prototype editor · no ECU connection')
         note.setObjectName('warning');note.setWordWrap(True);lv.addWidget(note)
         split.addWidget(left)
@@ -147,14 +162,40 @@ class MainWindow(QMainWindow):
     def _rebuild_tree(self):
         self.tree.clear();parents={}
         for name in self.project.tables:
-            group,leaf=name.split(' / ',1)
+            group,separator,leaf=name.partition(' / ')
+            if not separator:group,leaf='Calibration',name
             if group not in parents:
                 p=QTreeWidgetItem([group]);self.tree.addTopLevelItem(p);parents[group]=p
             child=QTreeWidgetItem([leaf]);child.setData(0,Qt.ItemDataRole.UserRole,name)
             parents[group].addChild(child)
         self.tree.expandAll()
+        self._filter_tree(self.map_search.text())
 
-    def _tree_clicked(self,item,column):
+    def _focus_search(self):
+        self.map_search.setFocus()
+        self.map_search.selectAll()
+
+    def _filter_tree(self,query):
+        terms=query.casefold().split()
+        # Filtering only changes navigation visibility, never the active map,
+        # selected Z layer, values, or document undo history.
+        blocker=QSignalBlocker(self.tree)
+        for i in range(self.tree.topLevelItemCount()):
+            group=self.tree.topLevelItem(i)
+            visible=0
+            for j in range(group.childCount()):
+                child=group.child(j)
+                table=self.project.tables[child.data(0,Qt.ItemDataRole.UserRole)]
+                text=' '.join((table.name,table.description,table.x_label,
+                               table.y_label,getattr(table,'z_label',''),table.value_unit)).casefold()
+                matches=all(term in text for term in terms)
+                child.setHidden(not matches)
+                visible+=matches
+            group.setHidden(visible==0)
+        del blocker
+
+    def _tree_clicked(self,item,previous):
+        if item is None:return
         name=item.data(0,Qt.ItemDataRole.UserRole)
         if name:self._select_table(name)
 
@@ -182,6 +223,12 @@ class MainWindow(QMainWindow):
         return max(0,self.layer_selector.currentIndex()) if isinstance(table,CalibrationTable4D) else 0
 
     @staticmethod
+    def _format_value(value):
+        # The displayed text is also the delegate's edit buffer. Rounding a
+        # higher-precision value here makes Enter silently change calibration.
+        return f'{value:.2f}' if value==round(value,2) else repr(value)
+
+    @staticmethod
     def _color(value,low,high):
         f=0.5 if high==low else max(0,min(1,(value-low)/(high-low)))
         # green -> amber -> orange; colors are values, not "good/bad" markers.
@@ -199,7 +246,7 @@ class MainWindow(QMainWindow):
         rows=t.values[z] if isinstance(t,CalibrationTable4D) else t.values
         for row,vals in enumerate(rows):
             for col,value in enumerate(vals):
-                item=QTableWidgetItem(f'{value:.2f}')
+                item=QTableWidgetItem(self._format_value(value))
                 item.setTextAlignment(Qt.AlignmentFlag.AlignCenter)
                 item.setBackground(self._color(value,t.minimum,t.maximum))
                 item.setForeground(QColor('#09121b'))
@@ -239,41 +286,86 @@ class MainWindow(QMainWindow):
             try:
                 item=self.grid.item(y,x)
                 if item:
-                    item.setText(f'{value:.2f}')
+                    item.setText(self._format_value(value))
                     item.setBackground(self._color(value,t.minimum,t.maximum))
             finally:
                 self._in_update=False
-        self.setWindowModified(True)
         self.statusBar().showMessage(f'Edited {name} [Z={z}, Y={y}, X={x}] = {value:g} {t.value_unit} · OFFLINE',6000)
 
+    def _clean_changed(self,clean):
+        self.setWindowModified(not clean)
+
+    def _update_window_title(self):
+        label=self.path.name if self.path else 'Untitled'
+        self.setWindowTitle(f'{label}[*] — R2 Power8GDI Configurator  •  OFFLINE')
+
+    def _finish_cell_edit(self):
+        # File actions can run via a shortcut while a delegate still holds text
+        # that has not reached itemChanged/the undo stack. Moving focus commits
+        # it through Qt's normal delegate validation before save or discard.
+        focus=self.focusWidget()
+        if focus is not None and self.grid.isAncestorOf(focus):
+            self.grid.setFocus(Qt.FocusReason.OtherFocusReason)
+
+    def _confirm_discard(self):
+        self._finish_cell_edit()
+        if self.undo_stack.isClean():return True
+        choice=QMessageBox.warning(
+            self,'Unsaved changes','Save changes to the current project?',
+            QMessageBox.StandardButton.Save | QMessageBox.StandardButton.Discard |
+            QMessageBox.StandardButton.Cancel,QMessageBox.StandardButton.Cancel)
+        if choice==QMessageBox.StandardButton.Save:return self.save_project()
+        return choice==QMessageBox.StandardButton.Discard
+
     def new_project(self):
+        if not self._confirm_discard():return False
         self.project=default_project();self.path=None;self.undo_stack.clear()
         self._rebuild_tree();self._select_table('Boost / Target')
-        self.setWindowModified(False)
+        self._update_window_title()
+        self.statusBar().showMessage('New offline project',7000)
+        return True
 
     def open_project(self):
         path,_=QFileDialog.getOpenFileName(self,'Open project','','Power8GDI (*.json);;All files (*)')
-        if not path:return
+        if not path:return False
+        if not self._confirm_discard():return False
         try:
             p=CalibrationProject.load(path)
+            if not p.tables:raise ValueError('Project contains no calibration tables')
+            if any(not isinstance(t.description,str) for t in p.tables.values()):
+                raise ValueError('Table descriptions must be text')
         except (ValueError,KeyError,OSError,TypeError) as exc:
-            QMessageBox.critical(self,'Cannot load',str(exc));return
+            QMessageBox.critical(self,'Cannot load',str(exc));return False
         self.project=p;self.path=Path(path);self.undo_stack.clear()
         self._rebuild_tree();self._select_table(next(iter(p.tables)))
-        self.setWindowModified(False)
+        self._update_window_title()
         self.statusBar().showMessage('Loaded '+path,7000)
+        return True
 
     def save_project(self):
+        self._finish_cell_edit()
         if self.path is None:return self.save_as()
-        try:self.project.save(self.path)
+        return self._save_to(self.path)
+
+    def _save_to(self,path):
+        try:self.project.save(path)
         except (OSError,ValueError) as exc:
-            QMessageBox.critical(self,'Cannot save',str(exc));return
-        self.setWindowModified(False)
+            QMessageBox.critical(self,'Cannot save',str(exc));return False
+        self.path=Path(path)
+        self.undo_stack.setClean()
+        self._update_window_title()
         self.statusBar().showMessage('Saved '+str(self.path),7000)
+        return True
 
     def save_as(self):
+        self._finish_cell_edit()
         path,_=QFileDialog.getSaveFileName(self,'Save project','Power8GDI_Reference.p8gdi.json','Power8GDI (*.json)')
-        if path:self.path=Path(path);self.save_project()
+        if not path:return False
+        return self._save_to(Path(path))
+
+    def closeEvent(self,event):
+        if self._confirm_discard():event.accept()
+        else:event.ignore()
 
     def offline_notice(self):
         QMessageBox.information(self,'Connection unavailable',

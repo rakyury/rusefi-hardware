@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/src/Power8GDI/hardware/design/wbo/wbo1_heater_feed.kicad_sch</source>
+    <date>2026-10-23T18:13:26+0000</date>
+    <tool>Eeschema 9.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>WBO1: reverse protected heater supply</title>
+        <company/>
+        <rev>Engineering draft 0.1</rev>
+        <date/>
+        <source>wbo1_heater_feed.kicad_sch</source>
+        <comment number="1" value="UNQUALIFIED: no manufacturing or engine approval"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C5650">
+      <value>100n 100V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>57191a80-7468-50c1-a74d-c7de1c0b0967</tstamps>
+    </comp>
+    <comp ref="C5651">
+      <value>47u 63V lowESR</value>
+      <footprint>Capacitor_SMD:CP_Elec_8x10</footprint>
+      <fields>
+        <field name="Design note">Provisional bulk MPN/ripple and cold ESR pending.</field>
+        <field name="Footprint">Capacitor_SMD:CP_Elec_8x10</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value="Provisional bulk MPN/ripple and cold ESR pending."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c941a13c-0c20-5900-8aea-1b325d987e07</tstamps>
+    </comp>
+    <comp ref="D5610">
+      <value>STPS5H100BY-TR</value>
+      <footprint>Package_TO_SOT_SMD:TO-252-2</footprint>
+      <fields>
+        <field name="Design note">ST DS6906 page1 package: leftlead1 NC, tab2 K, rightlead3 A. External branch fuse coordination and diode thermal validation required.</field>
+        <field name="Footprint">Package_TO_SOT_SMD:TO-252-2</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_STPS5H100BY" description=""/>
+      <property name="Design note" value="ST DS6906 page1 package: leftlead1 NC, tab2 K, rightlead3 A. External branch fuse coordination and diode thermal validation required."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d81bbe4a-52c1-5c05-b8de-ea2152c6fbd5</tstamps>
+    </comp>
+    <comp ref="D5611">
+      <value>SMBJ24CA</value>
+      <footprint>Diode_SMD:D_SMB</footprint>
+      <fields>
+        <field name="Design note">38.9V ratedclamp nominal &lt;40V switch minimumclamp; overshoot/pulse energy still unqualified.</field>
+        <field name="Footprint">Diode_SMD:D_SMB</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_SMBJ24CA" description=""/>
+      <property name="Design note" value="38.9V ratedclamp nominal &lt;40V switch minimumclamp; overshoot/pulse energy still unqualified."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>09606869-e738-5771-b74a-c52bb462db5b</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Power8GDI_WBO" part="WBO_C">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">WBO_C</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_SMBJ24CA">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">WBO_SMBJ24CA</field>
+        <field name="Footprint">Diode_SMD:D_SMB</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_STPS5H100BY">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">WBO_STPS5H100BY</field>
+        <field name="Footprint">Package_TO_SOT_SMD:TO-252-2</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="NC" type="no_connect"/>
+        <pin num="2" name="CATHODE_TAB" type="passive"/>
+        <pin num="3" name="ANODE" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Power8GDI_WBO">
+      <uri>/src/Power8GDI/hardware/design/wbo/Power8GDI_WBO.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="GND" class="Default">
+      <node ref="C5650" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5651" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="D5611" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="2" name="HARNESS_WBO1_CONTACT4" class="Default">
+      <node ref="C5650" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5651" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="D5610" pin="2" pinfunction="CATHODE_TAB" pintype="passive"/>
+      <node ref="D5611" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="3" name="VBAT_MAIN_FUSED" class="Default">
+      <node ref="D5610" pin="3" pinfunction="ANODE" pintype="passive"/>
+    </net>
+    <net code="4" name="unconnected-(D5610-NC-Pad1)" class="Default">
+      <node ref="D5610" pin="1" pinfunction="NC" pintype="no_connect"/>
+    </net>
+  </nets>
+</export>

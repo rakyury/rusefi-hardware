@@ -1,0 +1,8175 @@
+{
+  "input_netlist": [
+    {
+      "path": "/work/Power8GDI/hardware/design/core.net",
+      "sha256": "9c9c0ac135e7141a24b57fdff2ce83b81b46072040463a44ee89c0d4c8d300de"
+    }
+  ],
+  "outline_mm": [
+    245,
+    165
+  ],
+  "donor": {
+    "A": {
+      "footprint_count": 129,
+      "copper_items": 1354,
+      "footprint_bounds_mm": [
+        76.725,
+        53.23502,
+        221.205,
+        135.85002
+      ],
+      "copper_bounds_mm": [
+        78.25,
+        50.433489,
+        225.549502,
+        137.700001
+      ],
+      "front_parts": 129,
+      "back_parts": 0
+    },
+    "B": {
+      "footprint_count": 129,
+      "copper_items": 1354,
+      "footprint_bounds_mm": [
+        76.725,
+        53.23502,
+        221.205,
+        135.85002
+      ],
+      "copper_bounds_mm": [
+        78.25,
+        50.433489,
+        225.549502,
+        137.700001
+      ],
+      "front_parts": 129,
+      "back_parts": 0
+    }
+  },
+  "groups": {
+    "core_power": {
+      "count": 3,
+      "body_area_mm2": 73.91645,
+      "largest": [
+        {
+          "reference": "U102",
+          "width_mm": 8.85,
+          "height_mm": 7.325,
+          "area_mm2": 64.82625
+        },
+        {
+          "reference": "C125",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        },
+        {
+          "reference": "C126",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        }
+      ]
+    },
+    "core_mcu": {
+      "count": 31,
+      "body_area_mm2": 924.557,
+      "largest": [
+        {
+          "reference": "U101",
+          "width_mm": 27.41,
+          "height_mm": 27.41,
+          "area_mm2": 751.3081
+        },
+        {
+          "reference": "J101",
+          "width_mm": 4.46,
+          "height_mm": 7.41,
+          "area_mm2": 33.0486
+        },
+        {
+          "reference": "Y101",
+          "width_mm": 3.75,
+          "height_mm": 3.45,
+          "area_mm2": 12.9375
+        },
+        {
+          "reference": "C101",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        }
+      ]
+    },
+    "core_comms": {
+      "count": 18,
+      "body_area_mm2": 182.32030000000003,
+      "largest": [
+        {
+          "reference": "U103",
+          "width_mm": 7.45,
+          "height_mm": 5.585,
+          "area_mm2": 41.60825
+        },
+        {
+          "reference": "U104",
+          "width_mm": 7.45,
+          "height_mm": 5.585,
+          "area_mm2": 41.60825
+        },
+        {
+          "reference": "D101",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "D102",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        }
+      ]
+    },
+    "ignition/ignition_common": {
+      "count": 18,
+      "body_area_mm2": 245.67219999999998,
+      "largest": [
+        {
+          "reference": "U5402",
+          "width_mm": 7.45,
+          "height_mm": 5.585,
+          "area_mm2": 41.60825
+        },
+        {
+          "reference": "U5403",
+          "width_mm": 7.45,
+          "height_mm": 5.585,
+          "area_mm2": 41.60825
+        },
+        {
+          "reference": "U5404",
+          "width_mm": 7.45,
+          "height_mm": 5.585,
+          "area_mm2": 41.60825
+        },
+        {
+          "reference": "U5405",
+          "width_mm": 7.45,
+          "height_mm": 5.585,
+          "area_mm2": 41.60825
+        }
+      ]
+    },
+    "ignition/ignition_1": {
+      "count": 16,
+      "body_area_mm2": 317.3009499999999,
+      "largest": [
+        {
+          "reference": "Q5420",
+          "width_mm": 16.7,
+          "height_mm": 11.35,
+          "area_mm2": 189.545
+        },
+        {
+          "reference": "R5427",
+          "width_mm": 7.71,
+          "height_mm": 3.91,
+          "area_mm2": 30.1461
+        },
+        {
+          "reference": "U5422",
+          "width_mm": 6.41,
+          "height_mm": 3.575,
+          "area_mm2": 22.915750000000003
+        },
+        {
+          "reference": "U5420",
+          "width_mm": 4.15,
+          "height_mm": 3.625,
+          "area_mm2": 15.043750000000001
+        }
+      ]
+    },
+    "ignition/ignition_2": {
+      "count": 16,
+      "body_area_mm2": 317.3009499999999,
+      "largest": [
+        {
+          "reference": "Q5440",
+          "width_mm": 16.7,
+          "height_mm": 11.35,
+          "area_mm2": 189.545
+        },
+        {
+          "reference": "R5447",
+          "width_mm": 7.71,
+          "height_mm": 3.91,
+          "area_mm2": 30.1461
+        },
+        {
+          "reference": "U5442",
+          "width_mm": 6.41,
+          "height_mm": 3.575,
+          "area_mm2": 22.915750000000003
+        },
+        {
+          "reference": "U5440",
+          "width_mm": 4.15,
+          "height_mm": 3.625,
+          "area_mm2": 15.043750000000001
+        }
+      ]
+    },
+    "ignition/ignition_3": {
+      "count": 16,
+      "body_area_mm2": 317.3009499999999,
+      "largest": [
+        {
+          "reference": "Q5460",
+          "width_mm": 16.7,
+          "height_mm": 11.35,
+          "area_mm2": 189.545
+        },
+        {
+          "reference": "R5467",
+          "width_mm": 7.71,
+          "height_mm": 3.91,
+          "area_mm2": 30.1461
+        },
+        {
+          "reference": "U5462",
+          "width_mm": 6.41,
+          "height_mm": 3.575,
+          "area_mm2": 22.915750000000003
+        },
+        {
+          "reference": "U5460",
+          "width_mm": 4.15,
+          "height_mm": 3.625,
+          "area_mm2": 15.043750000000001
+        }
+      ]
+    },
+    "ignition/ignition_4": {
+      "count": 16,
+      "body_area_mm2": 317.3009499999999,
+      "largest": [
+        {
+          "reference": "Q5480",
+          "width_mm": 16.7,
+          "height_mm": 11.35,
+          "area_mm2": 189.545
+        },
+        {
+          "reference": "R5487",
+          "width_mm": 7.71,
+          "height_mm": 3.91,
+          "area_mm2": 30.1461
+        },
+        {
+          "reference": "U5482",
+          "width_mm": 6.41,
+          "height_mm": 3.575,
+          "area_mm2": 22.915750000000003
+        },
+        {
+          "reference": "U5480",
+          "width_mm": 4.15,
+          "height_mm": 3.625,
+          "area_mm2": 15.043750000000001
+        }
+      ]
+    },
+    "ignition/ignition_5": {
+      "count": 16,
+      "body_area_mm2": 317.3009499999999,
+      "largest": [
+        {
+          "reference": "Q5500",
+          "width_mm": 16.7,
+          "height_mm": 11.35,
+          "area_mm2": 189.545
+        },
+        {
+          "reference": "R5507",
+          "width_mm": 7.71,
+          "height_mm": 3.91,
+          "area_mm2": 30.1461
+        },
+        {
+          "reference": "U5502",
+          "width_mm": 6.41,
+          "height_mm": 3.575,
+          "area_mm2": 22.915750000000003
+        },
+        {
+          "reference": "U5500",
+          "width_mm": 4.15,
+          "height_mm": 3.625,
+          "area_mm2": 15.043750000000001
+        }
+      ]
+    },
+    "ignition/ignition_6": {
+      "count": 16,
+      "body_area_mm2": 317.3009499999999,
+      "largest": [
+        {
+          "reference": "Q5520",
+          "width_mm": 16.7,
+          "height_mm": 11.35,
+          "area_mm2": 189.545
+        },
+        {
+          "reference": "R5527",
+          "width_mm": 7.71,
+          "height_mm": 3.91,
+          "area_mm2": 30.1461
+        },
+        {
+          "reference": "U5522",
+          "width_mm": 6.41,
+          "height_mm": 3.575,
+          "area_mm2": 22.915750000000003
+        },
+        {
+          "reference": "U5520",
+          "width_mm": 4.15,
+          "height_mm": 3.625,
+          "area_mm2": 15.043750000000001
+        }
+      ]
+    },
+    "ignition/ignition_7": {
+      "count": 16,
+      "body_area_mm2": 317.3009499999999,
+      "largest": [
+        {
+          "reference": "Q5540",
+          "width_mm": 16.7,
+          "height_mm": 11.35,
+          "area_mm2": 189.545
+        },
+        {
+          "reference": "R5547",
+          "width_mm": 7.71,
+          "height_mm": 3.91,
+          "area_mm2": 30.1461
+        },
+        {
+          "reference": "U5542",
+          "width_mm": 6.41,
+          "height_mm": 3.575,
+          "area_mm2": 22.915750000000003
+        },
+        {
+          "reference": "U5540",
+          "width_mm": 4.15,
+          "height_mm": 3.625,
+          "area_mm2": 15.043750000000001
+        }
+      ]
+    },
+    "ignition/ignition_8": {
+      "count": 16,
+      "body_area_mm2": 317.3009499999999,
+      "largest": [
+        {
+          "reference": "Q5560",
+          "width_mm": 16.7,
+          "height_mm": 11.35,
+          "area_mm2": 189.545
+        },
+        {
+          "reference": "R5567",
+          "width_mm": 7.71,
+          "height_mm": 3.91,
+          "area_mm2": 30.1461
+        },
+        {
+          "reference": "U5562",
+          "width_mm": 6.41,
+          "height_mm": 3.575,
+          "area_mm2": 22.915750000000003
+        },
+        {
+          "reference": "U5560",
+          "width_mm": 4.15,
+          "height_mm": 3.625,
+          "area_mm2": 15.043750000000001
+        }
+      ]
+    },
+    "io/analog_1": {
+      "count": 27,
+      "body_area_mm2": 198.24145,
+      "largest": [
+        {
+          "reference": "U701",
+          "width_mm": 7.75,
+          "height_mm": 5.715,
+          "area_mm2": 44.29125
+        },
+        {
+          "reference": "D701",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "D702",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "D703",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        }
+      ]
+    },
+    "io/analog_2": {
+      "count": 27,
+      "body_area_mm2": 198.24145,
+      "largest": [
+        {
+          "reference": "U702",
+          "width_mm": 7.75,
+          "height_mm": 5.715,
+          "area_mm2": 44.29125
+        },
+        {
+          "reference": "D705",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "D706",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "D707",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        }
+      ]
+    },
+    "io/analog_3": {
+      "count": 27,
+      "body_area_mm2": 198.24145,
+      "largest": [
+        {
+          "reference": "U703",
+          "width_mm": 7.75,
+          "height_mm": 5.715,
+          "area_mm2": 44.29125
+        },
+        {
+          "reference": "D709",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "D710",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "D711",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        }
+      ]
+    },
+    "io/analog_4": {
+      "count": 27,
+      "body_area_mm2": 198.24145,
+      "largest": [
+        {
+          "reference": "U704",
+          "width_mm": 7.75,
+          "height_mm": 5.715,
+          "area_mm2": 44.29125
+        },
+        {
+          "reference": "D713",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "D714",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "D715",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        }
+      ]
+    },
+    "io/analog_5": {
+      "count": 12,
+      "body_area_mm2": 103.23174999999998,
+      "largest": [
+        {
+          "reference": "U705",
+          "width_mm": 7.75,
+          "height_mm": 5.715,
+          "area_mm2": 44.29125
+        },
+        {
+          "reference": "D717",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "C732",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        },
+        {
+          "reference": "C733",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        }
+      ]
+    },
+    "io/digital_1": {
+      "count": 32,
+      "body_area_mm2": 238.8557499999999,
+      "largest": [
+        {
+          "reference": "U721",
+          "width_mm": 7.75,
+          "height_mm": 5.715,
+          "area_mm2": 44.29125
+        },
+        {
+          "reference": "D730",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "D731",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "D732",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        }
+      ]
+    },
+    "io/digital_2": {
+      "count": 12,
+      "body_area_mm2": 112.17614999999998,
+      "largest": [
+        {
+          "reference": "U722",
+          "width_mm": 7.75,
+          "height_mm": 5.715,
+          "area_mm2": 44.29125
+        },
+        {
+          "reference": "D736",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "D737",
+          "width_mm": 3.91,
+          "height_mm": 3.45,
+          "area_mm2": 13.489500000000001
+        },
+        {
+          "reference": "C756",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        }
+      ]
+    },
+    "io/crank_vr": {
+      "count": 7,
+      "body_area_mm2": 50.37864999999999,
+      "largest": [
+        {
+          "reference": "U731",
+          "width_mm": 6.41,
+          "height_mm": 3.605,
+          "area_mm2": 23.10805
+        },
+        {
+          "reference": "C760",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        },
+        {
+          "reference": "C761",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        },
+        {
+          "reference": "C762",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        }
+      ]
+    },
+    "outputs/ls_bank_1": {
+      "count": 23,
+      "body_area_mm2": 237.01585,
+      "largest": [
+        {
+          "reference": "U1101",
+          "width_mm": 8.35,
+          "height_mm": 11.65,
+          "area_mm2": 97.2775
+        },
+        {
+          "reference": "U1121",
+          "width_mm": 7.75,
+          "height_mm": 5.715,
+          "area_mm2": 44.29125
+        },
+        {
+          "reference": "C1101",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        },
+        {
+          "reference": "C1102",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        }
+      ]
+    },
+    "outputs/ls_bank_2": {
+      "count": 23,
+      "body_area_mm2": 237.01585,
+      "largest": [
+        {
+          "reference": "U1102",
+          "width_mm": 8.35,
+          "height_mm": 11.65,
+          "area_mm2": 97.2775
+        },
+        {
+          "reference": "U1122",
+          "width_mm": 7.75,
+          "height_mm": 5.715,
+          "area_mm2": 44.29125
+        },
+        {
+          "reference": "C1121",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        },
+        {
+          "reference": "C1122",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        }
+      ]
+    },
+    "outputs/ls_bank_3": {
+      "count": 23,
+      "body_area_mm2": 237.01585,
+      "largest": [
+        {
+          "reference": "U1103",
+          "width_mm": 8.35,
+          "height_mm": 11.65,
+          "area_mm2": 97.2775
+        },
+        {
+          "reference": "U1123",
+          "width_mm": 7.75,
+          "height_mm": 5.715,
+          "area_mm2": 44.29125
+        },
+        {
+          "reference": "C1141",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        },
+        {
+          "reference": "C1142",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        }
+      ]
+    },
+    "outputs/ls_bank_4": {
+      "count": 23,
+      "body_area_mm2": 237.01585,
+      "largest": [
+        {
+          "reference": "U1104",
+          "width_mm": 8.35,
+          "height_mm": 11.65,
+          "area_mm2": 97.2775
+        },
+        {
+          "reference": "U1124",
+          "width_mm": 7.75,
+          "height_mm": 5.715,
+          "area_mm2": 44.29125
+        },
+        {
+          "reference": "C1161",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        },
+        {
+          "reference": "C1162",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        }
+      ]
+    },
+    "outputs/ls_bank_5": {
+      "count": 23,
+      "body_area_mm2": 237.01585,
+      "largest": [
+        {
+          "reference": "U1105",
+          "width_mm": 8.35,
+          "height_mm": 11.65,
+          "area_mm2": 97.2775
+        },
+        {
+          "reference": "U1125",
+          "width_mm": 7.75,
+          "height_mm": 5.715,
+          "area_mm2": 44.29125
+        },
+        {
+          "reference": "C1181",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        },
+        {
+          "reference": "C1182",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        }
+      ]
+    },
+    "outputs/ls_bank_6": {
+      "count": 23,
+      "body_area_mm2": 237.01585,
+      "largest": [
+        {
+          "reference": "U1106",
+          "width_mm": 8.35,
+          "height_mm": 11.65,
+          "area_mm2": 97.2775
+        },
+        {
+          "reference": "U1126",
+          "width_mm": 7.75,
+          "height_mm": 5.715,
+          "area_mm2": 44.29125
+        },
+        {
+          "reference": "C1201",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        },
+        {
+          "reference": "C1202",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        }
+      ]
+    },
+    "outputs/ls_control": {
+      "count": 6,
+      "body_area_mm2": 37.76925,
+      "largest": [
+        {
+          "reference": "U1140",
+          "width_mm": 4.15,
+          "height_mm": 3.625,
+          "area_mm2": 15.043750000000001
+        },
+        {
+          "reference": "C1241",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        },
+        {
+          "reference": "R1241",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        },
+        {
+          "reference": "R1242",
+          "width_mm": 3.01,
+          "height_mm": 1.51,
+          "area_mm2": 4.5451
+        }
+      ]
+    },
+    "unknown": {
+      "count": 390,
+      "body_area_mm2": 5434.1553,
+      "largest": [
+        {
+          "reference": "J1502",
+          "width_mm": 13.73,
+          "height_mm": 16.325,
+          "area_mm2": 224.14225
+        },
+        {
+          "reference": "L501",
+          "width_mm": 13.05,
+          "height_mm": 12.775,
+          "area_mm2": 166.71375
+        },
+        {
+          "reference": "U1701",
+          "width_mm": 11.91,
+          "height_mm": 13.485,
+          "area_mm2": 160.60635
+        },
+        {
+          "reference": "C903",
+          "width_mm": 13.085,
+          "height_mm": 10.85,
+          "area_mm2": 141.97225
+        }
+      ]
+    },
+    "connector": {
+      "count": 4,
+      "body_area_mm2": 6991.8099999999995,
+      "largest": [
+        {
+          "reference": "J601",
+          "width_mm": 46.55,
+          "height_mm": 37.55,
+          "area_mm2": 1747.9524999999999
+        },
+        {
+          "reference": "J602",
+          "width_mm": 46.55,
+          "height_mm": 37.55,
+          "area_mm2": 1747.9524999999999
+        },
+        {
+          "reference": "J603",
+          "width_mm": 46.55,
+          "height_mm": 37.55,
+          "area_mm2": 1747.9524999999999
+        },
+        {
+          "reference": "J604",
+          "width_mm": 46.55,
+          "height_mm": 37.55,
+          "area_mm2": 1747.9524999999999
+        }
+      ]
+    }
+  },
+  "parts": {
+    "C125": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_power",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C126": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_power",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U102": {
+      "footprint": "Package_TO_SOT_SMD:SOT-223-3_TabPin2",
+      "sheet": "core_power",
+      "size_mm": [
+        8.85,
+        7.325
+      ]
+    },
+    "C101": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C102": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C103": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C104": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C105": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C106": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C107": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C108": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C109": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C110": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C111": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C112": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C113": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C114": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C115": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C116": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C117": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C118": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C119": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C120": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C121": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C122": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C123": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C124": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C129": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "J101": {
+      "footprint": "Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical",
+      "sheet": "core_mcu",
+      "size_mm": [
+        4.46,
+        7.41
+      ]
+    },
+    "R101": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R102": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R103": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U101": {
+      "footprint": "Package_QFP:LQFP-176_24x24mm_P0.5mm",
+      "sheet": "core_mcu",
+      "size_mm": [
+        27.41,
+        27.41
+      ]
+    },
+    "Y101": {
+      "footprint": "Power8GDI_Core:ASEM_3225",
+      "sheet": "core_mcu",
+      "size_mm": [
+        3.75,
+        3.45
+      ]
+    },
+    "C127": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C128": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C130": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C131": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C132": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D101": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D102": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "R104": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R105": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R106": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R107": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R108": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R109": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R110": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R111": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R112": {
+      "footprint": "Resistor_SMD:R_1206_3216Metric",
+      "sheet": "core_comms",
+      "size_mm": [
+        4.61,
+        2.31
+      ]
+    },
+    "U103": {
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "sheet": "core_comms",
+      "size_mm": [
+        7.45,
+        5.585
+      ]
+    },
+    "U104": {
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "sheet": "core_comms",
+      "size_mm": [
+        7.45,
+        5.585
+      ]
+    },
+    "C5400": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5401": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5402": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5403": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5404": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5405": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5406": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5407": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5408": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5409": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5400": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5401": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5400": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U5401": {
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        3.65,
+        2.645
+      ]
+    },
+    "U5402": {
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        7.45,
+        5.585
+      ]
+    },
+    "U5403": {
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        7.45,
+        5.585
+      ]
+    },
+    "U5404": {
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        7.45,
+        5.585
+      ]
+    },
+    "U5405": {
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "sheet": "ignition/ignition_common",
+      "size_mm": [
+        7.45,
+        5.585
+      ]
+    },
+    "C5420": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5421": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5422": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "Q5420": {
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        16.7,
+        11.35
+      ]
+    },
+    "R5420": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5421": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5422": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5423": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5424": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5425": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5426": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5427": {
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        7.71,
+        3.91
+      ]
+    },
+    "R5428": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5420": {
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U5421": {
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        3.65,
+        2.645
+      ]
+    },
+    "U5422": {
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "sheet": "ignition/ignition_1",
+      "size_mm": [
+        6.41,
+        3.575
+      ]
+    },
+    "C5440": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5441": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5442": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "Q5440": {
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        16.7,
+        11.35
+      ]
+    },
+    "R5440": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5441": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5442": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5443": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5444": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5445": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5446": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5447": {
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        7.71,
+        3.91
+      ]
+    },
+    "R5448": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5440": {
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U5441": {
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        3.65,
+        2.645
+      ]
+    },
+    "U5442": {
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "sheet": "ignition/ignition_2",
+      "size_mm": [
+        6.41,
+        3.575
+      ]
+    },
+    "C5460": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5461": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5462": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "Q5460": {
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        16.7,
+        11.35
+      ]
+    },
+    "R5460": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5461": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5462": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5463": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5464": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5465": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5466": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5467": {
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        7.71,
+        3.91
+      ]
+    },
+    "R5468": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5460": {
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U5461": {
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        3.65,
+        2.645
+      ]
+    },
+    "U5462": {
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "sheet": "ignition/ignition_3",
+      "size_mm": [
+        6.41,
+        3.575
+      ]
+    },
+    "C5480": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5481": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5482": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "Q5480": {
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        16.7,
+        11.35
+      ]
+    },
+    "R5480": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5481": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5482": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5483": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5484": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5485": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5486": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5487": {
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        7.71,
+        3.91
+      ]
+    },
+    "R5488": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5480": {
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U5481": {
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        3.65,
+        2.645
+      ]
+    },
+    "U5482": {
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "sheet": "ignition/ignition_4",
+      "size_mm": [
+        6.41,
+        3.575
+      ]
+    },
+    "C5500": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5501": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5502": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "Q5500": {
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        16.7,
+        11.35
+      ]
+    },
+    "R5500": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5501": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5502": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5503": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5504": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5505": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5506": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5507": {
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        7.71,
+        3.91
+      ]
+    },
+    "R5508": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5500": {
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U5501": {
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        3.65,
+        2.645
+      ]
+    },
+    "U5502": {
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "sheet": "ignition/ignition_5",
+      "size_mm": [
+        6.41,
+        3.575
+      ]
+    },
+    "C5520": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5521": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5522": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "Q5520": {
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        16.7,
+        11.35
+      ]
+    },
+    "R5520": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5521": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5522": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5523": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5524": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5525": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5526": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5527": {
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        7.71,
+        3.91
+      ]
+    },
+    "R5528": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5520": {
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U5521": {
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        3.65,
+        2.645
+      ]
+    },
+    "U5522": {
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "sheet": "ignition/ignition_6",
+      "size_mm": [
+        6.41,
+        3.575
+      ]
+    },
+    "C5540": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5541": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5542": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "Q5540": {
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        16.7,
+        11.35
+      ]
+    },
+    "R5540": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5541": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5542": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5543": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5544": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5545": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5546": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5547": {
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        7.71,
+        3.91
+      ]
+    },
+    "R5548": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5540": {
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U5541": {
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        3.65,
+        2.645
+      ]
+    },
+    "U5542": {
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "sheet": "ignition/ignition_7",
+      "size_mm": [
+        6.41,
+        3.575
+      ]
+    },
+    "C5560": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5561": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5562": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "Q5560": {
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        16.7,
+        11.35
+      ]
+    },
+    "R5560": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5561": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5562": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5563": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5564": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5565": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5566": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5567": {
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        7.71,
+        3.91
+      ]
+    },
+    "R5568": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5560": {
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U5561": {
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        3.65,
+        2.645
+      ]
+    },
+    "U5562": {
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "sheet": "ignition/ignition_8",
+      "size_mm": [
+        6.41,
+        3.575
+      ]
+    },
+    "C700": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C701": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C702": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C703": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C704": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C705": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C706": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C707": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C740": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C741": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D701": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D702": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D703": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D704": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "R700": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R701": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R702": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R703": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R704": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R705": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R706": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R707": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R708": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R709": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R710": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R711": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U701": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "io/analog_1",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C708": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C709": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C710": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C711": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C712": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C713": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C714": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C715": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C742": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C743": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D705": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D706": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D707": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D708": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "R712": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R713": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R714": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R715": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R716": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R717": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R718": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R719": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R720": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R721": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R722": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R723": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U702": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "io/analog_2",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C716": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C717": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C718": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C719": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C720": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C721": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C722": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C723": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C744": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C745": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D709": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D710": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D711": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D712": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "R724": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R725": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R726": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R727": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R728": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R729": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R730": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R731": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R732": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R733": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R734": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R735": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U703": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "io/analog_3",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C724": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C725": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C726": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C727": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C728": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C729": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C730": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C731": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C746": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C747": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D713": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D714": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D715": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D716": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "R736": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R737": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R738": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R739": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R740": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R741": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R742": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R743": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R744": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R745": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R746": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R747": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U704": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "io/analog_4",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C732": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C733": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C748": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C749": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/analog_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D717": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/analog_5",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "R748": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R749": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R750": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R751": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R752": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R753": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/analog_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U705": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "io/analog_5",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C750": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C751": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C752": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C753": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C754": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C755": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C758": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D730": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D731": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D732": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D733": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D734": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D735": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "R760": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R761": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R762": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R763": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R764": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R765": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R766": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R767": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R768": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R769": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R770": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R771": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R772": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R773": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R774": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R775": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R776": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R777": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U721": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "io/digital_1",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C756": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/digital_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C757": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/digital_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C759": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/digital_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D736": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/digital_2",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D737": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "io/digital_2",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "R778": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R779": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R780": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R781": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R782": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R783": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/digital_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U722": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "io/digital_2",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C760": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/crank_vr",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C761": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/crank_vr",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C762": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "io/crank_vr",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R790": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/crank_vr",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R791": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/crank_vr",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R792": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "io/crank_vr",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U731": {
+      "footprint": "Package_SO:MSOP-10_3x3mm_P0.5mm",
+      "sheet": "io/crank_vr",
+      "size_mm": [
+        6.41,
+        3.605
+      ]
+    },
+    "C1101": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1102": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1103": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1104": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1101": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1102": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1103": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1104": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1105": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1106": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1107": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1108": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1109": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1110": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1111": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1112": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1113": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1114": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1115": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1116": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1117": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U1101": {
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        8.35,
+        11.65
+      ]
+    },
+    "U1121": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "outputs/ls_bank_1",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C1121": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1122": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1123": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1124": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1121": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1122": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1123": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1124": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1125": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1126": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1127": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1128": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1129": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1130": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1131": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1132": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1133": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1134": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1135": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1136": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1137": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U1102": {
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        8.35,
+        11.65
+      ]
+    },
+    "U1122": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "outputs/ls_bank_2",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C1141": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1142": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1143": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1144": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1141": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1142": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1143": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1144": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1145": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1146": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1147": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1148": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1149": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1150": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1151": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1152": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1153": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1154": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1155": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1156": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1157": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U1103": {
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        8.35,
+        11.65
+      ]
+    },
+    "U1123": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "outputs/ls_bank_3",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C1161": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1162": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1163": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1164": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1161": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1162": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1163": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1164": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1165": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1166": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1167": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1168": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1169": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1170": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1171": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1172": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1173": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1174": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1175": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1176": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1177": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U1104": {
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        8.35,
+        11.65
+      ]
+    },
+    "U1124": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "outputs/ls_bank_4",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C1181": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1182": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1183": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1184": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1181": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1182": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1183": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1184": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1185": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1186": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1187": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1188": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1189": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1190": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1191": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1192": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1193": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1194": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1195": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1196": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1197": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U1105": {
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        8.35,
+        11.65
+      ]
+    },
+    "U1125": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "outputs/ls_bank_5",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C1201": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1202": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1203": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1204": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1201": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1202": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1203": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1204": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1205": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1206": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1207": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1208": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1209": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1210": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1211": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1212": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1213": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1214": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1215": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1216": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1217": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U1106": {
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        8.35,
+        11.65
+      ]
+    },
+    "U1126": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "outputs/ls_bank_6",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C1241": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "outputs/ls_control",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1241": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_control",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1242": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_control",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1243": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_control",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1244": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "outputs/ls_control",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U1140": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "outputs/ls_control",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "C501": {
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        4.65,
+        3.25
+      ]
+    },
+    "C502": {
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        4.65,
+        3.25
+      ]
+    },
+    "C503": {
+      "footprint": "Capacitor_SMD:CP_Elec_8x10",
+      "sheet": "unknown",
+      "size_mm": [
+        10.835,
+        8.85
+      ]
+    },
+    "C504": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C505": {
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        4.65,
+        3.25
+      ]
+    },
+    "C506": {
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        4.65,
+        3.25
+      ]
+    },
+    "C507": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C508": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D501": {
+      "footprint": "Diode_SMD:D_SMB",
+      "sheet": "unknown",
+      "size_mm": [
+        7.395,
+        4.55
+      ]
+    },
+    "D502": {
+      "footprint": "Diode_SMD:D_SMB",
+      "sheet": "unknown",
+      "size_mm": [
+        7.395,
+        4.55
+      ]
+    },
+    "L501": {
+      "footprint": "Inductor_SMD:L_Coilcraft_MSS1246T-XXX",
+      "sheet": "unknown",
+      "size_mm": [
+        13.05,
+        12.775
+      ]
+    },
+    "R501": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R502": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R503": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R504": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R505": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R506": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R507": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U501": {
+      "footprint": "Power8GDI_Board:HSOP8_EP_ThermalVia0p3",
+      "sheet": "unknown",
+      "size_mm": [
+        7.45,
+        5.585
+      ]
+    },
+    "C298": {
+      "footprint": "Power8GDI_GDI:REF_C17",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C299": {
+      "footprint": "Power8GDI_GDI:REF_C17",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "R298": {
+      "footprint": "Power8GDI_GDI:REF_R123",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R299": {
+      "footprint": "Power8GDI_GDI:REF_R123",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U249": {
+      "footprint": "Power8GDI_GDI:REF_U3",
+      "sheet": "unknown",
+      "size_mm": [
+        11.15,
+        7.05
+      ]
+    },
+    "C398": {
+      "footprint": "Power8GDI_GDI:REF_C17",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C399": {
+      "footprint": "Power8GDI_GDI:REF_C17",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "R398": {
+      "footprint": "Power8GDI_GDI:REF_R123",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R399": {
+      "footprint": "Power8GDI_GDI:REF_R123",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U349": {
+      "footprint": "Power8GDI_GDI:REF_U3",
+      "sheet": "unknown",
+      "size_mm": [
+        11.15,
+        7.05
+      ]
+    },
+    "C801": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C802": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C803": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C804": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C806": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R801": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R802": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R803": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R804": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R805": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R806": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R6500": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U801": {
+      "footprint": "Package_SON:VSON-8-1EP_3x3mm_P0.65mm_EP1.6x2.4mm",
+      "sheet": "unknown",
+      "size_mm": [
+        4.685,
+        3.55
+      ]
+    },
+    "U802": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U803": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U804": {
+      "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "sheet": "unknown",
+      "size_mm": [
+        4.61,
+        2.715
+      ]
+    },
+    "C901": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C902": {
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        4.65,
+        3.25
+      ]
+    },
+    "C903": {
+      "footprint": "Capacitor_SMD:CP_Elec_10x10",
+      "sheet": "unknown",
+      "size_mm": [
+        13.085,
+        10.85
+      ]
+    },
+    "C910": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C911": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C912": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C913": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C914": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C915": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D901": {
+      "footprint": "Diode_SMD:D_SMB",
+      "sheet": "unknown",
+      "size_mm": [
+        7.395,
+        4.55
+      ]
+    },
+    "D902": {
+      "footprint": "Diode_SMD:D_SMB",
+      "sheet": "unknown",
+      "size_mm": [
+        7.395,
+        4.55
+      ]
+    },
+    "R901": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R902": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R903": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R904": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R905": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R906": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R907": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U901": {
+      "footprint": "Power8GDI_Board:HSOP8_EP_ThermalVia0p3",
+      "sheet": "unknown",
+      "size_mm": [
+        7.45,
+        5.585
+      ]
+    },
+    "U910": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U911": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U912": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U913": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U914": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U915": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "C951": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C952": {
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        4.65,
+        3.25
+      ]
+    },
+    "C953": {
+      "footprint": "Capacitor_SMD:CP_Elec_10x10",
+      "sheet": "unknown",
+      "size_mm": [
+        13.085,
+        10.85
+      ]
+    },
+    "C960": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C961": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C962": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C963": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C964": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C965": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D951": {
+      "footprint": "Diode_SMD:D_SMB",
+      "sheet": "unknown",
+      "size_mm": [
+        7.395,
+        4.55
+      ]
+    },
+    "D952": {
+      "footprint": "Diode_SMD:D_SMB",
+      "sheet": "unknown",
+      "size_mm": [
+        7.395,
+        4.55
+      ]
+    },
+    "R951": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R952": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R953": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R954": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R955": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R956": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R957": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U951": {
+      "footprint": "Power8GDI_Board:HSOP8_EP_ThermalVia0p3",
+      "sheet": "unknown",
+      "size_mm": [
+        7.45,
+        5.585
+      ]
+    },
+    "U960": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U961": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U962": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U963": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U964": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U965": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "J601": {
+      "footprint": "Power8GDI_Board:TE_6437288-1_34way",
+      "sheet": "connector",
+      "size_mm": [
+        46.55,
+        37.55
+      ]
+    },
+    "J602": {
+      "footprint": "Power8GDI_Board:TE_6437288-1_34way",
+      "sheet": "connector",
+      "size_mm": [
+        46.55,
+        37.55
+      ]
+    },
+    "J603": {
+      "footprint": "Power8GDI_Board:TE_6437288-1_34way",
+      "sheet": "connector",
+      "size_mm": [
+        46.55,
+        37.55
+      ]
+    },
+    "J604": {
+      "footprint": "Power8GDI_Board:TE_6437288-1_34way",
+      "sheet": "connector",
+      "size_mm": [
+        46.55,
+        37.55
+      ]
+    },
+    "C1501": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1502": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1503": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1504": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C1505": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D1501": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D1502": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "R1501": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1502": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1503": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1504": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1505": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1506": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1507": {
+      "footprint": "Resistor_SMD:R_1206_3216Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        4.61,
+        2.31
+      ]
+    },
+    "U1501": {
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "sheet": "unknown",
+      "size_mm": [
+        7.45,
+        5.585
+      ]
+    },
+    "U1502": {
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "sheet": "unknown",
+      "size_mm": [
+        7.45,
+        5.585
+      ]
+    },
+    "C1510": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1511": {
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        4.65,
+        2.35
+      ]
+    },
+    "D1510": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "J1501": {
+      "footprint": "Connector_USB:USB_Micro-B_Molex-105017-0001",
+      "sheet": "unknown",
+      "size_mm": [
+        8.85,
+        6.15
+      ]
+    },
+    "Q1510": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "R1510": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1511": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1512": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1513": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1520": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1521": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C1522": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D1520": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "D1521": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "J1502": {
+      "footprint": "Connector_Card:microSD_HC_Molex_104031-0811",
+      "sheet": "unknown",
+      "size_mm": [
+        13.73,
+        16.325
+      ]
+    },
+    "R1520": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1521": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1522": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1523": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1524": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1525": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1526": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1527": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1528": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1530": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C1531": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1532": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1533": {
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        4.65,
+        3.25
+      ]
+    },
+    "C1534": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1535": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C1536": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1537": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1538": {
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        4.65,
+        3.25
+      ]
+    },
+    "C1539": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D1530": {
+      "footprint": "Diode_SMD:D_SMB",
+      "sheet": "unknown",
+      "size_mm": [
+        7.395,
+        4.55
+      ]
+    },
+    "D1531": {
+      "footprint": "Diode_SMD:D_SMB",
+      "sheet": "unknown",
+      "size_mm": [
+        7.395,
+        4.55
+      ]
+    },
+    "R1530": {
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.41,
+        1.95
+      ]
+    },
+    "R1531": {
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.41,
+        1.95
+      ]
+    },
+    "R1532": {
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.41,
+        1.95
+      ]
+    },
+    "U1530": {
+      "footprint": "Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02",
+      "sheet": "unknown",
+      "size_mm": [
+        7.51,
+        5.585
+      ]
+    },
+    "U1531": {
+      "footprint": "Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02",
+      "sheet": "unknown",
+      "size_mm": [
+        7.51,
+        5.585
+      ]
+    },
+    "C1600": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1601": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1602": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1603": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1604": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1610": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D1600": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D1601": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D1602": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D1603": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "D1604": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "R1600": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1601": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1602": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1603": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1604": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1605": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1606": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1607": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1608": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1609": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1610": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1611": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1612": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1613": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1614": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U1600": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "unknown",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "C1701": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1702": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1703": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1704": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1705": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1706": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1711": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C1721": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1701": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1702": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1703": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1711": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1712": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1713": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1721": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1722": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R1723": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U1701": {
+      "footprint": "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm",
+      "sheet": "unknown",
+      "size_mm": [
+        11.91,
+        13.485
+      ]
+    },
+    "U1702": {
+      "footprint": "Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm",
+      "sheet": "unknown",
+      "size_mm": [
+        8.225,
+        7.05
+      ]
+    },
+    "U1703": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "Y1701": {
+      "footprint": "Power8GDI_Core:ASEM_3225",
+      "sheet": "unknown",
+      "size_mm": [
+        3.75,
+        3.45
+      ]
+    },
+    "C5001": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C5002": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C5003": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C5004": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C5005": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "D5001": {
+      "footprint": "Diode_SMD:D_SMC",
+      "sheet": "unknown",
+      "size_mm": [
+        9.895,
+        6.75
+      ]
+    },
+    "Q5001": {
+      "footprint": "Package_TO_SOT_SMD:TO-252-2",
+      "sheet": "unknown",
+      "size_mm": [
+        11.15,
+        7.195
+      ]
+    },
+    "Q5002": {
+      "footprint": "Package_TO_SOT_SMD:TO-252-2",
+      "sheet": "unknown",
+      "size_mm": [
+        11.15,
+        7.195
+      ]
+    },
+    "R5001": {
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.41,
+        1.95
+      ]
+    },
+    "R5002": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5003": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5004": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5005": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5006": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5007": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5008": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5001": {
+      "footprint": "Power8GDI_GDIProtection:LM74800_DRR0012E",
+      "sheet": "unknown",
+      "size_mm": [
+        3.95,
+        3.625
+      ]
+    },
+    "C5051": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C5052": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C5053": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C5054": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C5055": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "D5051": {
+      "footprint": "Diode_SMD:D_SMC",
+      "sheet": "unknown",
+      "size_mm": [
+        9.895,
+        6.75
+      ]
+    },
+    "Q5051": {
+      "footprint": "Package_TO_SOT_SMD:TO-252-2",
+      "sheet": "unknown",
+      "size_mm": [
+        11.15,
+        7.195
+      ]
+    },
+    "Q5052": {
+      "footprint": "Package_TO_SOT_SMD:TO-252-2",
+      "sheet": "unknown",
+      "size_mm": [
+        11.15,
+        7.195
+      ]
+    },
+    "R5051": {
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.41,
+        1.95
+      ]
+    },
+    "R5052": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5053": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5054": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5055": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5056": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5057": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5058": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5051": {
+      "footprint": "Power8GDI_GDIProtection:LM74800_DRR0012E",
+      "sheet": "unknown",
+      "size_mm": [
+        3.95,
+        3.625
+      ]
+    },
+    "C5101": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "R5101": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5102": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5103": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5104": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5105": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5106": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5101": {
+      "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "sheet": "unknown",
+      "size_mm": [
+        4.61,
+        2.715
+      ]
+    },
+    "C5600": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5601": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5603": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5605": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5607": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5608": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5611": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5612": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5600": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5601": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5602": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5603": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5604": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5605": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5606": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5607": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5608": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5609": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5610": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5611": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5612": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5613": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5614": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5615": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5618": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5619": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5620": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5621": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5623": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5624": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5600": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "unknown",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "U5601": {
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U5603": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "C5602": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5609": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5610": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5613": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5614": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5615": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5616": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5617": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5618": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5640": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5641": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D5600": {
+      "footprint": "LED_SMD:LED_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.05,
+        1.59
+      ]
+    },
+    "D5601": {
+      "footprint": "LED_SMD:LED_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.05,
+        1.59
+      ]
+    },
+    "D5602": {
+      "footprint": "LED_SMD:LED_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.05,
+        1.59
+      ]
+    },
+    "D5603": {
+      "footprint": "LED_SMD:LED_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.05,
+        1.59
+      ]
+    },
+    "D5604": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "J5600": {
+      "footprint": "Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical",
+      "sheet": "unknown",
+      "size_mm": [
+        7.05,
+        4.05
+      ]
+    },
+    "Q5600": {
+      "footprint": "Package_TO_SOT_SMD:TO-252-2",
+      "sheet": "unknown",
+      "size_mm": [
+        11.15,
+        7.195
+      ]
+    },
+    "R5616": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5617": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5622": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5625": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5626": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5627": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5628": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5629": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5640": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5641": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5642": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5643": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5644": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5645": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5602": {
+      "footprint": "Package_QFP:LQFP-32_7x7mm_P0.8mm",
+      "sheet": "unknown",
+      "size_mm": [
+        10.41,
+        10.41
+      ]
+    },
+    "U5604": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "U5605": {
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "sheet": "unknown",
+      "size_mm": [
+        7.45,
+        5.585
+      ]
+    },
+    "U5610": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U5611": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "C5650": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C5651": {
+      "footprint": "Capacitor_SMD:CP_Elec_8x10",
+      "sheet": "unknown",
+      "size_mm": [
+        10.835,
+        8.85
+      ]
+    },
+    "D5610": {
+      "footprint": "Package_TO_SOT_SMD:TO-252-2",
+      "sheet": "unknown",
+      "size_mm": [
+        11.15,
+        7.195
+      ]
+    },
+    "D5611": {
+      "footprint": "Diode_SMD:D_SMB",
+      "sheet": "unknown",
+      "size_mm": [
+        7.395,
+        4.55
+      ]
+    },
+    "C5800": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5801": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5803": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5805": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5807": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5808": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5811": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5812": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5800": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5801": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5802": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5803": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5804": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5805": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5806": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5807": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5808": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5809": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5810": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5811": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5812": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5813": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5814": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5815": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5818": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5819": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5820": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5821": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5823": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5824": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5800": {
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "sheet": "unknown",
+      "size_mm": [
+        7.75,
+        5.715
+      ]
+    },
+    "U5801": {
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U5803": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "C5802": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5809": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5810": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5813": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5814": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5815": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5816": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5817": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5818": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5840": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "C5841": {
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "D5800": {
+      "footprint": "LED_SMD:LED_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.05,
+        1.59
+      ]
+    },
+    "D5801": {
+      "footprint": "LED_SMD:LED_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.05,
+        1.59
+      ]
+    },
+    "D5802": {
+      "footprint": "LED_SMD:LED_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.05,
+        1.59
+      ]
+    },
+    "D5803": {
+      "footprint": "LED_SMD:LED_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.05,
+        1.59
+      ]
+    },
+    "D5804": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "J5800": {
+      "footprint": "Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical",
+      "sheet": "unknown",
+      "size_mm": [
+        7.05,
+        4.05
+      ]
+    },
+    "Q5800": {
+      "footprint": "Package_TO_SOT_SMD:TO-252-2",
+      "sheet": "unknown",
+      "size_mm": [
+        11.15,
+        7.195
+      ]
+    },
+    "R5816": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5817": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5822": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5825": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5826": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5827": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5828": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5829": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5840": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5841": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5842": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5843": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5844": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "R5845": {
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.01,
+        1.51
+      ]
+    },
+    "U5802": {
+      "footprint": "Package_QFP:LQFP-32_7x7mm_P0.8mm",
+      "sheet": "unknown",
+      "size_mm": [
+        10.41,
+        10.41
+      ]
+    },
+    "U5804": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "sheet": "unknown",
+      "size_mm": [
+        3.91,
+        3.45
+      ]
+    },
+    "U5805": {
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "sheet": "unknown",
+      "size_mm": [
+        7.45,
+        5.585
+      ]
+    },
+    "U5810": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "U5811": {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "sheet": "unknown",
+      "size_mm": [
+        4.15,
+        3.625
+      ]
+    },
+    "C5850": {
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "sheet": "unknown",
+      "size_mm": [
+        3.45,
+        2.01
+      ]
+    },
+    "C5851": {
+      "footprint": "Capacitor_SMD:CP_Elec_8x10",
+      "sheet": "unknown",
+      "size_mm": [
+        10.835,
+        8.85
+      ]
+    },
+    "D5810": {
+      "footprint": "Package_TO_SOT_SMD:TO-252-2",
+      "sheet": "unknown",
+      "size_mm": [
+        11.15,
+        7.195
+      ]
+    },
+    "D5811": {
+      "footprint": "Diode_SMD:D_SMB",
+      "sheet": "unknown",
+      "size_mm": [
+        7.395,
+        4.55
+      ]
+    }
+  },
+  "warning": "Body areas exclude routing channels, electrical clearance and thermal copper; not a packing proof."
+}

@@ -19,6 +19,9 @@ Little-endian format:
 
 Raw cell v in physical units is v * scale + offset. The converter rejects
 values that cannot be represented to within half of one LSB plus float noise.
+Scale, offset and bounds are first rounded to their wire float32 values.
+Engineering cells use a float64 multiply/add and one final float32 rounding;
+serialized limits are enforced without widening them on each import.
 """
 from __future__ import annotations
 
@@ -41,17 +44,39 @@ class MapBinaryError(ValueError):
     """Invalid, unsupported, or corrupted calibration blob."""
 
 
+def _float32(value: float) -> float:
+    try:
+        result = struct.unpack('<f', struct.pack('<f', value))[0]
+    except (OverflowError, struct.error) as exc:
+        raise MapBinaryError('Value is not representable as finite float32') from exc
+    if not math.isfinite(result):
+        raise MapBinaryError('Value is not representable as finite float32')
+    return result
+
+
+def _physical(raw: int, scale: float, offset: float) -> float:
+    # Reject before conversion, matching the firmware's finite float32 range.
+    wide = raw * scale + offset
+    if abs(wide) > 3.4028234663852886e38:
+        raise MapBinaryError('Physical cell exceeds float32 range')
+    return _float32(wide)
+
+
 def encode_map4d(table: CalibrationTable4D, *, scale: float = 0.01,
                  offset: float = 0.0) -> bytes:
     """Quantize a validated map into an unsigned container with int16 cells."""
-    table.validate()
+    try:
+        table.validate()
+    except (ValueError, TypeError, OverflowError) as exc:
+        raise MapBinaryError(f'Unsafe map payload: {exc}') from exc
     if not math.isfinite(scale) or scale <= 0 or not math.isfinite(offset):
         raise MapBinaryError('Positive finite scale and finite offset required')
+    scale, offset = _float32(scale), _float32(offset)
+    if scale <= 0:
+        raise MapBinaryError('Scale underflows float32')
     nx, ny, nz = len(table.x_bins), len(table.y_bins), len(table.z_bins)
     try:
-        lo, hi = (float(struct.unpack('<f', struct.pack('<f', v))[0])
-                  for v in (table.minimum, table.maximum))
-        assert lo <= hi
+        lo, hi = _float32(table.minimum), _float32(table.maximum)
         axes = struct.pack(f'<{nx + ny + nz}f',
                            *(table.x_bins + table.y_bins + table.z_bins))
         raw = []
@@ -61,8 +86,13 @@ def encode_map4d(table: CalibrationTable4D, *, scale: float = 0.01,
                     q = round((value - offset) / scale)
                     if not -32768 <= q <= 32767:
                         raise MapBinaryError('Map value exceeds int16 quantization range')
-                    if abs((q * scale + offset) - value) > (scale * 0.5001 + 0.00001):
+                    physical = _physical(q, scale, offset)
+                    # Half an int16 LSB, plus the final binary32 rounding error.
+                    noise = max(abs(value), abs(physical)) * 2**-24 + 2**-150
+                    if abs(physical - value) > scale * 0.5 + noise:
                         raise MapBinaryError('Map value cannot be quantized accurately')
+                    if not lo <= physical <= hi:
+                        raise MapBinaryError('Quantized value outside physical limits')
                     raw.append(q)
         values = struct.pack(f'<{len(raw)}h', *raw)
         p = axes + values
@@ -71,7 +101,7 @@ def encode_map4d(table: CalibrationTable4D, *, scale: float = 0.01,
                               zlib.crc32(p) & 0xffffffff, 0, 0) + p
         decode_map4d(result)  # Check float32 rounding and bounds before export.
         return result
-    except (OverflowError, struct.error, AssertionError) as exc:
+    except (OverflowError, struct.error) as exc:
         raise MapBinaryError(f'Invalid map range / floating point: {exc}') from exc
 
 
@@ -103,14 +133,13 @@ def decode_map4d(blob: bytes, *, name: str = 'Imported / Map4D') -> CalibrationT
     x = list(axes[:nx]); y = list(axes[nx:nx+ny]); z = list(axes[nx+ny:])
     values = struct.unpack_from(f'<{cells}h', data, 4*(nx+ny+nz))
     it = iter(values)
-    grids = [[[float(next(it)*scale + offset) for _ in range(nx)]
+    grids = [[[_physical(next(it), scale, offset) for _ in range(nx)]
               for _ in range(ny)] for _ in range(nz)]
     table = CalibrationTable4D(
         name=name, description='Offline P4DM binary import; NOT a rusEFI page',
         x_label='X', y_label='Y', z_label='Z', value_unit='raw',
         x_bins=x, y_bins=y, z_bins=z, values=grids,
-        minimum=lo - abs(lo)*1e-6 - 1e-6,
-        maximum=hi + abs(hi)*1e-6 + 1e-6,
+        minimum=lo, maximum=hi,
     )
     try:
         table.validate()

@@ -1,0 +1,511 @@
+ref,value,footprint,dnp,sheet,note
+U101,STM32F767IIT6,Package_QFP:LQFP-176_24x24mm_P0.5mm,False,core_mcu,"Provisional industrial -40..85C LQFP176. Unassigned pads are intentionally unused in this candidate, not qualified resources."
+C101,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 15; short GND return
+C102,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 23; short GND return
+C103,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 36; short GND return
+C104,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 49; short GND return
+C105,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 62; short GND return
+C106,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 72; short GND return
+C107,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 82; short GND return
+C108,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 91; short GND return
+C109,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 103; short GND return
+C110,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 127; short GND return
+C111,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 136; short GND return
+C112,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 159; short GND return
+C113,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Place directly at U101 VDD pad 172; short GND return
+C114,4.7u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Package bulk; effective capacitance >=4.7uF after bias/temp derating
+C115,2.2u 10V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 pad81; effective2.2uF ESR<2ohm; no external load
+C116,2.2u 10V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 pad125; effective2.2uF ESR<2ohm; no external load
+C117,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 VDDA39/VREF38
+C118,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 VDDA39/VREF38
+R101,0R,Resistor_SMD:R_0603_1608Metric,False,core_mcu,Analog star feed; ferrite substitution needs transient/ADC review
+C119,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 VDDUSB pad114
+C120,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 VDDUSB pad114
+C121,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 VDDSDMMC pad149
+C122,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,U101 VDDSDMMC pad149
+C123,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,VBAT U101 pad6; no backup battery
+C124,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,DS11532 Fig41 reset filter; connect debugger open-drain reset
+R102,10k,Resistor_SMD:R_0603_1608Metric,False,core_mcu,
+R103,10k,Resistor_SMD:R_0603_1608Metric,False,core_mcu,Default flash boot; option bytes still require firmware review
+J101,SWD 3V3 target reference,Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical,False,core_mcu,"VTREF sense only, not external power input. Pin7 key/unused, pin8 unused; unshrouded header"
+Y101,ASEM1-8.000MHZ-LC-T,Power8GDI_Core:ASEM_3225,False,core_mcu,Abracon ASEM RevP p4 actual pins1EN2GND3OUT4VDD; firmware HSE bypass required; PH1 NC
+C129,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Abracon recommends10n between Y101 pins4/2; short return
+U103,TCAN1042HGVDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,core_comms,STB held high at reset; MCU PH2 pad43 may drive low to enable; GPIO firmware pending
+C127,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_comms,At U103 pin3
+C128,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_comms,At U103 pin5
+R104,10k,Resistor_SMD:R_0603_1608Metric,False,core_comms,Fail-closed default: transceiver in standby
+R105,0R DNP,Resistor_SMD:R_0603_1608Metric,True,core_comms,Test-only normal-mode strap; leave DNP for MCU PH2 control
+R106,120R DNP,Resistor_SMD:R_0603_1608Metric,True,core_comms,Fit only if ECU is a bus end; do not add third terminator
+D101,PESD2CAN,Package_TO_SOT_SMD:SOT-23,False,core_comms,Nexperia Rev2 pinning1/2lines3common; close connector; ground surge return review
+U104,TLIN1029ADRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,core_comms,"TI SLLSFK8A; 4..36V operating, 45V absolute VSUP; A variant avoids original duty-cycle erratum; default sleep"
+R107,4.7k,Resistor_SMD:R_0603_1608Metric,False,core_comms,Open-drainRXD must never be pulled toVBAT/5V
+R108,10k,Resistor_SMD:R_0603_1608Metric,False,core_comms,Default sleep; MCU PH3 pad44 enables high
+R109,0R DNP,Resistor_SMD:R_0603_1608Metric,True,core_comms,Optionalnormalmode afterphysicalbusreview
+R110,10k,Resistor_SMD:R_0603_1608Metric,False,core_comms,Recessive input during MCUreset
+R111,0R,Resistor_SMD:R_0603_1608Metric,False,core_comms,Requires root SMBJ24CA nominal38.9V clamp <45Vabs; actual pulse energy/overshoot gate remains
+C130,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_comms,At U104 pin7
+C131,1u 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,core_comms,
+C132,1n 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,core_comms,Commander bus capacitance; verify total cable/node capacitance
+D102,"BAS21,215",Package_TO_SOT_SMD:SOT-23,False,core_comms,Commander assembly; remove D102 and R112 for responder-only topology
+R112,1k 1% 0.5W,Resistor_SMD:R_1206_3216Metric,False,core_comms,16V dominant bound0.256W; pulse/voltage derating must be checked
+U5400,SN74LVC1G17QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,ignition/ignition_common,
+U5401,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,ignition/ignition_common,
+R5400,10k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_common,
+R5401,1k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_common,3.3mA load; holds driver EN below threshold against internal 200k typical pullups when logic is unpowered.
+C5400,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_common,
+C5401,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_common,
+U5402,UCC27524AQDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,ignition/ignition_common,"Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current."
+C5402,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_common,
+C5403,1u 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_common,
+U5403,UCC27524AQDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,ignition/ignition_common,"Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current."
+C5404,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_common,
+C5405,1u 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_common,
+U5404,UCC27524AQDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,ignition/ignition_common,"Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current."
+C5406,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_common,
+C5407,1u 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_common,
+U5405,UCC27524AQDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,ignition/ignition_common,"Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current."
+C5408,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_common,
+C5409,1u 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_common,
+U5420,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,ignition/ignition_1,
+U5421,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,ignition/ignition_1,
+R5420,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_1,
+R5421,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_1,
+R5422,100k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_1,
+R5423,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_1,
+R5424,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_1,
+C5420,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_1,
+C5421,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_1,
+Q5420,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,ignition/ignition_1,Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.
+R5425,10R,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_1,
+R5426,10k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_1,
+R5427,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,ignition/ignition_1,10mOhm 1% 3W; Kelvin sense; dedicated power return copper.
+U5422,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,ignition/ignition_1,"DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear."
+R5428,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_1,E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.
+C5422,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_1,
+U5440,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,ignition/ignition_2,
+U5441,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,ignition/ignition_2,
+R5440,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_2,
+R5441,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_2,
+R5442,100k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_2,
+R5443,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_2,
+R5444,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_2,
+C5440,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_2,
+C5441,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_2,
+Q5440,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,ignition/ignition_2,Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.
+R5445,10R,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_2,
+R5446,10k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_2,
+R5447,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,ignition/ignition_2,10mOhm 1% 3W; Kelvin sense; dedicated power return copper.
+U5442,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,ignition/ignition_2,"DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear."
+R5448,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_2,E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.
+C5442,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_2,
+U5460,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,ignition/ignition_3,
+U5461,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,ignition/ignition_3,
+R5460,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_3,
+R5461,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_3,
+R5462,100k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_3,
+R5463,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_3,
+R5464,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_3,
+C5460,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_3,
+C5461,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_3,
+Q5460,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,ignition/ignition_3,Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.
+R5465,10R,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_3,
+R5466,10k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_3,
+R5467,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,ignition/ignition_3,10mOhm 1% 3W; Kelvin sense; dedicated power return copper.
+U5462,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,ignition/ignition_3,"DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear."
+R5468,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_3,E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.
+C5462,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_3,
+U5480,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,ignition/ignition_4,
+U5481,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,ignition/ignition_4,
+R5480,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_4,
+R5481,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_4,
+R5482,100k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_4,
+R5483,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_4,
+R5484,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_4,
+C5480,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_4,
+C5481,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_4,
+Q5480,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,ignition/ignition_4,Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.
+R5485,10R,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_4,
+R5486,10k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_4,
+R5487,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,ignition/ignition_4,10mOhm 1% 3W; Kelvin sense; dedicated power return copper.
+U5482,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,ignition/ignition_4,"DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear."
+R5488,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_4,E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.
+C5482,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_4,
+U5500,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,ignition/ignition_5,
+U5501,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,ignition/ignition_5,
+R5500,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_5,
+R5501,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_5,
+R5502,100k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_5,
+R5503,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_5,
+R5504,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_5,
+C5500,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_5,
+C5501,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_5,
+Q5500,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,ignition/ignition_5,Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.
+R5505,10R,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_5,
+R5506,10k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_5,
+R5507,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,ignition/ignition_5,10mOhm 1% 3W; Kelvin sense; dedicated power return copper.
+U5502,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,ignition/ignition_5,"DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear."
+R5508,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_5,E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.
+C5502,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_5,
+U5520,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,ignition/ignition_6,
+U5521,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,ignition/ignition_6,
+R5520,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_6,
+R5521,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_6,
+R5522,100k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_6,
+R5523,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_6,
+R5524,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_6,
+C5520,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_6,
+C5521,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_6,
+Q5520,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,ignition/ignition_6,Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.
+R5525,10R,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_6,
+R5526,10k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_6,
+R5527,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,ignition/ignition_6,10mOhm 1% 3W; Kelvin sense; dedicated power return copper.
+U5522,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,ignition/ignition_6,"DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear."
+R5528,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_6,E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.
+C5522,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_6,
+U5540,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,ignition/ignition_7,
+U5541,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,ignition/ignition_7,
+R5540,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_7,
+R5541,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_7,
+R5542,100k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_7,
+R5543,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_7,
+R5544,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_7,
+C5540,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_7,
+C5541,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_7,
+Q5540,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,ignition/ignition_7,Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.
+R5545,10R,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_7,
+R5546,10k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_7,
+R5547,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,ignition/ignition_7,10mOhm 1% 3W; Kelvin sense; dedicated power return copper.
+U5542,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,ignition/ignition_7,"DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear."
+R5548,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_7,E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.
+C5542,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_7,
+U5560,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,ignition/ignition_8,
+U5561,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,ignition/ignition_8,
+R5560,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_8,
+R5561,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_8,
+R5562,100k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_8,
+R5563,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_8,
+R5564,100k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_8,
+C5560,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_8,
+C5561,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_8,
+Q5560,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,ignition/ignition_8,Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.
+R5565,10R,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_8,
+R5566,10k,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_8,
+R5567,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,ignition/ignition_8,10mOhm 1% 3W; Kelvin sense; dedicated power return copper.
+U5562,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,ignition/ignition_8,"DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear."
+R5568,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,ignition/ignition_8,E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.
+C5562,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,ignition/ignition_8,
+R700,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_1,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R701,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_1,
+C700,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_1,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D701,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_1,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R702,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_1,Isolates opamp from ADC sampling capacitor; settling budget pending
+C701,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_1,
+R703,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_1,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R704,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_1,
+C702,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_1,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D702,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_1,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R705,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_1,Isolates opamp from ADC sampling capacitor; settling budget pending
+C703,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_1,
+R706,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_1,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R707,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_1,
+C704,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_1,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D703,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_1,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R708,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_1,Isolates opamp from ADC sampling capacitor; settling budget pending
+C705,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_1,
+R709,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_1,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R710,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_1,
+C706,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_1,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D704,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_1,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R711,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_1,Isolates opamp from ADC sampling capacitor; settling budget pending
+C707,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_1,
+U701,TLV9004QPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,io/analog_1,Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply
+C740,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_1,
+C741,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_1,
+R712,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_2,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R713,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_2,
+C708,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_2,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D705,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_2,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R714,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_2,Isolates opamp from ADC sampling capacitor; settling budget pending
+C709,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_2,
+R715,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_2,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R716,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_2,
+C710,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_2,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D706,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_2,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R717,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_2,Isolates opamp from ADC sampling capacitor; settling budget pending
+C711,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_2,
+R718,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_2,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R719,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_2,
+C712,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_2,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D707,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_2,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R720,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_2,Isolates opamp from ADC sampling capacitor; settling budget pending
+C713,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_2,
+R721,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_2,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R722,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_2,
+C714,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_2,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D708,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_2,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R723,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_2,Isolates opamp from ADC sampling capacitor; settling budget pending
+C715,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_2,
+U702,TLV9004QPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,io/analog_2,Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply
+C742,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_2,
+C743,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_2,
+R724,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_3,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R725,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_3,
+C716,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_3,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D709,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_3,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R726,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_3,Isolates opamp from ADC sampling capacitor; settling budget pending
+C717,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_3,
+R727,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_3,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R728,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_3,
+C718,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_3,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D710,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_3,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R729,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_3,Isolates opamp from ADC sampling capacitor; settling budget pending
+C719,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_3,
+R730,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_3,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R731,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_3,
+C720,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_3,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D711,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_3,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R732,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_3,Isolates opamp from ADC sampling capacitor; settling budget pending
+C721,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_3,
+R733,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_3,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R734,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_3,
+C722,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_3,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D712,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_3,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R735,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_3,Isolates opamp from ADC sampling capacitor; settling budget pending
+C723,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_3,
+U703,TLV9004QPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,io/analog_3,Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply
+C744,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_3,
+C745,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_3,
+R736,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_4,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R737,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_4,
+C724,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_4,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D713,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_4,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R738,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_4,Isolates opamp from ADC sampling capacitor; settling budget pending
+C725,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_4,
+R739,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_4,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R740,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_4,
+C726,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_4,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D714,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_4,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R741,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_4,Isolates opamp from ADC sampling capacitor; settling budget pending
+C727,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_4,
+R742,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_4,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R743,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_4,
+C728,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_4,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D715,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_4,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R744,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_4,Isolates opamp from ADC sampling capacitor; settling budget pending
+C729,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_4,
+R745,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_4,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R746,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_4,
+C730,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_4,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D716,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_4,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R747,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_4,Isolates opamp from ADC sampling capacitor; settling budget pending
+C731,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_4,
+U704,TLV9004QPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,io/analog_4,Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply
+C746,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_4,
+C747,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_4,
+R748,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_5,Input current limiter; 0603 working/pulse voltage and fault energy must be qualified
+R749,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/analog_5,
+C732,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/analog_5,100k||100k and1n: nominal3.18kHz pole; source impedance changes transfer
+D717,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/analog_5,"Pin1=A1,2=K2,3=series midpoint. Clamp injection/backpower and hot leakage not qualified"
+R750,1k,Resistor_SMD:R_0603_1608Metric,False,io/analog_5,Isolates opamp from ADC sampling capacitor; settling budget pending
+C733,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_5,
+U705,TLV9004QPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,io/analog_5,Unity-gain followers; spare amplifiers tied toGND with closed feedback. 1.8..5.5V supply
+C748,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_5,
+C749,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/analog_5,
+R751,2.49k DNP,Resistor_SMD:R_0603_1608Metric,True,io/analog_5,"Optional NTC bias. Fit only after sensor curve, supply/reference and short-to-battery review"
+R752,2.49k DNP,Resistor_SMD:R_0603_1608Metric,True,io/analog_5,"Optional NTC bias. Fit only after sensor curve, supply/reference and short-to-battery review"
+R753,2.49k DNP,Resistor_SMD:R_0603_1608Metric,True,io/analog_5,"Optional NTC bias. Fit only after sensor curve, supply/reference and short-to-battery review"
+R760,10k,Resistor_SMD:R_0603_1608Metric,False,io/digital_1,Series current limiting; no automotive pulse qualification
+R761,47k,Resistor_SMD:R_0603_1608Metric,False,io/digital_1,
+C750,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/digital_1,Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured
+D730,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/digital_1,Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified
+R762,10k DNP,Resistor_SMD:R_0603_1608Metric,True,io/digital_1,Optional open-drain sensor pullup; sensor model and short-to-battery behavior required
+R763,10k,Resistor_SMD:R_0603_1608Metric,False,io/digital_1,Series current limiting; no automotive pulse qualification
+R764,47k,Resistor_SMD:R_0603_1608Metric,False,io/digital_1,
+C751,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/digital_1,Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured
+D731,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/digital_1,Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified
+R765,10k DNP,Resistor_SMD:R_0603_1608Metric,True,io/digital_1,Optional open-drain sensor pullup; sensor model and short-to-battery behavior required
+R766,10k,Resistor_SMD:R_0603_1608Metric,False,io/digital_1,Series current limiting; no automotive pulse qualification
+R767,47k,Resistor_SMD:R_0603_1608Metric,False,io/digital_1,
+C752,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/digital_1,Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured
+D732,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/digital_1,Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified
+R768,10k DNP,Resistor_SMD:R_0603_1608Metric,True,io/digital_1,Optional open-drain sensor pullup; sensor model and short-to-battery behavior required
+R769,10k,Resistor_SMD:R_0603_1608Metric,False,io/digital_1,Series current limiting; no automotive pulse qualification
+R770,47k,Resistor_SMD:R_0603_1608Metric,False,io/digital_1,
+C753,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/digital_1,Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured
+D733,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/digital_1,Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified
+R771,10k DNP,Resistor_SMD:R_0603_1608Metric,True,io/digital_1,Optional open-drain sensor pullup; sensor model and short-to-battery behavior required
+R772,10k,Resistor_SMD:R_0603_1608Metric,False,io/digital_1,Series current limiting; no automotive pulse qualification
+R773,47k,Resistor_SMD:R_0603_1608Metric,False,io/digital_1,
+C754,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/digital_1,Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured
+D734,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/digital_1,Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified
+R774,10k DNP,Resistor_SMD:R_0603_1608Metric,True,io/digital_1,Optional open-drain sensor pullup; sensor model and short-to-battery behavior required
+R775,10k,Resistor_SMD:R_0603_1608Metric,False,io/digital_1,Series current limiting; no automotive pulse qualification
+R776,47k,Resistor_SMD:R_0603_1608Metric,False,io/digital_1,
+C755,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/digital_1,Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured
+D735,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/digital_1,Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified
+R777,10k DNP,Resistor_SMD:R_0603_1608Metric,True,io/digital_1,Optional open-drain sensor pullup; sensor model and short-to-battery behavior required
+U721,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,io/digital_1,"Hex inverter,2..3.6V supply,5.5V tolerant inputs; unused inputsGND, outputsNC"
+C758,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/digital_1,
+R778,10k,Resistor_SMD:R_0603_1608Metric,False,io/digital_2,Series current limiting; no automotive pulse qualification
+R779,47k,Resistor_SMD:R_0603_1608Metric,False,io/digital_2,
+C756,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/digital_2,Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured
+D736,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/digital_2,Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified
+R780,10k DNP,Resistor_SMD:R_0603_1608Metric,True,io/digital_2,Optional open-drain sensor pullup; sensor model and short-to-battery behavior required
+R781,10k,Resistor_SMD:R_0603_1608Metric,False,io/digital_2,Series current limiting; no automotive pulse qualification
+R782,47k,Resistor_SMD:R_0603_1608Metric,False,io/digital_2,
+C757,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/digital_2,Nominal inputRC0.39us; SENT cable/pulse-width distortion must be measured
+D737,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,io/digital_2,Clamp to5V because LVC input is5.5V tolerant. Power-off rail injection is unqualified
+R783,10k DNP,Resistor_SMD:R_0603_1608Metric,True,io/digital_2,Optional open-drain sensor pullup; sensor model and short-to-battery behavior required
+U722,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,io/digital_2,"Hex inverter,2..3.6V supply,5.5V tolerant inputs; unused inputsGND, outputsNC"
+C759,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/digital_2,
+U731,MAX9924UAUB/V+,Package_SO:MSOP-10_3x3mm_P0.5mm,False,io/crank_vr,"Rev5 Table1 ModeA2: ZERO_EN=GND,INT_THRS=GND,BIAS=GND; EXT NC. Do not infer from mode pin names"
+R790,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/crank_vr,
+R791,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,io/crank_vr,
+C760,1n 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,io/crank_vr,Differential filter from manufacturerFig3; actual tooth amplitude/frequency pending
+R792,10k,Resistor_SMD:R_0603_1608Metric,False,io/crank_vr,"Open-drain output toMCU3V3, never5V"
+C761,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/crank_vr,
+C762,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,io/crank_vr,
+R1101,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1102,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,"Input current/edge damping; direct timing path, not SPI control"
+R1103,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Default high is OFF at TLE input; essential active-low pin polarity
+R1104,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1105,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,"Input current/edge damping; direct timing path, not SPI control"
+R1106,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Default high is OFF at TLE input; essential active-low pin polarity
+R1107,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1108,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,"Input current/edge damping; direct timing path, not SPI control"
+R1109,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Default high is OFF at TLE input; essential active-low pin polarity
+R1110,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1111,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,"Input current/edge damping; direct timing path, not SPI control"
+R1112,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Default high is OFF at TLE input; essential active-low pin polarity
+U1121,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,outputs/ls_bank_1,TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.
+U1101,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,outputs/ls_bank_1,Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.
+R1113,47R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,
+R1114,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Deselected during reset
+R1115,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,"Shared SPI2; high-Z SO while CSN high, 8MHz device maximum"
+R1116,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Dedicated EN physical kill independent of direct IN commands
+R1117,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_1,Default hardware inhibit
+C1101,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_1,
+C1102,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_1,
+C1103,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_1,
+C1104,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_1,
+R1121,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1122,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,"Input current/edge damping; direct timing path, not SPI control"
+R1123,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Default high is OFF at TLE input; essential active-low pin polarity
+R1124,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1125,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,"Input current/edge damping; direct timing path, not SPI control"
+R1126,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Default high is OFF at TLE input; essential active-low pin polarity
+R1127,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1128,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,"Input current/edge damping; direct timing path, not SPI control"
+R1129,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Default high is OFF at TLE input; essential active-low pin polarity
+R1130,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1131,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,"Input current/edge damping; direct timing path, not SPI control"
+R1132,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Default high is OFF at TLE input; essential active-low pin polarity
+U1122,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,outputs/ls_bank_2,TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.
+U1102,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,outputs/ls_bank_2,Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.
+R1133,47R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,
+R1134,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Deselected during reset
+R1135,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,"Shared SPI2; high-Z SO while CSN high, 8MHz device maximum"
+R1136,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Dedicated EN physical kill independent of direct IN commands
+R1137,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_2,Default hardware inhibit
+C1121,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_2,
+C1122,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_2,
+C1123,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_2,
+C1124,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_2,
+R1141,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1142,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,"Input current/edge damping; direct timing path, not SPI control"
+R1143,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Default high is OFF at TLE input; essential active-low pin polarity
+R1144,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1145,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,"Input current/edge damping; direct timing path, not SPI control"
+R1146,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Default high is OFF at TLE input; essential active-low pin polarity
+R1147,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1148,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,"Input current/edge damping; direct timing path, not SPI control"
+R1149,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Default high is OFF at TLE input; essential active-low pin polarity
+R1150,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1151,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,"Input current/edge damping; direct timing path, not SPI control"
+R1152,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Default high is OFF at TLE input; essential active-low pin polarity
+U1123,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,outputs/ls_bank_3,TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.
+U1103,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,outputs/ls_bank_3,Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.
+R1153,47R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,
+R1154,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Deselected during reset
+R1155,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,"Shared SPI2; high-Z SO while CSN high, 8MHz device maximum"
+R1156,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Dedicated EN physical kill independent of direct IN commands
+R1157,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_3,Default hardware inhibit
+C1141,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_3,
+C1142,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_3,
+C1143,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_3,
+C1144,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_3,
+R1161,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1162,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,"Input current/edge damping; direct timing path, not SPI control"
+R1163,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Default high is OFF at TLE input; essential active-low pin polarity
+R1164,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1165,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,"Input current/edge damping; direct timing path, not SPI control"
+R1166,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Default high is OFF at TLE input; essential active-low pin polarity
+R1167,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1168,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,"Input current/edge damping; direct timing path, not SPI control"
+R1169,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Default high is OFF at TLE input; essential active-low pin polarity
+R1170,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1171,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,"Input current/edge damping; direct timing path, not SPI control"
+R1172,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Default high is OFF at TLE input; essential active-low pin polarity
+U1124,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,outputs/ls_bank_4,TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.
+U1104,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,outputs/ls_bank_4,Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.
+R1173,47R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,
+R1174,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Deselected during reset
+R1175,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,"Shared SPI2; high-Z SO while CSN high, 8MHz device maximum"
+R1176,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Dedicated EN physical kill independent of direct IN commands
+R1177,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_4,Default hardware inhibit
+C1161,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_4,
+C1162,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_4,
+C1163,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_4,
+C1164,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_4,
+R1181,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1182,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,"Input current/edge damping; direct timing path, not SPI control"
+R1183,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Default high is OFF at TLE input; essential active-low pin polarity
+R1184,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1185,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,"Input current/edge damping; direct timing path, not SPI control"
+R1186,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Default high is OFF at TLE input; essential active-low pin polarity
+R1187,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1188,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,"Input current/edge damping; direct timing path, not SPI control"
+R1189,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Default high is OFF at TLE input; essential active-low pin polarity
+R1190,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1191,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,"Input current/edge damping; direct timing path, not SPI control"
+R1192,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Default high is OFF at TLE input; essential active-low pin polarity
+U1125,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,outputs/ls_bank_5,TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.
+U1105,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,outputs/ls_bank_5,Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.
+R1193,47R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,
+R1194,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Deselected during reset
+R1195,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,"Shared SPI2; high-Z SO while CSN high, 8MHz device maximum"
+R1196,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Dedicated EN physical kill independent of direct IN commands
+R1197,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_5,Default hardware inhibit
+C1181,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_5,
+C1182,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_5,
+C1183,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_5,
+C1184,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_5,
+R1201,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1202,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,"Input current/edge damping; direct timing path, not SPI control"
+R1203,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Default high is OFF at TLE input; essential active-low pin polarity
+R1204,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1205,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,"Input current/edge damping; direct timing path, not SPI control"
+R1206,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Default high is OFF at TLE input; essential active-low pin polarity
+R1207,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1208,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,"Input current/edge damping; direct timing path, not SPI control"
+R1209,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Default high is OFF at TLE input; essential active-low pin polarity
+R1210,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,MCU high-Z/reset command OFF; high command turns load ON through inverter
+R1211,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,"Input current/edge damping; direct timing path, not SPI control"
+R1212,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Default high is OFF at TLE input; essential active-low pin polarity
+U1126,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,outputs/ls_bank_6,TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.
+U1106,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,outputs/ls_bank_6,Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.
+R1213,47R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,
+R1214,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Deselected during reset
+R1215,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,"Shared SPI2; high-Z SO while CSN high, 8MHz device maximum"
+R1216,100R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Dedicated EN physical kill independent of direct IN commands
+R1217,10k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_bank_6,Default hardware inhibit
+C1201,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_6,
+C1202,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_6,
+C1203,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_6,
+C1204,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_bank_6,
+U1140,SN74LVC1G17QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,outputs/ls_control,Noninverting reset buffer; active-high MCU release. Keep low >=10us after VDD5V stable. Firmware must restart reset after either rail fault.
+R1241,100k,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_control,
+R1242,1k 1%,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_control,"6x100uA internal pullups +10uA Ioff =>0.6161V worst-case, below 1V reset-low limit"
+C1241,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,outputs/ls_control,
+R1243,33R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_control,Branch damping; validate signal integrity across6drivers and2PT chips
+R1244,33R,Resistor_SMD:R_0603_1608Metric,False,outputs/ls_control,

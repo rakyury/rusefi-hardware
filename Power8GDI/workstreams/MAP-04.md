@@ -1,8 +1,8 @@
 # MAP-04 — 4D maps
 
-**Status:** MANUAL DEVELOPMENT IN PROGRESS / agent profile has NOT been launched.
+**Status:** HOST CODEC/PARITY DELIVERED; MCU timing pending.
 **Profile:** `.github/agents/calibration4d.agent.md`
-**Topic branch:** `power8gdi/map-04`
+**Topic branch:** `codex/power8gdi-map-20261021`
 **Owned paths:** Power8GDI/firmware/include/map4d.h, 4D tests and docs/MAP_*
 
 ## Assigned task
@@ -12,10 +12,13 @@ Implement three-axis scalar map with [Z][Y][X], trilinear interpolation, validat
 Create scoped PR into `power8gdi-rev-a` containing source, reports and explicit limitations. Report ERC/DRC/firmware build/test results with commands and SHA. Never claim physical tests without data.
 
 ## Evidence
-- PR: pending
-- Tests: pending
+- PR: https://github.com/rakyury/rusefi-hardware/pull/1 (draft integration)
+- Evidence: [report](../docs/MAP4D_P4DM_V1.md)
+- Tests: bidirectional Python/C++ parity and two C++ map suites
 - Hardware validation: NOT RUN
 - Manufacturing readiness: NOT APPROVED
 
-## Verified manual progress (2026-10-21)
+## Earlier base-branch manual progress (463c8fa)
+
+Historical evidence before the later integration; current results are above.
 Map4D trilinear evaluator and P4DM v1 CRC32 binary codec in C++ and Python with offline golden tests. Format NOT wired into live rusEFI INI/configuration pages.

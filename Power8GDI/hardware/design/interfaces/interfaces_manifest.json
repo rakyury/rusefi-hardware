@@ -1,0 +1,1747 @@
+{
+  "schema_version": 1,
+  "project": "Power8GDI_Core",
+  "root_uuid": "f4d21065-0a5b-5086-a08e-1af9469f04bd",
+  "qualification": "BLOCKED_ENGINEERING_CANDIDATE",
+  "sheets": [
+    {
+      "name": "interfaces/comms2",
+      "title": "CAN2 and LIN2 physical interfaces",
+      "uuid": "cc9b57cc-a198-50f6-8c59-7b63a72c556b",
+      "sheet_id": "aef4a5ed-16a9-5635-82f1-5a0caf432873"
+    },
+    {
+      "name": "interfaces/usb_fs",
+      "title": "Self-powered USB FS device: host VBUS never powers ECU",
+      "uuid": "6118f46c-d3f4-5cdf-84bf-dd257864c198",
+      "sheet_id": "55d87602-cdb5-51c1-bf2b-41ce4824de19"
+    },
+    {
+      "name": "interfaces/sd_spi",
+      "title": "microSD SPI3 logging candidate",
+      "uuid": "995a4dbf-5d9b-59c7-af90-9f01a8e1434f",
+      "sheet_id": "781d084e-c831-5e51-829d-b08277f1b02a"
+    },
+    {
+      "name": "interfaces/sensor_power",
+      "title": "Dual sensor trackers and star returns",
+      "uuid": "0628253c-feb7-570d-b2c5-29acdc8006ec",
+      "sheet_id": "a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+    },
+    {
+      "name": "interfaces/digital_aux_1",
+      "title": "Additional Hall, flex and digital inputs bank 1",
+      "uuid": "0cc8a8a2-d389-592e-87a8-c2300ca42c23",
+      "sheet_id": "7a622c8e-9078-578e-989f-4d863863197b"
+    }
+  ],
+  "gpio_contract": [
+    {
+      "function": "CAN2_RX",
+      "stm32_pin": "PB5",
+      "package_pad": 163,
+      "mode": "AF9 CAN2_RX"
+    },
+    {
+      "function": "CAN2_TX",
+      "stm32_pin": "PB6",
+      "package_pad": 164,
+      "mode": "AF9 CAN2_TX"
+    },
+    {
+      "function": "SENT3",
+      "stm32_pin": "PE11",
+      "package_pad": 74,
+      "mode": "AF1 TIM1_CH2; relocate from PB6; shared timer with SENT1"
+    },
+    {
+      "function": "LIN2_TX",
+      "stm32_pin": "PB10",
+      "package_pad": 79,
+      "mode": "AF7 USART3_TX"
+    },
+    {
+      "function": "LIN2_RX",
+      "stm32_pin": "PB11",
+      "package_pad": 80,
+      "mode": "AF7 USART3_RX"
+    },
+    {
+      "function": "USB_DM",
+      "stm32_pin": "PA11",
+      "package_pad": 122,
+      "mode": "AF10 OTG_FS_DM"
+    },
+    {
+      "function": "USB_DP",
+      "stm32_pin": "PA12",
+      "package_pad": 123,
+      "mode": "AF10 OTG_FS_DP"
+    },
+    {
+      "function": "USB_VBUS_PRESENT_N",
+      "stm32_pin": "PA9",
+      "package_pad": 120,
+      "mode": "GPIO input active low; native VBUS detection disabled"
+    },
+    {
+      "function": "SD_SPI3_SCK",
+      "stm32_pin": "PC10",
+      "package_pad": 139,
+      "mode": "AF6 SPI3_SCK"
+    },
+    {
+      "function": "SD_SPI3_MISO",
+      "stm32_pin": "PC11",
+      "package_pad": 140,
+      "mode": "AF6 SPI3_MISO"
+    },
+    {
+      "function": "SD_SPI3_MOSI",
+      "stm32_pin": "PC12",
+      "package_pad": 141,
+      "mode": "AF6 SPI3_MOSI"
+    },
+    {
+      "function": "SD_CS",
+      "stm32_pin": "PA8",
+      "package_pad": 119,
+      "mode": "GPIO output, default high"
+    },
+    {
+      "function": "SD_CD",
+      "stm32_pin": "PG11",
+      "package_pad": 154,
+      "mode": "GPIO input polling, active low; not EXTI11"
+    },
+    {
+      "function": "CAN2_STB",
+      "stm32_pin": "PG12",
+      "package_pad": 155,
+      "mode": "GPIO output, default high standby"
+    },
+    {
+      "function": "LIN2_EN",
+      "stm32_pin": "PG13",
+      "package_pad": 156,
+      "mode": "GPIO output, default low sleep"
+    },
+    {
+      "function": "HALL1",
+      "stm32_pin": "PH14",
+      "package_pad": 129,
+      "mode": "GPIO EXTI14; inverted"
+    },
+    {
+      "function": "HALL2",
+      "stm32_pin": "PH15",
+      "package_pad": 130,
+      "mode": "GPIO EXTI15; inverted"
+    },
+    {
+      "function": "HALL3",
+      "stm32_pin": "PI0",
+      "package_pad": 131,
+      "mode": "GPIO EXTI0; inverted"
+    },
+    {
+      "function": "HALL4",
+      "stm32_pin": "PI7",
+      "package_pad": 176,
+      "mode": "GPIO EXTI7; inverted"
+    },
+    {
+      "function": "FLEX_FREQ",
+      "stm32_pin": "PI8",
+      "package_pad": 7,
+      "mode": "GPIO EXTI8; inverted; timing not qualified"
+    }
+  ],
+  "harness_aliases": {
+    "HARNESS_CAN2_H": "CAN2_H",
+    "HARNESS_CAN2_L": "CAN2_L",
+    "HARNESS_LIN2_BUS": "LIN2_BUS",
+    "HARNESS_SENSOR_5V_A": "SENSOR_5V_A",
+    "HARNESS_SENSOR_5V_B": "SENSOR_5V_B",
+    "HARNESS_CHASSIS_GND": "USB_SHIELD"
+  },
+  "digital_inverting_channels": [
+    "HALL1",
+    "HALL2",
+    "HALL3",
+    "HALL4",
+    "FLEX_FREQ"
+  ],
+  "parts": [
+    {
+      "ref": "U1501",
+      "value": "TCAN1042HGVDRQ1",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "1": "CAN2_TX",
+        "4": "CAN2_RX",
+        "8": "CAN2_STB",
+        "7": "CAN2_H",
+        "6": "CAN2_L",
+        "3": "+5V_CORE",
+        "5": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "TI SLLSES9D; STB pullup disables transmitter at MCU reset. PB5/PB6 AF9, PG12 standby.",
+      "sheet": "interfaces/comms2",
+      "symbol": "TCAN1042HGV_Q1",
+      "physical_pins": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "ref": "C1501",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "At U1501 pin3",
+      "sheet": "interfaces/comms2",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1502",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "At U1501 pin5",
+      "sheet": "interfaces/comms2",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1501",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "CAN2_STB"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/comms2",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1502",
+      "value": "120R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "CAN2_H",
+        "2": "CAN2_L"
+      },
+      "dnp": true,
+      "note": "Only fit at a bus end after topology review",
+      "sheet": "interfaces/comms2",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "D1501",
+      "value": "PESD2CAN",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "CAN2_H",
+        "2": "CAN2_L",
+        "3": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/comms2",
+      "symbol": "PESD2CAN",
+      "physical_pins": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "ref": "U1502",
+      "value": "TLIN1029ADRQ1",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "1": "LIN2_RX",
+        "4": "LIN2_TX",
+        "2": "LIN2_EN",
+        "6": "LIN2_BUS",
+        "7": "LIN2_VSUP",
+        "5": "GND"
+      },
+      "dnp": false,
+      "note": "TI SLLSFK8A A variant. VSUP 4..36V operating, 45V abs; pull-down EN gives sleep",
+      "sheet": "interfaces/comms2",
+      "symbol": "TLIN1029A_Q1",
+      "physical_pins": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "ref": "R1503",
+      "value": "4.7k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LIN2_RX"
+      },
+      "dnp": false,
+      "note": "RXD open-drain; pull only to3V3",
+      "sheet": "interfaces/comms2",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1504",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LIN2_EN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/comms2",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1505",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LIN2_TX"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/comms2",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1506",
+      "value": "0R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VBAT_LOGIC_PROTECTED",
+        "2": "LIN2_VSUP"
+      },
+      "dnp": false,
+      "note": "Requires root SMBJ24CA; 38.9V rated clamp is not pulse qualification",
+      "sheet": "interfaces/comms2",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1503",
+      "value": "100n 50V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "LIN2_VSUP",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/comms2",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1504",
+      "value": "1u 50V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "LIN2_VSUP",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/comms2",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1505",
+      "value": "1n 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "LIN2_BUS",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Commander bus capacitance; verify total cable/node capacitance",
+      "sheet": "interfaces/comms2",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "D1502",
+      "value": "BAS21,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "LIN2_VSUP",
+        "3": "LIN2_COMMANDER_DIODE"
+      },
+      "dnp": false,
+      "note": "Commander assembly: anode toward VSUP. Remove BOTH D1502/R1507 for responder-only harness topology",
+      "sheet": "interfaces/comms2",
+      "symbol": "Interface_BAS21",
+      "physical_pins": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "ref": "R1507",
+      "value": "1k 1% 0.5W",
+      "footprint": "Resistor_SMD:R_1206_3216Metric",
+      "pins": {
+        "1": "LIN2_COMMANDER_DIODE",
+        "2": "LIN2_BUS"
+      },
+      "dnp": false,
+      "note": "0.256W upper bound at16V dominant; voltage/pulse derating remains required",
+      "sheet": "interfaces/comms2",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "J1501",
+      "value": "Molex 1050170001",
+      "footprint": "Connector_USB:USB_Micro-B_Molex-105017-0001",
+      "pins": {
+        "1": "USB_HOST_VBUS",
+        "2": "USB_DM",
+        "3": "USB_DP",
+        "5": "GND",
+        "6": "USB_SHIELD"
+      },
+      "dnp": false,
+      "note": "Micro-B device-only; ID NC. Molex SD-105017-001 and official KiCad9 footprint; shell pads6. Not automotive/environmentally qualified",
+      "sheet": "interfaces/usb_fs",
+      "symbol": "Interface_USB_MicroB",
+      "physical_pins": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "ref": "D1510",
+      "value": "USBLC6-2SC6",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "pins": {
+        "1": "USB_DP",
+        "6": "USB_DP",
+        "3": "USB_DM",
+        "4": "USB_DM",
+        "5": "USB_HOST_VBUS",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "ST DS4260 Fig1: pins1/6 IO1,3/4 IO2,2GND,5VBUS. Close to connector with continuous GND return",
+      "sheet": "interfaces/usb_fs",
+      "symbol": "Interface_USBLC6_2SC6",
+      "physical_pins": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "ref": "C1510",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "USB_HOST_VBUS",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/usb_fs",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "Q1510",
+      "value": "2N7002,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "USB_VBUS_GATE",
+        "2": "GND",
+        "3": "USB_VBUS_PRESENT_N"
+      },
+      "dnp": false,
+      "note": "AN4879 MOSFET VBUS detector. MCU PA9 regular GPIO active-low; disables native OTG VBUS sensing; no5V on unpowered MCU",
+      "sheet": "interfaces/usb_fs",
+      "symbol": "Interface_2N7002",
+      "physical_pins": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "ref": "R1510",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "USB_HOST_VBUS",
+        "2": "USB_VBUS_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/usb_fs",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1511",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "USB_VBUS_GATE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/usb_fs",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1512",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "USB_VBUS_PRESENT_N"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/usb_fs",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1513",
+      "value": "0R DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "USB_SHIELD",
+        "2": "GND"
+      },
+      "dnp": true,
+      "note": "Chassis/shield strategy and ground-loop/EMC review required before fit",
+      "sheet": "interfaces/usb_fs",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1511",
+      "value": "1n 2kV C0G",
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
+      "pins": {
+        "1": "USB_SHIELD",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Candidate shield HF return, not isolation barrier; shield bonding must be reviewed with enclosure",
+      "sheet": "interfaces/usb_fs",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "J1502",
+      "value": "Molex 1040310811",
+      "footprint": "Connector_Card:microSD_HC_Molex_104031-0811",
+      "pins": {
+        "1": "SD_DAT2",
+        "2": "SD_CS",
+        "3": "SD_MOSI_CARD",
+        "4": "SD_3V3",
+        "5": "SD_SCK_CARD",
+        "6": "GND",
+        "7": "SD_SPI3_MISO",
+        "8": "SD_DAT1",
+        "9": "SD_CD",
+        "10": "GND",
+        "11": "GND"
+      },
+      "dnp": false,
+      "note": "Molex SD-104031-001: CD switch closes with card; official footprint numbers9/10 switch and11 shell. Card choice/load unspecified",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "Interface_Molex104031",
+      "physical_pins": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11"
+      ]
+    },
+    {
+      "ref": "R1520",
+      "value": "0R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "SD_3V3"
+      },
+      "dnp": false,
+      "note": "Current measurement link; no power switching or hot-plug inrush limit",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1520",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SD_3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1521",
+      "value": "10u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "SD_3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1521",
+      "value": "22R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SD_SPI3_SCK",
+        "2": "SD_SCK_CARD"
+      },
+      "dnp": false,
+      "note": "Provisional source series damping, tune only from SI evidence",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1522",
+      "value": "22R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SD_SPI3_MOSI",
+        "2": "SD_MOSI_CARD"
+      },
+      "dnp": false,
+      "note": "Provisional source series damping",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1523",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SD_3V3",
+        "2": "SD_CS"
+      },
+      "dnp": false,
+      "note": "SPI startup/unused data pullup; no clock pullup",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1524",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SD_3V3",
+        "2": "SD_SPI3_MISO"
+      },
+      "dnp": false,
+      "note": "SPI startup/unused data pullup; no clock pullup",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1525",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SD_3V3",
+        "2": "SD_MOSI_CARD"
+      },
+      "dnp": false,
+      "note": "SPI startup/unused data pullup; no clock pullup",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1526",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SD_3V3",
+        "2": "SD_DAT1"
+      },
+      "dnp": false,
+      "note": "SPI startup/unused data pullup; no clock pullup",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1527",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SD_3V3",
+        "2": "SD_DAT2"
+      },
+      "dnp": false,
+      "note": "SPI startup/unused data pullup; no clock pullup",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1528",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "SD_3V3",
+        "2": "SD_CD"
+      },
+      "dnp": false,
+      "note": "SPI startup/unused data pullup; no clock pullup",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1522",
+      "value": "1n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SD_CD",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Card detect debounce is firmware polling, no EXTI reservation",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "D1520",
+      "value": "USBLC6-2SC6",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "pins": {
+        "1": "SD_SCK_CARD",
+        "6": "SD_SCK_CARD",
+        "3": "SD_MOSI_CARD",
+        "4": "SD_MOSI_CARD",
+        "5": "SD_3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "ESD steering reference at3V3, below specified5.25V leakage test voltage; rail injection/clamping and actual system validation pending",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "Interface_USBLC6_2SC6",
+      "physical_pins": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "ref": "D1521",
+      "value": "USBLC6-2SC6",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "pins": {
+        "1": "SD_CS",
+        "6": "SD_CS",
+        "3": "SD_SPI3_MISO",
+        "4": "SD_SPI3_MISO",
+        "5": "SD_3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "ESD steering reference at3V3, below specified5.25V leakage test voltage; rail injection/clamping and actual system validation pending",
+      "sheet": "interfaces/sd_spi",
+      "symbol": "Interface_USBLC6_2SC6",
+      "physical_pins": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "ref": "D1530",
+      "value": "STPS2H100UY",
+      "footprint": "Diode_SMD:D_SMB",
+      "pins": {
+        "1": "SENSOR_A_IN",
+        "2": "VBAT_LOGIC_PROTECTED"
+      },
+      "dnp": false,
+      "note": "Anode shared protected battery, cathode trackerIN. Isolates shared rail during TPS7B4253 short-to-battery detection latency",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "D_Schottky",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "U1530",
+      "value": "TPS7B4253QDDARQ1",
+      "footprint": "Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02",
+      "pins": {
+        "8": "SENSOR_A_IN",
+        "5": "+5V_CORE",
+        "1": "SENSOR_5V_A",
+        "4": "SENSOR_5V_A",
+        "3": "GND",
+        "6": "GND",
+        "9": "GND"
+      },
+      "dnp": false,
+      "note": "TI SLVSCP3D unity tracking. 300mA silicon rating is NOT permitted harness load. FB=OUT; ADJ draws <=5.5uA. EP copper+thermal vias review required",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "Interface_TPS7B4253DDA",
+      "physical_pins": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    {
+      "ref": "C1530",
+      "value": "1u 50V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "SENSOR_A_IN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1531",
+      "value": "100n 50V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SENSOR_A_IN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1532",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "ADJ reference bypass close to pin5",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1533",
+      "value": "22u 50V X7R",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pins": {
+        "1": "SENSOR_5V_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Require effective >=10uF at voltage/temp/tolerance, ESR1mohm..20ohm; 50V withstands output short-to-battery. Exact MPN not frozen",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1534",
+      "value": "100n 50V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SENSOR_5V_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "D1531",
+      "value": "STPS2H100UY",
+      "footprint": "Diode_SMD:D_SMB",
+      "pins": {
+        "1": "SENSOR_B_IN",
+        "2": "VBAT_LOGIC_PROTECTED"
+      },
+      "dnp": false,
+      "note": "Anode shared protected battery, cathode trackerIN. Isolates shared rail during TPS7B4253 short-to-battery detection latency",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "D_Schottky",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "U1531",
+      "value": "TPS7B4253QDDARQ1",
+      "footprint": "Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02",
+      "pins": {
+        "8": "SENSOR_B_IN",
+        "5": "+5V_CORE",
+        "1": "SENSOR_5V_B",
+        "4": "SENSOR_5V_B",
+        "3": "GND",
+        "6": "GND",
+        "9": "GND"
+      },
+      "dnp": false,
+      "note": "TI SLVSCP3D unity tracking. 300mA silicon rating is NOT permitted harness load. FB=OUT; ADJ draws <=5.5uA. EP copper+thermal vias review required",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "Interface_TPS7B4253DDA",
+      "physical_pins": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    {
+      "ref": "C1535",
+      "value": "1u 50V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "SENSOR_B_IN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1536",
+      "value": "100n 50V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SENSOR_B_IN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1537",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "ADJ reference bypass close to pin5",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1538",
+      "value": "22u 50V X7R",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pins": {
+        "1": "SENSOR_5V_B",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Require effective >=10uF at voltage/temp/tolerance, ESR1mohm..20ohm; 50V withstands output short-to-battery. Exact MPN not frozen",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1539",
+      "value": "100n 50V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "SENSOR_5V_B",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1530",
+      "value": "0R star return",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "pins": {
+        "1": "HARNESS_SENSOR_GND_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1531",
+      "value": "0R star return",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "pins": {
+        "1": "HARNESS_SENSOR_GND_B",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1532",
+      "value": "0R star return",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "pins": {
+        "1": "HARNESS_SENSOR_GND_C",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse",
+      "sheet": "interfaces/sensor_power",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1600",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_HALL1",
+        "2": "HALL1_FILTERED"
+      },
+      "dnp": false,
+      "note": "Current limit only, no automotive pulse rating claim",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1601",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HALL1_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1600",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "HALL1_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "D1600",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "HALL1_FILTERED"
+      },
+      "dnp": false,
+      "note": "Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "BAT54S",
+      "physical_pins": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "ref": "R1602",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_HALL1"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; fit only after sensor/wiring review",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1603",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_HALL2",
+        "2": "HALL2_FILTERED"
+      },
+      "dnp": false,
+      "note": "Current limit only, no automotive pulse rating claim",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1604",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HALL2_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1601",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "HALL2_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "D1601",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "HALL2_FILTERED"
+      },
+      "dnp": false,
+      "note": "Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "BAT54S",
+      "physical_pins": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "ref": "R1605",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_HALL2"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; fit only after sensor/wiring review",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1606",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_HALL3",
+        "2": "HALL3_FILTERED"
+      },
+      "dnp": false,
+      "note": "Current limit only, no automotive pulse rating claim",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1607",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HALL3_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1602",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "HALL3_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "D1602",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "HALL3_FILTERED"
+      },
+      "dnp": false,
+      "note": "Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "BAT54S",
+      "physical_pins": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "ref": "R1608",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_HALL3"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; fit only after sensor/wiring review",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1609",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_HALL4",
+        "2": "HALL4_FILTERED"
+      },
+      "dnp": false,
+      "note": "Current limit only, no automotive pulse rating claim",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1610",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HALL4_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1603",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "HALL4_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "D1603",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "HALL4_FILTERED"
+      },
+      "dnp": false,
+      "note": "Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "BAT54S",
+      "physical_pins": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "ref": "R1611",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_HALL4"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; fit only after sensor/wiring review",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1612",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HARNESS_FLEX_FREQ",
+        "2": "FLEX_FREQ_FILTERED"
+      },
+      "dnp": false,
+      "note": "Current limit only, no automotive pulse rating claim",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "R1613",
+      "value": "47k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "FLEX_FREQ_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "C1604",
+      "value": "47p 100V C0G",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "FLEX_FREQ_FILTERED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "D1604",
+      "value": "BAT54S,215",
+      "footprint": "Package_TO_SOT_SMD:SOT-23",
+      "pins": {
+        "1": "GND",
+        "2": "+5V_CORE",
+        "3": "FLEX_FREQ_FILTERED"
+      },
+      "dnp": false,
+      "note": "Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "BAT54S",
+      "physical_pins": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "ref": "R1614",
+      "value": "10k DNP",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "HARNESS_FLEX_FREQ"
+      },
+      "dnp": true,
+      "note": "Optional open-drain sensor pullup; fit only after sensor/wiring review",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "R",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "ref": "U1600",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "1": "HALL1_FILTERED",
+        "2": "HALL1",
+        "3": "HALL2_FILTERED",
+        "4": "HALL2",
+        "5": "HALL3_FILTERED",
+        "6": "HALL3",
+        "9": "HALL4_FILTERED",
+        "8": "HALL4",
+        "11": "FLEX_FREQ_FILTERED",
+        "10": "FLEX_FREQ",
+        "13": "GND"
+      },
+      "dnp": false,
+      "note": "2..3.6V supply,5.5V tolerant inputs, all channels INVERT. Unused inputsGND and outputsNC",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "SN74LVC14A_Q1",
+      "physical_pins": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14"
+      ]
+    },
+    {
+      "ref": "C1610",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "interfaces/digital_aux_1",
+      "symbol": "C",
+      "physical_pins": [
+        "1",
+        "2"
+      ]
+    }
+  ],
+  "lin2_role": "commander assembly; default sleep",
+  "blockers": [
+    "Firmware pinmux, USB VBUS GPIO/native detect and48MHz clock",
+    "SD card peak current and3V3 LDO thermal budget",
+    "Sensor load/thermal/dropout and effective capacitance",
+    "Automotive transients, cable inductance, ESD, EMC and simultaneous unpowered faults",
+    "Connector enclosure/sealing and shield bonding",
+    "PCB connectivity/DRC/SI and hardware timing/fault measurements"
+  ]
+}

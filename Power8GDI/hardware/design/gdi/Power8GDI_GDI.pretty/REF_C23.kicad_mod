@@ -1,0 +1,105 @@
+(footprint "REF_C23"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 1.35 -1.575 180)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "03a0d37c-c5e1-474e-89dd-80856c523786")
+		(effects
+			(font
+				(size 0.820001 0.820001)
+				(thickness 0.17)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Value" "100n"
+		(at -0.227899 2.045587 180)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "5faea8c8-f579-4b5c-8473-e8a12dbdea93")
+		(effects
+			(font
+				(size 0.820001 0.820001)
+				(thickness 0.17)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "09cb9f53-afd3-4870-b2fe-f5f7d75589b1")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Capacitor"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b59be646-5241-458c-95aa-20b7facc7751")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC" "C14663"
+		(at 285.5 250.65 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b74657c5-5d42-4e98-925d-125412066603")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start 0 -0.349986)
+		(end 0 0.399999)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5353c3d4-4892-44fa-9dc8-b466857efc31")
+	)
+	(pad "1" smd roundrect
+		(at -0.790001 0)
+		(size 0.850001 0.850001)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.09999988235)
+		(uuid "5621ab4d-c103-4da0-863d-71f0b83af052")
+	)
+	(pad "2" smd roundrect
+		(at 0.790001 0)
+		(size 0.850001 0.850001)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.09999988235)
+		(uuid "fd5233f3-d789-4e5e-8c4a-55a2bf539145")
+	)
+	(embedded_fonts no)
+	(model ":hellen-one-models:0603 cap.STEP"
+		(offset
+			(xyz 0.000081 0.000078 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 0)
+		)
+	)
+)

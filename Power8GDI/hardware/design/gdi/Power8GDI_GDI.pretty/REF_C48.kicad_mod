@@ -1,0 +1,105 @@
+(footprint "REF_C48"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -1.450021 -0.225 180)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "55ad87a1-9e94-4ba1-849a-ef05eb9e801f")
+		(effects
+			(font
+				(size 0.820001 0.820001)
+				(thickness 0.17)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Value" "4700p"
+		(at -0.227899 2.045587 180)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "b6d52516-c807-4538-a6fe-69fbdaee9483")
+		(effects
+			(font
+				(size 0.820001 0.820001)
+				(thickness 0.17)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0d309e70-f8b0-40ce-a46e-309c3ee4462b")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Capacitor"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dc17c851-065b-48ce-9087-c797ce7f82a3")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC" "C342899"
+		(at 63.824979 172.725021 90)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "538bf4d3-bb0f-4d88-861e-3be5e5f2c1a7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start 0 -0.349986)
+		(end 0 0.399999)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "3759baf1-fd78-43b6-8c93-b494683072f8")
+	)
+	(pad "1" smd roundrect
+		(at -0.790001 0)
+		(size 0.850001 0.850001)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.09999988235)
+		(uuid "2ac7f9cc-648e-4115-ba70-fee08d072a81")
+	)
+	(pad "2" smd roundrect
+		(at 0.790001 0)
+		(size 0.850001 0.850001)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.09999988235)
+		(uuid "d1a50b72-c2ac-4195-9a14-4dc2ba68d586")
+	)
+	(embedded_fonts no)
+	(model ":hellen-one-models:0603 cap.STEP"
+		(offset
+			(xyz 0.000081 0.000078 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 0)
+		)
+	)
+)

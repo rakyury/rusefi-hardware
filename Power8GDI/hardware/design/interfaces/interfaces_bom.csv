@@ -1,0 +1,85 @@
+ref,value,footprint,dnp,sheet,note
+U1501,TCAN1042HGVDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,interfaces/comms2,"TI SLLSES9D; STB pullup disables transmitter at MCU reset. PB5/PB6 AF9, PG12 standby."
+C1501,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/comms2,At U1501 pin3
+C1502,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/comms2,At U1501 pin5
+R1501,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/comms2,
+R1502,120R DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/comms2,Only fit at a bus end after topology review
+D1501,PESD2CAN,Package_TO_SOT_SMD:SOT-23,False,interfaces/comms2,
+U1502,TLIN1029ADRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,interfaces/comms2,"TI SLLSFK8A A variant. VSUP 4..36V operating, 45V abs; pull-down EN gives sleep"
+R1503,4.7k,Resistor_SMD:R_0603_1608Metric,False,interfaces/comms2,RXD open-drain; pull only to3V3
+R1504,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/comms2,
+R1505,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/comms2,
+R1506,0R,Resistor_SMD:R_0603_1608Metric,False,interfaces/comms2,Requires root SMBJ24CA; 38.9V rated clamp is not pulse qualification
+C1503,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/comms2,
+C1504,1u 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,interfaces/comms2,
+C1505,1n 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,interfaces/comms2,Commander bus capacitance; verify total cable/node capacitance
+D1502,"BAS21,215",Package_TO_SOT_SMD:SOT-23,False,interfaces/comms2,Commander assembly: anode toward VSUP. Remove BOTH D1502/R1507 for responder-only harness topology
+R1507,1k 1% 0.5W,Resistor_SMD:R_1206_3216Metric,False,interfaces/comms2,0.256W upper bound at16V dominant; voltage/pulse derating remains required
+J1501,Molex 1050170001,Connector_USB:USB_Micro-B_Molex-105017-0001,False,interfaces/usb_fs,Micro-B device-only; ID NC. Molex SD-105017-001 and official KiCad9 footprint; shell pads6. Not automotive/environmentally qualified
+D1510,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,False,interfaces/usb_fs,"ST DS4260 Fig1: pins1/6 IO1,3/4 IO2,2GND,5VBUS. Close to connector with continuous GND return"
+C1510,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/usb_fs,
+Q1510,"2N7002,215",Package_TO_SOT_SMD:SOT-23,False,interfaces/usb_fs,AN4879 MOSFET VBUS detector. MCU PA9 regular GPIO active-low; disables native OTG VBUS sensing; no5V on unpowered MCU
+R1510,1k,Resistor_SMD:R_0603_1608Metric,False,interfaces/usb_fs,
+R1511,100k,Resistor_SMD:R_0603_1608Metric,False,interfaces/usb_fs,
+R1512,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/usb_fs,
+R1513,0R DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/usb_fs,Chassis/shield strategy and ground-loop/EMC review required before fit
+C1511,1n 2kV C0G,Capacitor_SMD:C_1206_3216Metric,False,interfaces/usb_fs,"Candidate shield HF return, not isolation barrier; shield bonding must be reviewed with enclosure"
+J1502,Molex 1040310811,Connector_Card:microSD_HC_Molex_104031-0811,False,interfaces/sd_spi,Molex SD-104031-001: CD switch closes with card; official footprint numbers9/10 switch and11 shell. Card choice/load unspecified
+R1520,0R,Resistor_SMD:R_0603_1608Metric,False,interfaces/sd_spi,Current measurement link; no power switching or hot-plug inrush limit
+C1520,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sd_spi,
+C1521,10u 16V X7R,Capacitor_SMD:C_0805_2012Metric,False,interfaces/sd_spi,
+R1521,22R,Resistor_SMD:R_0603_1608Metric,False,interfaces/sd_spi,"Provisional source series damping, tune only from SI evidence"
+R1522,22R,Resistor_SMD:R_0603_1608Metric,False,interfaces/sd_spi,Provisional source series damping
+R1523,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/sd_spi,SPI startup/unused data pullup; no clock pullup
+R1524,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/sd_spi,SPI startup/unused data pullup; no clock pullup
+R1525,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/sd_spi,SPI startup/unused data pullup; no clock pullup
+R1526,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/sd_spi,SPI startup/unused data pullup; no clock pullup
+R1527,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/sd_spi,SPI startup/unused data pullup; no clock pullup
+R1528,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/sd_spi,SPI startup/unused data pullup; no clock pullup
+C1522,1n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sd_spi,"Card detect debounce is firmware polling, no EXTI reservation"
+D1520,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,False,interfaces/sd_spi,"ESD steering reference at3V3, below specified5.25V leakage test voltage; rail injection/clamping and actual system validation pending"
+D1521,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,False,interfaces/sd_spi,"ESD steering reference at3V3, below specified5.25V leakage test voltage; rail injection/clamping and actual system validation pending"
+D1530,STPS2H100UY,Diode_SMD:D_SMB,False,interfaces/sensor_power,"Anode shared protected battery, cathode trackerIN. Isolates shared rail during TPS7B4253 short-to-battery detection latency"
+U1530,TPS7B4253QDDARQ1,Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02,False,interfaces/sensor_power,TI SLVSCP3D unity tracking. 300mA silicon rating is NOT permitted harness load. FB=OUT; ADJ draws <=5.5uA. EP copper+thermal vias review required
+C1530,1u 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,interfaces/sensor_power,
+C1531,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sensor_power,
+C1532,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sensor_power,ADJ reference bypass close to pin5
+C1533,22u 50V X7R,Capacitor_SMD:C_1210_3225Metric,False,interfaces/sensor_power,"Require effective >=10uF at voltage/temp/tolerance, ESR1mohm..20ohm; 50V withstands output short-to-battery. Exact MPN not frozen"
+C1534,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sensor_power,
+D1531,STPS2H100UY,Diode_SMD:D_SMB,False,interfaces/sensor_power,"Anode shared protected battery, cathode trackerIN. Isolates shared rail during TPS7B4253 short-to-battery detection latency"
+U1531,TPS7B4253QDDARQ1,Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02,False,interfaces/sensor_power,TI SLVSCP3D unity tracking. 300mA silicon rating is NOT permitted harness load. FB=OUT; ADJ draws <=5.5uA. EP copper+thermal vias review required
+C1535,1u 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,interfaces/sensor_power,
+C1536,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sensor_power,
+C1537,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sensor_power,ADJ reference bypass close to pin5
+C1538,22u 50V X7R,Capacitor_SMD:C_1210_3225Metric,False,interfaces/sensor_power,"Require effective >=10uF at voltage/temp/tolerance, ESR1mohm..20ohm; 50V withstands output short-to-battery. Exact MPN not frozen"
+C1539,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sensor_power,
+R1530,0R star return,Resistor_SMD:R_0805_2012Metric,False,interfaces/sensor_power,"Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse"
+R1531,0R star return,Resistor_SMD:R_0805_2012Metric,False,interfaces/sensor_power,"Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse"
+R1532,0R star return,Resistor_SMD:R_0805_2012Metric,False,interfaces/sensor_power,"Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse"
+R1600,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_1,"Current limit only, no automotive pulse rating claim"
+R1601,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_1,
+C1600,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,interfaces/digital_aux_1,Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation
+D1600,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,interfaces/digital_aux_1,Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release
+R1602,10k DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/digital_aux_1,Optional open-drain sensor pullup; fit only after sensor/wiring review
+R1603,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_1,"Current limit only, no automotive pulse rating claim"
+R1604,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_1,
+C1601,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,interfaces/digital_aux_1,Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation
+D1601,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,interfaces/digital_aux_1,Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release
+R1605,10k DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/digital_aux_1,Optional open-drain sensor pullup; fit only after sensor/wiring review
+R1606,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_1,"Current limit only, no automotive pulse rating claim"
+R1607,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_1,
+C1602,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,interfaces/digital_aux_1,Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation
+D1602,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,interfaces/digital_aux_1,Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release
+R1608,10k DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/digital_aux_1,Optional open-drain sensor pullup; fit only after sensor/wiring review
+R1609,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_1,"Current limit only, no automotive pulse rating claim"
+R1610,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_1,
+C1603,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,interfaces/digital_aux_1,Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation
+D1603,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,interfaces/digital_aux_1,Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release
+R1611,10k DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/digital_aux_1,Optional open-drain sensor pullup; fit only after sensor/wiring review
+R1612,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_1,"Current limit only, no automotive pulse rating claim"
+R1613,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_1,
+C1604,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,interfaces/digital_aux_1,Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation
+D1604,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,interfaces/digital_aux_1,Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release
+R1614,10k DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/digital_aux_1,Optional open-drain sensor pullup; fit only after sensor/wiring review
+U1600,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,interfaces/digital_aux_1,"2..3.6V supply,5.5V tolerant inputs, all channels INVERT. Unused inputsGND and outputsNC"
+C1610,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/digital_aux_1,

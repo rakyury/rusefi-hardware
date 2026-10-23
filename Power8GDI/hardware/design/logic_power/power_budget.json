@@ -1,0 +1,85 @@
+{
+  "status": "ALLOCATED_ENVELOPES_NOT_MEASURED_OR_THERMALLY_QUALIFIED",
+  "rail3v3_allocations_A": {
+    "STM32F767 + ADC + clocks": 0.35,
+    "20 analog amplifiers and filters": 0.05,
+    "8 ignition comparators, timers and gates": 0.1,
+    "safety, SENT, digital buffers and SPI": 0.1,
+    "4 H-bridge GPIO/pullups": 0.02,
+    "CAN VIO, LIN RX and misc pullups": 0.03,
+    "other core IO and LEDs": 0.05
+  },
+  "rail3v3_allocated_A": 0.7,
+  "rail3v3_target_A": 1.0,
+  "rail5v_direct_allocations_A": {
+    "2 WBO nodes (0.200A each incl local LDO)": 0.4,
+    "2 TCAN1042 incl specified bus fault (0.120A each)": 0.24,
+    "8 ignition gate drivers incl dynamic reserve": 0.1,
+    "6 TLE9104 logic supplies (0.030A each)": 0.18,
+    "MAX9924 + TPIC8101 + level translators": 0.08,
+    "Hall/pullups/sensor references and other logic": 0.05
+  },
+  "rail5v_direct_A": 1.05,
+  "rail5v_3v3_conversion_A": 0.792317,
+  "rail5v_combined_A": 1.842317,
+  "rail5v_target_A": 2.0,
+  "rail5v_headroom_A": 0.157683,
+  "conversion_assumption": {
+    "3v3_load_A": 1,
+    "input_min_V": 4.9,
+    "efficiency_floor_assumed_not_guaranteed": 0.85
+  },
+  "feedback_static_bounds_V": {
+    "5V": [
+      4.92111,
+      5.09915
+    ],
+    "3V3_PSM": [
+      3.20921,
+      3.40756
+    ]
+  },
+  "ripple_5v_A_60V_Lminus20_f440k": 1.9252666833778966,
+  "peak_5v_A_at2A": 2.9626333416889485,
+  "ripple_3v3_A_5p12V_Lminus20_f1MHz_assumed": 0.66650390625,
+  "peak_3v3_A_at1A": 1.333251953125,
+  "protected_battery_A_at6p4V_2A5V_plus_sensors_LIN": 2.599264705882353,
+  "diode_estimated_W_from_ST_formula": 1.4607485402249136,
+  "EN_rise_protected_nom_V": 6.8628,
+  "EN_rise_static_bounds_V": [
+    6.393200705294705,
+    7.230855761761761
+  ],
+  "Cff_estimate_F_at156uF": 1.8062931195620652e-10,
+  "excluded_from_logic_rails": [
+    "8 GDI /2HPFP power and local VCC5; main3V3 VCCIO is NOT excluded",
+    "8 PI coil current and 24 aux load current",
+    "8 ignition primary current",
+    "4 H-bridge motor current",
+    "2 WBO heater current",
+    "SENSOR_5V_A/B tracker output load (battery-fed)"
+  ],
+  "open_validation": [
+    "efficiency and thermal at minimum input/hot enclosure",
+    "capacitor manufacturer DC bias curves and exact order codes",
+    "LM76003 loop response with total5V bus capacitance",
+    "TPS62130A dynamic switching frequency, short circuit and hot inductor margin",
+    "supply backfeed through IO and programmer",
+    "input TVS/fuse pulse coordination",
+    "actual WBO node and actuator-control logic current across faults"
+  ],
+  "unresolved_3v3_loads": [
+    {
+      "load": "SD card at J1502.4 via R1520",
+      "allocated_A": null,
+      "closure": "Selected card peak current and duration required"
+    },
+    {
+      "load": "PT2001 VCCIO at U201.17/U301.17 via R221/R321",
+      "allocated_A": null,
+      "closure": "Full manufacturer electrical maxima required"
+    }
+  ],
+  "rail3v3_remaining_unvalidated_envelope_A": 0.3,
+  "allocation_complete": false
+}

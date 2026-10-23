@@ -9,6 +9,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
+#include <limits>
 
 namespace power8gdi {
 
@@ -53,10 +54,15 @@ public:
         for (std::size_t i = 0; i < nz_; ++i, at += 4) z_[i] = f32(bytes + at);
 
         for (std::size_t i = 0; i < count; ++i, at += 2) {
-            cells_[i] = static_cast<std::int16_t>(u16(bytes + at));
-            const float v = static_cast<float>(cells_[i]) * scale_ + offset_;
-            const float tol = 0.000001f + 0.000001f * std::fmax(std::fabs(minimum), std::fabs(maximum));
-            if (!std::isfinite(v) || v < minimum - tol || v > maximum + tol) return false;
+            const auto raw = u16(bytes + at);
+            cells_[i] = static_cast<std::int16_t>(raw <= 32767 ? int(raw) : int(raw) - 65536);
+            // One final binary32 rounding, shared with the Python codec. A float
+            // multiply followed by add can overflow before offset cancellation.
+            const double wide = double(cells_[i]) * scale_ + offset_;
+            if (!std::isfinite(wide) || std::fabs(wide) > std::numeric_limits<float>::max())
+                return false;
+            const float v = static_cast<float>(wide);
+            if (v < minimum || v > maximum) return false;
         }
         if (!axisValid(x_.data(), nx_) || !axisValid(y_.data(), ny_) ||
             !axisValid(z_.data(), nz_)) return false;
@@ -92,6 +98,7 @@ private:
     }
     static float f32(const std::uint8_t* p) noexcept {
         static_assert(sizeof(float) == 4, "Map4D requires IEEE754 32-bit float");
+        static_assert(std::numeric_limits<float>::is_iec559, "Map4D requires IEEE754");
         std::uint32_t raw = u32(p);
         float f;
         std::memcpy(&f, &raw, 4);

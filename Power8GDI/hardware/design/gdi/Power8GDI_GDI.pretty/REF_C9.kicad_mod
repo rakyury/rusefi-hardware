@@ -1,0 +1,105 @@
+(footprint "REF_C9"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -3.25 0.25 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "957010bb-41ea-491f-a6f0-401abe913801")
+		(effects
+			(font
+				(size 0.820001 0.820001)
+				(thickness 0.17)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Value" "1u"
+		(at -0.227899 2.045587 180)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "23c5c96c-53e4-48d6-aa0b-014148152731")
+		(effects
+			(font
+				(size 0.820001 0.820001)
+				(thickness 0.17)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dae4d296-43ad-404a-9de3-e5e6aa07bd13")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Capacitor"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a25936b2-e383-4fee-b3d6-d864985881b3")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC" "C15849"
+		(at 261.575 4.575 270)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3a29680d-0886-4b0c-b245-46f9c988459f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(fp_line
+		(start 0 -0.349986)
+		(end 0 0.399999)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9f1aa84e-5b8d-4f1a-b4ff-0117db82971c")
+	)
+	(pad "1" smd roundrect
+		(at -0.790001 0)
+		(size 0.850001 0.850001)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.09999988235)
+		(uuid "fdefd928-b2a5-4755-9f1d-2b509255db3f")
+	)
+	(pad "2" smd roundrect
+		(at 0.790001 0)
+		(size 0.850001 0.850001)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.09999988235)
+		(uuid "d164f902-fd3b-4e5c-a219-4780209be831")
+	)
+	(embedded_fonts no)
+	(model ":hellen-one-models:0603 cap.STEP"
+		(offset
+			(xyz 0.000081 0.000078 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 0)
+		)
+	)
+)

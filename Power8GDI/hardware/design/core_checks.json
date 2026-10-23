@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "structural_status": "PASS",
+  "release_status": "BLOCKED",
+  "core_components": 510,
+  "integrated_components": 1262,
+  "checked_mcu_pads": 176,
+  "errors": [],
+  "erc_counts": {
+    "global_label_dangling": 12,
+    "power_pin_not_driven": 21
+  },
+  "blockers": [
+    "ERC findings remain; power-source semantics and functional boundaries need review",
+    "MCU GPIO AF/DMA/timing and added PH2/PH3 firmware are not qualified",
+    "3V3/5V allocated budgets pass; capacitor derating, hot regulator thermal and transient energy remain unqualified",
+    "Independent actuator inhibit and actual coil/injector/pump models unresolved",
+    "PCB routing, DRC, SI/EMC, environmental and fault tests not complete"
+  ]
+}

@@ -41,7 +41,7 @@ struct GdiSafetySnapshot {
     PtChipSnapshot chip[2];
     // Immutable, validated calibration for duration of engine operation.
     // Both PT2001 ICs are ALWAYS required when 8 DI channels are assigned.
-    // Not every engine has two pumps or two rail transducers installed.
+    // Shared rails may use one pump/sensor; independent rails require both.
     GdiRailTopology railTopology = GdiRailTopology::Shared;
     bool pumpConfigured[2] = {false, false};
     bool railSensorConfigured[2] = {false, false};
@@ -51,6 +51,9 @@ struct GdiSafetySnapshot {
     bool synchronizationValid = false;
     bool runRequested = false;
     bool emergencyStopReleased = false;
+    // Fresh, independently established standstill evidence for recovery.
+    // False for rotating/unknown/stale state; never infer from loss of sync.
+    bool engineStoppedConfirmed = false;
 };
 
 struct GdiPermits {
@@ -69,7 +72,7 @@ public:
     // are valid, and the synchronized engine has explicitly requested a run.
     GdiPermits update(const GdiSafetySnapshot& snapshot) noexcept;
 
-    // Explicit recovery ONLY with engine stopped, no run request, E-stop
+    // Explicit recovery ONLY with engineStoppedConfirmed, no run request, E-stop
     // released, supply good, valid sensors, fresh diagnostics and both PTs
     // ready/fault free. This resets the software latch, not the external
     // hardwired fault/enable latch.

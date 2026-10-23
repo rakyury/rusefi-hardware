@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/src/Power8GDI/hardware/design/motor4/motor4.kicad_sch</source>
+    <date>2026-10-23T18:13:28+0000</date>
+    <tool>Eeschema 9.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>MOTOR4: TLE9201 motor bridge</title>
+        <company/>
+        <rev>Engineering draft 0.1</rev>
+        <date/>
+        <source>motor4.kicad_sch</source>
+        <comment number="1" value="UNQUALIFIED: no manufacturing or engine approval"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C6150">
+      <value>100n 25V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_C" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>752cb140-84d1-5b04-bf53-c9f6f4abf91a</tstamps>
+    </comp>
+    <comp ref="C6151">
+      <value>100n 25V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_C" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5699ae39-9cf5-51f5-a5aa-eb4f49f8d2cf</tstamps>
+    </comp>
+    <comp ref="C6152">
+      <value>100n 50V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_C" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c0af3c45-aaf8-5c99-92a8-7823ba0b59f9</tstamps>
+    </comp>
+    <comp ref="C6153">
+      <value>1u 50V X7R</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_C" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f8574d64-c1a6-58fe-b6c0-4d19c9b509b2</tstamps>
+    </comp>
+    <comp ref="C6154">
+      <value>100u 50V low ESR</value>
+      <footprint>Capacitor_SMD:CP_Elec_10x10.5</footprint>
+      <fields>
+        <field name="Design note">Bulk capacitor exact MPN, cold ESR/ripple and height not qualified.</field>
+        <field name="Footprint">Capacitor_SMD:CP_Elec_10x10.5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_C" description=""/>
+      <property name="Design note" value="Bulk capacitor exact MPN, cold ESR/ripple and height not qualified."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>983007fb-3e33-5549-aba9-6027b877a0d7</tstamps>
+    </comp>
+    <comp ref="C6155">
+      <value>1n 100V C0G</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note">Place output EMI capacitor at IC; Infineon application limit &lt;33nF.</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_C" description=""/>
+      <property name="Design note" value="Place output EMI capacitor at IC; Infineon application limit &lt;33nF."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fe2de198-ae38-513d-acee-3fc3992a6426</tstamps>
+    </comp>
+    <comp ref="C6156">
+      <value>1n 100V C0G</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note">Place output EMI capacitor at IC; Infineon application limit &lt;33nF.</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_C" description=""/>
+      <property name="Design note" value="Place output EMI capacitor at IC; Infineon application limit &lt;33nF."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8cedc2df-155b-5adc-99cd-4d5ba100f19e</tstamps>
+    </comp>
+    <comp ref="D6150">
+      <value>SMCJ18CA</value>
+      <footprint>Diode_SMD:D_SMC</footprint>
+      <fields>
+        <field name="Design note">18V standoff, 29.2V rated pulse clamp; input OV disconnect limits normal supply. Local regeneration/overshoot may exceed28V operating limit but must stay below40V ABSMAX. Energy/hot clamp not qualified.</field>
+        <field name="Footprint">Diode_SMD:D_SMC</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_TVS_BIDIR" description=""/>
+      <property name="Design note" value="18V standoff, 29.2V rated pulse clamp; input OV disconnect limits normal supply. Local regeneration/overshoot may exceed28V operating limit but must stay below40V ABSMAX. Energy/hot clamp not qualified."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>49d7c8a7-5009-5c26-b45c-f2e9ba7d2430</tstamps>
+    </comp>
+    <comp ref="R6150">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3d14c1aa-47f7-5b23-9909-b8ab82348c02</tstamps>
+    </comp>
+    <comp ref="R6151">
+      <value>100R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>44e2cecc-1689-58bb-8229-1b6ee91fe07a</tstamps>
+    </comp>
+    <comp ref="R6152">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7b923b44-f5fc-52b2-a490-f8af2d21c734</tstamps>
+    </comp>
+    <comp ref="R6153">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1a0ccb3b-6133-5078-9f5d-95b397786bd8</tstamps>
+    </comp>
+    <comp ref="R6154">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>78bea574-fba8-5478-b692-4c7283c9449e</tstamps>
+    </comp>
+    <comp ref="R6155">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5d54ca07-97da-56f6-8cc9-c945547f5bed</tstamps>
+    </comp>
+    <comp ref="U6150">
+      <value>TLE9201SG</value>
+      <footprint>Package_SO:Infineon_PG-DSO-12-11_ThermalVias</footprint>
+      <fields>
+        <field name="Design note">Infineon Rev1.0 p4: pin13 here denotes exposed ground slug. PG-DSO-12-17 dimensions checked against KiCad PG-DSO-12-11 land pattern; see checks.</field>
+        <field name="Footprint">Package_SO:Infineon_PG-DSO-12-11_ThermalVias</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="TLE9201SG" description=""/>
+      <property name="Design note" value="Infineon Rev1.0 p4: pin13 here denotes exposed ground slug. PG-DSO-12-17 dimensions checked against KiCad PG-DSO-12-11 land pattern; see checks."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f07611ce-994f-54b7-98c6-cb5020e7025c</tstamps>
+    </comp>
+    <comp ref="U6151">
+      <value>SN74LVC1G32QDBVRQ1</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="Design note">High means DISABLE. Either global latch or per-channel command forces both bridge outputs off; reset defaults are high.</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="SN74LVC1G32_Q1" description=""/>
+      <property name="Design note" value="High means DISABLE. Either global latch or per-channel command forces both bridge outputs off; reset defaults are high."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="motor4.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bce7b854-d0ba-5e28-a672-1eb9d2fcd5ba</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Power8GDI_Motor4" part="Motor_C">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">Motor_C</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Motor4" part="Motor_R">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">Motor_R</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Motor4" part="Motor_TVS_BIDIR">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">Motor_TVS_BIDIR</field>
+        <field name="Footprint">Diode_SMD:D_SMC</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Motor4" part="SN74LVC1G32_Q1">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SN74LVC1G32_Q1</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="input"/>
+        <pin num="2" name="B" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="Y" type="output"/>
+        <pin num="5" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Motor4" part="TLE9201SG">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TLE9201SG</field>
+        <field name="Footprint">Package_SO:Infineon_PG-DSO-12-11_ThermalVias</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="DIR" type="input"/>
+        <pin num="2" name="VSO" type="power_in"/>
+        <pin num="3" name="SO" type="tri_state"/>
+        <pin num="4" name="VS" type="power_in"/>
+        <pin num="5" name="OUT1" type="passive"/>
+        <pin num="6" name="GND" type="power_in"/>
+        <pin num="7" name="OUT2" type="passive"/>
+        <pin num="8" name="SI" type="input"/>
+        <pin num="9" name="CSN" type="input"/>
+        <pin num="10" name="SCK" type="input"/>
+        <pin num="11" name="DIS" type="input"/>
+        <pin num="12" name="PWM" type="input"/>
+        <pin num="13" name="EP_GND" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Power8GDI_Motor4">
+      <uri>/src/Power8GDI/hardware/design/motor4/Power8GDI_Motor4.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3" class="Default">
+      <node ref="C6150" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C6151" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R6154" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R6155" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U6150" pin="2" pinfunction="VSO" pintype="power_in"/>
+      <node ref="U6151" pin="5" pinfunction="VCC" pintype="power_in"/>
+    </net>
+    <net code="2" name="GND" class="Default">
+      <node ref="C6150" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C6151" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C6152" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C6153" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C6154" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C6155" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C6156" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="D6150" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R6152" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R6153" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U6150" pin="13" pinfunction="EP_GND" pintype="power_in"/>
+      <node ref="U6150" pin="6" pinfunction="GND" pintype="power_in"/>
+      <node ref="U6151" pin="3" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="3" name="HW_ACTUATOR_ENABLE_N" class="Default">
+      <node ref="U6151" pin="1" pinfunction="A" pintype="input"/>
+    </net>
+    <net code="4" name="MOTOR3_SPI_SO" class="Default">
+      <node ref="U6150" pin="8" pinfunction="SI" pintype="input"/>
+    </net>
+    <net code="5" name="MOTOR4_DIR" class="Default">
+      <node ref="R6151" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="6" name="MOTOR4_DIR_FILTERED" class="Default">
+      <node ref="R6151" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R6153" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U6150" pin="1" pinfunction="DIR" pintype="input"/>
+    </net>
+    <net code="7" name="MOTOR4_DISABLE" class="Default">
+      <node ref="R6154" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U6151" pin="2" pinfunction="B" pintype="input"/>
+    </net>
+    <net code="8" name="MOTOR4_DIS_GATED" class="Default">
+      <node ref="R6155" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U6150" pin="11" pinfunction="DIS" pintype="input"/>
+      <node ref="U6151" pin="4" pinfunction="Y" pintype="output"/>
+    </net>
+    <net code="9" name="MOTOR4_MOTOR_A" class="Default">
+      <node ref="C6155" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U6150" pin="5" pinfunction="OUT1" pintype="passive"/>
+    </net>
+    <net code="10" name="MOTOR4_MOTOR_B" class="Default">
+      <node ref="C6156" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U6150" pin="7" pinfunction="OUT2" pintype="passive"/>
+    </net>
+    <net code="11" name="MOTOR4_PWM" class="Default">
+      <node ref="R6150" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="12" name="MOTOR4_PWM_FILTERED" class="Default">
+      <node ref="R6150" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R6152" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U6150" pin="12" pinfunction="PWM" pintype="input"/>
+    </net>
+    <net code="13" name="MOTOR4_SPI_SO" class="Default">
+      <node ref="U6150" pin="3" pinfunction="SO" pintype="tri_state"/>
+    </net>
+    <net code="14" name="MOTOR24_VS" class="Default">
+      <node ref="C6152" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C6153" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C6154" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="D6150" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U6150" pin="4" pinfunction="VS" pintype="power_in"/>
+    </net>
+    <net code="15" name="MOTOR_CS_N" class="Default">
+      <node ref="U6150" pin="9" pinfunction="CSN" pintype="input"/>
+    </net>
+    <net code="16" name="MOTOR_SPI_SCK" class="Default">
+      <node ref="U6150" pin="10" pinfunction="SCK" pintype="input"/>
+    </net>
+  </nets>
+</export>

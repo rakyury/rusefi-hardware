@@ -1,0 +1,274 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-21T05:51:28+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/20465974-d3b0-5bf0-9403-bb1282024aae",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1701 Pin 1 [VDD, Power input, Line]",
+                            "pos": {
+                                "x": 0.6223,
+                                "y": 0.7747
+                            },
+                            "uuid": "c36c4689-760d-593b-be84-0b932d597258"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1701 Pin 2 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 0.9779,
+                                "y": 0.7747
+                            },
+                            "uuid": "731359ed-8c65-5055-8666-c53b3075b033"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1702 Pin 2 [A1, Input, Line]",
+                            "pos": {
+                                "x": 2.1717,
+                                "y": 0.8509
+                            },
+                            "uuid": "a030b877-e0a2-5afb-932a-29685fc7b323"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1702 Pin 4 [A2, Input, Line]",
+                            "pos": {
+                                "x": 2.1717,
+                                "y": 0.8763
+                            },
+                            "uuid": "ce55f1cb-62a6-5826-a6fe-82e3fa0d2b70"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1702 Pin 17 [A8, Input, Line]",
+                            "pos": {
+                                "x": 2.1717,
+                                "y": 1.0287
+                            },
+                            "uuid": "5bc5c2ca-70c0-5bdf-905b-8f96dd10b9a0"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1703 Pin 5 [VCC, Power input, Line]",
+                            "pos": {
+                                "x": 3.7211,
+                                "y": 0.8763
+                            },
+                            "uuid": "28d3b796-335d-5496-8a87-c925dce3923f"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'GDI_SPI2_MOSI'",
+                            "pos": {
+                                "x": 2.0955,
+                                "y": 0.8509
+                            },
+                            "uuid": "70e87a1c-2c73-5856-887f-61db49e3c66a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'GDI_SPI2_SCK'",
+                            "pos": {
+                                "x": 2.0955,
+                                "y": 0.8763
+                            },
+                            "uuid": "65d5603b-91ef-5881-b469-6c482a108cb9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'SAFETY_CLEAR_N'",
+                            "pos": {
+                                "x": 2.0955,
+                                "y": 1.0287
+                            },
+                            "uuid": "dc6d4093-6d0e-5625-a005-bb0a86ef976b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_CS_N_5V'",
+                            "pos": {
+                                "x": 2.6035,
+                                "y": 0.9017
+                            },
+                            "uuid": "38301061-b878-50bf-bc0d-32b4cde222b8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO2_CS_N_5V'",
+                            "pos": {
+                                "x": 2.6035,
+                                "y": 0.9271
+                            },
+                            "uuid": "42179692-51f0-5dd9-9360-0c1768d49b3d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO_RESET_N_5V'",
+                            "pos": {
+                                "x": 2.6035,
+                                "y": 0.9525
+                            },
+                            "uuid": "79468067-3f26-57a3-9473-a107cbd4024c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HARNESS_KNOCK1_RETURN'",
+                            "pos": {
+                                "x": 1.9177,
+                                "y": 2.4892
+                            },
+                            "uuid": "e93eb637-3fbe-5714-b559-7e34a1f9812b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HARNESS_KNOCK2_RETURN'",
+                            "pos": {
+                                "x": 1.9177,
+                                "y": 2.7051
+                            },
+                            "uuid": "6131e249-f394-50c1-94fc-c4c5bafdd9ad"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HARNESS_KNOCK1_SIG'",
+                            "pos": {
+                                "x": 3.2766,
+                                "y": 2.2733
+                            },
+                            "uuid": "d3082452-6ee4-52c3-b41b-4b4c80795357"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HARNESS_KNOCK2_SIG'",
+                            "pos": {
+                                "x": 3.2766,
+                                "y": 2.4892
+                            },
+                            "uuid": "9ba0063a-f2a1-5642-ba29-1a2e5c5d77ea"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'GDI_SPI2_MISO'",
+                            "pos": {
+                                "x": 4.1529,
+                                "y": 0.8763
+                            },
+                            "uuid": "67b99fbc-b6a0-5504-8494-07e6e6843f8a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "knock_dual.kicad_sch"
+}

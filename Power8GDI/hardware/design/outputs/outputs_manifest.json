@@ -1,0 +1,1978 @@
+{
+  "schema_version": 1,
+  "channels": [
+    "PI1",
+    "PI2",
+    "PI3",
+    "PI4",
+    "PI5",
+    "PI6",
+    "PI7",
+    "PI8",
+    "VVT1",
+    "VVT2",
+    "VVT3",
+    "VVT4",
+    "AUX_PWM1",
+    "AUX_PWM2",
+    "AUX_PWM3",
+    "AUX_PWM4",
+    "AUX_PWM5",
+    "AUX_PWM6",
+    "AUX_PWM7",
+    "AUX_PWM8",
+    "LS_AUX1",
+    "LS_AUX2",
+    "LS_AUX3",
+    "LS_AUX4"
+  ],
+  "bank_channels": [
+    [
+      "PI1",
+      "PI2",
+      "PI3",
+      "PI4"
+    ],
+    [
+      "PI5",
+      "PI6",
+      "PI7",
+      "PI8"
+    ],
+    [
+      "VVT1",
+      "VVT2",
+      "VVT3",
+      "VVT4"
+    ],
+    [
+      "AUX_PWM1",
+      "AUX_PWM2",
+      "AUX_PWM3",
+      "AUX_PWM4"
+    ],
+    [
+      "AUX_PWM5",
+      "AUX_PWM6",
+      "AUX_PWM7",
+      "AUX_PWM8"
+    ],
+    [
+      "LS_AUX1",
+      "LS_AUX2",
+      "LS_AUX3",
+      "LS_AUX4"
+    ]
+  ],
+  "parts": [
+    {
+      "ref": "R1101",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1102",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI1_INV",
+        "2": "PI1_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1103",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI1_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1104",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1105",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI2_INV",
+        "2": "PI2_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1106",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI2_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1107",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1108",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI3_INV",
+        "2": "PI3_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1109",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI3_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1110",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI4",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1111",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI4_INV",
+        "2": "PI4_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1112",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI4_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "U1121",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "11": "GND",
+        "13": "GND",
+        "1": "PI1",
+        "2": "PI1_INV",
+        "3": "PI2",
+        "4": "PI2_INV",
+        "5": "PI3",
+        "6": "PI3_INV",
+        "9": "PI4",
+        "8": "PI4_INV"
+      },
+      "dnp": false,
+      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "U1101",
+      "value": "TLE9104SHXUMA1",
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "pins": {
+        "2": "GND",
+        "9": "GND",
+        "12": "GND",
+        "19": "GND",
+        "21": "GND",
+        "15": "+3V3",
+        "16": "+5V_CORE",
+        "5": "LS1_SO",
+        "6": "LS_SPI_MOSI",
+        "8": "LS_SPI_SCK",
+        "7": "LS1_CS_N",
+        "13": "LS_RESET_N",
+        "14": "LS1_ENABLE",
+        "3": "PI1_IN_N",
+        "1": "HARNESS_PI1",
+        "18": "PI2_IN_N",
+        "20": "HARNESS_PI2",
+        "4": "PI3_IN_N",
+        "10": "HARNESS_PI3",
+        "17": "PI4_IN_N",
+        "11": "HARNESS_PI4"
+      },
+      "dnp": false,
+      "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1113",
+      "value": "47R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_CS1",
+        "2": "LS1_CS_N"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1114",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS1_CS_N"
+      },
+      "dnp": false,
+      "note": "Deselected during reset",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1115",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS1_SO",
+        "2": "GDI_SPI2_MISO"
+      },
+      "dnp": false,
+      "note": "Shared SPI2; high-Z SO while CSN high, 8MHz device maximum",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1116",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "LS1_ENABLE"
+      },
+      "dnp": false,
+      "note": "Dedicated EN physical kill independent of direct IN commands",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1117",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS1_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default hardware inhibit",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "C1101",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "C1102",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "C1103",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "C1104",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_1"
+    },
+    {
+      "ref": "R1121",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI5",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1122",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI5_INV",
+        "2": "PI5_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1123",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI5_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1124",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI6",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1125",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI6_INV",
+        "2": "PI6_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1126",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI6_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1127",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI7",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1128",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI7_INV",
+        "2": "PI7_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1129",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI7_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1130",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI8",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1131",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PI8_INV",
+        "2": "PI8_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1132",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PI8_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "U1122",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "11": "GND",
+        "13": "GND",
+        "1": "PI5",
+        "2": "PI5_INV",
+        "3": "PI6",
+        "4": "PI6_INV",
+        "5": "PI7",
+        "6": "PI7_INV",
+        "9": "PI8",
+        "8": "PI8_INV"
+      },
+      "dnp": false,
+      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "U1102",
+      "value": "TLE9104SHXUMA1",
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "pins": {
+        "2": "GND",
+        "9": "GND",
+        "12": "GND",
+        "19": "GND",
+        "21": "GND",
+        "15": "+3V3",
+        "16": "+5V_CORE",
+        "5": "LS2_SO",
+        "6": "LS_SPI_MOSI",
+        "8": "LS_SPI_SCK",
+        "7": "LS2_CS_N",
+        "13": "LS_RESET_N",
+        "14": "LS2_ENABLE",
+        "3": "PI5_IN_N",
+        "1": "HARNESS_PI5",
+        "18": "PI6_IN_N",
+        "20": "HARNESS_PI6",
+        "4": "PI7_IN_N",
+        "10": "HARNESS_PI7",
+        "17": "PI8_IN_N",
+        "11": "HARNESS_PI8"
+      },
+      "dnp": false,
+      "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1133",
+      "value": "47R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_CS2",
+        "2": "LS2_CS_N"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1134",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS2_CS_N"
+      },
+      "dnp": false,
+      "note": "Deselected during reset",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1135",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS2_SO",
+        "2": "GDI_SPI2_MISO"
+      },
+      "dnp": false,
+      "note": "Shared SPI2; high-Z SO while CSN high, 8MHz device maximum",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1136",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "LS2_ENABLE"
+      },
+      "dnp": false,
+      "note": "Dedicated EN physical kill independent of direct IN commands",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1137",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS2_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default hardware inhibit",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "C1121",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "C1122",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "C1123",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "C1124",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_2"
+    },
+    {
+      "ref": "R1141",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1142",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT1_INV",
+        "2": "VVT1_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1143",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "VVT1_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1144",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1145",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT2_INV",
+        "2": "VVT2_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1146",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "VVT2_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1147",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1148",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT3_INV",
+        "2": "VVT3_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1149",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "VVT3_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1150",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT4",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1151",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VVT4_INV",
+        "2": "VVT4_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1152",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "VVT4_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "U1123",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "11": "GND",
+        "13": "GND",
+        "1": "VVT1",
+        "2": "VVT1_INV",
+        "3": "VVT2",
+        "4": "VVT2_INV",
+        "5": "VVT3",
+        "6": "VVT3_INV",
+        "9": "VVT4",
+        "8": "VVT4_INV"
+      },
+      "dnp": false,
+      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "U1103",
+      "value": "TLE9104SHXUMA1",
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "pins": {
+        "2": "GND",
+        "9": "GND",
+        "12": "GND",
+        "19": "GND",
+        "21": "GND",
+        "15": "+3V3",
+        "16": "+5V_CORE",
+        "5": "LS3_SO",
+        "6": "LS_SPI_MOSI",
+        "8": "LS_SPI_SCK",
+        "7": "LS3_CS_N",
+        "13": "LS_RESET_N",
+        "14": "LS3_ENABLE",
+        "3": "VVT1_IN_N",
+        "1": "HARNESS_VVT1",
+        "18": "VVT2_IN_N",
+        "20": "HARNESS_VVT2",
+        "4": "VVT3_IN_N",
+        "10": "HARNESS_VVT3",
+        "17": "VVT4_IN_N",
+        "11": "HARNESS_VVT4"
+      },
+      "dnp": false,
+      "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1153",
+      "value": "47R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_CS3",
+        "2": "LS3_CS_N"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1154",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS3_CS_N"
+      },
+      "dnp": false,
+      "note": "Deselected during reset",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1155",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS3_SO",
+        "2": "GDI_SPI2_MISO"
+      },
+      "dnp": false,
+      "note": "Shared SPI2; high-Z SO while CSN high, 8MHz device maximum",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1156",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "LS3_ENABLE"
+      },
+      "dnp": false,
+      "note": "Dedicated EN physical kill independent of direct IN commands",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1157",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS3_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default hardware inhibit",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "C1141",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "C1142",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "C1143",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "C1144",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1161",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1162",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM1_INV",
+        "2": "AUX_PWM1_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1163",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM1_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1164",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1165",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM2_INV",
+        "2": "AUX_PWM2_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1166",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM2_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1167",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1168",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM3_INV",
+        "2": "AUX_PWM3_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1169",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM3_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1170",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM4",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1171",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM4_INV",
+        "2": "AUX_PWM4_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1172",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM4_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "U1124",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "11": "GND",
+        "13": "GND",
+        "1": "AUX_PWM1",
+        "2": "AUX_PWM1_INV",
+        "3": "AUX_PWM2",
+        "4": "AUX_PWM2_INV",
+        "5": "AUX_PWM3",
+        "6": "AUX_PWM3_INV",
+        "9": "AUX_PWM4",
+        "8": "AUX_PWM4_INV"
+      },
+      "dnp": false,
+      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "U1104",
+      "value": "TLE9104SHXUMA1",
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "pins": {
+        "2": "GND",
+        "9": "GND",
+        "12": "GND",
+        "19": "GND",
+        "21": "GND",
+        "15": "+3V3",
+        "16": "+5V_CORE",
+        "5": "LS4_SO",
+        "6": "LS_SPI_MOSI",
+        "8": "LS_SPI_SCK",
+        "7": "LS4_CS_N",
+        "13": "LS_RESET_N",
+        "14": "LS4_ENABLE",
+        "3": "AUX_PWM1_IN_N",
+        "1": "HARNESS_AUX_PWM1",
+        "18": "AUX_PWM2_IN_N",
+        "20": "HARNESS_AUX_PWM2",
+        "4": "AUX_PWM3_IN_N",
+        "10": "HARNESS_AUX_PWM3",
+        "17": "AUX_PWM4_IN_N",
+        "11": "HARNESS_AUX_PWM4"
+      },
+      "dnp": false,
+      "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1173",
+      "value": "47R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_CS4",
+        "2": "LS4_CS_N"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1174",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS4_CS_N"
+      },
+      "dnp": false,
+      "note": "Deselected during reset",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1175",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS4_SO",
+        "2": "GDI_SPI2_MISO"
+      },
+      "dnp": false,
+      "note": "Shared SPI2; high-Z SO while CSN high, 8MHz device maximum",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1176",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "LS4_ENABLE"
+      },
+      "dnp": false,
+      "note": "Dedicated EN physical kill independent of direct IN commands",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1177",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS4_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default hardware inhibit",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "C1161",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "C1162",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "C1163",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "C1164",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1181",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM5",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1182",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM5_INV",
+        "2": "AUX_PWM5_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1183",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM5_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1184",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM6",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1185",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM6_INV",
+        "2": "AUX_PWM6_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1186",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM6_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1187",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM7",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1188",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM7_INV",
+        "2": "AUX_PWM7_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1189",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM7_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1190",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM8",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1191",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM8_INV",
+        "2": "AUX_PWM8_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1192",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM8_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "U1125",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "11": "GND",
+        "13": "GND",
+        "1": "AUX_PWM5",
+        "2": "AUX_PWM5_INV",
+        "3": "AUX_PWM6",
+        "4": "AUX_PWM6_INV",
+        "5": "AUX_PWM7",
+        "6": "AUX_PWM7_INV",
+        "9": "AUX_PWM8",
+        "8": "AUX_PWM8_INV"
+      },
+      "dnp": false,
+      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "U1105",
+      "value": "TLE9104SHXUMA1",
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "pins": {
+        "2": "GND",
+        "9": "GND",
+        "12": "GND",
+        "19": "GND",
+        "21": "GND",
+        "15": "+3V3",
+        "16": "+5V_CORE",
+        "5": "LS5_SO",
+        "6": "LS_SPI_MOSI",
+        "8": "LS_SPI_SCK",
+        "7": "LS5_CS_N",
+        "13": "LS_RESET_N",
+        "14": "LS5_ENABLE",
+        "3": "AUX_PWM5_IN_N",
+        "1": "HARNESS_AUX_PWM5",
+        "18": "AUX_PWM6_IN_N",
+        "20": "HARNESS_AUX_PWM6",
+        "4": "AUX_PWM7_IN_N",
+        "10": "HARNESS_AUX_PWM7",
+        "17": "AUX_PWM8_IN_N",
+        "11": "HARNESS_AUX_PWM8"
+      },
+      "dnp": false,
+      "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1193",
+      "value": "47R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_CS5",
+        "2": "LS5_CS_N"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1194",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS5_CS_N"
+      },
+      "dnp": false,
+      "note": "Deselected during reset",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1195",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS5_SO",
+        "2": "GDI_SPI2_MISO"
+      },
+      "dnp": false,
+      "note": "Shared SPI2; high-Z SO while CSN high, 8MHz device maximum",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1196",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "LS5_ENABLE"
+      },
+      "dnp": false,
+      "note": "Dedicated EN physical kill independent of direct IN commands",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1197",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS5_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default hardware inhibit",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "C1181",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "C1182",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "C1183",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "C1184",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1201",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1202",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX1_INV",
+        "2": "LS_AUX1_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1203",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS_AUX1_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1204",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1205",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX2_INV",
+        "2": "LS_AUX2_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1206",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS_AUX2_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1207",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1208",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX3_INV",
+        "2": "LS_AUX3_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1209",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS_AUX3_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1210",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX4",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1211",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX4_INV",
+        "2": "LS_AUX4_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1212",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS_AUX4_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "U1126",
+      "value": "SN74LVC14AQPWRQ1",
+      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
+      "pins": {
+        "14": "+3V3",
+        "7": "GND",
+        "11": "GND",
+        "13": "GND",
+        "1": "LS_AUX1",
+        "2": "LS_AUX1_INV",
+        "3": "LS_AUX2",
+        "4": "LS_AUX2_INV",
+        "5": "LS_AUX3",
+        "6": "LS_AUX3_INV",
+        "9": "LS_AUX4",
+        "8": "LS_AUX4_INV"
+      },
+      "dnp": false,
+      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "U1106",
+      "value": "TLE9104SHXUMA1",
+      "footprint": "Power8GDI_Core:TLE9104SH_PG-DSO-20-88",
+      "pins": {
+        "2": "GND",
+        "9": "GND",
+        "12": "GND",
+        "19": "GND",
+        "21": "GND",
+        "15": "+3V3",
+        "16": "+5V_CORE",
+        "5": "LS6_SO",
+        "6": "LS_SPI_MOSI",
+        "8": "LS_SPI_SCK",
+        "7": "LS6_CS_N",
+        "13": "LS_RESET_N",
+        "14": "LS6_ENABLE",
+        "3": "LS_AUX1_IN_N",
+        "1": "HARNESS_LS_AUX1",
+        "18": "LS_AUX2_IN_N",
+        "20": "HARNESS_LS_AUX2",
+        "4": "LS_AUX3_IN_N",
+        "10": "HARNESS_LS_AUX3",
+        "17": "LS_AUX4_IN_N",
+        "11": "HARNESS_LS_AUX4"
+      },
+      "dnp": false,
+      "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1213",
+      "value": "47R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_CS6",
+        "2": "LS6_CS_N"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1214",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS6_CS_N"
+      },
+      "dnp": false,
+      "note": "Deselected during reset",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1215",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS6_SO",
+        "2": "GDI_SPI2_MISO"
+      },
+      "dnp": false,
+      "note": "Shared SPI2; high-Z SO while CSN high, 8MHz device maximum",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1216",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "LS6_ENABLE"
+      },
+      "dnp": false,
+      "note": "Dedicated EN physical kill independent of direct IN commands",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "R1217",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS6_ENABLE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default hardware inhibit",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "C1201",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "C1202",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "C1203",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "C1204",
+      "value": "1u 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_bank_6"
+    },
+    {
+      "ref": "U1140",
+      "value": "SN74LVC1G17QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+      "pins": {
+        "2": "LS_RESET_RELEASE",
+        "4": "LS_RESET_N",
+        "5": "+3V3",
+        "3": "GND"
+      },
+      "dnp": false,
+      "note": "Noninverting reset buffer; active-high MCU release. Keep low >=10us after VDD5V stable. Firmware must restart reset after either rail fault.",
+      "sheet": "outputs/ls_control"
+    },
+    {
+      "ref": "R1241",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_RESET_RELEASE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_control"
+    },
+    {
+      "ref": "R1242",
+      "value": "1k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_RESET_N",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "6x100uA internal pullups +10uA Ioff =>0.6161V worst-case, below 1V reset-low limit",
+      "sheet": "outputs/ls_control"
+    },
+    {
+      "ref": "C1241",
+      "value": "100n 16V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_control"
+    },
+    {
+      "ref": "R1243",
+      "value": "33R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_SPI2_SCK",
+        "2": "LS_SPI_SCK"
+      },
+      "dnp": false,
+      "note": "Branch damping; validate signal integrity across6drivers and2PT chips",
+      "sheet": "outputs/ls_control"
+    },
+    {
+      "ref": "R1244",
+      "value": "33R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_SPI2_MOSI",
+        "2": "LS_SPI_MOSI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "outputs/ls_control"
+    }
+  ],
+  "footprint": "Power8GDI_Core.pretty\\TLE9104SH_PG-DSO-20-88.kicad_mod",
+  "footprint_sha256": "0f8977eed9122e9469a9fb850a3b0dd213389db283a50d656d1c7220d111e87b",
+  "source": "https://www.infineon.com/assets/row/public/documents/10/49/infineon-tle9104sh-datasheet-en.pdf",
+  "source_revision": "1.31 2020-09-30",
+  "qualification": "BLOCKED_PENDING_LOADS_AND_PHYSICAL_VALIDATION"
+}

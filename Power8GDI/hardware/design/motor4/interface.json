@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "root_uuid": "f4d21065-0a5b-5086-a08e-1af9469f04bd",
+  "symbol_library": "Power8GDI_Motor4",
+  "footprint_library": "Power8GDI_Motor4",
+  "sheets": [
+    {
+      "name": "motor4/dbw",
+      "uuid": "36e9c1a5-87c4-587b-bde9-113d364b7eb2",
+      "sheet_id": "2f292352-1fdf-5f42-825f-c0663cc19609",
+      "components": 16
+    },
+    {
+      "name": "motor4/ewg",
+      "uuid": "2fad8777-507f-5874-a505-376795615aac",
+      "sheet_id": "001b4bf6-7a89-52c1-b644-282f1c625f1a",
+      "components": 16
+    },
+    {
+      "name": "motor4/motor3",
+      "uuid": "720e095c-0cf2-58d0-8963-25fc089db708",
+      "sheet_id": "a1d874ec-6625-54ba-9750-9693738ed94b",
+      "components": 16
+    },
+    {
+      "name": "motor4/motor4",
+      "uuid": "f191355a-cfaf-5a82-a6b4-3dc2bf9b5ce5",
+      "sheet_id": "fea959af-0a72-5725-83c1-637b9f1048bb",
+      "components": 16
+    },
+    {
+      "name": "motor4/spi",
+      "uuid": "73a8af16-0669-5b86-9557-39b951c36023",
+      "sheet_id": "653a7828-1657-5b98-8bae-fc4d9e0f409d",
+      "components": 8
+    },
+    {
+      "name": "motor4/motor13_power",
+      "uuid": "2d284011-6980-5169-8356-681db63b56d3",
+      "sheet_id": "5fe5f832-a00e-5bb4-8ef3-f4d0733d2003",
+      "components": 17
+    },
+    {
+      "name": "motor4/motor24_power",
+      "uuid": "1d3bdf9e-cfee-5b0b-8381-b01562d9f0a9",
+      "sheet_id": "e1c53cf8-3531-5132-a5f0-e5fe28fd72f9",
+      "components": 17
+    }
+  ],
+  "parts": 106,
+  "channels": [
+    {
+      "name": "DBW",
+      "ref": "U6000",
+      "protected_feed": "MOTOR13_VS",
+      "pwm": "PC6",
+      "dir": "PI2",
+      "disable": "PD13",
+      "output_nets": [
+        "DBW_MOTOR_A",
+        "DBW_MOTOR_B"
+      ]
+    },
+    {
+      "name": "EWG",
+      "ref": "U6050",
+      "protected_feed": "MOTOR24_VS",
+      "pwm": "PC8",
+      "dir": "PD14",
+      "disable": "PD15",
+      "output_nets": [
+        "EWG_MOTOR_A",
+        "EWG_MOTOR_B"
+      ]
+    },
+    {
+      "name": "MOTOR3",
+      "ref": "U6100",
+      "protected_feed": "MOTOR13_VS",
+      "pwm": "PC7",
+      "dir": "PI3",
+      "disable": "PI10",
+      "output_nets": [
+        "MOTOR3_MOTOR_A",
+        "MOTOR3_MOTOR_B"
+      ]
+    },
+    {
+      "name": "MOTOR4",
+      "ref": "U6150",
+      "protected_feed": "MOTOR24_VS",
+      "pwm": "PC9",
+      "dir": "PI4",
+      "disable": "PI11",
+      "output_nets": [
+        "MOTOR4_MOTOR_A",
+        "MOTOR4_MOTOR_B"
+      ]
+    }
+  ],
+  "feed_input_nets": [
+    "VBAT_DBW_FUSED",
+    "VBAT_EWG_FUSED"
+  ],
+  "shared_nets": [
+    "+3V3",
+    "GND",
+    "HW_ACTUATOR_ENABLE",
+    "HW_ACTUATOR_ENABLE_N",
+    "MOTOR_CS_N",
+    "GDI_SPI2_SCK",
+    "GDI_SPI2_MOSI",
+    "GDI_SPI2_MISO"
+  ],
+  "pwm_frequency_max_hz": 20000,
+  "pwm_timer": "TIM3 shared allfour",
+  "spi": {
+    "cs": "PB4",
+    "mode": 1,
+    "max_initial_hz": 1000000,
+    "frame_bits": 32,
+    "minimum_cs_high_us": 2,
+    "physical_order": [
+      "DBW",
+      "EWG",
+      "MOTOR3",
+      "MOTOR4"
+    ],
+    "wire_byte_order": [
+      "MOTOR4",
+      "MOTOR3",
+      "EWG",
+      "DBW"
+    ],
+    "response_latency_frames": 1,
+    "MISO_buffer_OE": "MOTOR_CS_N"
+  },
+  "disable_equation": "HW_ACTUATOR_ENABLE_N OR CHANNEL_DISABLE",
+  "normal_supply_ov_v": {
+    "nominal": 18.465,
+    "static_min": 17.86353622657343,
+    "static_max": 19.07438274554554
+  },
+  "continuous_current_A_design_target_only": {
+    "each_channel": 2,
+    "each_feed_sum": 4,
+    "all_channels_sum": 8
+  },
+  "remove_old_sheets": [
+    "motor/dbw_driver",
+    "motor/ewg_driver"
+  ],
+  "release_status": "NOT_HARDWARE_QUALIFIED",
+  "remaining_gates": [
+    "Load/stall and regenerative energy unknown",
+    "Thermal and simultaneous-current contact/fuse budget",
+    "Protection dynamicovershoot/EMC and MOSFET startupSOA",
+    "Bulk MPN/ripple/coldESR/height final selection",
+    "Root ERC/PCB layout/DRC",
+    "Real firmware SPI diagnostics / position safety / fault injection"
+  ]
+}

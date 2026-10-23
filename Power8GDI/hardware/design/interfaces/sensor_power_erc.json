@@ -1,0 +1,109 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-21T05:54:54+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/0628253c-feb7-570d-b2c5-29acdc8006ec",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1530 Pin 8 [IN, Power input, Line]",
+                            "pos": {
+                                "x": 2.6416,
+                                "y": 0.8001
+                            },
+                            "uuid": "45666f92-aef1-5f40-bdc8-c3f68df45d50"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1530 Pin 3 [GND3, Power input, Line]",
+                            "pos": {
+                                "x": 2.7432,
+                                "y": 1.1557
+                            },
+                            "uuid": "ad1d8087-b00f-56a2-a5c5-9d1bddd48c77"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1531 Pin 8 [IN, Power input, Line]",
+                            "pos": {
+                                "x": 2.6416,
+                                "y": 2.2479
+                            },
+                            "uuid": "158279e7-9f7a-5b6b-a88d-bb08384a2223"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HARNESS_SENSOR_GND_A'",
+                            "pos": {
+                                "x": 1.0033,
+                                "y": 3.0353
+                            },
+                            "uuid": "5ddd3ef0-eb20-5783-bbfe-5cbab168cc5a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HARNESS_SENSOR_GND_B'",
+                            "pos": {
+                                "x": 2.6035,
+                                "y": 3.0353
+                            },
+                            "uuid": "0cf8f67d-acc7-5254-89be-bd90953b22ec"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HARNESS_SENSOR_GND_C'",
+                            "pos": {
+                                "x": 4.2037,
+                                "y": 3.0353
+                            },
+                            "uuid": "316e3123-e3ad-5ca3-8dd8-547eb7f923dc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "sensor_power.kicad_sch"
+}

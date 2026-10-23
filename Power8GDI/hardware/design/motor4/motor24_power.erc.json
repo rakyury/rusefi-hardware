@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T17:22:31+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/1d3bdf9e-cfee-5b0b-8381-b01562d9f0a9",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U6250 Pin 10 [VS, Power input, Line]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 1.4986
+                            },
+                            "uuid": "4f235f64-c495-5c6b-b33c-79aa0668accc"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U6250 Pin 7 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 1.651
+                            },
+                            "uuid": "99fdfb39-7490-593f-880d-b22e0fba5dfe"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HW_ACTUATOR_ENABLE'",
+                            "pos": {
+                                "x": 3.3782,
+                                "y": 2.4003
+                            },
+                            "uuid": "5e937db3-2934-5b82-adfe-2af70a84e99c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "motor24_power.kicad_sch"
+}

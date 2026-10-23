@@ -1,0 +1,1359 @@
+[
+  {
+    "ref": "U6000",
+    "value": "TLE9201SG",
+    "footprint": "Package_SO:Infineon_PG-DSO-12-11_ThermalVias",
+    "pins": {
+      "1": "DBW_DIR_FILTERED",
+      "2": "+3V3",
+      "3": "DBW_SPI_SO",
+      "4": "MOTOR13_VS",
+      "5": "DBW_MOTOR_A",
+      "6": "GND",
+      "7": "DBW_MOTOR_B",
+      "8": "MOTOR_SPI_SI",
+      "9": "MOTOR_CS_N",
+      "10": "MOTOR_SPI_SCK",
+      "11": "DBW_DIS_GATED",
+      "12": "DBW_PWM_FILTERED",
+      "13": "GND"
+    },
+    "dnp": false,
+    "note": "Infineon Rev1.0 p4: pin13 here denotes exposed ground slug. PG-DSO-12-17 dimensions checked against KiCad PG-DSO-12-11 land pattern; see checks.",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "U6001",
+    "value": "SN74LVC1G32QDBVRQ1",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+    "pins": {
+      "1": "HW_ACTUATOR_ENABLE_N",
+      "2": "DBW_DISABLE",
+      "3": "GND",
+      "4": "DBW_DIS_GATED",
+      "5": "+3V3"
+    },
+    "dnp": false,
+    "note": "High means DISABLE. Either global latch or per-channel command forces both bridge outputs off; reset defaults are high.",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "R6000",
+    "value": "100R",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "DBW_PWM",
+      "2": "DBW_PWM_FILTERED"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "R6001",
+    "value": "100R",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "DBW_DIR",
+      "2": "DBW_DIR_FILTERED"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "R6002",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "DBW_PWM_FILTERED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "R6003",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "DBW_DIR_FILTERED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "R6004",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "DBW_DISABLE",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "R6005",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "DBW_DIS_GATED",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "C6000",
+    "value": "100n 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "C6001",
+    "value": "100n 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "C6002",
+    "value": "100n 50V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR13_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "C6003",
+    "value": "1u 50V X7R",
+    "footprint": "Capacitor_SMD:C_1206_3216Metric",
+    "pins": {
+      "1": "MOTOR13_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "C6004",
+    "value": "100u 50V low ESR",
+    "footprint": "Capacitor_SMD:CP_Elec_10x10.5",
+    "pins": {
+      "1": "MOTOR13_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Bulk capacitor exact MPN, cold ESR/ripple and height not qualified.",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "C6005",
+    "value": "1n 100V C0G",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "DBW_MOTOR_A",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Place output EMI capacitor at IC; Infineon application limit <33nF.",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "C6006",
+    "value": "1n 100V C0G",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "DBW_MOTOR_B",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Place output EMI capacitor at IC; Infineon application limit <33nF.",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "D6000",
+    "value": "SMCJ18CA",
+    "footprint": "Diode_SMD:D_SMC",
+    "pins": {
+      "1": "MOTOR13_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "18V standoff, 29.2V rated pulse clamp; input OV disconnect limits normal supply. Local regeneration/overshoot may exceed28V operating limit but must stay below40V ABSMAX. Energy/hot clamp not qualified.",
+    "sheet": "motor4/dbw"
+  },
+  {
+    "ref": "U6050",
+    "value": "TLE9201SG",
+    "footprint": "Package_SO:Infineon_PG-DSO-12-11_ThermalVias",
+    "pins": {
+      "1": "EWG_DIR_FILTERED",
+      "2": "+3V3",
+      "3": "EWG_SPI_SO",
+      "4": "MOTOR24_VS",
+      "5": "EWG_MOTOR_A",
+      "6": "GND",
+      "7": "EWG_MOTOR_B",
+      "8": "DBW_SPI_SO",
+      "9": "MOTOR_CS_N",
+      "10": "MOTOR_SPI_SCK",
+      "11": "EWG_DIS_GATED",
+      "12": "EWG_PWM_FILTERED",
+      "13": "GND"
+    },
+    "dnp": false,
+    "note": "Infineon Rev1.0 p4: pin13 here denotes exposed ground slug. PG-DSO-12-17 dimensions checked against KiCad PG-DSO-12-11 land pattern; see checks.",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "U6051",
+    "value": "SN74LVC1G32QDBVRQ1",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+    "pins": {
+      "1": "HW_ACTUATOR_ENABLE_N",
+      "2": "EWG_DISABLE",
+      "3": "GND",
+      "4": "EWG_DIS_GATED",
+      "5": "+3V3"
+    },
+    "dnp": false,
+    "note": "High means DISABLE. Either global latch or per-channel command forces both bridge outputs off; reset defaults are high.",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "R6050",
+    "value": "100R",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "EWG_PWM",
+      "2": "EWG_PWM_FILTERED"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "R6051",
+    "value": "100R",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "EWG_DIR",
+      "2": "EWG_DIR_FILTERED"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "R6052",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "EWG_PWM_FILTERED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "R6053",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "EWG_DIR_FILTERED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "R6054",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "EWG_DISABLE",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "R6055",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "EWG_DIS_GATED",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "C6050",
+    "value": "100n 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "C6051",
+    "value": "100n 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "C6052",
+    "value": "100n 50V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR24_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "C6053",
+    "value": "1u 50V X7R",
+    "footprint": "Capacitor_SMD:C_1206_3216Metric",
+    "pins": {
+      "1": "MOTOR24_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "C6054",
+    "value": "100u 50V low ESR",
+    "footprint": "Capacitor_SMD:CP_Elec_10x10.5",
+    "pins": {
+      "1": "MOTOR24_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Bulk capacitor exact MPN, cold ESR/ripple and height not qualified.",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "C6055",
+    "value": "1n 100V C0G",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "EWG_MOTOR_A",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Place output EMI capacitor at IC; Infineon application limit <33nF.",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "C6056",
+    "value": "1n 100V C0G",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "EWG_MOTOR_B",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Place output EMI capacitor at IC; Infineon application limit <33nF.",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "D6050",
+    "value": "SMCJ18CA",
+    "footprint": "Diode_SMD:D_SMC",
+    "pins": {
+      "1": "MOTOR24_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "18V standoff, 29.2V rated pulse clamp; input OV disconnect limits normal supply. Local regeneration/overshoot may exceed28V operating limit but must stay below40V ABSMAX. Energy/hot clamp not qualified.",
+    "sheet": "motor4/ewg"
+  },
+  {
+    "ref": "U6100",
+    "value": "TLE9201SG",
+    "footprint": "Package_SO:Infineon_PG-DSO-12-11_ThermalVias",
+    "pins": {
+      "1": "MOTOR3_DIR_FILTERED",
+      "2": "+3V3",
+      "3": "MOTOR3_SPI_SO",
+      "4": "MOTOR13_VS",
+      "5": "MOTOR3_MOTOR_A",
+      "6": "GND",
+      "7": "MOTOR3_MOTOR_B",
+      "8": "EWG_SPI_SO",
+      "9": "MOTOR_CS_N",
+      "10": "MOTOR_SPI_SCK",
+      "11": "MOTOR3_DIS_GATED",
+      "12": "MOTOR3_PWM_FILTERED",
+      "13": "GND"
+    },
+    "dnp": false,
+    "note": "Infineon Rev1.0 p4: pin13 here denotes exposed ground slug. PG-DSO-12-17 dimensions checked against KiCad PG-DSO-12-11 land pattern; see checks.",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "U6101",
+    "value": "SN74LVC1G32QDBVRQ1",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+    "pins": {
+      "1": "HW_ACTUATOR_ENABLE_N",
+      "2": "MOTOR3_DISABLE",
+      "3": "GND",
+      "4": "MOTOR3_DIS_GATED",
+      "5": "+3V3"
+    },
+    "dnp": false,
+    "note": "High means DISABLE. Either global latch or per-channel command forces both bridge outputs off; reset defaults are high.",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "R6100",
+    "value": "100R",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR3_PWM",
+      "2": "MOTOR3_PWM_FILTERED"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "R6101",
+    "value": "100R",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR3_DIR",
+      "2": "MOTOR3_DIR_FILTERED"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "R6102",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR3_PWM_FILTERED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "R6103",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR3_DIR_FILTERED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "R6104",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR3_DISABLE",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "R6105",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR3_DIS_GATED",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "C6100",
+    "value": "100n 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "C6101",
+    "value": "100n 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "C6102",
+    "value": "100n 50V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR13_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "C6103",
+    "value": "1u 50V X7R",
+    "footprint": "Capacitor_SMD:C_1206_3216Metric",
+    "pins": {
+      "1": "MOTOR13_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "C6104",
+    "value": "100u 50V low ESR",
+    "footprint": "Capacitor_SMD:CP_Elec_10x10.5",
+    "pins": {
+      "1": "MOTOR13_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Bulk capacitor exact MPN, cold ESR/ripple and height not qualified.",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "C6105",
+    "value": "1n 100V C0G",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR3_MOTOR_A",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Place output EMI capacitor at IC; Infineon application limit <33nF.",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "C6106",
+    "value": "1n 100V C0G",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR3_MOTOR_B",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Place output EMI capacitor at IC; Infineon application limit <33nF.",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "D6100",
+    "value": "SMCJ18CA",
+    "footprint": "Diode_SMD:D_SMC",
+    "pins": {
+      "1": "MOTOR13_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "18V standoff, 29.2V rated pulse clamp; input OV disconnect limits normal supply. Local regeneration/overshoot may exceed28V operating limit but must stay below40V ABSMAX. Energy/hot clamp not qualified.",
+    "sheet": "motor4/motor3"
+  },
+  {
+    "ref": "U6150",
+    "value": "TLE9201SG",
+    "footprint": "Package_SO:Infineon_PG-DSO-12-11_ThermalVias",
+    "pins": {
+      "1": "MOTOR4_DIR_FILTERED",
+      "2": "+3V3",
+      "3": "MOTOR4_SPI_SO",
+      "4": "MOTOR24_VS",
+      "5": "MOTOR4_MOTOR_A",
+      "6": "GND",
+      "7": "MOTOR4_MOTOR_B",
+      "8": "MOTOR3_SPI_SO",
+      "9": "MOTOR_CS_N",
+      "10": "MOTOR_SPI_SCK",
+      "11": "MOTOR4_DIS_GATED",
+      "12": "MOTOR4_PWM_FILTERED",
+      "13": "GND"
+    },
+    "dnp": false,
+    "note": "Infineon Rev1.0 p4: pin13 here denotes exposed ground slug. PG-DSO-12-17 dimensions checked against KiCad PG-DSO-12-11 land pattern; see checks.",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "U6151",
+    "value": "SN74LVC1G32QDBVRQ1",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+    "pins": {
+      "1": "HW_ACTUATOR_ENABLE_N",
+      "2": "MOTOR4_DISABLE",
+      "3": "GND",
+      "4": "MOTOR4_DIS_GATED",
+      "5": "+3V3"
+    },
+    "dnp": false,
+    "note": "High means DISABLE. Either global latch or per-channel command forces both bridge outputs off; reset defaults are high.",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "R6150",
+    "value": "100R",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR4_PWM",
+      "2": "MOTOR4_PWM_FILTERED"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "R6151",
+    "value": "100R",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR4_DIR",
+      "2": "MOTOR4_DIR_FILTERED"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "R6152",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR4_PWM_FILTERED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "R6153",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR4_DIR_FILTERED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "R6154",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR4_DISABLE",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "R6155",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR4_DIS_GATED",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "C6150",
+    "value": "100n 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "C6151",
+    "value": "100n 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "C6152",
+    "value": "100n 50V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR24_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "C6153",
+    "value": "1u 50V X7R",
+    "footprint": "Capacitor_SMD:C_1206_3216Metric",
+    "pins": {
+      "1": "MOTOR24_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "C6154",
+    "value": "100u 50V low ESR",
+    "footprint": "Capacitor_SMD:CP_Elec_10x10.5",
+    "pins": {
+      "1": "MOTOR24_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Bulk capacitor exact MPN, cold ESR/ripple and height not qualified.",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "C6155",
+    "value": "1n 100V C0G",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR4_MOTOR_A",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Place output EMI capacitor at IC; Infineon application limit <33nF.",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "C6156",
+    "value": "1n 100V C0G",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR4_MOTOR_B",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Place output EMI capacitor at IC; Infineon application limit <33nF.",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "D6150",
+    "value": "SMCJ18CA",
+    "footprint": "Diode_SMD:D_SMC",
+    "pins": {
+      "1": "MOTOR24_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "18V standoff, 29.2V rated pulse clamp; input OV disconnect limits normal supply. Local regeneration/overshoot may exceed28V operating limit but must stay below40V ABSMAX. Energy/hot clamp not qualified.",
+    "sheet": "motor4/motor4"
+  },
+  {
+    "ref": "U6190",
+    "value": "SN74LVC1G125QDBVRQ1",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+    "pins": {
+      "1": "MOTOR_CS_N",
+      "2": "MOTOR4_SPI_SO",
+      "3": "GND",
+      "4": "MOTOR_MISO_BUFFERED",
+      "5": "+3V3"
+    },
+    "dnp": false,
+    "note": "Extra explicit MISO isolation. TLE SO is tri-state at CSN high; asynchronous fault flag exists while CSN low before first clock, per Infineon4.12.1.",
+    "sheet": "motor4/spi"
+  },
+  {
+    "ref": "R6190",
+    "value": "47R",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "GDI_SPI2_MOSI",
+      "2": "MOTOR_SPI_SI"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/spi"
+  },
+  {
+    "ref": "R6191",
+    "value": "47R",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "GDI_SPI2_SCK",
+      "2": "MOTOR_SPI_SCK"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/spi"
+  },
+  {
+    "ref": "R6192",
+    "value": "47R",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR_MISO_BUFFERED",
+      "2": "GDI_SPI2_MISO"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/spi"
+  },
+  {
+    "ref": "R6193",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR_CS_N",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/spi"
+  },
+  {
+    "ref": "R6194",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "HW_ACTUATOR_ENABLE_N",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/spi"
+  },
+  {
+    "ref": "R6195",
+    "value": "100k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR4_SPI_SO",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/spi"
+  },
+  {
+    "ref": "C6190",
+    "value": "100n 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/spi"
+  },
+  {
+    "ref": "Q6200",
+    "value": "IPD90N10S4-06",
+    "footprint": "Package_TO_SOT_SMD:TO-252-2",
+    "pins": {
+      "1": "MOTOR13_DGATE",
+      "2": "MOTOR13_MID",
+      "3": "VBAT_DBW_FUSED"
+    },
+    "dnp": false,
+    "note": "Common drain reverse blocking FET, source=input. Exact 100V variant as existing GDI protection.",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "Q6201",
+    "value": "IPD90N10S4-06",
+    "footprint": "Package_TO_SOT_SMD:TO-252-2",
+    "pins": {
+      "1": "MOTOR13_HGATE",
+      "2": "MOTOR13_MID",
+      "3": "MOTOR13_VS"
+    },
+    "dnp": false,
+    "note": "Common drain output disconnect FET. Startup hot SOA and total motor bulk must be checked.",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "U6200",
+    "value": "LM74800QDRRRQ1",
+    "footprint": "Power8GDI_Motor4:LM74800_DRR0012E",
+    "pins": {
+      "1": "MOTOR13_DGATE",
+      "2": "VBAT_DBW_FUSED",
+      "3": "VBAT_DBW_FUSED",
+      "4": "MOTOR13_SW",
+      "5": "MOTOR13_OV",
+      "6": "MOTOR13_POWER_EN",
+      "7": "GND",
+      "8": "MOTOR13_HGATE",
+      "9": "MOTOR13_VS",
+      "10": "MOTOR13_MID",
+      "11": "MOTOR13_CAP",
+      "12": "MOTOR13_MID",
+      "13": null
+    },
+    "dnp": false,
+    "note": "TI SNOSD95C common-drain reference; mirrored existing GDI protection22d5fff. EP is electrically floating.",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "D6200",
+    "value": "SMCJ33CA",
+    "footprint": "Diode_SMD:D_SMC",
+    "pins": {
+      "1": "VBAT_DBW_FUSED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Input surge clamp53.3V at ratedpulse current, undercontroller65V limit. Hot clamp/pulseenergy/fuse coordination pending.",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "C6200",
+    "value": "100n 100V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR13_MID",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "R6200",
+    "value": "140k 0.1%",
+    "footprint": "Resistor_SMD:R_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR13_SW",
+      "2": "MOTOR13_OV"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "R6201",
+    "value": "10k 0.1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR13_OV",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "R6202",
+    "value": "1k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "HW_ACTUATOR_ENABLE",
+      "2": "MOTOR13_POWER_EN"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "R6203",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR13_POWER_EN",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "R6204",
+    "value": "1M",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR13_DGATE",
+      "2": "VBAT_DBW_FUSED"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "R6205",
+    "value": "1M",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR13_HGATE",
+      "2": "MOTOR13_VS"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "C6201",
+    "value": "100n 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR13_CAP",
+      "2": "MOTOR13_MID"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "C6202",
+    "value": "100n 100V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "VBAT_DBW_FUSED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "C6203",
+    "value": "100n 50V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR13_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "R6206",
+    "value": "1k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR13_HGATE",
+      "2": "MOTOR13_SLEW"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "C6204",
+    "value": "22n 100V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR13_SLEW",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "R6207",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR13_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor13_power"
+  },
+  {
+    "ref": "Q6250",
+    "value": "IPD90N10S4-06",
+    "footprint": "Package_TO_SOT_SMD:TO-252-2",
+    "pins": {
+      "1": "MOTOR24_DGATE",
+      "2": "MOTOR24_MID",
+      "3": "VBAT_EWG_FUSED"
+    },
+    "dnp": false,
+    "note": "Common drain reverse blocking FET, source=input. Exact 100V variant as existing GDI protection.",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "Q6251",
+    "value": "IPD90N10S4-06",
+    "footprint": "Package_TO_SOT_SMD:TO-252-2",
+    "pins": {
+      "1": "MOTOR24_HGATE",
+      "2": "MOTOR24_MID",
+      "3": "MOTOR24_VS"
+    },
+    "dnp": false,
+    "note": "Common drain output disconnect FET. Startup hot SOA and total motor bulk must be checked.",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "U6250",
+    "value": "LM74800QDRRRQ1",
+    "footprint": "Power8GDI_Motor4:LM74800_DRR0012E",
+    "pins": {
+      "1": "MOTOR24_DGATE",
+      "2": "VBAT_EWG_FUSED",
+      "3": "VBAT_EWG_FUSED",
+      "4": "MOTOR24_SW",
+      "5": "MOTOR24_OV",
+      "6": "MOTOR24_POWER_EN",
+      "7": "GND",
+      "8": "MOTOR24_HGATE",
+      "9": "MOTOR24_VS",
+      "10": "MOTOR24_MID",
+      "11": "MOTOR24_CAP",
+      "12": "MOTOR24_MID",
+      "13": null
+    },
+    "dnp": false,
+    "note": "TI SNOSD95C common-drain reference; mirrored existing GDI protection22d5fff. EP is electrically floating.",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "D6250",
+    "value": "SMCJ33CA",
+    "footprint": "Diode_SMD:D_SMC",
+    "pins": {
+      "1": "VBAT_EWG_FUSED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Input surge clamp53.3V at ratedpulse current, undercontroller65V limit. Hot clamp/pulseenergy/fuse coordination pending.",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "C6250",
+    "value": "100n 100V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR24_MID",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "R6250",
+    "value": "140k 0.1%",
+    "footprint": "Resistor_SMD:R_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR24_SW",
+      "2": "MOTOR24_OV"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "R6251",
+    "value": "10k 0.1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR24_OV",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "R6252",
+    "value": "1k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "HW_ACTUATOR_ENABLE",
+      "2": "MOTOR24_POWER_EN"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "R6253",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR24_POWER_EN",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "R6254",
+    "value": "1M",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR24_DGATE",
+      "2": "VBAT_EWG_FUSED"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "R6255",
+    "value": "1M",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR24_HGATE",
+      "2": "MOTOR24_VS"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "C6251",
+    "value": "100n 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR24_CAP",
+      "2": "MOTOR24_MID"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "C6252",
+    "value": "100n 100V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "VBAT_EWG_FUSED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "C6253",
+    "value": "100n 50V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR24_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "R6256",
+    "value": "1k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR24_HGATE",
+      "2": "MOTOR24_SLEW"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "C6254",
+    "value": "22n 100V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "MOTOR24_SLEW",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor24_power"
+  },
+  {
+    "ref": "R6257",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "MOTOR24_VS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "motor4/motor24_power"
+  }
+]

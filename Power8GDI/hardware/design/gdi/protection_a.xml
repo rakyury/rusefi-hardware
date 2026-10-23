@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/src/Power8GDI/hardware/design/gdi/protection_a.kicad_sch</source>
+    <date>2026-10-23T18:13:24+0000</date>
+    <tool>Eeschema 9.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>GDI bank A: protected battery feed</title>
+        <company/>
+        <rev>Engineering draft 0.1</rev>
+        <date/>
+        <source>protection_a.kicad_sch</source>
+        <comment number="1" value="UNQUALIFIED: no manufacturing or engine approval"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C5001">
+      <value>100n 100V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note">Place adjacent to VS/GND pins.</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_C" description=""/>
+      <property name="Design note" value="Place adjacent to VS/GND pins."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>40c55398-bdc5-504e-af65-9f5a342d1eef</tstamps>
+    </comp>
+    <comp ref="C5002">
+      <value>100n 25V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note">Required charge-pump capacitor CAP-to-VS, never CAP-to-GND</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_C" description=""/>
+      <property name="Design note" value="Required charge-pump capacitor CAP-to-VS, never CAP-to-GND"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4d11c443-4d5a-51f3-8972-d62ca94f95a2</tstamps>
+    </comp>
+    <comp ref="C5003">
+      <value>100n 100V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note">Input bypass at protection entry</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_C" description=""/>
+      <property name="Design note" value="Input bypass at protection entry"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5f2721b6-49b4-5704-b6ab-86d241922004</tstamps>
+    </comp>
+    <comp ref="C5004">
+      <value>100n 50V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note">Protected output bypass; existing GDI bulk retained</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_C" description=""/>
+      <property name="Design note" value="Protected output bypass; existing GDI bulk retained"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>eff82e96-f770-5915-8258-0ee9c391487d</tstamps>
+    </comp>
+    <comp ref="C5005">
+      <value>22n 100V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note">Soft-start candidate: ramp and hot MOSFET SOA must use actual downstream capacitance</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_C" description=""/>
+      <property name="Design note" value="Soft-start candidate: ramp and hot MOSFET SOA must use actual downstream capacitance"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f218eb54-6dd2-50f8-be21-6836cf016f64</tstamps>
+    </comp>
+    <comp ref="D5001">
+      <value>SMCJ33CA</value>
+      <footprint>Diode_SMD:D_SMC</footprint>
+      <fields>
+        <field name="Design note">Bidirectional TVS candidate. Surge energy/hot clamp/fuse coordination must be qualified.</field>
+        <field name="Footprint">Diode_SMD:D_SMC</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_TVS_BIDIR" description=""/>
+      <property name="Design note" value="Bidirectional TVS candidate. Surge energy/hot clamp/fuse coordination must be qualified."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>259b3f45-0cd5-5895-be4f-52c87b226a60</tstamps>
+    </comp>
+    <comp ref="Q5001">
+      <value>IPD90N10S4-06</value>
+      <footprint>Package_TO_SOT_SMD:TO-252-2</footprint>
+      <fields>
+        <field name="Design note">Input blocking FET. Source=input; drain/tab=common-drain midpoint. 100V, +/-20V VGS.</field>
+        <field name="Footprint">Package_TO_SOT_SMD:TO-252-2</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="IPD90N10S4_06" description=""/>
+      <property name="Design note" value="Input blocking FET. Source=input; drain/tab=common-drain midpoint. 100V, +/-20V VGS."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3445f560-412f-5f74-a702-d8f9e1e47ffd</tstamps>
+    </comp>
+    <comp ref="Q5002">
+      <value>IPD90N10S4-06</value>
+      <footprint>Package_TO_SOT_SMD:TO-252-2</footprint>
+      <fields>
+        <field name="Design note">Output disconnect FET. Source=protected output; drain/tab=midpoint. Hot SOA remains a gate.</field>
+        <field name="Footprint">Package_TO_SOT_SMD:TO-252-2</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="IPD90N10S4_06" description=""/>
+      <property name="Design note" value="Output disconnect FET. Source=protected output; drain/tab=midpoint. Hot SOA remains a gate."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>27a9a22a-6fe2-5ef0-acad-54404f8b961f</tstamps>
+    </comp>
+    <comp ref="R5001">
+      <value>140k 0.1%</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note">OV upper divider; use &gt;=75V rated 0805</field>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_R" description=""/>
+      <property name="Design note" value="OV upper divider; use &gt;=75V rated 0805"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fba4b781-3377-5c47-9bcc-956e2a9617d3</tstamps>
+    </comp>
+    <comp ref="R5002">
+      <value>10k 0.1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">OV nominal18.465V; conservative static bound17.864..19.075V including R(SW),200nA bias and divider tolerance</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_R" description=""/>
+      <property name="Design note" value="OV nominal18.465V; conservative static bound17.864..19.075V including R(SW),200nA bias and divider tolerance"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ab9aa0f6-c702-57ed-90ae-d99aa944019f</tstamps>
+    </comp>
+    <comp ref="R5003">
+      <value>1k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Hardware latch powers bank for configuration before per-bank DRVEN request</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_R" description=""/>
+      <property name="Design note" value="Hardware latch powers bank for configuration before per-bank DRVEN request"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a9561d77-91ab-532d-83e9-74b8c158175b</tstamps>
+    </comp>
+    <comp ref="R5004">
+      <value>10k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Default off; external enable low must meet &lt;=0.3V shutdown requirement</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_R" description=""/>
+      <property name="Design note" value="Default off; external enable low must meet &lt;=0.3V shutdown requirement"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>42bf087c-9546-5d59-a7ba-d78bf4cf0983</tstamps>
+    </comp>
+    <comp ref="R5005">
+      <value>1M 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">DGATE-source fallback; ~13uA when on</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_R" description=""/>
+      <property name="Design note" value="DGATE-source fallback; ~13uA when on"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>330ff25f-e739-54c0-9d97-d9027a24ff7b</tstamps>
+    </comp>
+    <comp ref="R5006">
+      <value>1M 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">HGATE-source fallback; adds load to55uA nominal source</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_R" description=""/>
+      <property name="Design note" value="HGATE-source fallback; adds load to55uA nominal source"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2360e510-42e8-5181-ba1f-a5dbefeaf392</tstamps>
+    </comp>
+    <comp ref="R5007">
+      <value>1k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">TI figure9-3 series resistor improves HGATE turnoff</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_R" description=""/>
+      <property name="Design note" value="TI figure9-3 series resistor improves HGATE turnoff"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a46f5647-e488-50fc-acfc-6ee74e3c050e</tstamps>
+    </comp>
+    <comp ref="R5008">
+      <value>10k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Input-bulk bleed; does not discharge boosted rail or guarantee safe touch</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="GDI_PROT_R" description=""/>
+      <property name="Design note" value="Input-bulk bleed; does not discharge boosted rail or guarantee safe touch"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a3a2073a-55a7-5df4-a58f-eef6aceffe33</tstamps>
+    </comp>
+    <comp ref="U5001">
+      <value>LM74800QDRRRQ1</value>
+      <footprint>Power8GDI_GDIProtection:LM74800_DRR0012E</footprint>
+      <fields>
+        <field name="Design note">TI SNOSD95C table6-1: exposed thermal pad floating, not GND. Common-drain topology.</field>
+        <field name="Footprint">Power8GDI_GDIProtection:LM74800_DRR0012E</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDIProtection" part="LM74800QDRRRQ1" description=""/>
+      <property name="Design note" value="TI SNOSD95C table6-1: exposed thermal pad floating, not GND. Common-drain topology."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="protection_a.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a7725634-5c90-5128-af1f-a8233f75c5d4</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Power8GDI_GDIProtection" part="GDI_PROT_C">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">GDI_PROT_C</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_GDIProtection" part="GDI_PROT_R">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">GDI_PROT_R</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_GDIProtection" part="GDI_PROT_TVS_BIDIR">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">GDI_PROT_TVS_BIDIR</field>
+        <field name="Footprint">Diode_SMD:D_SMC</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_GDIProtection" part="IPD90N10S4_06">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">IPD90N10S4_06</field>
+        <field name="Footprint">Package_TO_SOT_SMD:TO-252-2</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="D_TAB" type="passive"/>
+        <pin num="3" name="S" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_GDIProtection" part="LM74800QDRRRQ1">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">LM74800QDRRRQ1</field>
+        <field name="Footprint">Power8GDI_GDIProtection:LM74800_DRR0012E</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="DGATE" type="output"/>
+        <pin num="2" name="A" type="input"/>
+        <pin num="3" name="VSNS" type="input"/>
+        <pin num="4" name="SW" type="passive"/>
+        <pin num="5" name="OV" type="input"/>
+        <pin num="6" name="EN/UVLO" type="input"/>
+        <pin num="7" name="GND" type="power_in"/>
+        <pin num="8" name="HGATE" type="output"/>
+        <pin num="9" name="OUT" type="input"/>
+        <pin num="10" name="VS" type="power_in"/>
+        <pin num="11" name="CAP" type="output"/>
+        <pin num="12" name="C" type="input"/>
+        <pin num="13" name="EP_FLOAT" type="no_connect"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Power8GDI_GDIProtection">
+      <uri>/src/Power8GDI/hardware/design/gdi/Power8GDI_GDIProtection.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="GDI_A_CAP" class="Default">
+      <node ref="C5002" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5001" pin="11" pinfunction="CAP" pintype="output"/>
+    </net>
+    <net code="2" name="GDI_A_DGATE" class="Default">
+      <node ref="Q5001" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R5005" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5001" pin="1" pinfunction="DGATE" pintype="output"/>
+    </net>
+    <net code="3" name="GDI_A_HGATE" class="Default">
+      <node ref="Q5002" pin="1" pinfunction="G" pintype="input"/>
+      <node ref="R5006" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5007" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5001" pin="8" pinfunction="HGATE" pintype="output"/>
+    </net>
+    <net code="4" name="GDI_A_MID" class="Default">
+      <node ref="C5001" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5002" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="Q5001" pin="2" pinfunction="D_TAB" pintype="passive"/>
+      <node ref="Q5002" pin="2" pinfunction="D_TAB" pintype="passive"/>
+      <node ref="U5001" pin="10" pinfunction="VS" pintype="power_in"/>
+      <node ref="U5001" pin="12" pinfunction="C" pintype="input"/>
+    </net>
+    <net code="5" name="GDI_A_OV" class="Default">
+      <node ref="R5001" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5002" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5001" pin="5" pinfunction="OV" pintype="input"/>
+    </net>
+    <net code="6" name="GDI_A_POWER_EN" class="Default">
+      <node ref="R5003" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5004" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5001" pin="6" pinfunction="EN/UVLO" pintype="input"/>
+    </net>
+    <net code="7" name="GDI_A_SLEW" class="Default">
+      <node ref="C5005" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5007" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="8" name="GDI_A_SW" class="Default">
+      <node ref="R5001" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5001" pin="4" pinfunction="SW" pintype="passive"/>
+    </net>
+    <net code="9" name="GND" class="Default">
+      <node ref="C5001" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5003" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5004" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5005" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="D5001" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5002" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5004" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5008" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U5001" pin="7" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="10" name="HW_ACTUATOR_ENABLE" class="Default">
+      <node ref="R5003" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="11" name="VBAT_GDI_A" class="Default">
+      <node ref="C5004" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="Q5002" pin="3" pinfunction="S" pintype="passive"/>
+      <node ref="R5006" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5008" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5001" pin="9" pinfunction="OUT" pintype="input"/>
+    </net>
+    <net code="12" name="VBAT_GDI_A_FUSED" class="Default">
+      <node ref="C5003" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="D5001" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="Q5001" pin="3" pinfunction="S" pintype="passive"/>
+      <node ref="R5005" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U5001" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U5001" pin="3" pinfunction="VSNS" pintype="input"/>
+    </net>
+    <net code="13" name="unconnected-(U5001-EP_FLOAT-Pad13)" class="Default">
+      <node ref="U5001" pin="13" pinfunction="EP_FLOAT" pintype="no_connect"/>
+    </net>
+  </nets>
+</export>

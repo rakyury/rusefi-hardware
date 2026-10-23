@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/src/Power8GDI/hardware/design/interfaces/sensor_power.kicad_sch</source>
+    <date>2026-10-23T18:13:23+0000</date>
+    <tool>Eeschema 9.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Dual sensor trackers and star returns</title>
+        <company/>
+        <rev>Engineering draft 0.1</rev>
+        <date/>
+        <source>sensor_power.kicad_sch</source>
+        <comment number="1" value="UNQUALIFIED: no manufacturing or engine approval"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1530">
+      <value>1u 50V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>26095127-3e80-57a6-a6bb-f8328b587953</tstamps>
+    </comp>
+    <comp ref="C1531">
+      <value>100n 50V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bf6ab7f0-c415-5265-894c-088e8748e4dc</tstamps>
+    </comp>
+    <comp ref="C1532">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">ADJ reference bypass close to pin5</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="ADJ reference bypass close to pin5"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5e0a6ff1-d592-5d34-a4d0-ab4a46a9424d</tstamps>
+    </comp>
+    <comp ref="C1533">
+      <value>22u 50V X7R</value>
+      <footprint>Capacitor_SMD:C_1210_3225Metric</footprint>
+      <fields>
+        <field name="Design note">Require effective &gt;=10uF at voltage/temp/tolerance, ESR1mohm..20ohm; 50V withstands output short-to-battery. Exact MPN not frozen</field>
+        <field name="Footprint">Capacitor_SMD:C_1210_3225Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="Require effective &gt;=10uF at voltage/temp/tolerance, ESR1mohm..20ohm; 50V withstands output short-to-battery. Exact MPN not frozen"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c0ba9efe-749f-5336-8ffe-7db20af8b4a4</tstamps>
+    </comp>
+    <comp ref="C1534">
+      <value>100n 50V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>28026025-3e91-5e77-a4e3-132857dc468a</tstamps>
+    </comp>
+    <comp ref="C1535">
+      <value>1u 50V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f436261d-dc1b-587d-82c6-edf999f7a584</tstamps>
+    </comp>
+    <comp ref="C1536">
+      <value>100n 50V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f2f20306-741f-5925-9bfd-8bf4317e4034</tstamps>
+    </comp>
+    <comp ref="C1537">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">ADJ reference bypass close to pin5</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="ADJ reference bypass close to pin5"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1adb7b6c-8afb-51b0-8874-3300a0c2ec2b</tstamps>
+    </comp>
+    <comp ref="C1538">
+      <value>22u 50V X7R</value>
+      <footprint>Capacitor_SMD:C_1210_3225Metric</footprint>
+      <fields>
+        <field name="Design note">Require effective &gt;=10uF at voltage/temp/tolerance, ESR1mohm..20ohm; 50V withstands output short-to-battery. Exact MPN not frozen</field>
+        <field name="Footprint">Capacitor_SMD:C_1210_3225Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value="Require effective &gt;=10uF at voltage/temp/tolerance, ESR1mohm..20ohm; 50V withstands output short-to-battery. Exact MPN not frozen"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9afe2604-4767-54d8-8784-9200cb453ab6</tstamps>
+    </comp>
+    <comp ref="C1539">
+      <value>100n 50V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <property name="ki_fp_filters" value="C_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>17b51c5a-af05-572a-86e3-db502000a189</tstamps>
+    </comp>
+    <comp ref="D1530">
+      <value>STPS2H100UY</value>
+      <footprint>Diode_SMD:D_SMB</footprint>
+      <fields>
+        <field name="Design note">Anode shared protected battery, cathode trackerIN. Isolates shared rail during TPS7B4253 short-to-battery detection latency</field>
+        <field name="Footprint">Diode_SMD:D_SMB</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="D_Schottky" description="Schottky diode"/>
+      <property name="Design note" value="Anode shared protected battery, cathode trackerIN. Isolates shared rail during TPS7B4253 short-to-battery detection latency"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="diode Schottky"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e414d6de-4799-5a60-bb87-22e46c4c92b9</tstamps>
+    </comp>
+    <comp ref="D1531">
+      <value>STPS2H100UY</value>
+      <footprint>Diode_SMD:D_SMB</footprint>
+      <fields>
+        <field name="Design note">Anode shared protected battery, cathode trackerIN. Isolates shared rail during TPS7B4253 short-to-battery detection latency</field>
+        <field name="Footprint">Diode_SMD:D_SMB</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="D_Schottky" description="Schottky diode"/>
+      <property name="Design note" value="Anode shared protected battery, cathode trackerIN. Isolates shared rail during TPS7B4253 short-to-battery detection latency"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="diode Schottky"/>
+      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6739ea6a-25cf-56f1-b08f-93e3e1d20f61</tstamps>
+    </comp>
+    <comp ref="R1530">
+      <value>0R star return</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note">Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse</field>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0613166d-5e95-54ab-8bdf-9994daa6d88f</tstamps>
+    </comp>
+    <comp ref="R1531">
+      <value>0R star return</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note">Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse</field>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c1b56996-d733-5d67-b8a9-bdb57754729f</tstamps>
+    </comp>
+    <comp ref="R1532">
+      <value>0R star return</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note">Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse</field>
+        <field name="Footprint">Resistor_SMD:R_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
+      <property name="Design note" value="Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ea6bd20c-693c-5e8c-af2f-9ba0ac190f51</tstamps>
+    </comp>
+    <comp ref="U1530">
+      <value>TPS7B4253QDDARQ1</value>
+      <footprint>Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02</footprint>
+      <fields>
+        <field name="Design note">TI SLVSCP3D unity tracking. 300mA silicon rating is NOT permitted harness load. FB=OUT; ADJ draws &lt;=5.5uA. EP copper+thermal vias review required</field>
+        <field name="Footprint">Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Interface_TPS7B4253DDA" description=""/>
+      <property name="Design note" value="TI SLVSCP3D unity tracking. 300mA silicon rating is NOT permitted harness load. FB=OUT; ADJ draws &lt;=5.5uA. EP copper+thermal vias review required"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c397ac81-197c-52e0-b098-56d403cd75cb</tstamps>
+    </comp>
+    <comp ref="U1531">
+      <value>TPS7B4253QDDARQ1</value>
+      <footprint>Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02</footprint>
+      <fields>
+        <field name="Design note">TI SLVSCP3D unity tracking. 300mA silicon rating is NOT permitted harness load. FB=OUT; ADJ draws &lt;=5.5uA. EP copper+thermal vias review required</field>
+        <field name="Footprint">Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Core" part="Interface_TPS7B4253DDA" description=""/>
+      <property name="Design note" value="TI SLVSCP3D unity tracking. 300mA silicon rating is NOT permitted harness load. FB=OUT; ADJ draws &lt;=5.5uA. EP copper+thermal vias review required"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="sensor_power.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>250e7222-24e0-5d7b-98a0-74655ac30b4b</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Power8GDI_Core" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Unpolarized capacitor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="D_Schottky">
+      <description>Schottky diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Schottky</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Schottky diode</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="Interface_TPS7B4253DDA">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">Interface_TPS7B4253DDA</field>
+        <field name="Footprint">Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="OUT" type="power_out"/>
+        <pin num="2" name="NC" type="no_connect"/>
+        <pin num="3" name="GND3" type="power_in"/>
+        <pin num="4" name="FB" type="input"/>
+        <pin num="5" name="ADJ" type="input"/>
+        <pin num="6" name="GND6" type="power_in"/>
+        <pin num="7" name="NC" type="no_connect"/>
+        <pin num="8" name="IN" type="power_in"/>
+        <pin num="9" name="EP_GND" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Core" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+        <field name="Footprint"/>
+        <field name="Datasheet">~</field>
+        <field name="Description">Resistor</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Power8GDI_Core">
+      <uri>/src/Power8GDI/hardware/design/interfaces/interfaces.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+5V_CORE" class="Default">
+      <node ref="C1532" pin="1" pintype="passive"/>
+      <node ref="C1537" pin="1" pintype="passive"/>
+      <node ref="U1530" pin="5" pinfunction="ADJ" pintype="input"/>
+      <node ref="U1531" pin="5" pinfunction="ADJ" pintype="input"/>
+    </net>
+    <net code="2" name="GND" class="Default">
+      <node ref="C1530" pin="2" pintype="passive"/>
+      <node ref="C1531" pin="2" pintype="passive"/>
+      <node ref="C1532" pin="2" pintype="passive"/>
+      <node ref="C1533" pin="2" pintype="passive"/>
+      <node ref="C1534" pin="2" pintype="passive"/>
+      <node ref="C1535" pin="2" pintype="passive"/>
+      <node ref="C1536" pin="2" pintype="passive"/>
+      <node ref="C1537" pin="2" pintype="passive"/>
+      <node ref="C1538" pin="2" pintype="passive"/>
+      <node ref="C1539" pin="2" pintype="passive"/>
+      <node ref="R1530" pin="2" pintype="passive"/>
+      <node ref="R1531" pin="2" pintype="passive"/>
+      <node ref="R1532" pin="2" pintype="passive"/>
+      <node ref="U1530" pin="3" pinfunction="GND3" pintype="power_in"/>
+      <node ref="U1530" pin="6" pinfunction="GND6" pintype="power_in"/>
+      <node ref="U1530" pin="9" pinfunction="EP_GND" pintype="power_in"/>
+      <node ref="U1531" pin="3" pinfunction="GND3" pintype="power_in"/>
+      <node ref="U1531" pin="6" pinfunction="GND6" pintype="power_in"/>
+      <node ref="U1531" pin="9" pinfunction="EP_GND" pintype="power_in"/>
+    </net>
+    <net code="3" name="HARNESS_SENSOR_GND_A" class="Default">
+      <node ref="R1530" pin="1" pintype="passive"/>
+    </net>
+    <net code="4" name="HARNESS_SENSOR_GND_B" class="Default">
+      <node ref="R1531" pin="1" pintype="passive"/>
+    </net>
+    <net code="5" name="HARNESS_SENSOR_GND_C" class="Default">
+      <node ref="R1532" pin="1" pintype="passive"/>
+    </net>
+    <net code="6" name="SENSOR_5V_A" class="Default">
+      <node ref="C1533" pin="1" pintype="passive"/>
+      <node ref="C1534" pin="1" pintype="passive"/>
+      <node ref="U1530" pin="1" pinfunction="OUT" pintype="power_out"/>
+      <node ref="U1530" pin="4" pinfunction="FB" pintype="input"/>
+    </net>
+    <net code="7" name="SENSOR_5V_B" class="Default">
+      <node ref="C1538" pin="1" pintype="passive"/>
+      <node ref="C1539" pin="1" pintype="passive"/>
+      <node ref="U1531" pin="1" pinfunction="OUT" pintype="power_out"/>
+      <node ref="U1531" pin="4" pinfunction="FB" pintype="input"/>
+    </net>
+    <net code="8" name="SENSOR_A_IN" class="Default">
+      <node ref="C1530" pin="1" pintype="passive"/>
+      <node ref="C1531" pin="1" pintype="passive"/>
+      <node ref="D1530" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="U1530" pin="8" pinfunction="IN" pintype="power_in"/>
+    </net>
+    <net code="9" name="SENSOR_B_IN" class="Default">
+      <node ref="C1535" pin="1" pintype="passive"/>
+      <node ref="C1536" pin="1" pintype="passive"/>
+      <node ref="D1531" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="U1531" pin="8" pinfunction="IN" pintype="power_in"/>
+    </net>
+    <net code="10" name="VBAT_LOGIC_PROTECTED" class="Default">
+      <node ref="D1530" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="D1531" pin="2" pinfunction="A" pintype="passive"/>
+    </net>
+  </nets>
+</export>

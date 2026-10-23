@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "project": "Power8GDI_Core",
+  "root_uuid": "f4d21065-0a5b-5086-a08e-1af9469f04bd",
+  "qualification": "BLOCKED_ENGINEERING_CANDIDATE",
+  "parts": [
+    {
+      "ref": "D502",
+      "value": "SMBJ24CA",
+      "footprint": "Diode_SMD:D_SMB",
+      "pins": {
+        "1": "VBAT_MAIN_FUSED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Littelfuse bidirectional 24 V standoff TVS;38.9V rated clamp at25C; pulse energy/fuse coordination and manufacturer grade not frozen",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "D501",
+      "value": "STPS2H100UY",
+      "footprint": "Diode_SMD:D_SMB",
+      "pins": {
+        "1": "VBAT_LOGIC_PROTECTED",
+        "2": "VBAT_MAIN_FUSED"
+      },
+      "dnp": false,
+      "note": "100 V 2 A automotive SMB: pin1 cathode to protected rail; pin2 anode to fused input",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "C501",
+      "value": "2.2u 100V X7R",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pins": {
+        "1": "VBAT_LOGIC_PROTECTED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "2 parallel input ceramics; require total effective capacitance >=2.2uF across qualified input range",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "C502",
+      "value": "2.2u 100V X7R",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pins": {
+        "1": "VBAT_LOGIC_PROTECTED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "C503",
+      "value": "47u 63V bulk",
+      "footprint": "Capacitor_SMD:CP_Elec_8x10",
+      "pins": {
+        "1": "VBAT_LOGIC_PROTECTED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Provisional 8x10mm aluminum damping capacitor: MPN, ESR, ripple current and -40C impedance require selection",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "U501",
+      "value": "LM5164QDDARQ1",
+      "footprint": "Power8GDI_Board:HSOP8_EP_ThermalVia0p3",
+      "pins": {
+        "1": "GND",
+        "2": "VBAT_LOGIC_PROTECTED",
+        "3": "BUCK_EN",
+        "4": "BUCK_RON",
+        "5": "BUCK_FB",
+        "6": "PGOOD_5V_CORE",
+        "7": "BUCK_BST",
+        "8": "BUCK_SW",
+        "9": "GND"
+      },
+      "dnp": false,
+      "note": "TI DDA8 + exposed thermal pad9. EP tied GND; use close input/boot loops, Kelvin feedback ground.",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "C504",
+      "value": "2.2n 50V X7R 5%",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "BUCK_BST",
+        "2": "BUCK_SW"
+      },
+      "dnp": false,
+      "note": "TI allowable external bootstrap capacitance1.5..2.5nF;5% nominal chosen",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "L501",
+      "value": "MSS1246T-473MLC",
+      "footprint": "Inductor_SMD:L_Coilcraft_MSS1246T-XXX",
+      "pins": {
+        "1": "BUCK_SW",
+        "2": "+5V_CORE"
+      },
+      "dnp": false,
+      "note": "47uH20%;2.7A at10% inductance drop,1.5A Irms20C rise at25C per Coilcraft; hot derating pending",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "R501",
+      "value": "453k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VBAT_LOGIC_PROTECTED",
+        "2": "BUCK_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "R502",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "BUCK_EN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "R503",
+      "value": "41.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "BUCK_RON",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "R504",
+      "value": "158k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "BUCK_FB"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "R505",
+      "value": "49.9k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "BUCK_FB",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "C505",
+      "value": "22u 25V X7R",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Output ceramic voltage derating/MPN must be verified; evaluate load transient with actual effective Cout",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "C506",
+      "value": "22u 25V X7R",
+      "footprint": "Capacitor_SMD:C_1210_3225Metric",
+      "pins": {
+        "1": "+5V_CORE",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "R506",
+      "value": "110k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "BUCK_SW",
+        "2": "BUCK_RIPPLE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "C507",
+      "value": "3.3n 50V C0G 5%",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "BUCK_RIPPLE",
+        "2": "+5V_CORE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "C508",
+      "value": "220p 50V C0G 5%",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "BUCK_RIPPLE",
+        "2": "BUCK_FB"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "power_input/power_input"
+    },
+    {
+      "ref": "R507",
+      "value": "47k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "PGOOD_5V_CORE"
+      },
+      "dnp": false,
+      "note": "PGOOD open-drain pullup to3.3V; read only when3.3V valid; no automatic power-output enable",
+      "sheet": "power_input/power_input"
+    }
+  ],
+  "electrical_assumptions": {
+    "rail": "12 V nominal",
+    "output_target_a": 0.8,
+    "current_limit_min_peak_a": 1.25,
+    "actuator_feed_supported": false,
+    "ideal_output_v": 4.999599198396793,
+    "nominal_switching_khz": 303.37373776679567,
+    "uvlo_rising_nominal_protected_v": 8.295,
+    "uvlo_rising_conservative_max_protected_v": 8.713348484848487,
+    "uvlo_falling_min_protected_v": 7.34440099009901,
+    "ca_min_pf": 869.1983122362872,
+    "cb_min_pf_for_75us": 158.22784810126583,
+    "samples": [
+      {
+        "vin_protected_v": 7.344,
+        "ripple_current_nominal_a": 0.11193310275118451,
+        "peak_current_at_0p8a_nominal_a": 0.8559665513755923,
+        "peak_current_at_0p8a_lminus20pct_a": 0.8699581892194903,
+        "fb_injection_nominal_mv": 14.492715783211215
+      },
+      {
+        "vin_protected_v": 8.295,
+        "ripple_current_nominal_a": 0.13930002747212716,
+        "peak_current_at_0p8a_nominal_a": 0.8696500137360637,
+        "peak_current_at_0p8a_lminus20pct_a": 0.8870625171700796,
+        "fb_injection_nominal_mv": 18.036091711267147
+      },
+      {
+        "vin_protected_v": 12.0,
+        "ripple_current_nominal_a": 0.20455071845819303,
+        "peak_current_at_0p8a_nominal_a": 0.9022753592290965,
+        "peak_current_at_0p8a_lminus20pct_a": 0.9278441990363707,
+        "fb_injection_nominal_mv": 26.48452828522058
+      },
+      {
+        "vin_protected_v": 16.0,
+        "ripple_current_nominal_a": 0.24107261331172986,
+        "peak_current_at_0p8a_nominal_a": 0.9205363066558649,
+        "peak_current_at_0p8a_lminus20pct_a": 0.9506703833198312,
+        "fb_injection_nominal_mv": 31.2132584728686
+      },
+      {
+        "vin_protected_v": 24.0,
+        "ripple_current_nominal_a": 0.27759450816526676,
+        "peak_current_at_0p8a_nominal_a": 0.9387972540826335,
+        "peak_current_at_0p8a_lminus20pct_a": 0.9734965676032917,
+        "fb_injection_nominal_mv": 35.94198866051662
+      },
+      {
+        "vin_protected_v": 53.3,
+        "ripple_current_nominal_a": 0.3177480360905437,
+        "peak_current_at_0p8a_nominal_a": 0.958874018045272,
+        "peak_current_at_0p8a_lminus20pct_a": 0.9985925225565898,
+        "fb_injection_nominal_mv": 41.14093029271502
+      }
+    ]
+  },
+  "open_items": [
+    "source impedance and input bulk ESR",
+    "fuse and TVS energy coordination",
+    "actual shared5V/3.3V load budget",
+    "thermal/EMC/line and load transients",
+    "PGOOD supervisor integration",
+    "capacitor MPN/derating",
+    "no cold-crank qualification"
+  ]
+}
