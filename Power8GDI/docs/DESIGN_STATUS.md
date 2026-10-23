@@ -45,12 +45,16 @@ claim. [review_validation.json](../hardware/design/review_validation.json)
 records commands, root-netlist hash and scope; schematic-only validation excludes
 PCB DRC. WBO common VDD/VDDA supply, local reset and independent heater inhibit are now integrated; static checks pass, physical ramp tests remain open.
 
-A 1236-component PCB checkpoint is saved in board/layout_candidate, with 32 local
-ignition connections and 2535 remaining connections reported by the full
-connectivity engine. Its DRC JSON contains 926 violations and a separate list of
-499 unconnected items. Both lists contain capped categories; they are not a
-complete issue count. This board predates the latest 26 additional WBO components
-and is being updated. The earlier 631-component board and DRC reports are historical. The current
+A matching 1262-component PCB checkpoint is saved in board/layout_candidate;
+all 3951 pin assignments pass an independent comparison with the root netlist.
+It includes 32 local ignition connections and compact buck placement, with
+2602 remaining connections reported by the full connectivity engine. Its DRC
+JSON contains 938 violations and a separate list of 499 unconnected items.
+Both lists contain capped categories; they are not a complete issue count.
+The 60 discovered PT2001 switching nets now have explicit rules; the broader
+motor/buck voltage-domain review remains open. Local buck and WBO routing is
+being integrated separately. See [the checkpoint](PCB_LAYOUT_CHECKPOINT_1262.md)
+for hashes and exact scope. The earlier 631/1236-component artifacts are historical. The current
 layout must match the new root netlist and account for ignition spacing, GDI
 loops, current returns and sensitive analog regions. No current-board zero-DRC
 or manufacturing claim is made.
