@@ -10,6 +10,7 @@ import xml.etree.ElementTree as ET
 import pcbnew as p
 from build_connector import vec
 from board_cleanup import Spatial
+import voltage_domains
 
 
 def box(fp,margin=.25):
@@ -69,17 +70,21 @@ def place(board,fps,imported,netlist,manifest,nets,add_track,ground_pad,prepack_
     if any(c.get('anchor_mm') is None for c in supply['cells'].values()):
         raise ValueError('Compact logic supply placement failed: '+str(supply))
     placed.update(supply['placed_references']);report.append({'domain':'compact logic supply','local_module':supply})
+    from route_wbo_local import place_and_route as wbo_local
+    wbo=wbo_local(board,fps,nets,placed,regions={1:(153,52,197,142),2:(198,52,242,142)})
+    placed.update(wbo['placed_references']);report.append({'domain':'dual WBO local circuits','local_module':wbo})
     # Register copper and component obstacles independently for each assembly side.
     occupied={p.F_Cu:Spatial(),p.B_Cu:Spatial()}
     copper_obstacles={layer:Spatial() for layer in (p.F_Cu,p.In1_Cu,p.In2_Cu,p.B_Cu)}
     for t in board.GetTracks():
-        b=t.GetBoundingBox();r=(p.ToMM(b.GetX())-.3,p.ToMM(b.GetY())-.3,p.ToMM(b.GetRight())+.3,p.ToMM(b.GetBottom())+.3)
+        margin=max(.3,voltage_domains.clearance_mm(t.GetNetname()))
+        b=t.GetBoundingBox();r=(p.ToMM(b.GetX())-margin,p.ToMM(b.GetY())-margin,p.ToMM(b.GetRight())+margin,p.ToMM(b.GetBottom())+margin)
         for layer in copper_obstacles:
             if t.IsOnLayer(layer):copper_obstacles[layer].add(r)
     def register_pads(fp):
         for pad in fp.Pads():
             pb=pad.GetBoundingBox()
-            margin=2.5 if pad.GetNetname().startswith('HARNESS_IGN') else .3
+            margin=max(.3,voltage_domains.clearance_mm(pad.GetNetname()))
             rect=(p.ToMM(pb.GetX())-margin,p.ToMM(pb.GetY())-margin,p.ToMM(pb.GetRight())+margin,p.ToMM(pb.GetBottom())+margin)
             for layer in copper_obstacles:
                 if pad.IsOnLayer(layer):copper_obstacles[layer].add(rect)
@@ -109,10 +114,11 @@ def place(board,fps,imported,netlist,manifest,nets,add_track,ground_pad,prepack_
         if 'MCU' in name or 'permission' in name:return (5,94,48,142),(26,116),6
         if 'USB' in name or 'microSD' in name:return (5,94,48,142),(12,103),0
         if 'knock' in name.lower():return (156,5,239,82),(220,18),6
+        if 'sensor trackers' in name.lower():return (156,5,239,142),(216,45),6
         if name=='Hall and SENT receiver bank 2':return (146,94,155,142),(151,116),7
-        # Quiet inputs may share unused space at the top of the WBO region;
+        # Quiet inputs may share unused space around the WBO analogue region;
         # actual placed bodies/pads remain hard obstacles on that same side.
-        return (156,5,239,82),(195,28),7
+        return (156,5,239,142),(195,28),7
     # Within each functional group, place packages first and place passives near
     # already placed pins on their own low-fanout nets. No fallback off-board.
     refs_by_net=defaultdict(set)
@@ -145,20 +151,28 @@ def place(board,fps,imported,netlist,manifest,nets,add_track,ground_pad,prepack_
                     for layer in copper_obstacles:
                         if pad.IsOnLayer(layer):
                             padboxes.append((layer,p.ToMM(pb.GetX())-b[0],p.ToMM(pb.GetY())-b[1],p.ToMM(pb.GetRight())-b[0],p.ToMM(pb.GetBottom())-b[1]))
-                for yi in range(int(y0*2),int((y1-h)*2)+1):
-                    y=yi/2
-                    for xi in range(int(x0*2),int((x1-w)*2)+1):
+                xs=sorted(range(int(x0*2),int((x1-w)*2)+1),key=lambda i:(abs(i/2+w/2-target[0]),i))
+                ys=sorted(range(int(y0*2),int((y1-h)*2)+1),key=lambda i:(abs(i/2+h/2-target[1]),i))
+                for yi in ys:
+                    y=yi/2;dy2=(y+h/2-target[1])**2
+                    if best is not None and dy2>best[0]:break
+                    for xi in xs:
                         x=xi/2;r=(x,y,x+w,y+h)
-                        score=(x+w/2-target[0])**2+(y+h/2-target[1])**2
-                        if best is not None and score>=best[0]:continue
+                        score=(x+w/2-target[0])**2+dy2
+                        if best is not None and score>best[0]:break
+                        key=(score,angle,y,x)
+                        if best is not None and key>=best[5]:continue
                         if occupied[p.B_Cu].collides(r):continue
                         # Routes may pass under an insulated package body, but
                         # no new pad may touch retained donor copper/via annuli.
                         if any(copper_obstacles[layer].collides((x+a,y+bb,x+c,y+d)) for layer,a,bb,c,d in padboxes):continue
-                        best=(score,x-b[0],y-b[1],angle,r)
+                        best=(score,x-b[0],y-b[1],angle,r,key)
+                        # All later X candidates on this row have no smaller
+                        # distance; further rows are bounded by dy2 above.
+                        break
             if best is None:
                 raise ValueError(f'Functional region exhausted: {name}, {ref}, region{(x0,y0,x1,y1)}; no outline/DRC relaxation allowed')
-            _,x,y,a,r=best;move(fp,x,y,a,True);occupied[p.B_Cu].add(r);register_pads(fp);placed.add(ref);own.append(ref)
+            _,x,y,a,r,_=best;move(fp,x,y,a,True);occupied[p.B_Cu].add(r);register_pads(fp);placed.add(ref);own.append(ref)
         report.append({'domain':name,'region_mm':[x0,y0,x1,y1],'side':'B.Cu','references':own,'review':'Function-group placement with net-neighbor attraction; power-loop/EMC/thermal review remains open'})
     if set(fps)!=placed:raise ValueError('Unplaced references:'+str(sorted(set(fps)-placed)))
     return report
