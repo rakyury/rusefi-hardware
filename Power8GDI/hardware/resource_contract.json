@@ -13,7 +13,7 @@
     "debug_interface": "SWD",
     "hse_clock": "HSE_bypass_8MHz",
     "lse_clock": null,
-    "motor_pwm_timebase": null
+    "motor_pwm_timebase": "TIM3_CH1_to_CH4_shared_frequency"
   },
   "sources": {
     "DS11532": {
@@ -29,7 +29,8 @@
         "Table 11 pp. 79-80: SWD/JTAG and SDMMC1",
         "Table 11 footnote 2 p. 85: PC13 output restrictions",
         "Table11 pp68-84: 17 ADC package pads; PG9/PG10 GPIO; PI5/PI6 TIM8; PB6/PB7 TIM4",
-        "Table13 pp90,100: PB6/PB7 AF2 and PI5/PI6 AF3"
+        "Table13 pp90,100: PB6/PB7 AF2 and PI5/PI6 AF3",
+        "Table11 p78 and Table13 PortC: PC6..PC9 AF2 TIM3_CH1..4"
       ]
     },
     "RM0410": {
@@ -146,13 +147,17 @@
     "SD_CD",
     "KNOCK_CS_N",
     "KNOCK_INT_HOLD",
-    "WBO1_CS_N",
-    "WBO2_CS_N",
     "WBO1_HEATER_PWM",
     "WBO2_HEATER_PWM",
-    "WBO_ADC_CS_N",
     "CAN2_STB",
-    "LIN2_EN"
+    "LIN2_EN",
+    "MOTOR3_PWM",
+    "MOTOR3_DIR",
+    "MOTOR3_DISABLE",
+    "MOTOR4_PWM",
+    "MOTOR4_DIR",
+    "MOTOR4_DISABLE",
+    "MOTOR_CS_N"
   ],
   "direct_connector_groups": [
     "Ignition",
@@ -651,32 +656,65 @@
         "stm32_pin": "PI8",
         "package_pad": 7,
         "mode": "GPIO EXTI8; inverted; timing not qualified"
-      },
-      {
-        "function": "DIN5",
-        "stm32_pin": "PI2",
-        "package_pad": 133,
-        "mode": "GPIO polling; inverted"
-      },
-      {
-        "function": "DIN6",
-        "stm32_pin": "PI3",
-        "package_pad": 134,
-        "mode": "GPIO polling; inverted; EXTI3 occupied by CAM1"
-      },
-      {
-        "function": "DIN7",
-        "stm32_pin": "PI4",
-        "package_pad": 173,
-        "mode": "GPIO polling; inverted; EXTI4 occupied by CAM2"
-      },
-      {
-        "function": "DIN8",
-        "stm32_pin": "PI11",
-        "package_pad": 13,
-        "mode": "GPIO polling; inverted"
       }
-    ]
+    ],
+    "four_motor_revision": {
+      "HPFP1": {
+        "port": "PD8",
+        "mode": "GPIO_TIMED",
+        "note": "Dedicated scheduled pump command; moved offPC9 to reserve TIM3_CH4"
+      },
+      "DBW_DIR": {
+        "port": "PI2",
+        "mode": "GPIO",
+        "note": "Direction GPIO moved offPC7 to reserve TIM3_CH2"
+      },
+      "MOTOR3_PWM": {
+        "port": "PC7",
+        "mode": "TIM3_CH2",
+        "note": "DS11532 Table11 p78/AF2; same PWM frequency as other motor bridges"
+      },
+      "MOTOR3_DIR": {
+        "port": "PI3",
+        "mode": "GPIO",
+        "note": "Reserve motor direction; default low"
+      },
+      "MOTOR3_DISABLE": {
+        "port": "PI10",
+        "mode": "GPIO",
+        "note": "Reserve motor disable; external default high"
+      },
+      "MOTOR4_PWM": {
+        "port": "PC9",
+        "mode": "TIM3_CH4",
+        "note": "DS11532 Table11 p78/AF2; same PWM frequency as other motor bridges"
+      },
+      "MOTOR4_DIR": {
+        "port": "PI4",
+        "mode": "GPIO",
+        "note": "Reserve motor direction; default low"
+      },
+      "MOTOR4_DISABLE": {
+        "port": "PI11",
+        "mode": "GPIO",
+        "note": "Reserve motor disable; external default high"
+      },
+      "MOTOR_CS_N": {
+        "port": "PB4",
+        "mode": "GPIO",
+        "note": "Four TLE9201 diagnostics daisy-chain CS; external pullup and isolated MISO"
+      },
+      "WBO1_HEATER_PWM": {
+        "port": "PA10",
+        "mode": "GPIO",
+        "note": "Main-MCU heater permission, default low; local F042 supplies actual PWM"
+      },
+      "WBO2_HEATER_PWM": {
+        "port": "PB2",
+        "mode": "GPIO",
+        "note": "Main-MCU heater permission, default low; local F042 supplies actual PWM"
+      }
+    }
   },
   "indirect_functions": {
     "KNOCK1": {

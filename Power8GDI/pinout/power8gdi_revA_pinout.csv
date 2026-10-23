@@ -33,14 +33,14 @@ A,A31,31,PGND_MAIN_3,Power GND,Power ground parallel contact; rating pending
 A,A32,32,PGND_MAIN_4,Power GND,Power ground parallel contact; rating pending
 A,A33,33,VBAT_MAIN_2,Power,Main fused power; contact budget pending
 A,A34,34,VBAT_MAIN_3,Power,Main fused power; contact budget pending
-B,B01,1,IGN1,Ignition,5V logic for smart coil; check driver
-B,B02,2,IGN2,Ignition,5V logic for smart coil; check driver
-B,B03,3,IGN3,Ignition,5V logic for smart coil; check driver
-B,B04,4,IGN4,Ignition,5V logic for smart coil; check driver
-B,B05,5,IGN5,Ignition,5V logic for smart coil; check driver
-B,B06,6,IGN6,Ignition,5V logic for smart coil; check driver
-B,B07,7,IGN7,Ignition,5V logic for smart coil; check driver
-B,B08,8,IGN8,Ignition,5V logic for smart coil; check driver
+B,B01,1,IGN1,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
+B,B02,2,IGN2,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
+B,B03,3,IGN3,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
+B,B04,4,IGN4,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
+B,B05,5,IGN5,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
+B,B06,6,IGN6,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
+B,B07,7,IGN7,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
+B,B08,8,IGN8,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
 B,B09,9,PI1,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
 B,B10,10,PI2,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
 B,B11,11,PI3,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
@@ -115,10 +115,10 @@ D,D11,11,CAN1_H,CAN,CAN1 differential high
 D,D12,12,CAN1_L,CAN,CAN1 differential low
 D,D13,13,CAN2_H,CAN,CAN2 differential high
 D,D14,14,CAN2_L,CAN,CAN2 differential low
-D,D15,15,DIN5,Digital,Protected general digital input
-D,D16,16,DIN6,Digital,Protected general digital input
-D,D17,17,DIN7,Digital,Protected general digital input
-D,D18,18,DIN8,Digital,Protected general digital input
+D,D15,15,MOTOR3_MOTOR_A,H-Bridge,Reserved H-bridge motor terminal; previous DIN allocation superseded2026-10-23
+D,D16,16,MOTOR3_MOTOR_B,H-Bridge,Reserved H-bridge motor terminal; previous DIN allocation superseded2026-10-23
+D,D17,17,MOTOR4_MOTOR_A,H-Bridge,Reserved H-bridge motor terminal; previous DIN allocation superseded2026-10-23
+D,D18,18,MOTOR4_MOTOR_B,H-Bridge,Reserved H-bridge motor terminal; previous DIN allocation superseded2026-10-23
 D,D19,19,AUX_ANALOG1,Analog,Spare ADC input
 D,D20,20,AUX_ANALOG2,Analog,Spare ADC input
 D,D21,21,WBO1_CONTACT1,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection

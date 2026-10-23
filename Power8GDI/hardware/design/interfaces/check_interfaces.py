@@ -18,7 +18,7 @@ from core_schlib import parse,children,child
 
 def read_netlists(directory=HERE):
     components={}; pins={}; source_pins={}
-    for filename in ['comms2','usb_fs','sd_spi','sensor_power','digital_aux_1','digital_aux_2']:
+    for filename in ['comms2','usb_fs','sd_spi','sensor_power','digital_aux_1']:
         root=ET.parse(directory/(filename+'.xml')).getroot()
         libparts={p.get('part'):p for p in root.findall('./libparts/libpart')}
         for comp in root.findall('./components/comp'):
@@ -50,7 +50,10 @@ def electrical_checks(components,pins):
     for pad,net in {1:'LIN2_RX',2:'LIN2_EN',4:'LIN2_TX',5:'GND',6:'LIN2_BUS',7:'LIN2_VSUP'}.items():expect('U1502',pad,net)
     expect('R1503',1,'+3V3');expect('R1503',2,'LIN2_RX')
     expect('R1504',1,'LIN2_EN');expect('R1504',2,'GND')
-    dnp('D1502');dnp('R1507')
+    dnp('D1502',False);dnp('R1507',False)
+    expect('D1502',1,'LIN2_VSUP');expect('D1502',3,'LIN2_COMMANDER_DIODE')
+    expect('R1507',1,'LIN2_COMMANDER_DIODE');expect('R1507',2,'LIN2_BUS')
+    if components['R1507']['footprint']!='Resistor_SMD:R_1206_3216Metric':errors.append('LIN commander pullup power footprint insufficient')
     # ST DS4260 diagram; the pairs1/6 and3/4 are feedthrough, not separate channels.
     for ref,a,b,vbus in [('D1510','USB_DP','USB_DM','USB_HOST_VBUS'),('D1520','SD_SCK_CARD','SD_MOSI_CARD','SD_3V3'),('D1521','SD_CS','SD_SPI3_MISO','SD_3V3')]:
         for pad,net in {1:a,6:a,3:b,4:b,2:'GND',5:vbus}.items():expect(ref,pad,net)
@@ -69,7 +72,7 @@ def electrical_checks(components,pins):
         if '22u 50V' not in components[f'C{1533+5*i}']['value']:errors.append('Tracker output capacitor must retain specified22u/50V candidate and effective-capacitance gate')
     for i,bank in enumerate('ABC'):
         expect(f'R{1530+i}',1,'HARNESS_SENSOR_GND_'+bank);expect(f'R{1530+i}',2,'GND');dnp(f'R{1530+i}',False)
-    channels=['HALL1','HALL2','HALL3','HALL4','FLEX_FREQ','DIN5','DIN6','DIN7','DIN8']
+    channels=['HALL1','HALL2','HALL3','HALL4','FLEX_FREQ']
     for i,name in enumerate(channels):
         ref=f'U{1600+i//6}';j=i%6
         expect(ref,[1,3,5,9,11,13][j],name+'_FILTERED');expect(ref,[2,4,6,8,10,12][j],name)

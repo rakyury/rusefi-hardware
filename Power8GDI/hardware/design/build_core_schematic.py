@@ -139,8 +139,11 @@ def generate():
     res(comm,"R111","0R",420,165,"VBAT_LOGIC_PROTECTED","LIN1_VSUP","Requires root SMBJ24CA nominal38.9V clamp <45Vabs; actual pulse energy/overshoot gate remains")
     cap(comm,"C130","100n 50V X7R",465,165,"LIN1_VSUP","At U104 pin7")
     cap(comm,"C131","1u 50V X7R",510,165,"LIN1_VSUP",footprint="Capacitor_SMD:C_0805_2012Metric")
-    cap(comm,"C132","220p 100V C0G",465,220,"LIN1_BUS","Respondermode buscap TI Fig10-1; busEMC/loadbudget pending")
-    comm.text("LIN1 responder candidate: MCU PH3 pad44 enables high; default sleep.\nCommander role BLOCKED: requires1k + series diode pullup and network review.\nVSUP 4..36V operating,45V absolute. Requires root SMBJ24CA;38.9V specified clamp\nis below absolute limit, not proof of operation during transients or pulse qualification.",300,270)
+    cap(comm,"C132","1n 100V C0G",465,220,"LIN1_BUS","Commander bus capacitance; verify total cable/node capacitance")
+    bas21=box_symbol("Core_BAS21",[("1","A","passive",-10.16,0,0),("3","K","passive",10.16,0,180),("2","NC","no_connect",0,-10.16,90)],"Package_TO_SOT_SMD:SOT-23",prefix="D")
+    comm.component(bas21,"D102","BAS21,215",330,220,{"1":"LIN1_VSUP","3":"LIN1_COMMANDER_DIODE"},note="Commander assembly; remove D102 and R112 for responder-only topology")
+    comm.component(r,"R112","1k 1% 0.5W",390,220,{"1":"LIN1_COMMANDER_DIODE","2":"LIN1_BUS"},footprint="Resistor_SMD:R_1206_3216Metric",note="16V dominant bound0.256W; pulse/voltage derating must be checked")
+    comm.text("LIN1 commander assembly: MCU PH3 pad44 enables high; default sleep.\nOne commander per bus. Responder assembly omits BOTH D102/R112.\nVSUP4..36V operating,45V absolute. SMBJ24CA clamp38.9V is below absolute\nlimit, not proof of operation during transients or pulse qualification.",300,270)
 
     ign.hport("+5V_CORE",25.4,25.4)
     ign.hport("GND",25.4,33.02)

@@ -16,8 +16,12 @@ class Interfaces(unittest.TestCase):
     def test_tracker_input_isolation_polarity(self):self.assert_mutation_rejected('D1530',1,'VBAT_LOGIC_PROTECTED')
     def test_tracker_fb_must_follow_own_output(self):self.assert_mutation_rejected('U1531',4,'SENSOR_5V_A')
     def test_tracker_exposed_pad_must_be_grounded(self):self.assert_mutation_rejected('U1530',9,'SENSOR_A_IN')
-    def test_unreviewed_lin_commander_fit_rejected(self):
-        c=deepcopy(self.components);c['R1507']['dnp']=False
+    def test_missing_lin_commander_pullup_rejected(self):
+        c=deepcopy(self.components);c['R1507']['dnp']=True
+        self.assertTrue(electrical_checks(c,self.pins))
+    def test_lin_commander_reverse_diode_rejected(self):self.assert_mutation_rejected('D1502',1,'LIN2_BUS')
+    def test_lin_commander_undersized_resistor_rejected(self):
+        c=deepcopy(self.components);c['R1507']['footprint']='Resistor_SMD:R_0603_1608Metric'
         self.assertTrue(electrical_checks(c,self.pins))
     def test_input_clamp_polarity(self):self.assert_mutation_rejected('D1600',1,'+5V_CORE')
     def test_sensor_return_must_exist(self):self.assert_mutation_rejected('R1532',2,'SENSOR_5V_B')

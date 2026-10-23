@@ -37,8 +37,12 @@ class NetContractTests(unittest.TestCase):
         path=Path(__file__).resolve().parents[1]/'connector_aliases.csv'
         aliases={r['pinout_net']:r['board_net'] for r in csv.DictReader(path.read_text().splitlines())}
         for n in range(1,9):self.assertNotEqual(aliases.get(f'IGN{n}'),f'IGN{n}')
-        for name in ['PGND_MAIN_4','DI1_HIGH']:
-            self.assertNotIn(name,aliases)
+        self.assertEqual(aliases['PGND_MAIN_4'],'GND')
+        # GDI harness contacts now connect to physical power outputs, never START GPIO.
+        for bank,first in [('A',1),('B',5)]:
+            for channel in range(4):
+                self.assertEqual(aliases[f'DI{first+channel}_HIGH'],f'PT{bank}_H{1 if channel<2 else 3}')
+                self.assertEqual(aliases[f'DI{first+channel}_LOW'],f'PT{bank}_L{channel+1}')
         self.assertEqual(aliases['VBAT_MAIN_2'],'VBAT_DBW_FUSED')
         self.assertEqual(aliases['VBAT_MAIN_3'],'VBAT_EWG_FUSED')
         self.assertNotEqual(aliases['VBAT_MAIN_1'],aliases['VBAT_MAIN_2'])

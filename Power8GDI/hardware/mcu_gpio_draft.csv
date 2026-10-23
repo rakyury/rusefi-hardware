@@ -15,7 +15,7 @@ IGN5,PE2,GPIO,proposed,H144_IGN_5
 IGN6,PB8,GPIO,proposed,H144_IGN_6
 IGN7,PB9,GPIO,proposed,H144_IGN_7
 IGN8,PE6,GPIO,proposed,H144_IGN_8
-HPFP1,PC9,GPIO_TIMED,proposed,Relocated from PF12 to release DI6
+HPFP1,PD8,GPIO_TIMED,proposed,Dedicated scheduled pump command; moved offPC9 to reserve TIM3_CH4
 HPFP2,PD12,GPIO_TIMED,proposed,Must not reuse for SENT3 TIM4 input capture
 GDI_SPI2_SCK,PB13,SPI2,existing_macro,H_SPI2_SCK
 GDI_SPI2_MISO,PB14,SPI2,existing_macro,H_SPI2_MISO
@@ -29,7 +29,7 @@ PTB_DRVEN,PE15,GPIO,proposed,Independent safety inhibit
 PTA_FLAG,PG10,GPIO_EXTI,proposed,Moved from PF8 to preserve ADC3_IN6; LQFP176 pad153 EXTI10; polarity/voltage pending
 PTB_FLAG,PG9,GPIO_EXTI,proposed,Moved from PF9 to preserve ADC3_IN7; LQFP176 pad152 EXTI9; polarity/voltage pending
 DBW_PWM,PC6,TIM3_CH1,proposed,First H bridge control
-DBW_DIR,PC7,GPIO,proposed,First H bridge direction
+DBW_DIR,PI2,GPIO,proposed,Direction GPIO moved offPC7 to reserve TIM3_CH2
 DBW_DISABLE,PD13,GPIO,proposed,First H bridge disable
 EWG_PWM,PC8,TIM3_CH3,proposed,Second H bridge control
 EWG_DIR,PD14,GPIO,proposed,Second H bridge direction
@@ -119,14 +119,14 @@ HALL2,PH15,GPIO_EXTI,proposed,LQFP176 pad130; GPIO EXTI15; inverted; interfaces/
 HALL3,PI0,GPIO_EXTI,proposed,LQFP176 pad131; GPIO EXTI0; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
 HALL4,PI7,GPIO_EXTI,proposed,LQFP176 pad176; GPIO EXTI7; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
 FLEX_FREQ,PI8,GPIO_EXTI,proposed,LQFP176 pad7; GPIO EXTI8; inverted; timing not qualified; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
-DIN5,PI2,GPIO,proposed,LQFP176 pad133; GPIO polling; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
-DIN6,PI3,GPIO,proposed,LQFP176 pad134; GPIO polling; inverted; EXTI3 occupied by CAM1; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
-DIN7,PI4,GPIO,proposed,LQFP176 pad173; GPIO polling; inverted; EXTI4 occupied by CAM2; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
-DIN8,PI11,GPIO,proposed,LQFP176 pad13; GPIO polling; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
 KNOCK_CS_N,PI1,GPIO,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
 KNOCK_INT_HOLD,PI9,GPIO,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
-WBO1_CS_N,PI10,GPIO,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
-WBO2_CS_N,PD8,GPIO,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
-WBO1_HEATER_PWM,PA10,GPIO_PWM_SCHEDULED,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
-WBO2_HEATER_PWM,PB2,GPIO_PWM_SCHEDULED,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
-WBO_ADC_CS_N,PB4,GPIO,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
+WBO1_HEATER_PWM,PA10,GPIO,proposed,"Main-MCU heater permission, default low; local F042 supplies actual PWM"
+WBO2_HEATER_PWM,PB2,GPIO,proposed,"Main-MCU heater permission, default low; local F042 supplies actual PWM"
+MOTOR3_PWM,PC7,TIM3_CH2,proposed,DS11532 Table11 p78/AF2; same PWM frequency as other motor bridges
+MOTOR3_DIR,PI3,GPIO,proposed,Reserve motor direction; default low
+MOTOR3_DISABLE,PI10,GPIO,proposed,Reserve motor disable; external default high
+MOTOR4_PWM,PC9,TIM3_CH4,proposed,DS11532 Table11 p78/AF2; same PWM frequency as other motor bridges
+MOTOR4_DIR,PI4,GPIO,proposed,Reserve motor direction; default low
+MOTOR4_DISABLE,PI11,GPIO,proposed,Reserve motor disable; external default high
+MOTOR_CS_N,PB4,GPIO,proposed,Four TLE9201 diagnostics daisy-chain CS; external pullup and isolated MISO

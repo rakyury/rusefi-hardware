@@ -36,12 +36,8 @@ GPIO = [
     ("HALL3", "PI0", 131, "GPIO EXTI0; inverted"),
     ("HALL4", "PI7", 176, "GPIO EXTI7; inverted"),
     ("FLEX_FREQ", "PI8", 7, "GPIO EXTI8; inverted; timing not qualified"),
-    ("DIN5", "PI2", 133, "GPIO polling; inverted"),
-    ("DIN6", "PI3", 134, "GPIO polling; inverted; EXTI3 occupied by CAM1"),
-    ("DIN7", "PI4", 173, "GPIO polling; inverted; EXTI4 occupied by CAM2"),
-    ("DIN8", "PI11", 13, "GPIO polling; inverted"),
 ]
-DIGITAL = ["HALL1", "HALL2", "HALL3", "HALL4", "FLEX_FREQ", "DIN5", "DIN6", "DIN7", "DIN8"]
+DIGITAL = ["HALL1", "HALL2", "HALL3", "HALL4", "FLEX_FREQ"]
 
 
 def load_library(path):
@@ -88,8 +84,8 @@ def generate():
         s = Sheet("interfaces/"+name, title, root=ROOT, paper="A2")
         sheets.append(s)
         return s
-    def r(s, n, value, x, y, a, b, **kw):
-        s.component(syms["R"], f"R{n}", value, x, y, {"1": a, "2": b}, footprint=FP_R, **kw)
+    def r(s, n, value, x, y, a, b, footprint=FP_R, **kw):
+        s.component(syms["R"], f"R{n}", value, x, y, {"1": a, "2": b}, footprint=footprint, **kw)
     def c(s, n, value, x, y, a, b="GND", footprint=FP_C, **kw):
         s.component(syms["C"], f"C{n}", value, x, y, {"1": a, "2": b}, footprint=footprint, **kw)
     comm = sheet("comms2", "CAN2 and LIN2 physical interfaces")
@@ -110,11 +106,11 @@ def generate():
     r(comm,1506,"0R",445,165,"VBAT_LOGIC_PROTECTED","LIN2_VSUP",note="Requires root SMBJ24CA; 38.9V rated clamp is not pulse qualification")
     c(comm,1503,"100n 50V X7R",500,165,"LIN2_VSUP")
     c(comm,1504,"1u 50V X7R",500,225,"LIN2_VSUP",footprint="Capacitor_SMD:C_0805_2012Metric")
-    c(comm,1505,"220p 100V C0G",445,225,"LIN2_BUS")
+    c(comm,1505,"1n 100V C0G",445,225,"LIN2_BUS",note="Commander bus capacitance; verify total cable/node capacitance")
     bas21 = box_symbol("Interface_BAS21",[("1","A","passive",-10.16,0,0),("3","K","passive",10.16,0,180),("2","NC","no_connect",0,-10.16,90)],FP_SOT23,prefix="D")
-    comm.component(bas21,"D1502","BAS21,215 DNP",355,230,{"1":"LIN2_VSUP","3":"LIN2_COMMANDER_DIODE"},dnp=True,note="Optional commander pullup; anode toward VSUP. Both D1502/R1507 DNP in responder mode")
-    r(comm,1507,"1k DNP",355,285,"LIN2_COMMANDER_DIODE","LIN2_BUS",dnp=True)
-    comm.text("CAN2 default standby; LIN2 default responder/sleep. MCU control required.\nFit CAN termination only for an end node; fit BOTH commander parts only for a reviewed LIN commander.\nCAN2 uses PB5/PB6; SENT3 moves to PE11 pad74. Shared timer, CAN filters and firmware remain pending.\nNo automotive pulse/ESD/EMC or fault qualification is implied by this candidate.",25.4,335)
+    comm.component(bas21,"D1502","BAS21,215",355,230,{"1":"LIN2_VSUP","3":"LIN2_COMMANDER_DIODE"},note="Commander assembly: anode toward VSUP. Remove BOTH D1502/R1507 for responder-only harness topology")
+    r(comm,1507,"1k 1% 0.5W",355,285,"LIN2_COMMANDER_DIODE","LIN2_BUS",footprint="Resistor_SMD:R_1206_3216Metric",note="0.256W upper bound at16V dominant; voltage/pulse derating remains required")
+    comm.text("CAN2 default standby; LIN2 commander assembly, default sleep. MCU enables and schedules bus.\nOnly one commander pullup per LIN bus. Remove BOTH D1502/R1507 for responder-only assembly.\nCAN2 uses PB5/PB6; SENT3 uses PE11 pad74. Shared timer, CAN filters and firmware remain pending.\nNo automotive pulse/ESD/EMC or fault qualification is implied by this candidate.",25.4,335)
 
     esd = box_symbol("Interface_USBLC6_2SC6",[("1","IO1A","passive",-12.7,5.08,0),("6","IO1B","passive",12.7,5.08,180),
         ("3","IO2A","passive",-12.7,-5.08,0),("4","IO2B","passive",12.7,-5.08,180),
@@ -182,7 +178,7 @@ def generate():
             note="Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse")
     sp.text("OUT=FB: unity tracking. ADJ reference+enable; no fault GPIO exists.\nInput/output abs45V: upstream clamp and cable-inductance overshoot tests required.\nAt14V/5V,100mA dissipates about0.9W per tracker;300mA about2.7W. Neither is a qualified load budget.\nGround return links are NOT fuses. Star placement, ground offset, thermal, cold crank and fault tests block release.",25.4,365)
 
-    for group in range(2):
+    for group in range((len(DIGITAL)+5)//6):
         s=sheet(f"digital_aux_{group+1}",f"Additional Hall, flex and digital inputs bank {group+1}")
         nets={"14":"+3V3","7":"GND"}
         for j,(inp,out) in enumerate(zip([1,3,5,9,11,13],[2,4,6,8,10,12])):
@@ -199,7 +195,7 @@ def generate():
             r(s,1602+3*i,"10k DNP",475,y,"+5V_CORE","HARNESS_"+name,dnp=True,note="Optional open-drain sensor pullup; fit only after sensor/wiring review")
         s.component(syms["SN74LVC14A_Q1"],f"U{1600+group}","SN74LVC14AQPWRQ1",90,95,nets,note="2..3.6V supply,5.5V tolerant inputs, all channels INVERT. Unused inputsGND and outputsNC")
         c(s,1610+group,"100n 16V X7R",90,160,"+3V3")
-        s.text("HALL1..4 and FLEX_FREQ use EXTI14/15/0/7/8. DIN5..8 are POLLED, no EXTI reservations.\nInput low/high thresholds, cable faults, power-off rail injection and flex frequency timing are not qualified.\nEvery active channel inverts. Optional open-drain pullups remain DNP until actual sensor models are known.",25.4,370)
+        s.text("HALL1..4 and FLEX_FREQ use EXTI14/15/0/7/8. Former DIN5..8 connector sites now serve MOTOR3/4.\nInput low/high thresholds, cable faults, power-off rail injection and flex frequency timing are not qualified.\nEvery active channel inverts. Optional open-drain pullups remain DNP until actual sensor models are known.",25.4,370)
 
     all_symbols={}
     for s in sheets:
@@ -247,7 +243,7 @@ def generate():
         "sheets":[{"name":s.name,"title":s.title,"uuid":s.uuid,"sheet_id":s.sheet_id} for s in sheets],
         "gpio_contract":[dict(zip(["function","stm32_pin","package_pad","mode"],row)) for row in GPIO],
         "harness_aliases":{"HARNESS_CAN2_H":"CAN2_H","HARNESS_CAN2_L":"CAN2_L","HARNESS_LIN2_BUS":"LIN2_BUS","HARNESS_SENSOR_5V_A":"SENSOR_5V_A","HARNESS_SENSOR_5V_B":"SENSOR_5V_B","HARNESS_CHASSIS_GND":"USB_SHIELD"},
-        "digital_inverting_channels":DIGITAL,"parts":parts,
+        "digital_inverting_channels":DIGITAL,"parts":parts,"lin2_role":"commander assembly; default sleep",
         "blockers":["Firmware pinmux, USB VBUS GPIO/native detect and48MHz clock", "SD card peak current and3V3 LDO thermal budget", "Sensor load/thermal/dropout and effective capacitance", "Automotive transients, cable inductance, ESD, EMC and simultaneous unpowered faults", "Connector enclosure/sealing and shield bonding", "PCB connectivity/DRC/SI and hardware timing/fault measurements"]}
     (HERE/"interfaces_manifest.json").write_text(json.dumps(manifest,indent=2)+"\n",encoding="utf-8")
     with (HERE/"interfaces_bom.csv").open("w",newline="",encoding="utf-8") as f:
