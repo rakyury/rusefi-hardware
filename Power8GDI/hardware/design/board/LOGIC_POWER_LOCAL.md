@@ -55,11 +55,42 @@ contains hashes, counts, local findings and unfinished connectivity.
 | Total violations, including library/silk/warnings | 960 | 996 |
 
 For the **30 moved buck references and 128 added copper items**, there are no
-native clearance, short, width or drilled-hole errors in this fixture. Two
+native clearance, short, width or drilled-hole errors in the reported sample.
+**The 500-clearance count reaches the native report cap; absence from that
+sample is not proof of zero local errors. The spatial review below supersedes
+that interpretation and finds nine local LM violations.** Two
 intentional global breakout ends remain dangling. Dense reference text produces
 additional silk findings; total DRC is consequently not improved or clean.
 One D5200 NC pad at (25.625,14.055) remains only 0.31 mm from a PTA_H1 donor via;
 the generic packer must relocate D5200 under the new 0.6 mm rule.
+
+### Uncapped spatial check and corrected result
+
+The fixture helper now accepts `--scope x0 y0 x1 y1`. It keeps complete nearby
+footprints, crossing tracks/vias and intersecting zones on every copper layer;
+it does not clip a crossing obstacle. For this snapshot the rectangles are
+`75 12 112 40` (5 V) and `12 31 39 51` (3.3 V), with more than the largest
+applicable clearance outside the moved cell boundaries. The rules additionally
+classify LP5_SW and LP5_BOOT as battery-amplitude nets (0.3 mm), from shared
+helper commit `9539f60`. All 60 PT domains retain 0.6 mm.
+
+| Spatial native DRC | 5 V | 3.3 V |
+|---|---:|---:|
+| Total findings, including donor and clipped-network warnings | 120 | 130 |
+| All clearance findings | 40 | 70 |
+| Local buck clearance findings | **9** | 0 |
+| Local buck shorts / width / hole findings | 0 | 0 |
+
+These clearance counts are below the cap. Four LM76003 pad-pair violations
+are intrinsic to the selected footprint: pins 5–6 (SW–BOOT), 6–7 (BOOT–GND),
+19–20 (GND–PVIN), and 22–23 (PVIN–GND) have 0.25 mm copper separation versus
+the project's 0.3 mm battery rule. Five 0.2 mm escape tracks have 0.275 mm
+separation to the corresponding adjacent pads. A narrowly bounded package/
+escape design-rule decision is required; **no exception or reduction of the
+project policy is applied by this module**. Moving other components cannot
+change intrinsic pad spacing. The router's fine-pitch candidate allowance is
+not native DRC acceptance. Final assembly silk and local electrical completion
+remain open independently of this policy conflict.
 
 ## What is actually connected and what remains
 
@@ -91,8 +122,12 @@ python3 route_logic_power_local.py --input INPUT.kicad_pcb --output ROUTED.kicad
 python3 check_logic_power_local.py --input INPUT.kicad_pcb --routed ROUTED.kicad_pcb --netlist core.net --report routing.json --output checks.json
 python3 prepare_logic_power_fixture.py --source INPUT.kicad_pcb --output BEFORE.kicad_pcb --project ORIGINAL.kicad_pro --netlist core.net
 python3 prepare_logic_power_fixture.py --source ROUTED.kicad_pcb --output AFTER.kicad_pcb --project ORIGINAL.kicad_pro --netlist core.net
+python3 prepare_logic_power_fixture.py --source ROUTED.kicad_pcb --output LOCAL5V.kicad_pcb --project ORIGINAL.kicad_pro --netlist core.net --scope 75 12 112 40
+python3 prepare_logic_power_fixture.py --source ROUTED.kicad_pcb --output LOCAL3V3.kicad_pcb --project ORIGINAL.kicad_pro --netlist core.net --scope 12 31 39 51
 kicad-cli pcb drc --all-track-errors --format json --output before_drc.json BEFORE.kicad_pcb
 kicad-cli pcb drc --all-track-errors --format json --output after_drc.json AFTER.kicad_pcb
+kicad-cli pcb drc --all-track-errors --format json --output local5v_drc.json LOCAL5V.kicad_pcb
+kicad-cli pcb drc --all-track-errors --format json --output local3v3_drc.json LOCAL3V3.kicad_pcb
 ```
 
 Use a distinct process per fixture. Source boards and upstream designs remain
@@ -106,6 +141,11 @@ sections 10.1–10.3, drives the short PVIN/PGND hot loop, local VCC/BIAS bypass
 quiet feedback and exposed-pad/ground-plane connections.
 [TI TPS62130A-Q1 datasheet](https://www.ti.com/lit/ds/symlink/tps62130a-q1.pdf),
 section 12, requires the common AGND/PGND/EP return and separate output sensing.
+The LM datasheet section 6.1 specifies SW relative to ground as VIN+0.3 V
+maximum and BOOT relative to SW as 5.5 V maximum: LP5_BOOT floats above the
+switch node and must not be classified as ordinary low-voltage logic merely
+because BOOT-to-SW is a small differential voltage. Actual netlist connectivity
+is U5200.1–5/L5200.1/C5203.2 for LP5_SW and U5200.6/C5203.1 for LP5_BOOT.
 The available donor geometry constrains the EP vias and surrounds parts of the
 cells with GDI current-sense and switching copper. Native DRC cannot establish
 acceptable feedback noise, thermal impedance, via-in-pad assembly suitability,
