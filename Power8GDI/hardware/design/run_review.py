@@ -98,10 +98,15 @@ def main():
             for c in doc.findall('components/comp'):
                 w.writerow([c.get('ref'),c.findtext('value'),c.findtext('footprint'),any(p.get('name')=='dnp' for p in c.findall('property')),c.find('sheetpath').get('names')])
         erc=json.loads((HERE/'core_erc.json').read_text());summary['erc_counts']=dict(Counter(v['type'] for s in erc['sheets'] for v in s['violations']))
-        coverage=json.loads((out/'net_coverage.json').read_text());summary['drc_counts']=coverage['violations'];summary['unconnected_items']=coverage['unconnected_items']
+        coverage=json.loads((out/'net_coverage.json').read_text())
+        summary['drc_counts']=coverage['violations']
+        summary['unconnected_items']=coverage['unconnected_items']
+        summary['connectivity_unconnected_count']=coverage['connectivity_unconnected_count']
+        summary['drc_report_may_be_truncated']=coverage['drc_report_may_be_truncated']
+        summary['categories_at_kicad_reporting_limit']=coverage['categories_at_kicad_reporting_limit']
         if coverage['violations'].get('shorting_items',0):
             raise RuntimeError('PCB contains cross-net shorts; review regression rejected')
-        summary['structural_checks']='PASS';summary['source_sha256']={str(p.relative_to(HERE)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [HERE/'core.net',out/'Power8GDI_Review.kicad_pcb',out/'Power8GDI_Review.kicad_pro']}
+        summary['structural_checks']='PASS';summary['source_sha256']={str(p.relative_to(HERE)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [HERE/'core.net',out/'Power8GDI_Review.kicad_pcb',out/'Power8GDI_Review.kicad_pro',out/'Power8GDI_Review.kicad_dru']}
     except Exception as e:
         summary['structural_checks']='FAIL';summary['error']=str(e)
     (HERE/'review_validation.json').write_text(json.dumps(summary,indent=2)+'\n')
