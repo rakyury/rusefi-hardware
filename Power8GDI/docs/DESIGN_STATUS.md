@@ -25,9 +25,9 @@ reference; pin compatibility is not claimed.
 |---|---|---|
 | GDI | Reference-derived stages, protected feeds and permission gates | PT2001 electrical/shutdown evidence, loaded START6 microcode; qualification links remain DNP |
 | Ignition | 9 sheets, 146 components, independent actual-pin audit and standalone ERC | Coil profile, transient/thermal limits, external supply relay, physical returns |
-| WBO | 6 sheets, 174 components, source-topology and partial-power regression audit | Root regeneration, physical layout and local-controller/sensor tests |
-| Motors | 7 sheets, 106 components, four bridges, two protected feeds | Root integration, aggregate current, regeneration and thermal tests |
-| Logic power | 2 sheets, 32 components, LM76003 and sequenced TPS62130A | Replace both old supplies; capacitor DC bias, loop response and thermal tests |
+| WBO | 6 sheets, 174 components, source-topology and partial-power regression audit; integrated in root | Physical layout and local-controller/sensor tests |
+| Motors | 7 sheets, 106 components, four bridges, two protected feeds; integrated in root | Aggregate current, regeneration and thermal tests |
+| Logic power | 2 sheets, 32 components, LM76003 and sequenced TPS62130A replace the old supplies in root | Complete load allocation, capacitor DC bias, loop response and thermal tests |
 | MCU/interfaces | Resource draft, low sides, protected inputs, SENT/LIN/CAN and knock | Actual firmware timing/DMA, sensor profiles and fault tests |
 
 The WBO generator previously merged distinct amplifier + and − nets. Commit
@@ -45,7 +45,12 @@ claim. [review_validation.json](../hardware/design/review_validation.json)
 records commands, root-netlist hash and scope; schematic-only validation excludes
 PCB DRC. WBO common VDD/VDDA supply, local reset and independent heater inhibit are now integrated; static checks pass, physical ramp tests remain open.
 
-A new 1236-component PCB checkpoint is saved in board/layout_candidate, with 32 local ignition connections and 2535 remaining connections reported by the full connectivity engine. Its 926 DRC findings are a capped list, not a complete count. This board predates the latest 26 additional WBO components and is being updated. The earlier 631-component board and DRC reports are historical. The current
+A 1236-component PCB checkpoint is saved in board/layout_candidate, with 32 local
+ignition connections and 2535 remaining connections reported by the full
+connectivity engine. Its DRC JSON contains 926 violations and a separate list of
+499 unconnected items. Both lists contain capped categories; they are not a
+complete issue count. This board predates the latest 26 additional WBO components
+and is being updated. The earlier 631-component board and DRC reports are historical. The current
 layout must match the new root netlist and account for ignition spacing, GDI
 loops, current returns and sensitive analog regions. No current-board zero-DRC
 or manufacturing claim is made.
