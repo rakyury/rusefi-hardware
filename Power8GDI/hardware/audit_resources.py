@@ -106,7 +106,18 @@ def audit(rows: list[dict], connector_rows: list[dict], contract: dict) -> dict:
         if row['group'] in contract['direct_connector_groups']:
             required.add(row['net'])
             connector_groups[row['group']].add(row['net'])
-    missing = sorted(required - by_name.keys())
+    indirect = {}
+    for name, route in contract.get('indirect_functions', {}).items():
+        dependencies = route.get('required_signals', [])
+        if not dependencies or route.get('source') not in contract['sources'] or not route.get('component'):
+            errors.append('Invalid indirect function route: ' + name)
+            continue
+        if name in by_name:
+            errors.append('Function has both direct and indirect owners: ' + name)
+        unresolved = [n for n in dependencies if n not in by_name or by_name[n]['stm32_pin'] == 'UNASSIGNED']
+        indirect[name] = dict(**route, unresolved_signals=unresolved, status='unallocated' if unresolved else 'allocated_not_qualified')
+    covered_indirect = {name for name, route in indirect.items() if not route['unresolved_signals']}
+    missing = sorted(required - by_name.keys() - covered_indirect)
     unassigned = sorted(name for name in required & by_name.keys() if by_name[name]['stm32_pin'] == 'UNASSIGNED')
     if missing:
         add('MISSING_FUNCTIONS', 'missing_requirement', 'Required functions absent from MCU allocation', functions=missing)
@@ -115,7 +126,9 @@ def audit(rows: list[dict], connector_rows: list[dict], contract: dict) -> dict:
 
     interface_review = []
     for fact in contract['interface_pin_facts']:
-        overlaps = {pin: by_pin[pin] for pin in fact['pins'] if pin in by_pin}
+        intended = fact.get('functions_by_pin', {})
+        overlaps = {pin: [n for n in by_pin[pin] if n != intended.get(pin)] for pin in fact['pins'] if pin in by_pin}
+        overlaps = {pin: names for pin, names in overlaps.items() if names}
         selected = contract['decisions'][fact['decision']] == fact['mode']
         interface_review.append(dict(**fact, selected=selected, overlaps=overlaps,
                                      status='conflict_if_selected' if overlaps else 'no_listed_pin_overlap_not_qualified'))
@@ -148,7 +161,7 @@ def audit(rows: list[dict], connector_rows: list[dict], contract: dict) -> dict:
                      missing_functions=len(missing), unassigned_functions=len(unassigned),
                      collision_findings=count('collision'), conditional_conflicts=count('conditional_conflict'),
                      qualification_evidence_missing=len(evidence)),
-        missing_functions=missing, unassigned_functions=unassigned,
+        missing_functions=missing, unassigned_functions=unassigned, indirect_functions=indirect,
         connector_requirement_coverage={group: dict(required=len(names),
             missing=sorted(names - by_name.keys())) for group, names in sorted(connector_groups.items())},
         verification=dict(package_pad='unverified', alternate_function_numbers='unverified',

@@ -31,7 +31,7 @@ REQUIRED = {
                       *(f"AUX_PWM{i}" for i in range(1, 9)),
                       *(f"LS_AUX{i}" for i in range(1, 5))],
     "Crank & cams": ["CRANK", *(f"CAM{i}" for i in range(1, 5))],
-    "Knock": ["KNOCK1", "KNOCK2"],
+    "Knock serial controls": ["KNOCK_CS_N", "KNOCK_INT_HOLD"],
     "SENT input capture": [f"SENT{i}" for i in range(1, 5)],
     "LIN": [f"LIN{i}_{d}" for i in range(1, 3) for d in ("TX", "RX")],
     "CAN": [f"CAN{i}_{d}" for i in range(1, 3) for d in ("TX", "RX")],
@@ -77,7 +77,9 @@ def audit(rows: list[dict[str, str]]) -> dict:
         gaps.extend(missing)
     all_required = set(sum(REQUIRED.values(), []))
     return {
-        "complete": not gaps,
+        "allocation_complete": not gaps,
+        "complete": False,
+        "release_eligible": False,
         "revision": "Rev A preliminary / NO KiCad AF/DRC qualification",
         "mcu_candidate": "STM32F767IIT6, LQFP176 - not yet finalized",
         "total_mcu_functions": len(rows),
@@ -89,7 +91,7 @@ def audit(rows: list[dict[str, str]]) -> dict:
             "STM32 PC6 TIM3_CH1 and PC8 TIM3_CH3 share timer frequency",
             "PA15 provisional PTB_CS overlaps Hellen H_SPI3_CS/CAN termination pattern",
             "DI6/DI7/DI8 reuse Power4GDI LS6 HPFP / LS7 DRVEN / LS8 RESET",
-            "PF5 KNOCK2 conflicts with Hellen IN_SENS3 used for CAM3",
+            "Knock1/2 use TPIC8101 multiplexed SPI; timing and DSP configuration unqualified",
             "24 LS outputs require high-current/timing/PWM-specific hardware; TLE9104 count alone insufficient",
             "WBO1/2 6-pin connectors are not analog sensors: require qualified wideband analog front-end",
         ],
@@ -111,7 +113,7 @@ def validate_connector_groups() -> None:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--strict", action="store_true", help="Return nonzero unless EVERY required GPIO function resolved")
+    ap.add_argument("--strict", action="store_true", help="Return nonzero unless GPIO allocation and electrical qualification are complete")
     ap.add_argument("--json", action="store_true", help="Produce full machine-readable resource gap report")
     args = ap.parse_args()
     validate_connector_groups()
@@ -121,8 +123,8 @@ def main() -> int:
     else:
         for group, stats in report["groups"].items():
             print(f"{group}: {stats['assigned']}/{stats['required']} assigned")
-        print("Complete:" if report["complete"] else "PRODUCTION BLOCKED:",
-              report["complete"], len(report["unassigned_required"]), "required functions unresolved")
+        print("Qualification blocked; allocation complete:",
+              report["allocation_complete"], len(report["unassigned_required"]), "required functions unresolved")
     return 0 if not args.strict or report["complete"] else 2
 
 

@@ -7,8 +7,10 @@ import sys
 import xml.etree.ElementTree as ET
 
 HERE=Path(__file__).resolve().parent
+sys.path.insert(0,str(HERE))
 sys.path.insert(0,str(HERE/'board'))
 from net_contract import read_netlists
+from interfaces.check_interfaces import electrical_checks as interface_electrical_checks
 
 
 def verify(path):
@@ -17,7 +19,7 @@ def verify(path):
         if net is None and pins.get((ref,str(pin)),'').startswith('unconnected-'):return
         if pins.get((ref,str(pin)))!=net:errors.append(f'{ref}.{pin}: expected {net}; got {pins.get((ref,str(pin)))}')
     expected_refs=set()
-    for rel in ['core_manifest.json','power_input/power_input_manifest.json','motor/motor_manifest.json','safety/parts.json','board/connector_manifest.json']:
+    for rel in ['core_manifest.json','power_input/power_input_manifest.json','motor/motor_manifest.json','safety/parts.json','board/connector_manifest.json','interfaces/interfaces_manifest.json','interfaces_aux/parts.json']:
         manifest=json.loads((HERE/rel).read_text())
         entries=manifest if isinstance(manifest,list) else manifest['parts']
         for part in entries:
@@ -36,6 +38,9 @@ def verify(path):
         for (ref,pin),net in connections.items():
             if not net.startswith('unconnected-'):expect(ref,pin,net)
     if set(parts)!=expected_refs:errors.append('Integrated component set differs from leaf manifests')
+    errors.extend(interface_electrical_checks(parts,pins))
+    for route in json.loads((HERE/'interfaces/interfaces_manifest.json').read_text())['gpio_contract']:
+        expect('U101',route['package_pad'],route['function'])
     # Independent pin facts: TI SN74LVC244A-Q1 and MIC4427, plus STM32 DS11532.
     gate_inputs=[2,4,6,8,11,13,15,17];gate_outputs=[18,16,14,12,9,7,5,3]
     for i,(inp,out) in enumerate(zip(gate_inputs,gate_outputs),1):

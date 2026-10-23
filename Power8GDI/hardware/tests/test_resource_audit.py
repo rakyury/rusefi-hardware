@@ -30,10 +30,9 @@ class ResourceAuditTests(unittest.TestCase):
         self.assertEqual(report['structure_status'], 'pass')
         self.assertEqual(report['summary']['collision_findings'], 0)
         self.assertFalse(report['release_eligible'])
-        self.assertTrue({'FLEX_FREQ', 'DIN8', 'HALL4'} <= set(report['missing_functions']))
-        self.assertEqual(len(report['missing_functions']), 9)
-        self.assertTrue({'PI1', 'VVT4', 'AUX_PWM1', 'CAN2_RX', 'LIN2_RX'} <= set(report['unassigned_functions']))
-        self.assertEqual(len(report['unassigned_functions']), 28)
+        self.assertEqual(report['missing_functions'], [])
+        self.assertEqual(report['unassigned_functions'], [])
+        self.assertEqual(set(report['indirect_functions']), {'KNOCK1', 'KNOCK2'})
         self.assertNotIn('TPS1', report['missing_functions'])
         self.assertNotIn('SENT3', report['unassigned_functions'])
         self.assertEqual(report['verification']['DMA_routes'], 'unverified')
@@ -48,10 +47,22 @@ class ResourceAuditTests(unittest.TestCase):
         self.assertTrue(any(f['code'] == 'RESOURCE_COLLISION' and 'pin PG7' in f['detail'] for f in self.report()['findings']))
 
     def test_exti_port_alias_collision(self):
-        self.row('PTB_FLAG')['stm32_pin'] = 'PA10'  # Different pin, same EXTI10 as PG10.
+        self.row('PTB_FLAG')['stm32_pin'] = 'PC14'  # Different pin, same EXTI14 as PH14; oscillator unpopulated.
         findings = self.report()['findings']
-        self.assertTrue(any(f['code'] == 'RESOURCE_COLLISION' and 'exti_line 10' in f['detail'] for f in findings))
-        self.assertFalse(any('pin PA10' in f['detail'] for f in findings))
+        self.assertTrue(any(f['code'] == 'RESOURCE_COLLISION' and 'exti_line 14' in f['detail'] for f in findings))
+        self.assertFalse(any('pin PC14' in f['detail'] for f in findings))
+
+    def test_selected_interface_rejects_wrong_owner(self):
+        self.row('USB_DM')['function'] = 'UNRELATED_OUTPUT'
+        self.assertTrue(any(f['code']=='INTERFACE_PIN_CONFLICT' and f['category']=='collision' and 'OTG_FS:' in f['detail'] for f in self.report()['findings']))
+
+    def test_indirect_knock_requires_all_serial_controls(self):
+        self.rows = [r for r in self.rows if r['function'] != 'KNOCK_INT_HOLD']
+        self.assertTrue({'KNOCK1','KNOCK2'} <= set(self.report()['missing_functions']))
+
+    def test_direct_and_indirect_knock_cannot_both_own_channel(self):
+        self.rows.append(dict(function='KNOCK1',stm32_pin='PF7',mcu_resource='ADC3',status='proposed',notes='mutation'))
+        self.assertEqual(self.report()['structure_status'],'fail')
 
     def test_scheduler_timer_reservation(self):
         for resource in ('TIM5_CH1', 'TIM5_CAPTURE', 'TIM6'):
@@ -62,7 +73,7 @@ class ResourceAuditTests(unittest.TestCase):
         findings = self.report()['findings']
         matches = [f for f in findings if f['detail'].startswith('SDMMC1_4bit:')]
         self.assertEqual(matches[0]['category'], 'conditional_conflict')
-        self.assertEqual(matches[0]['functions'], ['EWG_PWM', 'HPFP1'])
+        self.assertEqual(matches[0]['functions'], ['EWG_PWM', 'HPFP1', 'SD_SPI3_SCK', 'SD_SPI3_MISO', 'SD_SPI3_MOSI', 'LS_AUX1'])
         self.contract['decisions']['storage_interface'] = 'SDMMC1_4bit'
         matches = [f for f in self.report()['findings'] if f['detail'].startswith('SDMMC1_4bit:')]
         self.assertEqual(matches[0]['category'], 'collision')

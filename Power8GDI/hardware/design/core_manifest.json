@@ -85,13 +85,15 @@
         "150": "LIN1_RX",
         "70": "SENT1",
         "41": "SENT2",
-        "25": "KNOCK1",
-        "21": "KNOCK2",
         "57": "CRANK",
         "19": "CAM1",
         "20": "CAM2",
         "74": "SENT3",
         "165": "SENT4",
+        "79": "LIN2_TX",
+        "80": "LIN2_RX",
+        "163": "CAN2_RX",
+        "164": "CAN2_TX",
         "169": "PI1",
         "170": "PI2",
         "68": "PI3",
@@ -147,6 +149,32 @@
         "88": "LS_CS5",
         "89": "LS_CS6",
         "128": "LS_RESET_RELEASE",
+        "122": "USB_DM",
+        "123": "USB_DP",
+        "120": "USB_VBUS_PRESENT_N",
+        "139": "SD_SPI3_SCK",
+        "140": "SD_SPI3_MISO",
+        "141": "SD_SPI3_MOSI",
+        "119": "SD_CS",
+        "154": "SD_CD",
+        "155": "CAN2_STB",
+        "156": "LIN2_EN",
+        "129": "HALL1",
+        "130": "HALL2",
+        "131": "HALL3",
+        "176": "HALL4",
+        "7": "FLEX_FREQ",
+        "133": "DIN5",
+        "134": "DIN6",
+        "173": "DIN7",
+        "13": "DIN8",
+        "132": "KNOCK_CS_N",
+        "11": "KNOCK_INT_HOLD",
+        "12": "WBO1_CS_N",
+        "96": "WBO2_CS_N",
+        "121": "WBO1_HEATER_PWM",
+        "58": "WBO2_HEATER_PWM",
+        "162": "WBO_ADC_CS_N",
         "31": "NRST",
         "166": "BOOT0",
         "124": "SWDIO",
@@ -5377,6 +5405,46 @@
     {
       "path": "board/connectors.kicad_sch",
       "instance_uuid": "df0c5f3e-1ee1-56be-91e2-4072c6105289"
+    },
+    {
+      "path": "interfaces/comms2.kicad_sch",
+      "instance_uuid": "aef4a5ed-16a9-5635-82f1-5a0caf432873"
+    },
+    {
+      "path": "interfaces/usb_fs.kicad_sch",
+      "instance_uuid": "55d87602-cdb5-51c1-bf2b-41ce4824de19"
+    },
+    {
+      "path": "interfaces/sd_spi.kicad_sch",
+      "instance_uuid": "781d084e-c831-5e51-829d-b08277f1b02a"
+    },
+    {
+      "path": "interfaces/sensor_power.kicad_sch",
+      "instance_uuid": "a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+    },
+    {
+      "path": "interfaces/digital_aux_1.kicad_sch",
+      "instance_uuid": "7a622c8e-9078-578e-989f-4d863863197b"
+    },
+    {
+      "path": "interfaces/digital_aux_2.kicad_sch",
+      "instance_uuid": "0fe1f4df-7d91-51cc-b263-2445d91923b8"
+    },
+    {
+      "path": "interfaces_aux/knock_dual.kicad_sch",
+      "instance_uuid": "8965976b-faa0-5281-9f71-542877bfa52b"
+    },
+    {
+      "path": "interfaces_aux/wbo1_analog.kicad_sch",
+      "instance_uuid": "28b2b557-e744-5d6d-830b-543e78eebf78"
+    },
+    {
+      "path": "interfaces_aux/wbo2_analog.kicad_sch",
+      "instance_uuid": "e56e84e4-9c6a-5fbe-8d1a-fc87a5f8ea5c"
+    },
+    {
+      "path": "interfaces_aux/wbo_adc_control.kicad_sch",
+      "instance_uuid": "d4e9e5b0-6e0d-5960-af45-b9cdee4a3196"
     }
   ],
   "added_gpio": [
@@ -5427,7 +5495,7 @@
     {
       "pad": "7",
       "name": "PI8",
-      "net": null
+      "net": "FLEX_FREQ"
     },
     {
       "pad": "8",
@@ -5447,17 +5515,17 @@
     {
       "pad": "11",
       "name": "PI9",
-      "net": null
+      "net": "KNOCK_INT_HOLD"
     },
     {
       "pad": "12",
       "name": "PI10",
-      "net": null
+      "net": "WBO1_CS_N"
     },
     {
       "pad": "13",
       "name": "PI11",
-      "net": null
+      "net": "DIN8"
     },
     {
       "pad": "14",
@@ -5497,7 +5565,7 @@
     {
       "pad": "21",
       "name": "PF5",
-      "net": "KNOCK2"
+      "net": null
     },
     {
       "pad": "22",
@@ -5517,7 +5585,7 @@
     {
       "pad": "25",
       "name": "PF7",
-      "net": "KNOCK1"
+      "net": null
     },
     {
       "pad": "26",
@@ -5682,7 +5750,7 @@
     {
       "pad": "58",
       "name": "PB2",
-      "net": null
+      "net": "WBO2_HEATER_PWM"
     },
     {
       "pad": "59",
@@ -5787,12 +5855,12 @@
     {
       "pad": "79",
       "name": "PB10",
-      "net": null
+      "net": "LIN2_TX"
     },
     {
       "pad": "80",
       "name": "PB11",
-      "net": null
+      "net": "LIN2_RX"
     },
     {
       "pad": "81",
@@ -5872,7 +5940,7 @@
     {
       "pad": "96",
       "name": "PD8",
-      "net": null
+      "net": "WBO2_CS_N"
     },
     {
       "pad": "97",
@@ -5987,27 +6055,27 @@
     {
       "pad": "119",
       "name": "PA8",
-      "net": null
+      "net": "SD_CS"
     },
     {
       "pad": "120",
       "name": "PA9",
-      "net": null
+      "net": "USB_VBUS_PRESENT_N"
     },
     {
       "pad": "121",
       "name": "PA10",
-      "net": null
+      "net": "WBO1_HEATER_PWM"
     },
     {
       "pad": "122",
       "name": "PA11",
-      "net": null
+      "net": "USB_DM"
     },
     {
       "pad": "123",
       "name": "PA12",
-      "net": null
+      "net": "USB_DP"
     },
     {
       "pad": "124",
@@ -6037,32 +6105,32 @@
     {
       "pad": "129",
       "name": "PH14",
-      "net": null
+      "net": "HALL1"
     },
     {
       "pad": "130",
       "name": "PH15",
-      "net": null
+      "net": "HALL2"
     },
     {
       "pad": "131",
       "name": "PI0",
-      "net": null
+      "net": "HALL3"
     },
     {
       "pad": "132",
       "name": "PI1",
-      "net": null
+      "net": "KNOCK_CS_N"
     },
     {
       "pad": "133",
       "name": "PI2",
-      "net": null
+      "net": "DIN5"
     },
     {
       "pad": "134",
       "name": "PI3",
-      "net": null
+      "net": "DIN6"
     },
     {
       "pad": "135",
@@ -6087,17 +6155,17 @@
     {
       "pad": "139",
       "name": "PC10",
-      "net": null
+      "net": "SD_SPI3_SCK"
     },
     {
       "pad": "140",
       "name": "PC11",
-      "net": null
+      "net": "SD_SPI3_MISO"
     },
     {
       "pad": "141",
       "name": "PC12",
-      "net": null
+      "net": "SD_SPI3_MOSI"
     },
     {
       "pad": "142",
@@ -6162,17 +6230,17 @@
     {
       "pad": "154",
       "name": "PG11",
-      "net": null
+      "net": "SD_CD"
     },
     {
       "pad": "155",
       "name": "PG12",
-      "net": null
+      "net": "CAN2_STB"
     },
     {
       "pad": "156",
       "name": "PG13",
-      "net": null
+      "net": "LIN2_EN"
     },
     {
       "pad": "157",
@@ -6202,17 +6270,17 @@
     {
       "pad": "162",
       "name": "PB4",
-      "net": null
+      "net": "WBO_ADC_CS_N"
     },
     {
       "pad": "163",
       "name": "PB5",
-      "net": null
+      "net": "CAN2_RX"
     },
     {
       "pad": "164",
       "name": "PB6",
-      "net": null
+      "net": "CAN2_TX"
     },
     {
       "pad": "165",
@@ -6257,7 +6325,7 @@
     {
       "pad": "173",
       "name": "PI4",
-      "net": null
+      "net": "DIN7"
     },
     {
       "pad": "174",
@@ -6272,15 +6340,10 @@
     {
       "pad": "176",
       "name": "PI7",
-      "net": null
+      "net": "HALL4"
     }
   ],
-  "unassigned_functions": [
-    "LIN2_TX",
-    "LIN2_RX",
-    "CAN2_RX",
-    "CAN2_TX"
-  ],
+  "unassigned_functions": [],
   "analog_channels": [
     {
       "function": "TPS1",

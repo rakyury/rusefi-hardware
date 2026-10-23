@@ -35,20 +35,23 @@ def main():
     out=HERE/'board/review';out.mkdir(exist_ok=True,parents=True)
     summary={'release_status':'BLOCKED','qualification':'INCOMPLETE_ENGINEERING_REVIEW','image':IMAGE,'commands':commands}
     try:
-        for script in ['power_input/build_power_input.py','motor/build_motor.py','safety/generate.py','board/build_connector_schematic.py','build_core_schematic.py']:
+        for script in ['power_input/build_power_input.py','motor/build_motor.py','safety/generate.py','board/build_connector_schematic.py','interfaces/build_interfaces.py','interfaces_aux/build_aux.py','build_core_schematic.py']:
             host(BASE+script)
         # GDI reference sources remain unchanged; re-export their actual leaves.
         leaves=['power_input/power_input','motor/dbw_driver','motor/ewg_driver','safety/safety_gate','board/connectors','gdi/stage_a','gdi/stage_b','Power8GDI_Core']
+        leaves=leaves[:-1]+[s['name'] for s in json.loads((HERE/'interfaces/interfaces_manifest.json').read_text())['sheets']]+['interfaces_aux/'+s['name'] for s in json.loads((HERE/'interfaces_aux/interface.json').read_text())['sheets']]+['Power8GDI_Core']
         for name in leaves:
             target='core.net' if name=='Power8GDI_Core' else name+'.xml'
             cad('kicad-cli','sch','export','netlist','--format','kicadxml','-o',BASE+target,BASE+name+'.kicad_sch')
         summary['erc_native_exit']=cad('kicad-cli','sch','erc','--format','json','--exit-code-violations','-o',BASE+'core_erc.json',BASE+'Power8GDI_Core.kicad_sch',allowed=(0,5))
         host(BASE+'verify_core.py','--erc',BASE+'core_erc.json','--output',BASE+'core_checks.json')
         host(BASE+'verify_integration.py')
-        for folder in ['core_tests','board/tests']:
-            host('-m','unittest','discover','-s',BASE+folder,'-v')
-        for script in ['outputs/check_outputs.py','power_input/check_power_input.py','motor/check_motor.py','safety/test_safety.py','gdi/test_schematic.py']:
+        host('-m','unittest','discover','-s',BASE+'core_tests','-v')
+        cad('python3','-m','unittest','discover','-s',BASE+'board/tests','-v')
+        for script in ['outputs/check_outputs.py','interfaces/check_interfaces.py','interfaces_aux/test_aux.py','power_input/check_power_input.py','motor/check_motor.py','safety/test_safety.py','gdi/test_schematic.py']:
             host(BASE+script)
+        host(BASE+'interfaces/test_interfaces.py')
+        host(BASE+'interfaces_aux/test_aux.py','--netlist',BASE+'core.net')
         host('-m','unittest','discover','-s','Power8GDI/hardware/tests','-v')
         host('Power8GDI/hardware/audit_resources.py','--gate','structure','--output','Power8GDI/hardware/resource_audit_report.json')
         if not args.skip_board_build:cad('python3',BASE+'board/build_board.py')

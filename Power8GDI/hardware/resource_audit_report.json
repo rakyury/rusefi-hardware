@@ -11,56 +11,49 @@
   },
   "errors": [],
   "summary": {
-    "gpio_rows": 100,
-    "assigned_pins": 72,
-    "required_functions": 109,
-    "missing_functions": 9,
-    "unassigned_functions": 28,
+    "gpio_rows": 131,
+    "assigned_pins": 131,
+    "required_functions": 133,
+    "missing_functions": 0,
+    "unassigned_functions": 0,
     "collision_findings": 0,
     "conditional_conflicts": 5,
     "qualification_evidence_missing": 13
   },
-  "missing_functions": [
-    "DIN5",
-    "DIN6",
-    "DIN7",
-    "DIN8",
-    "FLEX_FREQ",
-    "HALL1",
-    "HALL2",
-    "HALL3",
-    "HALL4"
-  ],
-  "unassigned_functions": [
-    "AUX_PWM1",
-    "AUX_PWM2",
-    "AUX_PWM3",
-    "AUX_PWM4",
-    "AUX_PWM5",
-    "AUX_PWM6",
-    "AUX_PWM7",
-    "AUX_PWM8",
-    "CAN2_RX",
-    "CAN2_TX",
-    "LIN2_RX",
-    "LIN2_TX",
-    "LS_AUX1",
-    "LS_AUX2",
-    "LS_AUX3",
-    "LS_AUX4",
-    "PI1",
-    "PI2",
-    "PI3",
-    "PI4",
-    "PI5",
-    "PI6",
-    "PI7",
-    "PI8",
-    "VVT1",
-    "VVT2",
-    "VVT3",
-    "VVT4"
-  ],
+  "missing_functions": [],
+  "unassigned_functions": [],
+  "indirect_functions": {
+    "KNOCK1": {
+      "component": "U1701",
+      "source": "TPIC8101",
+      "path": "design/interfaces_aux/knock_dual.kicad_sch",
+      "channel": 1,
+      "required_signals": [
+        "KNOCK_CS_N",
+        "KNOCK_INT_HOLD",
+        "GDI_SPI2_SCK",
+        "GDI_SPI2_MOSI",
+        "GDI_SPI2_MISO"
+      ],
+      "unresolved_signals": [],
+      "status": "allocated_not_qualified"
+    },
+    "KNOCK2": {
+      "component": "U1701",
+      "source": "TPIC8101",
+      "path": "design/interfaces_aux/knock_dual.kicad_sch",
+      "channel": 2,
+      "required_signals": [
+        "KNOCK_CS_N",
+        "KNOCK_INT_HOLD",
+        "GDI_SPI2_SCK",
+        "GDI_SPI2_MOSI",
+        "GDI_SPI2_MISO"
+      ],
+      "unresolved_signals": [],
+      "status": "allocated_not_qualified"
+    }
+  },
   "connector_requirement_coverage": {
     "Analog": {
       "required": 14,
@@ -76,22 +69,11 @@
     },
     "Digital": {
       "required": 8,
-      "missing": [
-        "DIN5",
-        "DIN6",
-        "DIN7",
-        "DIN8",
-        "HALL1",
-        "HALL2",
-        "HALL3",
-        "HALL4"
-      ]
+      "missing": []
     },
     "Frequency": {
       "required": 1,
-      "missing": [
-        "FLEX_FREQ"
-      ]
+      "missing": []
     },
     "Ignition": {
       "required": 8,
@@ -140,6 +122,12 @@
       "overlaps": {
         "PC8": [
           "EWG_PWM"
+        ],
+        "PC12": [
+          "SD_SPI3_MOSI"
+        ],
+        "PD2": [
+          "LS_AUX1"
         ]
       },
       "status": "conflict_if_selected"
@@ -165,6 +153,18 @@
         ],
         "PC9": [
           "HPFP1"
+        ],
+        "PC10": [
+          "SD_SPI3_SCK"
+        ],
+        "PC11": [
+          "SD_SPI3_MISO"
+        ],
+        "PC12": [
+          "SD_SPI3_MOSI"
+        ],
+        "PD2": [
+          "LS_AUX1"
         ]
       },
       "status": "conflict_if_selected"
@@ -224,8 +224,12 @@
       ],
       "source": "DS11532",
       "locator": "Table 12 p. 90",
-      "coverage": "DM/DP only; VBUS/ID/supply/clock still require review",
-      "selected": false,
+      "coverage": "Device FS AF10; PA9 inverted GPIO VBUS sense; clock/firmware/electrical qualification pending",
+      "functions_by_pin": {
+        "PA11": "USB_DM",
+        "PA12": "USB_DP"
+      },
+      "selected": true,
       "overlaps": {},
       "status": "no_listed_pin_overlap_not_qualified"
     },
@@ -287,16 +291,40 @@
       "selected": false,
       "overlaps": {},
       "status": "no_listed_pin_overlap_not_qualified"
+    },
+    {
+      "mode": "SPI3_SD",
+      "decision": "storage_interface",
+      "pins": [
+        "PC10",
+        "PC11",
+        "PC12",
+        "PA8",
+        "PG11"
+      ],
+      "functions_by_pin": {
+        "PC10": "SD_SPI3_SCK",
+        "PC11": "SD_SPI3_MISO",
+        "PC12": "SD_SPI3_MOSI",
+        "PA8": "SD_CS",
+        "PG11": "SD_CD"
+      },
+      "source": "DS11532",
+      "locator": "Table11/13; AF6 PC10/11/12; GPIO select and poll card detect",
+      "coverage": "SPI3 logging candidate; DMA/clock/inrush unqualified",
+      "selected": true,
+      "overlaps": {},
+      "status": "no_listed_pin_overlap_not_qualified"
     }
   ],
   "findings": [
     {
       "code": "SHARED_TIMER_TIMEBASE",
       "category": "unverified_resource",
-      "detail": "TIM3 channels share counter/prescaler/auto-reload; compatible periods/modes not proved",
+      "detail": "TIM1 channels share counter/prescaler/auto-reload; compatible periods/modes not proved",
       "functions": [
-        "DBW_PWM",
-        "EWG_PWM"
+        "SENT1",
+        "SENT3"
       ],
       "source": "RM0410",
       "blocks_release": true
@@ -304,10 +332,10 @@
     {
       "code": "SHARED_TIMER_TIMEBASE",
       "category": "unverified_resource",
-      "detail": "TIM4 channels share counter/prescaler/auto-reload; compatible periods/modes not proved",
+      "detail": "TIM3 channels share counter/prescaler/auto-reload; compatible periods/modes not proved",
       "functions": [
-        "SENT3",
-        "SENT4"
+        "DBW_PWM",
+        "EWG_PWM"
       ],
       "source": "RM0410",
       "blocks_release": true
@@ -324,66 +352,13 @@
       "blocks_release": true
     },
     {
-      "code": "MISSING_FUNCTIONS",
-      "category": "missing_requirement",
-      "detail": "Required functions absent from MCU allocation",
-      "functions": [
-        "DIN5",
-        "DIN6",
-        "DIN7",
-        "DIN8",
-        "FLEX_FREQ",
-        "HALL1",
-        "HALL2",
-        "HALL3",
-        "HALL4"
-      ],
-      "source": "project_requirements",
-      "blocks_release": true
-    },
-    {
-      "code": "UNASSIGNED_FUNCTIONS",
-      "category": "unassigned_requirement",
-      "detail": "Explicit UNASSIGNED rows still need an implementation",
-      "functions": [
-        "AUX_PWM1",
-        "AUX_PWM2",
-        "AUX_PWM3",
-        "AUX_PWM4",
-        "AUX_PWM5",
-        "AUX_PWM6",
-        "AUX_PWM7",
-        "AUX_PWM8",
-        "CAN2_RX",
-        "CAN2_TX",
-        "LIN2_RX",
-        "LIN2_TX",
-        "LS_AUX1",
-        "LS_AUX2",
-        "LS_AUX3",
-        "LS_AUX4",
-        "PI1",
-        "PI2",
-        "PI3",
-        "PI4",
-        "PI5",
-        "PI6",
-        "PI7",
-        "PI8",
-        "VVT1",
-        "VVT2",
-        "VVT3",
-        "VVT4"
-      ],
-      "source": "project_requirements",
-      "blocks_release": true
-    },
-    {
       "code": "INTERFACE_PIN_CONFLICT",
       "category": "conditional_conflict",
-      "detail": "SDMMC1_1bit: PC8=EWG_PWM",
+      "detail": "SDMMC1_1bit: PC8=EWG_PWM, PC12=SD_SPI3_MOSI, PD2=LS_AUX1",
       "functions": [
-        "EWG_PWM"
+        "EWG_PWM",
+        "SD_SPI3_MOSI",
+        "LS_AUX1"
       ],
       "source": "DS11532",
       "blocks_release": true
@@ -391,10 +366,14 @@
     {
       "code": "INTERFACE_PIN_CONFLICT",
       "category": "conditional_conflict",
-      "detail": "SDMMC1_4bit: PC8=EWG_PWM, PC9=HPFP1",
+      "detail": "SDMMC1_4bit: PC8=EWG_PWM, PC9=HPFP1, PC10=SD_SPI3_SCK, PC11=SD_SPI3_MISO, PC12=SD_SPI3_MOSI, PD2=LS_AUX1",
       "functions": [
         "EWG_PWM",
-        "HPFP1"
+        "HPFP1",
+        "SD_SPI3_SCK",
+        "SD_SPI3_MISO",
+        "SD_SPI3_MOSI",
+        "LS_AUX1"
       ],
       "source": "DS11532",
       "blocks_release": true
@@ -451,17 +430,17 @@
       "blocks_release": true
     },
     {
-      "code": "MODE_DECISION_OPEN",
+      "code": "MODE_SELECTION_UNREVIEWED",
       "category": "unverified_resource",
-      "detail": "storage_interface is undecided",
+      "detail": "storage_interface=SPI3_SD: selection is not qualification evidence",
       "functions": [],
       "source": "project_requirements",
       "blocks_release": true
     },
     {
-      "code": "MODE_DECISION_OPEN",
+      "code": "MODE_SELECTION_UNREVIEWED",
       "category": "unverified_resource",
-      "detail": "usb_interface is undecided",
+      "detail": "usb_interface=OTG_FS: selection is not qualification evidence",
       "functions": [],
       "source": "project_requirements",
       "blocks_release": true
@@ -609,6 +588,11 @@
     "connector_requirements": {
       "path": "pinout/power8gdi_revA_pinout.csv",
       "locator": "Planned connector functions; not MCU assignments"
+    },
+    "TPIC8101": {
+      "publisher": "Texas Instruments",
+      "url": "https://www.ti.com/lit/ds/symlink/tpic8101.pdf",
+      "locator": "SLIS110B; SPI digital readout; interfaces_aux/sources.json"
     }
   },
   "limitations": [
@@ -622,7 +606,7 @@
     "gpio_csv": {
       "name": "mcu_gpio_draft.csv",
       "canonicalization": "UTF-8 without BOM; LF newlines",
-      "sha256": "eb97833c1e30d955c1882bcfa648dca98c376ee190ea9d23910b2c0ae7f98590"
+      "sha256": "4c11fe0f219334e8b4b624b556e0433129498b109cb2fd8622cab0443aec20fd"
     },
     "connector_csv": {
       "name": "power8gdi_revA_pinout.csv",
@@ -632,7 +616,7 @@
     "contract": {
       "name": "resource_contract.json",
       "canonicalization": "UTF-8 without BOM; LF newlines",
-      "sha256": "26551937f07c9c7aecea79b36a95fc10d40ea20026129aa37026a2eb38418ec7"
+      "sha256": "571cc7eb721b8e00abfa9be80cded801cd9c30acd4a0d20009168103ae37bbbe"
     }
   }
 }

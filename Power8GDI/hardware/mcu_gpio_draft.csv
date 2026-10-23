@@ -40,17 +40,15 @@ LIN1_TX,PD5,USART2,proposed,Requires automotive LIN transceiver
 LIN1_RX,PD6,USART2,proposed,Requires automotive LIN transceiver
 SENT1,PE9,TIM1_CH1,proposed,H144_IN_AUX2_DIGITAL
 SENT2,PA1,TIM2_CH2,proposed,H144_IN_O2S2_DIGITAL; ensure not used as lambda analog
-KNOCK1,PF7,ADC3,existing_macro,Knock input analog
-KNOCK2,PF5,ADC3,proposed,Use only if CAM3 and other PF5 uses relocated
 CRANK,PB1,GPIO_EXTI,proposed,MAX9924 open-drain 3V3; EXTI1 timestamp on TIM5 scheduler; interrupt budget pending
 CAM1,PF3,GPIO_EXTI,proposed,Hall receiver inverted; EXTI3; no VR sensor compatibility claim
 CAM2,PF4,GPIO_EXTI,proposed,Hall receiver inverted; EXTI4; no VR sensor compatibility claim
-SENT3,PE11,TIM1_CH2,proposed,DS11532 AF1 pad74; inverted receiver; shared TIM1 capture timebase with SENT1; PB6 released for CAN2_TX
+SENT3,PE11,TIM1_CH2,proposed,LQFP176 pad74; AF1 TIM1_CH2; relocate from PB6; shared timer with SENT1; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
 SENT4,PB7,TIM4_CH2,proposed,DS11532 Table13 AF2; LQFP176 pad165; inverted receiver; shared TIM4 timebase/DMA pending
-LIN2_TX,UNASSIGNED,USART3_OR_UART4,unassigned,No pin until protocol plan
-LIN2_RX,UNASSIGNED,USART3_OR_UART4,unassigned,No pin until protocol plan
-CAN2_RX,UNASSIGNED,CAN2,unassigned,Pending board use of PB5/PB6 or alternate
-CAN2_TX,UNASSIGNED,CAN2,unassigned,Pending board use of PB5/PB6 or alternate
+LIN2_TX,PB10,USART3,proposed,LQFP176 pad79; AF7 USART3_TX; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+LIN2_RX,PB11,USART3,proposed,LQFP176 pad80; AF7 USART3_RX; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+CAN2_RX,PB5,CAN2,proposed,LQFP176 pad163; AF9 CAN2_RX; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+CAN2_TX,PB6,CAN2,proposed,LQFP176 pad164; AF9 CAN2_TX; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
 PI1,PE0,GPIO_TIMED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Engine scheduled pulse; timing qualification pending.
 PI2,PE1,GPIO_TIMED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Engine scheduled pulse; timing qualification pending.
 PI3,PE7,GPIO_TIMED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Engine scheduled pulse; timing qualification pending.
@@ -106,3 +104,29 @@ LS_CS4,PH10,GPIO,proposed,TLE9104 shared SPI2 individual active-low select; exte
 LS_CS5,PH11,GPIO,proposed,TLE9104 shared SPI2 individual active-low select; external10k pullup
 LS_CS6,PH12,GPIO,proposed,TLE9104 shared SPI2 individual active-low select; external10k pullup
 LS_RESET_RELEASE,PH13,GPIO,proposed,High releases six TLE9104 resets through Schmitt buffer; low >=10us after5V stable
+USB_DM,PA11,OTG_FS,proposed,LQFP176 pad122; AF10 OTG_FS_DM; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+USB_DP,PA12,OTG_FS,proposed,LQFP176 pad123; AF10 OTG_FS_DP; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+USB_VBUS_PRESENT_N,PA9,GPIO,proposed,LQFP176 pad120; GPIO input active low; native VBUS detection disabled; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+SD_SPI3_SCK,PC10,SPI3,proposed,LQFP176 pad139; AF6 SPI3_SCK; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+SD_SPI3_MISO,PC11,SPI3,proposed,LQFP176 pad140; AF6 SPI3_MISO; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+SD_SPI3_MOSI,PC12,SPI3,proposed,LQFP176 pad141; AF6 SPI3_MOSI; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+SD_CS,PA8,GPIO,proposed,"LQFP176 pad119; GPIO output, default high; interfaces/interfaces_manifest.json; firmware/electrical qualification pending"
+SD_CD,PG11,GPIO,proposed,"LQFP176 pad154; GPIO input polling, active low; not EXTI11; interfaces/interfaces_manifest.json; firmware/electrical qualification pending"
+CAN2_STB,PG12,GPIO,proposed,"LQFP176 pad155; GPIO output, default high standby; interfaces/interfaces_manifest.json; firmware/electrical qualification pending"
+LIN2_EN,PG13,GPIO,proposed,"LQFP176 pad156; GPIO output, default low sleep; interfaces/interfaces_manifest.json; firmware/electrical qualification pending"
+HALL1,PH14,GPIO_EXTI,proposed,LQFP176 pad129; GPIO EXTI14; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+HALL2,PH15,GPIO_EXTI,proposed,LQFP176 pad130; GPIO EXTI15; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+HALL3,PI0,GPIO_EXTI,proposed,LQFP176 pad131; GPIO EXTI0; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+HALL4,PI7,GPIO_EXTI,proposed,LQFP176 pad176; GPIO EXTI7; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+FLEX_FREQ,PI8,GPIO_EXTI,proposed,LQFP176 pad7; GPIO EXTI8; inverted; timing not qualified; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+DIN5,PI2,GPIO,proposed,LQFP176 pad133; GPIO polling; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+DIN6,PI3,GPIO,proposed,LQFP176 pad134; GPIO polling; inverted; EXTI3 occupied by CAM1; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+DIN7,PI4,GPIO,proposed,LQFP176 pad173; GPIO polling; inverted; EXTI4 occupied by CAM2; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+DIN8,PI11,GPIO,proposed,LQFP176 pad13; GPIO polling; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+KNOCK_CS_N,PI1,GPIO,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
+KNOCK_INT_HOLD,PI9,GPIO,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
+WBO1_CS_N,PI10,GPIO,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
+WBO2_CS_N,PD8,GPIO,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
+WBO1_HEATER_PWM,PA10,GPIO_PWM_SCHEDULED,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
+WBO2_HEATER_PWM,PB2,GPIO_PWM_SCHEDULED,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
+WBO_ADC_CS_N,PB4,GPIO,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved

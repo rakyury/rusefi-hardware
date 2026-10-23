@@ -8,8 +8,8 @@
     "silicon_revision": null
   },
   "decisions": {
-    "storage_interface": null,
-    "usb_interface": null,
+    "storage_interface": "SPI3_SD",
+    "usb_interface": "OTG_FS",
     "debug_interface": "SWD",
     "hse_clock": "HSE_bypass_8MHz",
     "lse_clock": null,
@@ -50,6 +50,11 @@
     "connector_requirements": {
       "path": "pinout/power8gdi_revA_pinout.csv",
       "locator": "Planned connector functions; not MCU assignments"
+    },
+    "TPIC8101": {
+      "publisher": "Texas Instruments",
+      "url": "https://www.ti.com/lit/ds/symlink/tpic8101.pdf",
+      "locator": "SLIS110B; SPI digital readout; interfaces_aux/sources.json"
     }
   },
   "numbered_requirements": [
@@ -123,7 +128,31 @@
     "LIN1_EN",
     "SAFETY_HEARTBEAT",
     "SAFETY_ARM_REQUEST",
-    "SAFETY_FAULT_N"
+    "SAFETY_FAULT_N",
+    "LS_CS1",
+    "LS_CS2",
+    "LS_CS3",
+    "LS_CS4",
+    "LS_CS5",
+    "LS_CS6",
+    "LS_RESET_RELEASE",
+    "USB_DM",
+    "USB_DP",
+    "USB_VBUS_PRESENT_N",
+    "SD_SPI3_SCK",
+    "SD_SPI3_MISO",
+    "SD_SPI3_MOSI",
+    "SD_CS",
+    "SD_CD",
+    "KNOCK_CS_N",
+    "KNOCK_INT_HOLD",
+    "WBO1_CS_N",
+    "WBO2_CS_N",
+    "WBO1_HEATER_PWM",
+    "WBO2_HEATER_PWM",
+    "WBO_ADC_CS_N",
+    "CAN2_STB",
+    "LIN2_EN"
   ],
   "direct_connector_groups": [
     "Ignition",
@@ -198,7 +227,11 @@
       ],
       "source": "DS11532",
       "locator": "Table 12 p. 90",
-      "coverage": "DM/DP only; VBUS/ID/supply/clock still require review"
+      "coverage": "Device FS AF10; PA9 inverted GPIO VBUS sense; clock/firmware/electrical qualification pending",
+      "functions_by_pin": {
+        "PA11": "USB_DM",
+        "PA12": "USB_DP"
+      }
     },
     {
       "mode": "SWD",
@@ -242,6 +275,27 @@
       "source": "DS11532",
       "locator": "Table 11; footnote 2 p. 85",
       "coverage": "oscillator pins only; RTC source undecided"
+    },
+    {
+      "mode": "SPI3_SD",
+      "decision": "storage_interface",
+      "pins": [
+        "PC10",
+        "PC11",
+        "PC12",
+        "PA8",
+        "PG11"
+      ],
+      "functions_by_pin": {
+        "PC10": "SD_SPI3_SCK",
+        "PC11": "SD_SPI3_MISO",
+        "PC12": "SD_SPI3_MOSI",
+        "PA8": "SD_CS",
+        "PG11": "SD_CD"
+      },
+      "source": "DS11532",
+      "locator": "Table11/13; AF6 PC10/11/12; GPIO select and poll card detect",
+      "coverage": "SPI3 logging candidate; DMA/clock/inrush unqualified"
     }
   ],
   "timer_reservations": {
@@ -476,6 +530,180 @@
         "port": "PD7",
         "mode": "GPIO direct to inverter/TLE9104; scheduled timing not qualified"
       }
+    },
+    "interfaces": [
+      {
+        "function": "CAN2_RX",
+        "stm32_pin": "PB5",
+        "package_pad": 163,
+        "mode": "AF9 CAN2_RX"
+      },
+      {
+        "function": "CAN2_TX",
+        "stm32_pin": "PB6",
+        "package_pad": 164,
+        "mode": "AF9 CAN2_TX"
+      },
+      {
+        "function": "SENT3",
+        "stm32_pin": "PE11",
+        "package_pad": 74,
+        "mode": "AF1 TIM1_CH2; relocate from PB6; shared timer with SENT1"
+      },
+      {
+        "function": "LIN2_TX",
+        "stm32_pin": "PB10",
+        "package_pad": 79,
+        "mode": "AF7 USART3_TX"
+      },
+      {
+        "function": "LIN2_RX",
+        "stm32_pin": "PB11",
+        "package_pad": 80,
+        "mode": "AF7 USART3_RX"
+      },
+      {
+        "function": "USB_DM",
+        "stm32_pin": "PA11",
+        "package_pad": 122,
+        "mode": "AF10 OTG_FS_DM"
+      },
+      {
+        "function": "USB_DP",
+        "stm32_pin": "PA12",
+        "package_pad": 123,
+        "mode": "AF10 OTG_FS_DP"
+      },
+      {
+        "function": "USB_VBUS_PRESENT_N",
+        "stm32_pin": "PA9",
+        "package_pad": 120,
+        "mode": "GPIO input active low; native VBUS detection disabled"
+      },
+      {
+        "function": "SD_SPI3_SCK",
+        "stm32_pin": "PC10",
+        "package_pad": 139,
+        "mode": "AF6 SPI3_SCK"
+      },
+      {
+        "function": "SD_SPI3_MISO",
+        "stm32_pin": "PC11",
+        "package_pad": 140,
+        "mode": "AF6 SPI3_MISO"
+      },
+      {
+        "function": "SD_SPI3_MOSI",
+        "stm32_pin": "PC12",
+        "package_pad": 141,
+        "mode": "AF6 SPI3_MOSI"
+      },
+      {
+        "function": "SD_CS",
+        "stm32_pin": "PA8",
+        "package_pad": 119,
+        "mode": "GPIO output, default high"
+      },
+      {
+        "function": "SD_CD",
+        "stm32_pin": "PG11",
+        "package_pad": 154,
+        "mode": "GPIO input polling, active low; not EXTI11"
+      },
+      {
+        "function": "CAN2_STB",
+        "stm32_pin": "PG12",
+        "package_pad": 155,
+        "mode": "GPIO output, default high standby"
+      },
+      {
+        "function": "LIN2_EN",
+        "stm32_pin": "PG13",
+        "package_pad": 156,
+        "mode": "GPIO output, default low sleep"
+      },
+      {
+        "function": "HALL1",
+        "stm32_pin": "PH14",
+        "package_pad": 129,
+        "mode": "GPIO EXTI14; inverted"
+      },
+      {
+        "function": "HALL2",
+        "stm32_pin": "PH15",
+        "package_pad": 130,
+        "mode": "GPIO EXTI15; inverted"
+      },
+      {
+        "function": "HALL3",
+        "stm32_pin": "PI0",
+        "package_pad": 131,
+        "mode": "GPIO EXTI0; inverted"
+      },
+      {
+        "function": "HALL4",
+        "stm32_pin": "PI7",
+        "package_pad": 176,
+        "mode": "GPIO EXTI7; inverted"
+      },
+      {
+        "function": "FLEX_FREQ",
+        "stm32_pin": "PI8",
+        "package_pad": 7,
+        "mode": "GPIO EXTI8; inverted; timing not qualified"
+      },
+      {
+        "function": "DIN5",
+        "stm32_pin": "PI2",
+        "package_pad": 133,
+        "mode": "GPIO polling; inverted"
+      },
+      {
+        "function": "DIN6",
+        "stm32_pin": "PI3",
+        "package_pad": 134,
+        "mode": "GPIO polling; inverted; EXTI3 occupied by CAM1"
+      },
+      {
+        "function": "DIN7",
+        "stm32_pin": "PI4",
+        "package_pad": 173,
+        "mode": "GPIO polling; inverted; EXTI4 occupied by CAM2"
+      },
+      {
+        "function": "DIN8",
+        "stm32_pin": "PI11",
+        "package_pad": 13,
+        "mode": "GPIO polling; inverted"
+      }
+    ]
+  },
+  "indirect_functions": {
+    "KNOCK1": {
+      "component": "U1701",
+      "source": "TPIC8101",
+      "path": "design/interfaces_aux/knock_dual.kicad_sch",
+      "channel": 1,
+      "required_signals": [
+        "KNOCK_CS_N",
+        "KNOCK_INT_HOLD",
+        "GDI_SPI2_SCK",
+        "GDI_SPI2_MOSI",
+        "GDI_SPI2_MISO"
+      ]
+    },
+    "KNOCK2": {
+      "component": "U1701",
+      "source": "TPIC8101",
+      "path": "design/interfaces_aux/knock_dual.kicad_sch",
+      "channel": 2,
+      "required_signals": [
+        "KNOCK_CS_N",
+        "KNOCK_INT_HOLD",
+        "GDI_SPI2_SCK",
+        "GDI_SPI2_MOSI",
+        "GDI_SPI2_MISO"
+      ]
     }
   }
 }

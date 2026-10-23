@@ -64,7 +64,7 @@ def generate():
     mcu.hport("GND",25.4,33.02)
     mcu.component(mcu_symbol,"U101","STM32F767IIT6",152.4,177.8,nets,
                   note="Provisional industrial -40..85C LQFP176. Unassigned pads are intentionally unused in this candidate, not qualified resources.")
-    mcu.text("176 physical pads; source: DS11532 Rev9 + official KiCad9.0.9 symbol.\nGPIO labels are logic-side draft functions, NEVER harness/actuator connections.\nNo USB or SD route is fitted. PH1, PC14/15 reserved unused; HSE bypass input only.",250,25.4)
+    mcu.text("176 physical pads; source: DS11532 Rev9 + official KiCad9.0.9 symbol.\nGPIO labels are logic-side draft functions, NEVER harness/actuator connections.\nUSB FS and SPI3 microSD use dedicated interface sheets. PH1, PC14/15 reserved unused; HSE bypass input only.",250,25.4)
     vdd=[n for n,p in mcu_symbol.pins.items() if p["name"]=="VDD"]
     decoupling=[]
     for i,n in enumerate(sorted(vdd,key=int)):
@@ -123,7 +123,7 @@ def generate():
     res(comm,"R104","10k",65,90,"+3V3","CAN1_STB","Fail-closed default: transceiver in standby")
     res(comm,"R105","0R DNP",65,140,"CAN1_STB","GND","Test-only normal-mode strap; leave DNP for MCU PH2 control",dnp=True)
     res(comm,"R106","120R DNP",205,120,"CAN1_H","CAN1_L","Fit only if ECU is a bus end; do not add third terminator",dnp=True)
-    comm.text("CAN1_H/L are vehicle-side nets. STB high by default; MCU PH2 pad43 enables low.\nDNP termination only after network topology review. EMC/ESD bench qualification pending.\nCAN2 and LIN2 remain unassigned. PH2/PH3 GPIO additions are provisional schematic assignments.",25.4,175)
+    comm.text("CAN1_H/L are vehicle-side nets. STB high by default; MCU PH2 pad43 enables low.\nDNP termination only after network topology review. EMC/ESD bench qualification pending.\nCAN2 and LIN2 use the comms2 sheet. PH2/PH3 GPIO additions are provisional schematic assignments.",25.4,175)
     can_tvs=box_symbol("PESD2CAN",[("1","CANH","passive",-10.16,5.08,0),("2","CANL","passive",-10.16,-5.08,0),("3","COMMON","passive",10.16,0,180)],
                        "Package_TO_SOT_SMD:SOT-23",prefix="D")
     comm.component(can_tvs,"D101","PESD2CAN",245,130,{"1":"CAN1_H","2":"CAN1_L","3":"GND"},note="Nexperia Rev2 pinning1/2lines3common; close connector; ground surge return review")
@@ -177,6 +177,8 @@ def generate():
         ("motor/dbw_driver","DBW H-bridge candidate",None),
         ("motor/ewg_driver","EWG H-bridge candidate",None),
         ("board/connectors","Four TE34 harness connectors",None),
+    ] + [(s['name'],s['title'],s['sheet_id']) for s in json.loads((HERE/'interfaces/interfaces_manifest.json').read_text())['sheets']] + [
+        ('interfaces_aux/'+s['name'],s['name'].replace('_',' '),s['root_instance_uuid']) for s in json.loads((HERE/'interfaces_aux/interface.json').read_text())['sheets']
     ]:
         if not (HERE/(name+".kicad_sch")).exists():
             raise FileNotFoundError("Integrated source-owned leaf required: "+name)
@@ -193,7 +195,7 @@ def generate():
     root.text("Each sheet uses explicit global net names. HARNESS names remain separate from MCU logic.\nNo ERC exclusions or power flags conceal missing supplies. DNP assembly flags must be preserved.\nGDI enable, injector/pump models, missing domains and full routing remain release blockers.",25.4,745)
     for sheet in sheets: sheet.write(HERE)
     all_symbols={n:s for sheet in sheets for n,s in sheet.symbols.items()}
-    for library in ["power_input/power_input.kicad_sym","motor/motor.kicad_sym"]:
+    for library in ["power_input/power_input.kicad_sym","motor/motor.kicad_sym","interfaces/interfaces.kicad_sym"]:
         source=parse((HERE/library).read_text(encoding="utf-8"))
         for expr in children(source,"symbol"):
             name=str(expr[1]).split(":")[-1]
@@ -205,6 +207,8 @@ def generate():
     (HERE/"sym-lib-table").write_text(table[:-1]+' (lib (name "Power8GDI_Safety")(type "KiCad")(uri "${KIPRJMOD}/safety/Power8GDI_Safety.kicad_sym")(options "")(descr "Hardware permission candidate")))\n',encoding="utf-8")
     table=(HERE/"sym-lib-table").read_text(encoding="utf-8").rstrip()
     (HERE/"sym-lib-table").write_text(table[:-1]+' (lib (name "Power8GDI_Board")(type "KiCad")(uri "${KIPRJMOD}/board/Power8GDI_Board.kicad_sym")(options "")(descr "TE harness connectors")))\n',encoding="utf-8")
+    table=(HERE/"sym-lib-table").read_text(encoding="utf-8").rstrip()
+    (HERE/"sym-lib-table").write_text(table[:-1]+' (lib (name "Power8GDI_Aux")(type "KiCad")(uri "${KIPRJMOD}/interfaces_aux/Power8GDI_Aux.kicad_sym")(options "")(descr "Knock and wideband candidates")))\n',encoding="utf-8")
     (HERE/"Power8GDI_Core.kicad_pro").write_text('{"meta":{"filename":"Power8GDI_Core.kicad_pro","version":1}}\n',encoding="utf-8")
     footprint_dir=HERE/"Power8GDI_Core.pretty"
     footprint_dir.mkdir(exist_ok=True)
@@ -215,6 +219,8 @@ def generate():
     (HERE/"fp-lib-table").write_text('(fp_lib_table (version 7) (lib (name "Power8GDI_Core")(type "KiCad")(uri "${KIPRJMOD}/Power8GDI_Core.pretty")(options "")(descr "Source-derived core footprints")) (lib (name "Power8GDI_GDI")(type "KiCad")(uri "${KIPRJMOD}/gdi/Power8GDI_GDI.pretty")(options "")(descr "GDI source-derived footprints")))\n',encoding="utf-8")
     table=(HERE/"fp-lib-table").read_text(encoding="utf-8").rstrip()
     (HERE/"fp-lib-table").write_text(table[:-1]+' (lib (name "Power8GDI_Board")(type "KiCad")(uri "${KIPRJMOD}/board/Power8GDI_Board.pretty")(options "")(descr "TE34 land pattern candidate")))\n',encoding="utf-8")
+    table=(HERE/"fp-lib-table").read_text(encoding="utf-8").rstrip()
+    (HERE/"fp-lib-table").write_text(table[:-1]+' (lib (name "Power8GDI_Interfaces")(type "KiCad")(uri "${KIPRJMOD}/interfaces/Power8GDI_Interfaces.pretty")(options "")(descr "Interface source-derived footprints")))\n',encoding="utf-8")
     manifest={"schema_version":1,"root_uuid":ROOT_ID,"project":"Power8GDI_Core","mcu":"STM32F767IIT6","qualification":"BLOCKED",
               "parts":[p for s in sheets for p in s.parts],"decoupling_placement":decoupling,"external_sheets":external,
               "added_gpio":[{"port":"PH2","pad":"43","net":"CAN1_STB","mode":"GPIO output; reset high-Z, external pullup"},{"port":"PH3","pad":"44","net":"LIN1_EN","mode":"GPIO output; reset high-Z, external pulldown"}],
