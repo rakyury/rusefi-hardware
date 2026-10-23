@@ -57,6 +57,37 @@ def supply_errors(observed,index):
         if observed.get(r,{}).get('value')!=value:errors.append(f'{r} expected {value}')
     return errors
 
+
+def inhibit_errors(observed,index):
+    """Independent partial-power contract: OE pull-up lives with AHCT VCC."""
+    b=5600 if index==1 else 5800;p=f'WBO{index}_';errors=[]
+    expected={f'U{b+11}':{'1':p+'HEATER_OE_N','5':'+5V_CORE'},
+              f'Q{b+20}':{'1':p+'HEATER_OE_BASE','2':'GND','3':p+'HEATER_OE_N'},
+              f'R{b+42}':{'1':p+'HEATER_OE_N','2':'+5V_CORE'},
+              f'R{b+64}':{'1':'HW_ACTUATOR_ENABLE','2':p+'HEATER_OE_BASE'},
+              f'R{b+65}':{'1':p+'HEATER_OE_BASE','2':'GND'}}
+    for r,pins in expected.items():
+        for pin,net in pins.items():
+            if observed.get(r,{}).get('pins',{}).get(pin)!=net:errors.append(f'{r}.{pin} must be {net}')
+    for r,value in [(f'Q{b+20}','BC847B-QR'),(f'R{b+42}','2.2k 1%'),(f'R{b+64}','4.7k 1%'),(f'R{b+65}','10k 1%')]:
+        if observed.get(r,{}).get('value')!=value:errors.append(f'{r} expected {value}')
+    return errors
+
+
+def partial_power_oe_bound(observed,index):
+    """DC fault scenario, NOT device transient simulation or measured proof.
+
+    Main3V3=0, local5V=4.5V, NPN base held low. Evaluate the actual pull-up
+    destination; includes a6uA combined collector/input leakage budget.
+    """
+    b=5600 if index==1 else 5800;r=observed[f'R{b+42}'];oe=observed[f'U{b+11}']['pins']['1']
+    ends=list(r['pins'].values())
+    if oe not in ends:return None
+    other=ends[1] if ends[0]==oe else ends[0]
+    rail={'GND':0.0,'+3V3':0.0,'+5V_CORE':4.5}.get(other)
+    if rail is None:return None
+    return rail-2200*1.01*6e-6
+
 def verify():
     parts={p['ref']:p for p in json.loads((HERE/'parts.json').read_text())}
     observed={};errors=[];checks=[]
@@ -72,7 +103,7 @@ def verify():
     def check(label,condition):
         checks.append({'check':label,'passed':bool(condition)})
         if not condition:errors.append(label)
-    check('All168parts exported exactly once',set(observed)==set(parts) and len(parts)==168)
+    check('All174parts exported exactly once',set(observed)==set(parts) and len(parts)==174)
     for ref,p in parts.items():
         o=observed.get(ref,{})
         check(ref+' exported electrical pins match manifest',all(o.get('pins',{}).get(pin)==net for pin,net in p['pins'].items()))
@@ -84,7 +115,7 @@ def verify():
         check(pre+'F042 pins PA11RX PA12TX',p('U',2)['21']==p('U',5)['4'] and p('U',2)['22']==p('U',5)['1'])
         check(pre+'F042 ADC pump/Nernst/virtualground',p('U',2)['6']==pre+'Un_sense' and p('U',2)['8']==pre+'Ip_sense' and p('U',2)['9']==pre+'Vm')
         check(pre+'F042 heaterPA7',p('U',2)['13']==pre+'F042_HEATER_PWM')
-        check(pre+'hardware inhibits heater directly',p('U',11)['1']=='HW_ACTUATOR_ENABLE_N' and p('U',11)['5']=='+5V_CORE')
+        check(pre+'hardware inhibit defaults disabled in5Vdomain',not inhibit_errors(observed,i))
         check(pre+'individualF7permission andF042PWM',p('U',10)['1']==pre+'F042_HEATER_PWM' and p('U',10)['2']==pre+'HEATER_PWM' and p('U',10)['4']==p('U',11)['2'])
         check(pre+'gate signal resistor and pulldown',p('R',22)['2']==p('U',11)['4'] and p('R',22)['1']==p('Q',0)['1'] and p('R',45)['1']==p('Q',0)['1'] and p('R',45)['2']=='GND')
         check(pre+'Hminus actual powerdrain pin2',p('Q',0)['2']==f'HARNESS_WBO{i}_CONTACT3' and p('Q',0)['3']=='GND')
@@ -110,6 +141,14 @@ def verify():
         power_problems=supply_errors(observed,index)
         check(f'WBO{index} independent power/reset datasheet pin contract',not power_problems)
         errors.extend(power_problems)
+        errors.extend(inhibit_errors(observed,index))
+        bound=partial_power_oe_bound(observed,index)
+        check(f'WBO{index} main3V3off 5Valive OE DC bound above2V',bound is not None and bound>2.0)
+        bad=deepcopy(observed);bad[f'R{base+42}']['pins']['2']='+3V3'
+        check(f'WBO{index} old3V3pullup fails partial-power DC scenario',partial_power_oe_bound(bad,index)<0.8)
+        for ref,pin,wrong in [(f'R{base+42}','2','+3V3'),(f'U{base+11}','1','HW_ACTUATOR_ENABLE_N'),(f'R{base+64}','1','HW_ACTUATOR_ENABLE_N'),(f'R{base+65}','2',None)]:
+            bad=deepcopy(observed);bad[ref]['pins'][pin]=wrong
+            check(f'WBO{index} partial-power inhibit mutation caught {ref}.{pin}',bool(inhibit_errors(bad,index)))
         for ref,pin,wrong in [(f'U{base+2}','5',f'WBO{index}_OLD_VDDA'),(f'U{base+3}','2',f'WBO{index}_3V3'),(f'U{base+4}','6','GND'),(f'U{base+12}','5','+3V3')]:
             bad=deepcopy(observed);bad[ref]['pins'][pin]=wrong
             check(f'WBO{index} power fault mutation caught {ref}.{pin}',bool(supply_errors(bad,index)))

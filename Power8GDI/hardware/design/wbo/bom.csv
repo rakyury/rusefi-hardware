@@ -60,12 +60,12 @@ U5602,STM32F042K6T6,Package_QFP:LQFP-32_7x7mm_P0.8mm,False,wbo/wbo1_control,Pinn
 U5604,LT3042IMSE#WTRPBF,Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm,False,wbo/wbo1_control,LT3042 RevC p15 external reference buffer; replaces XC6206. PGFB=IN disables fast start. OUTS Kelvin to output capacitor. EP grounded.
 U5605,TJA1051T/3/1J,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,wbo/wbo1_control,Pinned Hellen 0.6 source U605; netlist-derived.
 U5610,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,wbo/wbo1_control,"Main F7 permission uses legacy WBOx_HEATER_PWM net name; static enable, not a second PWM."
-U5611,SN74AHCT1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,wbo/wbo1_control,TTL input accepts3V3; disabled by independent global hardware latch. Output pull-down keeps switch off.
+U5611,SN74AHCT1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,wbo/wbo1_control,OE local5V pull-up defaults disabled; NPN level shift enables only when positive global HW enable is present. No5V pull-up on main3V3 output.
 R5640,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
 R5641,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
 C5640,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo1_control,
 C5641,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo1_control,
-R5642,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
+R5642,2.2k 1%,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
 R5643,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
 R5644,0R,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
 R5645,100k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
@@ -79,6 +79,9 @@ C5661,10u 16V X7R effective>=4.7u,Capacitor_SMD:C_1206_3216Metric,False,wbo/wbo1
 C5662,10u 16V X7R effective>=4.7u,Capacitor_SMD:C_1206_3216Metric,False,wbo/wbo1_control,LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate.
 C5663,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo1_control,
 C5664,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo1_control,
+Q5620,BC847B-QR,Package_TO_SOT_SMD:SOT-23,False,wbo/wbo1_control,NexperiaBC847x-Q Rev2:1B2E3C. Main3V3 absent -> base10k pull-down -> OE rises to5V independent of main permission.
+R5664,4.7k 1%,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
+R5665,10k 1%,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
 D5610,STPS5H100BY-TR,Package_TO_SOT_SMD:TO-252-2,False,wbo/wbo1_heater_feed,"ST DS6906 page1 package: leftlead1 NC, tab2 K, rightlead3 A. External branch fuse coordination and diode thermal validation required."
 D5611,SMBJ24CA,Diode_SMD:D_SMB,False,wbo/wbo1_heater_feed,38.9V ratedclamp nominal <40V switch minimumclamp; overshoot/pulse energy still unqualified.
 C5650,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,wbo/wbo1_heater_feed,
@@ -144,12 +147,12 @@ U5802,STM32F042K6T6,Package_QFP:LQFP-32_7x7mm_P0.8mm,False,wbo/wbo2_control,Pinn
 U5804,LT3042IMSE#WTRPBF,Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm,False,wbo/wbo2_control,LT3042 RevC p15 external reference buffer; replaces XC6206. PGFB=IN disables fast start. OUTS Kelvin to output capacitor. EP grounded.
 U5805,TJA1051T/3/1J,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,wbo/wbo2_control,Pinned Hellen 0.6 source U605; netlist-derived.
 U5810,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,wbo/wbo2_control,"Main F7 permission uses legacy WBOx_HEATER_PWM net name; static enable, not a second PWM."
-U5811,SN74AHCT1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,wbo/wbo2_control,TTL input accepts3V3; disabled by independent global hardware latch. Output pull-down keeps switch off.
+U5811,SN74AHCT1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,wbo/wbo2_control,OE local5V pull-up defaults disabled; NPN level shift enables only when positive global HW enable is present. No5V pull-up on main3V3 output.
 R5840,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
 R5841,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
 C5840,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo2_control,
 C5841,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo2_control,
-R5842,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
+R5842,2.2k 1%,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
 R5843,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
 R5844,0R,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
 R5845,100k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
@@ -163,6 +166,9 @@ C5861,10u 16V X7R effective>=4.7u,Capacitor_SMD:C_1206_3216Metric,False,wbo/wbo2
 C5862,10u 16V X7R effective>=4.7u,Capacitor_SMD:C_1206_3216Metric,False,wbo/wbo2_control,LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate.
 C5863,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo2_control,
 C5864,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo2_control,
+Q5820,BC847B-QR,Package_TO_SOT_SMD:SOT-23,False,wbo/wbo2_control,NexperiaBC847x-Q Rev2:1B2E3C. Main3V3 absent -> base10k pull-down -> OE rises to5V independent of main permission.
+R5864,4.7k 1%,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
+R5865,10k 1%,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
 D5810,STPS5H100BY-TR,Package_TO_SOT_SMD:TO-252-2,False,wbo/wbo2_heater_feed,"ST DS6906 page1 package: leftlead1 NC, tab2 K, rightlead3 A. External branch fuse coordination and diode thermal validation required."
 D5811,SMBJ24CA,Diode_SMD:D_SMB,False,wbo/wbo2_heater_feed,38.9V ratedclamp nominal <40V switch minimumclamp; overshoot/pulse energy still unqualified.
 C5850,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,wbo/wbo2_heater_feed,

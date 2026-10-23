@@ -1,10 +1,10 @@
 {
-  "check_count": 396,
+  "check_count": 420,
   "passed": true,
   "errors": [],
   "checks": [
     {
-      "check": "All168parts exported exactly once",
+      "check": "All174parts exported exactly once",
       "passed": true
     },
     {
@@ -645,6 +645,30 @@
     },
     {
       "check": "C5664 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "Q5620 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "Q5620 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "R5664 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "R5664 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "R5665 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "R5665 footprint preserved",
       "passed": true
     },
     {
@@ -1320,6 +1344,30 @@
       "passed": true
     },
     {
+      "check": "Q5820 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "Q5820 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "R5864 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "R5864 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "R5865 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "R5865 footprint preserved",
+      "passed": true
+    },
+    {
       "check": "D5810 exported electrical pins match manifest",
       "passed": true
     },
@@ -1368,7 +1416,7 @@
       "passed": true
     },
     {
-      "check": "WBO1_hardware inhibits heater directly",
+      "check": "WBO1_hardware inhibit defaults disabled in5Vdomain",
       "passed": true
     },
     {
@@ -1432,7 +1480,7 @@
       "passed": true
     },
     {
-      "check": "WBO2_hardware inhibits heater directly",
+      "check": "WBO2_hardware inhibit defaults disabled in5Vdomain",
       "passed": true
     },
     {
@@ -1500,6 +1548,30 @@
       "passed": true
     },
     {
+      "check": "WBO1 main3V3off 5Valive OE DC bound above2V",
+      "passed": true
+    },
+    {
+      "check": "WBO1 old3V3pullup fails partial-power DC scenario",
+      "passed": true
+    },
+    {
+      "check": "WBO1 partial-power inhibit mutation caught R5642.2",
+      "passed": true
+    },
+    {
+      "check": "WBO1 partial-power inhibit mutation caught U5611.1",
+      "passed": true
+    },
+    {
+      "check": "WBO1 partial-power inhibit mutation caught R5664.1",
+      "passed": true
+    },
+    {
+      "check": "WBO1 partial-power inhibit mutation caught R5665.2",
+      "passed": true
+    },
+    {
       "check": "WBO1 power fault mutation caught U5602.5",
       "passed": true
     },
@@ -1545,6 +1617,30 @@
     },
     {
       "check": "WBO2 independent power/reset datasheet pin contract",
+      "passed": true
+    },
+    {
+      "check": "WBO2 main3V3off 5Valive OE DC bound above2V",
+      "passed": true
+    },
+    {
+      "check": "WBO2 old3V3pullup fails partial-power DC scenario",
+      "passed": true
+    },
+    {
+      "check": "WBO2 partial-power inhibit mutation caught R5842.2",
+      "passed": true
+    },
+    {
+      "check": "WBO2 partial-power inhibit mutation caught U5811.1",
+      "passed": true
+    },
+    {
+      "check": "WBO2 partial-power inhibit mutation caught R5864.1",
+      "passed": true
+    },
+    {
+      "check": "WBO2 partial-power inhibit mutation caught R5865.2",
       "passed": true
     },
     {
@@ -1800,10 +1896,10 @@
   ],
   "schematic_hashes": {
     "wbo1_analog.kicad_sch": "5c9861cc6e8df964883c3e393de14ce113f78e8744d7219d55d885eb689b5d3b",
-    "wbo1_control.kicad_sch": "d551a91ed1bc4cc5d40aac528335de16f3a8bf8b43b8aabac1aa4205545f2307",
+    "wbo1_control.kicad_sch": "39bf2dc310afa58b7632f1d38b14357d3bc32d17048d680a46fbc1196adf1d6b",
     "wbo1_heater_feed.kicad_sch": "4e9e22188b31c5b9231b0da274edb4708b789c6c936e00bd4e3e3aca57ce3070",
     "wbo2_analog.kicad_sch": "23b7c8aa06feb8c43190e396013b0ddee90b7234cb1f964c1ced027f860136b5",
-    "wbo2_control.kicad_sch": "ce747c1e55c259ffc596c7394c37897eb58609af85cd254fb2a799105bfcb56b",
+    "wbo2_control.kicad_sch": "a1c8566d4f470e1ab3d5d3090814b93cdebea6bb739fe9d281387c4a9685e5db",
     "wbo2_heater_feed.kicad_sch": "60cdb49369a18b3113f4ef7965849ba9f637fb2ea0e48d45f917ab709adeae27"
   },
   "qualification": "Connectivity and land-pattern pad audit only; integratedERC/DRC and hardware measurement pending"

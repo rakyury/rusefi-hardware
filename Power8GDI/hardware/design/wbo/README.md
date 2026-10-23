@@ -2,14 +2,14 @@
 
 CURRENT ENGINEERING CHECKPOINT: local work resumed after cancelled handoff.
 All six netlists exported again with KiCad9.0.9 after final signal/layout changes.
-396 connectivity, independent topology, power/reset and footprint-pad checks pass. Standalone leaf ERC findings are
+420 connectivity, independent topology, power/reset and footprint-pad checks pass. Standalone leaf ERC findings are
 cross-sheet global labels and missing external power drivers only (7/10/1 per
 channel); final integrated ERC remains the integration lead's responsibility.
 No manufacturing, thermal, EMC or engine qualification is claimed.
 
 ## Implemented
 
-Six generated KiCad sheets, 168 actual components: two independent on-board
+Six generated KiCad sheets, 174 actual components: two independent on-board
 F042 WBO channels derived electrically from Hellen WBO0.6. Removes dependency
 on unresolved CJ125 pin18 and adds actual heater switches and protected feeds.
 Parent integration must replace interfaces_aux/wbo1_analog, wbo2_analog and
@@ -28,11 +28,12 @@ CAN2_H/L shared existing bus,500kbit/s. Data IDs400/402 and diagnostic401/403.
 Index0 uses SEL1low/SEL2floating; index1 uses SEL1floating/SEL2high as pinned
 f0_module port.cpp. Per-node120R termination DNP.
 +5V_CORE feeds local3.3V LDO/reference and transceiver; local3.3V never joins
-main3.3V. Main3.3V used only inhibit pull-up. Heater feed VBAT_MAIN_FUSED,
+main3.3V. Positive HW_ACTUATOR_ENABLE drives a transistor level shifter. Heater feed VBAT_MAIN_FUSED,
 NOT VBAT_LOGIC_PROTECTED (existing logic diode cannot carry heaters).
 Main MCU legacy WBO1_HEATER_PWM/WBO2_HEATER_PWM are static permissions;
 actual local PWM is WBO1/2_F042_HEATER_PWM. LVC1G08 AND + AHCT1G1255Vbuffer
-implements localPWM AND mainpermission AND NOT(HW_ACTUATOR_ENABLE_N).
+implements localPWM AND mainpermission AND HW_ACTUATOR_ENABLE.
+AHCT OE is locally pulled to5V, so loss of main3V3 leaves it disabled.
 Mainfirmware must clear permission on stale/invalid CAN. This is not an
 independent F042 hardware heartbeat. Calibration/thermal/fault tests pending.
 
@@ -47,7 +48,7 @@ cold-start and transient coordination remains integration work.
 
 Run build_wbo.py, export every wbo*.kicad_sch with kicad-cli sch export netlist
 --format kicadxml, then run verify_wbo.py inside the pinned KiCad9 image.
-Latest396 checks pass against the regenerated electrical sheets and all installed
+Latest420 checks pass against the regenerated electrical sheets and all installed
 footprint pads. Pin contracts cover Bosch sensor mapping, ST diode/FET mapping,
 CAN polarity, F042 pins, power isolation and all heater inhibit gates.
 Control and analog previews were inspected; sheet overflow and reference-label

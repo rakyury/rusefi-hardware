@@ -806,14 +806,14 @@
     "value": "SN74AHCT1G125QDBVRQ1",
     "footprint": "Package_TO_SOT_SMD:SOT-23-5",
     "pins": {
-      "1": "HW_ACTUATOR_ENABLE_N",
+      "1": "WBO1_HEATER_OE_N",
       "2": "WBO1_HEATER_ALLOWED_3V3",
       "3": "GND",
       "4": "WBO1_HEATER_DRIVE_5V",
       "5": "+5V_CORE"
     },
     "dnp": false,
-    "note": "TTL input accepts3V3; disabled by independent global hardware latch. Output pull-down keeps switch off.",
+    "note": "OE local5V pull-up defaults disabled; NPN level shift enables only when positive global HW enable is present. No5V pull-up on main3V3 output.",
     "sheet": "wbo/wbo1_control"
   },
   {
@@ -866,11 +866,11 @@
   },
   {
     "ref": "R5642",
-    "value": "10k",
+    "value": "2.2k 1%",
     "footprint": "Resistor_SMD:R_0603_1608Metric",
     "pins": {
-      "1": "HW_ACTUATOR_ENABLE_N",
-      "2": "+3V3"
+      "1": "WBO1_HEATER_OE_N",
+      "2": "+5V_CORE"
     },
     "dnp": false,
     "note": "",
@@ -1030,6 +1030,43 @@
     "footprint": "Capacitor_SMD:C_0603_1608Metric",
     "pins": {
       "1": "WBO1_REF3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo1_control"
+  },
+  {
+    "ref": "Q5620",
+    "value": "BC847B-QR",
+    "footprint": "Package_TO_SOT_SMD:SOT-23",
+    "pins": {
+      "1": "WBO1_HEATER_OE_BASE",
+      "2": "GND",
+      "3": "WBO1_HEATER_OE_N"
+    },
+    "dnp": false,
+    "note": "NexperiaBC847x-Q Rev2:1B2E3C. Main3V3 absent -> base10k pull-down -> OE rises to5V independent of main permission.",
+    "sheet": "wbo/wbo1_control"
+  },
+  {
+    "ref": "R5664",
+    "value": "4.7k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "HW_ACTUATOR_ENABLE",
+      "2": "WBO1_HEATER_OE_BASE"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo1_control"
+  },
+  {
+    "ref": "R5665",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "WBO1_HEATER_OE_BASE",
       "2": "GND"
     },
     "dnp": false,
@@ -1892,14 +1929,14 @@
     "value": "SN74AHCT1G125QDBVRQ1",
     "footprint": "Package_TO_SOT_SMD:SOT-23-5",
     "pins": {
-      "1": "HW_ACTUATOR_ENABLE_N",
+      "1": "WBO2_HEATER_OE_N",
       "2": "WBO2_HEATER_ALLOWED_3V3",
       "3": "GND",
       "4": "WBO2_HEATER_DRIVE_5V",
       "5": "+5V_CORE"
     },
     "dnp": false,
-    "note": "TTL input accepts3V3; disabled by independent global hardware latch. Output pull-down keeps switch off.",
+    "note": "OE local5V pull-up defaults disabled; NPN level shift enables only when positive global HW enable is present. No5V pull-up on main3V3 output.",
     "sheet": "wbo/wbo2_control"
   },
   {
@@ -1952,11 +1989,11 @@
   },
   {
     "ref": "R5842",
-    "value": "10k",
+    "value": "2.2k 1%",
     "footprint": "Resistor_SMD:R_0603_1608Metric",
     "pins": {
-      "1": "HW_ACTUATOR_ENABLE_N",
-      "2": "+3V3"
+      "1": "WBO2_HEATER_OE_N",
+      "2": "+5V_CORE"
     },
     "dnp": false,
     "note": "",
@@ -2116,6 +2153,43 @@
     "footprint": "Capacitor_SMD:C_0603_1608Metric",
     "pins": {
       "1": "WBO2_REF3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo2_control"
+  },
+  {
+    "ref": "Q5820",
+    "value": "BC847B-QR",
+    "footprint": "Package_TO_SOT_SMD:SOT-23",
+    "pins": {
+      "1": "WBO2_HEATER_OE_BASE",
+      "2": "GND",
+      "3": "WBO2_HEATER_OE_N"
+    },
+    "dnp": false,
+    "note": "NexperiaBC847x-Q Rev2:1B2E3C. Main3V3 absent -> base10k pull-down -> OE rises to5V independent of main permission.",
+    "sheet": "wbo/wbo2_control"
+  },
+  {
+    "ref": "R5864",
+    "value": "4.7k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "HW_ACTUATOR_ENABLE",
+      "2": "WBO2_HEATER_OE_BASE"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo2_control"
+  },
+  {
+    "ref": "R5865",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "WBO2_HEATER_OE_BASE",
       "2": "GND"
     },
     "dnp": false,

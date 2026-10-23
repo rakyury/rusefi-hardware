@@ -51,7 +51,7 @@ contracts directly against exported XML. It does not use `parts.json`, mapper or
 are rejected. The original connected-pin partition audit still rejects all six
 op-amp +/- collision mutations. Its only supply adaptation is the explicit
 VDDA/+3V3 merge, U604 replacement and U603 output relocation. No signal-net
-exception or ERC exclusion was introduced. Current export:168parts,396 checks.
+exception or ERC exclusion was introduced. Current export after the separate OE correction:174parts,420 checks.
 
 Standalone ERC is7 analog/10 control/1 heater-feed findings per channel, consisting
 of cross-sheet/external-driver findings. Integrated root ERC remains required.
@@ -62,7 +62,8 @@ the noise coupling and must be validated with ADC/lambda calibration on hardware
 
 The local LVC AND gate receives F042 PWM and main permission. Reset makes F042 PWM
 high impedance; the fitted1k PWM pull-down and downstream pull-downs remove its
-request. AHCT output is independently inhibited by main HW_ACTUATOR_ENABLE_N.
+request. AHCT output is independently inhibited by loss of positive HW_ACTUATOR_ENABLE
+through the local default-disabled level shifter described below.
 Main permission remains required after CAN recovery. A frozen F042 PWM is **not**
 independently detected here; main firmware must reject stale/invalid CAN and clear
 permission. No extra heartbeat guarantee is claimed.
@@ -91,3 +92,40 @@ these bench conditions is marked PASS by the XML checks.
 Primary documents were inspected through manufacturer-hosted PDF tools. Local
 LT3042 PDF download timed out; no captured PDF/hash is claimed. URLs/revisions
 above are the evidence; the older rejected STPS mirror remains explicitly unused.
+
+## Separate correction: main3V3 absent while local5V remains
+
+The earlier U5611/U5811 OE connection to HW_ACTUATOR_ENABLE_N depended on a
+main3V3 pull-up. With main3V3 off, OE could be low while the5V buffer remained
+powered. Individual permission default-off did not establish an independent
+hardware inhibit. This was reported by the independent GDI review after the
+common-supply correction and is fixed in a separate commit.
+
+R5642/R5842 now pull local HEATER_OE_N to **+5V_CORE through2.2k**. BC847B-QR
+Q5620/Q5820 pulls OE low only when positive HW_ACTUATOR_ENABLE is present.
+Base drive is4.7k; base-to-ground is10k. The5V collector never directly joins
+U804 or any main3V3 signal. Main permission and the global inhibit remain
+independent inputs to the final heater request.
+
+[Nexperia BC847x-Q Rev2, pp2/4](https://assets.nexperia.com/documents/data-sheet/BC847X-Q_SER.pdf)
+confirms1B/2E/3C and the SOT23 package. At nominal3.3V/0.7V base voltage, each
+channel draws about0.55mA from global enable and has about0.48mA transistor
+base current; collector current is about2.2mA. Integration must budget the
+combined~1.1mA added load on U804. This is a switching design calculation,
+not a measured transistor transfer curve over temperature.
+
+AHCT OE uses VIH2V/VIL0.8V at4.5..5.5V. For the static main3V3=0/local5V=4.5V
+fault case,6uA total leakage allowance across2.2k+1% leaves OE above4.486V.
+The base10k limits5uA collector-base leakage to roughly50mV even if the main
+output is high impedance. The exact transistor/logic partial-power behavior
+still needs hot/cold measurement. With an erroneously restored3V3 pull-up,
+the same actual-netlist DC scenario computes OE near0V and fails.
+
+Eight new net mutations cover wrong pull-up domain, direct negative-enable
+connection, inverted enable polarity and missing base discharge. Four static
+scenario checks additionally compare the correct circuit with the previous
+3V3-domain pull-up. These are topology/DC checks, not SPICE transient evidence.
+AHCT input transition limits also apply:2.2k reduces the OE rise time, and the
+collector/OE connection must remain short with no added shunt capacitor.
+Measure OE edges and storage delay at temperature; abrupt5V collapse below
+its valid range is still covered by the root5V latch/bench fault plan.

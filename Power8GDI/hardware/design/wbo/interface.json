@@ -13,7 +13,7 @@
       "name": "wbo/wbo1_control",
       "uuid": "28e175cd-f96b-5318-97c8-3451d37a0599",
       "sheet_id": "83dd4797-09a9-5962-bfa5-8fc5629e9137",
-      "components": 47
+      "components": 50
     },
     {
       "name": "wbo/wbo1_heater_feed",
@@ -31,7 +31,7 @@
       "name": "wbo/wbo2_control",
       "uuid": "1d788361-261b-55e4-afa2-56afadd57442",
       "sheet_id": "a4442b16-6d3e-55d7-87df-a3bdfaa6c095",
-      "components": 47
+      "components": 50
     },
     {
       "name": "wbo/wbo2_heater_feed",
@@ -40,7 +40,7 @@
       "components": 4
     }
   ],
-  "parts": 168,
+  "parts": 174,
   "local_supply": {
     "architecture": "REF3033 + current-limited SET + LT3042 common VDD/VDDA",
     "nominal_volts": 3.297816,
@@ -63,9 +63,8 @@
     "CAN2_H",
     "CAN2_L",
     "+5V_CORE",
-    "+3V3",
     "GND",
-    "HW_ACTUATOR_ENABLE_N",
+    "HW_ACTUATOR_ENABLE",
     "VBAT_MAIN_FUSED"
   ],
   "can": {
@@ -80,7 +79,7 @@
     ],
     "local_termination_fitted": false
   },
-  "heater_equation": "F042_PWM AND MAIN_PERMISSION AND NOT(HW_ACTUATOR_ENABLE_N)",
+  "heater_equation": "F042_PWM AND MAIN_PERMISSION AND HW_ACTUATOR_ENABLE; local5V OE default disabled",
   "remove_old_sheets": [
     "interfaces_aux/wbo1_analog",
     "interfaces_aux/wbo2_analog",

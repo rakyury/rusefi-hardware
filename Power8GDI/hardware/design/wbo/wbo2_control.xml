@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/work/Power8GDI/hardware/design/wbo/wbo2_control.kicad_sch</source>
-    <date>2026-10-23T18:10:36+0000</date>
+    <date>2026-10-23T18:12:21+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -392,6 +392,22 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>5bf26459-9819-5ffa-831f-8ead165078a6</tstamps>
     </comp>
+    <comp ref="Q5820">
+      <value>BC847B-QR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <fields>
+        <field name="Design note">NexperiaBC847x-Q Rev2:1B2E3C. Main3V3 absent -&gt; base10k pull-down -&gt; OE rises to5V independent of main permission.</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_BC847B_Q" description=""/>
+      <property name="Design note" value="NexperiaBC847x-Q Rev2:1B2E3C. Main3V3 absent -&gt; base10k pull-down -&gt; OE rises to5V independent of main permission."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo2_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6800ef1f-c393-5505-afc0-7dd9e036a4f2</tstamps>
+    </comp>
     <comp ref="R5816">
       <value>1k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
@@ -554,7 +570,7 @@
       <tstamps>1fb066cb-3aae-5c61-a1ca-c6c3b3a6a16e</tstamps>
     </comp>
     <comp ref="R5842">
-      <value>10k</value>
+      <value>2.2k 1%</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <fields>
         <field name="Design note"/>
@@ -681,6 +697,38 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>eee2d8c7-e254-5463-a62c-9ea547e0ab1c</tstamps>
     </comp>
+    <comp ref="R5864">
+      <value>4.7k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo2_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>98bf2963-f010-5a69-934f-f69ef82c734c</tstamps>
+    </comp>
+    <comp ref="R5865">
+      <value>10k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo2_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3f0c22f8-faf2-51dc-bd35-e89ff51a90ce</tstamps>
+    </comp>
     <comp ref="U5802">
       <value>STM32F042K6T6</value>
       <footprint>Package_QFP:LQFP-32_7x7mm_P0.8mm</footprint>
@@ -749,13 +797,13 @@
       <value>SN74AHCT1G125QDBVRQ1</value>
       <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
       <fields>
-        <field name="Design note">TTL input accepts3V3; disabled by independent global hardware latch. Output pull-down keeps switch off.</field>
+        <field name="Design note">OE local5V pull-up defaults disabled; NPN level shift enables only when positive global HW enable is present. No5V pull-up on main3V3 output.</field>
         <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_WBO" part="WBO_SN74AHCT1G125" description=""/>
-      <property name="Design note" value="TTL input accepts3V3; disabled by independent global hardware latch. Output pull-down keeps switch off."/>
+      <property name="Design note" value="OE local5V pull-up defaults disabled; NPN level shift enables only when positive global HW enable is present. No5V pull-up on main3V3 output."/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="wbo2_control.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -779,6 +827,20 @@
     </comp>
   </components>
   <libparts>
+    <libpart lib="Power8GDI_WBO" part="WBO_BC847B_Q">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">WBO_BC847B_Q</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="BASE" type="input"/>
+        <pin num="2" name="EMITTER" type="passive"/>
+        <pin num="3" name="COLLECTOR" type="open_collector"/>
+      </pins>
+    </libpart>
     <libpart lib="Power8GDI_WBO" part="WBO_C">
       <fields>
         <field name="Reference">C</field>
@@ -1042,15 +1104,13 @@
     </library>
   </libraries>
   <nets>
-    <net code="1" name="+3V3" class="Default">
-      <node ref="R5842" pin="2" pinfunction="2" pintype="passive"/>
-    </net>
-    <net code="2" name="+5V_CORE" class="Default">
+    <net code="1" name="+5V_CORE" class="Default">
       <node ref="C5810" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="C5813" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="C5817" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="C5841" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="C5861" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5842" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U5804" pin="1" pinfunction="IN" pintype="power_in"/>
       <node ref="U5804" pin="2" pinfunction="IN" pintype="power_in"/>
       <node ref="U5804" pin="3" pinfunction="EN_UV" pintype="input"/>
@@ -1058,17 +1118,17 @@
       <node ref="U5805" pin="3" pinfunction="VCC" pintype="power_in"/>
       <node ref="U5811" pin="5" pinfunction="VCC" pintype="power_in"/>
     </net>
-    <net code="3" name="CAN2_H" class="Default">
+    <net code="2" name="CAN2_H" class="Default">
       <node ref="D5804" pin="1" pinfunction="CANH" pintype="passive"/>
       <node ref="R5829" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U5805" pin="7" pinfunction="CANH" pintype="bidirectional"/>
     </net>
-    <net code="4" name="CAN2_L" class="Default">
+    <net code="3" name="CAN2_L" class="Default">
       <node ref="D5804" pin="2" pinfunction="CANL" pintype="passive"/>
       <node ref="R5829" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U5805" pin="6" pinfunction="CANL" pintype="bidirectional"/>
     </net>
-    <net code="5" name="GND" class="Default">
+    <net code="4" name="GND" class="Default">
       <node ref="C5802" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C5809" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C5810" pin="2" pinfunction="2" pintype="passive"/>
@@ -1090,6 +1150,7 @@
       <node ref="D5804" pin="3" pinfunction="GND" pintype="passive"/>
       <node ref="J5800" pin="5" pinfunction="Pin_5" pintype="passive"/>
       <node ref="Q5800" pin="3" pinfunction="SOURCE" pintype="passive"/>
+      <node ref="Q5820" pin="2" pinfunction="EMITTER" pintype="passive"/>
       <node ref="R5817" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="R5825" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="R5826" pin="1" pinfunction="1" pintype="passive"/>
@@ -1100,6 +1161,7 @@
       <node ref="R5845" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R5860" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R5861" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5865" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U5802" pin="16" pinfunction="VSS" pintype="power_in"/>
       <node ref="U5802" pin="2" pinfunction="PF0" pintype="input"/>
       <node ref="U5802" pin="3" pinfunction="PF1" pintype="input"/>
@@ -1113,17 +1175,16 @@
       <node ref="U5811" pin="3" pinfunction="GND" pintype="power_in"/>
       <node ref="U5812" pin="2" pinfunction="GND" pintype="power_in"/>
     </net>
-    <net code="6" name="HARNESS_WBO2_CONTACT2" class="Default">
+    <net code="5" name="HARNESS_WBO2_CONTACT2" class="Default">
       <node ref="U5802" pin="7" pinfunction="PA1" pintype="bidirectional"/>
     </net>
-    <net code="7" name="HARNESS_WBO2_CONTACT3" class="Default">
+    <net code="6" name="HARNESS_WBO2_CONTACT3" class="Default">
       <node ref="Q5800" pin="2" pinfunction="DRAIN" pintype="passive"/>
     </net>
-    <net code="8" name="HW_ACTUATOR_ENABLE_N" class="Default">
-      <node ref="R5842" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U5811" pin="1" pinfunction="~{OE}" pintype="input"/>
+    <net code="7" name="HW_ACTUATOR_ENABLE" class="Default">
+      <node ref="R5864" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="9" name="WBO2_3V3" class="Default">
+    <net code="8" name="WBO2_3V3" class="Default">
       <node ref="C5802" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="C5814" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="C5815" pin="1" pinfunction="1" pintype="passive"/>
@@ -1148,145 +1209,155 @@
       <node ref="U5812" pin="5" pinfunction="SENSE" pintype="input"/>
       <node ref="U5812" pin="6" pinfunction="VDD" pintype="power_in"/>
     </net>
-    <net code="10" name="WBO2_AUTO_Net_2D__28_D600_2D_A_29_" class="Default">
+    <net code="9" name="WBO2_AUTO_Net_2D__28_D600_2D_A_29_" class="Default">
       <node ref="D5800" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="R5816" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="11" name="WBO2_AUTO_Net_2D__28_D601_2D_K_29_" class="Default">
+    <net code="10" name="WBO2_AUTO_Net_2D__28_D601_2D_K_29_" class="Default">
       <node ref="D5801" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="R5826" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="12" name="WBO2_AUTO_Net_2D__28_D602_2D_K_29_" class="Default">
+    <net code="11" name="WBO2_AUTO_Net_2D__28_D602_2D_K_29_" class="Default">
       <node ref="D5802" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="R5827" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="13" name="WBO2_AUTO_Net_2D__28_D603_2D_A_29_" class="Default">
+    <net code="12" name="WBO2_AUTO_Net_2D__28_D603_2D_A_29_" class="Default">
       <node ref="D5803" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="R5828" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="14" name="WBO2_AUTO_Net_2D__28_Q600_2D_G_29_" class="Default">
+    <net code="13" name="WBO2_AUTO_Net_2D__28_Q600_2D_G_29_" class="Default">
       <node ref="Q5800" pin="1" pinfunction="INPUT" pintype="input"/>
       <node ref="R5822" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="R5845" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="15" name="WBO2_Boot0" class="Default">
+    <net code="14" name="WBO2_Boot0" class="Default">
       <node ref="R5825" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U5802" pin="31" pinfunction="PB8" pintype="bidirectional"/>
     </net>
-    <net code="16" name="WBO2_CAN_RX" class="Default">
+    <net code="15" name="WBO2_CAN_RX" class="Default">
       <node ref="U5802" pin="21" pinfunction="PA11" pintype="bidirectional"/>
       <node ref="U5805" pin="4" pinfunction="RXD" pintype="output"/>
     </net>
-    <net code="17" name="WBO2_CAN_TX" class="Default">
+    <net code="16" name="WBO2_CAN_TX" class="Default">
       <node ref="U5802" pin="22" pinfunction="PA12" pintype="bidirectional"/>
       <node ref="U5805" pin="1" pinfunction="TXD" pintype="input"/>
     </net>
-    <net code="18" name="WBO2_F042_HEATER_PWM" class="Default">
+    <net code="17" name="WBO2_F042_HEATER_PWM" class="Default">
       <node ref="R5816" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R5817" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U5802" pin="13" pinfunction="PA7" pintype="bidirectional"/>
       <node ref="U5810" pin="1" pinfunction="A" pintype="input"/>
     </net>
-    <net code="19" name="WBO2_HEATER_ALLOWED_3V3" class="Default">
+    <net code="18" name="WBO2_HEATER_ALLOWED_3V3" class="Default">
       <node ref="R5843" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U5810" pin="4" pinfunction="Y" pintype="output"/>
       <node ref="U5811" pin="2" pinfunction="A" pintype="input"/>
     </net>
-    <net code="20" name="WBO2_HEATER_DRIVE_5V" class="Default">
+    <net code="19" name="WBO2_HEATER_DRIVE_5V" class="Default">
       <node ref="R5822" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R5841" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U5811" pin="4" pinfunction="Y" pintype="tri_state"/>
     </net>
-    <net code="21" name="WBO2_HEATER_PWM" class="Default">
+    <net code="20" name="WBO2_HEATER_OE_BASE" class="Default">
+      <node ref="Q5820" pin="1" pinfunction="BASE" pintype="input"/>
+      <node ref="R5864" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5865" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="21" name="WBO2_HEATER_OE_N" class="Default">
+      <node ref="Q5820" pin="3" pinfunction="COLLECTOR" pintype="open_collector"/>
+      <node ref="R5842" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5811" pin="1" pinfunction="~{OE}" pintype="input"/>
+    </net>
+    <net code="22" name="WBO2_HEATER_PWM" class="Default">
       <node ref="R5840" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U5810" pin="2" pinfunction="B" pintype="input"/>
     </net>
-    <net code="22" name="WBO2_Ip_dac" class="Default">
+    <net code="23" name="WBO2_Ip_dac" class="Default">
       <node ref="U5802" pin="12" pinfunction="PA6" pintype="bidirectional"/>
     </net>
-    <net code="23" name="WBO2_Ip_sense" class="Default">
+    <net code="24" name="WBO2_Ip_sense" class="Default">
       <node ref="U5802" pin="8" pinfunction="PA2" pintype="bidirectional"/>
     </net>
-    <net code="24" name="WBO2_LED_BLUE" class="Default">
+    <net code="25" name="WBO2_LED_BLUE" class="Default">
       <node ref="D5802" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="U5802" pin="28" pinfunction="PB5" pintype="bidirectional"/>
     </net>
-    <net code="25" name="WBO2_LED_GREEN" class="Default">
+    <net code="26" name="WBO2_LED_GREEN" class="Default">
       <node ref="D5801" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="U5802" pin="29" pinfunction="PB6" pintype="bidirectional"/>
     </net>
-    <net code="26" name="WBO2_Nernst_esr_drive" class="Default">
+    <net code="27" name="WBO2_Nernst_esr_drive" class="Default">
       <node ref="U5802" pin="30" pinfunction="PB7" pintype="bidirectional"/>
     </net>
-    <net code="27" name="WBO2_REF3V3" class="Default">
+    <net code="28" name="WBO2_REF3V3" class="Default">
       <node ref="C5864" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="R5863" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="28" name="WBO2_REF_SET" class="Default">
+    <net code="29" name="WBO2_REF_SET" class="Default">
       <node ref="C5860" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="R5860" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="R5863" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U5804" pin="7" pinfunction="SET" pintype="passive"/>
     </net>
-    <net code="29" name="WBO2_SEL2" class="Default">
+    <net code="30" name="WBO2_SEL2" class="Default">
       <node ref="R5844" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U5802" pin="18" pinfunction="PA8" pintype="bidirectional"/>
     </net>
-    <net code="30" name="WBO2_SWCLK" class="Default">
+    <net code="31" name="WBO2_SWCLK" class="Default">
       <node ref="J5800" pin="4" pinfunction="Pin_4" pintype="passive"/>
       <node ref="U5802" pin="24" pinfunction="PA14" pintype="bidirectional"/>
     </net>
-    <net code="31" name="WBO2_SWDIO" class="Default">
+    <net code="32" name="WBO2_SWDIO" class="Default">
       <node ref="J5800" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="U5802" pin="23" pinfunction="PA13" pintype="bidirectional"/>
     </net>
-    <net code="32" name="WBO2_Un_sense" class="Default">
+    <net code="33" name="WBO2_Un_sense" class="Default">
       <node ref="U5802" pin="6" pinfunction="PA0" pintype="bidirectional"/>
     </net>
-    <net code="33" name="WBO2_Vm" class="Default">
+    <net code="34" name="WBO2_Vm" class="Default">
       <node ref="U5802" pin="9" pinfunction="PA3" pintype="bidirectional"/>
     </net>
-    <net code="34" name="WBO2_nRESET" class="Default">
+    <net code="35" name="WBO2_nRESET" class="Default">
       <node ref="C5809" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="J5800" pin="3" pinfunction="Pin_3" pintype="passive"/>
       <node ref="R5862" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U5802" pin="4" pinfunction="NRST" pintype="input"/>
       <node ref="U5812" pin="1" pinfunction="~{RESET}" pintype="open_collector"/>
     </net>
-    <net code="35" name="unconnected-(J5800-Pin_6-Pad6)" class="Default">
+    <net code="36" name="unconnected-(J5800-Pin_6-Pad6)" class="Default">
       <node ref="J5800" pin="6" pinfunction="Pin_6" pintype="passive+no_connect"/>
     </net>
-    <net code="36" name="unconnected-(U5802-PA4-Pad10)" class="Default">
+    <net code="37" name="unconnected-(U5802-PA4-Pad10)" class="Default">
       <node ref="U5802" pin="10" pinfunction="PA4" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="37" name="unconnected-(U5802-PA5-Pad11)" class="Default">
+    <net code="38" name="unconnected-(U5802-PA5-Pad11)" class="Default">
       <node ref="U5802" pin="11" pinfunction="PA5" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="38" name="unconnected-(U5802-PA9-Pad19)" class="Default">
+    <net code="39" name="unconnected-(U5802-PA9-Pad19)" class="Default">
       <node ref="U5802" pin="19" pinfunction="PA9" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="39" name="unconnected-(U5802-PA10-Pad20)" class="Default">
+    <net code="40" name="unconnected-(U5802-PA10-Pad20)" class="Default">
       <node ref="U5802" pin="20" pinfunction="PA10" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="40" name="unconnected-(U5802-PA15-Pad25)" class="Default">
+    <net code="41" name="unconnected-(U5802-PA15-Pad25)" class="Default">
       <node ref="U5802" pin="25" pinfunction="PA15" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="41" name="unconnected-(U5802-PB0-Pad14)" class="Default">
+    <net code="42" name="unconnected-(U5802-PB0-Pad14)" class="Default">
       <node ref="U5802" pin="14" pinfunction="PB0" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="42" name="unconnected-(U5802-PB1-Pad15)" class="Default">
+    <net code="43" name="unconnected-(U5802-PB1-Pad15)" class="Default">
       <node ref="U5802" pin="15" pinfunction="PB1" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="43" name="unconnected-(U5802-PB3-Pad26)" class="Default">
+    <net code="44" name="unconnected-(U5802-PB3-Pad26)" class="Default">
       <node ref="U5802" pin="26" pinfunction="PB3" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="44" name="unconnected-(U5802-PB4-Pad27)" class="Default">
+    <net code="45" name="unconnected-(U5802-PB4-Pad27)" class="Default">
       <node ref="U5802" pin="27" pinfunction="PB4" pintype="bidirectional+no_connect"/>
     </net>
-    <net code="45" name="unconnected-(U5804-PG-Pad4)" class="Default">
+    <net code="46" name="unconnected-(U5804-PG-Pad4)" class="Default">
       <node ref="U5804" pin="4" pinfunction="PG" pintype="open_collector+no_connect"/>
     </net>
-    <net code="46" name="unconnected-(U5812-CT-Pad4)" class="Default">
+    <net code="47" name="unconnected-(U5812-CT-Pad4)" class="Default">
       <node ref="U5812" pin="4" pinfunction="CT" pintype="passive+no_connect"/>
     </net>
   </nets>
