@@ -378,6 +378,7 @@ def build(args):
             key=(ref,pad.GetNumber());pad.SetNet(nets[assignments[key]]) if key in assignments else pad.SetNetCode(0)
     manifest=json.loads((design/'core_manifest.json').read_text())
     print('Placing core and power input',flush=True)
+    donor_copper_ids={t.m_Uuid.AsString() for t in board.GetTracks()}
     placed=core_placement(board,footprints,manifest,nets)|imported if not args.functional_layout else set(imported)
     fixed={'J601':(37,161.5,0),'J602':(85,161.5,0),'J603':(133,161.5,0),'J604':(208,161.5,0),
            'R299':(48,90,0),'R399':(154,120,90),
@@ -402,6 +403,7 @@ def build(args):
         bank_refs,bank_placements=place_output_banks(board,footprints) if args.grouped_outputs else (set(),[])
         placed|=bank_refs
         unplaced=place_candidate_domains(board,footprints,set(components)-placed)
+    local_copper_ids={t.m_Uuid.AsString() for t in board.GetTracks()}-donor_copper_ids
     add_plane(board,nets)
     title=board.GetTitleBlock();title.SetTitle('Power8GDI routed subdomains / INCOMPLETE ENGINEERING REVIEW');title.SetRevision('A engineering candidate')
     label=p.PCB_TEXT(board);label.SetText('Power8GDI RevA - INCOMPLETE / DO NOT FABRICATE');label.SetPosition(vec(70,92));label.SetTextSize(vec(1.3,1.3));label.SetLayer(p.F_SilkS);board.Add(label)
@@ -427,7 +429,7 @@ def build(args):
     (out/'fp-lib-table').write_text('(fp_lib_table(version 7)'+''.join(entries)+')\n')
     print('Filling zones',flush=True)
     board=p.LoadBoard(str(dest));board.BuildConnectivity();p.ZONE_FILLER(board).Fill(board.Zones());board.BuildConnectivity()
-    cleanup_report=remove_dangling(board)
+    cleanup_report=remove_dangling(board,preserve_ids=local_copper_ids)
     p.SaveBoard(str(dest),board)
     # SaveBoard persists the in-process project cache, which began with default
     # rules before our generated .pro existed. Write the authoritative project

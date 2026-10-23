@@ -73,14 +73,14 @@ def arrange_references(board):
             'references_without_free_local_position':unplaced,'reference_height_mm':.8,'hidden_references_added':0}
 
 
-def remove_dangling(board):
+def remove_dangling(board,preserve_ids=()):
     """Peel genuinely dangling copper using KiCad's own connectivity predicate.
 
     Run only after zone filling. Keep all vias: a one-layer via may still be a
     future branch endpoint or intended thermal stitching; don't infer that it
     is disposable from the warning alone.
     """
-    removed=[];blocked=[];seen=set();board.BuildConnectivity()
+    removed=[];blocked=[];seen=set(preserve_ids);board.BuildConnectivity()
     count_before=board.GetConnectivity().GetUnconnectedCount(False)
     while True:
         conn=board.GetConnectivity()
@@ -104,4 +104,5 @@ def remove_dangling(board):
     if count_after>count_before:raise ValueError('Dangling cleanup increased the connectivity gap count')
     return {'dangling_tracks_removed':removed,'unconnected_before':count_before,'unconnected_after':count_after,
             'retained_to_preserve_connectivity':blocked,
-            'method':'KiCad TestTrackEndpointDangling after zone fill; no via deletion'}
+            'protected_copper_items':len(set(preserve_ids)),
+            'method':'KiCad TestTrackEndpointDangling after zone fill; no via deletion; caller-protected local copper retained'}
