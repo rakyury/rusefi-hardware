@@ -182,6 +182,12 @@ def generate():
         ("board/connectors","Four TE34 harness connectors",None),
     ] + [(s['name'],s['title'],s['sheet_id']) for s in json.loads((HERE/'interfaces/interfaces_manifest.json').read_text())['sheets']] + [
         ('interfaces_aux/'+s['name'],s['name'].replace('_',' '),s['root_instance_uuid']) for s in json.loads((HERE/'interfaces_aux/interface.json').read_text())['sheets']
+    ] + [
+        (s['name'],s['name'].replace('_',' '),s['root_instance_uuid'])
+        for s in json.loads((HERE/'gdi/protection_manifest.json').read_text())['sheets']
+    ] + [
+        (s['name'],s['name'].replace('_',' '),s['sheet_id'])
+        for s in json.loads((HERE/'wbo/interface.json').read_text())['sheets']
     ]:
         if not (HERE/(name+".kicad_sch")).exists():
             raise FileNotFoundError("Integrated source-owned leaf required: "+name)
@@ -213,6 +219,9 @@ def generate():
     table=(HERE/"sym-lib-table").read_text(encoding="utf-8").rstrip()
     (HERE/"sym-lib-table").write_text(table[:-1]+' (lib (name "Power8GDI_Aux")(type "KiCad")(uri "${KIPRJMOD}/interfaces_aux/Power8GDI_Aux.kicad_sym")(options "")(descr "Knock and wideband candidates")))\n',encoding="utf-8")
     (HERE/"Power8GDI_Core.kicad_pro").write_text('{"meta":{"filename":"Power8GDI_Core.kicad_pro","version":1}}\n',encoding="utf-8")
+    for lib,relative in [('Power8GDI_GDIProtection','gdi/Power8GDI_GDIProtection'),('Power8GDI_WBO','wbo/Power8GDI_WBO')]:
+        table=(HERE/'sym-lib-table').read_text().rstrip()
+        (HERE/'sym-lib-table').write_text(table[:-1]+f' (lib (name "{lib}")(type "KiCad")(uri "${{KIPRJMOD}}/{relative}.kicad_sym")(options "")(descr "Integrated reviewed source")))\n')
     footprint_dir=HERE/"Power8GDI_Core.pretty"
     footprint_dir.mkdir(exist_ok=True)
     pads=[]
@@ -224,6 +233,8 @@ def generate():
     (HERE/"fp-lib-table").write_text(table[:-1]+' (lib (name "Power8GDI_Board")(type "KiCad")(uri "${KIPRJMOD}/board/Power8GDI_Board.pretty")(options "")(descr "TE34 land pattern candidate")))\n',encoding="utf-8")
     table=(HERE/"fp-lib-table").read_text(encoding="utf-8").rstrip()
     (HERE/"fp-lib-table").write_text(table[:-1]+' (lib (name "Power8GDI_Interfaces")(type "KiCad")(uri "${KIPRJMOD}/interfaces/Power8GDI_Interfaces.pretty")(options "")(descr "Interface source-derived footprints")))\n',encoding="utf-8")
+    table=(HERE/'fp-lib-table').read_text().rstrip()
+    (HERE/'fp-lib-table').write_text(table[:-1]+' (lib (name "Power8GDI_GDIProtection")(type "KiCad")(uri "${KIPRJMOD}/gdi/Power8GDI_GDIProtection.pretty")(options "")(descr "LM74800 floating exposed pad")))\n')
     manifest={"schema_version":1,"root_uuid":ROOT_ID,"project":"Power8GDI_Core","mcu":"STM32F767IIT6","qualification":"BLOCKED",
               "parts":[p for s in sheets for p in s.parts],"decoupling_placement":decoupling,"external_sheets":external,
               "added_gpio":[{"port":"PH2","pad":"43","net":"CAN1_STB","mode":"GPIO output; reset high-Z, external pullup"},{"port":"PH3","pad":"44","net":"LIN1_EN","mode":"GPIO output; reset high-Z, external pulldown"}],

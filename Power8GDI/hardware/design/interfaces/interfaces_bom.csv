@@ -12,9 +12,9 @@ R1505,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/comms2,
 R1506,0R,Resistor_SMD:R_0603_1608Metric,False,interfaces/comms2,Requires root SMBJ24CA; 38.9V rated clamp is not pulse qualification
 C1503,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/comms2,
 C1504,1u 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,interfaces/comms2,
-C1505,220p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,interfaces/comms2,
-D1502,"BAS21,215 DNP",Package_TO_SOT_SMD:SOT-23,True,interfaces/comms2,Optional commander pullup; anode toward VSUP. Both D1502/R1507 DNP in responder mode
-R1507,1k DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/comms2,
+C1505,1n 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,interfaces/comms2,Commander bus capacitance; verify total cable/node capacitance
+D1502,"BAS21,215",Package_TO_SOT_SMD:SOT-23,False,interfaces/comms2,Commander assembly: anode toward VSUP. Remove BOTH D1502/R1507 for responder-only harness topology
+R1507,1k 1% 0.5W,Resistor_SMD:R_1206_3216Metric,False,interfaces/comms2,0.256W upper bound at16V dominant; voltage/pulse derating remains required
 J1501,Molex 1050170001,Connector_USB:USB_Micro-B_Molex-105017-0001,False,interfaces/usb_fs,Micro-B device-only; ID NC. Molex SD-105017-001 and official KiCad9 footprint; shell pads6. Not automotive/environmentally qualified
 D1510,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,False,interfaces/usb_fs,"ST DS4260 Fig1: pins1/6 IO1,3/4 IO2,2GND,5VBUS. Close to connector with continuous GND return"
 C1510,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/usb_fs,
@@ -81,27 +81,5 @@ R1613,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_1,
 C1604,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,interfaces/digital_aux_1,Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation
 D1604,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,interfaces/digital_aux_1,Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release
 R1614,10k DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/digital_aux_1,Optional open-drain sensor pullup; fit only after sensor/wiring review
-R1615,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_1,"Current limit only, no automotive pulse rating claim"
-R1616,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_1,
-C1605,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,interfaces/digital_aux_1,Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation
-D1605,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,interfaces/digital_aux_1,Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release
-R1617,10k DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/digital_aux_1,Optional open-drain sensor pullup; fit only after sensor/wiring review
 U1600,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,interfaces/digital_aux_1,"2..3.6V supply,5.5V tolerant inputs, all channels INVERT. Unused inputsGND and outputsNC"
 C1610,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/digital_aux_1,
-R1618,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_2,"Current limit only, no automotive pulse rating claim"
-R1619,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_2,
-C1606,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,interfaces/digital_aux_2,Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation
-D1606,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,interfaces/digital_aux_2,Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release
-R1620,10k DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/digital_aux_2,Optional open-drain sensor pullup; fit only after sensor/wiring review
-R1621,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_2,"Current limit only, no automotive pulse rating claim"
-R1622,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_2,
-C1607,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,interfaces/digital_aux_2,Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation
-D1607,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,interfaces/digital_aux_2,Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release
-R1623,10k DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/digital_aux_2,Optional open-drain sensor pullup; fit only after sensor/wiring review
-R1624,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_2,"Current limit only, no automotive pulse rating claim"
-R1625,47k,Resistor_SMD:R_0603_1608Metric,False,interfaces/digital_aux_2,
-C1608,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,interfaces/digital_aux_2,Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation
-D1608,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,interfaces/digital_aux_2,Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release
-R1626,10k DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/digital_aux_2,Optional open-drain sensor pullup; fit only after sensor/wiring review
-U1601,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,interfaces/digital_aux_2,"2..3.6V supply,5.5V tolerant inputs, all channels INVERT. Unused inputsGND and outputsNC"
-C1611,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/digital_aux_2,

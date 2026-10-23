@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/src/Power8GDI/hardware/design/interfaces_aux/knock_dual.kicad_sch</source>
-    <date>2026-10-23T16:17:05+0000</date>
+    <date>2026-10-23T17:14:26+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -200,38 +200,6 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>e688a84b-9995-5de8-8102-8496590b4b30</tstamps>
     </comp>
-    <comp ref="R1704">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Aux" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="knock_dual.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>9d62a7c3-6256-5bf8-8bca-9bc7515f6066</tstamps>
-    </comp>
-    <comp ref="R1705">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Aux" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="knock_dual.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>3a89a937-1fad-5544-b102-827c0c99379c</tstamps>
-    </comp>
     <comp ref="R1711">
       <value>100k 1%</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
@@ -348,13 +316,13 @@
       <value>SN74AHCT244QPWRQ1</value>
       <footprint>Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm</footprint>
       <fields>
-        <field name="Design note">TTL VIH2V recognizes3.3V; all8 outputs used. Startup/partial power still require validation</field>
+        <field name="Design note">TTL VIH2V recognizes3.3V; five knock/SPI outputs used, unused inputs tied low. WBO now uses independent CAN nodes</field>
         <field name="Footprint">Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_Aux" part="SN74AHCT244QPWRQ1" description=""/>
-      <property name="Design note" value="TTL VIH2V recognizes3.3V; all8 outputs used. Startup/partial power still require validation"/>
+      <property name="Design note" value="TTL VIH2V recognizes3.3V; five knock/SPI outputs used, unused inputs tied low. WBO now uses independent CAN nodes"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="knock_dual.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -524,8 +492,6 @@
       <node ref="C1705" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="C1706" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="R1701" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R1704" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R1705" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U1703" pin="5" pinfunction="VCC" pintype="power_in"/>
       <node ref="Y1701" pin="1" pinfunction="EN" pintype="input"/>
       <node ref="Y1701" pin="4" pinfunction="VDD" pintype="power_in"/>
@@ -568,6 +534,9 @@
       <node ref="U1701" pin="2" pinfunction="GND" pintype="power_in"/>
       <node ref="U1702" pin="1" pinfunction="~{1OE}" pintype="input"/>
       <node ref="U1702" pin="10" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1702" pin="13" pinfunction="A6" pintype="input"/>
+      <node ref="U1702" pin="15" pinfunction="A7" pintype="input"/>
+      <node ref="U1702" pin="17" pinfunction="A8" pintype="input"/>
       <node ref="U1702" pin="19" pinfunction="~{2OE}" pintype="input"/>
       <node ref="U1703" pin="3" pinfunction="GND" pintype="power_in"/>
       <node ref="Y1701" pin="2" pinfunction="GND" pintype="power_in"/>
@@ -646,40 +615,29 @@
       <node ref="U1701" pin="20" pinfunction="CH1P" pintype="input"/>
       <node ref="U1701" pin="3" pinfunction="Vref" pintype="power_out"/>
     </net>
-    <net code="27" name="SAFETY_CLEAR_N" class="Default">
-      <node ref="U1702" pin="17" pinfunction="A8" pintype="input"/>
-    </net>
-    <net code="28" name="WBO1_CS_N" class="Default">
-      <node ref="R1704" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U1702" pin="13" pinfunction="A6" pintype="input"/>
-    </net>
-    <net code="29" name="WBO1_CS_N_5V" class="Default">
-      <node ref="U1702" pin="7" pinfunction="Y6" pintype="tri_state"/>
-    </net>
-    <net code="30" name="WBO2_CS_N" class="Default">
-      <node ref="R1705" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U1702" pin="15" pinfunction="A7" pintype="input"/>
-    </net>
-    <net code="31" name="WBO2_CS_N_5V" class="Default">
-      <node ref="U1702" pin="5" pinfunction="Y7" pintype="tri_state"/>
-    </net>
-    <net code="32" name="WBO_RESET_N_5V" class="Default">
-      <node ref="U1702" pin="3" pinfunction="Y8" pintype="tri_state"/>
-    </net>
-    <net code="33" name="unconnected-(U1701-NC-Pad5)" class="Default">
+    <net code="27" name="unconnected-(U1701-NC-Pad5)" class="Default">
       <node ref="U1701" pin="5" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="34" name="unconnected-(U1701-NC-Pad6)" class="Default">
+    <net code="28" name="unconnected-(U1701-NC-Pad6)" class="Default">
       <node ref="U1701" pin="6" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="35" name="unconnected-(U1701-OUT-Pad4)" class="Default">
+    <net code="29" name="unconnected-(U1701-OUT-Pad4)" class="Default">
       <node ref="U1701" pin="4" pinfunction="OUT" pintype="output+no_connect"/>
     </net>
-    <net code="36" name="unconnected-(U1701-XOUT-Pad10)" class="Default">
+    <net code="30" name="unconnected-(U1701-XOUT-Pad10)" class="Default">
       <node ref="U1701" pin="10" pinfunction="XOUT" pintype="output+no_connect"/>
     </net>
-    <net code="37" name="unconnected-(U1701-~{TEST}-Pad14)" class="Default">
+    <net code="31" name="unconnected-(U1701-~{TEST}-Pad14)" class="Default">
       <node ref="U1701" pin="14" pinfunction="~{TEST}" pintype="input+no_connect"/>
+    </net>
+    <net code="32" name="unconnected-(U1702-Y6-Pad7)" class="Default">
+      <node ref="U1702" pin="7" pinfunction="Y6" pintype="tri_state+no_connect"/>
+    </net>
+    <net code="33" name="unconnected-(U1702-Y7-Pad5)" class="Default">
+      <node ref="U1702" pin="5" pinfunction="Y7" pintype="tri_state+no_connect"/>
+    </net>
+    <net code="34" name="unconnected-(U1702-Y8-Pad3)" class="Default">
+      <node ref="U1702" pin="3" pinfunction="Y8" pintype="tri_state+no_connect"/>
     </net>
   </nets>
 </export>

@@ -8,52 +8,29 @@
       "name": "knock_dual",
       "sheet_uuid": "20465974-d3b0-5bf0-9403-bb1282024aae",
       "root_instance_uuid": "8965976b-faa0-5281-9f71-542877bfa52b",
-      "components": 23
-    },
-    {
-      "name": "wbo1_analog",
-      "sheet_uuid": "51233b85-e90a-5d89-97d6-d65711b85edf",
-      "root_instance_uuid": "28b2b557-e744-5d6d-830b-543e78eebf78",
-      "components": 29
-    },
-    {
-      "name": "wbo2_analog",
-      "sheet_uuid": "7e71fef2-ac15-5014-9097-624686a40780",
-      "root_instance_uuid": "e56e84e4-9c6a-5fbe-8d1a-fc87a5f8ea5c",
-      "components": 29
-    },
-    {
-      "name": "wbo_adc_control",
-      "sheet_uuid": "bfe056a8-f8a6-5464-91ba-555843602cef",
-      "root_instance_uuid": "d4e9e5b0-6e0d-5960-af45-b9cdee4a3196",
-      "components": 25
+      "components": 21
     }
   ],
   "gpio": [
     "KNOCK_CS_N",
-    "KNOCK_INT_HOLD",
-    "WBO1_CS_N",
-    "WBO2_CS_N",
-    "WBO1_HEATER_PWM",
-    "WBO2_HEATER_PWM",
-    "WBO_ADC_CS_N"
+    "KNOCK_INT_HOLD"
   ],
   "shared_spi": [
     "GDI_SPI2_SCK",
     "GDI_SPI2_MOSI",
     "GDI_SPI2_MISO"
   ],
-  "hardware_reset": "SAFETY_CLEAR_N -> AHCT -> WBO_RESET_N_5V",
   "mcu_adc_required": 0,
-  "watchdog_gate": "HW_ACTUATOR_ENABLE_N",
-  "part_count": 106,
+  "part_count": 21,
   "blockers": [
-    "CJ125 VCCSS pin18 absent from detailed public pin descriptions/limits",
-    "CJ125 orderable variant and LQFP32 land pattern unconfirmed",
-    "CJ125 full SPI electrical/timing/output-drive specifications absent",
-    "Independent heater power stages and protected9..18V UB/H+ feeds absent",
-    "Sensor/ADC calibration, SPI scheduling and conversion settling untested",
-    "ASEM and MCP3204 temperature ceiling85C",
-    "PT2001 feed/enable/output aliases unresolved; not changed by this aux increment"
-  ]
+    "Sensor calibration and SPI scheduling untested",
+    "Oscillator temperature ceiling85C",
+    "Physical and EMC qualification pending"
+  ],
+  "superseded_sheets": [
+    "wbo1_analog",
+    "wbo2_analog",
+    "wbo_adc_control"
+  ],
+  "replacement": "../wbo/interface.json"
 }

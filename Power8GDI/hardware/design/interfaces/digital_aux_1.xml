@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/src/Power8GDI/hardware/design/interfaces/digital_aux_1.kicad_sch</source>
-    <date>2026-10-23T16:17:03+0000</date>
+    <date>2026-10-23T17:14:26+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -114,24 +114,6 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>19bdbf38-450c-5924-89b6-30d838f2c593</tstamps>
     </comp>
-    <comp ref="C1605">
-      <value>47p 100V C0G</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note">Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation</field>
-        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
-      <property name="Design note" value="Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="digital_aux_1.kicad_sch"/>
-      <property name="ki_keywords" value="cap capacitor"/>
-      <property name="ki_fp_filters" value="C_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>914f664c-2b4c-5b3e-99c5-403acf936df1</tstamps>
-    </comp>
     <comp ref="C1610">
       <value>100n 16V X7R</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
@@ -229,22 +211,6 @@
       <property name="Sheetfile" value="digital_aux_1.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>555a7515-8ede-51d4-9db2-53ec9ea63192</tstamps>
-    </comp>
-    <comp ref="D1605">
-      <value>BAT54S,215</value>
-      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
-      <fields>
-        <field name="Design note">Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release</field>
-        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Core" part="BAT54S" description=""/>
-      <property name="Design note" value="Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="digital_aux_1.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>f9faf684-088a-5260-8383-ee72ec48abf7</tstamps>
     </comp>
     <comp ref="R1600">
       <value>10k</value>
@@ -521,61 +487,6 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>58845e13-d860-5aff-af9d-c99ab3230ca6</tstamps>
     </comp>
-    <comp ref="R1615">
-      <value>10k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note">Current limit only, no automotive pulse rating claim</field>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
-      <property name="Design note" value="Current limit only, no automotive pulse rating claim"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="digital_aux_1.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>cabe981f-06e1-5ea7-8957-1fa8868af7a4</tstamps>
-    </comp>
-    <comp ref="R1616">
-      <value>47k</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="digital_aux_1.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>ec785a8c-8238-5718-9038-09319d92f1d1</tstamps>
-    </comp>
-    <comp ref="R1617">
-      <value>10k DNP</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note">Optional open-drain sensor pullup; fit only after sensor/wiring review</field>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
-      <property name="Design note" value="Optional open-drain sensor pullup; fit only after sensor/wiring review"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="digital_aux_1.kicad_sch"/>
-      <property name="dnp"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>a7ea94d8-3dc6-5681-8ba7-f1184792eb7e</tstamps>
-    </comp>
     <comp ref="U1600">
       <value>SN74LVC14AQPWRQ1</value>
       <footprint>Package_SO:TSSOP-14_4.4x5mm_P0.65mm</footprint>
@@ -686,117 +597,99 @@
       <node ref="D1602" pin="2" pinfunction="K2" pintype="passive"/>
       <node ref="D1603" pin="2" pinfunction="K2" pintype="passive"/>
       <node ref="D1604" pin="2" pinfunction="K2" pintype="passive"/>
-      <node ref="D1605" pin="2" pinfunction="K2" pintype="passive"/>
       <node ref="R1602" pin="1" pintype="passive"/>
       <node ref="R1605" pin="1" pintype="passive"/>
       <node ref="R1608" pin="1" pintype="passive"/>
       <node ref="R1611" pin="1" pintype="passive"/>
       <node ref="R1614" pin="1" pintype="passive"/>
-      <node ref="R1617" pin="1" pintype="passive"/>
     </net>
-    <net code="3" name="DIN5" class="Default">
-      <node ref="U1600" pin="12" pinfunction="6Y_INV" pintype="output"/>
-    </net>
-    <net code="4" name="DIN5_FILTERED" class="Default">
-      <node ref="C1605" pin="1" pintype="passive"/>
-      <node ref="D1605" pin="3" pinfunction="K1_A2" pintype="passive"/>
-      <node ref="R1615" pin="2" pintype="passive"/>
-      <node ref="R1616" pin="1" pintype="passive"/>
-      <node ref="U1600" pin="13" pinfunction="6A" pintype="input"/>
-    </net>
-    <net code="5" name="FLEX_FREQ" class="Default">
+    <net code="3" name="FLEX_FREQ" class="Default">
       <node ref="U1600" pin="10" pinfunction="5Y_INV" pintype="output"/>
     </net>
-    <net code="6" name="FLEX_FREQ_FILTERED" class="Default">
+    <net code="4" name="FLEX_FREQ_FILTERED" class="Default">
       <node ref="C1604" pin="1" pintype="passive"/>
       <node ref="D1604" pin="3" pinfunction="K1_A2" pintype="passive"/>
       <node ref="R1612" pin="2" pintype="passive"/>
       <node ref="R1613" pin="1" pintype="passive"/>
       <node ref="U1600" pin="11" pinfunction="5A" pintype="input"/>
     </net>
-    <net code="7" name="GND" class="Default">
+    <net code="5" name="GND" class="Default">
       <node ref="C1600" pin="2" pintype="passive"/>
       <node ref="C1601" pin="2" pintype="passive"/>
       <node ref="C1602" pin="2" pintype="passive"/>
       <node ref="C1603" pin="2" pintype="passive"/>
       <node ref="C1604" pin="2" pintype="passive"/>
-      <node ref="C1605" pin="2" pintype="passive"/>
       <node ref="C1610" pin="2" pintype="passive"/>
       <node ref="D1600" pin="1" pinfunction="A1" pintype="passive"/>
       <node ref="D1601" pin="1" pinfunction="A1" pintype="passive"/>
       <node ref="D1602" pin="1" pinfunction="A1" pintype="passive"/>
       <node ref="D1603" pin="1" pinfunction="A1" pintype="passive"/>
       <node ref="D1604" pin="1" pinfunction="A1" pintype="passive"/>
-      <node ref="D1605" pin="1" pinfunction="A1" pintype="passive"/>
       <node ref="R1601" pin="2" pintype="passive"/>
       <node ref="R1604" pin="2" pintype="passive"/>
       <node ref="R1607" pin="2" pintype="passive"/>
       <node ref="R1610" pin="2" pintype="passive"/>
       <node ref="R1613" pin="2" pintype="passive"/>
-      <node ref="R1616" pin="2" pintype="passive"/>
+      <node ref="U1600" pin="13" pinfunction="6A" pintype="input"/>
       <node ref="U1600" pin="7" pinfunction="GND" pintype="power_in"/>
     </net>
-    <net code="8" name="HALL1" class="Default">
+    <net code="6" name="HALL1" class="Default">
       <node ref="U1600" pin="2" pinfunction="1Y_INV" pintype="output"/>
     </net>
-    <net code="9" name="HALL1_FILTERED" class="Default">
+    <net code="7" name="HALL1_FILTERED" class="Default">
       <node ref="C1600" pin="1" pintype="passive"/>
       <node ref="D1600" pin="3" pinfunction="K1_A2" pintype="passive"/>
       <node ref="R1600" pin="2" pintype="passive"/>
       <node ref="R1601" pin="1" pintype="passive"/>
       <node ref="U1600" pin="1" pinfunction="1A" pintype="input"/>
     </net>
-    <net code="10" name="HALL2" class="Default">
+    <net code="8" name="HALL2" class="Default">
       <node ref="U1600" pin="4" pinfunction="2Y_INV" pintype="output"/>
     </net>
-    <net code="11" name="HALL2_FILTERED" class="Default">
+    <net code="9" name="HALL2_FILTERED" class="Default">
       <node ref="C1601" pin="1" pintype="passive"/>
       <node ref="D1601" pin="3" pinfunction="K1_A2" pintype="passive"/>
       <node ref="R1603" pin="2" pintype="passive"/>
       <node ref="R1604" pin="1" pintype="passive"/>
       <node ref="U1600" pin="3" pinfunction="2A" pintype="input"/>
     </net>
-    <net code="12" name="HALL3" class="Default">
+    <net code="10" name="HALL3" class="Default">
       <node ref="U1600" pin="6" pinfunction="3Y_INV" pintype="output"/>
     </net>
-    <net code="13" name="HALL3_FILTERED" class="Default">
+    <net code="11" name="HALL3_FILTERED" class="Default">
       <node ref="C1602" pin="1" pintype="passive"/>
       <node ref="D1602" pin="3" pinfunction="K1_A2" pintype="passive"/>
       <node ref="R1606" pin="2" pintype="passive"/>
       <node ref="R1607" pin="1" pintype="passive"/>
       <node ref="U1600" pin="5" pinfunction="3A" pintype="input"/>
     </net>
-    <net code="14" name="HALL4" class="Default">
+    <net code="12" name="HALL4" class="Default">
       <node ref="U1600" pin="8" pinfunction="4Y_INV" pintype="output"/>
     </net>
-    <net code="15" name="HALL4_FILTERED" class="Default">
+    <net code="13" name="HALL4_FILTERED" class="Default">
       <node ref="C1603" pin="1" pintype="passive"/>
       <node ref="D1603" pin="3" pinfunction="K1_A2" pintype="passive"/>
       <node ref="R1609" pin="2" pintype="passive"/>
       <node ref="R1610" pin="1" pintype="passive"/>
       <node ref="U1600" pin="9" pinfunction="4A" pintype="input"/>
     </net>
-    <net code="16" name="HARNESS_DIN5" class="Default">
-      <node ref="R1615" pin="1" pintype="passive"/>
-      <node ref="R1617" pin="2" pintype="passive"/>
-    </net>
-    <net code="17" name="HARNESS_FLEX_FREQ" class="Default">
+    <net code="14" name="HARNESS_FLEX_FREQ" class="Default">
       <node ref="R1612" pin="1" pintype="passive"/>
       <node ref="R1614" pin="2" pintype="passive"/>
     </net>
-    <net code="18" name="HARNESS_HALL1" class="Default">
+    <net code="15" name="HARNESS_HALL1" class="Default">
       <node ref="R1600" pin="1" pintype="passive"/>
       <node ref="R1602" pin="2" pintype="passive"/>
     </net>
-    <net code="19" name="HARNESS_HALL2" class="Default">
+    <net code="16" name="HARNESS_HALL2" class="Default">
       <node ref="R1603" pin="1" pintype="passive"/>
       <node ref="R1605" pin="2" pintype="passive"/>
     </net>
-    <net code="20" name="HARNESS_HALL3" class="Default">
+    <net code="17" name="HARNESS_HALL3" class="Default">
       <node ref="R1606" pin="1" pintype="passive"/>
       <node ref="R1608" pin="2" pintype="passive"/>
     </net>
-    <net code="21" name="HARNESS_HALL4" class="Default">
+    <net code="18" name="HARNESS_HALL4" class="Default">
       <node ref="R1609" pin="1" pintype="passive"/>
       <node ref="R1611" pin="2" pintype="passive"/>
     </net>

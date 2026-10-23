@@ -22,6 +22,7 @@ from net_contract import read_netlists, compare_pad_assignments
 from board_cleanup import arrange_references, remove_dangling, Spatial
 
 HERE = Path(__file__).resolve().parent
+_FOOTPRINT_CACHE = {}
 
 
 def digest(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -60,15 +61,20 @@ def connector_contract(pinout, output):
 
 
 def load_footprint(identifier, design):
+    cache_key=(str(design.resolve()),identifier)
+    if cache_key in _FOOTPRINT_CACHE:return _FOOTPRINT_CACHE[cache_key].Duplicate()
     library,name=identifier.split(':',1)
     libraries={'Power8GDI_Board':HERE/'Power8GDI_Board.pretty',
                'Power8GDI_Core':design/'Power8GDI_Core.pretty',
+               'Power8GDI_Interfaces':design/'interfaces/Power8GDI_Interfaces.pretty',
+               'Power8GDI_GDIProtection':design/'gdi/Power8GDI_GDIProtection.pretty',
                'Power8GDI_GDI':design/'gdi/Power8GDI_GDI.pretty'}
     path=libraries.get(library,Path('/usr/share/kicad/footprints')/(library+'.pretty'))
     footprint=p.PCB_IO_MGR.PluginFind(p.PCB_IO_MGR.KICAD_SEXP).FootprintLoad(str(path),name)
     if footprint is None: raise ValueError(f'Missing footprint {identifier} at {path}')
     footprint.SetFPID(p.LIB_ID(library,name))
-    return footprint
+    _FOOTPRINT_CACHE[cache_key]=footprint
+    return footprint.Duplicate()
 
 
 def add_track(board, net, points, width=.25, layer=p.F_Cu):
@@ -306,13 +312,8 @@ def build(args):
     root_path=design/'core.net'
     root_refs={c.attrib['ref'] for c in ET.parse(root_path).findall('./components/comp')}
     paths=[root_path]
-    # Current integrated root is authoritative. For a pre-integration checkpoint,
-    # accept whole independent sub-sheets only, never partially duplicate refs.
-    for candidate in [design/'power_input/power_input.xml',design/'gdi/stage_a.xml',design/'gdi/stage_b.xml']:
-        candidate_refs={c.attrib['ref'] for c in ET.parse(candidate).findall('./components/comp')}
-        if candidate_refs <= root_refs:continue
-        if candidate_refs & root_refs:raise ValueError(f'Partial duplicate hierarchy: {candidate}')
-        paths.append(candidate)
+    # Root export is authoritative. Never resurrect obsolete power or WBO
+    # sheets merely because historical XML files remain in the repository.
     connector_refs={'J601','J602','J603','J604'}
     if not connector_refs <= root_refs:
         if connector_refs & root_refs:raise ValueError('Partially integrated connector hierarchy')
@@ -397,7 +398,8 @@ def build(args):
     if errors:raise ValueError('\n'.join(errors))
     silk_report=arrange_references(board)
     dest=out/'Power8GDI_Review.kicad_pcb';p.SaveBoard(str(dest),board);insert_stackup(dest);project_file(dest.with_suffix('.kicad_pro'))
-    libs={'Power8GDI_Board':HERE/'Power8GDI_Board.pretty','Power8GDI_Core':design/'Power8GDI_Core.pretty','Power8GDI_GDI':design/'gdi/Power8GDI_GDI.pretty'}
+    libs={'Power8GDI_Board':HERE/'Power8GDI_Board.pretty','Power8GDI_Core':design/'Power8GDI_Core.pretty','Power8GDI_GDI':design/'gdi/Power8GDI_GDI.pretty',
+          'Power8GDI_Interfaces':design/'interfaces/Power8GDI_Interfaces.pretty','Power8GDI_GDIProtection':design/'gdi/Power8GDI_GDIProtection.pretty'}
     for comp in components.values():
         name=comp['footprint'].split(':')[0]
         if name not in libs:libs[name]=Path('/usr/share/kicad/footprints')/(name+'.pretty')

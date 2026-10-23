@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/src/Power8GDI/hardware/design/interfaces/comms2.kicad_sch</source>
-    <date>2026-10-23T16:16:59+0000</date>
+    <date>2026-10-23T17:14:23+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -97,16 +97,16 @@
       <tstamps>21df429c-0a29-530c-80bf-57b53bf08eb0</tstamps>
     </comp>
     <comp ref="C1505">
-      <value>220p 100V C0G</value>
+      <value>1n 100V C0G</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
-        <field name="Design note"/>
+        <field name="Design note">Commander bus capacitance; verify total cable/node capacitance</field>
         <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
-      <property name="Design note" value=""/>
+      <property name="Design note" value="Commander bus capacitance; verify total cable/node capacitance"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="comms2.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -131,19 +131,18 @@
       <tstamps>bf84dbe2-08f0-5b14-affe-811460cf4be6</tstamps>
     </comp>
     <comp ref="D1502">
-      <value>BAS21,215 DNP</value>
+      <value>BAS21,215</value>
       <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
       <fields>
-        <field name="Design note">Optional commander pullup; anode toward VSUP. Both D1502/R1507 DNP in responder mode</field>
+        <field name="Design note">Commander assembly: anode toward VSUP. Remove BOTH D1502/R1507 for responder-only harness topology</field>
         <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_Core" part="Interface_BAS21" description=""/>
-      <property name="Design note" value="Optional commander pullup; anode toward VSUP. Both D1502/R1507 DNP in responder mode"/>
+      <property name="Design note" value="Commander assembly: anode toward VSUP. Remove BOTH D1502/R1507 for responder-only harness topology"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="comms2.kicad_sch"/>
-      <property name="dnp"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>f74b45fc-24ae-5a06-99e9-aaedfe26c186</tstamps>
     </comp>
@@ -257,19 +256,18 @@
       <tstamps>6361a47f-4e00-538c-8a16-e1cf04c25c25</tstamps>
     </comp>
     <comp ref="R1507">
-      <value>1k DNP</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <value>1k 1% 0.5W</value>
+      <footprint>Resistor_SMD:R_1206_3216Metric</footprint>
       <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Design note">0.256W upper bound at16V dominant; voltage/pulse derating remains required</field>
+        <field name="Footprint">Resistor_SMD:R_1206_3216Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
-      <property name="Design note" value=""/>
+      <property name="Design note" value="0.256W upper bound at16V dominant; voltage/pulse derating remains required"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="comms2.kicad_sch"/>
-      <property name="dnp"/>
       <property name="ki_keywords" value="R res resistor"/>
       <property name="ki_fp_filters" value="R_*"/>
       <sheetpath names="/" tstamps="/"/>

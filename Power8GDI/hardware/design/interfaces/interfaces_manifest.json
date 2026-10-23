@@ -33,12 +33,6 @@
       "title": "Additional Hall, flex and digital inputs bank 1",
       "uuid": "0cc8a8a2-d389-592e-87a8-c2300ca42c23",
       "sheet_id": "7a622c8e-9078-578e-989f-4d863863197b"
-    },
-    {
-      "name": "interfaces/digital_aux_2",
-      "title": "Additional Hall, flex and digital inputs bank 2",
-      "uuid": "0537d8aa-314a-5d6f-9b8c-694224cd4821",
-      "sheet_id": "0fe1f4df-7d91-51cc-b263-2445d91923b8"
     }
   ],
   "gpio_contract": [
@@ -161,30 +155,6 @@
       "stm32_pin": "PI8",
       "package_pad": 7,
       "mode": "GPIO EXTI8; inverted; timing not qualified"
-    },
-    {
-      "function": "DIN5",
-      "stm32_pin": "PI2",
-      "package_pad": 133,
-      "mode": "GPIO polling; inverted"
-    },
-    {
-      "function": "DIN6",
-      "stm32_pin": "PI3",
-      "package_pad": 134,
-      "mode": "GPIO polling; inverted; EXTI3 occupied by CAM1"
-    },
-    {
-      "function": "DIN7",
-      "stm32_pin": "PI4",
-      "package_pad": 173,
-      "mode": "GPIO polling; inverted; EXTI4 occupied by CAM2"
-    },
-    {
-      "function": "DIN8",
-      "stm32_pin": "PI11",
-      "package_pad": 13,
-      "mode": "GPIO polling; inverted"
     }
   ],
   "harness_aliases": {
@@ -200,11 +170,7 @@
     "HALL2",
     "HALL3",
     "HALL4",
-    "FLEX_FREQ",
-    "DIN5",
-    "DIN6",
-    "DIN7",
-    "DIN8"
+    "FLEX_FREQ"
   ],
   "parts": [
     {
@@ -454,14 +420,14 @@
     },
     {
       "ref": "C1505",
-      "value": "220p 100V C0G",
+      "value": "1n 100V C0G",
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pins": {
         "1": "LIN2_BUS",
         "2": "GND"
       },
       "dnp": false,
-      "note": "",
+      "note": "Commander bus capacitance; verify total cable/node capacitance",
       "sheet": "interfaces/comms2",
       "symbol": "C",
       "physical_pins": [
@@ -471,14 +437,14 @@
     },
     {
       "ref": "D1502",
-      "value": "BAS21,215 DNP",
+      "value": "BAS21,215",
       "footprint": "Package_TO_SOT_SMD:SOT-23",
       "pins": {
         "1": "LIN2_VSUP",
         "3": "LIN2_COMMANDER_DIODE"
       },
-      "dnp": true,
-      "note": "Optional commander pullup; anode toward VSUP. Both D1502/R1507 DNP in responder mode",
+      "dnp": false,
+      "note": "Commander assembly: anode toward VSUP. Remove BOTH D1502/R1507 for responder-only harness topology",
       "sheet": "interfaces/comms2",
       "symbol": "Interface_BAS21",
       "physical_pins": [
@@ -489,14 +455,14 @@
     },
     {
       "ref": "R1507",
-      "value": "1k DNP",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "value": "1k 1% 0.5W",
+      "footprint": "Resistor_SMD:R_1206_3216Metric",
       "pins": {
         "1": "LIN2_COMMANDER_DIODE",
         "2": "LIN2_BUS"
       },
-      "dnp": true,
-      "note": "",
+      "dnp": false,
+      "note": "0.256W upper bound at16V dominant; voltage/pulse derating remains required",
       "sheet": "interfaces/comms2",
       "symbol": "R",
       "physical_pins": [
@@ -1712,93 +1678,6 @@
       ]
     },
     {
-      "ref": "R1615",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "HARNESS_DIN5",
-        "2": "DIN5_FILTERED"
-      },
-      "dnp": false,
-      "note": "Current limit only, no automotive pulse rating claim",
-      "sheet": "interfaces/digital_aux_1",
-      "symbol": "R",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "R1616",
-      "value": "47k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "DIN5_FILTERED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "interfaces/digital_aux_1",
-      "symbol": "R",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "C1605",
-      "value": "47p 100V C0G",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "DIN5_FILTERED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation",
-      "sheet": "interfaces/digital_aux_1",
-      "symbol": "C",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "D1605",
-      "value": "BAT54S,215",
-      "footprint": "Package_TO_SOT_SMD:SOT-23",
-      "pins": {
-        "1": "GND",
-        "2": "+5V_CORE",
-        "3": "DIN5_FILTERED"
-      },
-      "dnp": false,
-      "note": "Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release",
-      "sheet": "interfaces/digital_aux_1",
-      "symbol": "BAT54S",
-      "physical_pins": [
-        "1",
-        "2",
-        "3"
-      ]
-    },
-    {
-      "ref": "R1617",
-      "value": "10k DNP",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+5V_CORE",
-        "2": "HARNESS_DIN5"
-      },
-      "dnp": true,
-      "note": "Optional open-drain sensor pullup; fit only after sensor/wiring review",
-      "sheet": "interfaces/digital_aux_1",
-      "symbol": "R",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
       "ref": "U1600",
       "value": "SN74LVC14AQPWRQ1",
       "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
@@ -1815,8 +1694,7 @@
         "8": "HALL4",
         "11": "FLEX_FREQ_FILTERED",
         "10": "FLEX_FREQ",
-        "13": "DIN5_FILTERED",
-        "12": "DIN5"
+        "13": "GND"
       },
       "dnp": false,
       "note": "2..3.6V supply,5.5V tolerant inputs, all channels INVERT. Unused inputsGND and outputsNC",
@@ -1855,324 +1733,9 @@
         "1",
         "2"
       ]
-    },
-    {
-      "ref": "R1618",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "HARNESS_DIN6",
-        "2": "DIN6_FILTERED"
-      },
-      "dnp": false,
-      "note": "Current limit only, no automotive pulse rating claim",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "R",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "R1619",
-      "value": "47k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "DIN6_FILTERED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "R",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "C1606",
-      "value": "47p 100V C0G",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "DIN6_FILTERED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "C",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "D1606",
-      "value": "BAT54S,215",
-      "footprint": "Package_TO_SOT_SMD:SOT-23",
-      "pins": {
-        "1": "GND",
-        "2": "+5V_CORE",
-        "3": "DIN6_FILTERED"
-      },
-      "dnp": false,
-      "note": "Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "BAT54S",
-      "physical_pins": [
-        "1",
-        "2",
-        "3"
-      ]
-    },
-    {
-      "ref": "R1620",
-      "value": "10k DNP",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+5V_CORE",
-        "2": "HARNESS_DIN6"
-      },
-      "dnp": true,
-      "note": "Optional open-drain sensor pullup; fit only after sensor/wiring review",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "R",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "R1621",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "HARNESS_DIN7",
-        "2": "DIN7_FILTERED"
-      },
-      "dnp": false,
-      "note": "Current limit only, no automotive pulse rating claim",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "R",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "R1622",
-      "value": "47k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "DIN7_FILTERED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "R",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "C1607",
-      "value": "47p 100V C0G",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "DIN7_FILTERED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "C",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "D1607",
-      "value": "BAT54S,215",
-      "footprint": "Package_TO_SOT_SMD:SOT-23",
-      "pins": {
-        "1": "GND",
-        "2": "+5V_CORE",
-        "3": "DIN7_FILTERED"
-      },
-      "dnp": false,
-      "note": "Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "BAT54S",
-      "physical_pins": [
-        "1",
-        "2",
-        "3"
-      ]
-    },
-    {
-      "ref": "R1623",
-      "value": "10k DNP",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+5V_CORE",
-        "2": "HARNESS_DIN7"
-      },
-      "dnp": true,
-      "note": "Optional open-drain sensor pullup; fit only after sensor/wiring review",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "R",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "R1624",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "HARNESS_DIN8",
-        "2": "DIN8_FILTERED"
-      },
-      "dnp": false,
-      "note": "Current limit only, no automotive pulse rating claim",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "R",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "R1625",
-      "value": "47k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "DIN8_FILTERED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "R",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "C1608",
-      "value": "47p 100V C0G",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "DIN8_FILTERED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Nominal RC0.39us; actual source/cable/Schmitt delays require timing validation",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "C",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "D1608",
-      "value": "BAT54S,215",
-      "footprint": "Package_TO_SOT_SMD:SOT-23",
-      "pins": {
-        "1": "GND",
-        "2": "+5V_CORE",
-        "3": "DIN8_FILTERED"
-      },
-      "dnp": false,
-      "note": "Input5.5V tolerant; clamps can inject into5V rail. Unpowered simultaneous faults block release",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "BAT54S",
-      "physical_pins": [
-        "1",
-        "2",
-        "3"
-      ]
-    },
-    {
-      "ref": "R1626",
-      "value": "10k DNP",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+5V_CORE",
-        "2": "HARNESS_DIN8"
-      },
-      "dnp": true,
-      "note": "Optional open-drain sensor pullup; fit only after sensor/wiring review",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "R",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
-    },
-    {
-      "ref": "U1601",
-      "value": "SN74LVC14AQPWRQ1",
-      "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
-      "pins": {
-        "14": "+3V3",
-        "7": "GND",
-        "1": "DIN6_FILTERED",
-        "2": "DIN6",
-        "3": "DIN7_FILTERED",
-        "4": "DIN7",
-        "5": "DIN8_FILTERED",
-        "6": "DIN8",
-        "9": "GND",
-        "11": "GND",
-        "13": "GND"
-      },
-      "dnp": false,
-      "note": "2..3.6V supply,5.5V tolerant inputs, all channels INVERT. Unused inputsGND and outputsNC",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "SN74LVC14A_Q1",
-      "physical_pins": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11",
-        "12",
-        "13",
-        "14"
-      ]
-    },
-    {
-      "ref": "C1611",
-      "value": "100n 16V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "interfaces/digital_aux_2",
-      "symbol": "C",
-      "physical_pins": [
-        "1",
-        "2"
-      ]
     }
   ],
+  "lin2_role": "commander assembly; default sleep",
   "blockers": [
     "Firmware pinmux, USB VBUS GPIO/native detect and48MHz clock",
     "SD card peak current and3V3 LDO thermal budget",

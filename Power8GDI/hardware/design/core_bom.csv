@@ -48,7 +48,9 @@ R110,10k,Resistor_SMD:R_0603_1608Metric,False,core_comms,Recessive input during 
 R111,0R,Resistor_SMD:R_0603_1608Metric,False,core_comms,Requires root SMBJ24CA nominal38.9V clamp <45Vabs; actual pulse energy/overshoot gate remains
 C130,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_comms,At U104 pin7
 C131,1u 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,core_comms,
-C132,220p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,core_comms,Respondermode buscap TI Fig10-1; busEMC/loadbudget pending
+C132,1n 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,core_comms,Commander bus capacitance; verify total cable/node capacitance
+D102,"BAS21,215",Package_TO_SOT_SMD:SOT-23,False,core_comms,Commander assembly; remove D102 and R112 for responder-only topology
+R112,1k 1% 0.5W,Resistor_SMD:R_1206_3216Metric,False,core_comms,16V dominant bound0.256W; pulse/voltage derating must be checked
 U110,MIC4427YM,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,core_ignition,Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP
 C140,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_ignition,Close Udriver pin6/3
 C141,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_ignition,

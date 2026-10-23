@@ -5,7 +5,7 @@
   "commands": [
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/power_input/build_power_input.py"
       ],
       "returncode": 0,
@@ -13,7 +13,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/motor/build_motor.py"
       ],
       "returncode": 0,
@@ -21,7 +21,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/safety/generate.py"
       ],
       "returncode": 0,
@@ -29,7 +29,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/board/build_connector_schematic.py"
       ],
       "returncode": 0,
@@ -37,27 +37,51 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/interfaces/build_interfaces.py"
       ],
       "returncode": 0,
-      "output": "Generated 6 leaves, 106 physical components; release BLOCKED\n"
+      "output": "Generated 5 leaves, 84 physical components; release BLOCKED\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/interfaces_aux/build_aux.py"
       ],
       "returncode": 0,
-      "output": "{\n  \"schema_version\": 1,\n  \"root_uuid\": \"f4d21065-0a5b-5086-a08e-1af9469f04bd\",\n  \"project\": \"Power8GDI_Core\",\n  \"release_status\": \"BLOCKED\",\n  \"sheets\": [\n    {\n      \"name\": \"knock_dual\",\n      \"sheet_uuid\": \"20465974-d3b0-5bf0-9403-bb1282024aae\",\n      \"root_instance_uuid\": \"8965976b-faa0-5281-9f71-542877bfa52b\",\n      \"components\": 23\n    },\n    {\n      \"name\": \"wbo1_analog\",\n      \"sheet_uuid\": \"51233b85-e90a-5d89-97d6-d65711b85edf\",\n      \"root_instance_uuid\": \"28b2b557-e744-5d6d-830b-543e78eebf78\",\n      \"components\": 29\n    },\n    {\n      \"name\": \"wbo2_analog\",\n      \"sheet_uuid\": \"7e71fef2-ac15-5014-9097-624686a40780\",\n      \"root_instance_uuid\": \"e56e84e4-9c6a-5fbe-8d1a-fc87a5f8ea5c\",\n      \"components\": 29\n    },\n    {\n      \"name\": \"wbo_adc_control\",\n      \"sheet_uuid\": \"bfe056a8-f8a6-5464-91ba-555843602cef\",\n      \"root_instance_uuid\": \"d4e9e5b0-6e0d-5960-af45-b9cdee4a3196\",\n      \"components\": 25\n    }\n  ],\n  \"gpio\": [\n    \"KNOCK_CS_N\",\n    \"KNOCK_INT_HOLD\",\n    \"WBO1_CS_N\",\n    \"WBO2_CS_N\",\n    \"WBO1_HEATER_PWM\",\n    \"WBO2_HEATER_PWM\",\n    \"WBO_ADC_CS_N\"\n  ],\n  \"shared_spi\": [\n    \"GDI_SPI2_SCK\",\n    \"GDI_SPI2_MOSI\",\n    \"GDI_SPI2_MISO\"\n  ],\n  \"hardware_reset\": \"SAFETY_CLEAR_N -> AHCT -> WBO_RESET_N_5V\",\n  \"mcu_adc_required\": 0,\n  \"watchdog_gate\": \"HW_ACTUATOR_ENABLE_N\",\n  \"part_count\": 106,\n  \"blockers\": [\n    \"CJ125 VCCSS pin18 absent from detailed public pin descriptions/limits\",\n    \"CJ125 orderable variant and LQFP32 land pattern unconfirmed\",\n    \"CJ125 full SPI electrical/timing/output-drive specifications absent\",\n    \"Independent heater power stages and protected9..18V UB/H+ feeds absent\",\n    \"Sensor/ADC calibration, SPI scheduling and conversion settling untested\",\n    \"ASEM and MCP3204 temperature ceiling85C\",\n    \"PT2001 feed/enable/output aliases unresolved; not changed by this aux increment\"\n  ]\n}\n"
+      "output": "{\n  \"schema_version\": 1,\n  \"root_uuid\": \"f4d21065-0a5b-5086-a08e-1af9469f04bd\",\n  \"project\": \"Power8GDI_Core\",\n  \"release_status\": \"BLOCKED\",\n  \"sheets\": [\n    {\n      \"name\": \"knock_dual\",\n      \"sheet_uuid\": \"20465974-d3b0-5bf0-9403-bb1282024aae\",\n      \"root_instance_uuid\": \"8965976b-faa0-5281-9f71-542877bfa52b\",\n      \"components\": 21\n    }\n  ],\n  \"gpio\": [\n    \"KNOCK_CS_N\",\n    \"KNOCK_INT_HOLD\"\n  ],\n  \"shared_spi\": [\n    \"GDI_SPI2_SCK\",\n    \"GDI_SPI2_MOSI\",\n    \"GDI_SPI2_MISO\"\n  ],\n  \"mcu_adc_required\": 0,\n  \"part_count\": 21,\n  \"blockers\": [\n    \"Sensor calibration and SPI scheduling untested\",\n    \"Oscillator temperature ceiling85C\",\n    \"Physical and EMC qualification pending\"\n  ],\n  \"superseded_sheets\": [\n    \"wbo1_analog\",\n    \"wbo2_analog\",\n    \"wbo_adc_control\"\n  ],\n  \"replacement\": \"../wbo/interface.json\"\n}\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "Power8GDI/hardware/design/gdi/generate.py"
+      ],
+      "returncode": 0,
+      "output": "Generated 2 stages, 129 source components + 5 new components each; release BLOCKED.\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "Power8GDI/hardware/design/gdi/build_protection.py"
+      ],
+      "returncode": 0,
+      "output": "Generated 3 connected GDI protection/gate sheets, 42 components.\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "Power8GDI/hardware/design/wbo/build_wbo.py"
+      ],
+      "returncode": 0,
+      "output": "{\"sheets\": 6, \"parts\": 148}\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/build_core_schematic.py"
       ],
       "returncode": 0,
-      "output": "Generated 20 sheets, 401 components, all176 MCU pads accounted\n"
+      "output": "Generated 20 sheets, 403 components, all176 MCU pads accounted\n"
     },
     {
       "command": [
@@ -378,31 +402,6 @@
         "--format",
         "kicadxml",
         "-o",
-        "Power8GDI/hardware/design/interfaces/digital_aux_2.xml",
-        "Power8GDI/hardware/design/interfaces/digital_aux_2.kicad_sch"
-      ],
-      "returncode": 0,
-      "output": ""
-    },
-    {
-      "command": [
-        "docker",
-        "run",
-        "--rm",
-        "--network",
-        "none",
-        "--mount",
-        "type=bind,source=C:\\Users\\User\\Documents\\Codex\\2026-10-21\\ghj\\work\\Power8GDI,target=/src",
-        "-w",
-        "/src",
-        "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
-        "kicad-cli",
-        "sch",
-        "export",
-        "netlist",
-        "--format",
-        "kicadxml",
-        "-o",
         "Power8GDI/hardware/design/interfaces_aux/knock_dual.xml",
         "Power8GDI/hardware/design/interfaces_aux/knock_dual.kicad_sch"
       ],
@@ -428,8 +427,8 @@
         "--format",
         "kicadxml",
         "-o",
-        "Power8GDI/hardware/design/interfaces_aux/wbo1_analog.xml",
-        "Power8GDI/hardware/design/interfaces_aux/wbo1_analog.kicad_sch"
+        "Power8GDI/hardware/design/gdi/protection_a.xml",
+        "Power8GDI/hardware/design/gdi/protection_a.kicad_sch"
       ],
       "returncode": 0,
       "output": ""
@@ -453,8 +452,8 @@
         "--format",
         "kicadxml",
         "-o",
-        "Power8GDI/hardware/design/interfaces_aux/wbo2_analog.xml",
-        "Power8GDI/hardware/design/interfaces_aux/wbo2_analog.kicad_sch"
+        "Power8GDI/hardware/design/gdi/protection_b.xml",
+        "Power8GDI/hardware/design/gdi/protection_b.kicad_sch"
       ],
       "returncode": 0,
       "output": ""
@@ -478,8 +477,158 @@
         "--format",
         "kicadxml",
         "-o",
-        "Power8GDI/hardware/design/interfaces_aux/wbo_adc_control.xml",
-        "Power8GDI/hardware/design/interfaces_aux/wbo_adc_control.kicad_sch"
+        "Power8GDI/hardware/design/gdi/permission.xml",
+        "Power8GDI/hardware/design/gdi/permission.kicad_sch"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--mount",
+        "type=bind,source=C:\\Users\\User\\Documents\\Codex\\2026-10-21\\ghj\\work\\Power8GDI,target=/src",
+        "-w",
+        "/src",
+        "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
+        "kicad-cli",
+        "sch",
+        "export",
+        "netlist",
+        "--format",
+        "kicadxml",
+        "-o",
+        "Power8GDI/hardware/design/wbo/wbo1_analog.xml",
+        "Power8GDI/hardware/design/wbo/wbo1_analog.kicad_sch"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--mount",
+        "type=bind,source=C:\\Users\\User\\Documents\\Codex\\2026-10-21\\ghj\\work\\Power8GDI,target=/src",
+        "-w",
+        "/src",
+        "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
+        "kicad-cli",
+        "sch",
+        "export",
+        "netlist",
+        "--format",
+        "kicadxml",
+        "-o",
+        "Power8GDI/hardware/design/wbo/wbo1_control.xml",
+        "Power8GDI/hardware/design/wbo/wbo1_control.kicad_sch"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--mount",
+        "type=bind,source=C:\\Users\\User\\Documents\\Codex\\2026-10-21\\ghj\\work\\Power8GDI,target=/src",
+        "-w",
+        "/src",
+        "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
+        "kicad-cli",
+        "sch",
+        "export",
+        "netlist",
+        "--format",
+        "kicadxml",
+        "-o",
+        "Power8GDI/hardware/design/wbo/wbo1_heater_feed.xml",
+        "Power8GDI/hardware/design/wbo/wbo1_heater_feed.kicad_sch"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--mount",
+        "type=bind,source=C:\\Users\\User\\Documents\\Codex\\2026-10-21\\ghj\\work\\Power8GDI,target=/src",
+        "-w",
+        "/src",
+        "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
+        "kicad-cli",
+        "sch",
+        "export",
+        "netlist",
+        "--format",
+        "kicadxml",
+        "-o",
+        "Power8GDI/hardware/design/wbo/wbo2_analog.xml",
+        "Power8GDI/hardware/design/wbo/wbo2_analog.kicad_sch"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--mount",
+        "type=bind,source=C:\\Users\\User\\Documents\\Codex\\2026-10-21\\ghj\\work\\Power8GDI,target=/src",
+        "-w",
+        "/src",
+        "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
+        "kicad-cli",
+        "sch",
+        "export",
+        "netlist",
+        "--format",
+        "kicadxml",
+        "-o",
+        "Power8GDI/hardware/design/wbo/wbo2_control.xml",
+        "Power8GDI/hardware/design/wbo/wbo2_control.kicad_sch"
+      ],
+      "returncode": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--mount",
+        "type=bind,source=C:\\Users\\User\\Documents\\Codex\\2026-10-21\\ghj\\work\\Power8GDI,target=/src",
+        "-w",
+        "/src",
+        "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
+        "kicad-cli",
+        "sch",
+        "export",
+        "netlist",
+        "--format",
+        "kicadxml",
+        "-o",
+        "Power8GDI/hardware/design/wbo/wbo2_heater_feed.xml",
+        "Power8GDI/hardware/design/wbo/wbo2_heater_feed.kicad_sch"
       ],
       "returncode": 0,
       "output": ""
@@ -532,11 +681,11 @@
         "Power8GDI/hardware/design/Power8GDI_Core.kicad_sch"
       ],
       "returncode": 5,
-      "output": "Found 46 violations\nSaved ERC Report to Power8GDI/hardware/design/core_erc.json\n"
+      "output": "Found 189 violations\nSaved ERC Report to Power8GDI/hardware/design/core_erc.json\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/verify_core.py",
         "--erc",
         "Power8GDI/hardware/design/core_erc.json",
@@ -544,19 +693,19 @@
         "Power8GDI/hardware/design/core_checks.json"
       ],
       "returncode": 0,
-      "output": "{\n  \"schema_version\": 1,\n  \"structural_status\": \"PASS\",\n  \"release_status\": \"BLOCKED\",\n  \"core_components\": 401,\n  \"integrated_components\": 987,\n  \"checked_mcu_pads\": 176,\n  \"errors\": [],\n  \"erc_counts\": {\n    \"global_label_dangling\": 24,\n    \"power_pin_not_driven\": 20,\n    \"pin_not_driven\": 2\n  },\n  \"blockers\": [\n    \"ERC findings remain; power-source semantics and functional boundaries need review\",\n    \"MCU GPIO AF/DMA/timing and added PH2/PH3 firmware are not qualified\",\n    \"3V3/5V current, capacitor derating, regulator thermal and transient energy budgets unresolved\",\n    \"Independent actuator inhibit and actual coil/injector/pump models unresolved\",\n    \"PCB routing, DRC, SI/EMC, environmental and fault tests not complete\"\n  ]\n}\n"
+      "output": "{\n  \"schema_version\": 1,\n  \"structural_status\": \"PASS\",\n  \"release_status\": \"BLOCKED\",\n  \"core_components\": 403,\n  \"integrated_components\": 1072,\n  \"checked_mcu_pads\": 176,\n  \"errors\": [],\n  \"erc_counts\": {\n    \"lib_symbol_issues\": 148,\n    \"global_label_dangling\": 23,\n    \"power_pin_not_driven\": 18\n  },\n  \"blockers\": [\n    \"ERC findings remain; power-source semantics and functional boundaries need review\",\n    \"MCU GPIO AF/DMA/timing and added PH2/PH3 firmware are not qualified\",\n    \"3V3/5V current, capacitor derating, regulator thermal and transient energy budgets unresolved\",\n    \"Independent actuator inhibit and actual coil/injector/pump models unresolved\",\n    \"PCB routing, DRC, SI/EMC, environmental and fault tests not complete\"\n  ]\n}\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/verify_integration.py"
       ],
       "returncode": 0,
-      "output": "{\n  \"status\": \"PASS_STATIC_INTEGRATION\",\n  \"components\": 987,\n  \"exported_pins\": 3133,\n  \"dnp_components\": 53,\n  \"errors\": [],\n  \"unimplemented_harness_nets\": [\n    \"HARNESS_VBAT_GDI_A_1\",\n    \"HARNESS_VBAT_GDI_A_2\",\n    \"HARNESS_VBAT_GDI_B_1\",\n    \"HARNESS_VBAT_GDI_B_2\"\n  ],\n  \"release_status\": \"BLOCKED\",\n  \"hardware_tested\": false\n}\n"
+      "output": "{\n  \"status\": \"PASS_STATIC_INTEGRATION\",\n  \"components\": 1072,\n  \"exported_pins\": 3344,\n  \"dnp_components\": 43,\n  \"errors\": [],\n  \"unimplemented_harness_nets\": [],\n  \"release_status\": \"BLOCKED\",\n  \"hardware_tested\": false\n}\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "-m",
         "unittest",
         "discover",
@@ -565,7 +714,7 @@
         "-v"
       ],
       "returncode": 0,
-      "output": "test_fitted_ignition_output_is_rejected (test_connectivity.ConnectivityTests.test_fitted_ignition_output_is_rejected) ... ok\ntest_incompatible_root_tvs_is_rejected (test_connectivity.ConnectivityTests.test_incompatible_root_tvs_is_rejected) ... ok\ntest_real_kicad_export (test_connectivity.ConnectivityTests.test_real_kicad_export) ... ok\ntest_reversed_supply_pad_is_rejected (test_connectivity.ConnectivityTests.test_reversed_supply_pad_is_rejected) ... ok\ntest_vcap_external_load_is_rejected (test_connectivity.ConnectivityTests.test_vcap_external_load_is_rejected) ... ok\ntest_actual_export (test_integration.IntegrationTests.test_actual_export) ... ok\ntest_connector_motor_swap_rejected (test_integration.IntegrationTests.test_connector_motor_swap_rejected) ... ok\ntest_ignition_bypass_rejected (test_integration.IntegrationTests.test_ignition_bypass_rejected) ... ok\ntest_mcu_harness_bypass_rejected (test_integration.IntegrationTests.test_mcu_harness_bypass_rejected) ... ok\ntest_motor_permission_bypass_rejected (test_integration.IntegrationTests.test_motor_permission_bypass_rejected) ... ok\ntest_wrong_vr_mode_rejected (test_integration.IntegrationTests.test_wrong_vr_mode_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 1.955s\n\nOK\n"
+      "output": "test_fitted_ignition_output_is_rejected (test_connectivity.ConnectivityTests) ... ok\ntest_incompatible_root_tvs_is_rejected (test_connectivity.ConnectivityTests) ... ok\ntest_real_kicad_export (test_connectivity.ConnectivityTests) ... ok\ntest_reversed_supply_pad_is_rejected (test_connectivity.ConnectivityTests) ... ok\ntest_vcap_external_load_is_rejected (test_connectivity.ConnectivityTests) ... ok\ntest_actual_export (test_integration.IntegrationTests) ... ok\ntest_connector_motor_swap_rejected (test_integration.IntegrationTests) ... ok\ntest_ignition_bypass_rejected (test_integration.IntegrationTests) ... ok\ntest_mcu_harness_bypass_rejected (test_integration.IntegrationTests) ... ok\ntest_motor_permission_bypass_rejected (test_integration.IntegrationTests) ... ok\ntest_wrong_vr_mode_rejected (test_integration.IntegrationTests) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 1.787s\n\nOK\n"
     },
     {
       "command": [
@@ -587,8 +736,121 @@
         "Power8GDI/hardware/design/board/tests",
         "-v"
       ],
+      "returncode": 0,
+      "output": "test_connector_silk_stays_inside_edge (test_board_geometry.BoardGeometryTests.test_connector_silk_stays_inside_edge) ... ok\ntest_rules_survive_kicad_roundtrip (test_board_geometry.BoardGeometryTests.test_rules_survive_kicad_roundtrip) ... ok\ntest_thermal_changes_only_six_ep_holes (test_board_geometry.BoardGeometryTests.test_thermal_changes_only_six_ep_holes) ... ok\ntest_conflicting_pin_nets_fail (test_net_contract.NetContractTests.test_conflicting_pin_nets_fail) ... ok\ntest_connector_aliases_do_not_short_gpio_or_unreviewed_power (test_net_contract.NetContractTests.test_connector_aliases_do_not_short_gpio_or_unreviewed_power) ... ok\ntest_dnp_and_bom_flags_survive_xml (test_net_contract.NetContractTests.test_dnp_and_bom_flags_survive_xml) ... ok\ntest_duplicates_fail_instead_of_silently_overwrite (test_net_contract.NetContractTests.test_duplicates_fail_instead_of_silently_overwrite) ... ok\ntest_missing_and_unexpected_connections_are_detected (test_net_contract.NetContractTests.test_missing_and_unexpected_connections_are_detected) ... ok\ntest_repeated_thermal_pads_must_all_match (test_net_contract.NetContractTests.test_repeated_thermal_pads_must_all_match) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.471s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "Power8GDI/hardware/design/outputs/check_outputs.py"
+      ],
+      "returncode": 0,
+      "output": "{\"status\": \"PASS_STATIC_NETWORK\", \"errors\": [], \"output_channels\": 24, \"shared_reset_pullup_worst_v\": 0.6161000000000001, \"candidate_max_inductance_mH_at_1p4A_16V_7mJ\": 4.8571428571428585, \"six_driver_5V_supply_budget_mA\": 60, \"full_load_thermal_rating_approved\": false, \"timing_15us\": \"typical only; no maximum injector timing guarantee\", \"release_status\": \"BLOCKED\"}\n.......\n----------------------------------------------------------------------\nRan 7 tests in 1.658s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "Power8GDI/hardware/design/interfaces/check_interfaces.py"
+      ],
+      "returncode": 0,
+      "output": "{\n  \"structural_status\": \"PASS\",\n  \"release_status\": \"BLOCKED\",\n  \"components\": 84,\n  \"exported_connected_pins\": 230,\n  \"footprints_checked\": 0,\n  \"erc_findings\": {\n    \"global_label_dangling\": 16,\n    \"pin_not_driven\": 1,\n    \"power_pin_not_driven\": 9\n  },\n  \"errors\": [],\n  \"release_blockers\": [\n    \"Firmware pinmux, USB VBUS GPIO/native detect and48MHz clock\",\n    \"SD card peak current and3V3 LDO thermal budget\",\n    \"Sensor load/thermal/dropout and effective capacitance\",\n    \"Automotive transients, cable inductance, ESD, EMC and simultaneous unpowered faults\",\n    \"Connector enclosure/sealing and shield bonding\",\n    \"PCB connectivity/DRC/SI and hardware timing/fault measurements\"\n  ]\n}\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "Power8GDI/hardware/design/interfaces_aux/test_aux.py"
+      ],
+      "returncode": 0,
+      "output": "test_actual_footprint_pad_numbers_cover_all_pins (__main__.AuxTests) ... ok\ntest_knock_miso_disabled_when_not_selected (__main__.AuxTests) ... ok\ntest_manifest_export_parity_and_unique_refs (__main__.AuxTests) ... ok\ntest_primary_source_provenance_and_upstream_blobs (__main__.AuxTests) ... ok\ntest_resource_and_release_contract (__main__.AuxTests) ... ok\ntest_tpic_exact_primary_pinout (__main__.AuxTests) ... ok\ntest_unused_translator_inputs_grounded_no_old_wbo_controls (__main__.AuxTests) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.047s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "Power8GDI/hardware/design/power_input/check_power_input.py"
+      ],
+      "returncode": 0,
+      "output": "{\"result\": \"PASS_CONNECTIVITY_AND_NOMINAL_CALCULATIONS_ONLY\", \"components\": 19, \"critical_connections_checked\": 24, \"nominal_injection_at_min_uvlo_mv\": 14.494403231111155, \"manufacturing_release\": false, \"note\": \"IC timing tolerances, actual load, thermal and transient tests remain open\"}\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "Power8GDI/hardware/design/motor/check_motor.py"
+      ],
+      "returncode": 0,
+      "output": "{\"status\": \"PASS_STATIC_NETWORK_AND_NOMINAL_CALCULATIONS\", \"channels\": {\"DBW\": {\"components\": 25, \"truth_cases\": 16, \"power_paths\": \"PASS\", \"hardware_inhibit_bypass_mutation_detected\": true}, \"EWG\": {\"components\": 25, \"truth_cases\": 16, \"power_paths\": \"PASS\", \"hardware_inhibit_bypass_mutation_detected\": true}}, \"current_limit_calculated_a\": {\"minimum\": 1.60043401600434, \"nominal\": 1.7534246575342465, \"maximum\": 1.9095060190950603}, \"release\": \"BLOCKED\", \"hardware_tested\": false, \"motor_models\": null}\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "Power8GDI/hardware/design/safety/test_safety.py"
+      ],
+      "returncode": 0,
+      "output": "test_all_intended_nets_survive_export (__main__.SafetyTests) ... ok\ntest_async_clear_dominates_and_rejected_arm_not_queued (__main__.SafetyTests) ... ok\ntest_eight_gate_channels_and_default_disable (__main__.SafetyTests) ... ok\ntest_every_electrical_pin_exists_in_footprint (__main__.SafetyTests) ... ok\ntest_fault_clear_without_new_arm_does_not_reenable (__main__.SafetyTests) ... ok\ntest_latch_datasheet_pin_polarity (__main__.SafetyTests) ... ok\ntest_no_pt_enable_or_unqualified_rail_connection (__main__.SafetyTests) ... ok\ntest_regression_catches_oe_polarity_swap_and_missing_pd (__main__.SafetyTests) ... ok\ntest_supervisor_and_watchdog_fault_wired_or (__main__.SafetyTests) ... ok\ntest_watchdog_cap_margin_and_timing (__main__.SafetyTests) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.008s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "Power8GDI/hardware/design/gdi/test_schematic.py"
+      ],
+      "returncode": 0,
+      "output": "test_all_reference_pin_connections_survive (__main__.SchematicTests) ... ok\ntest_bom_and_export_are_consistent (__main__.SchematicTests) ... ok\ntest_checker_detects_pin_short_and_break (__main__.SchematicTests) ... ok\ntest_enable_isolation_dnp_not_a_short (__main__.SchematicTests) ... ok\ntest_every_electrical_pin_has_physical_pad (__main__.SchematicTests) ... ok\ntest_hpfp_start6_matches_reviewed_microcode_contract (__main__.SchematicTests) ... ok\ntest_local_regulator_connections (__main__.SchematicTests) ... ok\ntest_nxp_pin20_and_directions_corrected (__main__.SchematicTests) ... ok\ntest_pinned_source_hash (__main__.SchematicTests) ... ok\ntest_provenance_blocks_release (__main__.SchematicTests) ... ok\ntest_stage_references_and_independent_control_rails (__main__.SchematicTests) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 1.152s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "Power8GDI/hardware/design/interfaces/test_interfaces.py"
+      ],
+      "returncode": 0,
+      "output": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.049s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "Power8GDI/hardware/design/interfaces_aux/test_aux.py",
+        "--netlist",
+        "Power8GDI/hardware/design/core.net"
+      ],
+      "returncode": 0,
+      "output": "test_actual_footprint_pad_numbers_cover_all_pins (__main__.AuxTests) ... ok\ntest_knock_miso_disabled_when_not_selected (__main__.AuxTests) ... ok\ntest_manifest_export_parity_and_unique_refs (__main__.AuxTests) ... ok\ntest_primary_source_provenance_and_upstream_blobs (__main__.AuxTests) ... ok\ntest_resource_and_release_contract (__main__.AuxTests) ... ok\ntest_tpic_exact_primary_pinout (__main__.AuxTests) ... ok\ntest_unused_translator_inputs_grounded_no_old_wbo_controls (__main__.AuxTests) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.026s\n\nOK\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "Power8GDI/hardware/design/gdi/test_protection.py"
+      ],
+      "returncode": 0,
+      "output": "test_banks_match_manufacturer_pin_map (__main__.ProtectionTests) ... ok\ntest_faults_rejected (__main__.ProtectionTests) ... ok\ntest_gate_and_device_pulldowns (__main__.ProtectionTests) ... ok\ntest_manifest_exports_no_missing_parts_or_dnp_additions (__main__.ProtectionTests) ... ok\ntest_no_shared_power_nodes_between_banks (__main__.ProtectionTests) ... ok\ntest_static_ov_bounds_below_regulator_normal_max (__main__.ProtectionTests) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.007s\n\nOK\n"
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--mount",
+        "type=bind,source=C:\\Users\\User\\Documents\\Codex\\2026-10-21\\ghj\\work\\Power8GDI,target=/src",
+        "-w",
+        "/src",
+        "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
+        "python3",
+        "Power8GDI/hardware/design/wbo/verify_wbo.py"
+      ],
+      "returncode": 0,
+      "output": "{\n  \"checks\": 332,\n  \"passed\": true,\n  \"errors\": []\n}\n"
+    },
+    {
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "Power8GDI/hardware/tests",
+        "-v"
+      ],
       "returncode": 1,
-      "output": "test_connector_silk_stays_inside_edge (test_board_geometry.BoardGeometryTests.test_connector_silk_stays_inside_edge) ... ok\ntest_rules_survive_kicad_roundtrip (test_board_geometry.BoardGeometryTests.test_rules_survive_kicad_roundtrip) ... ok\ntest_thermal_changes_only_six_ep_holes (test_board_geometry.BoardGeometryTests.test_thermal_changes_only_six_ep_holes) ... ok\ntest_conflicting_pin_nets_fail (test_net_contract.NetContractTests.test_conflicting_pin_nets_fail) ... ok\ntest_connector_aliases_do_not_short_gpio_or_unreviewed_power (test_net_contract.NetContractTests.test_connector_aliases_do_not_short_gpio_or_unreviewed_power) ... FAIL\ntest_dnp_and_bom_flags_survive_xml (test_net_contract.NetContractTests.test_dnp_and_bom_flags_survive_xml) ... ok\ntest_duplicates_fail_instead_of_silently_overwrite (test_net_contract.NetContractTests.test_duplicates_fail_instead_of_silently_overwrite) ... ok\ntest_missing_and_unexpected_connections_are_detected (test_net_contract.NetContractTests.test_missing_and_unexpected_connections_are_detected) ... ok\ntest_repeated_thermal_pads_must_all_match (test_net_contract.NetContractTests.test_repeated_thermal_pads_must_all_match) ... ok\n\n======================================================================\nFAIL: test_connector_aliases_do_not_short_gpio_or_unreviewed_power (test_net_contract.NetContractTests.test_connector_aliases_do_not_short_gpio_or_unreviewed_power)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/src/Power8GDI/hardware/design/board/tests/test_net_contract.py\", line 41, in test_connector_aliases_do_not_short_gpio_or_unreviewed_power\n    self.assertNotIn(name,aliases)\nAssertionError: 'PGND_MAIN_4' unexpectedly found in {'VBAT_MAIN_1': 'VBAT_MAIN_FUSED', 'PGND_MAIN_1': 'GND', 'CAN1_H': 'CAN1_H', 'CAN1_L': 'CAN1_L', 'LIN1_BUS': 'LIN1_BUS', 'IGN1': 'IGN1_LOGIC_OUT', 'IGN2': 'IGN2_LOGIC_OUT', 'IGN3': 'IGN3_LOGIC_OUT', 'IGN4': 'IGN4_LOGIC_OUT', 'IGN5': 'IGN5_LOGIC_OUT', 'IGN6': 'IGN6_LOGIC_OUT', 'IGN7': 'IGN7_LOGIC_OUT', 'IGN8': 'IGN8_LOGIC_OUT', 'VBAT_MAIN_2': 'VBAT_DBW_FUSED', 'VBAT_MAIN_3': 'VBAT_EWG_FUSED', 'PGND_MAIN_2': 'GND', 'PGND_MAIN_3': 'GND', 'DBW_MOTOR_A': 'DBW_MOTOR_A', 'DBW_MOTOR_B': 'DBW_MOTOR_B', 'EWG_MOTOR_A': 'EWG_MOTOR_A', 'EWG_MOTOR_B': 'EWG_MOTOR_B', 'PGND_MAIN_4': 'GND', 'PGND_MAIN_B': 'GND', 'PGND_GDI_A_1': 'GND', 'PGND_GDI_A_2': 'GND', 'PGND_GDI_B_1': 'GND', 'PGND_GDI_B_2': 'GND', 'CAN2_H': 'CAN2_H', 'CAN2_L': 'CAN2_L', 'LIN2_BUS': 'LIN2_BUS', 'SENSOR_5V_A': 'SENSOR_5V_A', 'SENSOR_5V_B': 'SENSOR_5V_B', 'CHASSIS_GND': 'USB_SHIELD', 'DI1_HIGH': 'PTA_H1', 'DI1_LOW': 'PTA_L1', 'DI2_HIGH': 'PTA_H1', 'DI2_LOW': 'PTA_L2', 'DI3_HIGH': 'PTA_H3', 'DI3_LOW': 'PTA_L3', 'DI4_HIGH': 'PTA_H3', 'DI4_LOW': 'PTA_L4', 'HPFP1_HIGH': 'PTA_H5PUMP', 'HPFP1_LOW': 'PTA_L6PUMP', 'DI5_HIGH': 'PTB_H1', 'DI5_LOW': 'PTB_L1', 'DI6_HIGH': 'PTB_H1', 'DI6_LOW': 'PTB_L2', 'DI7_HIGH': 'PTB_H3', 'DI7_LOW': 'PTB_L3', 'DI8_HIGH': 'PTB_H3', 'DI8_LOW': 'PTB_L4', 'HPFP2_HIGH': 'PTB_H5PUMP', 'HPFP2_LOW': 'PTB_L6PUMP'}\n\n----------------------------------------------------------------------\nRan 9 tests in 0.653s\n\nFAILED (failures=1)\n"
+      "output": "test_bad_pin_status_duplicate_and_empty_inputs (test_resource_audit.ResourceAuditTests) ... ok\ntest_cli_structure_is_distinct_from_default_release_gate (test_resource_audit.ResourceAuditTests) ... FAIL\ntest_collision_free_draft_cannot_pass_qualification (test_resource_audit.ResourceAuditTests) ... ok\ntest_direct_and_indirect_knock_cannot_both_own_channel (test_resource_audit.ResourceAuditTests) ... ok\ntest_exti_port_alias_collision (test_resource_audit.ResourceAuditTests) ... ok\ntest_indirect_knock_requires_all_serial_controls (test_resource_audit.ResourceAuditTests) ... ok\ntest_new_connector_function_cannot_disappear_from_requirements (test_resource_audit.ResourceAuditTests) ... ok\ntest_no_json_approval_shortcut (test_resource_audit.ResourceAuditTests) ... ok\ntest_pin_collision (test_resource_audit.ResourceAuditTests) ... ok\ntest_scheduler_timer_reservation (test_resource_audit.ResourceAuditTests) ... ok\ntest_selected_interface_rejects_wrong_owner (test_resource_audit.ResourceAuditTests) ... ok\ntest_shared_peripheral_channel_collision_despite_unique_gpio (test_resource_audit.ResourceAuditTests) ... ok\ntest_source_or_family_change_requires_new_review (test_resource_audit.ResourceAuditTests) ... ok\ntest_storage_conflicts_are_conditional_until_selected (test_resource_audit.ResourceAuditTests) ... FAIL\ntest_timer_timebase_and_pc13_require_review_without_false_collision (test_resource_audit.ResourceAuditTests) ... FAIL\n\n======================================================================\nFAIL: test_cli_structure_is_distinct_from_default_release_gate (test_resource_audit.ResourceAuditTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\User\\Documents\\Codex\\2026-10-21\\ghj\\work\\Power8GDI\\Power8GDI\\hardware\\tests\\test_resource_audit.py\", line 123, in test_cli_structure_is_distinct_from_default_release_gate\n    self.assertEqual(json.loads(output.read_text()), json.loads((HARDWARE / 'resource_audit_report.json').read_text()))\nAssertionError: {'sch[1334 chars]ed': 4, 'missing': []}, 'Frequency': {'require[12324 chars]a'}}} != {'sch[1334 chars]ed': 8, 'missing': []}, 'Frequency': {'require[12154 chars]e'}}}\nDiff is 25597 characters long. Set self.maxDiff to None to see it.\n\n======================================================================\nFAIL: test_storage_conflicts_are_conditional_until_selected (test_resource_audit.ResourceAuditTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\User\\Documents\\Codex\\2026-10-21\\ghj\\work\\Power8GDI\\Power8GDI\\hardware\\tests\\test_resource_audit.py\", line 76, in test_storage_conflicts_are_conditional_until_selected\n    self.assertEqual(matches[0]['functions'], ['EWG_PWM', 'HPFP1', 'SD_SPI3_SCK', 'SD_SPI3_MISO', 'SD_SPI3_MOSI', 'LS_AUX1'])\nAssertionError: Lists differ: ['EWG_PWM', 'MOTOR4_PWM', 'SD_SPI3_SCK', 'SD_SPI3_MISO[24 chars]UX1'] != ['EWG_PWM', 'HPFP1', 'SD_SPI3_SCK', 'SD_SPI3_MISO', 'S[19 chars]UX1']\n\nFirst differing element 1:\n'MOTOR4_PWM'\n'HPFP1'\n\n+ ['EWG_PWM', 'HPFP1', 'SD_SPI3_SCK', 'SD_SPI3_MISO', 'SD_SPI3_MOSI', 'LS_AUX1']\n- ['EWG_PWM',\n-  'MOTOR4_PWM',\n-  'SD_SPI3_SCK',\n-  'SD_SPI3_MISO',\n-  'SD_SPI3_MOSI',\n-  'LS_AUX1']\n\n======================================================================\nFAIL: test_timer_timebase_and_pc13_require_review_without_false_collision (test_resource_audit.ResourceAuditTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\User\\Documents\\Codex\\2026-10-21\\ghj\\work\\Power8GDI\\Power8GDI\\hardware\\tests\\test_resource_audit.py\", line 83, in test_timer_timebase_and_pc13_require_review_without_false_collision\n    self.assertTrue(any(f['code'] == 'SHARED_TIMER_TIMEBASE' and set(f['functions']) == {'DBW_PWM', 'EWG_PWM'} for f in findings))\nAssertionError: False is not true\n\n----------------------------------------------------------------------\nRan 15 tests in 0.305s\n\nFAILED (failures=3)\n"
     }
   ],
   "erc_native_exit": 5,

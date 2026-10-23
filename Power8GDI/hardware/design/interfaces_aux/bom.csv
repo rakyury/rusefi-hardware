@@ -1,6 +1,6 @@
 ref,value,footprint,dnp,note,sheet
 U1701,TPIC8101DWR,Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm,False,"TI SLIS110C p3 exact pins; TEST open per datasheet, NC5/6 no traces; OUT unused digital-readout mode",knock_dual
-U1702,SN74AHCT244QPWRQ1,Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm,False,TTL VIH2V recognizes3.3V; all8 outputs used. Startup/partial power still require validation,knock_dual
+U1702,SN74AHCT244QPWRQ1,Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm,False,"TTL VIH2V recognizes3.3V; five knock/SPI outputs used, unused inputs tied low. WBO now uses independent CAN nodes",knock_dual
 U1703,CLVC1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,CS disables return buffer; input5.5V tolerant; shared MISO arbitration required,knock_dual
 Y1701,ASEM1-8.000MHZ-LC-T,Power8GDI_Core:ASEM_3225,False,Own oscillator; manufacturer15pF load ceiling; temp−40..85C is a release constraint,knock_dual
 C1701,4.7uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,,knock_dual
@@ -20,88 +20,3 @@ R1723,0R,Resistor_SMD:R_0603_1608Metric,False,Dedicated return routed to analogu
 R1701,10k 1%,Resistor_SMD:R_0603_1608Metric,False,,knock_dual
 R1702,10k 1%,Resistor_SMD:R_0603_1608Metric,False,,knock_dual
 R1703,100k 1%,Resistor_SMD:R_0603_1608Metric,False,,knock_dual
-R1704,10k 1%,Resistor_SMD:R_0603_1608Metric,False,,knock_dual
-R1705,10k 1%,Resistor_SMD:R_0603_1608Metric,False,,knock_dual
-U1801,CJ125 LQFP32 (ordering code unresolved),Package_QFP:LQFP-32_7x7mm_P0.8mm,True,"DNP until Bosch full datasheet VCCSS, ordering code, package land pattern and operating/SPI limits reviewed",wbo1_analog
-U1802,CLVC1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,5V->3.3V return candidate; disabled on CS high; CJ125 output levels/timing still require full datasheet,wbo1_analog
-R1801,61.9R 0.1%,Resistor_SMD:R_0603_1608Metric,False,Pump current shunt from Bosch proposal; calibration/grade required,wbo1_analog
-R1802,470k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo1_analog
-R1803,4.7k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo1_analog
-R1804,301R 0.1%,Resistor_SMD:R_0603_1608Metric,False,"LSU4.9 Ri calibration resistor, not LSU4.2 82.5R",wbo1_analog
-R1805,100R 1%,Resistor_SMD:R_0603_1608Metric,False,Candidate value: public Bosch drawing shows series resistor without readable value,wbo1_analog
-C1801,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,Candidate value: public Bosch drawing shows post-filter capacitor without readable value,wbo1_analog
-C1802,2.2nF 25V C0G,Capacitor_SMD:C_0603_1608Metric,False,"Bosch raster label2,2n; return is GND, not VM",wbo1_analog
-R1811,100k 1%,Resistor_SMD:R_0603_1608Metric,False,Bosch leakage-detection resistor,wbo1_analog
-R1806,31.6k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo1_analog
-C1803,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo1_analog
-R1807,100k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo1_analog
-C1804,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo1_analog
-C1805,33nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo1_analog
-C1806,33nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo1_analog
-R1808,10k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo1_analog
-R1809,6.8k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo1_analog
-C1807,33nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo1_analog
-C1808,33nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo1_analog
-C1809,1nF 25V C0G,Capacitor_SMD:C_0603_1608Metric,False,,wbo1_analog
-C1810,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo1_analog
-R1810,100k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo1_analog
-R1821,0R,Resistor_SMD:R_0603_1608Metric,False,Bosch LSU4.9 automotive connector mapping; project harness pin numbering must be reviewed,wbo1_analog
-R1822,0R,Resistor_SMD:R_0603_1608Metric,False,Bosch LSU4.9 automotive connector mapping; project harness pin numbering must be reviewed,wbo1_analog
-R1823,0R,Resistor_SMD:R_0603_1608Metric,True,Bosch LSU4.9 automotive connector mapping; project harness pin numbering must be reviewed,wbo1_analog
-R1824,0R,Resistor_SMD:R_0603_1608Metric,True,Bosch LSU4.9 automotive connector mapping; project harness pin numbering must be reviewed,wbo1_analog
-R1825,0R,Resistor_SMD:R_0603_1608Metric,False,Bosch LSU4.9 automotive connector mapping; project harness pin numbering must be reviewed,wbo1_analog
-R1826,0R,Resistor_SMD:R_0603_1608Metric,False,Bosch LSU4.9 automotive connector mapping; project harness pin numbering must be reviewed,wbo1_analog
-U1901,CJ125 LQFP32 (ordering code unresolved),Package_QFP:LQFP-32_7x7mm_P0.8mm,True,"DNP until Bosch full datasheet VCCSS, ordering code, package land pattern and operating/SPI limits reviewed",wbo2_analog
-U1902,CLVC1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,5V->3.3V return candidate; disabled on CS high; CJ125 output levels/timing still require full datasheet,wbo2_analog
-R1901,61.9R 0.1%,Resistor_SMD:R_0603_1608Metric,False,Pump current shunt from Bosch proposal; calibration/grade required,wbo2_analog
-R1902,470k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo2_analog
-R1903,4.7k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo2_analog
-R1904,301R 0.1%,Resistor_SMD:R_0603_1608Metric,False,"LSU4.9 Ri calibration resistor, not LSU4.2 82.5R",wbo2_analog
-R1905,100R 1%,Resistor_SMD:R_0603_1608Metric,False,Candidate value: public Bosch drawing shows series resistor without readable value,wbo2_analog
-C1901,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,Candidate value: public Bosch drawing shows post-filter capacitor without readable value,wbo2_analog
-C1902,2.2nF 25V C0G,Capacitor_SMD:C_0603_1608Metric,False,"Bosch raster label2,2n; return is GND, not VM",wbo2_analog
-R1911,100k 1%,Resistor_SMD:R_0603_1608Metric,False,Bosch leakage-detection resistor,wbo2_analog
-R1906,31.6k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo2_analog
-C1903,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo2_analog
-R1907,100k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo2_analog
-C1904,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo2_analog
-C1905,33nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo2_analog
-C1906,33nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo2_analog
-R1908,10k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo2_analog
-R1909,6.8k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo2_analog
-C1907,33nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo2_analog
-C1908,33nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo2_analog
-C1909,1nF 25V C0G,Capacitor_SMD:C_0603_1608Metric,False,,wbo2_analog
-C1910,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo2_analog
-R1910,100k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo2_analog
-R1921,0R,Resistor_SMD:R_0603_1608Metric,False,Bosch LSU4.9 automotive connector mapping; project harness pin numbering must be reviewed,wbo2_analog
-R1922,0R,Resistor_SMD:R_0603_1608Metric,False,Bosch LSU4.9 automotive connector mapping; project harness pin numbering must be reviewed,wbo2_analog
-R1923,0R,Resistor_SMD:R_0603_1608Metric,True,Bosch LSU4.9 automotive connector mapping; project harness pin numbering must be reviewed,wbo2_analog
-R1924,0R,Resistor_SMD:R_0603_1608Metric,True,Bosch LSU4.9 automotive connector mapping; project harness pin numbering must be reviewed,wbo2_analog
-R1925,0R,Resistor_SMD:R_0603_1608Metric,False,Bosch LSU4.9 automotive connector mapping; project harness pin numbering must be reviewed,wbo2_analog
-R1926,0R,Resistor_SMD:R_0603_1608Metric,False,Bosch LSU4.9 automotive connector mapping; project harness pin numbering must be reviewed,wbo2_analog
-U2001,MCP3204T-BI/SL,Package_SO:SOIC-14_3.9x8.7mm_P1.27mm,False,"DS21298E pin map, four12-bit inputs; candidate ≤500kHz clock; SAR source settling/calibration must be measured",wbo_adc_control
-U2002,SN74AHCT244QPWRQ1,Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm,False,Both banks disabled when hardware latch off; outputs have pull-down. No power MOSFET included,wbo_adc_control
-U2003,TLV9004QPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,Unity buffers: CJ125 UA specified at <10uA load; divider must not directly load CJ outputs. 10k isolates100nF load,wbo_adc_control
-C2001,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo_adc_control
-C2002,1uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo_adc_control
-C2003,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo_adc_control
-R2001,10k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-R2002,10k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-R2003,10k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-R2004,10k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-R2005,10k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-R2006,10k 1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-C2004,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo_adc_control
-R2010,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-R2011,15k 0.1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-C2010,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo_adc_control
-R2012,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-R2013,15k 0.1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-C2011,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo_adc_control
-R2014,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-R2015,15k 0.1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-C2012,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo_adc_control
-R2016,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-R2017,15k 0.1%,Resistor_SMD:R_0603_1608Metric,False,,wbo_adc_control
-C2013,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,,wbo_adc_control

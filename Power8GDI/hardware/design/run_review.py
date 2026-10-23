@@ -35,11 +35,11 @@ def main():
     out=HERE/'board/review';out.mkdir(exist_ok=True,parents=True)
     summary={'release_status':'BLOCKED','qualification':'INCOMPLETE_ENGINEERING_REVIEW','image':IMAGE,'commands':commands}
     try:
-        for script in ['power_input/build_power_input.py','motor/build_motor.py','safety/generate.py','board/build_connector_schematic.py','interfaces/build_interfaces.py','interfaces_aux/build_aux.py','build_core_schematic.py']:
+        for script in ['power_input/build_power_input.py','motor/build_motor.py','safety/generate.py','board/build_connector_schematic.py','interfaces/build_interfaces.py','interfaces_aux/build_aux.py','gdi/generate.py','gdi/build_protection.py','wbo/build_wbo.py','build_core_schematic.py']:
             host(BASE+script)
         # GDI reference sources remain unchanged; re-export their actual leaves.
         leaves=['power_input/power_input','motor/dbw_driver','motor/ewg_driver','safety/safety_gate','board/connectors','gdi/stage_a','gdi/stage_b','Power8GDI_Core']
-        leaves=leaves[:-1]+[s['name'] for s in json.loads((HERE/'interfaces/interfaces_manifest.json').read_text())['sheets']]+['interfaces_aux/'+s['name'] for s in json.loads((HERE/'interfaces_aux/interface.json').read_text())['sheets']]+['Power8GDI_Core']
+        leaves=leaves[:-1]+[s['name'] for s in json.loads((HERE/'interfaces/interfaces_manifest.json').read_text())['sheets']]+['interfaces_aux/'+s['name'] for s in json.loads((HERE/'interfaces_aux/interface.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'gdi/protection_manifest.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'wbo/interface.json').read_text())['sheets']]+['Power8GDI_Core']
         for name in leaves:
             target='core.net' if name=='Power8GDI_Core' else name+'.xml'
             cad('kicad-cli','sch','export','netlist','--format','kicadxml','-o',BASE+target,BASE+name+'.kicad_sch')
@@ -52,8 +52,10 @@ def main():
             host(BASE+script)
         host(BASE+'interfaces/test_interfaces.py')
         host(BASE+'interfaces_aux/test_aux.py','--netlist',BASE+'core.net')
-        host('-m','unittest','discover','-s','Power8GDI/hardware/tests','-v')
+        host(BASE+'gdi/test_protection.py')
+        cad('python3',BASE+'wbo/verify_wbo.py')
         host('Power8GDI/hardware/audit_resources.py','--gate','structure','--output','Power8GDI/hardware/resource_audit_report.json')
+        host('-m','unittest','discover','-s','Power8GDI/hardware/tests','-v')
         if not args.skip_board_build:cad('python3',BASE+'board/build_board.py')
         board=BASE+'board/review/Power8GDI_Review.kicad_pcb'
         cad('python3',BASE+'board/verify_board.py',board,BASE+'core.net')

@@ -11,6 +11,7 @@ sys.path.insert(0,str(HERE))
 sys.path.insert(0,str(HERE/'board'))
 from net_contract import read_netlists
 from interfaces.check_interfaces import electrical_checks as interface_electrical_checks
+from gdi.test_protection import protection_errors, gate_errors
 
 
 def verify(path):
@@ -19,7 +20,7 @@ def verify(path):
         if net is None and pins.get((ref,str(pin)),'').startswith('unconnected-'):return
         if pins.get((ref,str(pin)))!=net:errors.append(f'{ref}.{pin}: expected {net}; got {pins.get((ref,str(pin)))}')
     expected_refs=set()
-    for rel in ['core_manifest.json','power_input/power_input_manifest.json','motor/motor_manifest.json','safety/parts.json','board/connector_manifest.json','interfaces/interfaces_manifest.json','interfaces_aux/parts.json']:
+    for rel in ['core_manifest.json','power_input/power_input_manifest.json','motor/motor_manifest.json','safety/parts.json','board/connector_manifest.json','interfaces/interfaces_manifest.json','interfaces_aux/parts.json','gdi/protection_manifest.json','wbo/parts.json']:
         manifest=json.loads((HERE/rel).read_text())
         entries=manifest if isinstance(manifest,list) else manifest['parts']
         for part in entries:
@@ -39,6 +40,13 @@ def verify(path):
             if not net.startswith('unconnected-'):expect(ref,pin,net)
     if set(parts)!=expected_refs:errors.append('Integrated component set differs from leaf manifests')
     errors.extend(interface_electrical_checks(parts,pins))
+    tree=ET.parse(path)
+    for stage in 'AB':errors.extend(protection_errors(tree,stage))
+    errors.extend(gate_errors(tree))
+    for ref,net in [('U201','HPFP1'),('U301','HPFP2')]:expect(ref,9,net)
+    # CAN WBO MCU permissions must be distinct from local heater PWM.
+    for net in ['WBO1_CS_N','WBO2_CS_N','WBO_ADC_CS_N','WBO_RESET_N_5V']:
+        if net in pins.values():errors.append('Obsolete WBO SPI control remains: '+net)
     for route in json.loads((HERE/'interfaces/interfaces_manifest.json').read_text())['gpio_contract']:
         expect('U101',route['package_pad'],route['function'])
     # Independent pin facts: TI SN74LVC244A-Q1 and MIC4427, plus STM32 DS11532.

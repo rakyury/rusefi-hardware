@@ -68,7 +68,7 @@
       "missing": []
     },
     "Digital": {
-      "required": 8,
+      "required": 4,
       "missing": []
     },
     "Frequency": {
@@ -152,7 +152,7 @@
           "EWG_PWM"
         ],
         "PC9": [
-          "HPFP1"
+          "MOTOR4_PWM"
         ],
         "PC10": [
           "SD_SPI3_SCK"
@@ -335,7 +335,9 @@
       "detail": "TIM3 channels share counter/prescaler/auto-reload; compatible periods/modes not proved",
       "functions": [
         "DBW_PWM",
-        "EWG_PWM"
+        "EWG_PWM",
+        "MOTOR3_PWM",
+        "MOTOR4_PWM"
       ],
       "source": "RM0410",
       "blocks_release": true
@@ -366,10 +368,10 @@
     {
       "code": "INTERFACE_PIN_CONFLICT",
       "category": "conditional_conflict",
-      "detail": "SDMMC1_4bit: PC8=EWG_PWM, PC9=HPFP1, PC10=SD_SPI3_SCK, PC11=SD_SPI3_MISO, PC12=SD_SPI3_MOSI, PD2=LS_AUX1",
+      "detail": "SDMMC1_4bit: PC8=EWG_PWM, PC9=MOTOR4_PWM, PC10=SD_SPI3_SCK, PC11=SD_SPI3_MISO, PC12=SD_SPI3_MOSI, PD2=LS_AUX1",
       "functions": [
         "EWG_PWM",
-        "HPFP1",
+        "MOTOR4_PWM",
         "SD_SPI3_SCK",
         "SD_SPI3_MISO",
         "SD_SPI3_MOSI",
@@ -470,9 +472,9 @@
       "blocks_release": true
     },
     {
-      "code": "MODE_DECISION_OPEN",
+      "code": "MODE_SELECTION_UNREVIEWED",
       "category": "unverified_resource",
-      "detail": "motor_pwm_timebase is undecided",
+      "detail": "motor_pwm_timebase=TIM3_CH1_to_CH4_shared_frequency: selection is not qualification evidence",
       "functions": [],
       "source": "project_requirements",
       "blocks_release": true
@@ -567,7 +569,8 @@
         "Table 11 pp. 79-80: SWD/JTAG and SDMMC1",
         "Table 11 footnote 2 p. 85: PC13 output restrictions",
         "Table11 pp68-84: 17 ADC package pads; PG9/PG10 GPIO; PI5/PI6 TIM8; PB6/PB7 TIM4",
-        "Table13 pp90,100: PB6/PB7 AF2 and PI5/PI6 AF3"
+        "Table13 pp90,100: PB6/PB7 AF2 and PI5/PI6 AF3",
+        "Table11 p78 and Table13 PortC: PC6..PC9 AF2 TIM3_CH1..4"
       ]
     },
     "RM0410": {
@@ -606,17 +609,17 @@
     "gpio_csv": {
       "name": "mcu_gpio_draft.csv",
       "canonicalization": "UTF-8 without BOM; LF newlines",
-      "sha256": "4c11fe0f219334e8b4b624b556e0433129498b109cb2fd8622cab0443aec20fd"
+      "sha256": "c3d113d291b7adae331af235f31138fd037070967f5eafe2d6b4000a5cfcfb89"
     },
     "connector_csv": {
       "name": "power8gdi_revA_pinout.csv",
       "canonicalization": "UTF-8 without BOM; LF newlines",
-      "sha256": "27d91cf0f556e44d405b1f46fd5d8f9c09e3fa883eac2720667c83fb8db26551"
+      "sha256": "beb000f880ba8386ffdb302d320bf95d0f005d3a8e39ace25a3bb1128ee421b1"
     },
     "contract": {
       "name": "resource_contract.json",
       "canonicalization": "UTF-8 without BOM; LF newlines",
-      "sha256": "571cc7eb721b8e00abfa9be80cded801cd9c30acd4a0d20009168103ae37bbbe"
+      "sha256": "904886bea0372f51e3f0af3f0b5a91ae9c32dde5b245e9b8b0df0002e1ab9fba"
     }
   }
 }

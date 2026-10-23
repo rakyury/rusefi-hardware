@@ -40,8 +40,8 @@ def knock():
     t=ic('TPIC8101DWR',[(1,'VDD','power_in'),(3,'Vref','power_out'),(20,'CH1P','input'),(19,'CH1N','input'),(18,'CH1FB','output'),(15,'CH2P','input'),(16,'CH2N','input'),(17,'CH2FB','output'),(9,'XIN','input')],[(2,'GND','power_in'),(4,'OUT','output'),(5,'NC','no_connect'),(6,'NC','no_connect'),(7,'INT/HOLD','input'),(8,'~{CS}','input'),(10,'XOUT','output'),(11,'SDO','tri_state'),(12,'SDI','input'),(13,'SCLK','input'),(14,'~{TEST}','input')],'TPIC')
     n={'1':PWR,'2':GND,'3':'KNOCK_VREF','4':None,'5':None,'6':None,'7':'KNOCK_INT_HOLD_5V','8':'KNOCK_CS_N_5V','9':'KNOCK_CLK_5V','10':None,'11':'KNOCK_SDO_5V','12':'AUX_SPI_MOSI_5V','13':'AUX_SPI_SCK_5V','14':None,'15':'KNOCK_VREF','16':'KNOCK2_INV','17':'KNOCK2_FB','18':'KNOCK1_FB','19':'KNOCK1_INV','20':'KNOCK_VREF'}
     s.component(t,'U1701','TPIC8101DWR',80,90,n,note='TI SLIS110C p3 exact pins; TEST open per datasheet, NC5/6 no traces; OUT unused digital-readout mode')
-    channels=[('GDI_SPI2_MOSI','AUX_SPI_MOSI_5V'),('GDI_SPI2_SCK','AUX_SPI_SCK_5V'),('KNOCK_CS_N','KNOCK_CS_N_5V'),('KNOCK_INT_HOLD','KNOCK_INT_HOLD_5V'),('KNOCK_OSC_3V3','KNOCK_CLK_5V'),('WBO1_CS_N','WBO1_CS_N_5V'),('WBO2_CS_N','WBO2_CS_N_5V'),('SAFETY_CLEAR_N','WBO_RESET_N_5V')]
-    s.component(AHCT,'U1702',AHCT.name,235,90,ahct_nets(channels),note='TTL VIH2V recognizes3.3V; all8 outputs used. Startup/partial power still require validation')
+    channels=[('GDI_SPI2_MOSI','AUX_SPI_MOSI_5V'),('GDI_SPI2_SCK','AUX_SPI_SCK_5V'),('KNOCK_CS_N','KNOCK_CS_N_5V'),('KNOCK_INT_HOLD','KNOCK_INT_HOLD_5V'),('KNOCK_OSC_3V3','KNOCK_CLK_5V'),(GND,None),(GND,None),(GND,None)]
+    s.component(AHCT,'U1702',AHCT.name,235,90,ahct_nets(channels),note='TTL VIH2V recognizes3.3V; five knock/SPI outputs used, unused inputs tied low. WBO now uses independent CAN nodes')
     s.component(LVC,'U1703',LVC.name,390,90,{'5':IO,'1':'KNOCK_CS_N','2':'KNOCK_SDO_5V','4':'GDI_SPI2_MISO','3':GND},note='CS disables return buffer; input5.5V tolerant; shared MISO arbitration required')
     osc=ic('ASEM1_8MHz',[(1,'EN','input'),(4,'VDD','power_in')],[(3,'OUT','output'),(2,'GND','power_in')],'OSC',prefix='Y')
     s.component(osc,'Y1701','ASEM1-8.000MHZ-LC-T',390,145,{'1':IO,'2':GND,'3':'KNOCK_OSC_3V3','4':IO},note='Own oscillator; manufacturer15pF load ceiling; temp−40..85C is a release constraint')
@@ -49,7 +49,7 @@ def knock():
     for i in (1,2):
         b=1710+(i-1)*10
         items += [(f'C{b+1}','3.3nF 50V C0G',f'HARNESS_KNOCK{i}_SIG',f'KNOCK{i}_AC'),(f'R{b+1}','100k 1%',f'KNOCK{i}_AC',f'KNOCK{i}_INV'),(f'R{b+2}','100k 1%',f'KNOCK{i}_FB',f'KNOCK{i}_INV'),(f'R{b+3}','0R',f'HARNESS_KNOCK{i}_RETURN',GND,'Dedicated return routed to analogue ground entry; sensor cable/EMC review required')]
-    items += [('R1701','10k 1%','KNOCK_CS_N',IO),('R1702','10k 1%','KNOCK_INT_HOLD',GND),('R1703','100k 1%','KNOCK_SDO_5V',GND),('R1704','10k 1%','WBO1_CS_N',IO),('R1705','10k 1%','WBO2_CS_N',IO)]
+    items += [('R1701','10k 1%','KNOCK_CS_N',IO),('R1702','10k 1%','KNOCK_INT_HOLD',GND),('R1703','100k 1%','KNOCK_SDO_5V',GND)]
     passives(s,items,205)
     return s
 
@@ -95,7 +95,7 @@ def adc_and_heater_logic():
     return s
 
 def main():
-    sheets=[knock(),wideband(1),wideband(2),adc_and_heater_logic()];parts=[];symbols={}
+    sheets=[knock()];parts=[];symbols={}
     for s in sheets:
         s.write(HERE);p=HERE/(s.name+'.kicad_sch');text=p.read_text()
         for part in s.parts:
@@ -109,7 +109,15 @@ def main():
     (HERE/'parts.json').write_text(json.dumps(parts,indent=2)+'\n')
     with (HERE/'bom.csv').open('w',newline='',encoding='utf-8') as f:
         out=csv.DictWriter(f,fieldnames=['ref','value','footprint','dnp','note','sheet']);out.writeheader();out.writerows({k:p[k] for k in out.fieldnames} for p in parts)
-    manifest={'schema_version':1,'root_uuid':ROOT_UUID,'project':'Power8GDI_Core','release_status':'BLOCKED','sheets':[{'name':s.name,'sheet_uuid':s.uuid,'root_instance_uuid':s.sheet_id,'components':len(s.parts)} for s in sheets],'gpio':['KNOCK_CS_N','KNOCK_INT_HOLD','WBO1_CS_N','WBO2_CS_N','WBO1_HEATER_PWM','WBO2_HEATER_PWM','WBO_ADC_CS_N'],'shared_spi':['GDI_SPI2_SCK','GDI_SPI2_MOSI','GDI_SPI2_MISO'],'hardware_reset':'SAFETY_CLEAR_N -> AHCT -> WBO_RESET_N_5V','mcu_adc_required':0,'watchdog_gate':'HW_ACTUATOR_ENABLE_N','part_count':len(parts),'blockers':['CJ125 VCCSS pin18 absent from detailed public pin descriptions/limits','CJ125 orderable variant and LQFP32 land pattern unconfirmed','CJ125 full SPI electrical/timing/output-drive specifications absent','Independent heater power stages and protected9..18V UB/H+ feeds absent','Sensor/ADC calibration, SPI scheduling and conversion settling untested','ASEM and MCP3204 temperature ceiling85C','PT2001 feed/enable/output aliases unresolved; not changed by this aux increment']}
+    manifest={'schema_version':1,'root_uuid':ROOT_UUID,'project':'Power8GDI_Core',
+        'release_status':'BLOCKED',
+        'sheets':[{'name':s.name,'sheet_uuid':s.uuid,'root_instance_uuid':s.sheet_id,'components':len(s.parts)} for s in sheets],
+        'gpio':['KNOCK_CS_N','KNOCK_INT_HOLD'],
+        'shared_spi':['GDI_SPI2_SCK','GDI_SPI2_MOSI','GDI_SPI2_MISO'],
+        'mcu_adc_required':0,'part_count':len(parts),
+        'blockers':['Sensor calibration and SPI scheduling untested','Oscillator temperature ceiling85C','Physical and EMC qualification pending'],
+        'superseded_sheets':['wbo1_analog','wbo2_analog','wbo_adc_control'],
+        'replacement':'../wbo/interface.json'}
     (HERE/'interface.json').write_text(json.dumps(manifest,indent=2)+'\n');print(json.dumps(manifest,indent=2))
 
 if __name__=='__main__':main()
