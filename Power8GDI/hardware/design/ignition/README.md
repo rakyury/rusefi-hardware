@@ -29,8 +29,11 @@ also force the supervisor and global safety latch off, inhibiting fuel/GDI/other
 actuators. No new MCU GPIO is required. Existing parent10k pullup in parallel
 with local10k presents approximately0.66mA total sink current at3.3V.
 
-Parent must provide external switched/fused coil+12V feed and a fault strategy
-that removes it. This module does not contain that relay/high-side switch.
+Parent reserves LS_AUX1 (connector B29) for an external normally-open coil-supply
+relay command; its TLE9104 bank enable must remain hardware-gated. Parent must
+provide external switched/fused coil+12V feed and a fault strategy that removes
+it. Relay/contact/fuse/load specifications remain pending. This module does not
+contain that relay/high-side power switch.
 Latch clearing requires power-cycle; verify parent does not automatically re-arm
 after transient3V3 loss. Startup software delay is not a substitute for hardware
 rail supervision. Hold permission low until rails and timers/comparators settle.
