@@ -15,11 +15,12 @@ from test_schematic import nets, pin_nets, topology_errors
 
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[3]
+IMAGE='kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729'
 
 
 def cli(*args,allowed=(0,)):
     command=['docker','run','--rm','--network','none','--mount',f'type=bind,source={ROOT},target=/repo',
-             '--entrypoint','kicad-cli','kicad/kicad:9.0',*args]
+             '--entrypoint','kicad-cli',IMAGE,*args]
     result=subprocess.run(command,text=True,capture_output=True)
     print(result.stdout.strip())
     if result.returncode not in allowed:
@@ -64,8 +65,18 @@ def main():
                 netmap[name]=next(iter(values))
             handoff['stages'][stage]={'reference_map':refmap,'net_map':netmap}
         (HERE/'pcb_handoff.json').write_text(json.dumps(handoff,indent=2)+'\n')
-    result=subprocess.run([sys.executable,str(HERE/'test_schematic.py')],cwd=HERE)
-    if result.returncode:return result.returncode
+        summary['protection_sheets']={}
+        for name in ['protection_a','protection_b','permission']:
+            cli('sch','export','netlist','--format','kicadxml','-o',base+name+'.xml',base+name+'.kicad_sch')
+            erc=cli('sch','erc','--exit-code-violations','--format','json','-o',base+'reports/'+name+'_erc.json',base+name+'.kicad_sch',allowed=(0,5))
+            cli('sch','export','svg','-o',base+'reports/',base+name+'.kicad_sch')
+            data=json.loads((reports/(name+'_erc.json')).read_text())
+            issues=[v for s in data['sheets'] for v in s['violations']]
+            summary['protection_sheets'][name]={'erc_exit_code':erc.returncode,'erc_violations':len(issues),'by_type':dict(Counter(i['type'] for i in issues))}
+        (reports/'verification.json').write_text(json.dumps(summary,indent=2)+'\n')
+    for script in ['test_schematic.py','test_protection.py']:
+        result=subprocess.run([sys.executable,str(HERE/script)],cwd=HERE)
+        if result.returncode:return result.returncode
     print('Topology/part/pad checks PASS; ERC and manufacturing release remain BLOCKED.')
     return 2 if args.require_ready else 0
 

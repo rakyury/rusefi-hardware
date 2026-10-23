@@ -31,5 +31,32 @@
       }
     }
   },
-  "release_status": "BLOCKED"
+  "release_status": "BLOCKED",
+  "protection_sheets": {
+    "protection_a": {
+      "erc_exit_code": 5,
+      "erc_violations": 3,
+      "by_type": {
+        "power_pin_not_driven": 2,
+        "global_label_dangling": 1
+      }
+    },
+    "protection_b": {
+      "erc_exit_code": 5,
+      "erc_violations": 3,
+      "by_type": {
+        "power_pin_not_driven": 2,
+        "global_label_dangling": 1
+      }
+    },
+    "permission": {
+      "erc_exit_code": 5,
+      "erc_violations": 5,
+      "by_type": {
+        "pin_not_driven": 1,
+        "power_pin_not_driven": 2,
+        "global_label_dangling": 2
+      }
+    }
+  }
 }

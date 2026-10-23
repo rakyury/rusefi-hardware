@@ -5345,7 +5345,7 @@
         (size 0.75 0.75))
       (justify left bottom))
     (uuid 47f7ed69-44db-591c-9859-cb041159fc65))
-  (global_label "PTA_START6"
+  (global_label "HPFP1"
     (shape bidirectional)
     (at 179.07 57.15 180)
     (fields_autoplaced)
@@ -12451,14 +12451,14 @@
         (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a05bbd47-81aa-5269-b9b3-0a4b9afd615c"
           (reference "R299")
           (unit 1)))))
-  (global_label "PTA_DRVEN"
+  (global_label "PTA_DRVEN_GATED"
     (shape bidirectional)
     (at 218.44 15.24 0)
     (effects
       (font
         (size 0.9 0.9))
       (justify left))
-    (uuid 758cfc5a-e4fa-598b-9c47-552b93006dda))
+    (uuid f7287d20-1556-5980-a80b-9ed45622d0d5))
   (global_label "PTA_DEVICE_DRVEN"
     (shape bidirectional)
     (at 218.44 22.86 0)
@@ -12467,7 +12467,7 @@
         (size 0.9 0.9))
       (justify left))
     (uuid b009ed42-bff6-53a7-b3ef-3492b1419ff4))
-  (text "DO NOT ENERGIZE: hardware inhibit missing; R299 MUST REMAIN DNP.\nHPFP1/2 to START5/6 mapping unresolved. Source values are NOT load-qualified."
+  (text "R299 remains DNP pending PT electrical/shutdown qualification.\nHPFP START6 is wired; loaded microcode/mask still requires verification.\nHardware permission and protected battery input are on separate GDI sheets."
     (at 15.24 17.78 0)
     (effects
       (font
@@ -12718,7 +12718,7 @@
         (size 0.9 0.9))
       (justify left))
     (uuid 04a088bc-6e4c-5f43-bcf6-d538b45b39c9))
-  (text "Independent 5V candidate: 7-20V regulation range; 35V ABS MAX is not a surge rating.\nPT2001 VCC5/VCCIO current UNKNOWN; 500mA requires adequate heatsinking.\nSource VBAT_GDI_A requires external fuse/reverse/load-dump protection."
+  (text "Independent 5V candidate: 7-20V regulation range; 35V ABS MAX is not a surge rating.\nPT2001 VCC5/VCCIO current UNKNOWN; 500mA requires adequate heatsinking.\nVBAT_GDI_A comes from LM74800 protection sheet; external fuse and transient tests required."
     (at 266.7 83.82 0)
     (effects
       (font

@@ -1,0 +1,94 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T16:27:47+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/dae676c7-59f7-5713-9ba1-1568d3c6beca",
+            "violations": [
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U5101 Pin 2 [1B, Input, Line]",
+                            "pos": {
+                                "x": 1.7907,
+                                "y": 0.8255
+                            },
+                            "uuid": "c1b5beec-cbd8-5f9c-8f1f-b3303f3da07f"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U5101 Pin 8 [VCC, Power input, Line]",
+                            "pos": {
+                                "x": 2.1971,
+                                "y": 0.8763
+                            },
+                            "uuid": "67a4570b-fb36-5350-aae5-05a3ec985d28"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U5101 Pin 4 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.1971,
+                                "y": 0.9271
+                            },
+                            "uuid": "6cc205b5-e254-5f99-b26d-ae3ad70c0b03"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'PTA_DEVICE_DRVEN'",
+                            "pos": {
+                                "x": 1.9177,
+                                "y": 1.8034
+                            },
+                            "uuid": "87c47efa-31b4-5832-adb6-056c1d02d949"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'PTB_DEVICE_DRVEN'",
+                            "pos": {
+                                "x": 3.2258,
+                                "y": 1.8034
+                            },
+                            "uuid": "5793fb08-14f2-5a6b-8803-6315234d8767"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "permission.kicad_sch"
+}

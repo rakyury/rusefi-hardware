@@ -51,7 +51,8 @@ def renamed(name, stage):
                 '+BATT': 'VBAT_GDI_' + stage, 'GND': 'GND',
                 'MOSI': 'GDI_SPI2_MOSI', 'MISO': 'GDI_SPI2_MISO', 'SCLK': 'GDI_SPI2_SCK',
                 'CSB': p + '_CS', 'RESETB': p + '_RESET', 'FLAG_0': p + '_FLAG',
-                'DRVEN': p + '_DEVICE_DRVEN', 'VCC2P5': p + '_VCC1P5', 'Vdrive': p + '_VBOOST',
+                'DRVEN': p + '_DEVICE_DRVEN', 'START6': 'HPFP1' if stage == 'A' else 'HPFP2',
+                'VCC2P5': p + '_VCC1P5', 'Vdrive': p + '_VBOOST',
                 'H2': p + '_H1', 'H4': p + '_H3', 'H5':p + '_H1', 'H6':p + '_H3'}
     if name in explicit:
         return explicit[name]
@@ -175,8 +176,8 @@ def main():
         r[:] = [n for n in r if not (isinstance(n,list) and n[0] in ('instances','dnp'))]
         r.extend([['dnp','yes'],['instances',['project',Q(project),['path',Q('/'+sheetid),['reference',Q(ref)],['unit','1']]]]])
         out.append(r)
-        out.extend([label('PT'+stage+'_DRVEN',218.44,15.24,global_=True),label('PT'+stage+'_DEVICE_DRVEN',218.44,22.86,global_=True)])
-        out.append(['text',Q('DO NOT ENERGIZE: hardware inhibit missing; R'+str(base+99)+' MUST REMAIN DNP.\nHPFP1/2 to START5/6 mapping unresolved. Source values are NOT load-qualified.'), ['at','15.24','17.78','0'], ['effects',['font',['size','1.1','1.1']],['justify','left']],['uuid',uid(stage+':note')]])
+        out.extend([label('PT'+stage+'_DRVEN_GATED',218.44,15.24,global_=True),label('PT'+stage+'_DEVICE_DRVEN',218.44,22.86,global_=True)])
+        out.append(['text',Q('R'+str(base+99)+' remains DNP pending PT electrical/shutdown qualification.\nHPFP START6 is wired; loaded microcode/mask still requires verification.\nHardware permission and protected battery input are on separate GDI sheets.'), ['at','15.24','17.78','0'], ['effects',['font',['size','1.1','1.1']],['justify','left']],['uuid',uid(stage+':note')]])
         # Independent provisional 5 V rail. NCV78M05AB pin mapping is verified
         # from onsemi MC78M00/D rev29; PT2001 current/thermal budget is UNKNOWN.
         candidates = [
@@ -205,7 +206,7 @@ def main():
             for name,lx,ly in pins:out.append(label(name,round(lx,4),round(ly,4),global_=True))
             bom.append({'stage':stage,'reference':newref,'source_reference':'NEW_REGULATOR_CANDIDATE', 'value':value,
                         'footprint':'Power8GDI_GDI:'+fp,'source_footprint':str(prop(template,'Footprint')[2]),'qualification':'THERMAL_CURRENT_BUDGET_UNKNOWN','population':'REVIEW_REQUIRED'})
-        out.append(['text',Q('Independent 5V candidate: 7-20V regulation range; 35V ABS MAX is not a surge rating.\nPT2001 VCC5/VCCIO current UNKNOWN; 500mA requires adequate heatsinking.\nSource VBAT_GDI_'+stage+' requires external fuse/reverse/load-dump protection.'),['at','266.7','83.82','0'],['effects',['font',['size','0.9','0.9']],['justify','left']],['uuid',uid(stage+':regulator-note')]])
+        out.append(['text',Q('Independent 5V candidate: 7-20V regulation range; 35V ABS MAX is not a surge rating.\nPT2001 VCC5/VCCIO current UNKNOWN; 500mA requires adequate heatsinking.\nVBAT_GDI_'+stage+' comes from LM74800 protection sheet; external fuse and transient tests required.'),['at','266.7','83.82','0'],['effects',['font',['size','0.9','0.9']],['justify','left']],['uuid',uid(stage+':regulator-note')]])
         for part in children(out,'symbol'):
             inst=child(part,'instances')
             inst.append(['project',Q('Power8GDI_Core'),['path',Q('/f4d21065-0a5b-5086-a08e-1af9469f04bd/'+sheetid),['reference',Q(prop(part,'Reference')[2])],['unit','1']]])

@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T16:27:41+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/98cbfaf1-39fa-5389-847e-8294d75141c7",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U5001 Pin 10 [VS, Power input, Line]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 1.4478
+                            },
+                            "uuid": "51d1702c-e4e5-51af-bee1-4b6bd017f243"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U5001 Pin 7 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 1.6002
+                            },
+                            "uuid": "13a4cfe4-6925-509d-8f6a-32e48a289b93"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HW_ACTUATOR_ENABLE'",
+                            "pos": {
+                                "x": 3.3782,
+                                "y": 2.3495
+                            },
+                            "uuid": "21af76e5-c98b-58de-bf35-ddcfda3bde9b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "protection_a.kicad_sch"
+}

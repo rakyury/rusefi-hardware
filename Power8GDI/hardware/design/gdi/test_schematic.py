@@ -79,7 +79,7 @@ class SchematicTests(unittest.TestCase):
             tree=load(stage);r='R'+str(base+99);c=tree.find('.//components/comp[@ref="'+r+'"]')
             self.assertIsNotNone(c.find('property[@name="dnp"]'))
             lookup=pin_nets(tree)
-            self.assertEqual(lookup[(r,'1')],'PT'+stage+'_DRVEN')
+            self.assertEqual(lookup[(r,'1')],'PT'+stage+'_DRVEN_GATED')
             self.assertEqual(lookup[(r,'2')],'PT'+stage+'_DEVICE_DRVEN')
             self.assertNotEqual(lookup[(r,'1')],lookup[(r,'2')])
 
@@ -124,9 +124,11 @@ class SchematicTests(unittest.TestCase):
                 self.assertEqual(lookup[(ref,'1')],top)
                 self.assertEqual(lookup[(ref,'2')],'GND')
 
-    def test_hpfp_mapping_not_silently_assigned(self):
-        for stage in 'AB':
-            self.assertFalse({'HPFP1','HPFP2'} & nets(load(stage)).keys())
+    def test_hpfp_start6_matches_reviewed_microcode_contract(self):
+        for stage,base,pump in [('A',200,'HPFP1'),('B',300,'HPFP2')]:
+            lookup=pin_nets(load(stage))
+            self.assertEqual(lookup[('U'+str(base+1),'9')],pump)
+            self.assertEqual(lookup[('U'+str(base+1),'8')],'PT'+stage+'_START5')
 
     def test_provenance_blocks_release(self):
         report=json.loads((HERE/'provenance.json').read_text())

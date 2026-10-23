@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/src/Power8GDI/hardware/design/gdi/stage_b.kicad_sch</source>
-    <date>2026-10-23T16:16:58+0000</date>
+    <source>/repo/Power8GDI/hardware/design/gdi/stage_b.kicad_sch</source>
+    <date>2026-10-23T16:27:34+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -2805,7 +2805,7 @@
   </libparts>
   <libraries>
     <library logical="Power8GDI_GDI">
-      <uri>/src/Power8GDI/hardware/design/gdi/Power8GDI_GDI.kicad_sym</uri>
+      <uri>/repo/Power8GDI/hardware/design/gdi/Power8GDI_GDI.kicad_sym</uri>
     </library>
   </libraries>
   <nets>
@@ -2895,234 +2895,238 @@
       <node ref="U349" pin="2" pinfunction="GND" pintype="power_in"/>
       <node ref="Y301" pin="2" pinfunction="GND" pintype="power_in"/>
     </net>
-    <net code="11" name="Net-(C336-Pad2)" class="Default">
+    <net code="11" name="HPFP2" class="Default">
+      <node ref="TP306" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U301" pin="9" pinfunction="START6" pintype="bidirectional"/>
+    </net>
+    <net code="12" name="Net-(C336-Pad2)" class="Default">
       <node ref="C336" pin="2" pintype="passive"/>
       <node ref="R317" pin="1" pintype="passive"/>
     </net>
-    <net code="12" name="Net-(C344-Pad2)" class="Default">
+    <net code="13" name="Net-(C344-Pad2)" class="Default">
       <node ref="C344" pin="2" pintype="passive"/>
       <node ref="R319" pin="1" pintype="passive"/>
     </net>
-    <net code="13" name="Net-(D311-A)" class="Default">
+    <net code="14" name="Net-(D311-A)" class="Default">
       <node ref="D311" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="R320" pin="1" pintype="passive"/>
     </net>
-    <net code="14" name="Net-(Q301-G)" class="Default">
+    <net code="15" name="Net-(Q301-G)" class="Default">
       <node ref="C352" pin="2" pintype="passive"/>
       <node ref="Q301" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R326" pin="2" pintype="passive"/>
     </net>
-    <net code="15" name="Net-(Q302-G)" class="Default">
+    <net code="16" name="Net-(Q302-G)" class="Default">
       <node ref="C345" pin="2" pintype="passive"/>
       <node ref="Q302" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R314" pin="1" pintype="passive"/>
     </net>
-    <net code="16" name="Net-(Q303-G)" class="Default">
+    <net code="17" name="Net-(Q303-G)" class="Default">
       <node ref="C328" pin="2" pintype="passive"/>
       <node ref="Q303" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R301" pin="2" pintype="passive"/>
     </net>
-    <net code="17" name="Net-(Q303-S)" class="Default">
+    <net code="18" name="Net-(Q303-S)" class="Default">
       <node ref="C316" pin="2" pintype="passive"/>
       <node ref="C328" pin="1" pintype="passive"/>
       <node ref="D302" pin="3" pinfunction="A" pintype="passive"/>
       <node ref="Q303" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="U301" pin="63" pinfunction="S_HS1" pintype="input"/>
     </net>
-    <net code="18" name="Net-(Q304-G)" class="Default">
+    <net code="19" name="Net-(Q304-G)" class="Default">
       <node ref="C329" pin="2" pintype="passive"/>
       <node ref="Q304" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R302" pin="2" pintype="passive"/>
     </net>
-    <net code="19" name="Net-(Q305-G)" class="Default">
+    <net code="20" name="Net-(Q305-G)" class="Default">
       <node ref="C332" pin="2" pintype="passive"/>
       <node ref="Q305" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R306" pin="2" pintype="passive"/>
     </net>
-    <net code="20" name="Net-(Q305-S)" class="Default">
+    <net code="21" name="Net-(Q305-S)" class="Default">
       <node ref="C317" pin="2" pintype="passive"/>
       <node ref="C332" pin="1" pintype="passive"/>
       <node ref="D303" pin="3" pinfunction="A" pintype="passive"/>
       <node ref="Q305" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="U301" pin="57" pinfunction="S_HS3" pintype="input"/>
     </net>
-    <net code="21" name="Net-(Q306-G)" class="Default">
+    <net code="22" name="Net-(Q306-G)" class="Default">
       <node ref="C333" pin="2" pintype="passive"/>
       <node ref="Q306" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R307" pin="2" pintype="passive"/>
     </net>
-    <net code="22" name="Net-(Q307-G)" class="Default">
+    <net code="23" name="Net-(Q307-G)" class="Default">
       <node ref="C331" pin="2" pintype="passive"/>
       <node ref="Q307" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R305" pin="2" pintype="passive"/>
     </net>
-    <net code="23" name="Net-(Q308-G)" class="Default">
+    <net code="24" name="Net-(Q308-G)" class="Default">
       <node ref="C330" pin="2" pintype="passive"/>
       <node ref="Q308" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R304" pin="2" pintype="passive"/>
     </net>
-    <net code="24" name="Net-(Q309-G)" class="Default">
+    <net code="25" name="Net-(Q309-G)" class="Default">
       <node ref="C334" pin="2" pintype="passive"/>
       <node ref="Q309" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R308" pin="2" pintype="passive"/>
     </net>
-    <net code="25" name="Net-(Q310-G)" class="Default">
+    <net code="26" name="Net-(Q310-G)" class="Default">
       <node ref="C337" pin="2" pintype="passive"/>
       <node ref="Q310" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R309" pin="2" pintype="passive"/>
     </net>
-    <net code="26" name="Net-(Q311-G)" class="Default">
+    <net code="27" name="Net-(Q311-G)" class="Default">
       <node ref="C338" pin="2" pintype="passive"/>
       <node ref="Q311" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R310" pin="2" pintype="passive"/>
     </net>
-    <net code="27" name="Net-(Q312-G)" class="Default">
+    <net code="28" name="Net-(Q312-G)" class="Default">
       <node ref="C339" pin="2" pintype="passive"/>
       <node ref="C354" pin="2" pintype="passive"/>
       <node ref="Q312" pin="1" pinfunction="G" pintype="input"/>
       <node ref="Q313" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R311" pin="2" pintype="passive"/>
     </net>
-    <net code="28" name="Net-(Q312-S)" class="Default">
+    <net code="29" name="Net-(Q312-S)" class="Default">
       <node ref="C339" pin="1" pintype="passive"/>
       <node ref="Q312" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="R315" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="29" name="Net-(U301-B_HS1)" class="Default">
+    <net code="30" name="Net-(U301-B_HS1)" class="Default">
       <node ref="C316" pin="1" pintype="passive"/>
       <node ref="U301" pin="61" pinfunction="B_HS1" pintype="input"/>
     </net>
-    <net code="30" name="Net-(U301-B_HS2)" class="Default">
+    <net code="31" name="Net-(U301-B_HS2)" class="Default">
       <node ref="C318" pin="1" pintype="passive"/>
       <node ref="U301" pin="58" pinfunction="B_HS2" pintype="input"/>
     </net>
-    <net code="31" name="Net-(U301-B_HS3)" class="Default">
+    <net code="32" name="Net-(U301-B_HS3)" class="Default">
       <node ref="C317" pin="1" pintype="passive"/>
       <node ref="U301" pin="55" pinfunction="B_HS3" pintype="input"/>
     </net>
-    <net code="32" name="Net-(U301-B_HS4)" class="Default">
+    <net code="33" name="Net-(U301-B_HS4)" class="Default">
       <node ref="C319" pin="1" pintype="passive"/>
       <node ref="U301" pin="52" pinfunction="B_HS4" pintype="input"/>
     </net>
-    <net code="33" name="Net-(U301-B_HS5)" class="Default">
+    <net code="34" name="Net-(U301-B_HS5)" class="Default">
       <node ref="C340" pin="1" pintype="passive"/>
       <node ref="U301" pin="49" pinfunction="B_HS5" pintype="input"/>
     </net>
-    <net code="34" name="Net-(U301-DBG)" class="Default">
+    <net code="35" name="Net-(U301-DBG)" class="Default">
       <node ref="R325" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U301" pin="18" pinfunction="DBG" pintype="bidirectional"/>
     </net>
-    <net code="35" name="Net-(U301-D_LS6)" class="Default">
+    <net code="36" name="Net-(U301-D_LS6)" class="Default">
       <node ref="R316" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R318" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U301" pin="33" pinfunction="D_LS6" pintype="input"/>
     </net>
-    <net code="36" name="Net-(U301-FLAG1)" class="Default">
+    <net code="37" name="Net-(U301-FLAG1)" class="Default">
       <node ref="R323" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U301" pin="11" pinfunction="FLAG1" pintype="bidirectional"/>
     </net>
-    <net code="37" name="Net-(U301-FLAG2)" class="Default">
+    <net code="38" name="Net-(U301-FLAG2)" class="Default">
       <node ref="R324" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U301" pin="12" pinfunction="FLAG2" pintype="bidirectional"/>
     </net>
-    <net code="38" name="Net-(U301-G_HS1)" class="Default">
+    <net code="39" name="Net-(U301-G_HS1)" class="Default">
       <node ref="R301" pin="1" pintype="passive"/>
       <node ref="U301" pin="62" pinfunction="G_HS1" pintype="output"/>
     </net>
-    <net code="39" name="Net-(U301-G_HS2)" class="Default">
+    <net code="40" name="Net-(U301-G_HS2)" class="Default">
       <node ref="R302" pin="1" pintype="passive"/>
       <node ref="U301" pin="59" pinfunction="G_HS2" pintype="output"/>
     </net>
-    <net code="40" name="Net-(U301-G_HS3)" class="Default">
+    <net code="41" name="Net-(U301-G_HS3)" class="Default">
       <node ref="R306" pin="1" pintype="passive"/>
       <node ref="U301" pin="56" pinfunction="G_HS3" pintype="output"/>
     </net>
-    <net code="41" name="Net-(U301-G_HS4)" class="Default">
+    <net code="42" name="Net-(U301-G_HS4)" class="Default">
       <node ref="R307" pin="1" pintype="passive"/>
       <node ref="U301" pin="53" pinfunction="G_HS4" pintype="output"/>
     </net>
-    <net code="42" name="Net-(U301-G_HS5)" class="Default">
+    <net code="43" name="Net-(U301-G_HS5)" class="Default">
       <node ref="R310" pin="1" pintype="passive"/>
       <node ref="U301" pin="50" pinfunction="G_HS5" pintype="output"/>
     </net>
-    <net code="43" name="Net-(U301-G_LS1)" class="Default">
+    <net code="44" name="Net-(U301-G_LS1)" class="Default">
       <node ref="R304" pin="1" pintype="passive"/>
       <node ref="U301" pin="47" pinfunction="G_LS1" pintype="output"/>
     </net>
-    <net code="44" name="Net-(U301-G_LS2)" class="Default">
+    <net code="45" name="Net-(U301-G_LS2)" class="Default">
       <node ref="R305" pin="1" pintype="passive"/>
       <node ref="U301" pin="46" pinfunction="G_LS2" pintype="output"/>
     </net>
-    <net code="45" name="Net-(U301-G_LS3)" class="Default">
+    <net code="46" name="Net-(U301-G_LS3)" class="Default">
       <node ref="R308" pin="1" pintype="passive"/>
       <node ref="U301" pin="45" pinfunction="G_LS3" pintype="output"/>
     </net>
-    <net code="46" name="Net-(U301-G_LS4)" class="Default">
+    <net code="47" name="Net-(U301-G_LS4)" class="Default">
       <node ref="R309" pin="1" pintype="passive"/>
       <node ref="U301" pin="44" pinfunction="G_LS4" pintype="output"/>
     </net>
-    <net code="47" name="Net-(U301-G_LS5)" class="Default">
+    <net code="48" name="Net-(U301-G_LS5)" class="Default">
       <node ref="R326" pin="1" pintype="passive"/>
       <node ref="U301" pin="43" pinfunction="G_LS5" pintype="output"/>
     </net>
-    <net code="48" name="Net-(U301-G_LS6)" class="Default">
+    <net code="49" name="Net-(U301-G_LS6)" class="Default">
       <node ref="R311" pin="1" pintype="passive"/>
       <node ref="U301" pin="42" pinfunction="G_LS6" pintype="output"/>
     </net>
-    <net code="49" name="Net-(U301-G_LS7)" class="Default">
+    <net code="50" name="Net-(U301-G_LS7)" class="Default">
       <node ref="R314" pin="2" pintype="passive"/>
       <node ref="U301" pin="41" pinfunction="G_LS7" pintype="output"/>
     </net>
-    <net code="50" name="Net-(U301-IRQ)" class="Default">
+    <net code="51" name="Net-(U301-IRQ)" class="Default">
       <node ref="R322" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U301" pin="64" pinfunction="IRQ" pintype="bidirectional"/>
     </net>
-    <net code="51" name="Net-(U301-VCCIO)" class="Default">
+    <net code="52" name="Net-(U301-VCCIO)" class="Default">
       <node ref="C335" pin="2" pintype="passive"/>
       <node ref="R321" pin="4" pinfunction="4" pintype="passive"/>
       <node ref="U301" pin="17" pinfunction="VCCIO" pintype="power_in"/>
     </net>
-    <net code="52" name="Net-(U301-VSENSEN1)" class="Default">
+    <net code="53" name="Net-(U301-VSENSEN1)" class="Default">
       <node ref="C302" pin="1" pintype="passive"/>
       <node ref="R312" pin="3" pinfunction="3" pintype="passive"/>
       <node ref="U301" pin="25" pinfunction="VSENSEN1" pintype="input"/>
     </net>
-    <net code="53" name="Net-(U301-VSENSEN2)" class="Default">
+    <net code="54" name="Net-(U301-VSENSEN2)" class="Default">
       <node ref="C303" pin="1" pintype="passive"/>
       <node ref="R313" pin="3" pinfunction="3" pintype="passive"/>
       <node ref="U301" pin="27" pinfunction="VSENSEN2" pintype="input"/>
     </net>
-    <net code="54" name="Net-(U301-VSENSEN3)" class="Default">
+    <net code="55" name="Net-(U301-VSENSEN3)" class="Default">
       <node ref="C304" pin="1" pintype="passive"/>
       <node ref="R315" pin="3" pinfunction="3" pintype="passive"/>
       <node ref="U301" pin="29" pinfunction="VSENSEN3" pintype="input"/>
     </net>
-    <net code="55" name="Net-(U301-VSENSEN4)" class="Default">
+    <net code="56" name="Net-(U301-VSENSEN4)" class="Default">
       <node ref="C311" pin="1" pintype="passive"/>
       <node ref="R303" pin="3" pinfunction="3" pintype="passive"/>
       <node ref="U301" pin="31" pinfunction="VSENSEN4" pintype="input"/>
     </net>
-    <net code="56" name="Net-(U301-VSENSEP1)" class="Default">
+    <net code="57" name="Net-(U301-VSENSEP1)" class="Default">
       <node ref="C302" pin="2" pintype="passive"/>
       <node ref="R312" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U301" pin="26" pinfunction="VSENSEP1" pintype="input"/>
     </net>
-    <net code="57" name="Net-(U301-VSENSEP2)" class="Default">
+    <net code="58" name="Net-(U301-VSENSEP2)" class="Default">
       <node ref="C303" pin="2" pintype="passive"/>
       <node ref="R313" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U301" pin="28" pinfunction="VSENSEP2" pintype="input"/>
     </net>
-    <net code="58" name="Net-(U301-VSENSEP3)" class="Default">
+    <net code="59" name="Net-(U301-VSENSEP3)" class="Default">
       <node ref="C304" pin="2" pintype="passive"/>
       <node ref="R315" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U301" pin="30" pinfunction="VSENSEP3" pintype="input"/>
     </net>
-    <net code="59" name="Net-(U301-VSENSEP4)" class="Default">
+    <net code="60" name="Net-(U301-VSENSEP4)" class="Default">
       <node ref="C311" pin="2" pintype="passive"/>
       <node ref="R303" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U301" pin="32" pinfunction="VSENSEP4" pintype="input"/>
     </net>
-    <net code="60" name="PTB_+Batt_filtered" class="Default">
+    <net code="61" name="PTB_+Batt_filtered" class="Default">
       <node ref="C306" pin="1" pintype="passive"/>
       <node ref="C346" pin="1" pintype="passive"/>
       <node ref="L301" pin="2" pinfunction="2" pintype="passive"/>
@@ -3130,35 +3134,35 @@
       <node ref="R330" pin="1" pintype="passive"/>
       <node ref="R331" pin="1" pintype="passive"/>
     </net>
-    <net code="61" name="PTB_CLK" class="Default">
+    <net code="62" name="PTB_CLK" class="Default">
       <node ref="U301" pin="1" pinfunction="CLK" pintype="input"/>
       <node ref="Y301" pin="3" pinfunction="RFout" pintype="output"/>
     </net>
-    <net code="62" name="PTB_CS" class="Default">
+    <net code="63" name="PTB_CS" class="Default">
       <node ref="U301" pin="13" pinfunction="CSB" pintype="input"/>
     </net>
-    <net code="63" name="PTB_DBG" class="Default">
+    <net code="64" name="PTB_DBG" class="Default">
       <node ref="R325" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="64" name="PTB_DEVICE_DRVEN" class="Default">
+    <net code="65" name="PTB_DEVICE_DRVEN" class="Default">
       <node ref="R327" pin="1" pintype="passive"/>
       <node ref="R399" pin="2" pintype="passive"/>
       <node ref="U301" pin="2" pinfunction="DRVEN" pintype="input"/>
     </net>
-    <net code="65" name="PTB_DRVEN" class="Default">
+    <net code="66" name="PTB_DRVEN_GATED" class="Default">
       <node ref="R399" pin="1" pintype="passive"/>
     </net>
-    <net code="66" name="PTB_FLAG" class="Default">
+    <net code="67" name="PTB_FLAG" class="Default">
       <node ref="R329" pin="1" pintype="passive"/>
       <node ref="U301" pin="10" pinfunction="FLAG0" pintype="bidirectional"/>
     </net>
-    <net code="67" name="PTB_FLAG_1" class="Default">
+    <net code="68" name="PTB_FLAG_1" class="Default">
       <node ref="R323" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="68" name="PTB_FLAG_2" class="Default">
+    <net code="69" name="PTB_FLAG_2" class="Default">
       <node ref="R324" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="69" name="PTB_H1" class="Default">
+    <net code="70" name="PTB_H1" class="Default">
       <node ref="C318" pin="2" pintype="passive"/>
       <node ref="C320" pin="2" pintype="passive"/>
       <node ref="C321" pin="2" pintype="passive"/>
@@ -3168,7 +3172,7 @@
       <node ref="Q304" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="U301" pin="60" pinfunction="S_HS2" pintype="input"/>
     </net>
-    <net code="70" name="PTB_H3" class="Default">
+    <net code="71" name="PTB_H3" class="Default">
       <node ref="C319" pin="2" pintype="passive"/>
       <node ref="C324" pin="2" pintype="passive"/>
       <node ref="C325" pin="2" pintype="passive"/>
@@ -3178,7 +3182,7 @@
       <node ref="Q306" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="U301" pin="54" pinfunction="S_HS4" pintype="input"/>
     </net>
-    <net code="71" name="PTB_H5PUMP" class="Default">
+    <net code="72" name="PTB_H5PUMP" class="Default">
       <node ref="C338" pin="1" pintype="passive"/>
       <node ref="C340" pin="2" pintype="passive"/>
       <node ref="C341" pin="2" pintype="passive"/>
@@ -3186,68 +3190,64 @@
       <node ref="Q311" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="U301" pin="51" pinfunction="S_HS5" pintype="input"/>
     </net>
-    <net code="72" name="PTB_IRQ" class="Default">
+    <net code="73" name="PTB_IRQ" class="Default">
       <node ref="R322" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="73" name="PTB_L1" class="Default">
+    <net code="74" name="PTB_L1" class="Default">
       <node ref="C322" pin="2" pintype="passive"/>
       <node ref="D301" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="Q308" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="U301" pin="38" pinfunction="D_LS1" pintype="input"/>
     </net>
-    <net code="74" name="PTB_L2" class="Default">
+    <net code="75" name="PTB_L2" class="Default">
       <node ref="C323" pin="2" pintype="passive"/>
       <node ref="D304" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="Q307" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="U301" pin="37" pinfunction="D_LS2" pintype="input"/>
     </net>
-    <net code="75" name="PTB_L3" class="Default">
+    <net code="76" name="PTB_L3" class="Default">
       <node ref="C326" pin="2" pintype="passive"/>
       <node ref="D305" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="Q309" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="U301" pin="36" pinfunction="D_LS3" pintype="input"/>
     </net>
-    <net code="76" name="PTB_L4" class="Default">
+    <net code="77" name="PTB_L4" class="Default">
       <node ref="C327" pin="2" pintype="passive"/>
       <node ref="D306" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="Q310" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="U301" pin="35" pinfunction="D_LS4" pintype="input"/>
     </net>
-    <net code="77" name="PTB_L5" class="Default">
+    <net code="78" name="PTB_L5" class="Default">
       <node ref="C351" pin="2" pintype="passive"/>
       <node ref="D309" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="Q301" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="U301" pin="34" pinfunction="D_LS5" pintype="input"/>
     </net>
-    <net code="78" name="PTB_L6" class="Default">
+    <net code="79" name="PTB_L6" class="Default">
       <node ref="C353" pin="2" pintype="passive"/>
       <node ref="D310" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="Q313" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="R318" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="79" name="PTB_L6PUMP" class="Default">
+    <net code="80" name="PTB_L6PUMP" class="Default">
       <node ref="C342" pin="2" pintype="passive"/>
       <node ref="D308" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="Q312" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="R316" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="80" name="PTB_OA_1" class="Default">
+    <net code="81" name="PTB_OA_1" class="Default">
       <node ref="U301" pin="22" pinfunction="OA_1" pintype="bidirectional"/>
     </net>
-    <net code="81" name="PTB_OA_2" class="Default">
+    <net code="82" name="PTB_OA_2" class="Default">
       <node ref="U301" pin="23" pinfunction="OA_2" pintype="bidirectional"/>
     </net>
-    <net code="82" name="PTB_RESET" class="Default">
+    <net code="83" name="PTB_RESET" class="Default">
       <node ref="R328" pin="1" pintype="passive"/>
       <node ref="U301" pin="3" pinfunction="RESETB" pintype="input"/>
     </net>
-    <net code="83" name="PTB_START5" class="Default">
+    <net code="84" name="PTB_START5" class="Default">
       <node ref="TP305" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U301" pin="8" pinfunction="START5" pintype="bidirectional"/>
-    </net>
-    <net code="84" name="PTB_START6" class="Default">
-      <node ref="TP306" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U301" pin="9" pinfunction="START6" pintype="bidirectional"/>
     </net>
     <net code="85" name="PTB_VBOOST" class="Default">
       <node ref="C307" pin="1" pintype="passive"/>
