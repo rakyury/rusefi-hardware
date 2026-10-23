@@ -1,11 +1,11 @@
 (kicad_sch (version 20250114) (generator "eeschema") (uuid "70a9690b-a781-5e0b-a649-2c12c6cd0d4f") (paper "A2") (title_block (title "Ignition permission and four dual gate drivers") (rev "Engineering draft 0.1") (comment 1 "UNQUALIFIED: no manufacturing or engine approval"))
 (lib_symbols
-(symbol "Power8GDI_Core:SN74LVC1G17_Q1" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+(symbol "Power8GDI_Core:IGN_SN74LVC1G17_Q1" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
 (property "Reference" "U" (at 0 8.89 0) (effects (font (size 1.27 1.27))))
-(property "Value" "SN74LVC1G17_Q1" (at 0 -8.89 0) (effects (font (size 1.27 1.27))))
+(property "Value" "IGN_SN74LVC1G17_Q1" (at 0 -8.89 0) (effects (font (size 1.27 1.27))))
 (property "Footprint" "Package_TO_SOT_SMD:SOT-23-5" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
-(symbol "SN74LVC1G17_Q1_0_1" (rectangle (start -17.78 6.35) (end 17.78 -6.35) (stroke (width 0.254) (type default)) (fill (type background))))
-(symbol "SN74LVC1G17_Q1_1_1"
+(symbol "IGN_SN74LVC1G17_Q1_0_1" (rectangle (start -17.78 6.35) (end 17.78 -6.35) (stroke (width 0.254) (type default)) (fill (type background))))
+(symbol "IGN_SN74LVC1G17_Q1_1_1"
 (pin no_connect line (at -20.32 5.08 0) (length 2.54) (name "NC" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
 (pin input line (at -20.32 0 0) (length 2.54) (name "A" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
 (pin power_in line (at -20.32 -5.08 0) (length 2.54) (name "GND" (effects (font (size 1.016 1.016)))) (number "3" (effects (font (size 1.016 1.016)))))
@@ -45,7 +45,7 @@
 )
 (text "PASSIVE PRIMARY OUTPUT ASSEMBLY" (at 25 20 0) (effects (font (size 2 2)) (justify left top)) (uuid "5e96d00b-f8bc-5994-9eab-ff8b8a4fe4d1"))
 (text "IGN_OC_OK is open drain, healthy high. Parent connects to HW_KILL_N.\nNo firmware-only current limit. Fault turn-off can cause an unintended spark.\nCoil +12V feed must be removed on fault; see HW_IGNITION_B58.md." (at 25 35 0) (effects (font (size 1.27 1.27)) (justify left top)) (uuid "a91dc38f-5eaa-518b-9ac7-b74c3880abb6"))
-(symbol (lib_id "Power8GDI_Core:SN74LVC1G17_Q1") (at 100.33 90.17 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "f5525a20-f8b8-5560-a0a5-3b0369f0ec2d") (property "Reference" "U5400" (at 100.33 82.55 0) (effects (font (size 1.27 1.27)))) (property "Value" "SN74LVC1G17QDBVRQ1" (at 100.33 97.79 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "Package_TO_SOT_SMD:SOT-23-5" (at 100.33 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 100.33 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "e92a6056-7972-57fe-afad-86dd7040d007")) (pin "2" (uuid "4cbbd2e2-3429-5946-bd73-b213fe4c9ab8")) (pin "3" (uuid "5c86352c-2136-5987-bb40-687b36b90cfe")) (pin "4" (uuid "25723570-a6d3-5112-9c17-c548a613d1ca")) (pin "5" (uuid "94722745-e7ea-5bfa-bcef-c8f87f9c79ef")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "U5400") (unit 1)))))
+(symbol (lib_id "Power8GDI_Core:IGN_SN74LVC1G17_Q1") (at 100.33 90.17 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "f5525a20-f8b8-5560-a0a5-3b0369f0ec2d") (property "Reference" "U5400" (at 100.33 82.55 0) (effects (font (size 1.27 1.27)))) (property "Value" "SN74LVC1G17QDBVRQ1" (at 100.33 97.79 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "Package_TO_SOT_SMD:SOT-23-5" (at 100.33 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 100.33 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "e92a6056-7972-57fe-afad-86dd7040d007")) (pin "2" (uuid "4cbbd2e2-3429-5946-bd73-b213fe4c9ab8")) (pin "3" (uuid "5c86352c-2136-5987-bb40-687b36b90cfe")) (pin "4" (uuid "25723570-a6d3-5112-9c17-c548a613d1ca")) (pin "5" (uuid "94722745-e7ea-5bfa-bcef-c8f87f9c79ef")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "U5400") (unit 1)))))
 (no_connect (at 80.01 85.09) (uuid "91c9c7cd-a63a-502f-b48c-50daf3a2a92d"))
 (wire (pts (xy 80.01 90.17) (xy 72.39 90.17)) (stroke (width 0) (type default)) (uuid "7fb33c66-4c6f-5b6f-a4b6-03d1bffe2233"))
 (global_label "IGN_OC_OK" (shape bidirectional) (at 72.39 90.17 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "1458b214-fe10-504f-a19b-8455a2887d32"))

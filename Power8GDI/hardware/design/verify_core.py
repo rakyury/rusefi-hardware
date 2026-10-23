@@ -3,10 +3,13 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 import json
+import sys
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
 HERE=Path(__file__).resolve().parent
+sys.path.insert(0,str(HERE))
+from logic_power.check_logic_power import validate as validate_logic_power
 
 
 def verify(xml_path, manifest_path=HERE/"core_manifest.json", erc_path=None):
@@ -60,19 +63,29 @@ def verify(xml_path, manifest_path=HERE/"core_manifest.json", erc_path=None):
         if endpoints.get((ref,"1"))!=f"IGN{i}_GATE": errors.append("Ignition gate bypass "+str(i))
         if any(r=="U101" for r,p in net_nodes.get(f"HARNESS_IGN{i}",set())): errors.append("MCU directly on ignition harness")
     # Fail if the integration silently restores the earlier incompatible 33 V TVS.
-    if "D502" in components and "SMBJ24CA" not in components["D502"].findtext("value",""):
+    if "D5201" not in components or "SMBJ24CA" not in components["D5201"].findtext("value",""):
         errors.append("LIN supply requires reviewed SMBJ24CA root protection candidate")
+    try:
+        validate_logic_power(endpoints,{r:c.findtext("value") for r,c in components.items()},
+                             {r:c.findtext("footprint") for r,c in components.items()},integrated=True)
+    except (AssertionError,KeyError) as error:
+        errors.append("Logic power independent contract: "+str(error))
     counts=Counter()
     if erc_path:
         erc=json.loads(Path(erc_path).read_text(encoding="utf-8"))
         counts.update(v["type"] for sheet in erc["sheets"] for v in sheet["violations"])
+        # Open supply semantics and unused boundaries remain visible release
+        # gates. Library mismatches and electrical conflicts are regressions,
+        # not something a successful XML export can excuse.
+        unexpected=set(counts)-{'power_pin_not_driven','global_label_dangling'}
+        if unexpected:errors.append('Unexpected integrated ERC findings: '+', '.join(sorted(unexpected)))
     return {"schema_version":1,"structural_status":"FAIL" if errors else "PASS",
             "release_status":"BLOCKED","core_components":len(manifest["parts"]),
             "integrated_components":len(components),"checked_mcu_pads":176,
             "errors":errors,"erc_counts":dict(counts),
             "blockers":["ERC findings remain; power-source semantics and functional boundaries need review",
                         "MCU GPIO AF/DMA/timing and added PH2/PH3 firmware are not qualified",
-                        "3V3/5V current, capacitor derating, regulator thermal and transient energy budgets unresolved",
+                        "3V3/5V allocated budgets pass; capacitor derating, hot regulator thermal and transient energy remain unqualified",
                         "Independent actuator inhibit and actual coil/injector/pump models unresolved",
                         "PCB routing, DRC, SI/EMC, environmental and fault tests not complete"]}
 

@@ -1,7 +1,4 @@
 Reference,Value,Footprint,DNP,Sheet
-C125,4.7u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/3V3 logic post-regulator/
-C126,4.7u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/3V3 logic post-regulator/
-U102,TLV1117LV33DCYR,Package_TO_SOT_SMD:SOT-223-3_TabPin2,False,/3V3 logic post-regulator/
 C101,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/MCU, power decoupling and debug/"
 C102,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/MCU, power decoupling and debug/"
 C103,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/MCU, power decoupling and debug/"
@@ -37,8 +34,9 @@ C127,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/CAN1 and LIN1 physical 
 C128,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/CAN1 and LIN1 physical interfaces/
 C130,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,/CAN1 and LIN1 physical interfaces/
 C131,1u 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,/CAN1 and LIN1 physical interfaces/
-C132,220p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,/CAN1 and LIN1 physical interfaces/
+C132,1n 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,/CAN1 and LIN1 physical interfaces/
 D101,PESD2CAN,Package_TO_SOT_SMD:SOT-23,False,/CAN1 and LIN1 physical interfaces/
+D102,"BAS21,215",Package_TO_SOT_SMD:SOT-23,False,/CAN1 and LIN1 physical interfaces/
 R104,10k,Resistor_SMD:R_0603_1608Metric,False,/CAN1 and LIN1 physical interfaces/
 R105,0R DNP,Resistor_SMD:R_0603_1608Metric,True,/CAN1 and LIN1 physical interfaces/
 R106,120R DNP,Resistor_SMD:R_0603_1608Metric,True,/CAN1 and LIN1 physical interfaces/
@@ -47,44 +45,155 @@ R108,10k,Resistor_SMD:R_0603_1608Metric,False,/CAN1 and LIN1 physical interfaces
 R109,0R DNP,Resistor_SMD:R_0603_1608Metric,True,/CAN1 and LIN1 physical interfaces/
 R110,10k,Resistor_SMD:R_0603_1608Metric,False,/CAN1 and LIN1 physical interfaces/
 R111,0R,Resistor_SMD:R_0603_1608Metric,False,/CAN1 and LIN1 physical interfaces/
+R112,1k 1% 0.5W,Resistor_SMD:R_1206_3216Metric,False,/CAN1 and LIN1 physical interfaces/
 U103,TCAN1042HGVDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/CAN1 and LIN1 physical interfaces/
 U104,TLIN1029ADRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/CAN1 and LIN1 physical interfaces/
-C140,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Eight smart-coil logic candidates/
-C141,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Eight smart-coil logic candidates/
-C142,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Eight smart-coil logic candidates/
-C143,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Eight smart-coil logic candidates/
-C144,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Eight smart-coil logic candidates/
-C145,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Eight smart-coil logic candidates/
-C146,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Eight smart-coil logic candidates/
-C147,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R120,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R121,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R122,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R123,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R124,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R125,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R126,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R127,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R128,100R DNP,Resistor_SMD:R_0603_1608Metric,True,/Eight smart-coil logic candidates/
-R129,100R DNP,Resistor_SMD:R_0603_1608Metric,True,/Eight smart-coil logic candidates/
-R130,100R DNP,Resistor_SMD:R_0603_1608Metric,True,/Eight smart-coil logic candidates/
-R131,100R DNP,Resistor_SMD:R_0603_1608Metric,True,/Eight smart-coil logic candidates/
-R132,100R DNP,Resistor_SMD:R_0603_1608Metric,True,/Eight smart-coil logic candidates/
-R133,100R DNP,Resistor_SMD:R_0603_1608Metric,True,/Eight smart-coil logic candidates/
-R134,100R DNP,Resistor_SMD:R_0603_1608Metric,True,/Eight smart-coil logic candidates/
-R135,100R DNP,Resistor_SMD:R_0603_1608Metric,True,/Eight smart-coil logic candidates/
-R136,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R137,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R138,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R139,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R140,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R141,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R142,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-R143,100k,Resistor_SMD:R_0603_1608Metric,False,/Eight smart-coil logic candidates/
-U110,MIC4427YM,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/Eight smart-coil logic candidates/
-U111,MIC4427YM,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/Eight smart-coil logic candidates/
-U112,MIC4427YM,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/Eight smart-coil logic candidates/
-U113,MIC4427YM,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/Eight smart-coil logic candidates/
+C5400,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition permission and four dual gate drivers/
+C5401,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition permission and four dual gate drivers/
+C5402,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition permission and four dual gate drivers/
+C5403,1u 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition permission and four dual gate drivers/
+C5404,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition permission and four dual gate drivers/
+C5405,1u 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition permission and four dual gate drivers/
+C5406,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition permission and four dual gate drivers/
+C5407,1u 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition permission and four dual gate drivers/
+C5408,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition permission and four dual gate drivers/
+C5409,1u 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition permission and four dual gate drivers/
+R5400,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition permission and four dual gate drivers/
+R5401,1k,Resistor_SMD:R_0603_1608Metric,False,/Ignition permission and four dual gate drivers/
+U5400,SN74LVC1G17QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/Ignition permission and four dual gate drivers/
+U5401,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,/Ignition permission and four dual gate drivers/
+U5402,UCC27524AQDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/Ignition permission and four dual gate drivers/
+U5403,UCC27524AQDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/Ignition permission and four dual gate drivers/
+U5404,UCC27524AQDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/Ignition permission and four dual gate drivers/
+U5405,UCC27524AQDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/Ignition permission and four dual gate drivers/
+C5420,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 1 - timed primary and OC latch/
+C5421,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 1 - timed primary and OC latch/
+C5422,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 1 - timed primary and OC latch/
+Q5420,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,/Ignition 1 - timed primary and OC latch/
+R5420,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 1 - timed primary and OC latch/
+R5421,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 1 - timed primary and OC latch/
+R5422,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 1 - timed primary and OC latch/
+R5423,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 1 - timed primary and OC latch/
+R5424,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 1 - timed primary and OC latch/
+R5425,10R,Resistor_SMD:R_0603_1608Metric,False,/Ignition 1 - timed primary and OC latch/
+R5426,10k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 1 - timed primary and OC latch/
+R5427,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,/Ignition 1 - timed primary and OC latch/
+R5428,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 1 - timed primary and OC latch/
+U5420,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,/Ignition 1 - timed primary and OC latch/
+U5421,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,/Ignition 1 - timed primary and OC latch/
+U5422,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,/Ignition 1 - timed primary and OC latch/
+C5440,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 2 - timed primary and OC latch/
+C5441,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 2 - timed primary and OC latch/
+C5442,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 2 - timed primary and OC latch/
+Q5440,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,/Ignition 2 - timed primary and OC latch/
+R5440,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 2 - timed primary and OC latch/
+R5441,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 2 - timed primary and OC latch/
+R5442,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 2 - timed primary and OC latch/
+R5443,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 2 - timed primary and OC latch/
+R5444,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 2 - timed primary and OC latch/
+R5445,10R,Resistor_SMD:R_0603_1608Metric,False,/Ignition 2 - timed primary and OC latch/
+R5446,10k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 2 - timed primary and OC latch/
+R5447,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,/Ignition 2 - timed primary and OC latch/
+R5448,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 2 - timed primary and OC latch/
+U5440,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,/Ignition 2 - timed primary and OC latch/
+U5441,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,/Ignition 2 - timed primary and OC latch/
+U5442,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,/Ignition 2 - timed primary and OC latch/
+C5460,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 3 - timed primary and OC latch/
+C5461,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 3 - timed primary and OC latch/
+C5462,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 3 - timed primary and OC latch/
+Q5460,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,/Ignition 3 - timed primary and OC latch/
+R5460,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 3 - timed primary and OC latch/
+R5461,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 3 - timed primary and OC latch/
+R5462,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 3 - timed primary and OC latch/
+R5463,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 3 - timed primary and OC latch/
+R5464,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 3 - timed primary and OC latch/
+R5465,10R,Resistor_SMD:R_0603_1608Metric,False,/Ignition 3 - timed primary and OC latch/
+R5466,10k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 3 - timed primary and OC latch/
+R5467,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,/Ignition 3 - timed primary and OC latch/
+R5468,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 3 - timed primary and OC latch/
+U5460,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,/Ignition 3 - timed primary and OC latch/
+U5461,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,/Ignition 3 - timed primary and OC latch/
+U5462,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,/Ignition 3 - timed primary and OC latch/
+C5480,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 4 - timed primary and OC latch/
+C5481,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 4 - timed primary and OC latch/
+C5482,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 4 - timed primary and OC latch/
+Q5480,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,/Ignition 4 - timed primary and OC latch/
+R5480,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 4 - timed primary and OC latch/
+R5481,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 4 - timed primary and OC latch/
+R5482,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 4 - timed primary and OC latch/
+R5483,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 4 - timed primary and OC latch/
+R5484,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 4 - timed primary and OC latch/
+R5485,10R,Resistor_SMD:R_0603_1608Metric,False,/Ignition 4 - timed primary and OC latch/
+R5486,10k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 4 - timed primary and OC latch/
+R5487,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,/Ignition 4 - timed primary and OC latch/
+R5488,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 4 - timed primary and OC latch/
+U5480,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,/Ignition 4 - timed primary and OC latch/
+U5481,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,/Ignition 4 - timed primary and OC latch/
+U5482,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,/Ignition 4 - timed primary and OC latch/
+C5500,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 5 - timed primary and OC latch/
+C5501,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 5 - timed primary and OC latch/
+C5502,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 5 - timed primary and OC latch/
+Q5500,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,/Ignition 5 - timed primary and OC latch/
+R5500,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 5 - timed primary and OC latch/
+R5501,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 5 - timed primary and OC latch/
+R5502,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 5 - timed primary and OC latch/
+R5503,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 5 - timed primary and OC latch/
+R5504,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 5 - timed primary and OC latch/
+R5505,10R,Resistor_SMD:R_0603_1608Metric,False,/Ignition 5 - timed primary and OC latch/
+R5506,10k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 5 - timed primary and OC latch/
+R5507,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,/Ignition 5 - timed primary and OC latch/
+R5508,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 5 - timed primary and OC latch/
+U5500,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,/Ignition 5 - timed primary and OC latch/
+U5501,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,/Ignition 5 - timed primary and OC latch/
+U5502,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,/Ignition 5 - timed primary and OC latch/
+C5520,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 6 - timed primary and OC latch/
+C5521,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 6 - timed primary and OC latch/
+C5522,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 6 - timed primary and OC latch/
+Q5520,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,/Ignition 6 - timed primary and OC latch/
+R5520,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 6 - timed primary and OC latch/
+R5521,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 6 - timed primary and OC latch/
+R5522,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 6 - timed primary and OC latch/
+R5523,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 6 - timed primary and OC latch/
+R5524,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 6 - timed primary and OC latch/
+R5525,10R,Resistor_SMD:R_0603_1608Metric,False,/Ignition 6 - timed primary and OC latch/
+R5526,10k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 6 - timed primary and OC latch/
+R5527,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,/Ignition 6 - timed primary and OC latch/
+R5528,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 6 - timed primary and OC latch/
+U5520,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,/Ignition 6 - timed primary and OC latch/
+U5521,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,/Ignition 6 - timed primary and OC latch/
+U5522,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,/Ignition 6 - timed primary and OC latch/
+C5540,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 7 - timed primary and OC latch/
+C5541,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 7 - timed primary and OC latch/
+C5542,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 7 - timed primary and OC latch/
+Q5540,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,/Ignition 7 - timed primary and OC latch/
+R5540,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 7 - timed primary and OC latch/
+R5541,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 7 - timed primary and OC latch/
+R5542,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 7 - timed primary and OC latch/
+R5543,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 7 - timed primary and OC latch/
+R5544,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 7 - timed primary and OC latch/
+R5545,10R,Resistor_SMD:R_0603_1608Metric,False,/Ignition 7 - timed primary and OC latch/
+R5546,10k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 7 - timed primary and OC latch/
+R5547,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,/Ignition 7 - timed primary and OC latch/
+R5548,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 7 - timed primary and OC latch/
+U5540,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,/Ignition 7 - timed primary and OC latch/
+U5541,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,/Ignition 7 - timed primary and OC latch/
+U5542,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,/Ignition 7 - timed primary and OC latch/
+C5560,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 8 - timed primary and OC latch/
+C5561,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 8 - timed primary and OC latch/
+C5562,100n 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Ignition 8 - timed primary and OC latch/
+Q5560,STGB18N40LZT4,Package_TO_SOT_SMD:TO-263-2,False,/Ignition 8 - timed primary and OC latch/
+R5560,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 8 - timed primary and OC latch/
+R5561,147k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 8 - timed primary and OC latch/
+R5562,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 8 - timed primary and OC latch/
+R5563,39.2k 1%,Resistor_SMD:R_0603_1608Metric,False,/Ignition 8 - timed primary and OC latch/
+R5564,100k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 8 - timed primary and OC latch/
+R5565,10R,Resistor_SMD:R_0603_1608Metric,False,/Ignition 8 - timed primary and OC latch/
+R5566,10k,Resistor_SMD:R_0603_1608Metric,False,/Ignition 8 - timed primary and OC latch/
+R5567,WSLP2512R0100FEA,Resistor_SMD:R_2512_6332Metric,False,/Ignition 8 - timed primary and OC latch/
+R5568,4.99k 1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,/Ignition 8 - timed primary and OC latch/
+U5560,LTC6993HS6-1#WTRPBF,Package_TO_SOT_SMD:TSOT-23-6,False,/Ignition 8 - timed primary and OC latch/
+U5561,SN74LVC1G11BDCKRQ1,Package_TO_SOT_SMD:SOT-363_SC-70-6,False,/Ignition 8 - timed primary and OC latch/
+U5562,INA300AQDGSRQ1,Package_SO:VSSOP-10_3x3mm_P0.5mm,False,/Ignition 8 - timed primary and OC latch/
 C700,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,/Buffered analog inputs 1..4/
 C701,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Buffered analog inputs 1..4/
 C702,1n 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,/Buffered analog inputs 1..4/
@@ -256,25 +365,150 @@ R790,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,/Differential VR crank receiv
 R791,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,/Differential VR crank receiver/
 R792,10k,Resistor_SMD:R_0603_1608Metric,False,/Differential VR crank receiver/
 U731,MAX9924UAUB/V+,Package_SO:MSOP-10_3x3mm_P0.5mm,False,/Differential VR crank receiver/
-C501,2.2u 100V X7R,Capacitor_SMD:C_1210_3225Metric,False,/Protected logic battery input/
-C502,2.2u 100V X7R,Capacitor_SMD:C_1210_3225Metric,False,/Protected logic battery input/
-C503,47u 63V bulk,Capacitor_SMD:CP_Elec_8x10,False,/Protected logic battery input/
-C504,2.2n 50V X7R 5%,Capacitor_SMD:C_0603_1608Metric,False,/Protected logic battery input/
-C505,22u 25V X7R,Capacitor_SMD:C_1210_3225Metric,False,/Protected logic battery input/
-C506,22u 25V X7R,Capacitor_SMD:C_1210_3225Metric,False,/Protected logic battery input/
-C507,3.3n 50V C0G 5%,Capacitor_SMD:C_0603_1608Metric,False,/Protected logic battery input/
-C508,220p 50V C0G 5%,Capacitor_SMD:C_0603_1608Metric,False,/Protected logic battery input/
-D501,STPS2H100UY,Diode_SMD:D_SMB,False,/Protected logic battery input/
-D502,SMBJ24CA,Diode_SMD:D_SMB,False,/Protected logic battery input/
-L501,MSS1246T-473MLC,Inductor_SMD:L_Coilcraft_MSS1246T-XXX,False,/Protected logic battery input/
-R501,453k 1%,Resistor_SMD:R_0603_1608Metric,False,/Protected logic battery input/
-R502,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/Protected logic battery input/
-R503,41.2k 1%,Resistor_SMD:R_0603_1608Metric,False,/Protected logic battery input/
-R504,158k 0.1%,Resistor_SMD:R_0603_1608Metric,False,/Protected logic battery input/
-R505,49.9k 0.1%,Resistor_SMD:R_0603_1608Metric,False,/Protected logic battery input/
-R506,110k 1%,Resistor_SMD:R_0603_1608Metric,False,/Protected logic battery input/
-R507,47k 1%,Resistor_SMD:R_0603_1608Metric,False,/Protected logic battery input/
-U501,LM5164QDDARQ1,Package_SO:HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm_ThermalVias,False,/Protected logic battery input/
+C1101,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+C1102,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+C1103,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+C1104,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1101,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1102,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1103,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1104,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1105,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1106,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1107,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1108,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1109,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1110,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1111,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1112,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1113,47R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1114,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1115,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1116,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+R1117,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+U1101,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+U1121,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,"/Direct protected low-side PI1, PI2, PI3, PI4/"
+C1121,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+C1122,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+C1123,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+C1124,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1121,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1122,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1123,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1124,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1125,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1126,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1127,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1128,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1129,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1130,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1131,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1132,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1133,47R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1134,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1135,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1136,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+R1137,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+U1102,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+U1122,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,"/Direct protected low-side PI5, PI6, PI7, PI8/"
+C1141,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+C1142,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+C1143,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+C1144,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1141,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1142,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1143,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1144,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1145,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1146,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1147,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1148,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1149,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1150,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1151,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1152,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1153,47R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1154,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1155,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1156,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+R1157,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+U1103,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+U1123,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,"/Direct protected low-side VVT1, VVT2, VVT3, VVT4/"
+C1161,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+C1162,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+C1163,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+C1164,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1161,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1162,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1163,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1164,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1165,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1166,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1167,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1168,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1169,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1170,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1171,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1172,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1173,47R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1174,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1175,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1176,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+R1177,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+U1104,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+U1124,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,"/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/"
+C1181,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+C1182,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+C1183,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+C1184,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1181,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1182,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1183,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1184,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1185,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1186,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1187,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1188,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1189,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1190,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1191,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1192,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1193,47R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1194,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1195,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1196,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+R1197,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+U1105,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+U1125,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,"/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/"
+C1201,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+C1202,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+C1203,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+C1204,1u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1201,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1202,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1203,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1204,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1205,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1206,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1207,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1208,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1209,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1210,100k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1211,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1212,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1213,47R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1214,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1215,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1216,100R,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+R1217,10k,Resistor_SMD:R_0603_1608Metric,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+U1106,TLE9104SHXUMA1,Power8GDI_Core:TLE9104SH_PG-DSO-20-88,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+U1126,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,"/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/"
+C1241,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Low-side shared SPI and reset/
+R1241,100k,Resistor_SMD:R_0603_1608Metric,False,/Low-side shared SPI and reset/
+R1242,1k 1%,Resistor_SMD:R_0603_1608Metric,False,/Low-side shared SPI and reset/
+R1243,33R,Resistor_SMD:R_0603_1608Metric,False,/Low-side shared SPI and reset/
+R1244,33R,Resistor_SMD:R_0603_1608Metric,False,/Low-side shared SPI and reset/
+U1140,SN74LVC1G17QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/Low-side shared SPI and reset/
 C201,1u,Power8GDI_GDI:REF_C9,False,/GDI bank A reference candidate/
 C202,330p,Power8GDI_GDI:REF_C10,False,/GDI bank A reference candidate/
 C203,330p,Power8GDI_GDI:REF_C11,False,/GDI bank A reference candidate/
@@ -547,7 +781,6 @@ C801,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Latched hardware permi
 C802,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Latched hardware permission/
 C803,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Latched hardware permission/
 C804,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Latched hardware permission/
-C805,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Latched hardware permission/
 C806,120pF 50V C0G 1%,Capacitor_SMD:C_0603_1608Metric,False,/Latched hardware permission/
 R801,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
 R802,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
@@ -555,78 +788,445 @@ R803,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
 R804,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
 R805,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
 R806,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R811,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R812,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R813,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R814,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R815,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R816,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R817,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R818,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R821,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R822,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R823,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R824,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R825,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R826,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R827,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
-R828,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
+R6500,0R,Resistor_SMD:R_0603_1608Metric,False,/Latched hardware permission/
 U801,TPS3431SQDRBRQ1,Package_SON:VSON-8-1EP_3x3mm_P0.65mm_EP1.6x2.4mm,False,/Latched hardware permission/
 U802,TPS3808G33QDBVRQ1,Package_TO_SOT_SMD:SOT-23-6,False,/Latched hardware permission/
 U803,SN74LVC1G17QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/Latched hardware permission/
 U804,SN74LVC2G74QDCURQ1,Package_SO:VSSOP-8_2.3x2mm_P0.5mm,False,/Latched hardware permission/
-U805,SN74LVC244AQPWRQ1,Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm,False,/Latched hardware permission/
-C901,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,/DBW H-bridge candidate/
-C902,2.2u 50V X7R,Capacitor_SMD:C_1210_3225Metric,False,/DBW H-bridge candidate/
-C903,100u 50V bulk,Capacitor_SMD:CP_Elec_10x10,False,/DBW H-bridge candidate/
-C910,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/DBW H-bridge candidate/
-C911,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/DBW H-bridge candidate/
-C912,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/DBW H-bridge candidate/
-C913,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/DBW H-bridge candidate/
-C914,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/DBW H-bridge candidate/
-C915,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/DBW H-bridge candidate/
-D901,STPS2H100UY,Diode_SMD:D_SMB,False,/DBW H-bridge candidate/
-D902,SMBJ24CA,Diode_SMD:D_SMB,False,/DBW H-bridge candidate/
-R901,36.5k 1%,Resistor_SMD:R_0603_1608Metric,False,/DBW H-bridge candidate/
-R902,100k,Resistor_SMD:R_0603_1608Metric,False,/DBW H-bridge candidate/
-R903,100k,Resistor_SMD:R_0603_1608Metric,False,/DBW H-bridge candidate/
-R904,10k,Resistor_SMD:R_0603_1608Metric,False,/DBW H-bridge candidate/
-R905,100k,Resistor_SMD:R_0603_1608Metric,False,/DBW H-bridge candidate/
-R906,10k,Resistor_SMD:R_0603_1608Metric,False,/DBW H-bridge candidate/
-R907,10k,Resistor_SMD:R_0603_1608Metric,False,/DBW H-bridge candidate/
-U901,DRV8871DDAR,Package_SO:HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm_ThermalVias,False,/DBW H-bridge candidate/
-U910,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/DBW H-bridge candidate/
-U911,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/DBW H-bridge candidate/
-U912,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/DBW H-bridge candidate/
-U913,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/DBW H-bridge candidate/
-U914,SN74LVC1G04QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/DBW H-bridge candidate/
-U915,SN74LVC1G04QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/DBW H-bridge candidate/
-C951,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,/EWG H-bridge candidate/
-C952,2.2u 50V X7R,Capacitor_SMD:C_1210_3225Metric,False,/EWG H-bridge candidate/
-C953,100u 50V bulk,Capacitor_SMD:CP_Elec_10x10,False,/EWG H-bridge candidate/
-C960,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/EWG H-bridge candidate/
-C961,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/EWG H-bridge candidate/
-C962,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/EWG H-bridge candidate/
-C963,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/EWG H-bridge candidate/
-C964,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/EWG H-bridge candidate/
-C965,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/EWG H-bridge candidate/
-D951,STPS2H100UY,Diode_SMD:D_SMB,False,/EWG H-bridge candidate/
-D952,SMBJ24CA,Diode_SMD:D_SMB,False,/EWG H-bridge candidate/
-R951,36.5k 1%,Resistor_SMD:R_0603_1608Metric,False,/EWG H-bridge candidate/
-R952,100k,Resistor_SMD:R_0603_1608Metric,False,/EWG H-bridge candidate/
-R953,100k,Resistor_SMD:R_0603_1608Metric,False,/EWG H-bridge candidate/
-R954,10k,Resistor_SMD:R_0603_1608Metric,False,/EWG H-bridge candidate/
-R955,100k,Resistor_SMD:R_0603_1608Metric,False,/EWG H-bridge candidate/
-R956,10k,Resistor_SMD:R_0603_1608Metric,False,/EWG H-bridge candidate/
-R957,10k,Resistor_SMD:R_0603_1608Metric,False,/EWG H-bridge candidate/
-U951,DRV8871DDAR,Package_SO:HSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.41x3.1mm_ThermalVias,False,/EWG H-bridge candidate/
-U960,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/EWG H-bridge candidate/
-U961,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/EWG H-bridge candidate/
-U962,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/EWG H-bridge candidate/
-U963,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/EWG H-bridge candidate/
-U964,SN74LVC1G04QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/EWG H-bridge candidate/
-U965,SN74LVC1G04QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/EWG H-bridge candidate/
 J601,6437288-1 / KEY1 CANDIDATE,Power8GDI_Board:TE_6437288-1_34way,False,/Four TE34 harness connectors/
 J602,6437288-1 / KEY1 CANDIDATE,Power8GDI_Board:TE_6437288-1_34way,False,/Four TE34 harness connectors/
 J603,6437288-1 / KEY1 CANDIDATE,Power8GDI_Board:TE_6437288-1_34way,False,/Four TE34 harness connectors/
 J604,6437288-1 / KEY1 CANDIDATE,Power8GDI_Board:TE_6437288-1_34way,False,/Four TE34 harness connectors/
+C1501,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/CAN2 and LIN2 physical interfaces/
+C1502,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/CAN2 and LIN2 physical interfaces/
+C1503,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,/CAN2 and LIN2 physical interfaces/
+C1504,1u 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,/CAN2 and LIN2 physical interfaces/
+C1505,1n 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,/CAN2 and LIN2 physical interfaces/
+D1501,PESD2CAN,Package_TO_SOT_SMD:SOT-23,False,/CAN2 and LIN2 physical interfaces/
+D1502,"BAS21,215",Package_TO_SOT_SMD:SOT-23,False,/CAN2 and LIN2 physical interfaces/
+R1501,10k,Resistor_SMD:R_0603_1608Metric,False,/CAN2 and LIN2 physical interfaces/
+R1502,120R DNP,Resistor_SMD:R_0603_1608Metric,True,/CAN2 and LIN2 physical interfaces/
+R1503,4.7k,Resistor_SMD:R_0603_1608Metric,False,/CAN2 and LIN2 physical interfaces/
+R1504,10k,Resistor_SMD:R_0603_1608Metric,False,/CAN2 and LIN2 physical interfaces/
+R1505,10k,Resistor_SMD:R_0603_1608Metric,False,/CAN2 and LIN2 physical interfaces/
+R1506,0R,Resistor_SMD:R_0603_1608Metric,False,/CAN2 and LIN2 physical interfaces/
+R1507,1k 1% 0.5W,Resistor_SMD:R_1206_3216Metric,False,/CAN2 and LIN2 physical interfaces/
+U1501,TCAN1042HGVDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/CAN2 and LIN2 physical interfaces/
+U1502,TLIN1029ADRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/CAN2 and LIN2 physical interfaces/
+C1510,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Self-powered USB FS device: host VBUS never powers ECU/
+C1511,1n 2kV C0G,Capacitor_SMD:C_1206_3216Metric,False,/Self-powered USB FS device: host VBUS never powers ECU/
+D1510,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,False,/Self-powered USB FS device: host VBUS never powers ECU/
+J1501,Molex 1050170001,Connector_USB:USB_Micro-B_Molex-105017-0001,False,/Self-powered USB FS device: host VBUS never powers ECU/
+Q1510,"2N7002,215",Package_TO_SOT_SMD:SOT-23,False,/Self-powered USB FS device: host VBUS never powers ECU/
+R1510,1k,Resistor_SMD:R_0603_1608Metric,False,/Self-powered USB FS device: host VBUS never powers ECU/
+R1511,100k,Resistor_SMD:R_0603_1608Metric,False,/Self-powered USB FS device: host VBUS never powers ECU/
+R1512,10k,Resistor_SMD:R_0603_1608Metric,False,/Self-powered USB FS device: host VBUS never powers ECU/
+R1513,0R DNP,Resistor_SMD:R_0603_1608Metric,True,/Self-powered USB FS device: host VBUS never powers ECU/
+C1520,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/microSD SPI3 logging candidate/
+C1521,10u 16V X7R,Capacitor_SMD:C_0805_2012Metric,False,/microSD SPI3 logging candidate/
+C1522,1n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/microSD SPI3 logging candidate/
+D1520,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,False,/microSD SPI3 logging candidate/
+D1521,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6,False,/microSD SPI3 logging candidate/
+J1502,Molex 1040310811,Connector_Card:microSD_HC_Molex_104031-0811,False,/microSD SPI3 logging candidate/
+R1520,0R,Resistor_SMD:R_0603_1608Metric,False,/microSD SPI3 logging candidate/
+R1521,22R,Resistor_SMD:R_0603_1608Metric,False,/microSD SPI3 logging candidate/
+R1522,22R,Resistor_SMD:R_0603_1608Metric,False,/microSD SPI3 logging candidate/
+R1523,47k,Resistor_SMD:R_0603_1608Metric,False,/microSD SPI3 logging candidate/
+R1524,47k,Resistor_SMD:R_0603_1608Metric,False,/microSD SPI3 logging candidate/
+R1525,47k,Resistor_SMD:R_0603_1608Metric,False,/microSD SPI3 logging candidate/
+R1526,47k,Resistor_SMD:R_0603_1608Metric,False,/microSD SPI3 logging candidate/
+R1527,47k,Resistor_SMD:R_0603_1608Metric,False,/microSD SPI3 logging candidate/
+R1528,47k,Resistor_SMD:R_0603_1608Metric,False,/microSD SPI3 logging candidate/
+C1530,1u 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,/Dual sensor trackers and star returns/
+C1531,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Dual sensor trackers and star returns/
+C1532,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Dual sensor trackers and star returns/
+C1533,22u 50V X7R,Capacitor_SMD:C_1210_3225Metric,False,/Dual sensor trackers and star returns/
+C1534,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Dual sensor trackers and star returns/
+C1535,1u 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,/Dual sensor trackers and star returns/
+C1536,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Dual sensor trackers and star returns/
+C1537,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Dual sensor trackers and star returns/
+C1538,22u 50V X7R,Capacitor_SMD:C_1210_3225Metric,False,/Dual sensor trackers and star returns/
+C1539,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,/Dual sensor trackers and star returns/
+D1530,STPS2H100UY,Diode_SMD:D_SMB,False,/Dual sensor trackers and star returns/
+D1531,STPS2H100UY,Diode_SMD:D_SMB,False,/Dual sensor trackers and star returns/
+R1530,0R star return,Resistor_SMD:R_0805_2012Metric,False,/Dual sensor trackers and star returns/
+R1531,0R star return,Resistor_SMD:R_0805_2012Metric,False,/Dual sensor trackers and star returns/
+R1532,0R star return,Resistor_SMD:R_0805_2012Metric,False,/Dual sensor trackers and star returns/
+U1530,TPS7B4253QDDARQ1,Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02,False,/Dual sensor trackers and star returns/
+U1531,TPS7B4253QDDARQ1,Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02,False,/Dual sensor trackers and star returns/
+C1600,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+C1601,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+C1602,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+C1603,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+C1604,47p 100V C0G,Capacitor_SMD:C_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+C1610,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+D1600,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,"/Additional Hall, flex and digital inputs bank 1/"
+D1601,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,"/Additional Hall, flex and digital inputs bank 1/"
+D1602,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,"/Additional Hall, flex and digital inputs bank 1/"
+D1603,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,"/Additional Hall, flex and digital inputs bank 1/"
+D1604,"BAT54S,215",Package_TO_SOT_SMD:SOT-23,False,"/Additional Hall, flex and digital inputs bank 1/"
+R1600,10k,Resistor_SMD:R_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+R1601,47k,Resistor_SMD:R_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+R1602,10k DNP,Resistor_SMD:R_0603_1608Metric,True,"/Additional Hall, flex and digital inputs bank 1/"
+R1603,10k,Resistor_SMD:R_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+R1604,47k,Resistor_SMD:R_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+R1605,10k DNP,Resistor_SMD:R_0603_1608Metric,True,"/Additional Hall, flex and digital inputs bank 1/"
+R1606,10k,Resistor_SMD:R_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+R1607,47k,Resistor_SMD:R_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+R1608,10k DNP,Resistor_SMD:R_0603_1608Metric,True,"/Additional Hall, flex and digital inputs bank 1/"
+R1609,10k,Resistor_SMD:R_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+R1610,47k,Resistor_SMD:R_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+R1611,10k DNP,Resistor_SMD:R_0603_1608Metric,True,"/Additional Hall, flex and digital inputs bank 1/"
+R1612,10k,Resistor_SMD:R_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+R1613,47k,Resistor_SMD:R_0603_1608Metric,False,"/Additional Hall, flex and digital inputs bank 1/"
+R1614,10k DNP,Resistor_SMD:R_0603_1608Metric,True,"/Additional Hall, flex and digital inputs bank 1/"
+U1600,SN74LVC14AQPWRQ1,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,"/Additional Hall, flex and digital inputs bank 1/"
+C1701,4.7uF 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/knock dual/
+C1702,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/knock dual/
+C1703,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/knock dual/
+C1704,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/knock dual/
+C1705,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/knock dual/
+C1706,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,/knock dual/
+C1711,3.3nF 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,/knock dual/
+C1721,3.3nF 50V C0G,Capacitor_SMD:C_0603_1608Metric,False,/knock dual/
+R1701,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/knock dual/
+R1702,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/knock dual/
+R1703,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/knock dual/
+R1711,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/knock dual/
+R1712,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/knock dual/
+R1713,0R,Resistor_SMD:R_0603_1608Metric,False,/knock dual/
+R1721,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/knock dual/
+R1722,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/knock dual/
+R1723,0R,Resistor_SMD:R_0603_1608Metric,False,/knock dual/
+U1701,TPIC8101DWR,Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm,False,/knock dual/
+U1702,SN74AHCT244QPWRQ1,Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm,False,/knock dual/
+U1703,CLVC1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/knock dual/
+Y1701,ASEM1-8.000MHZ-LC-T,Power8GDI_Core:ASEM_3225,False,/knock dual/
+C5001,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/gdi/protection a/
+C5002,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/gdi/protection a/
+C5003,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/gdi/protection a/
+C5004,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,/gdi/protection a/
+C5005,22n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/gdi/protection a/
+D5001,SMCJ33CA,Diode_SMD:D_SMC,False,/gdi/protection a/
+Q5001,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,False,/gdi/protection a/
+Q5002,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,False,/gdi/protection a/
+R5001,140k 0.1%,Resistor_SMD:R_0805_2012Metric,False,/gdi/protection a/
+R5002,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection a/
+R5003,1k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection a/
+R5004,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection a/
+R5005,1M 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection a/
+R5006,1M 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection a/
+R5007,1k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection a/
+R5008,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection a/
+U5001,LM74800QDRRRQ1,Power8GDI_GDIProtection:LM74800_DRR0012E,False,/gdi/protection a/
+C5051,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/gdi/protection b/
+C5052,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/gdi/protection b/
+C5053,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/gdi/protection b/
+C5054,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,/gdi/protection b/
+C5055,22n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/gdi/protection b/
+D5051,SMCJ33CA,Diode_SMD:D_SMC,False,/gdi/protection b/
+Q5051,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,False,/gdi/protection b/
+Q5052,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,False,/gdi/protection b/
+R5051,140k 0.1%,Resistor_SMD:R_0805_2012Metric,False,/gdi/protection b/
+R5052,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection b/
+R5053,1k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection b/
+R5054,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection b/
+R5055,1M 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection b/
+R5056,1M 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection b/
+R5057,1k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection b/
+R5058,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/protection b/
+U5051,LM74800QDRRRQ1,Power8GDI_GDIProtection:LM74800_DRR0012E,False,/gdi/protection b/
+C5101,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/gdi/permission/
+R5101,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/permission/
+R5102,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/permission/
+R5103,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/permission/
+R5104,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/permission/
+R5105,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/permission/
+R5106,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/gdi/permission/
+U5101,SN74LVC2G08QDCURQ1,Package_SO:VSSOP-8_2.3x2mm_P0.5mm,False,/gdi/permission/
+C5600,1u,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 analog/
+C5601,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 analog/
+C5603,33n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 analog/
+C5605,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 analog/
+C5607,1u,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 analog/
+C5608,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 analog/
+C5611,1u,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 analog/
+C5612,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 analog/
+R5600,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5601,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5602,68k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5603,68k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5604,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5605,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5606,10,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5607,22k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5608,47,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5609,61.9,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5610,20k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5611,20k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5612,20k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5613,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5614,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5615,100k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5618,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5619,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5620,27k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5621,100k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5623,27k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+R5624,3.3k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 analog/
+U5600,MCP6004T-E/ST,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,/wbo/wbo1 analog/
+U5601,AD8628ARTZ-REEL7,Package_TO_SOT_SMD:TSOT-23-5,False,/wbo/wbo1 analog/
+U5603,REF3033AIDBZR,Package_TO_SOT_SMD:SOT-23,False,/wbo/wbo1 analog/
+C5602,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 control/
+C5609,1u,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 control/
+C5610,1u,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 control/
+C5613,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 control/
+C5614,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 control/
+C5615,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 control/
+C5616,4.7u,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 control/
+C5617,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 control/
+C5618,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 control/
+C5640,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 control/
+C5641,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo1 control/
+D5600,LED-RED-0603,LED_SMD:LED_0603_1608Metric,False,/wbo/wbo1 control/
+D5601,LED-GREEN-0603,LED_SMD:LED_0603_1608Metric,False,/wbo/wbo1 control/
+D5602,LED-BLUE-0603,LED_SMD:LED_0603_1608Metric,False,/wbo/wbo1 control/
+D5603,LED-RED-0603,LED_SMD:LED_0603_1608Metric,False,/wbo/wbo1 control/
+D5604,PESD1CAN,Package_TO_SOT_SMD:SOT-23,False,/wbo/wbo1 control/
+J5600,Conn_02x03_Odd_Even,Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical,False,/wbo/wbo1 control/
+Q5600,VND7NV04TR-E,Package_TO_SOT_SMD:TO-252-2,False,/wbo/wbo1 control/
+R5616,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 control/
+R5617,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 control/
+R5622,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 control/
+R5625,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 control/
+R5626,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 control/
+R5627,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 control/
+R5628,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 control/
+R5629,120R DNP,Resistor_SMD:R_0603_1608Metric,True,/wbo/wbo1 control/
+R5640,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 control/
+R5641,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 control/
+R5642,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 control/
+R5643,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 control/
+R5644,0R,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 control/
+R5645,100k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo1 control/
+U5602,STM32F042K6T6,Package_QFP:LQFP-32_7x7mm_P0.8mm,False,/wbo/wbo1 control/
+U5604,XC6206P332MR-G,Package_TO_SOT_SMD:SOT-23,False,/wbo/wbo1 control/
+U5605,TJA1051T/3/1J,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/wbo/wbo1 control/
+U5610,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/wbo/wbo1 control/
+U5611,SN74AHCT1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/wbo/wbo1 control/
+C5650,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/wbo/wbo1 heater feed/
+C5651,47u 63V lowESR,Capacitor_SMD:CP_Elec_8x10,False,/wbo/wbo1 heater feed/
+D5610,STPS5H100BY-TR,Package_TO_SOT_SMD:TO-252-2,False,/wbo/wbo1 heater feed/
+D5611,SMBJ24CA,Diode_SMD:D_SMB,False,/wbo/wbo1 heater feed/
+C5800,1u,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 analog/
+C5801,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 analog/
+C5803,33n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 analog/
+C5805,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 analog/
+C5807,1u,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 analog/
+C5808,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 analog/
+C5811,1u,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 analog/
+C5812,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 analog/
+R5800,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5801,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5802,68k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5803,68k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5804,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5805,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5806,10,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5807,22k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5808,47,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5809,61.9,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5810,20k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5811,20k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5812,20k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5813,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5814,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5815,100k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5818,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5819,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5820,27k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5821,100k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5823,27k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+R5824,3.3k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 analog/
+U5800,MCP6004T-E/ST,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,/wbo/wbo2 analog/
+U5801,AD8628ARTZ-REEL7,Package_TO_SOT_SMD:TSOT-23-5,False,/wbo/wbo2 analog/
+U5803,REF3033AIDBZR,Package_TO_SOT_SMD:SOT-23,False,/wbo/wbo2 analog/
+C5802,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 control/
+C5809,1u,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 control/
+C5810,1u,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 control/
+C5813,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 control/
+C5814,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 control/
+C5815,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 control/
+C5816,4.7u,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 control/
+C5817,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 control/
+C5818,100n,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 control/
+C5840,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 control/
+C5841,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,/wbo/wbo2 control/
+D5800,LED-RED-0603,LED_SMD:LED_0603_1608Metric,False,/wbo/wbo2 control/
+D5801,LED-GREEN-0603,LED_SMD:LED_0603_1608Metric,False,/wbo/wbo2 control/
+D5802,LED-BLUE-0603,LED_SMD:LED_0603_1608Metric,False,/wbo/wbo2 control/
+D5803,LED-RED-0603,LED_SMD:LED_0603_1608Metric,False,/wbo/wbo2 control/
+D5804,PESD1CAN,Package_TO_SOT_SMD:SOT-23,False,/wbo/wbo2 control/
+J5800,Conn_02x03_Odd_Even,Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical,False,/wbo/wbo2 control/
+Q5800,VND7NV04TR-E,Package_TO_SOT_SMD:TO-252-2,False,/wbo/wbo2 control/
+R5816,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 control/
+R5817,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 control/
+R5822,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 control/
+R5825,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 control/
+R5826,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 control/
+R5827,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 control/
+R5828,1k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 control/
+R5829,120R DNP,Resistor_SMD:R_0603_1608Metric,True,/wbo/wbo2 control/
+R5840,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 control/
+R5841,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 control/
+R5842,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 control/
+R5843,10k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 control/
+R5844,0R,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 control/
+R5845,100k,Resistor_SMD:R_0603_1608Metric,False,/wbo/wbo2 control/
+U5802,STM32F042K6T6,Package_QFP:LQFP-32_7x7mm_P0.8mm,False,/wbo/wbo2 control/
+U5804,XC6206P332MR-G,Package_TO_SOT_SMD:SOT-23,False,/wbo/wbo2 control/
+U5805,TJA1051T/3/1J,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,/wbo/wbo2 control/
+U5810,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/wbo/wbo2 control/
+U5811,SN74AHCT1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/wbo/wbo2 control/
+C5850,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/wbo/wbo2 heater feed/
+C5851,47u 63V lowESR,Capacitor_SMD:CP_Elec_8x10,False,/wbo/wbo2 heater feed/
+D5810,STPS5H100BY-TR,Package_TO_SOT_SMD:TO-252-2,False,/wbo/wbo2 heater feed/
+D5811,SMBJ24CA,Diode_SMD:D_SMB,False,/wbo/wbo2 heater feed/
+C5200,10u 100V X7R,Capacitor_SMD:C_1210_3225Metric,False,/logic power/logic 5v/
+C5201,10u 100V X7R,Capacitor_SMD:C_1210_3225Metric,False,/logic power/logic 5v/
+C5202,47n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/logic power/logic 5v/
+C5203,470n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/logic power/logic 5v/
+C5204,2.2u 16V X7R,Capacitor_SMD:C_0805_2012Metric,False,/logic power/logic 5v/
+C5205,1u 16V X7R,Capacitor_SMD:C_0805_2012Metric,False,/logic power/logic 5v/
+C5206,22n 16V X7R,Capacitor_SMD:C_0805_2012Metric,False,/logic power/logic 5v/
+C5207,180p 50V C0G,Capacitor_SMD:C_0805_2012Metric,False,/logic power/logic 5v/
+C5208,47u 25V X7R,Capacitor_SMD:C_1210_3225Metric,False,/logic power/logic 5v/
+C5209,47u 25V X7R,Capacitor_SMD:C_1210_3225Metric,False,/logic power/logic 5v/
+C5210,47u 25V X7R,Capacitor_SMD:C_1210_3225Metric,False,/logic power/logic 5v/
+C5211,47u 25V X7R,Capacitor_SMD:C_1210_3225Metric,False,/logic power/logic 5v/
+D5200,STPS5H100BY-TR,Package_TO_SOT_SMD:TO-252-2,False,/logic power/logic 5v/
+D5201,SMBJ24CA,Diode_SMD:D_SMB,False,/logic power/logic 5v/
+L5200,XAL7070-682MEC 6.8uH,Inductor_SMD:L_Coilcraft_XAL7070-XXX,False,/logic power/logic 5v/
+R5200,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,/logic power/logic 5v/
+R5201,25k 0.1%,Resistor_SMD:R_0603_1608Metric,False,/logic power/logic 5v/
+R5202,470k 0.1%,Resistor_SMD:R_0805_2012Metric,False,/logic power/logic 5v/
+R5203,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,/logic power/logic 5v/
+R5204,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/logic power/logic 5v/
+R5205,1M 1%,Resistor_SMD:R_0603_1608Metric,False,/logic power/logic 5v/
+U5200,LM76003QRNPRQ1,Package_DFN_QFN:Texas_RNP0030B_WQFN-30-1EP_4x6mm_P0.5mm_EP1.8x4.5mm,False,/logic power/logic 5v/
+C5300,10u 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/logic power/logic 3v3/
+C5301,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/logic power/logic 3v3/
+C5302,22u 16V X7R,Capacitor_SMD:C_1210_3225Metric,False,/logic power/logic 3v3/
+C5303,3.3n 25V C0G,Capacitor_SMD:C_0805_2012Metric,False,/logic power/logic 3v3/
+L5300,XAL5030-222MEC 2.2uH,Inductor_SMD:L_Coilcraft_XAL5030-XXX,False,/logic power/logic 3v3/
+R5300,100k 0.1%,Resistor_SMD:R_0603_1608Metric,False,/logic power/logic 3v3/
+R5301,32k 0.1%,Resistor_SMD:R_0603_1608Metric,False,/logic power/logic 3v3/
+R5302,100k 1%,Resistor_SMD:R_0603_1608Metric,False,/logic power/logic 3v3/
+R5303,10k 1%,Resistor_SMD:R_0603_1608Metric,False,/logic power/logic 3v3/
+U5300,TPS62130AQRGTRQ1,Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm,False,/logic power/logic 3v3/
+C6000,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/dbw/
+C6001,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/dbw/
+C6002,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/dbw/
+C6003,1u 50V X7R,Capacitor_SMD:C_1206_3216Metric,False,/motor4/dbw/
+C6004,100u 50V low ESR,Capacitor_SMD:CP_Elec_10x10.5,False,/motor4/dbw/
+C6005,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,False,/motor4/dbw/
+C6006,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,False,/motor4/dbw/
+D6000,SMCJ18CA,Diode_SMD:D_SMC,False,/motor4/dbw/
+R6000,100R,Resistor_SMD:R_0603_1608Metric,False,/motor4/dbw/
+R6001,100R,Resistor_SMD:R_0603_1608Metric,False,/motor4/dbw/
+R6002,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/dbw/
+R6003,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/dbw/
+R6004,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/dbw/
+R6005,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/dbw/
+U6000,TLE9201SG,Package_SO:Infineon_PG-DSO-12-11_ThermalVias,False,/motor4/dbw/
+U6001,SN74LVC1G32QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/motor4/dbw/
+C6050,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/ewg/
+C6051,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/ewg/
+C6052,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/ewg/
+C6053,1u 50V X7R,Capacitor_SMD:C_1206_3216Metric,False,/motor4/ewg/
+C6054,100u 50V low ESR,Capacitor_SMD:CP_Elec_10x10.5,False,/motor4/ewg/
+C6055,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,False,/motor4/ewg/
+C6056,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,False,/motor4/ewg/
+D6050,SMCJ18CA,Diode_SMD:D_SMC,False,/motor4/ewg/
+R6050,100R,Resistor_SMD:R_0603_1608Metric,False,/motor4/ewg/
+R6051,100R,Resistor_SMD:R_0603_1608Metric,False,/motor4/ewg/
+R6052,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/ewg/
+R6053,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/ewg/
+R6054,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/ewg/
+R6055,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/ewg/
+U6050,TLE9201SG,Package_SO:Infineon_PG-DSO-12-11_ThermalVias,False,/motor4/ewg/
+U6051,SN74LVC1G32QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/motor4/ewg/
+C6100,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor3/
+C6101,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor3/
+C6102,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor3/
+C6103,1u 50V X7R,Capacitor_SMD:C_1206_3216Metric,False,/motor4/motor3/
+C6104,100u 50V low ESR,Capacitor_SMD:CP_Elec_10x10.5,False,/motor4/motor3/
+C6105,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor3/
+C6106,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor3/
+D6100,SMCJ18CA,Diode_SMD:D_SMC,False,/motor4/motor3/
+R6100,100R,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor3/
+R6101,100R,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor3/
+R6102,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor3/
+R6103,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor3/
+R6104,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor3/
+R6105,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor3/
+U6100,TLE9201SG,Package_SO:Infineon_PG-DSO-12-11_ThermalVias,False,/motor4/motor3/
+U6101,SN74LVC1G32QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/motor4/motor3/
+C6150,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor4/
+C6151,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor4/
+C6152,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor4/
+C6153,1u 50V X7R,Capacitor_SMD:C_1206_3216Metric,False,/motor4/motor4/
+C6154,100u 50V low ESR,Capacitor_SMD:CP_Elec_10x10.5,False,/motor4/motor4/
+C6155,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor4/
+C6156,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor4/
+D6150,SMCJ18CA,Diode_SMD:D_SMC,False,/motor4/motor4/
+R6150,100R,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor4/
+R6151,100R,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor4/
+R6152,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor4/
+R6153,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor4/
+R6154,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor4/
+R6155,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor4/
+U6150,TLE9201SG,Package_SO:Infineon_PG-DSO-12-11_ThermalVias,False,/motor4/motor4/
+U6151,SN74LVC1G32QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/motor4/motor4/
+C6190,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/spi/
+R6190,47R,Resistor_SMD:R_0603_1608Metric,False,/motor4/spi/
+R6191,47R,Resistor_SMD:R_0603_1608Metric,False,/motor4/spi/
+R6192,47R,Resistor_SMD:R_0603_1608Metric,False,/motor4/spi/
+R6193,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/spi/
+R6194,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/spi/
+R6195,100k,Resistor_SMD:R_0603_1608Metric,False,/motor4/spi/
+U6190,SN74LVC1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,/motor4/spi/
+C6200,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor13 power/
+C6201,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor13 power/
+C6202,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor13 power/
+C6203,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor13 power/
+C6204,22n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor13 power/
+D6200,SMCJ33CA,Diode_SMD:D_SMC,False,/motor4/motor13 power/
+Q6200,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,False,/motor4/motor13 power/
+Q6201,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,False,/motor4/motor13 power/
+R6200,140k 0.1%,Resistor_SMD:R_0805_2012Metric,False,/motor4/motor13 power/
+R6201,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor13 power/
+R6202,1k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor13 power/
+R6203,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor13 power/
+R6204,1M,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor13 power/
+R6205,1M,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor13 power/
+R6206,1k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor13 power/
+R6207,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor13 power/
+U6200,LM74800QDRRRQ1,Power8GDI_Motor4:LM74800_DRR0012E,False,/motor4/motor13 power/
+C6250,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor24 power/
+C6251,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor24 power/
+C6252,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor24 power/
+C6253,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor24 power/
+C6254,22n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,/motor4/motor24 power/
+D6250,SMCJ33CA,Diode_SMD:D_SMC,False,/motor4/motor24 power/
+Q6250,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,False,/motor4/motor24 power/
+Q6251,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,False,/motor4/motor24 power/
+R6250,140k 0.1%,Resistor_SMD:R_0805_2012Metric,False,/motor4/motor24 power/
+R6251,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor24 power/
+R6252,1k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor24 power/
+R6253,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor24 power/
+R6254,1M,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor24 power/
+R6255,1M,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor24 power/
+R6256,1k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor24 power/
+R6257,10k,Resistor_SMD:R_0603_1608Metric,False,/motor4/motor24 power/
+U6250,LM74800QDRRRQ1,Power8GDI_Motor4:LM74800_DRR0012E,False,/motor4/motor24 power/

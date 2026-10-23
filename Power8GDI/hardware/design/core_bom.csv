@@ -30,9 +30,6 @@ R103,10k,Resistor_SMD:R_0603_1608Metric,False,core_mcu,Default flash boot; optio
 J101,SWD 3V3 target reference,Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical,False,core_mcu,"VTREF sense only, not external power input. Pin7 key/unused, pin8 unused; unshrouded header"
 Y101,ASEM1-8.000MHZ-LC-T,Power8GDI_Core:ASEM_3225,False,core_mcu,Abracon ASEM RevP p4 actual pins1EN2GND3OUT4VDD; firmware HSE bypass required; PH1 NC
 C129,10n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_mcu,Abracon recommends10n between Y101 pins4/2; short return
-U102,TLV1117LV33DCYR,Package_TO_SOT_SMD:SOT-223-3_TabPin2,False,core_power,"TI SBVS160C; industrial candidate, not AEC-Q100; TAB=OUT pad2"
-C125,4.7u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_power,Effective CIN>=1uF; next to pin3
-C126,4.7u 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_power,Effective COUT>=1uF; next to pad2; no reverse-power injection
 U103,TCAN1042HGVDRQ1,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,core_comms,STB held high at reset; MCU PH2 pad43 may drive low to enable; GPIO firmware pending
 C127,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_comms,At U103 pin3
 C128,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,core_comms,At U103 pin5

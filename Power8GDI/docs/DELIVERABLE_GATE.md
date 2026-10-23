@@ -7,8 +7,8 @@ successful firmware compile by itself does not make an ECU safe for operation.
 
 | Artifact | Current state | Acceptance criteria |
 |---|---|---|
-| Electrical schematic | Connector-only sketch | Complete hierarchical sheets; ERC clear or justified exceptions; verified references / analog and power rails / PT2001 dual GDI integration |
-| PCB | Envelope-only | Correct TE footprints; placed/routed signals; validated stackup and return currents; DRC zero critical; reviewed HV spacing and high-current derating |
+| Electrical schematic | Connected hierarchy; current Huge/GDI8 module integration in progress | Complete hierarchical sheets; ERC clear or justified exceptions; verified references / analog and power rails / PT2001 dual GDI integration |
+| PCB | Earlier routed reference is superseded; current functional placement/routing in progress | Correct TE footprints; placed/routed signals; validated stackup and return currents; DRC zero critical; reviewed HV spacing and high-current derating |
 | PCB 3D CAD/views | Provisional envelopes | Board STEP from real KiCad footprint placement, official component models, actual materials |
 | Mechanical enclosure | CAD concept | Mated TE connector STEP/cutouts; seal, screw bosses, fasteners, gasket design; CNC drawing and tolerance limits; thermal conduction and installation vibration checks |
 | Manufacturing package | Not started | Gerbers, drill, BOM manufacturer P/N, substitutions, pick-place, stackup fab drawing, revision and licensed fab files |

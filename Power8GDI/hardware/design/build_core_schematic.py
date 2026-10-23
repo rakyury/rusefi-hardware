@@ -34,10 +34,9 @@ def generate():
     r,c=syms["R"],syms["C"]
     root=Sheet("Power8GDI_Core","Power8GDI core and interfaces",paper="A0")
     mcu=Sheet("core_mcu","MCU, power decoupling and debug",root=ROOT_ID,paper="A2")
-    power=Sheet("core_power","3V3 logic post-regulator",root=ROOT_ID)
     comm=Sheet("core_comms","CAN1 and LIN1 physical interfaces",root=ROOT_ID,paper="A2")
     ignition_sheets=make_ignition(syms,ROOT_ID)
-    sheets=[root,mcu,power,comm]+ignition_sheets
+    sheets=[root,mcu,comm]+ignition_sheets
     def cap(sheet,ref,value,x,y,net,note="",footprint=FP_C):
         sheet.component(c,ref,value,x,y,{"1":net,"2":"GND"},footprint=footprint,note=note)
     def res(sheet,ref,value,x,y,a,b,note="",dnp=False):
@@ -102,16 +101,6 @@ def generate():
     cap(mcu,"C129","10n 16V X7R",120,330,"+3V3","Abracon recommends10n between Y101 pins4/2; short return")
     mcu.text("8MHz CMOS HSE: bypass mode required.\nOscillator load <=15pF, start<=3ms.\nClock tree/USB48MHz firmware review pending.",25.4,365)
 
-    ldo=box_symbol("TLV1117LV33DCY",[("3","IN","power_in",-10.16,5.08,0),("2","OUT_TAB","power_out",10.16,5.08,180),("1","GND","power_in",0,-10.16,90)],
-                   "Package_TO_SOT_SMD:SOT-223-3_TabPin2",height=15.24)
-    power.hport("+5V_CORE",25.4,25.4)
-    power.hport("+3V3",25.4,33.02,"output")
-    power.hport("GND",25.4,40.64)
-    power.component(ldo,"U102","TLV1117LV33DCYR",120.65,76.2,{"3":"+5V_CORE","2":"+3V3","1":"GND"},note="TI SBVS160C; industrial candidate, not AEC-Q100; TAB=OUT pad2")
-    cap(power,"C125","4.7u 16V X7R",65,76.2,"+5V_CORE","Effective CIN>=1uF; next to pin3")
-    cap(power,"C126","4.7u 16V X7R",185,76.2,"+3V3","Effective COUT>=1uF; next to pad2; no reverse-power injection")
-    power.text("Input: regulated +5V_CORE only, 5.5V maximum operating.\n1A silicon rating is NOT a thermal budget: at0.30A, (5-3.3)*0.30=0.51W.\nCopper/temperature/load budget remains BLOCKED. No raw VBAT connection.\nAll GPIO protection and GDI stage current are outside this 3V3 core regulator.",25.4,130)
-
     can=box_symbol("TCAN1042HGV_Q1",[("1","TXD","input",-12.7,7.62,0),("4","RXD","output",-12.7,0,0),("8","STB","input",-12.7,-7.62,0),
                    ("7","CANH","bidirectional",12.7,5.08,180),("6","CANL","bidirectional",12.7,-5.08,180),
                    ("3","VCC","power_in",-2.54,15.24,270),("5","VIO","power_in",2.54,15.24,270),("2","GND","power_in",0,-15.24,90)],FP_SO8,width=20.32,height=25.4)
@@ -150,15 +139,12 @@ def generate():
     io_sheets=make_io(syms,ROOT_ID)
     output_sheets=make_outputs(syms,ROOT_ID)
     sheets.extend(io_sheets+output_sheets)
-    leaves=[power,mcu,comm]+ignition_sheets+io_sheets+output_sheets
+    leaves=[mcu,comm]+ignition_sheets+io_sheets+output_sheets
     external=[]
     for name,title,instance in [
-        ("power_input/power_input","Protected logic battery input",None),
         ("gdi/stage_a","GDI bank A reference candidate","a05bbd47-81aa-5269-b9b3-0a4b9afd615c"),
         ("gdi/stage_b","GDI bank B reference candidate","2aa9486d-083b-53a0-b9ea-735fb5a4b253"),
         ("safety/safety_gate","Latched hardware permission","d3688535-de83-5779-ad3b-0e54c99cc6b1"),
-        ("motor/dbw_driver","DBW H-bridge candidate",None),
-        ("motor/ewg_driver","EWG H-bridge candidate",None),
         ("board/connectors","Four TE34 harness connectors",None),
     ] + [(s['name'],s['title'],s['sheet_id']) for s in json.loads((HERE/'interfaces/interfaces_manifest.json').read_text())['sheets']] + [
         ('interfaces_aux/'+s['name'],s['name'].replace('_',' '),s['root_instance_uuid']) for s in json.loads((HERE/'interfaces_aux/interface.json').read_text())['sheets']
@@ -168,6 +154,12 @@ def generate():
     ] + [
         (s['name'],s['name'].replace('_',' '),s['sheet_id'])
         for s in json.loads((HERE/'wbo/interface.json').read_text())['sheets']
+    ] + [
+        (s['name'],s['name'].replace('_',' '),s['root_instance_uuid'])
+        for s in json.loads((HERE/'logic_power/interface.json').read_text())['sheets']
+    ] + [
+        (s['name'],s['name'].replace('_',' '),s['sheet_id'])
+        for s in json.loads((HERE/'motor4/interface.json').read_text())['sheets']
     ]:
         if not (HERE/(name+".kicad_sch")).exists():
             raise FileNotFoundError("Integrated source-owned leaf required: "+name)
@@ -175,15 +167,14 @@ def generate():
         if instance: leaf.sheet_id=instance
         leaves.append(leaf)
         external.append({"path":name+".kicad_sch","instance_uuid":leaf.sheet_id})
-    ports={power.name:[("+5V_CORE","input"),("+3V3","output"),("GND","input")],
-           mcu.name:[("+3V3","input"),("GND","input")],
+    ports={mcu.name:[("+3V3","input"),("GND","input")],
            comm.name:[("+3V3","input"),("+5V_CORE","input"),("GND","input")]}
     for i,leaf in enumerate(leaves):
-        root.add_child(leaf,40+190*(i%6),75+90*(i//6),width=155,height=55,ports=ports.get(leaf.name,[]))
+        root.add_child(leaf,40+190*(i%6),65+75*(i//6),width=155,height=55,ports=ports.get(leaf.name,[]))
     root.text("Each sheet uses explicit global net names. HARNESS names remain separate from MCU logic.\nNo ERC exclusions or power flags conceal missing supplies. DNP assembly flags must be preserved.\nGDI enable, injector/pump models, missing domains and full routing remain release blockers.",25.4,745)
     for sheet in sheets: sheet.write(HERE)
     all_symbols={n:s for sheet in sheets for n,s in sheet.symbols.items()}
-    for library in ["power_input/power_input.kicad_sym","motor/motor.kicad_sym","interfaces/interfaces.kicad_sym"]:
+    for library in ["interfaces/interfaces.kicad_sym"]:
         source=parse((HERE/library).read_text(encoding="utf-8"))
         for expr in children(source,"symbol"):
             name=str(expr[1]).split(":")[-1]
@@ -198,7 +189,7 @@ def generate():
     table=(HERE/"sym-lib-table").read_text(encoding="utf-8").rstrip()
     (HERE/"sym-lib-table").write_text(table[:-1]+' (lib (name "Power8GDI_Aux")(type "KiCad")(uri "${KIPRJMOD}/interfaces_aux/Power8GDI_Aux.kicad_sym")(options "")(descr "Knock and wideband candidates")))\n',encoding="utf-8")
     (HERE/"Power8GDI_Core.kicad_pro").write_text('{"meta":{"filename":"Power8GDI_Core.kicad_pro","version":1}}\n',encoding="utf-8")
-    for lib,relative in [('Power8GDI_GDIProtection','gdi/Power8GDI_GDIProtection'),('Power8GDI_WBO','wbo/Power8GDI_WBO')]:
+    for lib,relative in [('Power8GDI_GDIProtection','gdi/Power8GDI_GDIProtection'),('Power8GDI_WBO','wbo/Power8GDI_WBO'),('Power8GDI_LogicPower','logic_power/Power8GDI_LogicPower'),('Power8GDI_Motor4','motor4/Power8GDI_Motor4')]:
         table=(HERE/'sym-lib-table').read_text().rstrip()
         (HERE/'sym-lib-table').write_text(table[:-1]+f' (lib (name "{lib}")(type "KiCad")(uri "${{KIPRJMOD}}/{relative}.kicad_sym")(options "")(descr "Integrated reviewed source")))\n')
     footprint_dir=HERE/"Power8GDI_Core.pretty"
@@ -214,6 +205,8 @@ def generate():
     (HERE/"fp-lib-table").write_text(table[:-1]+' (lib (name "Power8GDI_Interfaces")(type "KiCad")(uri "${KIPRJMOD}/interfaces/Power8GDI_Interfaces.pretty")(options "")(descr "Interface source-derived footprints")))\n',encoding="utf-8")
     table=(HERE/'fp-lib-table').read_text().rstrip()
     (HERE/'fp-lib-table').write_text(table[:-1]+' (lib (name "Power8GDI_GDIProtection")(type "KiCad")(uri "${KIPRJMOD}/gdi/Power8GDI_GDIProtection.pretty")(options "")(descr "LM74800 floating exposed pad")))\n')
+    table=(HERE/'fp-lib-table').read_text().rstrip()
+    (HERE/'fp-lib-table').write_text(table[:-1]+' (lib (name "Power8GDI_Motor4")(type "KiCad")(uri "${KIPRJMOD}/motor4/Power8GDI_Motor4.pretty")(options "")(descr "Motor protection source footprint")))\n')
     manifest={"schema_version":1,"root_uuid":ROOT_ID,"project":"Power8GDI_Core","mcu":"STM32F767IIT6","qualification":"BLOCKED",
               "parts":[p for s in sheets for p in s.parts],"decoupling_placement":decoupling,"external_sheets":external,
               "added_gpio":[{"port":"PH2","pad":"43","net":"CAN1_STB","mode":"GPIO output; reset high-Z, external pullup"},{"port":"PH3","pad":"44","net":"LIN1_EN","mode":"GPIO output; reset high-Z, external pulldown"}],

@@ -38,21 +38,31 @@ def main():
     out=HERE/'board/review';out.mkdir(exist_ok=True,parents=True)
     summary={'release_status':'BLOCKED','qualification':'INCOMPLETE_ENGINEERING_REVIEW','image':IMAGE,'commands':commands}
     try:
-        for script in ['power_input/build_power_input.py','motor/build_motor.py','safety/generate.py','board/build_connector_schematic.py','interfaces/build_interfaces.py','interfaces_aux/build_aux.py','gdi/generate.py','gdi/build_protection.py','wbo/build_wbo.py','build_core_schematic.py']:
+        for script in ['logic_power/build_logic_power.py','logic_power/calculate.py','motor4/build_motor4.py','safety/generate.py','board/build_connector_schematic.py','interfaces/build_interfaces.py','interfaces_aux/build_aux.py','gdi/generate.py','gdi/build_protection.py','wbo/build_wbo.py','build_core_schematic.py']:
             host(BASE+script)
+        (HERE/'logic_power/work').mkdir(exist_ok=True)
         # GDI reference sources remain unchanged; re-export their actual leaves.
-        leaves=['power_input/power_input','motor/dbw_driver','motor/ewg_driver','safety/safety_gate','board/connectors','gdi/stage_a','gdi/stage_b','Power8GDI_Core']
-        leaves=leaves[:-1]+[s['name'] for s in json.loads((HERE/'interfaces/interfaces_manifest.json').read_text())['sheets']]+['interfaces_aux/'+s['name'] for s in json.loads((HERE/'interfaces_aux/interface.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'gdi/protection_manifest.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'wbo/interface.json').read_text())['sheets']]+['Power8GDI_Core']
+        leaves=['safety/safety_gate','board/connectors','gdi/stage_a','gdi/stage_b','Power8GDI_Core']
+        leaves=leaves[:-1]+[s['name'] for s in json.loads((HERE/'interfaces/interfaces_manifest.json').read_text())['sheets']]+['interfaces_aux/'+s['name'] for s in json.loads((HERE/'interfaces_aux/interface.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'gdi/protection_manifest.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'wbo/interface.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'logic_power/interface.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'motor4/interface.json').read_text())['sheets']]+['Power8GDI_Core']
         for name in leaves:
-            target='core.net' if name=='Power8GDI_Core' else name+'.xml'
+            target='core.net' if name=='Power8GDI_Core' else name.replace('logic_power/','logic_power/work/')+'.xml'
             cad('kicad-cli','sch','export','netlist','--format','kicadxml','-o',BASE+target,BASE+name+'.kicad_sch')
+        doc=ET.parse(HERE/'core.net')
+        with (HERE/'integrated_bom.csv').open('w',newline='',encoding='utf-8') as f:
+            w=csv.writer(f);w.writerow(['Reference','Value','Footprint','DNP','Sheet'])
+            for c in doc.findall('components/comp'):
+                w.writerow([c.get('ref'),c.findtext('value'),c.findtext('footprint'),any(p.get('name')=='dnp' for p in c.findall('property')),c.find('sheetpath').get('names')])
         summary['erc_native_exit']=cad('kicad-cli','sch','erc','--format','json','--exit-code-violations','-o',BASE+'core_erc.json',BASE+'Power8GDI_Core.kicad_sch',allowed=(0,5))
         host(BASE+'verify_core.py','--erc',BASE+'core_erc.json','--output',BASE+'core_checks.json')
         host(BASE+'verify_integration.py')
         host('-m','unittest','discover','-s',BASE+'core_tests','-v')
         cad('python3','-m','unittest','discover','-s',BASE+'board/tests','-v')
-        for script in ['outputs/check_outputs.py','interfaces/check_interfaces.py','interfaces_aux/test_aux.py','power_input/check_power_input.py','motor/check_motor.py','safety/test_safety.py','gdi/test_schematic.py']:
+        for script in ['outputs/check_outputs.py','interfaces/check_interfaces.py','interfaces_aux/test_aux.py','safety/test_safety.py','gdi/test_schematic.py']:
             host(BASE+script)
+        cad('python3',BASE+'logic_power/check_footprints.py')
+        host(BASE+'logic_power/check_logic_power.py')
+        host(BASE+'logic_power/check_logic_power.py',BASE+'core.net')
+        cad('python3',BASE+'motor4/verify_motor4.py')
         host(BASE+'interfaces/test_interfaces.py')
         host(BASE+'interfaces_aux/test_aux.py','--netlist',BASE+'core.net')
         host(BASE+'gdi/test_protection.py')

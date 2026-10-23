@@ -555,43 +555,6 @@
       "sheet": "core_mcu"
     },
     {
-      "ref": "U102",
-      "value": "TLV1117LV33DCYR",
-      "footprint": "Package_TO_SOT_SMD:SOT-223-3_TabPin2",
-      "pins": {
-        "3": "+5V_CORE",
-        "2": "+3V3",
-        "1": "GND"
-      },
-      "dnp": false,
-      "note": "TI SBVS160C; industrial candidate, not AEC-Q100; TAB=OUT pad2",
-      "sheet": "core_power"
-    },
-    {
-      "ref": "C125",
-      "value": "4.7u 16V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+5V_CORE",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Effective CIN>=1uF; next to pin3",
-      "sheet": "core_power"
-    },
-    {
-      "ref": "C126",
-      "value": "4.7u 16V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Effective COUT>=1uF; next to pad2; no reverse-power injection",
-      "sheet": "core_power"
-    },
-    {
       "ref": "U103",
       "value": "TCAN1042HGVDRQ1",
       "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
@@ -6857,10 +6820,6 @@
   ],
   "external_sheets": [
     {
-      "path": "power_input/power_input.kicad_sch",
-      "instance_uuid": "d420a403-004b-5e7c-9c34-8708b750eadb"
-    },
-    {
       "path": "gdi/stage_a.kicad_sch",
       "instance_uuid": "a05bbd47-81aa-5269-b9b3-0a4b9afd615c"
     },
@@ -6871,14 +6830,6 @@
     {
       "path": "safety/safety_gate.kicad_sch",
       "instance_uuid": "d3688535-de83-5779-ad3b-0e54c99cc6b1"
-    },
-    {
-      "path": "motor/dbw_driver.kicad_sch",
-      "instance_uuid": "a94361be-a999-5467-91e7-db9050858e28"
-    },
-    {
-      "path": "motor/ewg_driver.kicad_sch",
-      "instance_uuid": "98411c65-d6e9-551f-ab9e-b123f778692f"
     },
     {
       "path": "board/connectors.kicad_sch",
@@ -6943,6 +6894,42 @@
     {
       "path": "wbo/wbo2_heater_feed.kicad_sch",
       "instance_uuid": "cccd9144-7da5-572f-923b-d8d84647036e"
+    },
+    {
+      "path": "logic_power/logic_5v.kicad_sch",
+      "instance_uuid": "61ce6944-66a3-57e1-9204-f75037bec847"
+    },
+    {
+      "path": "logic_power/logic_3v3.kicad_sch",
+      "instance_uuid": "8693d79f-9e91-570e-9079-3a5aac066d8c"
+    },
+    {
+      "path": "motor4/dbw.kicad_sch",
+      "instance_uuid": "2f292352-1fdf-5f42-825f-c0663cc19609"
+    },
+    {
+      "path": "motor4/ewg.kicad_sch",
+      "instance_uuid": "001b4bf6-7a89-52c1-b644-282f1c625f1a"
+    },
+    {
+      "path": "motor4/motor3.kicad_sch",
+      "instance_uuid": "a1d874ec-6625-54ba-9750-9693738ed94b"
+    },
+    {
+      "path": "motor4/motor4.kicad_sch",
+      "instance_uuid": "fea959af-0a72-5725-83c1-637b9f1048bb"
+    },
+    {
+      "path": "motor4/spi.kicad_sch",
+      "instance_uuid": "653a7828-1657-5b98-8bae-fc4d9e0f409d"
+    },
+    {
+      "path": "motor4/motor13_power.kicad_sch",
+      "instance_uuid": "5fe5f832-a00e-5bb4-8ef3-f4d0733d2003"
+    },
+    {
+      "path": "motor4/motor24_power.kicad_sch",
+      "instance_uuid": "e1c53cf8-3531-5132-a5f0-e5fe28fd72f9"
     }
   ],
   "added_gpio": [

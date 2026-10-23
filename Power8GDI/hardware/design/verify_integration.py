@@ -12,6 +12,8 @@ sys.path.insert(0,str(HERE/'board'))
 from net_contract import read_netlists
 from interfaces.check_interfaces import electrical_checks as interface_electrical_checks
 from gdi.test_protection import protection_errors, gate_errors
+from motor4.verify_motor4 import electrical_errors as motor_electrical_errors
+from logic_power.check_logic_power import validate as validate_logic_power
 
 
 def verify(path):
@@ -20,7 +22,7 @@ def verify(path):
         if net is None and pins.get((ref,str(pin)),'').startswith('unconnected-'):return
         if pins.get((ref,str(pin)))!=net:errors.append(f'{ref}.{pin}: expected {net}; got {pins.get((ref,str(pin)))}')
     expected_refs=set()
-    for rel in ['core_manifest.json','power_input/power_input_manifest.json','motor/motor_manifest.json','safety/parts.json','board/connector_manifest.json','interfaces/interfaces_manifest.json','interfaces_aux/parts.json','gdi/protection_manifest.json','wbo/parts.json']:
+    for rel in ['core_manifest.json','logic_power/parts.json','motor4/parts.json','safety/parts.json','board/connector_manifest.json','interfaces/interfaces_manifest.json','interfaces_aux/parts.json','gdi/protection_manifest.json','wbo/parts.json']:
         manifest=json.loads((HERE/rel).read_text())
         entries=manifest if isinstance(manifest,list) else manifest['parts']
         for part in entries:
@@ -61,9 +63,14 @@ def verify(path):
         expect(f'Q{base}',2,f'HARNESS_IGN{i}')
     if 'U805' in parts:errors.append('Obsolete ignition buffer still populated')
     for pad,net in [(45,'SAFETY_HEARTBEAT'),(46,'SAFETY_ARM_REQUEST'),(83,'SAFETY_FAULT_N')]:expect('U101',pad,net)
-    for base,channel in [(900,'DBW'),(950,'EWG')]:
-        expect(f'U{base+10}',1,'HW_ACTUATOR_ENABLE')
-        expect(f'U{base+1}',3,channel+'_IN1_GATED');expect(f'U{base+1}',2,channel+'_IN2_GATED')
+    errors.extend(motor_electrical_errors({k:None if v.startswith('unconnected-') else v for k,v in pins.items()}))
+    for ref in ['U901','U951','U910','U960']:
+        if ref in parts: errors.append('Obsolete motor circuit remains: '+ref)
+    try:
+        validate_logic_power(pins,{r:p['value'] for r,p in parts.items()},
+                             {r:p['footprint'] for r,p in parts.items()},integrated=True)
+    except (AssertionError,KeyError) as error:
+        errors.append('Logic power contract: '+str(error))
     # MAX9924 Rev5 Mode A2 and 3V3 open-drain pull-up.
     for pad in [4,5,6,9]:expect('U731',pad,'GND')
     expect('U731',10,'+5V_CORE');expect('U731',7,'CRANK');expect('R792',1,'+3V3')

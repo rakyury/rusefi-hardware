@@ -34,8 +34,15 @@ class ConnectivityTests(unittest.TestCase):
     def test_reversed_supply_pad_is_rejected(self):
         def mutation(root):
             for node in root.findall("nets/net/node"):
-                if node.get("ref")=="U102" and node.get("pin")=="3": node.set("pin","1")
+                if node.get("ref")=="U5200" and node.get("pin")=="20": node.set("pin","1")
         self.assertTrue(self.check_mutation(mutation)["errors"])
+
+    def test_parallel_legacy_regulator_is_rejected(self):
+        def mutation(root):
+            comp=ET.SubElement(root.find('components'),'comp',ref='U102')
+            ET.SubElement(comp,'value').text='TLV1117LV33DCYR'
+            ET.SubElement(comp,'footprint').text='Package_TO_SOT_SMD:SOT-223-3_TabPin2'
+        self.assertTrue(self.check_mutation(mutation)['errors'])
 
     def test_ignition_collector_swapped_to_gate_is_rejected(self):
         def mutation(root):
@@ -44,7 +51,7 @@ class ConnectivityTests(unittest.TestCase):
         self.assertTrue(self.check_mutation(mutation)["errors"])
 
     def test_incompatible_root_tvs_is_rejected(self):
-        def mutation(root): root.find("components/comp[@ref='D502']/value").text="SMBJ33CA"
+        def mutation(root): root.find("components/comp[@ref='D5201']/value").text="SMBJ33CA"
         self.assertTrue(self.check_mutation(mutation)["errors"])
 
 

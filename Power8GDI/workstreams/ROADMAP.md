@@ -5,9 +5,9 @@
 **Review branch:** `codex/power8gdi-resume-20261021`
 
 **Review:** https://github.com/rakyury/rusefi-hardware/pull/1 (draft)
-**Checkpoint:** 2026-10-21, connected electrical engineering review; manufacturing release BLOCKED.
+**Checkpoint:** 2026-10-23, Huge/GDI8 scope and revised electrical integration in progress; manufacturing release BLOCKED.
 
-Latest: [20-sheet / 631-component electrical integration](../docs/INTEGRATION_2026_10_21_ELECTRICAL.md). Actual review PCB: 499 unconnected items, 752 DRC findings; no full-routing claim. Earlier offline milestones below remain historical.
+Latest: [current engineering status](../docs/DESIGN_STATUS.md) and [approved Huge/GDI8 scope](../docs/SCOPE_2026_10_23_HUGE_GDI8.md). The [20-sheet / 631-component review](../docs/INTEGRATION_2026_10_21_ELECTRICAL.md), its 499 unconnected items and 752 DRC findings describe the earlier board only. The table below records historical milestones, not completion of the expanded hardware.
 
 Seven specialist roles were executed in dedicated worktrees using three actual
 concurrent worker slots, with integration as the eighth role. Roles were queued

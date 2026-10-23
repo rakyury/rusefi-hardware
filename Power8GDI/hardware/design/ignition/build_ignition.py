@@ -37,7 +37,7 @@ def symbols():
             {"GND":"power_in","V+":"power_in","SET":"passive","OUT":"output"}, "Package_TO_SOT_SMD:TSOT-23-6"),
         "and": device("SN74LVC1G11B_Q1", [(1,"A"),(2,"GND"),(3,"B"),(4,"Y"),(5,"VCC"),(6,"C")],
             {"GND":"power_in","VCC":"power_in","Y":"output"}, "Package_TO_SOT_SMD:SOT-363_SC-70-6"),
-        "buffer": device("SN74LVC1G17_Q1", [(1,"NC"),(2,"A"),(3,"GND"),(4,"Y"),(5,"VCC")],
+        "buffer": device("IGN_SN74LVC1G17_Q1", [(1,"NC"),(2,"A"),(3,"GND"),(4,"Y"),(5,"VCC")],
             {"NC":"no_connect","GND":"power_in","VCC":"power_in","Y":"output"}, "Package_TO_SOT_SMD:SOT-23-5"),
         "driver": device("UCC27524AQDRQ1", [(1,"ENA"),(2,"INA"),(3,"GND"),(4,"INB"),(5,"OUTB"),(6,"VDD"),(7,"OUTA"),(8,"ENB")],
             {"GND":"power_in","VDD":"power_in","OUTA":"output","OUTB":"output"}, "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"),
