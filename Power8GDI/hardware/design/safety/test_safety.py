@@ -13,12 +13,13 @@ def lookup(tree):
 
 def gate_errors(tree):
     actual=lookup(tree);errors=[]
-    for pin in ['1','19']:
-        if actual.get(('U805',pin))!='HW_ACTUATOR_ENABLE_N':errors.append('unsafe_oe')
-    for i,(a,y) in enumerate(zip([2,4,6,8,11,13,15,17],[18,16,14,12,9,7,5,3]),1):
-        for pin,net in [(str(a),f'IGN{i}'),(str(y),f'IGN{i}_GATED')]:
-            if actual.get(('U805',pin))!=net:errors.append('wrong_channel')
-        if actual.get((f'R{820+i}','1'))!=f'IGN{i}_GATED' or actual.get((f'R{820+i}','2'))!='GND':errors.append('missing_pulldown')
+    expected={('R6500','1'):'IGN_OC_OK',('R6500','2'):'HW_KILL_N',
+        ('U802','3'):'HW_KILL_N',('U803','2'):'SAFETY_FAULT_N',
+        ('U803','4'):'SAFETY_CLEAR_N',('U804','6'):'SAFETY_CLEAR_N',
+        ('R805','1'):'HW_ACTUATOR_ENABLE_N',('R805','2'):'+3V3',
+        ('R806','1'):'HW_ACTUATOR_ENABLE',('R806','2'):'GND'}
+    for key,net in expected.items():
+        if actual.get(key)!=net:errors.append(str(key)+' expected '+net)
     return errors
 
 def step(q,previous_arm,arm,fault_n):
@@ -31,8 +32,8 @@ class SafetyTests(unittest.TestCase):
         cls.tree=ET.parse(HERE/'safety_gate.xml');cls.pins=lookup(cls.tree)
 
     def test_all_intended_nets_survive_export(self):
-        parts=json.loads((HERE/'parts.json').read_text())
-        self.assertEqual(len(self.tree.findall('.//components/comp')),33)
+        parts=json.loads((HERE/'parts.json').read_text(encoding='utf-8'))
+        self.assertEqual(len(self.tree.findall('.//components/comp')),16)
         for p in parts:
             comp=self.tree.find(f'.//components/comp[@ref="{p["ref"]}"]')
             self.assertEqual(comp.findtext('value'),p['value'])
@@ -53,26 +54,21 @@ class SafetyTests(unittest.TestCase):
         for pin,net in expected.items():self.assertEqual(self.pins[('U804',pin)],net)
         self.assertEqual(self.pins[('U803','4')],'SAFETY_CLEAR_N')
 
-    def test_eight_gate_channels_and_default_disable(self):
+    def test_overcurrent_fault_reaches_global_latch(self):
         self.assertEqual(gate_errors(self.tree),[])
-        self.assertEqual(self.pins[('R805','1')],'HW_ACTUATOR_ENABLE_N')
-        self.assertEqual(self.pins[('R805','2')],'+3V3')
-        self.assertEqual(self.tree.find('.//components/comp[@ref="U805"]/value').text,'SN74LVC244AQPWRQ1')
+        self.assertEqual(self.tree.find('.//components/comp[@ref="R6500"]/value').text,'0R')
+        self.assertIsNone(self.tree.find('.//components/comp[@ref="U805"]'))
 
-    def test_regression_catches_oe_polarity_swap_and_missing_pd(self):
-        tree=deepcopy(self.tree)
-        n=tree.find('.//nets/net/node[@ref="U805"][@pin="1"]')
-        parent=next(x for x in tree.findall('.//nets/net') if n in list(x));parent.remove(n)
-        tree.find('.//nets/net[@name="HW_ACTUATOR_ENABLE"]').append(n)
-        self.assertIn('unsafe_oe',gate_errors(tree))
-        tree=deepcopy(self.tree)
-        n=tree.find('.//nets/net/node[@ref="R821"][@pin="2"]')
-        next(x for x in tree.findall('.//nets/net') if n in list(x)).remove(n)
-        self.assertIn('missing_pulldown',gate_errors(tree))
+    def test_regression_catches_disconnected_fault_and_missing_default(self):
+        for ref,pin in [('R6500','2'),('R806','2'),('U804','6')]:
+            tree=deepcopy(self.tree)
+            n=tree.find(f'.//nets/net/node[@ref="{ref}"][@pin="{pin}"]')
+            next(x for x in tree.findall('.//nets/net') if n in list(x)).remove(n)
+            self.assertTrue(gate_errors(tree))
 
     def test_every_electrical_pin_exists_in_footprint(self):
-        manifest=json.loads((HERE/'footprint_manifest.json').read_text())
-        for p in json.loads((HERE/'parts.json').read_text()):
+        manifest=json.loads((HERE/'footprint_manifest.json').read_text(encoding='utf-8'))
+        for p in json.loads((HERE/'parts.json').read_text(encoding='utf-8')):
             self.assertFalse(set(p['pins'])-set(manifest[p['footprint']]['pads']),p['ref'])
         self.assertIn('9',manifest['Package_SON:VSON-8-1EP_3x3mm_P0.65mm_EP1.6x2.4mm']['pads'])
 
@@ -90,7 +86,7 @@ class SafetyTests(unittest.TestCase):
         for raw in range(256):self.assertEqual(raw if step(1,1,1,False) else 0,0)
 
     def test_watchdog_cap_margin_and_timing(self):
-        data=json.loads((HERE/'interface.json').read_text())['watchdog_ms']
+        data=json.loads((HERE/'interface.json').read_text(encoding='utf-8'))['watchdog_ms']
         self.assertGreaterEqual(data['capacitor_pf']*.99,100)
         self.assertAlmostEqual(data['nominal'],64.288)
         self.assertLess(data['with_cap_tolerance_min'],data['nominal'])
@@ -98,6 +94,6 @@ class SafetyTests(unittest.TestCase):
 
     def test_no_pt_enable_or_unqualified_rail_connection(self):
         self.assertFalse(any('DRVEN' in x or 'VBAT' in x or '5V' in x for x in self.pins.values()))
-        self.assertEqual(json.loads((HERE/'interface.json').read_text())['release_status'],'BLOCKED')
+        self.assertEqual(json.loads((HERE/'interface.json').read_text(encoding='utf-8'))['release_status'],'BLOCKED')
 
 if __name__=='__main__':unittest.main(verbosity=2)

@@ -9,12 +9,12 @@ NETLIST=None
 def load():
     if NETLIST:
         tree=ET.parse(NETLIST)
-        return {s['name']:tree for s in json.loads((HERE/'interface.json').read_text())['sheets']}
-    return {s['name']:ET.parse(HERE/(s['name']+'.xml')) for s in json.loads((HERE/'interface.json').read_text())['sheets']}
+        return {s['name']:tree for s in json.loads((HERE/'interface.json').read_text(encoding='utf-8'))['sheets']}
+    return {s['name']:ET.parse(HERE/(s['name']+'.xml')) for s in json.loads((HERE/'interface.json').read_text(encoding='utf-8'))['sheets']}
 def lookup(tree):return {(p.attrib['ref'],p.attrib['pin']):n.attrib['name'] for n in tree.findall('.//nets/net') for p in n.findall('node')}
 class AuxTests(unittest.TestCase):
     @classmethod
-    def setUpClass(cls):cls.trees=load();cls.pins={s:lookup(t) for s,t in cls.trees.items()};cls.parts=json.loads((HERE/'parts.json').read_text())
+    def setUpClass(cls):cls.trees=load();cls.pins={s:lookup(t) for s,t in cls.trees.items()};cls.parts=json.loads((HERE/'parts.json').read_text(encoding='utf-8'))
     def test_manifest_export_parity_and_unique_refs(self):
         refs=[p['ref'] for p in self.parts];self.assertEqual(len(refs),len(set(refs)))
         for part in self.parts:
@@ -36,16 +36,16 @@ class AuxTests(unittest.TestCase):
         for pin in ('7','5','3'):self.assertTrue(p[('U1702',pin)].startswith('unconnected-'))
         self.assertFalse(any(net in {'WBO1_CS_N','WBO2_CS_N','WBO_ADC_CS_N'} for net in p.values()))
     def test_actual_footprint_pad_numbers_cover_all_pins(self):
-        manifest=json.loads((HERE/'footprint_manifest.json').read_text())
+        manifest=json.loads((HERE/'footprint_manifest.json').read_text(encoding='utf-8'))
         for part in self.parts:self.assertFalse(set(part['pins'])-set(manifest[part['footprint']]['pads']),part['ref'])
     def test_resource_and_release_contract(self):
-        m=json.loads((HERE/'interface.json').read_text())
+        m=json.loads((HERE/'interface.json').read_text(encoding='utf-8'))
         self.assertEqual(m['gpio'],['KNOCK_CS_N','KNOCK_INT_HOLD'])
         self.assertEqual(m['mcu_adc_required'],0)
         self.assertEqual(m['release_status'],'BLOCKED')
         self.assertEqual([x['name'] for x in m['sheets']],['knock_dual'])
     def test_primary_source_provenance_and_upstream_blobs(self):
-        m=json.loads((HERE/'sources.json').read_text());self.assertEqual(len(m['documents']),7)
+        m=json.loads((HERE/'sources.json').read_text(encoding='utf-8'));self.assertEqual(len(m['documents']),7)
         for doc in m['documents']:
             self.assertTrue(doc['url'].startswith('https://'));self.assertEqual(len(doc['sha256']),64);self.assertGreater(doc['bytes'],10000)
         for item in m['source_files']:

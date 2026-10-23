@@ -819,36 +819,104 @@
       "sheet": "core_comms"
     },
     {
-      "ref": "U110",
-      "value": "MIC4427YM",
-      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "ref": "U5400",
+      "value": "SN74LVC1G17QDBVRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-23-5",
       "pins": {
-        "2": "IGN1_GATED",
-        "4": "IGN2_GATED",
-        "7": "IGN1_BUFFER",
-        "5": "IGN2_BUFFER",
-        "6": "+5V_CORE",
-        "3": "GND"
+        "2": "IGN_OC_OK",
+        "3": "GND",
+        "4": "IGN_OC_OK_CLEAN",
+        "5": "+3V3"
       },
       "dnp": false,
-      "note": "Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP",
-      "sheet": "core_ignition"
+      "note": "",
+      "sheet": "ignition/ignition_common"
     },
     {
-      "ref": "C140",
-      "value": "100n 16V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "ref": "U5401",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
       "pins": {
-        "1": "+5V_CORE",
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "GND",
+        "3": "IGN_OC_OK_CLEAN",
+        "4": "IGN_SAFE_EN",
+        "5": "+3V3",
+        "6": "+3V3"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "R5400",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN_OC_OK"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "R5401",
+      "value": "1k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN_SAFE_EN",
         "2": "GND"
       },
       "dnp": false,
-      "note": "Close Udriver pin6/3",
-      "sheet": "core_ignition"
+      "note": "3.3mA load; holds driver EN below threshold against internal 200k typical pullups when logic is unpowered.",
+      "sheet": "ignition/ignition_common"
     },
     {
-      "ref": "C141",
-      "value": "1u 16V X7R",
+      "ref": "C5400",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5401",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "U5402",
+      "value": "UCC27524AQDRQ1",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+      "pins": {
+        "1": "IGN_SAFE_EN",
+        "2": "IGN1_GUARDED",
+        "3": "GND",
+        "4": "IGN2_GUARDED",
+        "5": "IGN2_DRIVE",
+        "6": "+5V_CORE",
+        "7": "IGN1_DRIVE",
+        "8": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current.",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5402",
+      "value": "100n 25V X7R",
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pins": {
         "1": "+5V_CORE",
@@ -856,111 +924,11 @@
       },
       "dnp": false,
       "note": "",
-      "sheet": "core_ignition"
+      "sheet": "ignition/ignition_common"
     },
     {
-      "ref": "R120",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN1_GATED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Buffer input default low after hardware permission gate",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R128",
-      "value": "100R DNP",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN1_BUFFER",
-        "2": "IGN1_LOGIC_OUT"
-      },
-      "dnp": true,
-      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R136",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN1_LOGIC_OUT",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R121",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN2_GATED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Buffer input default low after hardware permission gate",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R129",
-      "value": "100R DNP",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN2_BUFFER",
-        "2": "IGN2_LOGIC_OUT"
-      },
-      "dnp": true,
-      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R137",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN2_LOGIC_OUT",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "U111",
-      "value": "MIC4427YM",
-      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
-      "pins": {
-        "2": "IGN3_GATED",
-        "4": "IGN4_GATED",
-        "7": "IGN3_BUFFER",
-        "5": "IGN4_BUFFER",
-        "6": "+5V_CORE",
-        "3": "GND"
-      },
-      "dnp": false,
-      "note": "Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "C142",
-      "value": "100n 16V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+5V_CORE",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Close Udriver pin6/3",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "C143",
-      "value": "1u 16V X7R",
+      "ref": "C5403",
+      "value": "1u 25V X7R",
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pins": {
         "1": "+5V_CORE",
@@ -968,111 +936,29 @@
       },
       "dnp": false,
       "note": "",
-      "sheet": "core_ignition"
+      "sheet": "ignition/ignition_common"
     },
     {
-      "ref": "R122",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN3_GATED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Buffer input default low after hardware permission gate",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R130",
-      "value": "100R DNP",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN3_BUFFER",
-        "2": "IGN3_LOGIC_OUT"
-      },
-      "dnp": true,
-      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R138",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN3_LOGIC_OUT",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R123",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN4_GATED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Buffer input default low after hardware permission gate",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R131",
-      "value": "100R DNP",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN4_BUFFER",
-        "2": "IGN4_LOGIC_OUT"
-      },
-      "dnp": true,
-      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R139",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN4_LOGIC_OUT",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "U112",
-      "value": "MIC4427YM",
+      "ref": "U5403",
+      "value": "UCC27524AQDRQ1",
       "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
       "pins": {
-        "2": "IGN5_GATED",
-        "4": "IGN6_GATED",
-        "7": "IGN5_BUFFER",
-        "5": "IGN6_BUFFER",
+        "1": "IGN_SAFE_EN",
+        "2": "IGN3_GUARDED",
+        "3": "GND",
+        "4": "IGN4_GUARDED",
+        "5": "IGN4_DRIVE",
         "6": "+5V_CORE",
-        "3": "GND"
+        "7": "IGN3_DRIVE",
+        "8": "IGN_SAFE_EN"
       },
       "dnp": false,
-      "note": "Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP",
-      "sheet": "core_ignition"
+      "note": "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current.",
+      "sheet": "ignition/ignition_common"
     },
     {
-      "ref": "C144",
-      "value": "100n 16V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+5V_CORE",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Close Udriver pin6/3",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "C145",
-      "value": "1u 16V X7R",
+      "ref": "C5404",
+      "value": "100n 25V X7R",
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pins": {
         "1": "+5V_CORE",
@@ -1080,111 +966,11 @@
       },
       "dnp": false,
       "note": "",
-      "sheet": "core_ignition"
+      "sheet": "ignition/ignition_common"
     },
     {
-      "ref": "R124",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN5_GATED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Buffer input default low after hardware permission gate",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R132",
-      "value": "100R DNP",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN5_BUFFER",
-        "2": "IGN5_LOGIC_OUT"
-      },
-      "dnp": true,
-      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R140",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN5_LOGIC_OUT",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R125",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN6_GATED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Buffer input default low after hardware permission gate",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R133",
-      "value": "100R DNP",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN6_BUFFER",
-        "2": "IGN6_LOGIC_OUT"
-      },
-      "dnp": true,
-      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R141",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN6_LOGIC_OUT",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "U113",
-      "value": "MIC4427YM",
-      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
-      "pins": {
-        "2": "IGN7_GATED",
-        "4": "IGN8_GATED",
-        "7": "IGN7_BUFFER",
-        "5": "IGN8_BUFFER",
-        "6": "+5V_CORE",
-        "3": "GND"
-      },
-      "dnp": false,
-      "note": "Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "C146",
-      "value": "100n 16V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+5V_CORE",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "Close Udriver pin6/3",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "C147",
-      "value": "1u 16V X7R",
+      "ref": "C5405",
+      "value": "1u 25V X7R",
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pins": {
         "1": "+5V_CORE",
@@ -1192,79 +978,1747 @@
       },
       "dnp": false,
       "note": "",
-      "sheet": "core_ignition"
+      "sheet": "ignition/ignition_common"
     },
     {
-      "ref": "R126",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "ref": "U5404",
+      "value": "UCC27524AQDRQ1",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
       "pins": {
-        "1": "IGN7_GATED",
+        "1": "IGN_SAFE_EN",
+        "2": "IGN5_GUARDED",
+        "3": "GND",
+        "4": "IGN6_GUARDED",
+        "5": "IGN6_DRIVE",
+        "6": "+5V_CORE",
+        "7": "IGN5_DRIVE",
+        "8": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current.",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5406",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
         "2": "GND"
       },
       "dnp": false,
-      "note": "Buffer input default low after hardware permission gate",
-      "sheet": "core_ignition"
+      "note": "",
+      "sheet": "ignition/ignition_common"
     },
     {
-      "ref": "R134",
-      "value": "100R DNP",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "ref": "C5407",
+      "value": "1u 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pins": {
-        "1": "IGN7_BUFFER",
-        "2": "IGN7_LOGIC_OUT"
-      },
-      "dnp": true,
-      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R142",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN7_LOGIC_OUT",
+        "1": "+5V_CORE",
         "2": "GND"
       },
       "dnp": false,
-      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
-      "sheet": "core_ignition"
+      "note": "",
+      "sheet": "ignition/ignition_common"
     },
     {
-      "ref": "R127",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "ref": "U5405",
+      "value": "UCC27524AQDRQ1",
+      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
       "pins": {
-        "1": "IGN8_GATED",
+        "1": "IGN_SAFE_EN",
+        "2": "IGN7_GUARDED",
+        "3": "GND",
+        "4": "IGN8_GUARDED",
+        "5": "IGN8_DRIVE",
+        "6": "+5V_CORE",
+        "7": "IGN7_DRIVE",
+        "8": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current.",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "C5408",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+5V_CORE",
         "2": "GND"
       },
       "dnp": false,
-      "note": "Buffer input default low after hardware permission gate",
-      "sheet": "core_ignition"
+      "note": "",
+      "sheet": "ignition/ignition_common"
     },
     {
-      "ref": "R135",
-      "value": "100R DNP",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "ref": "C5409",
+      "value": "1u 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pins": {
-        "1": "IGN8_BUFFER",
-        "2": "IGN8_LOGIC_OUT"
-      },
-      "dnp": true,
-      "note": "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",
-      "sheet": "core_ignition"
-    },
-    {
-      "ref": "R143",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN8_LOGIC_OUT",
+        "1": "+5V_CORE",
         "2": "GND"
       },
       "dnp": false,
-      "note": "Harnesslogic pulldown; no active drive with DNPserieslink",
-      "sheet": "core_ignition"
+      "note": "",
+      "sheet": "ignition/ignition_common"
+    },
+    {
+      "ref": "U5420",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN1",
+        "2": "GND",
+        "3": "IGN1_SET",
+        "4": "IGN1_DIV",
+        "5": "+3V3",
+        "6": "IGN1_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "U5421",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN1",
+        "2": "GND",
+        "3": "IGN1_WINDOW",
+        "4": "IGN1_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5420",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5421",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5422",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN1_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5423",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5424",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "C5420",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "C5421",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "Q5420",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN1_GATE",
+        "2": "HARNESS_IGN1",
+        "3": "IGN1_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5425",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_DRIVE",
+        "2": "IGN1_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5426",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_GATE",
+        "2": "IGN1_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5427",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN1_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "U5422",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN1_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN1_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "R5428",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN1_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "C5422",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_1"
+    },
+    {
+      "ref": "U5440",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN2",
+        "2": "GND",
+        "3": "IGN2_SET",
+        "4": "IGN2_DIV",
+        "5": "+3V3",
+        "6": "IGN2_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "U5441",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN2",
+        "2": "GND",
+        "3": "IGN2_WINDOW",
+        "4": "IGN2_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5440",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5441",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5442",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN2_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5443",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5444",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "C5440",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "C5441",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "Q5440",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN2_GATE",
+        "2": "HARNESS_IGN2",
+        "3": "IGN2_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5445",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_DRIVE",
+        "2": "IGN2_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5446",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_GATE",
+        "2": "IGN2_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5447",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN2_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "U5442",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN2_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN2_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "R5448",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN2_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "C5442",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_2"
+    },
+    {
+      "ref": "U5460",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN3",
+        "2": "GND",
+        "3": "IGN3_SET",
+        "4": "IGN3_DIV",
+        "5": "+3V3",
+        "6": "IGN3_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "U5461",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN3",
+        "2": "GND",
+        "3": "IGN3_WINDOW",
+        "4": "IGN3_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5460",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5461",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5462",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN3_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5463",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5464",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "C5460",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "C5461",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "Q5460",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN3_GATE",
+        "2": "HARNESS_IGN3",
+        "3": "IGN3_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5465",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_DRIVE",
+        "2": "IGN3_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5466",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_GATE",
+        "2": "IGN3_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5467",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN3_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "U5462",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN3_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN3_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "R5468",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN3_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "C5462",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_3"
+    },
+    {
+      "ref": "U5480",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN4",
+        "2": "GND",
+        "3": "IGN4_SET",
+        "4": "IGN4_DIV",
+        "5": "+3V3",
+        "6": "IGN4_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "U5481",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN4",
+        "2": "GND",
+        "3": "IGN4_WINDOW",
+        "4": "IGN4_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5480",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5481",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5482",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN4_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5483",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5484",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "C5480",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "C5481",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "Q5480",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN4_GATE",
+        "2": "HARNESS_IGN4",
+        "3": "IGN4_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5485",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_DRIVE",
+        "2": "IGN4_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5486",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_GATE",
+        "2": "IGN4_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5487",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN4_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "U5482",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN4_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN4_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "R5488",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN4_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "C5482",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_4"
+    },
+    {
+      "ref": "U5500",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN5",
+        "2": "GND",
+        "3": "IGN5_SET",
+        "4": "IGN5_DIV",
+        "5": "+3V3",
+        "6": "IGN5_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "U5501",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN5",
+        "2": "GND",
+        "3": "IGN5_WINDOW",
+        "4": "IGN5_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5500",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5501",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5502",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN5_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5503",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5504",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "C5500",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "C5501",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "Q5500",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN5_GATE",
+        "2": "HARNESS_IGN5",
+        "3": "IGN5_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5505",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_DRIVE",
+        "2": "IGN5_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5506",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_GATE",
+        "2": "IGN5_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5507",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN5_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "U5502",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN5_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN5_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "R5508",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN5_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "C5502",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_5"
+    },
+    {
+      "ref": "U5520",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN6",
+        "2": "GND",
+        "3": "IGN6_SET",
+        "4": "IGN6_DIV",
+        "5": "+3V3",
+        "6": "IGN6_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "U5521",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN6",
+        "2": "GND",
+        "3": "IGN6_WINDOW",
+        "4": "IGN6_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5520",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5521",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5522",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN6_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5523",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5524",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "C5520",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "C5521",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "Q5520",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN6_GATE",
+        "2": "HARNESS_IGN6",
+        "3": "IGN6_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5525",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_DRIVE",
+        "2": "IGN6_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5526",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_GATE",
+        "2": "IGN6_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5527",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN6_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "U5522",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN6_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN6_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "R5528",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN6_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "C5522",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_6"
+    },
+    {
+      "ref": "U5540",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN7",
+        "2": "GND",
+        "3": "IGN7_SET",
+        "4": "IGN7_DIV",
+        "5": "+3V3",
+        "6": "IGN7_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "U5541",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN7",
+        "2": "GND",
+        "3": "IGN7_WINDOW",
+        "4": "IGN7_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5540",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5541",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5542",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN7_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5543",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5544",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "C5540",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "C5541",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "Q5540",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN7_GATE",
+        "2": "HARNESS_IGN7",
+        "3": "IGN7_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5545",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_DRIVE",
+        "2": "IGN7_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5546",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_GATE",
+        "2": "IGN7_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5547",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN7_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "U5542",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN7_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN7_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "R5548",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN7_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "C5542",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_7"
+    },
+    {
+      "ref": "U5560",
+      "value": "LTC6993HS6-1#WTRPBF",
+      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
+      "pins": {
+        "1": "IGN8",
+        "2": "GND",
+        "3": "IGN8_SET",
+        "4": "IGN8_DIV",
+        "5": "+3V3",
+        "6": "IGN8_WINDOW"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "U5561",
+      "value": "SN74LVC1G11BDCKRQ1",
+      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
+      "pins": {
+        "1": "IGN8",
+        "2": "GND",
+        "3": "IGN8_WINDOW",
+        "4": "IGN8_GUARDED",
+        "5": "+3V3",
+        "6": "IGN_SAFE_EN"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5560",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5561",
+      "value": "147k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_SET",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5562",
+      "value": "100k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "IGN8_DIV"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5563",
+      "value": "39.2k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_DIV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5564",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_GUARDED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "C5560",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "C5561",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "Q5560",
+      "value": "STGB18N40LZT4",
+      "footprint": "Package_TO_SOT_SMD:TO-263-2",
+      "pins": {
+        "1": "IGN8_GATE",
+        "2": "HARNESS_IGN8",
+        "3": "IGN8_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5565",
+      "value": "10R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_DRIVE",
+        "2": "IGN8_GATE"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5566",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_GATE",
+        "2": "IGN8_SHUNT_HI"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5567",
+      "value": "WSLP2512R0100FEA",
+      "footprint": "Resistor_SMD:R_2512_6332Metric",
+      "pins": {
+        "1": "IGN8_SHUNT_HI",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "U5562",
+      "value": "INA300AQDGSRQ1",
+      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
+      "pins": {
+        "1": "IGN8_SHUNT_HI",
+        "2": "GND",
+        "3": "IGN8_ILIMIT",
+        "4": "+3V3",
+        "5": "IGN_OC_OK",
+        "6": "+3V3",
+        "8": "GND",
+        "9": "+3V3"
+      },
+      "dnp": false,
+      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "R5568",
+      "value": "4.99k 1% 25ppm",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "IGN8_ILIMIT",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
+      "sheet": "ignition/ignition_8"
+    },
+    {
+      "ref": "C5562",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "ignition/ignition_8"
     },
     {
       "ref": "R700",

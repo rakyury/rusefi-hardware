@@ -16,7 +16,10 @@ BASE='Power8GDI/hardware/design/'
 IMAGE='kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729'
 
 def main():
+    # Generated KiCad text and primary-source comments are UTF-8 on Windows too.
+    os.environ['PYTHONUTF8']='1'
     parser=argparse.ArgumentParser();parser.add_argument('--release',action='store_true');parser.add_argument('--skip-board-build',action='store_true')
+    parser.add_argument('--schematic-only',action='store_true',help='Validate the current schematic without claiming verification of an older PCB')
     args=parser.parse_args();commands=[]
     def run(cmd,allowed=(0,)):
         r=subprocess.run(cmd,cwd=REPO,text=True,encoding='utf-8',errors='replace',capture_output=True)
@@ -56,6 +59,16 @@ def main():
         cad('python3',BASE+'wbo/verify_wbo.py')
         host('Power8GDI/hardware/audit_resources.py','--gate','structure','--output','Power8GDI/hardware/resource_audit_report.json')
         host('-m','unittest','discover','-s','Power8GDI/hardware/tests','-v')
+        host(BASE+'ignition/test_ignition.py')
+        if args.schematic_only:
+            erc=json.loads((HERE/'core_erc.json').read_text())
+            summary['erc_counts']=dict(Counter(v['type'] for s in erc['sheets'] for v in s['violations']))
+            summary['structural_checks']='PASS'
+            summary['scope']='SCHEMATIC_ONLY; PCB not built or verified by this run'
+            summary['source_sha256']={'core.net':hashlib.sha256((HERE/'core.net').read_bytes()).hexdigest()}
+            (HERE/'review_validation.json').write_text(json.dumps(summary,indent=2)+'\n')
+            print(json.dumps({k:v for k,v in summary.items() if k!='commands'},indent=2))
+            return 2 if args.release else 0
         if not args.skip_board_build:cad('python3',BASE+'board/build_board.py')
         board=BASE+'board/review/Power8GDI_Review.kicad_pcb'
         cad('python3',BASE+'board/verify_board.py',board,BASE+'core.net')

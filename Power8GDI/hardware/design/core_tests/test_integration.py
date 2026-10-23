@@ -19,7 +19,8 @@ class IntegrationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             path=Path(folder)/'mutant.xml';tree.write(path);return module.verify(path)
     def test_actual_export(self):self.assertEqual(module.verify(HERE/'core.net')['errors'],[])
-    def test_ignition_bypass_rejected(self):self.assertTrue(self.mutate('U110',2,'IGN1')['errors'])
+    def test_ignition_bypass_rejected(self):self.assertTrue(self.mutate('U5402',2,'IGN1')['errors'])
+    def test_overcurrent_global_shutdown_bypass_rejected(self):self.assertTrue(self.mutate('R6500',2,'+3V3')['errors'])
     def test_motor_permission_bypass_rejected(self):self.assertTrue(self.mutate('U910',1,'+3V3')['errors'])
     def test_wrong_vr_mode_rejected(self):self.assertTrue(self.mutate('U731',6,'+5V_CORE')['errors'])
     def test_mcu_harness_bypass_rejected(self):self.assertTrue(self.mutate('U101',40,'HARNESS_TPS1')['errors'])

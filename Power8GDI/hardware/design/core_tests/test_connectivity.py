@@ -37,11 +37,10 @@ class ConnectivityTests(unittest.TestCase):
                 if node.get("ref")=="U102" and node.get("pin")=="3": node.set("pin","1")
         self.assertTrue(self.check_mutation(mutation)["errors"])
 
-    def test_fitted_ignition_output_is_rejected(self):
+    def test_ignition_collector_swapped_to_gate_is_rejected(self):
         def mutation(root):
-            comp=root.find("components/comp[@ref='R128']")
-            for item in list(comp.findall("property")):
-                if item.get("name")=="dnp": comp.remove(item)
+            node=root.find("nets/net/node[@ref='Q5420'][@pin='2']")
+            node.set('pin','1')
         self.assertTrue(self.check_mutation(mutation)["errors"])
 
     def test_incompatible_root_tvs_is_rejected(self):

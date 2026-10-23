@@ -55,9 +55,10 @@ def verify(xml_path, manifest_path=HERE/"core_manifest.json", erc_path=None):
             errors.append("Reserved oscillator pad unexpectedly connected: "+str(pad))
     if len({pin for ref,pin in endpoints if ref=="U101"})!=176: errors.append("Not all 176 MCU pads exported")
     for i in range(1,9):
-        ref="R"+str(127+i)
-        if endpoints.get((ref,"2"))!=f"IGN{i}_LOGIC_OUT": errors.append("Ignition boundary "+str(i))
-        if any(r=="U101" for r,p in net_nodes.get(f"IGN{i}_LOGIC_OUT",set())): errors.append("MCU directly on ignition harness")
+        ref="Q"+str(5420+(i-1)*20)
+        if endpoints.get((ref,"2"))!=f"HARNESS_IGN{i}": errors.append("Ignition collector boundary "+str(i))
+        if endpoints.get((ref,"1"))!=f"IGN{i}_GATE": errors.append("Ignition gate bypass "+str(i))
+        if any(r=="U101" for r,p in net_nodes.get(f"HARNESS_IGN{i}",set())): errors.append("MCU directly on ignition harness")
     # Fail if the integration silently restores the earlier incompatible 33 V TVS.
     if "D502" in components and "SMBJ24CA" not in components["D502"].findtext("value",""):
         errors.append("LIN supply requires reviewed SMBJ24CA root protection candidate")

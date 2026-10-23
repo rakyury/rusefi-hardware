@@ -2,11 +2,11 @@
 <export version="E">
   <design>
     <source>/src/Power8GDI/hardware/design/safety/safety_gate.kicad_sch</source>
-    <date>2026-10-23T17:14:21+0000</date>
+    <date>2026-10-23T17:23:58+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
-        <title>Watchdog, latched inhibit and eight ignition gates</title>
+        <title>Watchdog and latched global actuator inhibit</title>
         <company/>
         <rev>Engineering draft 0.1</rev>
         <date/>
@@ -87,22 +87,6 @@
       <property name="Sheetfile" value="safety_gate.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a33ead10-91e9-5ccd-afc2-d9103fad5112</tstamps>
-    </comp>
-    <comp ref="C805">
-      <value>100nF 25V X7R</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="C" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>69625c81-c7b8-506a-9903-8b95aa00c664</tstamps>
     </comp>
     <comp ref="C806">
       <value>120pF 50V C0G 1%</value>
@@ -216,8 +200,8 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>687edef3-829f-5174-8a43-55df8c8fdcdb</tstamps>
     </comp>
-    <comp ref="R811">
-      <value>10k 1%</value>
+    <comp ref="R6500">
+      <value>0R</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <fields>
         <field name="Design note"/>
@@ -230,247 +214,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="safety_gate.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>637bacf2-fa42-51a8-afdb-2582d0160f1f</tstamps>
-    </comp>
-    <comp ref="R812">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>8e8dc1ae-fbd4-5b22-9974-1b447f0c5eec</tstamps>
-    </comp>
-    <comp ref="R813">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>5ef9d281-859f-5639-860b-80e37571b48e</tstamps>
-    </comp>
-    <comp ref="R814">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>6b868a75-be71-5454-bc84-f971ecc3c04b</tstamps>
-    </comp>
-    <comp ref="R815">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>3a0c02ff-dae1-5696-a424-a1bd94272b55</tstamps>
-    </comp>
-    <comp ref="R816">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>545393a7-93a9-545e-a8d1-fdcb68bcaeb3</tstamps>
-    </comp>
-    <comp ref="R817">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>eb227bbe-cf71-5f8e-afed-f82abda317c3</tstamps>
-    </comp>
-    <comp ref="R818">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>6dbf0dcd-2855-5053-959d-fd77f9ee0f58</tstamps>
-    </comp>
-    <comp ref="R821">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>3b1f5656-9add-5e79-8c37-c979c0efdabd</tstamps>
-    </comp>
-    <comp ref="R822">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>cc893136-2c11-58f3-9409-c70a98c0a2a8</tstamps>
-    </comp>
-    <comp ref="R823">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>c7167e92-71fe-53c4-bd92-11d5c349f400</tstamps>
-    </comp>
-    <comp ref="R824">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>a036cf24-1f7c-56cb-bc9e-7424285322be</tstamps>
-    </comp>
-    <comp ref="R825">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>bf54a75d-1b7d-5273-9547-1e2a10b149ea</tstamps>
-    </comp>
-    <comp ref="R826">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>499e422e-c8c7-59c0-a9b6-1964a91eae93</tstamps>
-    </comp>
-    <comp ref="R827">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>d2d8d79c-6677-5d4d-8b12-6b63ead11ae4</tstamps>
-    </comp>
-    <comp ref="R828">
-      <value>10k 1%</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <fields>
-        <field name="Design note"/>
-        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="R" description=""/>
-      <property name="Design note" value=""/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>6e555b3b-84e7-5d26-a355-490b874352b6</tstamps>
+      <tstamps>5dd1de4b-688e-596f-abea-389c53085366</tstamps>
     </comp>
     <comp ref="U801">
       <value>TPS3431SQDRBRQ1</value>
@@ -536,22 +280,6 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>827a165d-54ce-5c5c-af24-d06f6e9aab0e</tstamps>
     </comp>
-    <comp ref="U805">
-      <value>SN74LVC244AQPWRQ1</value>
-      <footprint>Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm</footprint>
-      <fields>
-        <field name="Design note">Both OE default disabled; gated output pulldowns; source-level candidate</field>
-        <field name="Footprint">Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_Safety" part="SN74LVC244AQPWRQ1" description=""/>
-      <property name="Design note" value="Both OE default disabled; gated output pulldowns; source-level candidate"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>a44ef9e4-22ef-5f7f-9395-0602f51232c5</tstamps>
-    </comp>
   </components>
   <libparts>
     <libpart lib="Power8GDI_Safety" part="C">
@@ -594,37 +322,6 @@
         <pin num="3" name="GND" type="power_in"/>
         <pin num="4" name="Y" type="output"/>
         <pin num="5" name="VCC" type="power_in"/>
-      </pins>
-    </libpart>
-    <libpart lib="Power8GDI_Safety" part="SN74LVC244AQPWRQ1">
-      <fields>
-        <field name="Reference">U</field>
-        <field name="Value">SN74LVC244AQPWRQ1</field>
-        <field name="Footprint">Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <pins>
-        <pin num="1" name="~{1OE}" type="input"/>
-        <pin num="2" name="1A1" type="input"/>
-        <pin num="3" name="2Y4" type="tri_state"/>
-        <pin num="4" name="1A2" type="input"/>
-        <pin num="5" name="2Y3" type="tri_state"/>
-        <pin num="6" name="1A3" type="input"/>
-        <pin num="7" name="2Y2" type="tri_state"/>
-        <pin num="8" name="1A4" type="input"/>
-        <pin num="9" name="2Y1" type="tri_state"/>
-        <pin num="10" name="GND" type="power_in"/>
-        <pin num="11" name="2A1" type="input"/>
-        <pin num="12" name="1Y4" type="tri_state"/>
-        <pin num="13" name="2A2" type="input"/>
-        <pin num="14" name="1Y3" type="tri_state"/>
-        <pin num="15" name="2A3" type="input"/>
-        <pin num="16" name="1Y2" type="tri_state"/>
-        <pin num="17" name="2A4" type="input"/>
-        <pin num="18" name="1Y1" type="tri_state"/>
-        <pin num="19" name="~{2OE}" type="input"/>
-        <pin num="20" name="VCC" type="power_in"/>
       </pins>
     </libpart>
     <libpart lib="Power8GDI_Safety" part="SN74LVC2G74QDCURQ1">
@@ -695,7 +392,6 @@
       <node ref="C802" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="C803" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="C804" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="C805" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="R801" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R802" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R805" pin="2" pinfunction="2" pintype="passive"/>
@@ -708,40 +404,21 @@
       <node ref="U804" pin="2" pinfunction="D" pintype="input"/>
       <node ref="U804" pin="7" pinfunction="~{PRE}" pintype="input"/>
       <node ref="U804" pin="8" pinfunction="VCC" pintype="power_in"/>
-      <node ref="U805" pin="20" pinfunction="VCC" pintype="power_in"/>
     </net>
     <net code="2" name="GND" class="Default">
       <node ref="C801" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C802" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C803" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C804" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="C805" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C806" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R803" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R804" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R806" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R811" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R812" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R813" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R814" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R815" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R816" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R817" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R818" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R821" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R822" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R823" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R824" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R825" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R826" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R827" pin="2" pinfunction="2" pintype="passive"/>
-      <node ref="R828" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U801" pin="4" pinfunction="GND" pintype="power_in"/>
       <node ref="U801" pin="9" pinfunction="EP" pintype="power_in"/>
       <node ref="U802" pin="2" pinfunction="GND" pintype="power_in"/>
       <node ref="U803" pin="3" pinfunction="GND" pintype="power_in"/>
       <node ref="U804" pin="4" pinfunction="GND" pintype="power_in"/>
-      <node ref="U805" pin="10" pinfunction="GND" pintype="power_in"/>
     </net>
     <net code="3" name="HW_ACTUATOR_ENABLE" class="Default">
       <node ref="R806" pin="1" pinfunction="1" pintype="passive"/>
@@ -750,104 +427,42 @@
     <net code="4" name="HW_ACTUATOR_ENABLE_N" class="Default">
       <node ref="R805" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U804" pin="3" pinfunction="~{Q}" pintype="output"/>
-      <node ref="U805" pin="1" pinfunction="~{1OE}" pintype="input"/>
-      <node ref="U805" pin="19" pinfunction="~{2OE}" pintype="input"/>
     </net>
     <net code="5" name="HW_KILL_N" class="Default">
+      <node ref="R6500" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R802" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U802" pin="3" pinfunction="~{MR}" pintype="input"/>
     </net>
-    <net code="6" name="IGN1" class="Default">
-      <node ref="R811" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="2" pinfunction="1A1" pintype="input"/>
+    <net code="6" name="IGN_OC_OK" class="Default">
+      <node ref="R6500" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="7" name="IGN1_GATED" class="Default">
-      <node ref="R821" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="18" pinfunction="1Y1" pintype="tri_state"/>
-    </net>
-    <net code="8" name="IGN2" class="Default">
-      <node ref="R812" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="4" pinfunction="1A2" pintype="input"/>
-    </net>
-    <net code="9" name="IGN2_GATED" class="Default">
-      <node ref="R822" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="16" pinfunction="1Y2" pintype="tri_state"/>
-    </net>
-    <net code="10" name="IGN3" class="Default">
-      <node ref="R813" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="6" pinfunction="1A3" pintype="input"/>
-    </net>
-    <net code="11" name="IGN3_GATED" class="Default">
-      <node ref="R823" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="14" pinfunction="1Y3" pintype="tri_state"/>
-    </net>
-    <net code="12" name="IGN4" class="Default">
-      <node ref="R814" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="8" pinfunction="1A4" pintype="input"/>
-    </net>
-    <net code="13" name="IGN4_GATED" class="Default">
-      <node ref="R824" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="12" pinfunction="1Y4" pintype="tri_state"/>
-    </net>
-    <net code="14" name="IGN5" class="Default">
-      <node ref="R815" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="11" pinfunction="2A1" pintype="input"/>
-    </net>
-    <net code="15" name="IGN5_GATED" class="Default">
-      <node ref="R825" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="9" pinfunction="2Y1" pintype="tri_state"/>
-    </net>
-    <net code="16" name="IGN6" class="Default">
-      <node ref="R816" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="13" pinfunction="2A2" pintype="input"/>
-    </net>
-    <net code="17" name="IGN6_GATED" class="Default">
-      <node ref="R826" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="7" pinfunction="2Y2" pintype="tri_state"/>
-    </net>
-    <net code="18" name="IGN7" class="Default">
-      <node ref="R817" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="15" pinfunction="2A3" pintype="input"/>
-    </net>
-    <net code="19" name="IGN7_GATED" class="Default">
-      <node ref="R827" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="5" pinfunction="2Y3" pintype="tri_state"/>
-    </net>
-    <net code="20" name="IGN8" class="Default">
-      <node ref="R818" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="17" pinfunction="2A4" pintype="input"/>
-    </net>
-    <net code="21" name="IGN8_GATED" class="Default">
-      <node ref="R828" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U805" pin="3" pinfunction="2Y4" pintype="tri_state"/>
-    </net>
-    <net code="22" name="SAFETY_ARM_REQUEST" class="Default">
+    <net code="7" name="SAFETY_ARM_REQUEST" class="Default">
       <node ref="R804" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U804" pin="1" pinfunction="CLK" pintype="input"/>
     </net>
-    <net code="23" name="SAFETY_CLEAR_N" class="Default">
+    <net code="8" name="SAFETY_CLEAR_N" class="Default">
       <node ref="U803" pin="4" pinfunction="Y" pintype="output"/>
       <node ref="U804" pin="6" pinfunction="~{CLR}" pintype="input"/>
     </net>
-    <net code="24" name="SAFETY_FAULT_N" class="Default">
+    <net code="9" name="SAFETY_FAULT_N" class="Default">
       <node ref="R801" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U801" pin="7" pinfunction="~{WDO}" pintype="open_collector"/>
       <node ref="U801" pin="8" pinfunction="ENOUT" pintype="open_collector"/>
       <node ref="U802" pin="1" pinfunction="~{RESET}" pintype="open_collector"/>
       <node ref="U803" pin="2" pinfunction="A" pintype="input"/>
     </net>
-    <net code="25" name="SAFETY_HEARTBEAT" class="Default">
+    <net code="10" name="SAFETY_HEARTBEAT" class="Default">
       <node ref="R803" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U801" pin="6" pinfunction="WDI" pintype="input"/>
     </net>
-    <net code="26" name="WD_CWD" class="Default">
+    <net code="11" name="WD_CWD" class="Default">
       <node ref="C806" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U801" pin="2" pinfunction="CWD" pintype="input"/>
     </net>
-    <net code="27" name="unconnected-(U802-CT-Pad4)" class="Default">
+    <net code="12" name="unconnected-(U802-CT-Pad4)" class="Default">
       <node ref="U802" pin="4" pinfunction="CT" pintype="input+no_connect"/>
     </net>
-    <net code="28" name="unconnected-(U803-NC-Pad1)" class="Default">
+    <net code="13" name="unconnected-(U803-NC-Pad1)" class="Default">
       <node ref="U803" pin="1" pinfunction="NC" pintype="no_connect"/>
     </net>
   </nets>

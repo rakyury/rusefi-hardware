@@ -7,6 +7,7 @@ from pathlib import Path
 from core_schlib import Sheet, Symbol, box_symbol, child, children, dump, parse, q, uid
 from build_core_io import ANALOG, make_io
 from outputs.build_outputs import make_outputs
+from ignition.build_ignition import make_ignition
 
 HERE=Path(__file__).resolve().parent
 HARDWARE=HERE.parent
@@ -35,8 +36,8 @@ def generate():
     mcu=Sheet("core_mcu","MCU, power decoupling and debug",root=ROOT_ID,paper="A2")
     power=Sheet("core_power","3V3 logic post-regulator",root=ROOT_ID)
     comm=Sheet("core_comms","CAN1 and LIN1 physical interfaces",root=ROOT_ID,paper="A2")
-    ign=Sheet("core_ignition","Eight smart-coil logic candidates",root=ROOT_ID,paper="A2")
-    sheets=[root,mcu,power,comm,ign]
+    ignition_sheets=make_ignition(syms,ROOT_ID)
+    sheets=[root,mcu,power,comm]+ignition_sheets
     def cap(sheet,ref,value,x,y,net,note="",footprint=FP_C):
         sheet.component(c,ref,value,x,y,{"1":net,"2":"GND"},footprint=footprint,note=note)
     def res(sheet,ref,value,x,y,a,b,note="",dnp=False):
@@ -145,32 +146,11 @@ def generate():
     comm.component(r,"R112","1k 1% 0.5W",390,220,{"1":"LIN1_COMMANDER_DIODE","2":"LIN1_BUS"},footprint="Resistor_SMD:R_1206_3216Metric",note="16V dominant bound0.256W; pulse/voltage derating must be checked")
     comm.text("LIN1 commander assembly: MCU PH3 pad44 enables high; default sleep.\nOne commander per bus. Responder assembly omits BOTH D102/R112.\nVSUP4..36V operating,45V absolute. SMBJ24CA clamp38.9V is below absolute\nlimit, not proof of operation during transients or pulse qualification.",300,270)
 
-    ign.hport("+5V_CORE",25.4,25.4)
-    ign.hport("GND",25.4,33.02)
-    driver=box_symbol("MIC4427YM",[("1","NC","no_connect",-12.7,7.62,0),("2","INA","input",-12.7,2.54,0),("4","INB","input",-12.7,-5.08,0),
-                     ("7","OUTA","output",12.7,2.54,180),("5","OUTB","output",12.7,-5.08,180),("8","NC","no_connect",12.7,7.62,180),
-                     ("6","VS","power_in",0,15.24,270),("3","GND","power_in",0,-15.24,90)],FP_SO8,width=20.32,height=25.4)
-    for pair in range(4):
-        a,b=2*pair+1,2*pair+2
-        x=120+(pair%2)*260
-        y=85+(pair//2)*170
-        ign.component(driver,"U"+str(110+pair),"MIC4427YM",x,y,
-                      {"2":f"IGN{a}_GATED","4":f"IGN{b}_GATED","7":f"IGN{a}_BUFFER","5":f"IGN{b}_BUFFER","6":"+5V_CORE","3":"GND"},
-                      note="Non-inverting5V logicbuffer only; no coilprimary drive; no independentenable; outputlinksDNP")
-        cap(ign,"C"+str(140+2*pair),"100n 16V X7R",x+65,y-30,"+5V_CORE","Close Udriver pin6/3")
-        cap(ign,"C"+str(141+2*pair),"1u 16V X7R",x+110,y-30,"+5V_CORE")
-        for index,channel in enumerate([a,b]):
-            res(ign,"R"+str(120+channel-1),"100k",x-65,y-20+index*60,f"IGN{channel}_GATED","GND","Buffer input default low after hardware permission gate")
-            res(ign,"R"+str(128+channel-1),"100R DNP",x+65,y+25+index*50,f"IGN{channel}_BUFFER",f"IGN{channel}_LOGIC_OUT",
-                "Physical output remainsisolated until coilpolarity/load/current/faultkill reviewed",dnp=True)
-            res(ign,"R"+str(136+channel-1),"100k",x+110,y+25+index*50,f"IGN{channel}_LOGIC_OUT","GND","Harnesslogic pulldown; no active drive with DNPserieslink")
-    ign.text("All eight output series links R128..R135 are DNP: coil model, polarity, 5V current and maximum dwell protection unresolved.\nMIC4427 is a candidate buffer, not a qualified automotive ignition driver. No coils or loads may be attached.\nThe MCU-side names IGN1..8 are distinct from harness-side IGN1_LOGIC_OUT..8.\nPC13 load must remain below ST restrictions; MIC input typ6pF/max1uA, 100k pulldown adds33uA at3.3V.",25.4,375)
-
     root.text("Power8GDI electrical candidate / NOT RELEASED\nConnected hierarchy: MCU, input supply, two GDI stages, safety, motor candidates, sensor frontends and harness.\nOutstanding channels and load qualification are tracked in INTEGRATION_2026_10_21_ELECTRICAL.md.",25.4,20)
     io_sheets=make_io(syms,ROOT_ID)
     output_sheets=make_outputs(syms,ROOT_ID)
     sheets.extend(io_sheets+output_sheets)
-    leaves=[power,mcu,comm,ign]+io_sheets+output_sheets
+    leaves=[power,mcu,comm]+ignition_sheets+io_sheets+output_sheets
     external=[]
     for name,title,instance in [
         ("power_input/power_input","Protected logic battery input",None),
@@ -197,8 +177,7 @@ def generate():
         external.append({"path":name+".kicad_sch","instance_uuid":leaf.sheet_id})
     ports={power.name:[("+5V_CORE","input"),("+3V3","output"),("GND","input")],
            mcu.name:[("+3V3","input"),("GND","input")],
-           comm.name:[("+3V3","input"),("+5V_CORE","input"),("GND","input")],
-           ign.name:[("+5V_CORE","input"),("GND","input")]}
+           comm.name:[("+3V3","input"),("+5V_CORE","input"),("GND","input")]}
     for i,leaf in enumerate(leaves):
         root.add_child(leaf,40+190*(i%6),75+90*(i//6),width=155,height=55,ports=ports.get(leaf.name,[]))
     root.text("Each sheet uses explicit global net names. HARNESS names remain separate from MCU logic.\nNo ERC exclusions or power flags conceal missing supplies. DNP assembly flags must be preserved.\nGDI enable, injector/pump models, missing domains and full routing remain release blockers.",25.4,745)

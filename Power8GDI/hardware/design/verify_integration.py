@@ -49,12 +49,17 @@ def verify(path):
         if net in pins.values():errors.append('Obsolete WBO SPI control remains: '+net)
     for route in json.loads((HERE/'interfaces/interfaces_manifest.json').read_text())['gpio_contract']:
         expect('U101',route['package_pad'],route['function'])
-    # Independent pin facts: TI SN74LVC244A-Q1 and MIC4427, plus STM32 DS11532.
-    gate_inputs=[2,4,6,8,11,13,15,17];gate_outputs=[18,16,14,12,9,7,5,3]
-    for i,(inp,out) in enumerate(zip(gate_inputs,gate_outputs),1):
-        expect('U805',inp,f'IGN{i}');expect('U805',out,f'IGN{i}_GATED')
-        expect('U'+str(110+(i-1)//2),2 if i%2 else 4,f'IGN{i}_GATED')
-        if not parts[f'R{127+i}']['dnp']:errors.append(f'IGN{i} output link must remain DNP')
+    # Independent physical fault path and UCC27524A/STGB18N40LZ pin facts.
+    expect('R6500',1,'IGN_OC_OK');expect('R6500',2,'HW_KILL_N');expect('U802',3,'HW_KILL_N')
+    for i in range(1,9):
+        base=5420+(i-1)*20
+        expect(f'U{base}',1,f'IGN{i}')
+        expect(f'U{base+1}',6,'IGN_SAFE_EN')
+        expect(f'U{base+2}',5,'IGN_OC_OK')
+        expect(f'U{base+2}',4,'+3V3');expect(f'U{base+2}',6,'+3V3')
+        expect('U'+str(5402+(i-1)//2),2 if i%2 else 4,f'IGN{i}_GUARDED')
+        expect(f'Q{base}',2,f'HARNESS_IGN{i}')
+    if 'U805' in parts:errors.append('Obsolete ignition buffer still populated')
     for pad,net in [(45,'SAFETY_HEARTBEAT'),(46,'SAFETY_ARM_REQUEST'),(83,'SAFETY_FAULT_N')]:expect('U101',pad,net)
     for base,channel in [(900,'DBW'),(950,'EWG')]:
         expect(f'U{base+10}',1,'HW_ACTUATOR_ENABLE')

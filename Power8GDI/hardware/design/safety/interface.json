@@ -12,29 +12,14 @@
     "SAFETY_HEARTBEAT",
     "SAFETY_ARM_REQUEST",
     "HW_KILL_N",
-    "IGN1",
-    "IGN2",
-    "IGN3",
-    "IGN4",
-    "IGN5",
-    "IGN6",
-    "IGN7",
-    "IGN8"
+    "IGN_OC_OK"
   ],
   "outputs": [
     "SAFETY_FAULT_N",
     "HW_ACTUATOR_ENABLE",
-    "HW_ACTUATOR_ENABLE_N",
-    "IGN1_GATED",
-    "IGN2_GATED",
-    "IGN3_GATED",
-    "IGN4_GATED",
-    "IGN5_GATED",
-    "IGN6_GATED",
-    "IGN7_GATED",
-    "IGN8_GATED"
+    "HW_ACTUATOR_ENABLE_N"
   ],
-  "pt_drven_connected": false,
+  "pt_drven_connected": "via gdi/permission sheet, qualified device links remain DNP",
   "watchdog_ms": {
     "nominal": 64.288,
     "ideal_cap_min": 58.18064,
@@ -44,5 +29,5 @@
     "capacitor_pf": 120,
     "capacitor_tolerance_percent": 1
   },
-  "part_count": 33
+  "part_count": 16
 }

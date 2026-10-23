@@ -97,7 +97,7 @@ def adc_and_heater_logic():
 def main():
     sheets=[knock()];parts=[];symbols={}
     for s in sheets:
-        s.write(HERE);p=HERE/(s.name+'.kicad_sch');text=p.read_text()
+        s.write(HERE);p=HERE/(s.name+'.kicad_sch');text=p.read_text(encoding='utf-8')
         for part in s.parts:
             old=f'(project "Power8GDI_Core" (path "/{ROOT_UUID}/{s.sheet_id}" (reference "{part["ref"]}") (unit 1)))'
             text=text.replace(old,old+f' (project "{s.name}" (path "/{s.uuid}" (reference "{part["ref"]}") (unit 1)))')
