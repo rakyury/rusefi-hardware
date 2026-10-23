@@ -1,0 +1,2466 @@
+{
+  "scope": "Conservative PT switching-domain coverage audit; not complete voltage or DRC qualification",
+  "datasheet": "https://www.nxp.com/docs/en/data-sheet/MC33PT2001_SDS.pdf",
+  "datasheet_revision": "10.1, Table2 pp6-7",
+  "netlist_sha256": "d7fb0ddc652c735b1617ddce309dcb4ca93b4729c80044e7e9be3e5e50e74ae7",
+  "project_sha256": "a79544c77ed5e21587d191fc009dfe04767c77733410b43bf6a4246c94033db9",
+  "rules_sha256": "91d630ba80cd1932adb5aeb9a11f56d769845ff7bf0c6643461a2fa668e30e15",
+  "switching_domain_net_count": 60,
+  "nets_without_explicit_existing_0p6mm_target": [
+    "Net-(Q203-G)",
+    "Net-(Q203-S)",
+    "Net-(Q204-G)",
+    "Net-(Q205-G)",
+    "Net-(Q205-S)",
+    "Net-(Q206-G)",
+    "Net-(Q211-G)",
+    "Net-(Q303-G)",
+    "Net-(Q303-S)",
+    "Net-(Q304-G)",
+    "Net-(Q305-G)",
+    "Net-(Q305-S)",
+    "Net-(Q306-G)",
+    "Net-(Q311-G)",
+    "Net-(U201-B_HS1)",
+    "Net-(U201-B_HS2)",
+    "Net-(U201-B_HS3)",
+    "Net-(U201-B_HS4)",
+    "Net-(U201-B_HS5)",
+    "Net-(U201-D_LS6)",
+    "Net-(U201-G_HS1)",
+    "Net-(U201-G_HS2)",
+    "Net-(U201-G_HS3)",
+    "Net-(U201-G_HS4)",
+    "Net-(U201-G_HS5)",
+    "Net-(U301-B_HS1)",
+    "Net-(U301-B_HS2)",
+    "Net-(U301-B_HS3)",
+    "Net-(U301-B_HS4)",
+    "Net-(U301-B_HS5)",
+    "Net-(U301-D_LS6)",
+    "Net-(U301-G_HS1)",
+    "Net-(U301-G_HS2)",
+    "Net-(U301-G_HS3)",
+    "Net-(U301-G_HS4)",
+    "Net-(U301-G_HS5)",
+    "PTA_H1",
+    "PTA_H3",
+    "PTA_H5PUMP",
+    "PTA_L1",
+    "PTA_L2",
+    "PTA_L3",
+    "PTA_L4",
+    "PTA_L5",
+    "PTA_L6",
+    "PTA_L6PUMP",
+    "PTB_H1",
+    "PTB_H3",
+    "PTB_H5PUMP",
+    "PTB_L1",
+    "PTB_L2",
+    "PTB_L3",
+    "PTB_L4",
+    "PTB_L5",
+    "PTB_L6",
+    "PTB_L6PUMP"
+  ],
+  "interpretation": "0.6mm is the existing project engineering target, not a requirement derived from this short datasheet. Package escapes, within-domain differential voltage, fabrication and transients need separate review. No rules changed or waived.",
+  "nets": {
+    "Net-(Q203-G)": {
+      "evidence": [
+        "Via series R201 from Net-(U201-G_HS1)"
+      ],
+      "nodes": [
+        {
+          "ref": "C228",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q203",
+          "pin": "1",
+          "pinfunction": "G",
+          "pintype": "input"
+        },
+        {
+          "ref": "R201",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(Q203-S)": {
+      "evidence": [
+        "U201.63 S_HS1"
+      ],
+      "nodes": [
+        {
+          "ref": "C216",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C228",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D202",
+          "pin": "3",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q203",
+          "pin": "3",
+          "pinfunction": "S",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "63",
+          "pinfunction": "S_HS1",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(Q204-G)": {
+      "evidence": [
+        "Via series R202 from Net-(U201-G_HS2)"
+      ],
+      "nodes": [
+        {
+          "ref": "C229",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q204",
+          "pin": "1",
+          "pinfunction": "G",
+          "pintype": "input"
+        },
+        {
+          "ref": "R202",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(Q205-G)": {
+      "evidence": [
+        "Via series R206 from Net-(U201-G_HS3)"
+      ],
+      "nodes": [
+        {
+          "ref": "C232",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q205",
+          "pin": "1",
+          "pinfunction": "G",
+          "pintype": "input"
+        },
+        {
+          "ref": "R206",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(Q205-S)": {
+      "evidence": [
+        "U201.57 S_HS3"
+      ],
+      "nodes": [
+        {
+          "ref": "C217",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C232",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D203",
+          "pin": "3",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q205",
+          "pin": "3",
+          "pinfunction": "S",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "57",
+          "pinfunction": "S_HS3",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(Q206-G)": {
+      "evidence": [
+        "Via series R207 from Net-(U201-G_HS4)"
+      ],
+      "nodes": [
+        {
+          "ref": "C233",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q206",
+          "pin": "1",
+          "pinfunction": "G",
+          "pintype": "input"
+        },
+        {
+          "ref": "R207",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(Q211-G)": {
+      "evidence": [
+        "Via series R210 from Net-(U201-G_HS5)"
+      ],
+      "nodes": [
+        {
+          "ref": "C238",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q211",
+          "pin": "1",
+          "pinfunction": "G",
+          "pintype": "input"
+        },
+        {
+          "ref": "R210",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(Q303-G)": {
+      "evidence": [
+        "Via series R301 from Net-(U301-G_HS1)"
+      ],
+      "nodes": [
+        {
+          "ref": "C328",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q303",
+          "pin": "1",
+          "pinfunction": "G",
+          "pintype": "input"
+        },
+        {
+          "ref": "R301",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(Q303-S)": {
+      "evidence": [
+        "U301.63 S_HS1"
+      ],
+      "nodes": [
+        {
+          "ref": "C316",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C328",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D302",
+          "pin": "3",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q303",
+          "pin": "3",
+          "pinfunction": "S",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "63",
+          "pinfunction": "S_HS1",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(Q304-G)": {
+      "evidence": [
+        "Via series R302 from Net-(U301-G_HS2)"
+      ],
+      "nodes": [
+        {
+          "ref": "C329",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q304",
+          "pin": "1",
+          "pinfunction": "G",
+          "pintype": "input"
+        },
+        {
+          "ref": "R302",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(Q305-G)": {
+      "evidence": [
+        "Via series R306 from Net-(U301-G_HS3)"
+      ],
+      "nodes": [
+        {
+          "ref": "C332",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q305",
+          "pin": "1",
+          "pinfunction": "G",
+          "pintype": "input"
+        },
+        {
+          "ref": "R306",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(Q305-S)": {
+      "evidence": [
+        "U301.57 S_HS3"
+      ],
+      "nodes": [
+        {
+          "ref": "C317",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C332",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D303",
+          "pin": "3",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q305",
+          "pin": "3",
+          "pinfunction": "S",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "57",
+          "pinfunction": "S_HS3",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(Q306-G)": {
+      "evidence": [
+        "Via series R307 from Net-(U301-G_HS4)"
+      ],
+      "nodes": [
+        {
+          "ref": "C333",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q306",
+          "pin": "1",
+          "pinfunction": "G",
+          "pintype": "input"
+        },
+        {
+          "ref": "R307",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(Q311-G)": {
+      "evidence": [
+        "Via series R310 from Net-(U301-G_HS5)"
+      ],
+      "nodes": [
+        {
+          "ref": "C338",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q311",
+          "pin": "1",
+          "pinfunction": "G",
+          "pintype": "input"
+        },
+        {
+          "ref": "R310",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U201-B_HS1)": {
+      "evidence": [
+        "U201.61 B_HS1"
+      ],
+      "nodes": [
+        {
+          "ref": "C216",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "61",
+          "pinfunction": "B_HS1",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U201-B_HS2)": {
+      "evidence": [
+        "U201.58 B_HS2"
+      ],
+      "nodes": [
+        {
+          "ref": "C218",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "58",
+          "pinfunction": "B_HS2",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U201-B_HS3)": {
+      "evidence": [
+        "U201.55 B_HS3"
+      ],
+      "nodes": [
+        {
+          "ref": "C217",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "55",
+          "pinfunction": "B_HS3",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U201-B_HS4)": {
+      "evidence": [
+        "U201.52 B_HS4"
+      ],
+      "nodes": [
+        {
+          "ref": "C219",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "52",
+          "pinfunction": "B_HS4",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U201-B_HS5)": {
+      "evidence": [
+        "U201.49 B_HS5"
+      ],
+      "nodes": [
+        {
+          "ref": "C240",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "49",
+          "pinfunction": "B_HS5",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U201-D_LS6)": {
+      "evidence": [
+        "U201.33 D_LS6"
+      ],
+      "nodes": [
+        {
+          "ref": "R216",
+          "pin": "2",
+          "pinfunction": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R218",
+          "pin": "2",
+          "pinfunction": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "33",
+          "pinfunction": "D_LS6",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U201-G_HS1)": {
+      "evidence": [
+        "U201.62 G_HS1"
+      ],
+      "nodes": [
+        {
+          "ref": "R201",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "62",
+          "pinfunction": "G_HS1",
+          "pintype": "output"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U201-G_HS2)": {
+      "evidence": [
+        "U201.59 G_HS2"
+      ],
+      "nodes": [
+        {
+          "ref": "R202",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "59",
+          "pinfunction": "G_HS2",
+          "pintype": "output"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U201-G_HS3)": {
+      "evidence": [
+        "U201.56 G_HS3"
+      ],
+      "nodes": [
+        {
+          "ref": "R206",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "56",
+          "pinfunction": "G_HS3",
+          "pintype": "output"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U201-G_HS4)": {
+      "evidence": [
+        "U201.53 G_HS4"
+      ],
+      "nodes": [
+        {
+          "ref": "R207",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "53",
+          "pinfunction": "G_HS4",
+          "pintype": "output"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U201-G_HS5)": {
+      "evidence": [
+        "U201.50 G_HS5"
+      ],
+      "nodes": [
+        {
+          "ref": "R210",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "50",
+          "pinfunction": "G_HS5",
+          "pintype": "output"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U301-B_HS1)": {
+      "evidence": [
+        "U301.61 B_HS1"
+      ],
+      "nodes": [
+        {
+          "ref": "C316",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "61",
+          "pinfunction": "B_HS1",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U301-B_HS2)": {
+      "evidence": [
+        "U301.58 B_HS2"
+      ],
+      "nodes": [
+        {
+          "ref": "C318",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "58",
+          "pinfunction": "B_HS2",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U301-B_HS3)": {
+      "evidence": [
+        "U301.55 B_HS3"
+      ],
+      "nodes": [
+        {
+          "ref": "C317",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "55",
+          "pinfunction": "B_HS3",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U301-B_HS4)": {
+      "evidence": [
+        "U301.52 B_HS4"
+      ],
+      "nodes": [
+        {
+          "ref": "C319",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "52",
+          "pinfunction": "B_HS4",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U301-B_HS5)": {
+      "evidence": [
+        "U301.49 B_HS5"
+      ],
+      "nodes": [
+        {
+          "ref": "C340",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "49",
+          "pinfunction": "B_HS5",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U301-D_LS6)": {
+      "evidence": [
+        "U301.33 D_LS6"
+      ],
+      "nodes": [
+        {
+          "ref": "R316",
+          "pin": "2",
+          "pinfunction": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R318",
+          "pin": "2",
+          "pinfunction": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "33",
+          "pinfunction": "D_LS6",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U301-G_HS1)": {
+      "evidence": [
+        "U301.62 G_HS1"
+      ],
+      "nodes": [
+        {
+          "ref": "R301",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "62",
+          "pinfunction": "G_HS1",
+          "pintype": "output"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U301-G_HS2)": {
+      "evidence": [
+        "U301.59 G_HS2"
+      ],
+      "nodes": [
+        {
+          "ref": "R302",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "59",
+          "pinfunction": "G_HS2",
+          "pintype": "output"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U301-G_HS3)": {
+      "evidence": [
+        "U301.56 G_HS3"
+      ],
+      "nodes": [
+        {
+          "ref": "R306",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "56",
+          "pinfunction": "G_HS3",
+          "pintype": "output"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U301-G_HS4)": {
+      "evidence": [
+        "U301.53 G_HS4"
+      ],
+      "nodes": [
+        {
+          "ref": "R307",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "53",
+          "pinfunction": "G_HS4",
+          "pintype": "output"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "Net-(U301-G_HS5)": {
+      "evidence": [
+        "U301.50 G_HS5"
+      ],
+      "nodes": [
+        {
+          "ref": "R310",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "50",
+          "pinfunction": "G_HS5",
+          "pintype": "output"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTA_H1": {
+      "evidence": [
+        "U201.60 S_HS2"
+      ],
+      "nodes": [
+        {
+          "ref": "C218",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C220",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C221",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C229",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C249",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D202",
+          "pin": "2",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "1",
+          "pinfunction": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "3",
+          "pinfunction": "3",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q204",
+          "pin": "3",
+          "pinfunction": "S",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "60",
+          "pinfunction": "S_HS2",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTA_H3": {
+      "evidence": [
+        "U201.54 S_HS4"
+      ],
+      "nodes": [
+        {
+          "ref": "C219",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C224",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C225",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C233",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C250",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D203",
+          "pin": "2",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "5",
+          "pinfunction": "5",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "7",
+          "pinfunction": "7",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q206",
+          "pin": "3",
+          "pinfunction": "S",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "54",
+          "pinfunction": "S_HS4",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTA_H5PUMP": {
+      "evidence": [
+        "U201.51 S_HS5"
+      ],
+      "nodes": [
+        {
+          "ref": "C238",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C240",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C241",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D207",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "17",
+          "pinfunction": "17",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q211",
+          "pin": "3",
+          "pinfunction": "S",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "51",
+          "pinfunction": "S_HS5",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTA_L1": {
+      "evidence": [
+        "Anode of D201; cathode on PTA_VBOOST",
+        "U201.38 D_LS1"
+      ],
+      "nodes": [
+        {
+          "ref": "C222",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D201",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "2",
+          "pinfunction": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q208",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "38",
+          "pinfunction": "D_LS1",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTA_L2": {
+      "evidence": [
+        "Anode of D204; cathode on PTA_VBOOST",
+        "U201.37 D_LS2"
+      ],
+      "nodes": [
+        {
+          "ref": "C223",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D204",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "4",
+          "pinfunction": "4",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q207",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "37",
+          "pinfunction": "D_LS2",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTA_L3": {
+      "evidence": [
+        "Anode of D205; cathode on PTA_VBOOST",
+        "U201.36 D_LS3"
+      ],
+      "nodes": [
+        {
+          "ref": "C226",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D205",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "6",
+          "pinfunction": "6",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q209",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "36",
+          "pinfunction": "D_LS3",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTA_L4": {
+      "evidence": [
+        "Anode of D206; cathode on PTA_VBOOST",
+        "U201.35 D_LS4"
+      ],
+      "nodes": [
+        {
+          "ref": "C227",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D206",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "8",
+          "pinfunction": "8",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q210",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "35",
+          "pinfunction": "D_LS4",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTA_L5": {
+      "evidence": [
+        "Anode of D209; cathode on PTA_VBOOST",
+        "U201.34 D_LS5"
+      ],
+      "nodes": [
+        {
+          "ref": "C251",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D209",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q201",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "34",
+          "pinfunction": "D_LS5",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTA_L6": {
+      "evidence": [
+        "Anode of D210; cathode on PTA_VBOOST",
+        "Via series R218 from Net-(U201-D_LS6)"
+      ],
+      "nodes": [
+        {
+          "ref": "C253",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D210",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q213",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R218",
+          "pin": "1",
+          "pinfunction": "1",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTA_L6PUMP": {
+      "evidence": [
+        "Via series R216 from Net-(U201-D_LS6)"
+      ],
+      "nodes": [
+        {
+          "ref": "C242",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D208",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "18",
+          "pinfunction": "18",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q212",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R216",
+          "pin": "1",
+          "pinfunction": "1",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTA_VBOOST": {
+      "evidence": [
+        "U201.48 VBOOST"
+      ],
+      "nodes": [
+        {
+          "ref": "C207",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C209",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C247",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C248",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D201",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D204",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D205",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D206",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D209",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D210",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D212",
+          "pin": "2",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q204",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q206",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R219",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R220",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R232",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R233",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R234",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R235",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R236",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R237",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R238",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R239",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R240",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U201",
+          "pin": "48",
+          "pinfunction": "VBOOST",
+          "pintype": "power_in"
+        }
+      ],
+      "matching_project_classes": [
+        "GDI_HV"
+      ],
+      "matching_class_clearances_mm": {
+        "GDI_HV": 0.6
+      },
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
+    },
+    "PTA_Vdrive_coil": {
+      "evidence": [
+        "Anode of D212; cathode on PTA_VBOOST"
+      ],
+      "nodes": [
+        {
+          "ref": "D212",
+          "pin": "1",
+          "pinfunction": "A",
+          "pintype": "input"
+        },
+        {
+          "ref": "D212",
+          "pin": "3",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "L202",
+          "pin": "2",
+          "pinfunction": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q202",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R217",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "GDI_HV"
+      ],
+      "matching_class_clearances_mm": {
+        "GDI_HV": 0.6
+      },
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
+    },
+    "PTB_H1": {
+      "evidence": [
+        "U301.60 S_HS2"
+      ],
+      "nodes": [
+        {
+          "ref": "C318",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C320",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C321",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C329",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C349",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D302",
+          "pin": "2",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "11",
+          "pinfunction": "11",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "9",
+          "pinfunction": "9",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q304",
+          "pin": "3",
+          "pinfunction": "S",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "60",
+          "pinfunction": "S_HS2",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTB_H3": {
+      "evidence": [
+        "U301.54 S_HS4"
+      ],
+      "nodes": [
+        {
+          "ref": "C319",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C324",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C325",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C333",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C350",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D303",
+          "pin": "2",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "13",
+          "pinfunction": "13",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "15",
+          "pinfunction": "15",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q306",
+          "pin": "3",
+          "pinfunction": "S",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "54",
+          "pinfunction": "S_HS4",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTB_H5PUMP": {
+      "evidence": [
+        "U301.51 S_HS5"
+      ],
+      "nodes": [
+        {
+          "ref": "C338",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C340",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C341",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D307",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "19",
+          "pinfunction": "19",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q311",
+          "pin": "3",
+          "pinfunction": "S",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "51",
+          "pinfunction": "S_HS5",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTB_L1": {
+      "evidence": [
+        "Anode of D301; cathode on PTB_VBOOST",
+        "U301.38 D_LS1"
+      ],
+      "nodes": [
+        {
+          "ref": "C322",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D301",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "10",
+          "pinfunction": "10",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q308",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "38",
+          "pinfunction": "D_LS1",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTB_L2": {
+      "evidence": [
+        "Anode of D304; cathode on PTB_VBOOST",
+        "U301.37 D_LS2"
+      ],
+      "nodes": [
+        {
+          "ref": "C323",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D304",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "12",
+          "pinfunction": "12",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q307",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "37",
+          "pinfunction": "D_LS2",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTB_L3": {
+      "evidence": [
+        "Anode of D305; cathode on PTB_VBOOST",
+        "U301.36 D_LS3"
+      ],
+      "nodes": [
+        {
+          "ref": "C326",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D305",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "14",
+          "pinfunction": "14",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q309",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "36",
+          "pinfunction": "D_LS3",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTB_L4": {
+      "evidence": [
+        "Anode of D306; cathode on PTB_VBOOST",
+        "U301.35 D_LS4"
+      ],
+      "nodes": [
+        {
+          "ref": "C327",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D306",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "16",
+          "pinfunction": "16",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q310",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "35",
+          "pinfunction": "D_LS4",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTB_L5": {
+      "evidence": [
+        "Anode of D309; cathode on PTB_VBOOST",
+        "U301.34 D_LS5"
+      ],
+      "nodes": [
+        {
+          "ref": "C351",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D309",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q301",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "34",
+          "pinfunction": "D_LS5",
+          "pintype": "input"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTB_L6": {
+      "evidence": [
+        "Anode of D310; cathode on PTB_VBOOST",
+        "Via series R318 from Net-(U301-D_LS6)"
+      ],
+      "nodes": [
+        {
+          "ref": "C353",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D310",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q313",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R318",
+          "pin": "1",
+          "pinfunction": "1",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTB_L6PUMP": {
+      "evidence": [
+        "Via series R316 from Net-(U301-D_LS6)"
+      ],
+      "nodes": [
+        {
+          "ref": "C342",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D308",
+          "pin": "2",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "J601",
+          "pin": "20",
+          "pinfunction": "20",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q312",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R316",
+          "pin": "1",
+          "pinfunction": "1",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "Default"
+      ],
+      "matching_class_clearances_mm": {
+        "Default": 0.2
+      },
+      "explicit_clearance_minima_mm": []
+    },
+    "PTB_VBOOST": {
+      "evidence": [
+        "U301.48 VBOOST"
+      ],
+      "nodes": [
+        {
+          "ref": "C307",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C309",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C347",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "C348",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D301",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D304",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D305",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D306",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D309",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D310",
+          "pin": "1",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "D312",
+          "pin": "2",
+          "pinfunction": "K",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q304",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q306",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R319",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R320",
+          "pin": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R332",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R333",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R334",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R335",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R336",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R337",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R338",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R339",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R340",
+          "pin": "1",
+          "pintype": "passive"
+        },
+        {
+          "ref": "U301",
+          "pin": "48",
+          "pinfunction": "VBOOST",
+          "pintype": "power_in"
+        }
+      ],
+      "matching_project_classes": [
+        "GDI_HV"
+      ],
+      "matching_class_clearances_mm": {
+        "GDI_HV": 0.6
+      },
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
+    },
+    "PTB_Vdrive_coil": {
+      "evidence": [
+        "Anode of D312; cathode on PTB_VBOOST"
+      ],
+      "nodes": [
+        {
+          "ref": "D312",
+          "pin": "1",
+          "pinfunction": "A",
+          "pintype": "input"
+        },
+        {
+          "ref": "D312",
+          "pin": "3",
+          "pinfunction": "A",
+          "pintype": "passive"
+        },
+        {
+          "ref": "L302",
+          "pin": "2",
+          "pinfunction": "2",
+          "pintype": "passive"
+        },
+        {
+          "ref": "Q302",
+          "pin": "2",
+          "pinfunction": "D",
+          "pintype": "passive"
+        },
+        {
+          "ref": "R317",
+          "pin": "2",
+          "pintype": "passive"
+        }
+      ],
+      "matching_project_classes": [
+        "GDI_HV"
+      ],
+      "matching_class_clearances_mm": {
+        "GDI_HV": 0.6
+      },
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
+    }
+  }
+}
