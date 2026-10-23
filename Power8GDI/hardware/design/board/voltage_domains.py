@@ -11,6 +11,7 @@ from audit_gdi_voltage_domains import discover
 
 _gdi=None
 _source=None
+_battery_aliases=frozenset({'PTA_+Batt_filtered','PTB_+Batt_filtered'})
 
 
 def configure(netlist):
@@ -29,11 +30,15 @@ def gdi_high_voltage_nets():
     return _gdi
 
 
+def battery_alias_nets():
+    return _battery_aliases
+
+
 def clearance_mm(name):
     domains=gdi_high_voltage_nets()
     if re.fullmatch(r'HARNESS_IGN[1-8]',name):return 2.5
     if name in domains:return .6
-    if name.startswith('VBAT'):return .3
+    if name.startswith('VBAT') or name in _battery_aliases:return .3
     return .2
 
 

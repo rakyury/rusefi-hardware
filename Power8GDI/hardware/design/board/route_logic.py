@@ -14,6 +14,7 @@ from pathlib import Path
 import re
 import shutil
 import pcbnew as p
+import voltage_domains
 
 
 ALLOW = {
@@ -55,6 +56,7 @@ def signature(item):
 
 
 def export(board_path,dsn):
+    voltage_domains.configure(Path(__file__).resolve().parent.parent/'core.net')
     board=p.LoadBoard(str(board_path))
     names={pad.GetNetname() for fp in board.GetFootprints() for pad in fp.Pads() if pad.GetNetname()}
     allowed=sorted(names & ALLOW);protected=sorted(names-ALLOW)
@@ -88,8 +90,8 @@ def export(board_path,dsn):
     quote=lambda name:json.dumps(name)
     classes=[]
     ignition=[n for n in protected if re.fullmatch(r'HARNESS_IGN[1-8]',n)]
-    boost=[n for n in protected if n.startswith(('PTA_VBOOST','PTB_VBOOST','PTA_Vdrive','PTB_Vdrive'))]
-    battery=[n for n in protected if n.startswith('VBAT')]
+    boost=sorted(set(protected)&voltage_domains.gdi_high_voltage_nets())
+    battery=[n for n in protected if n.startswith('VBAT') or n in voltage_domains.battery_alias_nets()]
     ordinary=sorted(set(protected)-set(ignition+boost+battery))
     for name,members,width,clearance in [('RouteLogic',allowed,250,200),('Protected',ordinary,250,200),
                                        ('ProtectedBattery',battery,600,300),('ProtectedBoost',boost,800,600),
@@ -102,6 +104,7 @@ def export(board_path,dsn):
     metadata={'source_board_sha256':hashlib.sha256(board_path.read_bytes()).hexdigest(),
               'source_project_sha256':hashlib.sha256(board_path.with_suffix('.kicad_pro').read_bytes()).hexdigest(),
               'source_custom_rules_sha256':hashlib.sha256(board_path.with_suffix('.kicad_dru').read_bytes()).hexdigest(),
+              'voltage_domains':voltage_domains.provenance(),
               'allowed_nets':allowed,'protected_nets':protected,'all_existing_copper_protected':True,
               'routing_width_mm':.25,'clearance_mm':.2,'via_mm':[.6,.3],
               'routable_layers':['F.Cu','In2.Cu','B.Cu'],'ground_plane_reserved':'In1.Cu',
@@ -112,6 +115,7 @@ def export(board_path,dsn):
 
 
 def import_session(board_path,ses,output):
+    if board_path.resolve()==output.resolve():raise ValueError('Routing import must preserve its source board')
     scope=json.loads(ses.with_suffix('.scope.json').read_text())
     if scope['source_board_sha256']!=hashlib.sha256(board_path.read_bytes()).hexdigest():
         raise ValueError('Routing source board changed after DSN export; refusing stale SES')
@@ -137,18 +141,21 @@ def import_session(board_path,ses,output):
     assert before <= Counter(signature(t) for t in original.GetTracks())
     output.parent.mkdir(parents=True,exist_ok=True)
     p.SaveBoard(str(output),original)
-    original=p.LoadBoard(str(output));original.BuildConnectivity();p.ZONE_FILLER(original).Fill(original.Zones())
-    p.SaveBoard(str(output),original)
-    # Restore authoritative rules AFTER SaveBoard (KiCad may persist cached defaults).
-    for name in (board_path.with_suffix('.kicad_pro').name,board_path.with_suffix('.kicad_dru').name,'fp-lib-table'):
-        source=board_path.parent/name
-        target=output.with_suffix(source.suffix) if source.suffix in ('.kicad_pro','.kicad_dru') else output.parent/name
-        if source.resolve()!=target.resolve():
+    def copy_rules():
+        for name in (board_path.with_suffix('.kicad_pro').name,board_path.with_suffix('.kicad_dru').name,'fp-lib-table'):
+            source=board_path.parent/name
+            target=output.with_suffix(source.suffix) if source.suffix in ('.kicad_pro','.kicad_dru') else output.parent/name
             if name=='fp-lib-table':
                 text=source.read_text()
                 text=re.sub(r'\$\{KIPRJMOD\}/([^\"]+)',lambda m:'${KIPRJMOD}/'+os.path.relpath((board_path.parent/m.group(1)).resolve(),output.parent),text)
-                target.write_text(text)
+                if source.resolve()!=target.resolve():target.write_text(text)
             else:shutil.copy2(source,target)
+    # The second load/fill needs the real rules already in place, then restore
+    # their bytes after SaveBoard in case KiCad persisted an in-process cache.
+    copy_rules()
+    original=p.LoadBoard(str(output));original.BuildConnectivity();p.ZONE_FILLER(original).Fill(original.Zones())
+    p.SaveBoard(str(output),original)
+    copy_rules()
     (output.parent/'logic_routing_report.json').write_text(json.dumps({
         'source_board_sha256':hashlib.sha256(board_path.read_bytes()).hexdigest(),
         'session_sha256':hashlib.sha256(ses.read_bytes()).hexdigest(),

@@ -20,6 +20,7 @@ from build_connector import make_footprint, vec
 from copper_transfer import audited_copper
 from net_contract import read_netlists, compare_pad_assignments
 from board_cleanup import arrange_references, remove_dangling, Spatial
+import voltage_domains
 
 HERE = Path(__file__).resolve().parent
 _FOOTPRINT_CACHE = {}
@@ -157,7 +158,8 @@ def core_placement(board, footprints, manifest, nets):
     return set(fixed)|decoupled|io
 
 
-def project_file(path):
+def project_file(path,netlist=None):
+    voltage_domains.configure(netlist or HERE.parent/'core.net')
     rules={'min_clearance':.2,'min_track_width':.2,'min_via_diameter':.6,'min_through_hole_diameter':.3,
            'min_hole_clearance':.25,'min_copper_edge_clearance':.5}
     classes=[]
@@ -169,18 +171,18 @@ def project_file(path):
                         'schematic_color':'rgba(0,0,0,0)','description':'Provisional engineering rule; fabrication and current/thermal approval pending'})
     doc={'meta':{'filename':path.name,'version':1},'board':{'design_settings':{
          'meta':{'filename':'board_design_settings.json','version':2},'rules':rules,'drc_exclusions':[]}},
-         'net_settings':{'meta':{'version':4},'classes':classes,'netclass_assignments':{},'netclass_patterns':[{'pattern':'PT*_Vdrive*','netclass':'GDI_HV'},
+         'net_settings':{'meta':{'version':4},'classes':classes,'netclass_assignments':{**{name:['GDI_HV'] for name in sorted(voltage_domains.gdi_high_voltage_nets())},**{name:['Power'] for name in sorted(voltage_domains.battery_alias_nets())}},'netclass_patterns':[{'pattern':'PT*_Vdrive*','netclass':'GDI_HV'},
                          {'pattern':'PT*_VBOOST','netclass':'GDI_HV'},{'pattern':'HARNESS_IGN*','netclass':'Ignition_HV'},
                          {'pattern':'VBAT*','netclass':'Power'},{'pattern':'+5V*','netclass':'LogicSupply'},{'pattern':'+3V3*','netclass':'LogicSupply'}]}}
     path.write_text(json.dumps(doc,indent=2)+'\n')
     # Explicit equivalent rules make these safety-relevant classes auditable
     # even in CLI consumers that fail to resolve project pattern assignments.
-    high=['PT'+s+n for s in ('A','B') for n in ('_VBOOST','_Vdrive_coil','_Vdrive_shunt')]
+    high=sorted(voltage_domains.gdi_high_voltage_nets())
     # Regulated 3.3/5 V rails use the ordinary 0.2 mm electrical clearance.
     # Their 0.5 mm-pitch packages have 0.25 mm intrinsic adjacent-pad gaps;
     # the previous battery-class rule imposed 0.3 mm even on those pad pairs.
     # This classification changes no battery, boost or ignition isolation rule.
-    supplies=['VBAT_MAIN_FUSED','VBAT_LOGIC_PROTECTED','VBAT_GDI_A','VBAT_GDI_B','VBAT_DBW_FUSED','VBAT_EWG_FUSED']
+    supplies=['VBAT_MAIN_FUSED','VBAT_LOGIC_PROTECTED','VBAT_GDI_A','VBAT_GDI_B','VBAT_DBW_FUSED','VBAT_EWG_FUSED']+sorted(voltage_domains.battery_alias_nets())
     rules_text=['(version 1)']
     for label,names,clearance in [('Power clearance',supplies,.3),('GDI high voltage clearance',high,.6),
         ('Ignition preliminary isolation target - qualification pending',[f'HARNESS_IGN{i}' for i in range(1,9)],2.5)]:
@@ -315,6 +317,7 @@ def build(args):
     p.PCB_IO_MGR.PluginFind(p.PCB_IO_MGR.KICAD_SEXP).FootprintSave(str(library),make_footprint())
     rows,aliases=connector_contract(args.pinout,out/'connector_contract.xml')
     root_path=design/'core.net'
+    voltage_domains.configure(root_path)
     root_refs={c.attrib['ref'] for c in ET.parse(root_path).findall('./components/comp')}
     paths=[root_path]
     # Root export is authoritative. Never resurrect obsolete power or WBO
@@ -410,7 +413,7 @@ def build(args):
     errors=compare_pad_assignments(assignments,actual)
     if errors:raise ValueError('\n'.join(errors))
     silk_report=arrange_references(board)
-    dest=out/'Power8GDI_Review.kicad_pcb';p.SaveBoard(str(dest),board);insert_stackup(dest);project_file(dest.with_suffix('.kicad_pro'))
+    dest=out/'Power8GDI_Review.kicad_pcb';p.SaveBoard(str(dest),board);insert_stackup(dest);project_file(dest.with_suffix('.kicad_pro'),root_path)
     libs={'Power8GDI_Board':HERE/'Power8GDI_Board.pretty','Power8GDI_Core':design/'Power8GDI_Core.pretty','Power8GDI_GDI':design/'gdi/Power8GDI_GDI.pretty',
           'Power8GDI_Interfaces':design/'interfaces/Power8GDI_Interfaces.pretty','Power8GDI_GDIProtection':design/'gdi/Power8GDI_GDIProtection.pretty',
           'Power8GDI_Motor4':design/'motor4/Power8GDI_Motor4.pretty'}
@@ -429,7 +432,7 @@ def build(args):
     # SaveBoard persists the in-process project cache, which began with default
     # rules before our generated .pro existed. Write the authoritative project
     # AFTER the final save; otherwise KiCad overwrites .2 mm with its 0 mm default.
-    project_file(dest.with_suffix('.kicad_pro'))
+    project_file(dest.with_suffix('.kicad_pro'),root_path)
     report={'kicad_version':p.GetBuildVersion(),'qualification':'INCOMPLETE_ENGINEERING_REVIEW_DO_NOT_FABRICATE',
             'outline_mm':[245,165],'copper_layers':4,'thickness_mm':1.6,'source_netlists':sources,
             'source_reference_pcb_sha256':digest(args.source_board),'source_reference_mapping_sha256':digest(design/'gdi/reference_mapping.json'),
@@ -440,6 +443,7 @@ def build(args):
             'staged_unreviewed_placements':unplaced,'reference_copper':audit,
             'silkscreen_geometry':silk_report,'copper_cleanup':cleanup_report,'output_bank_placement':bank_placements,
             'ignition_local_routes':ignition_routes}
+    report['voltage_domains']=voltage_domains.provenance()
     (out/'board_report.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({k:v for k,v in report.items() if k not in ('reference_copper','source_netlists','staged_unreviewed_placements')},indent=2))
 
