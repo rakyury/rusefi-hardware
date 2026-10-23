@@ -21,20 +21,20 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--release',action='store_true');parser.add_argument('--skip-board-build',action='store_true')
     parser.add_argument('--schematic-only',action='store_true',help='Validate the current schematic without claiming verification of an older PCB')
     args=parser.parse_args();commands=[]
-    def run(cmd,allowed=(0,)):
+    def run(cmd,allowed=(0,),label=None):
         r=subprocess.run(cmd,cwd=REPO,text=True,encoding='utf-8',errors='replace',capture_output=True)
         commands.append({'command':cmd,'returncode':r.returncode,'output':r.stdout+r.stderr})
-        print(f'{cmd[-1]}: exit {r.returncode}',flush=True)
+        print(f'{label or cmd[-1]}: exit {r.returncode}',flush=True)
         if r.returncode not in allowed:
             print(r.stdout+r.stderr);raise RuntimeError('Required check failed')
         return r.returncode
     def host(*a):return run([sys.executable,*a])
-    def cad(*a,allowed=(0,)):
+    def cad(*a,allowed=(0,),label=None):
         # Linux bind mounts retain host ownership; the image's default UID is
         # not necessarily the CI runner's UID. Windows Docker handles this itself.
         identity=[] if os.name=='nt' else ['--user',f'{os.getuid()}:{os.getgid()}',
             '--env','HOME=/tmp','--env','XDG_CONFIG_HOME=/tmp/.config','--env','XDG_CACHE_HOME=/tmp/.cache']
-        return run(['docker','run','--rm','--network','none',*identity,'--mount',f'type=bind,source={REPO},target=/src','-w','/src',IMAGE,*a],allowed)
+        return run(['docker','run','--rm','--network','none',*identity,'--mount',f'type=bind,source={REPO},target=/src','-w','/src',IMAGE,*a],allowed,label)
     out=HERE/'board/review';out.mkdir(exist_ok=True,parents=True)
     summary={'release_status':'BLOCKED','qualification':'INCOMPLETE_ENGINEERING_REVIEW','image':IMAGE,'commands':commands}
     try:
@@ -44,9 +44,14 @@ def main():
         # GDI reference sources remain unchanged; re-export their actual leaves.
         leaves=['safety/safety_gate','board/connectors','gdi/stage_a','gdi/stage_b','Power8GDI_Core']
         leaves=leaves[:-1]+[s['name'] for s in json.loads((HERE/'interfaces/interfaces_manifest.json').read_text())['sheets']]+['interfaces_aux/'+s['name'] for s in json.loads((HERE/'interfaces_aux/interface.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'gdi/protection_manifest.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'wbo/interface.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'logic_power/interface.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'motor4/interface.json').read_text())['sheets']]+['Power8GDI_Core']
+        exports=[]
         for name in leaves:
             target='core.net' if name=='Power8GDI_Core' else name.replace('logic_power/','logic_power/work/')+'.xml'
-            cad('kicad-cli','sch','export','netlist','--format','kicadxml','-o',BASE+target,BASE+name+'.kicad_sch')
+            exports.append(['kicad-cli','sch','export','netlist','--format','kicadxml','-o',BASE+target,BASE+name+'.kicad_sch'])
+        # One pinned container avoids repeated Docker startup; every export still
+        # runs in order and fails immediately with its original command/output.
+        batch="import json,subprocess,sys\nfor cmd in json.loads(sys.argv[1]):\n print(json.dumps(cmd),flush=True)\n subprocess.run(cmd,check=True)\n"
+        cad('python3','-c',batch,json.dumps(exports),label=f'Export {len(exports)} schematic netlists')
         doc=ET.parse(HERE/'core.net')
         with (HERE/'integrated_bom.csv').open('w',newline='',encoding='utf-8') as f:
             w=csv.writer(f);w.writerow(['Reference','Value','Footprint','DNP','Sheet'])
