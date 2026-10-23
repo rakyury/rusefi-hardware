@@ -113,3 +113,9 @@ The remaining 12 root ERC items are dangling optional PT labels (IRQ/OA1/OA2/FLA
 ## Handoff
 
 Fix the WBO OE domain issue in its owned module and add a real partial-power acceptance test. Close the two missing budget allocations. Preserve the explicit GDI inhibit boundary pending manufacturer sequencing evidence. Before power-load release, perform controlled supply-order/collapse, residual-energy, external-backfeed and ground-bounce tests with dummy loads; record actual current and voltage waveforms. PCB completion and DRC remain separate work.
+
+## Follow-up: other 5 V buffer domains
+
+Read-only follow-up after the initial checkpoint checked all exported AHCT and LVC buffer instances. The 24 low-side channels use 3.3 V LVC14 inverters with ground-default MCU commands, plus separate EN/RESN ground defaults; they do not duplicate the WBO 5 V OE topology.
+
+Knock U1702 AHCT244 runs from +5V_CORE with both OE pins grounded. With main +3V3 absent, R1701 pulls KNOCK_CS_N toward zero, so the live knock peripheral can be selected. U1703, however, buffers its return onto shared MISO from the main 3.3 V domain with partial-power-down behavior; TPIC8101 analog OUT is NC. Thus this is not a second actuator-inhibit defect. SCK/MOSI and the oscillator input still need checks for undefined levels and supply current while their source domain is off. AHCT244 specifies input leakage for VCC from 0 to 5.5 V and input range independent of VCC, so direct MCU-to-AHCT inputs are not inherently a forward-diode backfeed path. [TI SN74AHCT244-Q1, sections 5.1/5.5](https://www.ti.com/lit/ds/symlink/sn74ahct244-q1.pdf).
