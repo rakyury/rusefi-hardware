@@ -109,6 +109,7 @@ class Sheet:
         self.project = "Power8GDI_Core"
         self.sheet_id = uid("sheet:" + name)
         self.symbols, self.items, self.parts = {}, [], []
+        self.child_count = 0
 
     def _id(self, key):
         return uid(self.name + ":" + str(key))
@@ -158,6 +159,8 @@ class Sheet:
         self.parts.append({"ref":ref,"value":value,"footprint":fp,"pins":nets,"dnp":dnp,"note":note,"sheet":self.name})
 
     def add_child(self, sheet, x, y, width=65, height=40, ports=(), title_size=1.27, file_size=1.27):
+        # Root is page 1; graphical labels/wires must not consume page numbers.
+        self.child_count += 1
         x,y,width,height=map(snap,(x,y,width,height))
         fields = [f'(property "Sheetname" {q(sheet.title)} (at {num(x)} {num(y-title_size)} 0) {effect(title_size, "left")})',
                   f'(property "Sheetfile" {q(sheet.name+".kicad_sch")} (at {num(x)} {num(y+height+file_size)} 0) {effect(file_size, "left")})']
@@ -166,7 +169,7 @@ class Sheet:
             fields.append(f'(pin {q(name)} {direction} (at {num(x)} {num(py)} 180) {effect(1.27, "left")} (uuid {q(uid(sheet.name+":"+name))}))')
             self.wire(x,py,x-10.16,py)
             self.label(name,x-10.16,py,global_=True,shape=direction)
-        self.items.append(f'(sheet (at {num(x)} {num(y)}) (size {num(width)} {num(height)}) (stroke (width 0.254) (type default)) (fill (color 0 0 0 0)) (uuid {q(sheet.sheet_id)}) {" ".join(fields)} (instances (project {q(self.project)} (path {q("/"+self.uuid)} (page {q(str(len(self.items)))})))))')
+        self.items.append(f'(sheet (at {num(x)} {num(y)}) (size {num(width)} {num(height)}) (stroke (width 0.254) (type default)) (fill (color 0 0 0 0)) (uuid {q(sheet.sheet_id)}) {" ".join(fields)} (instances (project {q(self.project)} (path {q("/"+self.uuid)} (page {q(str(self.child_count+1))})))))')
 
     def write(self, directory):
         lib="\n".join(s.body for s in self.symbols.values())
