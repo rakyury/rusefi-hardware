@@ -14,6 +14,14 @@ ROOT='f4d21065-0a5b-5086-a08e-1af9469f04bd'
 RFP='Resistor_SMD:R_0603_1608Metric'
 CFP='Capacitor_SMD:C_0603_1608Metric'
 
+def encode_auto_net(net):
+    """Reversible byte encoding: '+' and '-' and '_' can never collapse.
+
+    All source-generated Net-* names use a reserved AUTO_ namespace. Escape
+    underscores too, so a literal source `_2B_` cannot mimic an encoded plus.
+    """
+    return 'AUTO_'+''.join(chr(b) if 48<=b<=57 or 65<=b<=90 or 97<=b<=122 else f'_{b:02X}_' for b in net.encode('utf-8'))
+
 def symbol(name,pins,fp,prefix='U'):
     n=(len(pins)+1)//2; coords=[]
     for i,(number,label,kind) in enumerate(pins):
@@ -48,7 +56,15 @@ def build():
             if net in ('/SEL1','/SEL2'):
                 # f0_module port.cpp: low/floating -> index0, floating/high -> index1.
                 if index==1 and net=='/SEL2' or index==2 and net=='/SEL1': return None
-            return pre+re.sub('[^A-Za-z0-9_]+','_',net.lstrip('/')).strip('_')
+            return pre+(encode_auto_net(net) if net.startswith('Net-') else net.lstrip('/'))
+        # Explicit aliases above are one-to-one within each channel. Reject
+        # any future source name that collides with them before writing files.
+        reverse={}
+        for original in sorted({n for pins in nets.values() for n in pins.values()}):
+            mapped=mapnet(original)
+            if mapped is None:continue
+            if mapped in reverse:raise ValueError(f'Net alias collision: {reverse[mapped]} and {original} -> {mapped}')
+            reverse[mapped]=original
         def refmap(ref):return re.sub(r'\d+',lambda m:str(base+int(m[0])-600),ref)
         analog=Sheet(f'wbo/wbo{index}_analog',f'WBO{index}: LSU4.9 pump and Nernst analog loop',root=ROOT,paper='A2')
         control=Sheet(f'wbo/wbo{index}_control',f'WBO{index}: F042, CAN and hardware-inhibited heater',root=ROOT,paper='A2')
@@ -104,7 +120,7 @@ def build():
         control.component(bufsym,f'U{base+11}','SN74AHCT1G125QDBVRQ1',275,200,{'1':'HW_ACTUATOR_ENABLE_N','2':pre+'HEATER_ALLOWED_3V3','3':'GND','4':pre+'HEATER_DRIVE_5V','5':'+5V_CORE'},note='TTL input accepts3V3; disabled by independent global hardware latch. Output pull-down keeps switch off.')
         extras=[('R',40,'10k',pre+'HEATER_PWM','GND'),('R',41,'10k',pre+'HEATER_DRIVE_5V','GND'),('C',40,'100n 16V X7R',pre+'3V3','GND'),('C',41,'100n 16V X7R','+5V_CORE','GND'),('R',42,'10k','HW_ACTUATOR_ENABLE_N','+3V3'),('R',43,'10k',pre+'HEATER_ALLOWED_3V3','GND'),('R',44,'0R',pre+('SEL1' if index==1 else 'SEL2'),'GND' if index==1 else pre+'3V3'),('R',45,'10k',pre+'HEATER_GATE','GND')]
         # Gate discharge resistor at actual FET input (after1k), not before it.
-        extras[-1]=('R',45,'100k',pre+'Net_Q600_G','GND')
+        extras[-1]=('R',45,'100k',mapnet('Net-(Q600-G)'),'GND')
         for kind,num,val,a,b in extras:
             k=counts[control.name];counts[control.name]+=1
             control.component(R if kind=='R' else C,f'{kind}{base+num}',val,65+135*(k%4),240+19*(k//4),{'1':a,'2':b})

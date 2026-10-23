@@ -1,5 +1,5 @@
 {
-  "check_count": 332,
+  "check_count": 346,
   "passed": true,
   "errors": [],
   "checks": [
@@ -1330,6 +1330,78 @@
     {
       "check": "No formerCJ125 paths",
       "passed": true
+    },
+    {
+      "check": "WBO1 original source pinsets preserve every connectivity partition",
+      "passed": true
+    },
+    {
+      "check": "WBO1 U600.3/2 physically distinct",
+      "passed": true
+    },
+    {
+      "check": "WBO1 collision mutation caught U600.3/2",
+      "passed": true
+    },
+    {
+      "check": "WBO1 U600.5/6 physically distinct",
+      "passed": true
+    },
+    {
+      "check": "WBO1 collision mutation caught U600.5/6",
+      "passed": true
+    },
+    {
+      "check": "WBO1 U601.3/4 physically distinct",
+      "passed": true
+    },
+    {
+      "check": "WBO1 collision mutation caught U601.3/4",
+      "passed": true
+    },
+    {
+      "check": "WBO2 original source pinsets preserve every connectivity partition",
+      "passed": true
+    },
+    {
+      "check": "WBO2 U600.3/2 physically distinct",
+      "passed": true
+    },
+    {
+      "check": "WBO2 collision mutation caught U600.3/2",
+      "passed": true
+    },
+    {
+      "check": "WBO2 U600.5/6 physically distinct",
+      "passed": true
+    },
+    {
+      "check": "WBO2 collision mutation caught U600.5/6",
+      "passed": true
+    },
+    {
+      "check": "WBO2 U601.3/4 physically distinct",
+      "passed": true
+    },
+    {
+      "check": "WBO2 collision mutation caught U601.3/4",
+      "passed": true
+    }
+  ],
+  "independent_source_topology": [
+    {
+      "channel": 1,
+      "source_partition_count": 44,
+      "target_partition_count": 44,
+      "retained_source_pin_count": 168,
+      "errors": []
+    },
+    {
+      "channel": 2,
+      "source_partition_count": 44,
+      "target_partition_count": 44,
+      "retained_source_pin_count": 168,
+      "errors": []
     }
   ],
   "footprints": [
@@ -1493,11 +1565,11 @@
     }
   ],
   "schematic_hashes": {
-    "wbo1_analog.kicad_sch": "329bd428aa85480b6f44563e65b1f7a37137a9f8b3332b149b53fbf5b8520fdd",
-    "wbo1_control.kicad_sch": "ccc5fd57f05b0f3ba965c23c57368306e5b0ad41d317db68a0f0ea079ba3eec8",
+    "wbo1_analog.kicad_sch": "46dc8504af468e9a3b8cb50c001050355bfb721b12076c2c94c70d4098a29d63",
+    "wbo1_control.kicad_sch": "a78b598a9c1c4e2e0ad84ad6cf3a4f812fd607ecaabbecf190281bcf1c3d3af1",
     "wbo1_heater_feed.kicad_sch": "4e9e22188b31c5b9231b0da274edb4708b789c6c936e00bd4e3e3aca57ce3070",
-    "wbo2_analog.kicad_sch": "0fee197f0b3d4deb15061ac3ef2b441965259fd8ab186c025ad2a57dbb54cb1a",
-    "wbo2_control.kicad_sch": "8f45ca27555d07b6ba6770935b507b0b6a01c82f8c9d0dc0387229fdaee8f3d8",
+    "wbo2_analog.kicad_sch": "bc9ffaf3ec0a2422f5067a2e9b8943caaf0800b6ceba7b94c6bd0965987076d9",
+    "wbo2_control.kicad_sch": "4eb90324aabdcf3d97f4dc8845eec471048ab7a3f9055e2f1323a7e79624232b",
     "wbo2_heater_feed.kicad_sch": "60cdb49369a18b3113f4ef7965849ba9f637fb2ea0e48d45f917ab709adeae27"
   },
   "qualification": "Connectivity and land-pattern pad audit only; integratedERC/DRC and hardware measurement pending"

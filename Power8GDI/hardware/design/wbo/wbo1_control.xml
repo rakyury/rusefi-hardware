@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/src/Power8GDI/hardware/design/wbo/wbo1_control.kicad_sch</source>
-    <date>2026-10-23T17:24:07+0000</date>
+    <source>/work/Power8GDI/hardware/design/wbo/wbo1_control.kicad_sch</source>
+    <date>2026-10-23T17:50:38+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -853,7 +853,7 @@
   </libparts>
   <libraries>
     <library logical="Power8GDI_WBO">
-      <uri>/src/Power8GDI/hardware/design/wbo/Power8GDI_WBO.kicad_sym</uri>
+      <uri>/work/Power8GDI/hardware/design/wbo/Power8GDI_WBO.kicad_sym</uri>
     </library>
   </libraries>
   <nets>
@@ -940,75 +940,75 @@
       <node ref="U5605" pin="5" pinfunction="VIO" pintype="power_in"/>
       <node ref="U5610" pin="5" pinfunction="VCC" pintype="power_in"/>
     </net>
-    <net code="10" name="WBO1_Boot0" class="Default">
+    <net code="10" name="WBO1_AUTO_Net_2D__28_D600_2D_A_29_" class="Default">
+      <node ref="D5600" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R5616" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="11" name="WBO1_AUTO_Net_2D__28_D601_2D_K_29_" class="Default">
+      <node ref="D5601" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R5626" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="12" name="WBO1_AUTO_Net_2D__28_D602_2D_K_29_" class="Default">
+      <node ref="D5602" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R5627" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="13" name="WBO1_AUTO_Net_2D__28_D603_2D_A_29_" class="Default">
+      <node ref="D5603" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R5628" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="14" name="WBO1_AUTO_Net_2D__28_Q600_2D_G_29_" class="Default">
+      <node ref="Q5600" pin="1" pinfunction="INPUT" pintype="input"/>
+      <node ref="R5622" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5645" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="15" name="WBO1_Boot0" class="Default">
       <node ref="R5625" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U5602" pin="31" pinfunction="PB8" pintype="bidirectional"/>
     </net>
-    <net code="11" name="WBO1_CAN_RX" class="Default">
+    <net code="16" name="WBO1_CAN_RX" class="Default">
       <node ref="U5602" pin="21" pinfunction="PA11" pintype="bidirectional"/>
       <node ref="U5605" pin="4" pinfunction="RXD" pintype="output"/>
     </net>
-    <net code="12" name="WBO1_CAN_TX" class="Default">
+    <net code="17" name="WBO1_CAN_TX" class="Default">
       <node ref="U5602" pin="22" pinfunction="PA12" pintype="bidirectional"/>
       <node ref="U5605" pin="1" pinfunction="TXD" pintype="input"/>
     </net>
-    <net code="13" name="WBO1_F042_HEATER_PWM" class="Default">
+    <net code="18" name="WBO1_F042_HEATER_PWM" class="Default">
       <node ref="R5616" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R5617" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U5602" pin="13" pinfunction="PA7" pintype="bidirectional"/>
       <node ref="U5610" pin="1" pinfunction="A" pintype="input"/>
     </net>
-    <net code="14" name="WBO1_HEATER_ALLOWED_3V3" class="Default">
+    <net code="19" name="WBO1_HEATER_ALLOWED_3V3" class="Default">
       <node ref="R5643" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U5610" pin="4" pinfunction="Y" pintype="output"/>
       <node ref="U5611" pin="2" pinfunction="A" pintype="input"/>
     </net>
-    <net code="15" name="WBO1_HEATER_DRIVE_5V" class="Default">
+    <net code="20" name="WBO1_HEATER_DRIVE_5V" class="Default">
       <node ref="R5622" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R5641" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U5611" pin="4" pinfunction="Y" pintype="tri_state"/>
     </net>
-    <net code="16" name="WBO1_HEATER_PWM" class="Default">
+    <net code="21" name="WBO1_HEATER_PWM" class="Default">
       <node ref="R5640" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U5610" pin="2" pinfunction="B" pintype="input"/>
     </net>
-    <net code="17" name="WBO1_Ip_dac" class="Default">
+    <net code="22" name="WBO1_Ip_dac" class="Default">
       <node ref="U5602" pin="12" pinfunction="PA6" pintype="bidirectional"/>
     </net>
-    <net code="18" name="WBO1_Ip_sense" class="Default">
+    <net code="23" name="WBO1_Ip_sense" class="Default">
       <node ref="U5602" pin="8" pinfunction="PA2" pintype="bidirectional"/>
     </net>
-    <net code="19" name="WBO1_LED_BLUE" class="Default">
+    <net code="24" name="WBO1_LED_BLUE" class="Default">
       <node ref="D5602" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="U5602" pin="28" pinfunction="PB5" pintype="bidirectional"/>
     </net>
-    <net code="20" name="WBO1_LED_GREEN" class="Default">
+    <net code="25" name="WBO1_LED_GREEN" class="Default">
       <node ref="D5601" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="U5602" pin="29" pinfunction="PB6" pintype="bidirectional"/>
     </net>
-    <net code="21" name="WBO1_Nernst_esr_drive" class="Default">
+    <net code="26" name="WBO1_Nernst_esr_drive" class="Default">
       <node ref="U5602" pin="30" pinfunction="PB7" pintype="bidirectional"/>
-    </net>
-    <net code="22" name="WBO1_Net_D600_A" class="Default">
-      <node ref="D5600" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="R5616" pin="1" pinfunction="1" pintype="passive"/>
-    </net>
-    <net code="23" name="WBO1_Net_D601_K" class="Default">
-      <node ref="D5601" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="R5626" pin="2" pinfunction="2" pintype="passive"/>
-    </net>
-    <net code="24" name="WBO1_Net_D602_K" class="Default">
-      <node ref="D5602" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="R5627" pin="2" pinfunction="2" pintype="passive"/>
-    </net>
-    <net code="25" name="WBO1_Net_D603_A" class="Default">
-      <node ref="D5603" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="R5628" pin="1" pinfunction="1" pintype="passive"/>
-    </net>
-    <net code="26" name="WBO1_Net_Q600_G" class="Default">
-      <node ref="Q5600" pin="1" pinfunction="INPUT" pintype="input"/>
-      <node ref="R5622" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="R5645" pin="1" pinfunction="1" pintype="passive"/>
     </net>
     <net code="27" name="WBO1_SEL1" class="Default">
       <node ref="R5644" pin="1" pinfunction="1" pintype="passive"/>

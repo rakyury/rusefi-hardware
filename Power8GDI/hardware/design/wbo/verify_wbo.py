@@ -3,6 +3,37 @@ from pathlib import Path
 import argparse, hashlib, json, xml.etree.ElementTree as ET
 HERE=Path(__file__).resolve().parent
 
+def source_partition_errors(observed,index):
+    """Compare source and target connectivity partitions, ignoring net names.
+
+    Read original KiCad XML directly. DO NOT use the generated parts manifest,
+    reference_map, mapper or sanitized aliases to predict source connectivity.
+    Component identity changes only by the documented numeric offset.
+    """
+    base=5600 if index==1 else 5800
+    omitted_refs={'M1','R630','C604','C606'}
+    # Explicit adaptations: SOT223 extra drain pad removed for DPAK; heater
+    # input resistor moved behind safety buffer; one ternary ID pin floats.
+    omitted_pins={('Q600','4'),('R622','2'),('U602','18' if index==1 else '15')}
+    source_groups={};target_groups={};errors=[]
+    for net in ET.parse(HERE/'reference/hellen1-wbo.xml').findall('./nets/net'):
+        name=net.get('name')
+        if name.startswith('unconnected-'):continue
+        for node in net.findall('node'):
+            old,pin=node.get('ref'),node.get('pin')
+            if old in omitted_refs or (old,pin) in omitted_pins:continue
+            ref=old[0]+str(base+int(old[1:])-600);key=(old,pin)
+            source_groups.setdefault(name,set()).add(key)
+            target=observed.get(ref,{}).get('pins',{}).get(pin)
+            if target is None:errors.append(f'{ref}.{pin} unexpectedly absent/unconnected')
+            target_groups.setdefault(target,set()).add(key)
+    source_partition={frozenset(x) for x in source_groups.values()}
+    target_partition={frozenset(x) for x in target_groups.values()}
+    if source_partition!=target_partition:
+        for name,pins in source_groups.items():
+            if frozenset(pins) not in target_partition:errors.append(f'WBO{index} source net partition changed: {name}: {sorted(pins)}')
+    return errors,{'source_partition_count':len(source_partition),'target_partition_count':len(target_partition),'retained_source_pin_count':sum(map(len,source_groups.values()))}
+
 def verify():
     parts={p['ref']:p for p in json.loads((HERE/'parts.json').read_text())}
     observed={};errors=[];checks=[]
@@ -46,6 +77,22 @@ def verify():
     check('Index1 floating/high',parts['R5844']['pins']=={'1':'WBO2_SEL2','2':'WBO2_3V3'} and observed['U5802']['pins'].get('15') is None)
     # Ensure semantic adaptation does not accidentally join the two sensor analog loops.
     check('No formerCJ125 paths',not any('CJ125' in p['value'] or 'VCCSS' in str(p['pins']) for p in parts.values()))
+    topology=[]
+    from copy import deepcopy
+    for index,base in [(1,5600),(2,5800)]:
+        problems,counts=source_partition_errors(observed,index)
+        topology.append({'channel':index,**counts,'errors':problems})
+        check(f'WBO{index} original source pinsets preserve every connectivity partition',not problems)
+        errors.extend(problems)
+        # Simulate precisely the old sanitizer fault: merge each opamp +/- net.
+        for source_ref,positive,negative in [('U600','3','2'),('U600','5','6'),('U601','3','4')]:
+            ref=source_ref[0]+str(base+int(source_ref[1:])-600)
+            bad=deepcopy(observed);a=bad[ref]['pins'][positive];b=bad[ref]['pins'][negative]
+            check(f'WBO{index} {source_ref}.{positive}/{negative} physically distinct',a!=b)
+            for c in bad.values():
+                for pin,name in c['pins'].items():
+                    if name==a:c['pins'][pin]=b
+            check(f'WBO{index} collision mutation caught {source_ref}.{positive}/{negative}',bool(source_partition_errors(bad,index)[0]))
     footprints=[]
     try:
         import pcbnew as pcb
@@ -61,7 +108,7 @@ def verify():
             footprints.append({'footprint':fp,'pads':sorted(pads)})
     except ImportError:
         errors.append('pcbnew not available: run in pinned KiCad9 image for footprint verification')
-    report={'check_count':len(checks),'passed':not errors,'errors':errors,'checks':checks,'footprints':footprints,'schematic_hashes':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in HERE.glob('wbo*.kicad_sch')},'qualification':'Connectivity and land-pattern pad audit only; integratedERC/DRC and hardware measurement pending'}
+    report={'check_count':len(checks),'passed':not errors,'errors':errors,'checks':checks,'independent_source_topology':topology,'footprints':footprints,'schematic_hashes':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in HERE.glob('wbo*.kicad_sch')},'qualification':'Connectivity and land-pattern pad audit only; integratedERC/DRC and hardware measurement pending'}
     (HERE/'checks.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({'checks':len(checks),'passed':not errors,'errors':errors},indent=2))
     return 0 if not errors else 1

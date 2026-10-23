@@ -78,6 +78,29 @@ not avalidPDF. Preserved forhandoff pernodeletion instruction; do not use.
 OfficialSTPDF download timedout; webPDF rendered via search_service screenshot
 successfully and pinout read visually. No physicalhardwarequalification claim.
 
+## Critical analog-net correction after integration review
+
+The original generic punctuation sanitizer incorrectly merged three pairs of
+distinct op-amp input nets in each channel: U600A +/-, U600B +/-, U601 +/-.
+Earlier332 manifest-based checks did not detect this and are insufficient evidence
+of analog topology. Do not use the electrical exports through commit de91746.
+
+Automatic source nets now use reversible UTF-8 byte escaping, including underscores,
+and a reserved AUTO_ prefix. A generator guard rejects any two source names mapping
+to one alias. The added independent audit reads the original Hellen XML and compares
+entire connected-pin partitions with the real target XML, without reference_map or
+the generator's alias function. Only documented adaptation pins are removed from
+comparison: omitted module-frame/R630/C604/C606, Q600 extra SOT223 drain pad4,
+R622.2 moved behind the safety buffer, and the selected floating ternary-ID pin.
+Every other retained source connection must remain in exactly the same partition.
+
+Latest346 checks pass, including independent source topology for both channels and
+six deliberate +/- collision mutations rejected. The same independent audit also
+rejects the actual old de91746 netlists, with six changed source-net partitions per
+channel (`reports/legacy_collision_rejection.json`). Regenerated schematics, XML,
+ERC and SVG/PNG previews supersede the earlier exports. Physical calibration and
+integrated-board validation are still required.
+
 ## Read-only interface findings given to integrationlead
 
 LIN1 originally lackedmasterpullup; LIN2 optional1k+diode DNP responderonly.
