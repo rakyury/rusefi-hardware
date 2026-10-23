@@ -121,6 +121,19 @@ def build():
         sheets += [analog,control,feed]
     parts=[];symbols={}
     for s in sheets:
+        for n,item in enumerate(s.items):
+            if not item.startswith('(symbol '):continue
+            inst=parse(item); props=children(inst,'property')
+            ref=next(str(p[2]) for p in props if p[1]=='Reference')
+            if ref[0] not in 'DQJ':continue
+            at=child(inst,'at');sx,sy=float(at[1]),float(at[2])
+            sym=s.symbols[str(child(inst,'lib_id')[1]).split(':')[-1]]
+            extent=max(7.62,max(abs(p['y']) for p in sym.pins.values())+5.08)
+            for prop in props:
+                if prop[1] in ('Reference','Value'):
+                    child(prop,'at')[1:3]=[str(sx),str(sy+(-extent if prop[1]=='Reference' else extent))]
+                    effects=child(prop,'effects');effects[:]=[v for v in effects if not (isinstance(v,list) and v[0]=='justify')]
+            s.items[n]=dump(inst)
         s.write(HERE.parent)
         p=HERE.parent/(s.name+'.kicad_sch');t=p.read_text(encoding='utf-8')
         for part in s.parts:

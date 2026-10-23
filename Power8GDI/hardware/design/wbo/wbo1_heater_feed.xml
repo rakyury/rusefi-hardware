@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/work/Power8GDI/hardware/design/wbo/wbo1_heater_feed.kicad_sch</source>
-    <date>2026-10-23T16:25:32+0000</date>
+    <date>2026-10-23T17:13:10+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -36,7 +36,7 @@
       <libsource lib="Power8GDI_Aux" part="WBO_C" description=""/>
       <property name="Design note" value=""/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="work/Power8GDI/hardware/design/wbo/wbo1_heater_feed.kicad_sch"/>
+      <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>57191a80-7468-50c1-a74d-c7de1c0b0967</tstamps>
     </comp>
@@ -52,7 +52,7 @@
       <libsource lib="Power8GDI_Aux" part="WBO_C" description=""/>
       <property name="Design note" value="Provisional bulk MPN/ripple and cold ESR pending."/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="work/Power8GDI/hardware/design/wbo/wbo1_heater_feed.kicad_sch"/>
+      <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>c941a13c-0c20-5900-8aea-1b325d987e07</tstamps>
     </comp>
@@ -68,7 +68,7 @@
       <libsource lib="Power8GDI_Aux" part="WBO_STPS5H100BY" description=""/>
       <property name="Design note" value="ST DS6906 page1 package: leftlead1 NC, tab2 K, rightlead3 A. External branch fuse coordination and diode thermal validation required."/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="work/Power8GDI/hardware/design/wbo/wbo1_heater_feed.kicad_sch"/>
+      <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>d81bbe4a-52c1-5c05-b8de-ea2152c6fbd5</tstamps>
     </comp>
@@ -84,7 +84,7 @@
       <libsource lib="Power8GDI_Aux" part="WBO_SMBJ24CA" description=""/>
       <property name="Design note" value="38.9V ratedclamp nominal &lt;40V switch minimumclamp; overshoot/pulse energy still unqualified."/>
       <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="work/Power8GDI/hardware/design/wbo/wbo1_heater_feed.kicad_sch"/>
+      <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>09606869-e738-5771-b74a-c52bb462db5b</tstamps>
     </comp>
@@ -131,7 +131,11 @@
       </pins>
     </libpart>
   </libparts>
-  <libraries/>
+  <libraries>
+    <library logical="Power8GDI_Aux">
+      <uri>/work/Power8GDI/hardware/design/wbo/Power8GDI_WBO.kicad_sym</uri>
+    </library>
+  </libraries>
   <nets>
     <net code="1" name="GND" class="Default">
       <node ref="C5650" pin="2" pinfunction="2" pintype="passive"/>

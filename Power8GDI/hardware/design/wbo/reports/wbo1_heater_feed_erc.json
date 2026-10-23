@@ -1,0 +1,34 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T17:12:19+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/a54f5754-f64a-5b39-be6f-e9eea49aaacf",
+            "violations": [
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'VBAT_MAIN_FUSED'",
+                            "pos": {
+                                "x": 1.1557,
+                                "y": 0.7366
+                            },
+                            "uuid": "b8ef2fb2-8405-513d-90c5-cb604a8af1e2"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "wbo1_heater_feed.kicad_sch"
+}

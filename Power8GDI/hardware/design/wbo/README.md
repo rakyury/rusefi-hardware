@@ -1,8 +1,11 @@
 # WBO engineering checkpoint - 2026-10-23
 
-INCOMPLETE HANDOFF CHECKPOINT. Engineering frozen on integration-lead request
-for same-chat server handoff. Do not treat the current XML/check report as current
-with respect to the final schematic edit (see validation status below).
+CURRENT ENGINEERING CHECKPOINT: local work resumed after cancelled handoff.
+All six netlists exported again with KiCad9.0.9 after final signal/layout changes.
+332 connectivity and footprint-pad checks pass. Standalone leaf ERC findings are
+cross-sheet global labels and missing external power drivers only (6/12/1 per
+channel); final integrated ERC remains the integration lead's responsibility.
+No manufacturing, thermal, EMC or engine qualification is claimed.
 
 ## Implemented
 
@@ -40,19 +43,16 @@ Heater supply diode drop requires compensation in voltage sent over CAN;
 no local heater voltage ADC is currently added. Branchfuses/currentreturn/
 cold-start and transient coordination remains integration work.
 
-## Validation status at freeze
+## Validation
 
-KiCad9.0.9 exported all6sheets successfully. verify_wbo.py performed332checks
-including actual exported net connectivity, independent criticalpin contracts,
-and installed library footprint-pad availability; passed before last edit.
-Then visual review found control-sheet lastrow and tinyQ/J/Dproperty overlap.
-Last edit fixed placement, added leaf .kicad_pro forlibraryresolution, and
-renamed local heater_pwm to F042_HEATER_PWM to avoid mainpermissionlabelcase
-confusion. Generation rerun. Controlleaf ERC rerun:12violations (9dangling
-crosssheet global labels,3powernotdriven in isolatedleaf), no lib/misc errors.
-ALL6XML EXPORTS AND verify_wbo.py MUST BE RERUN AFTER LASTEDIT. Existing
-checks.json and SVG/PNG correspond to previousrevision and are historical.
-No fullparent integrationERC, boardroute/DRC or hardware measurements run.
+Run build_wbo.py, export every wbo*.kicad_sch with kicad-cli sch export netlist
+--format kicadxml, then run verify_wbo.py inside the pinned KiCad9 image.
+Latest332 checks pass against the regenerated electrical sheets and all installed
+footprint pads. Pin contracts cover Bosch sensor mapping, ST diode/FET mapping,
+CAN polarity, F042 pins, power isolation and all heater inhibit gates.
+Control and analog previews were inspected; sheet overflow and reference-label
+overlap corrected. Saved SVG/PNG previews are illustrative snapshots, not release
+artifacts. Root integration and routed-board DRC remain outside this module scope.
 
 ## Provenance / rights
 
