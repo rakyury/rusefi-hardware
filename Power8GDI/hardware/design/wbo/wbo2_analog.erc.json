@@ -1,0 +1,109 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T17:17:12+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/a379aa82-67b4-5f35-9573-337734fbe5b3",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U5800 Pin 4 [V+, Power input, Line]",
+                            "pos": {
+                                "x": 0.7239,
+                                "y": 0.8509
+                            },
+                            "uuid": "29cf67ce-5638-56cf-8dd1-ea903cc9abec"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U5800 Pin 11 [V-, Power input, Line]",
+                            "pos": {
+                                "x": 1.0795,
+                                "y": 0.8509
+                            },
+                            "uuid": "a1965157-92f8-5716-af7b-abea2c0152cf"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U5803 Pin 1 [IN, Power input, Line]",
+                            "pos": {
+                                "x": 4.318,
+                                "y": 0.8382
+                            },
+                            "uuid": "6d2557e5-f3cc-58af-842f-d1cdaae1020f"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO2_Ip_dac'",
+                            "pos": {
+                                "x": 3.2258,
+                                "y": 2.0955
+                            },
+                            "uuid": "b92bcb23-e3db-56f2-b51b-6ba057a335ac"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label '+5V_CORE'",
+                            "pos": {
+                                "x": 4.2418,
+                                "y": 0.8382
+                            },
+                            "uuid": "3990d03d-a856-5f00-8db6-08398db27f7a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO2_Nernst_esr_drive'",
+                            "pos": {
+                                "x": 4.826,
+                                "y": 2.3114
+                            },
+                            "uuid": "53330ab4-2cd0-5db3-ab92-7de36b252bc3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "wbo2_analog.kicad_sch"
+}

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/src/Power8GDI/hardware/design/wbo/wbo1_heater_feed.kicad_sch</source>
-    <date>2026-10-23T17:14:31+0000</date>
+    <source>/work/Power8GDI/hardware/design/wbo/wbo1_heater_feed.kicad_sch</source>
+    <date>2026-10-23T17:17:11+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -33,7 +33,7 @@
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="Power8GDI_Aux" part="WBO_C" description=""/>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
       <property name="Design note" value=""/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
@@ -49,7 +49,7 @@
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="Power8GDI_Aux" part="WBO_C" description=""/>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
       <property name="Design note" value="Provisional bulk MPN/ripple and cold ESR pending."/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
@@ -65,7 +65,7 @@
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="Power8GDI_Aux" part="WBO_STPS5H100BY" description=""/>
+      <libsource lib="Power8GDI_WBO" part="WBO_STPS5H100BY" description=""/>
       <property name="Design note" value="ST DS6906 page1 package: leftlead1 NC, tab2 K, rightlead3 A. External branch fuse coordination and diode thermal validation required."/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
@@ -81,7 +81,7 @@
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
-      <libsource lib="Power8GDI_Aux" part="WBO_SMBJ24CA" description=""/>
+      <libsource lib="Power8GDI_WBO" part="WBO_SMBJ24CA" description=""/>
       <property name="Design note" value="38.9V ratedclamp nominal &lt;40V switch minimumclamp; overshoot/pulse energy still unqualified."/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
@@ -90,7 +90,7 @@
     </comp>
   </components>
   <libparts>
-    <libpart lib="Power8GDI_Aux" part="WBO_C">
+    <libpart lib="Power8GDI_WBO" part="WBO_C">
       <fields>
         <field name="Reference">C</field>
         <field name="Value">WBO_C</field>
@@ -103,7 +103,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Power8GDI_Aux" part="WBO_SMBJ24CA">
+    <libpart lib="Power8GDI_WBO" part="WBO_SMBJ24CA">
       <fields>
         <field name="Reference">D</field>
         <field name="Value">WBO_SMBJ24CA</field>
@@ -116,7 +116,7 @@
         <pin num="2" name="2" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Power8GDI_Aux" part="WBO_STPS5H100BY">
+    <libpart lib="Power8GDI_WBO" part="WBO_STPS5H100BY">
       <fields>
         <field name="Reference">D</field>
         <field name="Value">WBO_STPS5H100BY</field>
@@ -132,8 +132,8 @@
     </libpart>
   </libparts>
   <libraries>
-    <library logical="Power8GDI_Aux">
-      <uri>/src/Power8GDI/hardware/design/wbo/Power8GDI_WBO.kicad_sym</uri>
+    <library logical="Power8GDI_WBO">
+      <uri>/work/Power8GDI/hardware/design/wbo/Power8GDI_WBO.kicad_sym</uri>
     </library>
   </libraries>
   <nets>
