@@ -67,6 +67,7 @@ def load_footprint(identifier, design):
     libraries={'Power8GDI_Board':HERE/'Power8GDI_Board.pretty',
                'Power8GDI_Core':design/'Power8GDI_Core.pretty',
                'Power8GDI_Interfaces':design/'interfaces/Power8GDI_Interfaces.pretty',
+               'Power8GDI_Motor4':design/'motor4/Power8GDI_Motor4.pretty',
                'Power8GDI_GDIProtection':design/'gdi/Power8GDI_GDIProtection.pretty',
                'Power8GDI_GDI':design/'gdi/Power8GDI_GDI.pretty'}
     path=libraries.get(library,Path('/usr/share/kicad/footprints')/(library+'.pretty'))
@@ -385,8 +386,11 @@ def build(args):
     if args.functional_layout:
         from functional_layout import place
         bank_placements=place(board,footprints,imported,root_path,manifest,nets,add_track,ground_pad)
+        from route_ignition_local import route as route_ignition
+        ignition_routes=route_ignition(board,footprints,nets,add_track)
         unplaced=[]
     else:
+        ignition_routes=[]
         for ref,(x,y,a) in fixed.items():
             if ref in footprints:footprints[ref].SetPosition(vec(x,y));footprints[ref].SetOrientationDegrees(a);placed.add(ref)
         bank_refs,bank_placements=place_output_banks(board,footprints) if args.grouped_outputs else (set(),[])
@@ -405,7 +409,8 @@ def build(args):
     silk_report=arrange_references(board)
     dest=out/'Power8GDI_Review.kicad_pcb';p.SaveBoard(str(dest),board);insert_stackup(dest);project_file(dest.with_suffix('.kicad_pro'))
     libs={'Power8GDI_Board':HERE/'Power8GDI_Board.pretty','Power8GDI_Core':design/'Power8GDI_Core.pretty','Power8GDI_GDI':design/'gdi/Power8GDI_GDI.pretty',
-          'Power8GDI_Interfaces':design/'interfaces/Power8GDI_Interfaces.pretty','Power8GDI_GDIProtection':design/'gdi/Power8GDI_GDIProtection.pretty'}
+          'Power8GDI_Interfaces':design/'interfaces/Power8GDI_Interfaces.pretty','Power8GDI_GDIProtection':design/'gdi/Power8GDI_GDIProtection.pretty',
+          'Power8GDI_Motor4':design/'motor4/Power8GDI_Motor4.pretty'}
     for comp in components.values():
         name=comp['footprint'].split(':')[0]
         if name not in libs:libs[name]=Path('/usr/share/kicad/footprints')/(name+'.pretty')
@@ -430,7 +435,8 @@ def build(args):
             'zones':len(list(board.Zones())),'unconnected_count':board.GetConnectivity().GetUnconnectedCount(False),
             'dnp_references':sorted(ref for ref,comp in components.items() if comp['dnp']),
             'staged_unreviewed_placements':unplaced,'reference_copper':audit,
-            'silkscreen_geometry':silk_report,'copper_cleanup':cleanup_report,'output_bank_placement':bank_placements}
+            'silkscreen_geometry':silk_report,'copper_cleanup':cleanup_report,'output_bank_placement':bank_placements,
+            'ignition_local_routes':ignition_routes}
     (out/'board_report.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({k:v for k,v in report.items() if k not in ('reference_copper','source_netlists','staged_unreviewed_placements')},indent=2))
 
