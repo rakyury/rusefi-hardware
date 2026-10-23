@@ -1,4 +1,9 @@
-# Ignition checkpoint — incomplete, untested
+# Historical ignition checkpoint — superseded by README.md
+
+This file preserves research and the interrupted checkpoint. Current implementation
+and actual validation are in README.md and reports/. MIC4427YM has since been
+replaced by automotive UCC27524AQDRQ1; LIMIT is now E96 4.99k (9.93A nominal).
+The statements below about not running generation/tests describe the old checkpoint.
 
 Work paused for user-requested transfer to WIN-V7K2CF64NGO on 2026-10-23.
 `build_ignition.py` has been written but NOT run, syntax-tested, ERC-checked,
