@@ -1,25 +1,25 @@
 {
   "manufacturing_gate": "FAIL",
   "violations": {
-    "clearance": 501,
+    "clearance": 504,
     "track_width": 199,
     "via_dangling": 12,
     "track_dangling": 2,
-    "silk_over_copper": 35,
-    "silk_overlap": 177
+    "silk_over_copper": 49,
+    "silk_overlap": 172
   },
-  "total_violations": 926,
+  "total_violations": 938,
   "unconnected_items": 499,
-  "multi_terminal_nets": 754,
-  "connectivity_unconnected_count": 2535,
+  "multi_terminal_nets": 760,
+  "connectivity_unconnected_count": 2602,
   "drc_report_may_be_truncated": true,
   "categories_at_kicad_reporting_limit": {
-    "clearance": 501,
+    "clearance": 504,
     "track_width": 199,
     "unconnected_items": 499
   },
-  "multi_terminal_nets_with_missing_connections": 60,
-  "multi_terminal_nets_without_reported_missing_connection": 694,
+  "multi_terminal_nets_with_missing_connections": 56,
+  "multi_terminal_nets_without_reported_missing_connection": 704,
   "singleton_harness_nets": [],
   "nets": {
     "+3V3": {
@@ -166,8 +166,6 @@
         "R5522.1",
         "R5542.1",
         "R5562.1",
-        "R5642.2",
-        "R5842.2",
         "R6004.2",
         "R6005.2",
         "R6054.2",
@@ -290,7 +288,7 @@
         "Y201.4",
         "Y301.4"
       ],
-      "missing_connections": 249
+      "missing_connections": 246
     },
     "+3V3_A": {
       "pads": [
@@ -375,10 +373,12 @@
         "C5613.1",
         "C5617.1",
         "C5641.1",
+        "C5661.1",
         "C5810.1",
         "C5813.1",
         "C5817.1",
         "C5841.1",
+        "C5861.1",
         "C761.1",
         "C762.1",
         "D1600.2",
@@ -402,6 +402,8 @@
         "R1614.1",
         "R5200.1",
         "R5204.1",
+        "R5642.2",
+        "R5842.2",
         "R751.1",
         "R752.1",
         "R753.1",
@@ -436,16 +438,22 @@
         "U5404.6",
         "U5405.6",
         "U5603.1",
+        "U5604.1",
+        "U5604.2",
         "U5604.3",
+        "U5604.6",
         "U5605.3",
         "U5611.5",
         "U5803.1",
+        "U5804.1",
+        "U5804.2",
         "U5804.3",
+        "U5804.6",
         "U5805.3",
         "U5811.5",
         "U731.10"
       ],
-      "missing_connections": 107
+      "missing_connections": 117
     },
     "+5V_GDI_A": {
       "pads": [
@@ -874,21 +882,21 @@
         "R716.1",
         "U702.5"
       ],
-      "missing_connections": 4
+      "missing_connections": 0
     },
     "BOOT0": {
       "pads": [
         "R103.1",
         "U101.166"
       ],
-      "missing_connections": 1
+      "missing_connections": 0
     },
     "CAM1": {
       "pads": [
         "U101.19",
         "U721.2"
       ],
-      "missing_connections": 1
+      "missing_connections": 0
     },
     "CAM1_FILTERED": {
       "pads": [
@@ -898,7 +906,7 @@
         "R761.1",
         "U721.1"
       ],
-      "missing_connections": 1
+      "missing_connections": 0
     },
     "CAM2": {
       "pads": [
@@ -1750,6 +1758,11 @@
         "C5641.2",
         "C5650.2",
         "C5651.2",
+        "C5660.2",
+        "C5661.2",
+        "C5662.2",
+        "C5663.2",
+        "C5664.2",
         "C5800.2",
         "C5801.2",
         "C5802.2",
@@ -1769,6 +1782,11 @@
         "C5841.2",
         "C5850.2",
         "C5851.2",
+        "C5860.2",
+        "C5861.2",
+        "C5862.2",
+        "C5863.2",
+        "C5864.2",
         "C6000.2",
         "C6001.2",
         "C6002.2",
@@ -1949,7 +1967,9 @@
         "J602.34",
         "Q1510.2",
         "Q5600.3",
+        "Q5620.2",
         "Q5800.3",
+        "Q5820.2",
         "R103.2",
         "R105.2",
         "R108.2",
@@ -2097,6 +2117,9 @@
         "R5643.2",
         "R5644.2",
         "R5645.2",
+        "R5660.2",
+        "R5661.2",
+        "R5665.2",
         "R5801.2",
         "R5817.1",
         "R5820.2",
@@ -2107,6 +2130,9 @@
         "R5841.2",
         "R5843.2",
         "R5845.2",
+        "R5860.2",
+        "R5861.2",
+        "R5865.2",
         "R6002.2",
         "R6003.2",
         "R6052.2",
@@ -2309,11 +2335,14 @@
         "U5602.3",
         "U5602.32",
         "U5603.3",
-        "U5604.1",
+        "U5604.11",
+        "U5604.5",
+        "U5604.8",
         "U5605.2",
         "U5605.8",
         "U5610.3",
         "U5611.3",
+        "U5612.2",
         "U5800.11",
         "U5801.2",
         "U5802.16",
@@ -2321,11 +2350,14 @@
         "U5802.3",
         "U5802.32",
         "U5803.3",
-        "U5804.1",
+        "U5804.11",
+        "U5804.5",
+        "U5804.8",
         "U5805.2",
         "U5805.8",
         "U5810.3",
         "U5811.3",
+        "U5812.2",
         "U6000.13",
         "U6000.6",
         "U6001.3",
@@ -3087,6 +3119,8 @@
         "R1216.1",
         "R5003.1",
         "R5053.1",
+        "R5664.1",
+        "R5864.1",
         "R6202.1",
         "R6252.1",
         "R806.1",
@@ -3099,12 +3133,8 @@
     },
     "HW_ACTUATOR_ENABLE_N": {
       "pads": [
-        "R5642.1",
-        "R5842.1",
         "R6194.1",
         "R805.1",
-        "U5611.1",
-        "U5811.1",
         "U6001.1",
         "U6051.1",
         "U6101.1",
@@ -7001,21 +7031,33 @@
       "pads": [
         "C5601.1",
         "C5602.1",
+        "C5611.1",
+        "C5612.1",
         "C5614.1",
         "C5615.1",
         "C5616.1",
         "C5618.1",
         "C5640.1",
+        "C5662.1",
+        "C5663.1",
         "J5600.1",
+        "R5600.1",
         "R5610.2",
         "R5628.2",
+        "R5661.1",
+        "R5662.2",
         "U5600.4",
         "U5601.5",
         "U5602.1",
         "U5602.17",
-        "U5604.2",
+        "U5602.5",
+        "U5604.10",
+        "U5604.9",
         "U5605.5",
-        "U5610.5"
+        "U5610.5",
+        "U5612.3",
+        "U5612.5",
+        "U5612.6"
       ],
       "missing_connections": 0
     },
@@ -7197,6 +7239,22 @@
       ],
       "missing_connections": 0
     },
+    "WBO1_HEATER_OE_BASE": {
+      "pads": [
+        "Q5620.1",
+        "R5664.2",
+        "R5665.1"
+      ],
+      "missing_connections": 0
+    },
+    "WBO1_HEATER_OE_N": {
+      "pads": [
+        "Q5620.3",
+        "R5642.1",
+        "U5611.1"
+      ],
+      "missing_connections": 0
+    },
     "WBO1_HEATER_PWM": {
       "pads": [
         "R5640.1",
@@ -7249,6 +7307,23 @@
       ],
       "missing_connections": 0
     },
+    "WBO1_REF3V3": {
+      "pads": [
+        "C5664.1",
+        "R5663.1",
+        "U5603.2"
+      ],
+      "missing_connections": 0
+    },
+    "WBO1_REF_SET": {
+      "pads": [
+        "C5660.1",
+        "R5660.1",
+        "R5663.2",
+        "U5604.7"
+      ],
+      "missing_connections": 0
+    },
     "WBO1_SEL1": {
       "pads": [
         "R5644.1",
@@ -7278,16 +7353,6 @@
       ],
       "missing_connections": 0
     },
-    "WBO1_VDDA": {
-      "pads": [
-        "C5611.1",
-        "C5612.1",
-        "R5600.1",
-        "U5602.5",
-        "U5603.2"
-      ],
-      "missing_connections": 0
-    },
     "WBO1_Vm": {
       "pads": [
         "R5603.2",
@@ -7303,7 +7368,9 @@
       "pads": [
         "C5609.1",
         "J5600.3",
-        "U5602.4"
+        "R5662.1",
+        "U5602.4",
+        "U5612.1"
       ],
       "missing_connections": 0
     },
@@ -7311,22 +7378,34 @@
       "pads": [
         "C5801.1",
         "C5802.1",
+        "C5811.1",
+        "C5812.1",
         "C5814.1",
         "C5815.1",
         "C5816.1",
         "C5818.1",
         "C5840.1",
+        "C5862.1",
+        "C5863.1",
         "J5800.1",
+        "R5800.1",
         "R5810.2",
         "R5828.2",
         "R5844.2",
+        "R5861.1",
+        "R5862.2",
         "U5800.4",
         "U5801.5",
         "U5802.1",
         "U5802.17",
-        "U5804.2",
+        "U5802.5",
+        "U5804.10",
+        "U5804.9",
         "U5805.5",
-        "U5810.5"
+        "U5810.5",
+        "U5812.3",
+        "U5812.5",
+        "U5812.6"
       ],
       "missing_connections": 0
     },
@@ -7508,6 +7587,22 @@
       ],
       "missing_connections": 0
     },
+    "WBO2_HEATER_OE_BASE": {
+      "pads": [
+        "Q5820.1",
+        "R5864.2",
+        "R5865.1"
+      ],
+      "missing_connections": 0
+    },
+    "WBO2_HEATER_OE_N": {
+      "pads": [
+        "Q5820.3",
+        "R5842.1",
+        "U5811.1"
+      ],
+      "missing_connections": 0
+    },
     "WBO2_HEATER_PWM": {
       "pads": [
         "R5840.1",
@@ -7560,6 +7655,23 @@
       ],
       "missing_connections": 0
     },
+    "WBO2_REF3V3": {
+      "pads": [
+        "C5864.1",
+        "R5863.1",
+        "U5803.2"
+      ],
+      "missing_connections": 0
+    },
+    "WBO2_REF_SET": {
+      "pads": [
+        "C5860.1",
+        "R5860.1",
+        "R5863.2",
+        "U5804.7"
+      ],
+      "missing_connections": 0
+    },
     "WBO2_SEL2": {
       "pads": [
         "R5844.1",
@@ -7589,16 +7701,6 @@
       ],
       "missing_connections": 0
     },
-    "WBO2_VDDA": {
-      "pads": [
-        "C5811.1",
-        "C5812.1",
-        "R5800.1",
-        "U5802.5",
-        "U5803.2"
-      ],
-      "missing_connections": 0
-    },
     "WBO2_Vm": {
       "pads": [
         "R5803.2",
@@ -7614,7 +7716,9 @@
       "pads": [
         "C5809.1",
         "J5800.3",
-        "U5802.4"
+        "R5862.1",
+        "U5802.4",
+        "U5812.1"
       ],
       "missing_connections": 0
     },
@@ -8093,6 +8197,18 @@
       ],
       "missing_connections": 0
     },
+    "unconnected-(U5604-PG-Pad4)": {
+      "pads": [
+        "U5604.4"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U5612-CT-Pad4)": {
+      "pads": [
+        "U5612.4"
+      ],
+      "missing_connections": 0
+    },
     "unconnected-(U5802-PA10-Pad20)": {
       "pads": [
         "U5802.20"
@@ -8144,6 +8260,18 @@
     "unconnected-(U5802-PB4-Pad27)": {
       "pads": [
         "U5802.27"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U5804-PG-Pad4)": {
+      "pads": [
+        "U5804.4"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U5812-CT-Pad4)": {
+      "pads": [
+        "U5812.4"
       ],
       "missing_connections": 0
     },

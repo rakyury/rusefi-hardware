@@ -3,67 +3,10 @@
   "datasheet": "https://www.nxp.com/docs/en/data-sheet/MC33PT2001_SDS.pdf",
   "datasheet_revision": "10.1, Table2 pp6-7",
   "netlist_sha256": "d7fb0ddc652c735b1617ddce309dcb4ca93b4729c80044e7e9be3e5e50e74ae7",
-  "project_sha256": "a79544c77ed5e21587d191fc009dfe04767c77733410b43bf6a4246c94033db9",
-  "rules_sha256": "91d630ba80cd1932adb5aeb9a11f56d769845ff7bf0c6643461a2fa668e30e15",
+  "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+  "rules_sha256": "e9d8c514216163a9bf15b9f1d364d4e127c75921b3df4cf92ef13ee6a2134552",
   "switching_domain_net_count": 60,
-  "nets_without_explicit_existing_0p6mm_target": [
-    "Net-(Q203-G)",
-    "Net-(Q203-S)",
-    "Net-(Q204-G)",
-    "Net-(Q205-G)",
-    "Net-(Q205-S)",
-    "Net-(Q206-G)",
-    "Net-(Q211-G)",
-    "Net-(Q303-G)",
-    "Net-(Q303-S)",
-    "Net-(Q304-G)",
-    "Net-(Q305-G)",
-    "Net-(Q305-S)",
-    "Net-(Q306-G)",
-    "Net-(Q311-G)",
-    "Net-(U201-B_HS1)",
-    "Net-(U201-B_HS2)",
-    "Net-(U201-B_HS3)",
-    "Net-(U201-B_HS4)",
-    "Net-(U201-B_HS5)",
-    "Net-(U201-D_LS6)",
-    "Net-(U201-G_HS1)",
-    "Net-(U201-G_HS2)",
-    "Net-(U201-G_HS3)",
-    "Net-(U201-G_HS4)",
-    "Net-(U201-G_HS5)",
-    "Net-(U301-B_HS1)",
-    "Net-(U301-B_HS2)",
-    "Net-(U301-B_HS3)",
-    "Net-(U301-B_HS4)",
-    "Net-(U301-B_HS5)",
-    "Net-(U301-D_LS6)",
-    "Net-(U301-G_HS1)",
-    "Net-(U301-G_HS2)",
-    "Net-(U301-G_HS3)",
-    "Net-(U301-G_HS4)",
-    "Net-(U301-G_HS5)",
-    "PTA_H1",
-    "PTA_H3",
-    "PTA_H5PUMP",
-    "PTA_L1",
-    "PTA_L2",
-    "PTA_L3",
-    "PTA_L4",
-    "PTA_L5",
-    "PTA_L6",
-    "PTA_L6PUMP",
-    "PTB_H1",
-    "PTB_H3",
-    "PTB_H5PUMP",
-    "PTB_L1",
-    "PTB_L2",
-    "PTB_L3",
-    "PTB_L4",
-    "PTB_L5",
-    "PTB_L6",
-    "PTB_L6PUMP"
-  ],
+  "nets_without_explicit_existing_0p6mm_target": [],
   "interpretation": "0.6mm is the existing project engineering target, not a requirement derived from this short datasheet. Package escapes, within-domain differential voltage, fabrication and transients need separate review. No rules changed or waived.",
   "nets": {
     "Net-(Q203-G)": {
@@ -89,12 +32,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(Q203-S)": {
       "evidence": [
@@ -131,12 +76,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(Q204-G)": {
       "evidence": [
@@ -161,12 +108,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(Q205-G)": {
       "evidence": [
@@ -191,12 +140,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(Q205-S)": {
       "evidence": [
@@ -233,12 +184,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(Q206-G)": {
       "evidence": [
@@ -263,12 +216,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(Q211-G)": {
       "evidence": [
@@ -293,12 +248,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(Q303-G)": {
       "evidence": [
@@ -323,12 +280,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(Q303-S)": {
       "evidence": [
@@ -365,12 +324,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(Q304-G)": {
       "evidence": [
@@ -395,12 +356,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(Q305-G)": {
       "evidence": [
@@ -425,12 +388,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(Q305-S)": {
       "evidence": [
@@ -467,12 +432,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(Q306-G)": {
       "evidence": [
@@ -497,12 +464,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(Q311-G)": {
       "evidence": [
@@ -527,12 +496,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U201-B_HS1)": {
       "evidence": [
@@ -552,12 +523,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U201-B_HS2)": {
       "evidence": [
@@ -577,12 +550,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U201-B_HS3)": {
       "evidence": [
@@ -602,12 +577,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U201-B_HS4)": {
       "evidence": [
@@ -627,12 +604,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U201-B_HS5)": {
       "evidence": [
@@ -652,12 +631,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U201-D_LS6)": {
       "evidence": [
@@ -684,12 +665,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U201-G_HS1)": {
       "evidence": [
@@ -709,12 +692,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U201-G_HS2)": {
       "evidence": [
@@ -734,12 +719,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U201-G_HS3)": {
       "evidence": [
@@ -759,12 +746,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U201-G_HS4)": {
       "evidence": [
@@ -784,12 +773,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U201-G_HS5)": {
       "evidence": [
@@ -809,12 +800,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U301-B_HS1)": {
       "evidence": [
@@ -834,12 +827,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U301-B_HS2)": {
       "evidence": [
@@ -859,12 +854,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U301-B_HS3)": {
       "evidence": [
@@ -884,12 +881,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U301-B_HS4)": {
       "evidence": [
@@ -909,12 +908,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U301-B_HS5)": {
       "evidence": [
@@ -934,12 +935,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U301-D_LS6)": {
       "evidence": [
@@ -966,12 +969,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U301-G_HS1)": {
       "evidence": [
@@ -991,12 +996,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U301-G_HS2)": {
       "evidence": [
@@ -1016,12 +1023,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U301-G_HS3)": {
       "evidence": [
@@ -1041,12 +1050,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U301-G_HS4)": {
       "evidence": [
@@ -1066,12 +1077,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "Net-(U301-G_HS5)": {
       "evidence": [
@@ -1091,12 +1104,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTA_H1": {
       "evidence": [
@@ -1160,12 +1175,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTA_H3": {
       "evidence": [
@@ -1229,12 +1246,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTA_H5PUMP": {
       "evidence": [
@@ -1282,12 +1301,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTA_L1": {
       "evidence": [
@@ -1326,12 +1347,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTA_L2": {
       "evidence": [
@@ -1370,12 +1393,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTA_L3": {
       "evidence": [
@@ -1414,12 +1439,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTA_L4": {
       "evidence": [
@@ -1458,12 +1485,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTA_L5": {
       "evidence": [
@@ -1496,12 +1525,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTA_L6": {
       "evidence": [
@@ -1534,12 +1565,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTA_L6PUMP": {
       "evidence": [
@@ -1577,12 +1610,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTA_VBOOST": {
       "evidence": [
@@ -1842,12 +1877,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTB_H3": {
       "evidence": [
@@ -1911,12 +1948,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTB_H5PUMP": {
       "evidence": [
@@ -1964,12 +2003,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTB_L1": {
       "evidence": [
@@ -2008,12 +2049,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTB_L2": {
       "evidence": [
@@ -2052,12 +2095,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTB_L3": {
       "evidence": [
@@ -2096,12 +2141,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTB_L4": {
       "evidence": [
@@ -2140,12 +2187,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTB_L5": {
       "evidence": [
@@ -2178,12 +2227,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTB_L6": {
       "evidence": [
@@ -2216,12 +2267,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTB_L6PUMP": {
       "evidence": [
@@ -2259,12 +2312,14 @@
         }
       ],
       "matching_project_classes": [
-        "Default"
+        "GDI_HV"
       ],
       "matching_class_clearances_mm": {
-        "Default": 0.2
+        "GDI_HV": 0.6
       },
-      "explicit_clearance_minima_mm": []
+      "explicit_clearance_minima_mm": [
+        0.6
+      ]
     },
     "PTB_VBOOST": {
       "evidence": [

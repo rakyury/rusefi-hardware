@@ -102,8 +102,27 @@
         "description": "Provisional engineering rule; fabrication and current/thermal approval pending"
       },
       {
-        "name": "Logic",
+        "name": "LogicSupply",
         "priority": 3,
+        "clearance": 0.2,
+        "track_width": 0.4,
+        "via_diameter": 0.65,
+        "via_drill": 0.3,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "diff_pair_width": 0.2,
+        "diff_pair_gap": 0.2,
+        "diff_pair_via_gap": 0.25,
+        "wire_width": 6,
+        "bus_width": 12,
+        "line_style": 0,
+        "pcb_color": "rgba(0,0,0,0)",
+        "schematic_color": "rgba(0,0,0,0)",
+        "description": "Provisional engineering rule; fabrication and current/thermal approval pending"
+      },
+      {
+        "name": "Logic",
+        "priority": 4,
         "clearance": 0.2,
         "track_width": 0.25,
         "via_diameter": 0.65,
@@ -121,7 +140,200 @@
         "description": "Provisional engineering rule; fabrication and current/thermal approval pending"
       }
     ],
-    "netclass_assignments": {},
+    "netclass_assignments": {
+      "Net-(Q203-G)": [
+        "GDI_HV"
+      ],
+      "Net-(Q203-S)": [
+        "GDI_HV"
+      ],
+      "Net-(Q204-G)": [
+        "GDI_HV"
+      ],
+      "Net-(Q205-G)": [
+        "GDI_HV"
+      ],
+      "Net-(Q205-S)": [
+        "GDI_HV"
+      ],
+      "Net-(Q206-G)": [
+        "GDI_HV"
+      ],
+      "Net-(Q211-G)": [
+        "GDI_HV"
+      ],
+      "Net-(Q303-G)": [
+        "GDI_HV"
+      ],
+      "Net-(Q303-S)": [
+        "GDI_HV"
+      ],
+      "Net-(Q304-G)": [
+        "GDI_HV"
+      ],
+      "Net-(Q305-G)": [
+        "GDI_HV"
+      ],
+      "Net-(Q305-S)": [
+        "GDI_HV"
+      ],
+      "Net-(Q306-G)": [
+        "GDI_HV"
+      ],
+      "Net-(Q311-G)": [
+        "GDI_HV"
+      ],
+      "Net-(U201-B_HS1)": [
+        "GDI_HV"
+      ],
+      "Net-(U201-B_HS2)": [
+        "GDI_HV"
+      ],
+      "Net-(U201-B_HS3)": [
+        "GDI_HV"
+      ],
+      "Net-(U201-B_HS4)": [
+        "GDI_HV"
+      ],
+      "Net-(U201-B_HS5)": [
+        "GDI_HV"
+      ],
+      "Net-(U201-D_LS6)": [
+        "GDI_HV"
+      ],
+      "Net-(U201-G_HS1)": [
+        "GDI_HV"
+      ],
+      "Net-(U201-G_HS2)": [
+        "GDI_HV"
+      ],
+      "Net-(U201-G_HS3)": [
+        "GDI_HV"
+      ],
+      "Net-(U201-G_HS4)": [
+        "GDI_HV"
+      ],
+      "Net-(U201-G_HS5)": [
+        "GDI_HV"
+      ],
+      "Net-(U301-B_HS1)": [
+        "GDI_HV"
+      ],
+      "Net-(U301-B_HS2)": [
+        "GDI_HV"
+      ],
+      "Net-(U301-B_HS3)": [
+        "GDI_HV"
+      ],
+      "Net-(U301-B_HS4)": [
+        "GDI_HV"
+      ],
+      "Net-(U301-B_HS5)": [
+        "GDI_HV"
+      ],
+      "Net-(U301-D_LS6)": [
+        "GDI_HV"
+      ],
+      "Net-(U301-G_HS1)": [
+        "GDI_HV"
+      ],
+      "Net-(U301-G_HS2)": [
+        "GDI_HV"
+      ],
+      "Net-(U301-G_HS3)": [
+        "GDI_HV"
+      ],
+      "Net-(U301-G_HS4)": [
+        "GDI_HV"
+      ],
+      "Net-(U301-G_HS5)": [
+        "GDI_HV"
+      ],
+      "PTA_H1": [
+        "GDI_HV"
+      ],
+      "PTA_H3": [
+        "GDI_HV"
+      ],
+      "PTA_H5PUMP": [
+        "GDI_HV"
+      ],
+      "PTA_L1": [
+        "GDI_HV"
+      ],
+      "PTA_L2": [
+        "GDI_HV"
+      ],
+      "PTA_L3": [
+        "GDI_HV"
+      ],
+      "PTA_L4": [
+        "GDI_HV"
+      ],
+      "PTA_L5": [
+        "GDI_HV"
+      ],
+      "PTA_L6": [
+        "GDI_HV"
+      ],
+      "PTA_L6PUMP": [
+        "GDI_HV"
+      ],
+      "PTA_VBOOST": [
+        "GDI_HV"
+      ],
+      "PTA_Vdrive_coil": [
+        "GDI_HV"
+      ],
+      "PTA_Vdrive_shunt": [
+        "GDI_HV"
+      ],
+      "PTB_H1": [
+        "GDI_HV"
+      ],
+      "PTB_H3": [
+        "GDI_HV"
+      ],
+      "PTB_H5PUMP": [
+        "GDI_HV"
+      ],
+      "PTB_L1": [
+        "GDI_HV"
+      ],
+      "PTB_L2": [
+        "GDI_HV"
+      ],
+      "PTB_L3": [
+        "GDI_HV"
+      ],
+      "PTB_L4": [
+        "GDI_HV"
+      ],
+      "PTB_L5": [
+        "GDI_HV"
+      ],
+      "PTB_L6": [
+        "GDI_HV"
+      ],
+      "PTB_L6PUMP": [
+        "GDI_HV"
+      ],
+      "PTB_VBOOST": [
+        "GDI_HV"
+      ],
+      "PTB_Vdrive_coil": [
+        "GDI_HV"
+      ],
+      "PTB_Vdrive_shunt": [
+        "GDI_HV"
+      ],
+      "PTA_+Batt_filtered": [
+        "Power"
+      ],
+      "PTB_+Batt_filtered": [
+        "Power"
+      ]
+    },
     "netclass_patterns": [
       {
         "pattern": "PT*_Vdrive*",
@@ -141,11 +353,11 @@
       },
       {
         "pattern": "+5V*",
-        "netclass": "Power"
+        "netclass": "LogicSupply"
       },
       {
         "pattern": "+3V3*",
-        "netclass": "Power"
+        "netclass": "LogicSupply"
       }
     ]
   }
