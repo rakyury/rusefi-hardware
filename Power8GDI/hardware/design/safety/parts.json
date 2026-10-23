@@ -68,6 +68,22 @@
     "sheet": "safety_gate"
   },
   {
+    "ref": "U806",
+    "value": "TPS3808G01QDBVRQ1",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+    "pins": {
+      "6": "+3V3",
+      "5": "SAFETY_5V_SENSE",
+      "3": "+3V3",
+      "4": null,
+      "1": "SAFETY_FAULT_N",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Independent 5V undervoltage fault while 3V3 remains alive; CT open 12..28ms recovery. TI SBVS085J.",
+    "sheet": "safety_gate"
+  },
+  {
     "ref": "R801",
     "value": "10k 1%",
     "footprint": "Resistor_SMD:R_0603_1608Metric",
@@ -205,6 +221,54 @@
     "footprint": "Capacitor_SMD:C_0603_1608Metric",
     "pins": {
       "1": "WD_CWD",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R807",
+    "value": "102k 0.1% 25ppm",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "SAFETY_5V_SENSE"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "R808",
+    "value": "9.76k 0.1% 25ppm",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "SAFETY_5V_SENSE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "C807",
+    "value": "100nF 25V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "safety_gate"
+  },
+  {
+    "ref": "C808",
+    "value": "1nF 50V C0G 5%",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "SAFETY_5V_SENSE",
       "2": "GND"
     },
     "dnp": false,

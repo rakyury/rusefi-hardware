@@ -5,7 +5,7 @@
   "commands": [
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/logic_power/build_logic_power.py"
       ],
       "returncode": 0,
@@ -13,7 +13,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/logic_power/calculate.py"
       ],
       "returncode": 0,
@@ -21,7 +21,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/motor4/build_motor4.py"
       ],
       "returncode": 0,
@@ -29,15 +29,15 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/safety/generate.py"
       ],
       "returncode": 0,
-      "output": "{\n  \"schema_version\": 1,\n  \"release_status\": \"BLOCKED\",\n  \"sheet_file\": \"safety_gate.kicad_sch\",\n  \"sheet_uuid\": \"eded34d9-2614-5eea-9c99-f04c697d2107\",\n  \"root_instance_uuid\": \"d3688535-de83-5779-ad3b-0e54c99cc6b1\",\n  \"root_uuid\": \"f4d21065-0a5b-5086-a08e-1af9469f04bd\",\n  \"project\": \"Power8GDI_Core\",\n  \"power\": \"+3V3\",\n  \"ground\": \"GND\",\n  \"inputs\": [\n    \"SAFETY_HEARTBEAT\",\n    \"SAFETY_ARM_REQUEST\",\n    \"HW_KILL_N\",\n    \"IGN_OC_OK\"\n  ],\n  \"outputs\": [\n    \"SAFETY_FAULT_N\",\n    \"HW_ACTUATOR_ENABLE\",\n    \"HW_ACTUATOR_ENABLE_N\"\n  ],\n  \"pt_drven_connected\": \"via gdi/permission sheet, qualified device links remain DNP\",\n  \"watchdog_ms\": {\n    \"nominal\": 64.288,\n    \"ideal_cap_min\": 58.18064,\n    \"ideal_cap_max\": 70.39536,\n    \"with_cap_tolerance_min\": 58.0965836,\n    \"with_cap_tolerance_max\": 70.4970636,\n    \"capacitor_pf\": 120,\n    \"capacitor_tolerance_percent\": 1\n  },\n  \"part_count\": 16\n}\n"
+      "output": "{\n  \"schema_version\": 1,\n  \"release_status\": \"BLOCKED\",\n  \"sheet_file\": \"safety_gate.kicad_sch\",\n  \"sheet_uuid\": \"eded34d9-2614-5eea-9c99-f04c697d2107\",\n  \"root_instance_uuid\": \"d3688535-de83-5779-ad3b-0e54c99cc6b1\",\n  \"root_uuid\": \"f4d21065-0a5b-5086-a08e-1af9469f04bd\",\n  \"project\": \"Power8GDI_Core\",\n  \"power\": \"+3V3\",\n  \"ground\": \"GND\",\n  \"inputs\": [\n    \"SAFETY_HEARTBEAT\",\n    \"SAFETY_ARM_REQUEST\",\n    \"HW_KILL_N\",\n    \"IGN_OC_OK\"\n  ],\n  \"outputs\": [\n    \"SAFETY_FAULT_N\",\n    \"HW_ACTUATOR_ENABLE\",\n    \"HW_ACTUATOR_ENABLE_N\"\n  ],\n  \"pt_drven_connected\": \"via gdi/permission sheet, qualified device links remain DNP\",\n  \"watchdog_ms\": {\n    \"nominal\": 64.288,\n    \"ideal_cap_min\": 58.18064,\n    \"ideal_cap_max\": 70.39536,\n    \"with_cap_tolerance_min\": 58.0965836,\n    \"with_cap_tolerance_max\": 70.4970636,\n    \"capacitor_pf\": 120,\n    \"capacitor_tolerance_percent\": 1\n  },\n  \"part_count\": 21,\n  \"rail5v_monitor\": {\n    \"part\": \"TPS3808G01QDBVRQ1\",\n    \"supply\": \"+3V3\",\n    \"nominal_fall_V\": 4.637581967213115,\n    \"static_fall_bounds_V\": [\n      4.513337160422334,\n      4.763219310529681\n    ],\n    \"static_release_max_V\": 4.906039122095572,\n    \"sense_filter_tau_us\": 8.907659269863995,\n    \"recovery_ms\": [\n      12,\n      28\n    ],\n    \"source\": \"https://www.ti.com/lit/gpn/TPS3808-Q1\",\n    \"qualification\": \"Static budget only; fast collapse, partial power, noise and fault tests pending\"\n  }\n}\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/board/build_connector_schematic.py"
       ],
       "returncode": 0,
@@ -45,7 +45,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/interfaces/build_interfaces.py"
       ],
       "returncode": 0,
@@ -53,7 +53,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/interfaces_aux/build_aux.py"
       ],
       "returncode": 0,
@@ -61,7 +61,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/gdi/generate.py"
       ],
       "returncode": 0,
@@ -69,7 +69,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/gdi/build_protection.py"
       ],
       "returncode": 0,
@@ -77,7 +77,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/wbo/build_wbo.py"
       ],
       "returncode": 0,
@@ -85,7 +85,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/build_core_schematic.py"
       ],
       "returncode": 0,
@@ -843,7 +843,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/verify_core.py",
         "--erc",
         "Power8GDI/hardware/design/core_erc.json",
@@ -851,19 +851,19 @@
         "Power8GDI/hardware/design/core_checks.json"
       ],
       "returncode": 0,
-      "output": "{\n  \"schema_version\": 1,\n  \"structural_status\": \"PASS\",\n  \"release_status\": \"BLOCKED\",\n  \"core_components\": 510,\n  \"integrated_components\": 1231,\n  \"checked_mcu_pads\": 176,\n  \"errors\": [],\n  \"erc_counts\": {\n    \"global_label_dangling\": 12,\n    \"power_pin_not_driven\": 21\n  },\n  \"blockers\": [\n    \"ERC findings remain; power-source semantics and functional boundaries need review\",\n    \"MCU GPIO AF/DMA/timing and added PH2/PH3 firmware are not qualified\",\n    \"3V3/5V allocated budgets pass; capacitor derating, hot regulator thermal and transient energy remain unqualified\",\n    \"Independent actuator inhibit and actual coil/injector/pump models unresolved\",\n    \"PCB routing, DRC, SI/EMC, environmental and fault tests not complete\"\n  ]\n}\n"
+      "output": "{\n  \"schema_version\": 1,\n  \"structural_status\": \"PASS\",\n  \"release_status\": \"BLOCKED\",\n  \"core_components\": 510,\n  \"integrated_components\": 1236,\n  \"checked_mcu_pads\": 176,\n  \"errors\": [],\n  \"erc_counts\": {\n    \"global_label_dangling\": 12,\n    \"power_pin_not_driven\": 21\n  },\n  \"blockers\": [\n    \"ERC findings remain; power-source semantics and functional boundaries need review\",\n    \"MCU GPIO AF/DMA/timing and added PH2/PH3 firmware are not qualified\",\n    \"3V3/5V allocated budgets pass; capacitor derating, hot regulator thermal and transient energy remain unqualified\",\n    \"Independent actuator inhibit and actual coil/injector/pump models unresolved\",\n    \"PCB routing, DRC, SI/EMC, environmental and fault tests not complete\"\n  ]\n}\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/verify_integration.py"
       ],
       "returncode": 0,
-      "output": "{\n  \"status\": \"PASS_STATIC_INTEGRATION\",\n  \"components\": 1231,\n  \"exported_pins\": 3859,\n  \"dnp_components\": 35,\n  \"errors\": [],\n  \"unimplemented_harness_nets\": [],\n  \"release_status\": \"BLOCKED\",\n  \"hardware_tested\": false\n}\n"
+      "output": "{\n  \"status\": \"PASS_STATIC_INTEGRATION\",\n  \"components\": 1236,\n  \"exported_pins\": 3873,\n  \"dnp_components\": 35,\n  \"errors\": [],\n  \"unimplemented_harness_nets\": [],\n  \"release_status\": \"BLOCKED\",\n  \"hardware_tested\": false\n}\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "-m",
         "unittest",
         "discover",
@@ -872,7 +872,7 @@
         "-v"
       ],
       "returncode": 0,
-      "output": "test_ignition_collector_swapped_to_gate_is_rejected (test_connectivity.ConnectivityTests.test_ignition_collector_swapped_to_gate_is_rejected) ... ok\ntest_incompatible_root_tvs_is_rejected (test_connectivity.ConnectivityTests.test_incompatible_root_tvs_is_rejected) ... ok\ntest_parallel_legacy_regulator_is_rejected (test_connectivity.ConnectivityTests.test_parallel_legacy_regulator_is_rejected) ... ok\ntest_real_kicad_export (test_connectivity.ConnectivityTests.test_real_kicad_export) ... ok\ntest_reversed_supply_pad_is_rejected (test_connectivity.ConnectivityTests.test_reversed_supply_pad_is_rejected) ... ok\ntest_vcap_external_load_is_rejected (test_connectivity.ConnectivityTests.test_vcap_external_load_is_rejected) ... ok\ntest_actual_export (test_integration.IntegrationTests.test_actual_export) ... ok\ntest_circular_power_sequence_rejected (test_integration.IntegrationTests.test_circular_power_sequence_rejected) ... ok\ntest_connector_motor_swap_rejected (test_integration.IntegrationTests.test_connector_motor_swap_rejected) ... ok\ntest_ignition_bypass_rejected (test_integration.IntegrationTests.test_ignition_bypass_rejected) ... ok\ntest_mcu_harness_bypass_rejected (test_integration.IntegrationTests.test_mcu_harness_bypass_rejected) ... ok\ntest_motor3_permission_bypass_rejected (test_integration.IntegrationTests.test_motor3_permission_bypass_rejected) ... ok\ntest_motor4_spi_bypass_rejected (test_integration.IntegrationTests.test_motor4_spi_bypass_rejected) ... ok\ntest_motor_permission_bypass_rejected (test_integration.IntegrationTests.test_motor_permission_bypass_rejected) ... ok\ntest_overcurrent_global_shutdown_bypass_rejected (test_integration.IntegrationTests.test_overcurrent_global_shutdown_bypass_rejected) ... ok\ntest_wrong_vr_mode_rejected (test_integration.IntegrationTests.test_wrong_vr_mode_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 3.352s\n\nOK\n"
+      "output": "test_ignition_collector_swapped_to_gate_is_rejected (test_connectivity.ConnectivityTests) ... ok\ntest_incompatible_root_tvs_is_rejected (test_connectivity.ConnectivityTests) ... ok\ntest_parallel_legacy_regulator_is_rejected (test_connectivity.ConnectivityTests) ... ok\ntest_real_kicad_export (test_connectivity.ConnectivityTests) ... ok\ntest_reversed_supply_pad_is_rejected (test_connectivity.ConnectivityTests) ... ok\ntest_vcap_external_load_is_rejected (test_connectivity.ConnectivityTests) ... ok\ntest_actual_export (test_integration.IntegrationTests) ... ok\ntest_circular_power_sequence_rejected (test_integration.IntegrationTests) ... ok\ntest_connector_motor_swap_rejected (test_integration.IntegrationTests) ... ok\ntest_ignition_bypass_rejected (test_integration.IntegrationTests) ... ok\ntest_mcu_harness_bypass_rejected (test_integration.IntegrationTests) ... ok\ntest_motor3_permission_bypass_rejected (test_integration.IntegrationTests) ... ok\ntest_motor4_spi_bypass_rejected (test_integration.IntegrationTests) ... ok\ntest_motor_permission_bypass_rejected (test_integration.IntegrationTests) ... ok\ntest_overcurrent_global_shutdown_bypass_rejected (test_integration.IntegrationTests) ... ok\ntest_wrong_vr_mode_rejected (test_integration.IntegrationTests) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 4.620s\n\nOK\n"
     },
     {
       "command": [
@@ -895,19 +895,19 @@
         "-v"
       ],
       "returncode": 0,
-      "output": "test_connector_silk_stays_inside_edge (test_board_geometry.BoardGeometryTests.test_connector_silk_stays_inside_edge) ... ok\ntest_rules_survive_kicad_roundtrip (test_board_geometry.BoardGeometryTests.test_rules_survive_kicad_roundtrip) ... ok\ntest_thermal_changes_only_six_ep_holes (test_board_geometry.BoardGeometryTests.test_thermal_changes_only_six_ep_holes) ... ok\ntest_conflicting_pin_nets_fail (test_net_contract.NetContractTests.test_conflicting_pin_nets_fail) ... ok\ntest_connector_aliases_do_not_short_gpio_or_unreviewed_power (test_net_contract.NetContractTests.test_connector_aliases_do_not_short_gpio_or_unreviewed_power) ... ok\ntest_dnp_and_bom_flags_survive_xml (test_net_contract.NetContractTests.test_dnp_and_bom_flags_survive_xml) ... ok\ntest_duplicates_fail_instead_of_silently_overwrite (test_net_contract.NetContractTests.test_duplicates_fail_instead_of_silently_overwrite) ... ok\ntest_missing_and_unexpected_connections_are_detected (test_net_contract.NetContractTests.test_missing_and_unexpected_connections_are_detected) ... ok\ntest_repeated_thermal_pads_must_all_match (test_net_contract.NetContractTests.test_repeated_thermal_pads_must_all_match) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.431s\n\nOK\n"
+      "output": "test_connector_silk_stays_inside_edge (test_board_geometry.BoardGeometryTests.test_connector_silk_stays_inside_edge) ... ok\ntest_rules_survive_kicad_roundtrip (test_board_geometry.BoardGeometryTests.test_rules_survive_kicad_roundtrip) ... ok\ntest_thermal_changes_only_six_ep_holes (test_board_geometry.BoardGeometryTests.test_thermal_changes_only_six_ep_holes) ... ok\ntest_conflicting_pin_nets_fail (test_net_contract.NetContractTests.test_conflicting_pin_nets_fail) ... ok\ntest_connector_aliases_do_not_short_gpio_or_unreviewed_power (test_net_contract.NetContractTests.test_connector_aliases_do_not_short_gpio_or_unreviewed_power) ... ok\ntest_dnp_and_bom_flags_survive_xml (test_net_contract.NetContractTests.test_dnp_and_bom_flags_survive_xml) ... ok\ntest_duplicates_fail_instead_of_silently_overwrite (test_net_contract.NetContractTests.test_duplicates_fail_instead_of_silently_overwrite) ... ok\ntest_missing_and_unexpected_connections_are_detected (test_net_contract.NetContractTests.test_missing_and_unexpected_connections_are_detected) ... ok\ntest_repeated_thermal_pads_must_all_match (test_net_contract.NetContractTests.test_repeated_thermal_pads_must_all_match) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.559s\n\nOK\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/outputs/check_outputs.py"
       ],
       "returncode": 0,
-      "output": "{\"status\": \"PASS_STATIC_NETWORK\", \"errors\": [], \"output_channels\": 24, \"shared_reset_pullup_worst_v\": 0.6161000000000001, \"candidate_max_inductance_mH_at_1p4A_16V_7mJ\": 4.8571428571428585, \"six_driver_5V_supply_budget_mA\": 60, \"full_load_thermal_rating_approved\": false, \"timing_15us\": \"typical only; no maximum injector timing guarantee\", \"release_status\": \"BLOCKED\"}\n.......\n----------------------------------------------------------------------\nRan 7 tests in 1.862s\n\nOK\n"
+      "output": "{\"status\": \"PASS_STATIC_NETWORK\", \"errors\": [], \"output_channels\": 24, \"shared_reset_pullup_worst_v\": 0.6161000000000001, \"candidate_max_inductance_mH_at_1p4A_16V_7mJ\": 4.8571428571428585, \"six_driver_5V_supply_budget_mA\": 60, \"full_load_thermal_rating_approved\": false, \"timing_15us\": \"typical only; no maximum injector timing guarantee\", \"release_status\": \"BLOCKED\"}\n.......\n----------------------------------------------------------------------\nRan 7 tests in 2.422s\n\nOK\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/interfaces/check_interfaces.py"
       ],
       "returncode": 0,
@@ -915,27 +915,27 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/interfaces_aux/test_aux.py"
       ],
       "returncode": 0,
-      "output": "test_actual_footprint_pad_numbers_cover_all_pins (__main__.AuxTests.test_actual_footprint_pad_numbers_cover_all_pins) ... ok\ntest_knock_miso_disabled_when_not_selected (__main__.AuxTests.test_knock_miso_disabled_when_not_selected) ... ok\ntest_manifest_export_parity_and_unique_refs (__main__.AuxTests.test_manifest_export_parity_and_unique_refs) ... ok\ntest_primary_source_provenance_and_upstream_blobs (__main__.AuxTests.test_primary_source_provenance_and_upstream_blobs) ... ok\ntest_resource_and_release_contract (__main__.AuxTests.test_resource_and_release_contract) ... ok\ntest_tpic_exact_primary_pinout (__main__.AuxTests.test_tpic_exact_primary_pinout) ... ok\ntest_unused_translator_inputs_grounded_no_old_wbo_controls (__main__.AuxTests.test_unused_translator_inputs_grounded_no_old_wbo_controls) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.003s\n\nOK\n"
+      "output": "test_actual_footprint_pad_numbers_cover_all_pins (__main__.AuxTests) ... ok\ntest_knock_miso_disabled_when_not_selected (__main__.AuxTests) ... ok\ntest_manifest_export_parity_and_unique_refs (__main__.AuxTests) ... ok\ntest_primary_source_provenance_and_upstream_blobs (__main__.AuxTests) ... ok\ntest_resource_and_release_contract (__main__.AuxTests) ... ok\ntest_tpic_exact_primary_pinout (__main__.AuxTests) ... ok\ntest_unused_translator_inputs_grounded_no_old_wbo_controls (__main__.AuxTests) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.004s\n\nOK\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/safety/test_safety.py"
       ],
       "returncode": 0,
-      "output": "test_all_intended_nets_survive_export (__main__.SafetyTests.test_all_intended_nets_survive_export) ... ok\ntest_async_clear_dominates_and_rejected_arm_not_queued (__main__.SafetyTests.test_async_clear_dominates_and_rejected_arm_not_queued) ... ok\ntest_every_electrical_pin_exists_in_footprint (__main__.SafetyTests.test_every_electrical_pin_exists_in_footprint) ... ok\ntest_fault_clear_without_new_arm_does_not_reenable (__main__.SafetyTests.test_fault_clear_without_new_arm_does_not_reenable) ... ok\ntest_latch_datasheet_pin_polarity (__main__.SafetyTests.test_latch_datasheet_pin_polarity) ... ok\ntest_no_pt_enable_or_unqualified_rail_connection (__main__.SafetyTests.test_no_pt_enable_or_unqualified_rail_connection) ... ok\ntest_overcurrent_fault_reaches_global_latch (__main__.SafetyTests.test_overcurrent_fault_reaches_global_latch) ... ok\ntest_regression_catches_disconnected_fault_and_missing_default (__main__.SafetyTests.test_regression_catches_disconnected_fault_and_missing_default) ... ok\ntest_supervisor_and_watchdog_fault_wired_or (__main__.SafetyTests.test_supervisor_and_watchdog_fault_wired_or) ... ok\ntest_watchdog_cap_margin_and_timing (__main__.SafetyTests.test_watchdog_cap_margin_and_timing) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.005s\n\nOK\n"
+      "output": "test_5v_undervoltage_sense_and_recovery_margin (__main__.SafetyTests) ... ok\ntest_all_intended_nets_survive_export (__main__.SafetyTests) ... ok\ntest_async_clear_dominates_and_rejected_arm_not_queued (__main__.SafetyTests) ... ok\ntest_every_electrical_pin_exists_in_footprint (__main__.SafetyTests) ... ok\ntest_fault_clear_without_new_arm_does_not_reenable (__main__.SafetyTests) ... ok\ntest_latch_datasheet_pin_polarity (__main__.SafetyTests) ... ok\ntest_no_pt_enable_or_unqualified_rail_connection (__main__.SafetyTests) ... ok\ntest_overcurrent_fault_reaches_global_latch (__main__.SafetyTests) ... ok\ntest_regression_catches_disconnected_fault_and_missing_default (__main__.SafetyTests) ... ok\ntest_supervisor_and_watchdog_fault_wired_or (__main__.SafetyTests) ... ok\ntest_watchdog_cap_margin_and_timing (__main__.SafetyTests) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.012s\n\nOK\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/gdi/test_schematic.py"
       ],
       "returncode": 0,
-      "output": "test_all_reference_pin_connections_survive (__main__.SchematicTests.test_all_reference_pin_connections_survive) ... ok\ntest_bom_and_export_are_consistent (__main__.SchematicTests.test_bom_and_export_are_consistent) ... ok\ntest_checker_detects_pin_short_and_break (__main__.SchematicTests.test_checker_detects_pin_short_and_break) ... ok\ntest_enable_isolation_dnp_not_a_short (__main__.SchematicTests.test_enable_isolation_dnp_not_a_short) ... ok\ntest_every_electrical_pin_has_physical_pad (__main__.SchematicTests.test_every_electrical_pin_has_physical_pad) ... ok\ntest_hpfp_start6_matches_reviewed_microcode_contract (__main__.SchematicTests.test_hpfp_start6_matches_reviewed_microcode_contract) ... ok\ntest_local_regulator_connections (__main__.SchematicTests.test_local_regulator_connections) ... ok\ntest_nxp_pin20_and_directions_corrected (__main__.SchematicTests.test_nxp_pin20_and_directions_corrected) ... ok\ntest_pinned_source_hash (__main__.SchematicTests.test_pinned_source_hash) ... ok\ntest_provenance_blocks_release (__main__.SchematicTests.test_provenance_blocks_release) ... ok\ntest_stage_references_and_independent_control_rails (__main__.SchematicTests.test_stage_references_and_independent_control_rails) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.250s\n\nOK\n"
+      "output": "test_all_reference_pin_connections_survive (__main__.SchematicTests) ... ok\ntest_bom_and_export_are_consistent (__main__.SchematicTests) ... ok\ntest_checker_detects_pin_short_and_break (__main__.SchematicTests) ... ok\ntest_enable_isolation_dnp_not_a_short (__main__.SchematicTests) ... ok\ntest_every_electrical_pin_has_physical_pad (__main__.SchematicTests) ... ok\ntest_hpfp_start6_matches_reviewed_microcode_contract (__main__.SchematicTests) ... ok\ntest_local_regulator_connections (__main__.SchematicTests) ... ok\ntest_nxp_pin20_and_directions_corrected (__main__.SchematicTests) ... ok\ntest_pinned_source_hash (__main__.SchematicTests) ... ok\ntest_provenance_blocks_release (__main__.SchematicTests) ... ok\ntest_stage_references_and_independent_control_rails (__main__.SchematicTests) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.340s\n\nOK\n"
     },
     {
       "command": [
@@ -957,15 +957,15 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/logic_power/check_logic_power.py"
       ],
       "returncode": 0,
-      "output": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.004s\n\nOK\n"
+      "output": "........\n----------------------------------------------------------------------\nRan 8 tests in 0.009s\n\nOK\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/logic_power/check_logic_power.py",
         "Power8GDI/hardware/design/core.net"
       ],
@@ -992,29 +992,29 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/interfaces/test_interfaces.py"
       ],
       "returncode": 0,
-      "output": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.061s\n\nOK\n"
+      "output": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.106s\n\nOK\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/interfaces_aux/test_aux.py",
         "--netlist",
         "Power8GDI/hardware/design/core.net"
       ],
       "returncode": 0,
-      "output": "test_actual_footprint_pad_numbers_cover_all_pins (__main__.AuxTests.test_actual_footprint_pad_numbers_cover_all_pins) ... ok\ntest_knock_miso_disabled_when_not_selected (__main__.AuxTests.test_knock_miso_disabled_when_not_selected) ... ok\ntest_manifest_export_parity_and_unique_refs (__main__.AuxTests.test_manifest_export_parity_and_unique_refs) ... ok\ntest_primary_source_provenance_and_upstream_blobs (__main__.AuxTests.test_primary_source_provenance_and_upstream_blobs) ... ok\ntest_resource_and_release_contract (__main__.AuxTests.test_resource_and_release_contract) ... ok\ntest_tpic_exact_primary_pinout (__main__.AuxTests.test_tpic_exact_primary_pinout) ... ok\ntest_unused_translator_inputs_grounded_no_old_wbo_controls (__main__.AuxTests.test_unused_translator_inputs_grounded_no_old_wbo_controls) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.033s\n\nOK\n"
+      "output": "test_actual_footprint_pad_numbers_cover_all_pins (__main__.AuxTests) ... ok\ntest_knock_miso_disabled_when_not_selected (__main__.AuxTests) ... ok\ntest_manifest_export_parity_and_unique_refs (__main__.AuxTests) ... ok\ntest_primary_source_provenance_and_upstream_blobs (__main__.AuxTests) ... ok\ntest_resource_and_release_contract (__main__.AuxTests) ... ok\ntest_tpic_exact_primary_pinout (__main__.AuxTests) ... ok\ntest_unused_translator_inputs_grounded_no_old_wbo_controls (__main__.AuxTests) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.066s\n\nOK\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/gdi/test_protection.py"
       ],
       "returncode": 0,
-      "output": "test_banks_match_manufacturer_pin_map (__main__.ProtectionTests.test_banks_match_manufacturer_pin_map) ... ok\ntest_faults_rejected (__main__.ProtectionTests.test_faults_rejected) ... ok\ntest_gate_and_device_pulldowns (__main__.ProtectionTests.test_gate_and_device_pulldowns) ... ok\ntest_manifest_exports_no_missing_parts_or_dnp_additions (__main__.ProtectionTests.test_manifest_exports_no_missing_parts_or_dnp_additions) ... ok\ntest_no_shared_power_nodes_between_banks (__main__.ProtectionTests.test_no_shared_power_nodes_between_banks) ... ok\ntest_static_ov_bounds_below_regulator_normal_max (__main__.ProtectionTests.test_static_ov_bounds_below_regulator_normal_max) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.009s\n\nOK\n"
+      "output": "test_banks_match_manufacturer_pin_map (__main__.ProtectionTests) ... ok\ntest_faults_rejected (__main__.ProtectionTests) ... ok\ntest_gate_and_device_pulldowns (__main__.ProtectionTests) ... ok\ntest_manifest_exports_no_missing_parts_or_dnp_additions (__main__.ProtectionTests) ... ok\ntest_no_shared_power_nodes_between_banks (__main__.ProtectionTests) ... ok\ntest_static_ov_bounds_below_regulator_normal_max (__main__.ProtectionTests) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.014s\n\nOK\n"
     },
     {
       "command": [
@@ -1036,7 +1036,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/audit_resources.py",
         "--gate",
         "structure",
@@ -1048,7 +1048,7 @@
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "-m",
         "unittest",
         "discover",
@@ -1057,15 +1057,15 @@
         "-v"
       ],
       "returncode": 0,
-      "output": "test_bad_pin_status_duplicate_and_empty_inputs (test_resource_audit.ResourceAuditTests.test_bad_pin_status_duplicate_and_empty_inputs) ... ok\ntest_cli_structure_is_distinct_from_default_release_gate (test_resource_audit.ResourceAuditTests.test_cli_structure_is_distinct_from_default_release_gate) ... ok\ntest_collision_free_draft_cannot_pass_qualification (test_resource_audit.ResourceAuditTests.test_collision_free_draft_cannot_pass_qualification) ... ok\ntest_direct_and_indirect_knock_cannot_both_own_channel (test_resource_audit.ResourceAuditTests.test_direct_and_indirect_knock_cannot_both_own_channel) ... ok\ntest_exti_port_alias_collision (test_resource_audit.ResourceAuditTests.test_exti_port_alias_collision) ... ok\ntest_indirect_knock_requires_all_serial_controls (test_resource_audit.ResourceAuditTests.test_indirect_knock_requires_all_serial_controls) ... ok\ntest_new_connector_function_cannot_disappear_from_requirements (test_resource_audit.ResourceAuditTests.test_new_connector_function_cannot_disappear_from_requirements) ... ok\ntest_no_json_approval_shortcut (test_resource_audit.ResourceAuditTests.test_no_json_approval_shortcut) ... ok\ntest_pin_collision (test_resource_audit.ResourceAuditTests.test_pin_collision) ... ok\ntest_scheduler_timer_reservation (test_resource_audit.ResourceAuditTests.test_scheduler_timer_reservation) ... ok\ntest_selected_interface_rejects_wrong_owner (test_resource_audit.ResourceAuditTests.test_selected_interface_rejects_wrong_owner) ... ok\ntest_shared_peripheral_channel_collision_despite_unique_gpio (test_resource_audit.ResourceAuditTests.test_shared_peripheral_channel_collision_despite_unique_gpio) ... ok\ntest_source_or_family_change_requires_new_review (test_resource_audit.ResourceAuditTests.test_source_or_family_change_requires_new_review) ... ok\ntest_storage_conflicts_are_conditional_until_selected (test_resource_audit.ResourceAuditTests.test_storage_conflicts_are_conditional_until_selected) ... ok\ntest_timer_timebase_and_pc13_require_review_without_false_collision (test_resource_audit.ResourceAuditTests.test_timer_timebase_and_pc13_require_review_without_false_collision) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.329s\n\nOK\n"
+      "output": "test_bad_pin_status_duplicate_and_empty_inputs (test_resource_audit.ResourceAuditTests) ... ok\ntest_cli_structure_is_distinct_from_default_release_gate (test_resource_audit.ResourceAuditTests) ... ok\ntest_collision_free_draft_cannot_pass_qualification (test_resource_audit.ResourceAuditTests) ... ok\ntest_direct_and_indirect_knock_cannot_both_own_channel (test_resource_audit.ResourceAuditTests) ... ok\ntest_exti_port_alias_collision (test_resource_audit.ResourceAuditTests) ... ok\ntest_indirect_knock_requires_all_serial_controls (test_resource_audit.ResourceAuditTests) ... ok\ntest_new_connector_function_cannot_disappear_from_requirements (test_resource_audit.ResourceAuditTests) ... ok\ntest_no_json_approval_shortcut (test_resource_audit.ResourceAuditTests) ... ok\ntest_pin_collision (test_resource_audit.ResourceAuditTests) ... ok\ntest_scheduler_timer_reservation (test_resource_audit.ResourceAuditTests) ... ok\ntest_selected_interface_rejects_wrong_owner (test_resource_audit.ResourceAuditTests) ... ok\ntest_shared_peripheral_channel_collision_despite_unique_gpio (test_resource_audit.ResourceAuditTests) ... ok\ntest_source_or_family_change_requires_new_review (test_resource_audit.ResourceAuditTests) ... ok\ntest_storage_conflicts_are_conditional_until_selected (test_resource_audit.ResourceAuditTests) ... ok\ntest_timer_timebase_and_pc13_require_review_without_false_collision (test_resource_audit.ResourceAuditTests) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.509s\n\nOK\n"
     },
     {
       "command": [
-        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python310\\python.exe",
         "Power8GDI/hardware/design/ignition/test_ignition.py"
       ],
       "returncode": 0,
-      "output": "test_bank_fault_is_physical_wired_bus_and_enable_path (__main__.IgnitionTest.test_bank_fault_is_physical_wired_bus_and_enable_path) ... ok\ntest_logic_variant_has_no_hv_devices_or_bypass_in_passive (__main__.IgnitionTest.test_logic_variant_has_no_hv_devices_or_bypass_in_passive) ... ok\ntest_normal_dwell_finishes_on_command_fall (__main__.IgnitionTest.test_normal_dwell_finishes_on_command_fall) ... ok\ntest_overcurrent_remains_latched_across_command_and_arm_changes (__main__.IgnitionTest.test_overcurrent_remains_latched_across_command_and_arm_changes) ... ok\ntest_reference_range_and_no_duplicate_parts (__main__.IgnitionTest.test_reference_range_and_no_duplicate_parts) ... ok\ntest_retrigger_after_timeout_is_possible_and_not_claimed_latched (__main__.IgnitionTest.test_retrigger_after_timeout_is_possible_and_not_claimed_latched) ... ok\ntest_retrigger_does_not_extend_window (__main__.IgnitionTest.test_retrigger_does_not_extend_window) ... ok\ntest_stuck_high_times_out_without_restarting (__main__.IgnitionTest.test_stuck_high_times_out_without_restarting) ... ok\ntest_threshold_and_timer_budget (__main__.IgnitionTest.test_threshold_and_timer_budget) ... ok\ntest_unarmed_and_supply_invalid_inhibit_ideal_output (__main__.IgnitionTest.test_unarmed_and_supply_invalid_inhibit_ideal_output) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.058s\n\nOK\n"
+      "output": "test_bank_fault_is_physical_wired_bus_and_enable_path (__main__.IgnitionTest) ... ok\ntest_logic_variant_has_no_hv_devices_or_bypass_in_passive (__main__.IgnitionTest) ... ok\ntest_normal_dwell_finishes_on_command_fall (__main__.IgnitionTest) ... ok\ntest_overcurrent_remains_latched_across_command_and_arm_changes (__main__.IgnitionTest) ... ok\ntest_reference_range_and_no_duplicate_parts (__main__.IgnitionTest) ... ok\ntest_retrigger_after_timeout_is_possible_and_not_claimed_latched (__main__.IgnitionTest) ... ok\ntest_retrigger_does_not_extend_window (__main__.IgnitionTest) ... ok\ntest_stuck_high_times_out_without_restarting (__main__.IgnitionTest) ... ok\ntest_threshold_and_timer_budget (__main__.IgnitionTest) ... ok\ntest_unarmed_and_supply_invalid_inhibit_ideal_output (__main__.IgnitionTest) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.092s\n\nOK\n"
     }
   ],
   "erc_native_exit": 5,
@@ -1076,6 +1076,6 @@
   "structural_checks": "PASS",
   "scope": "SCHEMATIC_ONLY; PCB not built or verified by this run",
   "source_sha256": {
-    "core.net": "bfaa65f4541fb14aded8f43fe60a68d347436115b8e58d8a098651ab9134720b"
+    "core.net": "171a2d234b448750f7baa44831ddb6fb832127faa1dc90f3db1f43f0cffcfbe0"
   }
 }

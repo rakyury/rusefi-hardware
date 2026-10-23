@@ -14,6 +14,7 @@ from interfaces.check_interfaces import electrical_checks as interface_electrica
 from gdi.test_protection import protection_errors, gate_errors
 from motor4.verify_motor4 import electrical_errors as motor_electrical_errors
 from logic_power.check_logic_power import validate as validate_logic_power
+from safety.test_safety import gate_errors as safety_gate_errors
 
 
 def verify(path):
@@ -45,6 +46,7 @@ def verify(path):
     tree=ET.parse(path)
     for stage in 'AB':errors.extend(protection_errors(tree,stage))
     errors.extend(gate_errors(tree))
+    errors.extend(safety_gate_errors(tree))
     for ref,net in [('U201','HPFP1'),('U301','HPFP2')]:expect(ref,9,net)
     # CAN WBO MCU permissions must be distinct from local heater PWM.
     for net in ['WBO1_CS_N','WBO2_CS_N','WBO_ADC_CS_N','WBO_RESET_N_5V']:

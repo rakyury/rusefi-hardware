@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/src/Power8GDI/hardware/design/safety/safety_gate.kicad_sch</source>
-    <date>2026-10-23T17:55:57+0000</date>
+    <date>2026-10-23T17:58:25+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -104,6 +104,38 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>ea2a6a0f-a08d-564e-ab3e-0ec3ae907284</tstamps>
     </comp>
+    <comp ref="C807">
+      <value>100nF 25V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Safety" part="C" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a3915108-80ab-54df-8506-264316739c9b</tstamps>
+    </comp>
+    <comp ref="C808">
+      <value>1nF 50V C0G 5%</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Safety" part="C" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>271bb7db-6a98-51ad-9fd9-56e5766e6f8a</tstamps>
+    </comp>
     <comp ref="R801">
       <value>10k 1%</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
@@ -200,6 +232,38 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>687edef3-829f-5174-8a43-55df8c8fdcdb</tstamps>
     </comp>
+    <comp ref="R807">
+      <value>102k 0.1% 25ppm</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Safety" part="R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>11d8bf4c-6352-5efa-8c70-728f44c71d2a</tstamps>
+    </comp>
+    <comp ref="R808">
+      <value>9.76k 0.1% 25ppm</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Safety" part="R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>080402d2-ffce-5a12-b56a-9fccf4fabcfd</tstamps>
+    </comp>
     <comp ref="R6500">
       <value>0R</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
@@ -279,6 +343,22 @@
       <property name="Sheetfile" value="safety_gate.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>827a165d-54ce-5c5c-af24-d06f6e9aab0e</tstamps>
+    </comp>
+    <comp ref="U806">
+      <value>TPS3808G01QDBVRQ1</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
+      <fields>
+        <field name="Design note">Independent 5V undervoltage fault while 3V3 remains alive; CT open 12..28ms recovery. TI SBVS085J.</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Safety" part="TPS3808G01QDBVRQ1" description=""/>
+      <property name="Design note" value="Independent 5V undervoltage fault while 3V3 remains alive; CT open 12..28ms recovery. TI SBVS085J."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="safety_gate.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>63302053-8e04-551d-a11e-ae9334f75ac6</tstamps>
     </comp>
   </components>
   <libparts>
@@ -363,6 +443,23 @@
         <pin num="9" name="EP" type="power_in"/>
       </pins>
     </libpart>
+    <libpart lib="Power8GDI_Safety" part="TPS3808G01QDBVRQ1">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TPS3808G01QDBVRQ1</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="~{RESET}" type="open_collector"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="~{MR}" type="input"/>
+        <pin num="4" name="CT" type="input"/>
+        <pin num="5" name="SENSE" type="input"/>
+        <pin num="6" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
     <libpart lib="Power8GDI_Safety" part="TPS3808G33QDBVRQ1">
       <fields>
         <field name="Reference">U</field>
@@ -392,6 +489,7 @@
       <node ref="C802" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="C803" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="C804" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C807" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="R801" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R802" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R805" pin="2" pinfunction="2" pintype="passive"/>
@@ -404,66 +502,85 @@
       <node ref="U804" pin="2" pinfunction="D" pintype="input"/>
       <node ref="U804" pin="7" pinfunction="~{PRE}" pintype="input"/>
       <node ref="U804" pin="8" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U806" pin="3" pinfunction="~{MR}" pintype="input"/>
+      <node ref="U806" pin="6" pinfunction="VDD" pintype="power_in"/>
     </net>
-    <net code="2" name="GND" class="Default">
+    <net code="2" name="+5V_CORE" class="Default">
+      <node ref="R807" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="3" name="GND" class="Default">
       <node ref="C801" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C802" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C803" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C804" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="C806" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C807" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C808" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R803" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R804" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R806" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R808" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U801" pin="4" pinfunction="GND" pintype="power_in"/>
       <node ref="U801" pin="9" pinfunction="EP" pintype="power_in"/>
       <node ref="U802" pin="2" pinfunction="GND" pintype="power_in"/>
       <node ref="U803" pin="3" pinfunction="GND" pintype="power_in"/>
       <node ref="U804" pin="4" pinfunction="GND" pintype="power_in"/>
+      <node ref="U806" pin="2" pinfunction="GND" pintype="power_in"/>
     </net>
-    <net code="3" name="HW_ACTUATOR_ENABLE" class="Default">
+    <net code="4" name="HW_ACTUATOR_ENABLE" class="Default">
       <node ref="R806" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U804" pin="5" pinfunction="Q" pintype="output"/>
     </net>
-    <net code="4" name="HW_ACTUATOR_ENABLE_N" class="Default">
+    <net code="5" name="HW_ACTUATOR_ENABLE_N" class="Default">
       <node ref="R805" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U804" pin="3" pinfunction="~{Q}" pintype="output"/>
     </net>
-    <net code="5" name="HW_KILL_N" class="Default">
+    <net code="6" name="HW_KILL_N" class="Default">
       <node ref="R6500" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R802" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U802" pin="3" pinfunction="~{MR}" pintype="input"/>
     </net>
-    <net code="6" name="IGN_OC_OK" class="Default">
+    <net code="7" name="IGN_OC_OK" class="Default">
       <node ref="R6500" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="7" name="SAFETY_ARM_REQUEST" class="Default">
+    <net code="8" name="SAFETY_5V_SENSE" class="Default">
+      <node ref="C808" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R807" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R808" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U806" pin="5" pinfunction="SENSE" pintype="input"/>
+    </net>
+    <net code="9" name="SAFETY_ARM_REQUEST" class="Default">
       <node ref="R804" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U804" pin="1" pinfunction="CLK" pintype="input"/>
     </net>
-    <net code="8" name="SAFETY_CLEAR_N" class="Default">
+    <net code="10" name="SAFETY_CLEAR_N" class="Default">
       <node ref="U803" pin="4" pinfunction="Y" pintype="output"/>
       <node ref="U804" pin="6" pinfunction="~{CLR}" pintype="input"/>
     </net>
-    <net code="9" name="SAFETY_FAULT_N" class="Default">
+    <net code="11" name="SAFETY_FAULT_N" class="Default">
       <node ref="R801" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U801" pin="7" pinfunction="~{WDO}" pintype="open_collector"/>
       <node ref="U801" pin="8" pinfunction="ENOUT" pintype="open_collector"/>
       <node ref="U802" pin="1" pinfunction="~{RESET}" pintype="open_collector"/>
       <node ref="U803" pin="2" pinfunction="A" pintype="input"/>
+      <node ref="U806" pin="1" pinfunction="~{RESET}" pintype="open_collector"/>
     </net>
-    <net code="10" name="SAFETY_HEARTBEAT" class="Default">
+    <net code="12" name="SAFETY_HEARTBEAT" class="Default">
       <node ref="R803" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U801" pin="6" pinfunction="WDI" pintype="input"/>
     </net>
-    <net code="11" name="WD_CWD" class="Default">
+    <net code="13" name="WD_CWD" class="Default">
       <node ref="C806" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U801" pin="2" pinfunction="CWD" pintype="input"/>
     </net>
-    <net code="12" name="unconnected-(U802-CT-Pad4)" class="Default">
+    <net code="14" name="unconnected-(U802-CT-Pad4)" class="Default">
       <node ref="U802" pin="4" pinfunction="CT" pintype="input+no_connect"/>
     </net>
-    <net code="13" name="unconnected-(U803-NC-Pad1)" class="Default">
+    <net code="15" name="unconnected-(U803-NC-Pad1)" class="Default">
       <node ref="U803" pin="1" pinfunction="NC" pintype="no_connect"/>
+    </net>
+    <net code="16" name="unconnected-(U806-CT-Pad4)" class="Default">
+      <node ref="U806" pin="4" pinfunction="CT" pintype="input+no_connect"/>
     </net>
   </nets>
 </export>

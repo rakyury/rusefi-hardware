@@ -37,12 +37,13 @@ superseded; deliberate merged-net mutations are now rejected.
 
 ## Verification and PCB
 
-The last full root run before the new power/motor integration was checkpoint
-`d320637`: 50 sheets, 1165 components and 42 ERC findings. Its symbol mismatch
-fix awaits regeneration. That run does not validate subsequent modules or the
-corrected WBO exports. The next report must include their actual root-netlist
-hash. [review_validation.json](../hardware/design/review_validation.json)
-records command results and scope; schematic-only validation excludes PCB DRC.
+The integrated root run now contains 55 sheets and 1236 components, including
+an independent 5 V undervoltage supervisor. All structural checks passed.
+Native ERC reports 21 power-source warnings and 12 unused PT diagnostic labels;
+there are no other ERC finding types. These are visible findings, not an ERC-zero
+claim. [review_validation.json](../hardware/design/review_validation.json)
+records commands, root-netlist hash and scope; schematic-only validation excludes
+PCB DRC. WBO supply sequencing is undergoing further independent review.
 
 The earlier 631-component board and DRC reports are historical. The current
 layout must match the new root netlist and account for ignition spacing, GDI

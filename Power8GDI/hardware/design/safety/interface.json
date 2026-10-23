@@ -29,5 +29,22 @@
     "capacitor_pf": 120,
     "capacitor_tolerance_percent": 1
   },
-  "part_count": 16
+  "part_count": 21,
+  "rail5v_monitor": {
+    "part": "TPS3808G01QDBVRQ1",
+    "supply": "+3V3",
+    "nominal_fall_V": 4.637581967213115,
+    "static_fall_bounds_V": [
+      4.513337160422334,
+      4.763219310529681
+    ],
+    "static_release_max_V": 4.906039122095572,
+    "sense_filter_tau_us": 8.907659269863995,
+    "recovery_ms": [
+      12,
+      28
+    ],
+    "source": "https://www.ti.com/lit/gpn/TPS3808-Q1",
+    "qualification": "Static budget only; fast collapse, partial power, noise and fault tests pending"
+  }
 }
