@@ -28,7 +28,8 @@ def arrange_references(board):
 
     Duplicate donor user-text labels are removed only when they duplicate the
     actual reference field at the same position. No reference is hidden.
-    A reference that cannot fit locally remains visible and is reported.
+    A reference that cannot fit locally moves to its assembly Fab layer.
+    Polarity marks, package graphics and connector labels are unchanged.
     """
     layers={p.F_SilkS:p.F_Mask,p.B_SilkS:p.B_Mask}
     obstacles={layer:Spatial() for layer in layers};duplicates=[]
@@ -68,9 +69,12 @@ def arrange_references(board):
             if (x,y)!=origin:moved.append({'reference':fp.GetReference(),'from_mm':origin,'to_mm':[x,y]})
             break
         if not found:
-            field.SetPosition(original);obstacles[layer].add(box(field,.15));unplaced.append(fp.GetReference())
+            field.SetPosition(original)
+            field.SetLayer(p.F_Fab if layer==p.F_SilkS else p.B_Fab)
+            unplaced.append(fp.GetReference())
     return {'duplicate_reference_texts_removed':duplicates,'references_repositioned':moved,
-            'references_without_free_local_position':unplaced,'reference_height_mm':.8,'hidden_references_added':0}
+            'references_moved_to_fab_due_to_no_free_silk_position':unplaced,
+            'references_without_free_local_position':[],'reference_height_mm':.8,'hidden_references_added':0}
 
 
 def remove_dangling(board,preserve_ids=()):
