@@ -2,14 +2,14 @@
 
 CURRENT ENGINEERING CHECKPOINT: local work resumed after cancelled handoff.
 All six netlists exported again with KiCad9.0.9 after final signal/layout changes.
-332 connectivity and footprint-pad checks pass. Standalone leaf ERC findings are
-cross-sheet global labels and missing external power drivers only (6/12/1 per
+396 connectivity, independent topology, power/reset and footprint-pad checks pass. Standalone leaf ERC findings are
+cross-sheet global labels and missing external power drivers only (7/10/1 per
 channel); final integrated ERC remains the integration lead's responsibility.
 No manufacturing, thermal, EMC or engine qualification is claimed.
 
 ## Implemented
 
-Six generated KiCad sheets, 148 actual components: two independent on-board
+Six generated KiCad sheets, 168 actual components: two independent on-board
 F042 WBO channels derived electrically from Hellen WBO0.6. Removes dependency
 on unresolved CJ125 pin18 and adds actual heater switches and protected feeds.
 Parent integration must replace interfaces_aux/wbo1_analog, wbo2_analog and
@@ -47,7 +47,7 @@ cold-start and transient coordination remains integration work.
 
 Run build_wbo.py, export every wbo*.kicad_sch with kicad-cli sch export netlist
 --format kicadxml, then run verify_wbo.py inside the pinned KiCad9 image.
-Latest332 checks pass against the regenerated electrical sheets and all installed
+Latest396 checks pass against the regenerated electrical sheets and all installed
 footprint pads. Pin contracts cover Bosch sensor mapping, ST diode/FET mapping,
 CAN polarity, F042 pins, power isolation and all heater inhibit gates.
 Control and analog previews were inspected; sheet overflow and reference-label
@@ -86,15 +86,18 @@ Earlier332 manifest-based checks did not detect this and are insufficient eviden
 of analog topology. Do not use the electrical exports through commit de91746.
 
 Automatic source nets now use reversible UTF-8 byte escaping, including underscores,
-and a reserved AUTO_ prefix. A generator guard rejects any two source names mapping
-to one alias. The added independent audit reads the original Hellen XML and compares
+and a reserved AUTO_ prefix. A generator guard rejects alias collisions except the deliberately documented
+VDDA/+3V3 common-supply merge in ELECTRICAL_QA.md. The added independent audit reads the original Hellen XML and compares
 entire connected-pin partitions with the real target XML, without reference_map or
 the generator's alias function. Only documented adaptation pins are removed from
 comparison: omitted module-frame/R630/C604/C606, Q600 extra SOT223 drain pad4,
 R622.2 moved behind the safety buffer, and the selected floating ternary-ID pin.
-Every other retained source connection must remain in exactly the same partition.
+The later supply fix additionally replaces U604, moves U603.2 to the reference
+setpoint and merges only the source VDDA/+3V3 partitions. Every retained signal
+connection must remain in exactly the same partition; a separate manufacturer
+pin contract checks the replacement supply and reset circuitry.
 
-Latest346 checks pass, including independent source topology for both channels and
+The prior collision-fix checkpoint had346 passing checks, including independent source topology for both channels and
 six deliberate +/- collision mutations rejected. The same independent audit also
 rejects the actual old de91746 netlists, with six changed source-net partitions per
 channel (`reports/legacy_collision_rejection.json`). Regenerated schematics, XML,
@@ -109,3 +112,10 @@ Parent nowaddingboth masterpullups percontract. SENT4frontend is5Vonly10k/47k,
 fast/slowchannels, CRC, timestamps/timeouts. No universalSENTsensorprofiling.
 ExternalEGT CAN500k matchesWBO. Exactprotocol/IDs andbusutilizationnotfrozen;
 reserve noanalogthermocoupleconnections inECUharness.
+
+## Power sequencing correction
+
+See [ELECTRICAL_QA.md](ELECTRICAL_QA.md) for the confirmed F042 supply defect,
+reference-buffer correction, independent mutation checks and remaining measured
+fault/ADC/thermal requirements. The local3V3 rail now supplies both VDD and VDDA;
+REF3033 supplies only the LT3042 setpoint. Do not restore the independent XC6206.

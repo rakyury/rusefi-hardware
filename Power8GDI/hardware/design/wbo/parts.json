@@ -77,7 +77,7 @@
     "footprint": "Capacitor_SMD:C_0603_1608Metric",
     "pins": {
       "2": "GND",
-      "1": "WBO1_VDDA"
+      "1": "WBO1_3V3"
     },
     "dnp": false,
     "note": "Pinned Hellen 0.6 source C611; netlist-derived.",
@@ -89,7 +89,7 @@
     "footprint": "Capacitor_SMD:C_0603_1608Metric",
     "pins": {
       "2": "GND",
-      "1": "WBO1_VDDA"
+      "1": "WBO1_3V3"
     },
     "dnp": false,
     "note": "Pinned Hellen 0.6 source C612; netlist-derived.",
@@ -101,7 +101,7 @@
     "footprint": "Resistor_SMD:R_0603_1608Metric",
     "pins": {
       "2": "WBO1_AUTO_Net_2D__28_U600D_2D__2B__29_",
-      "1": "WBO1_VDDA"
+      "1": "WBO1_3V3"
     },
     "dnp": false,
     "note": "Pinned Hellen 0.6 source R600; netlist-derived.",
@@ -405,10 +405,10 @@
     "pins": {
       "1": "+5V_CORE",
       "3": "GND",
-      "2": "WBO1_VDDA"
+      "2": "WBO1_REF3V3"
     },
     "dnp": false,
-    "note": "Pinned Hellen 0.6 source U603; netlist-derived.",
+    "note": "Pinned Hellen 0.6 source U603; netlist-derived. Precision setpoint only; LT3042 buffers the common VDD/VDDA rail.",
     "sheet": "wbo/wbo1_analog"
   },
   {
@@ -733,7 +733,7 @@
       "2": "GND",
       "3": "GND",
       "32": "GND",
-      "5": "WBO1_VDDA",
+      "5": "WBO1_3V3",
       "10": null,
       "11": null,
       "19": null,
@@ -749,15 +749,23 @@
   },
   {
     "ref": "U5604",
-    "value": "XC6206P332MR-G",
-    "footprint": "Package_TO_SOT_SMD:SOT-23",
+    "value": "LT3042IMSE#WTRPBF",
+    "footprint": "Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm",
     "pins": {
-      "2": "WBO1_3V3",
+      "1": "+5V_CORE",
+      "2": "+5V_CORE",
       "3": "+5V_CORE",
-      "1": "GND"
+      "4": null,
+      "5": "GND",
+      "6": "+5V_CORE",
+      "7": "WBO1_REF_SET",
+      "8": "GND",
+      "9": "WBO1_3V3",
+      "10": "WBO1_3V3",
+      "11": "GND"
     },
     "dnp": false,
-    "note": "Pinned Hellen 0.6 source U604; netlist-derived.",
+    "note": "LT3042 RevC p15 external reference buffer; replaces XC6206. PGFB=IN disables fast start. OUTS Kelvin to output capacitor. EP grounded.",
     "sheet": "wbo/wbo1_control"
   },
   {
@@ -905,6 +913,130 @@
     "sheet": "wbo/wbo1_control"
   },
   {
+    "ref": "U5612",
+    "value": "TPS3808G33QDBVRQ1",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+    "pins": {
+      "1": "WBO1_nRESET",
+      "2": "GND",
+      "3": "WBO1_3V3",
+      "4": null,
+      "5": "WBO1_3V3",
+      "6": "WBO1_3V3"
+    },
+    "dnp": false,
+    "note": "Local rail monitor: ~3.07V threshold; CT open ~20ms recovery delay. NRST internal POR alone does not guarantee ADC supply validity.",
+    "sheet": "wbo/wbo1_control"
+  },
+  {
+    "ref": "R5660",
+    "value": "30k 0.1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "WBO1_REF_SET",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "SET bleed sinks >102uA at nominal rail; 220R limits SET clamp fault current. Nominal buffered rail3.2978V.",
+    "sheet": "wbo/wbo1_control"
+  },
+  {
+    "ref": "R5661",
+    "value": "2.2k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "WBO1_3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo1_control"
+  },
+  {
+    "ref": "R5662",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "WBO1_nRESET",
+      "2": "WBO1_3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo1_control"
+  },
+  {
+    "ref": "R5663",
+    "value": "220R 0.1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "WBO1_REF3V3",
+      "2": "WBO1_REF_SET"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo1_control"
+  },
+  {
+    "ref": "C5660",
+    "value": "100n 16V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "WBO1_REF_SET",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo1_control"
+  },
+  {
+    "ref": "C5661",
+    "value": "10u 16V X7R effective>=4.7u",
+    "footprint": "Capacitor_SMD:C_1206_3216Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate.",
+    "sheet": "wbo/wbo1_control"
+  },
+  {
+    "ref": "C5662",
+    "value": "10u 16V X7R effective>=4.7u",
+    "footprint": "Capacitor_SMD:C_1206_3216Metric",
+    "pins": {
+      "1": "WBO1_3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate.",
+    "sheet": "wbo/wbo1_control"
+  },
+  {
+    "ref": "C5663",
+    "value": "100n 16V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "WBO1_3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo1_control"
+  },
+  {
+    "ref": "C5664",
+    "value": "100n 16V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "WBO1_REF3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo1_control"
+  },
+  {
     "ref": "D5610",
     "value": "STPS5H100BY-TR",
     "footprint": "Package_TO_SOT_SMD:TO-252-2",
@@ -1031,7 +1163,7 @@
     "footprint": "Capacitor_SMD:C_0603_1608Metric",
     "pins": {
       "2": "GND",
-      "1": "WBO2_VDDA"
+      "1": "WBO2_3V3"
     },
     "dnp": false,
     "note": "Pinned Hellen 0.6 source C611; netlist-derived.",
@@ -1043,7 +1175,7 @@
     "footprint": "Capacitor_SMD:C_0603_1608Metric",
     "pins": {
       "2": "GND",
-      "1": "WBO2_VDDA"
+      "1": "WBO2_3V3"
     },
     "dnp": false,
     "note": "Pinned Hellen 0.6 source C612; netlist-derived.",
@@ -1055,7 +1187,7 @@
     "footprint": "Resistor_SMD:R_0603_1608Metric",
     "pins": {
       "2": "WBO2_AUTO_Net_2D__28_U600D_2D__2B__29_",
-      "1": "WBO2_VDDA"
+      "1": "WBO2_3V3"
     },
     "dnp": false,
     "note": "Pinned Hellen 0.6 source R600; netlist-derived.",
@@ -1359,10 +1491,10 @@
     "pins": {
       "1": "+5V_CORE",
       "3": "GND",
-      "2": "WBO2_VDDA"
+      "2": "WBO2_REF3V3"
     },
     "dnp": false,
-    "note": "Pinned Hellen 0.6 source U603; netlist-derived.",
+    "note": "Pinned Hellen 0.6 source U603; netlist-derived. Precision setpoint only; LT3042 buffers the common VDD/VDDA rail.",
     "sheet": "wbo/wbo2_analog"
   },
   {
@@ -1687,7 +1819,7 @@
       "2": "GND",
       "3": "GND",
       "32": "GND",
-      "5": "WBO2_VDDA",
+      "5": "WBO2_3V3",
       "10": null,
       "11": null,
       "19": null,
@@ -1703,15 +1835,23 @@
   },
   {
     "ref": "U5804",
-    "value": "XC6206P332MR-G",
-    "footprint": "Package_TO_SOT_SMD:SOT-23",
+    "value": "LT3042IMSE#WTRPBF",
+    "footprint": "Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm",
     "pins": {
-      "2": "WBO2_3V3",
+      "1": "+5V_CORE",
+      "2": "+5V_CORE",
       "3": "+5V_CORE",
-      "1": "GND"
+      "4": null,
+      "5": "GND",
+      "6": "+5V_CORE",
+      "7": "WBO2_REF_SET",
+      "8": "GND",
+      "9": "WBO2_3V3",
+      "10": "WBO2_3V3",
+      "11": "GND"
     },
     "dnp": false,
-    "note": "Pinned Hellen 0.6 source U604; netlist-derived.",
+    "note": "LT3042 RevC p15 external reference buffer; replaces XC6206. PGFB=IN disables fast start. OUTS Kelvin to output capacitor. EP grounded.",
     "sheet": "wbo/wbo2_control"
   },
   {
@@ -1852,6 +1992,130 @@
     "footprint": "Resistor_SMD:R_0603_1608Metric",
     "pins": {
       "1": "WBO2_AUTO_Net_2D__28_Q600_2D_G_29_",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo2_control"
+  },
+  {
+    "ref": "U5812",
+    "value": "TPS3808G33QDBVRQ1",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+    "pins": {
+      "1": "WBO2_nRESET",
+      "2": "GND",
+      "3": "WBO2_3V3",
+      "4": null,
+      "5": "WBO2_3V3",
+      "6": "WBO2_3V3"
+    },
+    "dnp": false,
+    "note": "Local rail monitor: ~3.07V threshold; CT open ~20ms recovery delay. NRST internal POR alone does not guarantee ADC supply validity.",
+    "sheet": "wbo/wbo2_control"
+  },
+  {
+    "ref": "R5860",
+    "value": "30k 0.1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "WBO2_REF_SET",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "SET bleed sinks >102uA at nominal rail; 220R limits SET clamp fault current. Nominal buffered rail3.2978V.",
+    "sheet": "wbo/wbo2_control"
+  },
+  {
+    "ref": "R5861",
+    "value": "2.2k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "WBO2_3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo2_control"
+  },
+  {
+    "ref": "R5862",
+    "value": "10k",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "WBO2_nRESET",
+      "2": "WBO2_3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo2_control"
+  },
+  {
+    "ref": "R5863",
+    "value": "220R 0.1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "WBO2_REF3V3",
+      "2": "WBO2_REF_SET"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo2_control"
+  },
+  {
+    "ref": "C5860",
+    "value": "100n 16V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "WBO2_REF_SET",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo2_control"
+  },
+  {
+    "ref": "C5861",
+    "value": "10u 16V X7R effective>=4.7u",
+    "footprint": "Capacitor_SMD:C_1206_3216Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate.",
+    "sheet": "wbo/wbo2_control"
+  },
+  {
+    "ref": "C5862",
+    "value": "10u 16V X7R effective>=4.7u",
+    "footprint": "Capacitor_SMD:C_1206_3216Metric",
+    "pins": {
+      "1": "WBO2_3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate.",
+    "sheet": "wbo/wbo2_control"
+  },
+  {
+    "ref": "C5863",
+    "value": "100n 16V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "WBO2_3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "wbo/wbo2_control"
+  },
+  {
+    "ref": "C5864",
+    "value": "100n 16V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "WBO2_REF3V3",
       "2": "GND"
     },
     "dnp": false,

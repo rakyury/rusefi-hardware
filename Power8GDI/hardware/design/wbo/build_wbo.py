@@ -47,6 +47,7 @@ def build():
             if net=='+5V': return '+5V_CORE'
             if net=='GND': return 'GND'
             if net=='+3V3': return pre+'3V3'
+            if net=='VDDA': return pre+'3V3' # approved supply-only merge; F042 requires VDDA>=VDD
             if net=='/CANH': return 'CAN2_H'
             if net=='/CANL': return 'CAN2_L'
             if net=='/heater_pwm':return pre+'F042_HEATER_PWM'
@@ -63,7 +64,8 @@ def build():
         for original in sorted({n for pins in nets.values() for n in pins.values()}):
             mapped=mapnet(original)
             if mapped is None:continue
-            if mapped in reverse:raise ValueError(f'Net alias collision: {reverse[mapped]} and {original} -> {mapped}')
+            if mapped in reverse and {reverse[mapped],original}!={'+3V3','VDDA'}:
+                raise ValueError(f'Net alias collision: {reverse[mapped]} and {original} -> {mapped}')
             reverse[mapped]=original
         def refmap(ref):return re.sub(r'\d+',lambda m:str(base+int(m[0])-600),ref)
         analog=Sheet(f'wbo/wbo{index}_analog',f'WBO{index}: LSU4.9 pump and Nernst analog loop',root=ROOT,paper='A2')
@@ -86,18 +88,26 @@ def build():
                 pins=[('1','INPUT','input'),('2','DRAIN','passive'),('3','SOURCE','passive')]
                 note+=' Active DPAK variant replaces obsolete SOT223. Drain is HEATER NEGATIVE despite source net LSU_H+.'
             if old=='R622': mapped['2']=pre+'HEATER_DRIVE_5V'
+            if old=='U603':
+                mapped['2']=pre+'REF3V3'
+                note+=' Precision setpoint only; LT3042 buffers the common VDD/VDDA rail.'
+            if old=='U604':
+                fp='Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm'
+                pins=[('1','IN','power_in'),('2','IN','power_in'),('3','EN_UV','input'),('4','PG','open_collector'),('5','ILIM','passive'),('6','PGFB','input'),('7','SET','passive'),('8','GND','power_in'),('9','OUTS','input'),('10','OUT','power_out'),('11','EP_GND','power_in')]
+                mapped={'1':'+5V_CORE','2':'+5V_CORE','3':'+5V_CORE','4':None,'5':'GND','6':'+5V_CORE','7':pre+'REF_SET','8':'GND','9':pre+'3V3','10':pre+'3V3','11':'GND'}
+                note='LT3042 RevC p15 external reference buffer; replaces XC6206. PGFB=IN disables fast start. OUTS Kelvin to output capacitor. EP grounded.'
             if old=='R629':value='120R DNP';note+=' Do not fit: node on shared CAN2 bus, termination only at physical ends.'
             if old=='U605':
                 pins=[(p,n,'bidirectional' if p in ('6','7') else t) for p,n,t in pins]
                 fp='Package_SO:SOIC-8_3.9x4.9mm_P1.27mm'
             if old=='D604': pins=[('1','CANH','passive'),('2','CANL','passive'),('3','GND','passive')]
-            exact={'U600':'MCP6004T-E/ST','U601':'AD8628ARTZ-REEL7','U602':'STM32F042K6T6','U603':'REF3033AIDBZR','U604':'XC6206P332MR-G'}
+            exact={'U600':'MCP6004T-E/ST','U601':'AD8628ARTZ-REEL7','U602':'STM32F042K6T6','U603':'REF3033AIDBZR','U604':'LT3042IMSE#WTRPBF'}
             value=exact.get(old,value)
             if old in main_positions:s,x,y=main_positions[old]
             else:
                 s=analog if old in analog_refs else control
                 k=counts[s.name];counts[s.name]+=1
-                x=65+135*(k%4);y=(165+22*(k//4) if s is analog else 240+19*(k//4))
+                x=65+135*(k%4);y=(165+22*(k//4) if s is analog else 230+15.5*(k//4))
             # Passive 0402 parts enlarged to0603; same net topology and nominal values.
             if old.startswith('R'): fp=RFP;sym=R
             elif old.startswith('C'):fp=CFP;sym=C
@@ -123,7 +133,12 @@ def build():
         extras[-1]=('R',45,'100k',mapnet('Net-(Q600-G)'),'GND')
         for kind,num,val,a,b in extras:
             k=counts[control.name];counts[control.name]+=1
-            control.component(R if kind=='R' else C,f'{kind}{base+num}',val,65+135*(k%4),240+19*(k//4),{'1':a,'2':b})
+            control.component(R if kind=='R' else C,f'{kind}{base+num}',val,65+135*(k%4),230+15.5*(k//4),{'1':a,'2':b})
+        reset=symbol('TPS3808G33',[('1','~{RESET}','open_collector'),('2','GND','power_in'),('3','~{MR}','input'),('4','CT','passive'),('5','SENSE','input'),('6','VDD','power_in')],'Package_TO_SOT_SMD:SOT-23-6')
+        control.component(reset,f'U{base+12}','TPS3808G33QDBVRQ1',90,145,{'1':pre+'nRESET','2':'GND','3':pre+'3V3','4':None,'5':pre+'3V3','6':pre+'3V3'},note='Local rail monitor: ~3.07V threshold; CT open ~20ms recovery delay. NRST internal POR alone does not guarantee ADC supply validity.')
+        for kind,num,val,a,b in [('R',60,'30k 0.1%',pre+'REF_SET','GND'),('R',61,'2.2k 1%',pre+'3V3','GND'),('R',62,'10k',pre+'nRESET',pre+'3V3'),('R',63,'220R 0.1%',pre+'REF3V3',pre+'REF_SET'),('C',60,'100n 16V X7R',pre+'REF_SET','GND'),('C',61,'10u 16V X7R effective>=4.7u','+5V_CORE','GND'),('C',62,'10u 16V X7R effective>=4.7u',pre+'3V3','GND'),('C',63,'100n 16V X7R',pre+'3V3','GND'),('C',64,'100n 16V X7R',pre+'REF3V3','GND')]:
+            k=counts[control.name];counts[control.name]+=1
+            control.component(R if kind=='R' else C,f'{kind}{base+num}',val,65+135*(k%4),230+15.5*(k//4),{'1':a,'2':b},footprint='Capacitor_SMD:C_1206_3216Metric' if kind=='C' and num in (61,62) else None,note='SET bleed sinks >102uA at nominal rail; 220R limits SET clamp fault current. Nominal buffered rail3.2978V.' if num==60 and kind=='R' else ('LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate.' if kind=='C' and num in (61,62) else ''))
         # Heater supply is not routed through the logic supply diode.
         feed=Sheet(f'wbo/wbo{index}_heater_feed',f'WBO{index}: reverse protected heater supply',root=ROOT,paper='A3')
         feed.text('Heater current uses VBAT_MAIN_FUSED and dedicated power return; never +5V_CORE or VBAT_LOGIC_PROTECTED.',20,20,1.5)
@@ -161,7 +176,7 @@ def build():
     (HERE/'reference_map.json').write_text(json.dumps(reference_maps,indent=2)+'\n')
     (HERE/'Power8GDI_WBO.kicad_sym').write_text('(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor")\n'+'\n'.join(s.body.replace('Power8GDI_Aux:','') for s in symbols.values())+'\n)\n')
     (HERE/'sym-lib-table').write_text('(sym_lib_table (version 7) (lib (name "Power8GDI_WBO") (type "KiCad") (uri "${KIPRJMOD}/Power8GDI_WBO.kicad_sym") (options "") (descr "WBO derived candidate")))\n')
-    contract={'schema_version':1,'project':'Power8GDI_Core','root_uuid':ROOT,'sheets':[{'name':s.name,'uuid':s.uuid,'sheet_id':s.sheet_id,'components':len(s.parts)} for s in sheets],'parts':len(parts),'references':{'hardware_commit':(HERE/'reference/commit.txt').read_text().strip(),'firmware_commit':(HERE/'reference/firmware_commit.txt').read_text().strip()},'upstream_license':'NO LICENSE FOUND IN HELLEN-ONE; redistribution review pending','channel_count':2,'sensor':'Bosch LSU4.9 automotive6pin','main_mcu_signals':['WBO1_HEATER_PWM','WBO2_HEATER_PWM'],'shared_nets':['CAN2_H','CAN2_L','+5V_CORE','+3V3','GND','HW_ACTUATOR_ENABLE_N','VBAT_MAIN_FUSED'],'can':{'bitrate':500000,'standard_data_ids':[400,402],'diagnostic_ids':[401,403],'local_termination_fitted':False},'heater_equation':'F042_PWM AND MAIN_PERMISSION AND NOT(HW_ACTUATOR_ENABLE_N)','remove_old_sheets':['interfaces_aux/wbo1_analog','interfaces_aux/wbo2_analog','interfaces_aux/wbo_adc_control'],'external_egt':{'onboard_channels':0,'bus':'CAN2','rate_and_protocol':'TBD; target500kbit/s compatible with WBO'},'remaining_gates':['Main firmware stale/invalid CAN must clear individual permissions; no separate F042 hardware heartbeat','Heater supply voltage compensation after diode, fuse/cold-current/thermal and load dump validation','WBO source license/redistribution review','Exact assembly MPN grades and passives selection; source local LDO/MCU85C ceiling','Integrated ERC, PCB layout/DRC, bench calibration and hardware fault testing']}
+    contract={'schema_version':1,'project':'Power8GDI_Core','root_uuid':ROOT,'sheets':[{'name':s.name,'uuid':s.uuid,'sheet_id':s.sheet_id,'components':len(s.parts)} for s in sheets],'parts':len(parts),'local_supply':{'architecture':'REF3033 + current-limited SET + LT3042 common VDD/VDDA','nominal_volts':3.297816,'reset_supervisor':'TPS3808G33QDBVRQ1','reset_threshold_nominal_volts':3.07,'power_qa':'ELECTRICAL_QA.md'},'references':{'hardware_commit':(HERE/'reference/commit.txt').read_text().strip(),'firmware_commit':(HERE/'reference/firmware_commit.txt').read_text().strip()},'upstream_license':'NO LICENSE FOUND IN HELLEN-ONE; redistribution review pending','channel_count':2,'sensor':'Bosch LSU4.9 automotive6pin','main_mcu_signals':['WBO1_HEATER_PWM','WBO2_HEATER_PWM'],'shared_nets':['CAN2_H','CAN2_L','+5V_CORE','+3V3','GND','HW_ACTUATOR_ENABLE_N','VBAT_MAIN_FUSED'],'can':{'bitrate':500000,'standard_data_ids':[400,402],'diagnostic_ids':[401,403],'local_termination_fitted':False},'heater_equation':'F042_PWM AND MAIN_PERMISSION AND NOT(HW_ACTUATOR_ENABLE_N)','remove_old_sheets':['interfaces_aux/wbo1_analog','interfaces_aux/wbo2_analog','interfaces_aux/wbo_adc_control'],'external_egt':{'onboard_channels':0,'bus':'CAN2','rate_and_protocol':'TBD; target500kbit/s compatible with WBO'},'remaining_gates':['Main firmware stale/invalid CAN must clear individual permissions; no separate F042 hardware heartbeat','Heater supply voltage compensation after diode, fuse/cold-current/thermal and load dump validation','WBO source license/redistribution review','Exact assembly MPN grades and passives selection; source MCU85C ceiling; LT3042 effectiveCout/stability and ADC calibration','Integrated ERC, PCB layout/DRC, bench calibration and hardware fault testing']}
     (HERE/'interface.json').write_text(json.dumps(contract,indent=2)+'\n')
     with (HERE/'bom.csv').open('w',newline='') as f:
         w=csv.DictWriter(f,fieldnames=['ref','value','footprint','dnp','sheet','note']);w.writeheader();w.writerows({k:p[k] for k in w.fieldnames} for p in parts)

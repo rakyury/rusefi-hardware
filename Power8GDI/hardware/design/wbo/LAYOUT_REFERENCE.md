@@ -35,3 +35,9 @@ The stored original Q600 location must not be accepted as a DPAK placement.
 
 Source schematic and PCB retain upstream attribution and the existing unresolved
 hardware redistribution/license gate; copying placement does not resolve it.
+
+The subsequent supply correction also replaces U604 SOT23 with LT3042 MSOP10EP
+and adds U5612/U5812 local reset supervisors plus reference-buffer passives.
+Stored U604 coordinates are only a relative-location hint; reserve a new compact
+power cluster and Kelvin-route OUTS at C5662/C5862. Do not put a series ferrite
+between MCU VDD and VDDA: both must remain the same common supply net.

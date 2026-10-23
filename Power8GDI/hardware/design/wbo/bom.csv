@@ -31,7 +31,7 @@ R5623,27k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_analog,Pinned Hellen 0.6
 R5624,3.3k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_analog,Pinned Hellen 0.6 source R624; netlist-derived.
 U5600,MCP6004T-E/ST,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,wbo/wbo1_analog,Pinned Hellen 0.6 source U600; netlist-derived.
 U5601,AD8628ARTZ-REEL7,Package_TO_SOT_SMD:TSOT-23-5,False,wbo/wbo1_analog,Pinned Hellen 0.6 source U601; netlist-derived.
-U5603,REF3033AIDBZR,Package_TO_SOT_SMD:SOT-23,False,wbo/wbo1_analog,Pinned Hellen 0.6 source U603; netlist-derived.
+U5603,REF3033AIDBZR,Package_TO_SOT_SMD:SOT-23,False,wbo/wbo1_analog,Pinned Hellen 0.6 source U603; netlist-derived. Precision setpoint only; LT3042 buffers the common VDD/VDDA rail.
 C5602,100n,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo1_control,Pinned Hellen 0.6 source C602; netlist-derived.
 C5609,1u,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo1_control,Pinned Hellen 0.6 source C609; netlist-derived.
 C5610,1u,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo1_control,Pinned Hellen 0.6 source C610; netlist-derived.
@@ -57,7 +57,7 @@ R5627,1k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,Pinned Hellen 0.6
 R5628,1k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,Pinned Hellen 0.6 source R628; netlist-derived.
 R5629,120R DNP,Resistor_SMD:R_0603_1608Metric,True,wbo/wbo1_control,"Pinned Hellen 0.6 source R629; netlist-derived. Do not fit: node on shared CAN2 bus, termination only at physical ends."
 U5602,STM32F042K6T6,Package_QFP:LQFP-32_7x7mm_P0.8mm,False,wbo/wbo1_control,Pinned Hellen 0.6 source U602; netlist-derived.
-U5604,XC6206P332MR-G,Package_TO_SOT_SMD:SOT-23,False,wbo/wbo1_control,Pinned Hellen 0.6 source U604; netlist-derived.
+U5604,LT3042IMSE#WTRPBF,Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm,False,wbo/wbo1_control,LT3042 RevC p15 external reference buffer; replaces XC6206. PGFB=IN disables fast start. OUTS Kelvin to output capacitor. EP grounded.
 U5605,TJA1051T/3/1J,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,wbo/wbo1_control,Pinned Hellen 0.6 source U605; netlist-derived.
 U5610,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,wbo/wbo1_control,"Main F7 permission uses legacy WBOx_HEATER_PWM net name; static enable, not a second PWM."
 U5611,SN74AHCT1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,wbo/wbo1_control,TTL input accepts3V3; disabled by independent global hardware latch. Output pull-down keeps switch off.
@@ -69,6 +69,16 @@ R5642,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
 R5643,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
 R5644,0R,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
 R5645,100k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
+U5612,TPS3808G33QDBVRQ1,Package_TO_SOT_SMD:SOT-23-6,False,wbo/wbo1_control,Local rail monitor: ~3.07V threshold; CT open ~20ms recovery delay. NRST internal POR alone does not guarantee ADC supply validity.
+R5660,30k 0.1%,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,SET bleed sinks >102uA at nominal rail; 220R limits SET clamp fault current. Nominal buffered rail3.2978V.
+R5661,2.2k 1%,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
+R5662,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
+R5663,220R 0.1%,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo1_control,
+C5660,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo1_control,
+C5661,10u 16V X7R effective>=4.7u,Capacitor_SMD:C_1206_3216Metric,False,wbo/wbo1_control,LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate.
+C5662,10u 16V X7R effective>=4.7u,Capacitor_SMD:C_1206_3216Metric,False,wbo/wbo1_control,LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate.
+C5663,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo1_control,
+C5664,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo1_control,
 D5610,STPS5H100BY-TR,Package_TO_SOT_SMD:TO-252-2,False,wbo/wbo1_heater_feed,"ST DS6906 page1 package: leftlead1 NC, tab2 K, rightlead3 A. External branch fuse coordination and diode thermal validation required."
 D5611,SMBJ24CA,Diode_SMD:D_SMB,False,wbo/wbo1_heater_feed,38.9V ratedclamp nominal <40V switch minimumclamp; overshoot/pulse energy still unqualified.
 C5650,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,wbo/wbo1_heater_feed,
@@ -105,7 +115,7 @@ R5823,27k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_analog,Pinned Hellen 0.6
 R5824,3.3k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_analog,Pinned Hellen 0.6 source R624; netlist-derived.
 U5800,MCP6004T-E/ST,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,False,wbo/wbo2_analog,Pinned Hellen 0.6 source U600; netlist-derived.
 U5801,AD8628ARTZ-REEL7,Package_TO_SOT_SMD:TSOT-23-5,False,wbo/wbo2_analog,Pinned Hellen 0.6 source U601; netlist-derived.
-U5803,REF3033AIDBZR,Package_TO_SOT_SMD:SOT-23,False,wbo/wbo2_analog,Pinned Hellen 0.6 source U603; netlist-derived.
+U5803,REF3033AIDBZR,Package_TO_SOT_SMD:SOT-23,False,wbo/wbo2_analog,Pinned Hellen 0.6 source U603; netlist-derived. Precision setpoint only; LT3042 buffers the common VDD/VDDA rail.
 C5802,100n,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo2_control,Pinned Hellen 0.6 source C602; netlist-derived.
 C5809,1u,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo2_control,Pinned Hellen 0.6 source C609; netlist-derived.
 C5810,1u,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo2_control,Pinned Hellen 0.6 source C610; netlist-derived.
@@ -131,7 +141,7 @@ R5827,1k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,Pinned Hellen 0.6
 R5828,1k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,Pinned Hellen 0.6 source R628; netlist-derived.
 R5829,120R DNP,Resistor_SMD:R_0603_1608Metric,True,wbo/wbo2_control,"Pinned Hellen 0.6 source R629; netlist-derived. Do not fit: node on shared CAN2 bus, termination only at physical ends."
 U5802,STM32F042K6T6,Package_QFP:LQFP-32_7x7mm_P0.8mm,False,wbo/wbo2_control,Pinned Hellen 0.6 source U602; netlist-derived.
-U5804,XC6206P332MR-G,Package_TO_SOT_SMD:SOT-23,False,wbo/wbo2_control,Pinned Hellen 0.6 source U604; netlist-derived.
+U5804,LT3042IMSE#WTRPBF,Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm,False,wbo/wbo2_control,LT3042 RevC p15 external reference buffer; replaces XC6206. PGFB=IN disables fast start. OUTS Kelvin to output capacitor. EP grounded.
 U5805,TJA1051T/3/1J,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,False,wbo/wbo2_control,Pinned Hellen 0.6 source U605; netlist-derived.
 U5810,SN74LVC1G08QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,wbo/wbo2_control,"Main F7 permission uses legacy WBOx_HEATER_PWM net name; static enable, not a second PWM."
 U5811,SN74AHCT1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,wbo/wbo2_control,TTL input accepts3V3; disabled by independent global hardware latch. Output pull-down keeps switch off.
@@ -143,6 +153,16 @@ R5842,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
 R5843,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
 R5844,0R,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
 R5845,100k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
+U5812,TPS3808G33QDBVRQ1,Package_TO_SOT_SMD:SOT-23-6,False,wbo/wbo2_control,Local rail monitor: ~3.07V threshold; CT open ~20ms recovery delay. NRST internal POR alone does not guarantee ADC supply validity.
+R5860,30k 0.1%,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,SET bleed sinks >102uA at nominal rail; 220R limits SET clamp fault current. Nominal buffered rail3.2978V.
+R5861,2.2k 1%,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
+R5862,10k,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
+R5863,220R 0.1%,Resistor_SMD:R_0603_1608Metric,False,wbo/wbo2_control,
+C5860,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo2_control,
+C5861,10u 16V X7R effective>=4.7u,Capacitor_SMD:C_1206_3216Metric,False,wbo/wbo2_control,LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate.
+C5862,10u 16V X7R effective>=4.7u,Capacitor_SMD:C_1206_3216Metric,False,wbo/wbo2_control,LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate.
+C5863,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo2_control,
+C5864,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,wbo/wbo2_control,
 D5810,STPS5H100BY-TR,Package_TO_SOT_SMD:TO-252-2,False,wbo/wbo2_heater_feed,"ST DS6906 page1 package: leftlead1 NC, tab2 K, rightlead3 A. External branch fuse coordination and diode thermal validation required."
 D5811,SMBJ24CA,Diode_SMD:D_SMB,False,wbo/wbo2_heater_feed,38.9V ratedclamp nominal <40V switch minimumclamp; overshoot/pulse energy still unqualified.
 C5850,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,wbo/wbo2_heater_feed,

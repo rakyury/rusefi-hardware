@@ -1,10 +1,10 @@
 {
-  "check_count": 346,
+  "check_count": 396,
   "passed": true,
   "errors": [],
   "checks": [
     {
-      "check": "All148parts exported exactly once",
+      "check": "All168parts exported exactly once",
       "passed": true
     },
     {
@@ -565,6 +565,86 @@
     },
     {
       "check": "R5645 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "U5612 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "U5612 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "R5660 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "R5660 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "R5661 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "R5661 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "R5662 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "R5662 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "R5663 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "R5663 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "C5660 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "C5660 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "C5661 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "C5661 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "C5662 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "C5662 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "C5663 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "C5663 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "C5664 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "C5664 footprint preserved",
       "passed": true
     },
     {
@@ -1160,6 +1240,86 @@
       "passed": true
     },
     {
+      "check": "U5812 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "U5812 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "R5860 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "R5860 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "R5861 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "R5861 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "R5862 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "R5862 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "R5863 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "R5863 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "C5860 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "C5860 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "C5861 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "C5861 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "C5862 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "C5862 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "C5863 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "C5863 footprint preserved",
+      "passed": true
+    },
+    {
+      "check": "C5864 exported electrical pins match manifest",
+      "passed": true
+    },
+    {
+      "check": "C5864 footprint preserved",
+      "passed": true
+    },
+    {
       "check": "D5810 exported electrical pins match manifest",
       "passed": true
     },
@@ -1240,11 +1400,11 @@
       "passed": true
     },
     {
-      "check": "WBO1_local3V3 rail isolated",
+      "check": "WBO1_local3V3 rail isolated frommain",
       "passed": true
     },
     {
-      "check": "WBO1_reference3V3 distinct fromdigital3V3",
+      "check": "WBO1_VDD VDDA common buffered precisionrail",
       "passed": true
     },
     {
@@ -1304,11 +1464,11 @@
       "passed": true
     },
     {
-      "check": "WBO2_local3V3 rail isolated",
+      "check": "WBO2_local3V3 rail isolated frommain",
       "passed": true
     },
     {
-      "check": "WBO2_reference3V3 distinct fromdigital3V3",
+      "check": "WBO2_VDD VDDA common buffered precisionrail",
       "passed": true
     },
     {
@@ -1333,6 +1493,26 @@
     },
     {
       "check": "WBO1 original source pinsets preserve every connectivity partition",
+      "passed": true
+    },
+    {
+      "check": "WBO1 independent power/reset datasheet pin contract",
+      "passed": true
+    },
+    {
+      "check": "WBO1 power fault mutation caught U5602.5",
+      "passed": true
+    },
+    {
+      "check": "WBO1 power fault mutation caught U5603.2",
+      "passed": true
+    },
+    {
+      "check": "WBO1 power fault mutation caught U5604.6",
+      "passed": true
+    },
+    {
+      "check": "WBO1 power fault mutation caught U5612.5",
       "passed": true
     },
     {
@@ -1364,6 +1544,26 @@
       "passed": true
     },
     {
+      "check": "WBO2 independent power/reset datasheet pin contract",
+      "passed": true
+    },
+    {
+      "check": "WBO2 power fault mutation caught U5802.5",
+      "passed": true
+    },
+    {
+      "check": "WBO2 power fault mutation caught U5803.2",
+      "passed": true
+    },
+    {
+      "check": "WBO2 power fault mutation caught U5804.6",
+      "passed": true
+    },
+    {
+      "check": "WBO2 power fault mutation caught U5812.5",
+      "passed": true
+    },
+    {
       "check": "WBO2 U600.3/2 physically distinct",
       "passed": true
     },
@@ -1391,16 +1591,16 @@
   "independent_source_topology": [
     {
       "channel": 1,
-      "source_partition_count": 44,
-      "target_partition_count": 44,
-      "retained_source_pin_count": 168,
+      "source_partition_count": 43,
+      "target_partition_count": 43,
+      "retained_source_pin_count": 164,
       "errors": []
     },
     {
       "channel": 2,
-      "source_partition_count": 44,
-      "target_partition_count": 44,
-      "retained_source_pin_count": 168,
+      "source_partition_count": 43,
+      "target_partition_count": 43,
+      "retained_source_pin_count": 164,
       "errors": []
     }
   ],
@@ -1421,6 +1621,13 @@
     },
     {
       "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pads": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "footprint": "Capacitor_SMD:C_1206_3216Metric",
       "pads": [
         "1",
         "2"
@@ -1489,6 +1696,22 @@
       ]
     },
     {
+      "footprint": "Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm",
+      "pads": [
+        "1",
+        "10",
+        "11",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ]
+    },
+    {
       "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
       "pads": [
         "1",
@@ -1539,6 +1762,17 @@
       ]
     },
     {
+      "footprint": "Package_TO_SOT_SMD:SOT-23-6",
+      "pads": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
       "footprint": "Package_TO_SOT_SMD:TO-252-2",
       "pads": [
         "1",
@@ -1565,11 +1799,11 @@
     }
   ],
   "schematic_hashes": {
-    "wbo1_analog.kicad_sch": "46dc8504af468e9a3b8cb50c001050355bfb721b12076c2c94c70d4098a29d63",
-    "wbo1_control.kicad_sch": "a78b598a9c1c4e2e0ad84ad6cf3a4f812fd607ecaabbecf190281bcf1c3d3af1",
+    "wbo1_analog.kicad_sch": "5c9861cc6e8df964883c3e393de14ce113f78e8744d7219d55d885eb689b5d3b",
+    "wbo1_control.kicad_sch": "d551a91ed1bc4cc5d40aac528335de16f3a8bf8b43b8aabac1aa4205545f2307",
     "wbo1_heater_feed.kicad_sch": "4e9e22188b31c5b9231b0da274edb4708b789c6c936e00bd4e3e3aca57ce3070",
-    "wbo2_analog.kicad_sch": "bc9ffaf3ec0a2422f5067a2e9b8943caaf0800b6ceba7b94c6bd0965987076d9",
-    "wbo2_control.kicad_sch": "4eb90324aabdcf3d97f4dc8845eec471048ab7a3f9055e2f1323a7e79624232b",
+    "wbo2_analog.kicad_sch": "23b7c8aa06feb8c43190e396013b0ddee90b7234cb1f964c1ced027f860136b5",
+    "wbo2_control.kicad_sch": "ce747c1e55c259ffc596c7394c37897eb58609af85cd254fb2a799105bfcb56b",
     "wbo2_heater_feed.kicad_sch": "60cdb49369a18b3113f4ef7965849ba9f637fb2ea0e48d45f917ab709adeae27"
   },
   "qualification": "Connectivity and land-pattern pad audit only; integratedERC/DRC and hardware measurement pending"

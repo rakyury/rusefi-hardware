@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/src/Power8GDI/hardware/design/wbo/wbo2_analog.kicad_sch</source>
-    <date>2026-10-23T18:08:28+0000</date>
+    <source>/work/Power8GDI/hardware/design/wbo/wbo2_analog.kicad_sch</source>
+    <date>2026-10-23T18:10:34+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -540,13 +540,13 @@
       <value>REF3033AIDBZR</value>
       <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
       <fields>
-        <field name="Design note">Pinned Hellen 0.6 source U603; netlist-derived.</field>
+        <field name="Design note">Pinned Hellen 0.6 source U603; netlist-derived. Precision setpoint only; LT3042 buffers the common VDD/VDDA rail.</field>
         <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_WBO" part="WBO_U603_mapped" description=""/>
-      <property name="Design note" value="Pinned Hellen 0.6 source U603; netlist-derived."/>
+      <property name="Design note" value="Pinned Hellen 0.6 source U603; netlist-derived. Precision setpoint only; LT3042 buffers the common VDD/VDDA rail."/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="wbo2_analog.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -638,7 +638,7 @@
   </libparts>
   <libraries>
     <library logical="Power8GDI_WBO">
-      <uri>/src/Power8GDI/hardware/design/wbo/Power8GDI_WBO.kicad_sym</uri>
+      <uri>/work/Power8GDI/hardware/design/wbo/Power8GDI_WBO.kicad_sym</uri>
     </library>
   </libraries>
   <nets>
@@ -680,6 +680,9 @@
     </net>
     <net code="7" name="WBO2_3V3" class="Default">
       <node ref="C5801" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5811" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5812" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5800" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="R5810" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U5800" pin="4" pinfunction="V+" pintype="power_in"/>
       <node ref="U5801" pin="5" pinfunction="V+" pintype="power_in"/>
@@ -759,15 +762,12 @@
     <net code="23" name="WBO2_Nernst_esr_drive" class="Default">
       <node ref="R5807" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="24" name="WBO2_Un_sense" class="Default">
+    <net code="24" name="WBO2_REF3V3" class="Default">
+      <node ref="U5803" pin="2" pinfunction="OUT" pintype="power_out"/>
+    </net>
+    <net code="25" name="WBO2_Un_sense" class="Default">
       <node ref="R5823" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U5800" pin="7" pinfunction="7" pintype="output"/>
-    </net>
-    <net code="25" name="WBO2_VDDA" class="Default">
-      <node ref="C5811" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="C5812" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="R5800" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U5803" pin="2" pinfunction="OUT" pintype="power_out"/>
     </net>
     <net code="26" name="WBO2_Vm" class="Default">
       <node ref="R5803" pin="2" pinfunction="2" pintype="passive"/>
