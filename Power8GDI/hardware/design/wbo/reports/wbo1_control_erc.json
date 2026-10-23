@@ -1,0 +1,199 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T16:27:43+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/28e175cd-f96b-5318-97c8-3451d37a0599",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U5602 Pin 5 [VDDA, Power input, Line]",
+                            "pos": {
+                                "x": 0.7239,
+                                "y": 0.8636
+                            },
+                            "uuid": "2ead3faf-bd04-55ca-ad8e-251a90e263c6"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U5602 Pin 16 [VSS, Power input, Line]",
+                            "pos": {
+                                "x": 0.7239,
+                                "y": 1.143
+                            },
+                            "uuid": "e64f4995-b33e-5a4a-b211-374c0887d24e"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U5604 Pin 3 [VI, Power input, Line]",
+                            "pos": {
+                                "x": 2.9337,
+                                "y": 0.635
+                            },
+                            "uuid": "77eb0208-c158-5054-a69a-0acc2c1b3e9a"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_VDDA'",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 0.8636
+                            },
+                            "uuid": "9419afb3-5e78-555c-ad41-df45e430f994"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_Un_sense'",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 0.889
+                            },
+                            "uuid": "53592767-0fac-54dd-8fa2-ae136ada3727"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HARNESS_WBO1_CONTACT2'",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 0.9144
+                            },
+                            "uuid": "7231876d-ca36-586c-ac8a-0626f91f802b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_Ip_sense'",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 0.9398
+                            },
+                            "uuid": "3f6bd7fc-51a8-5353-944b-416cd4349d6b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_Vm'",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 0.9652
+                            },
+                            "uuid": "c38805ac-47c8-5053-ba4f-a8d991ab03d5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_Ip_dac'",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 1.0414
+                            },
+                            "uuid": "f006c2c4-cafd-5140-be36-43b24802c2fa"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_Nernst_esr_drive'",
+                            "pos": {
+                                "x": 1.1557,
+                                "y": 1.0922
+                            },
+                            "uuid": "9e379724-611b-5de5-864a-144fbbf1b54e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HARNESS_WBO1_CONTACT3'",
+                            "pos": {
+                                "x": 2.5019,
+                                "y": 1.3081
+                            },
+                            "uuid": "98bf093f-c0ab-5c5e-b46a-b6f1cd4ac76f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label '+3V3'",
+                            "pos": {
+                                "x": 2.1209,
+                                "y": 3.5433
+                            },
+                            "uuid": "b9dd0732-a90f-59d2-90bc-15f973b9ae01"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "wbo1_control.kicad_sch"
+}
