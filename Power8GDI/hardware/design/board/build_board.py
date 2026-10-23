@@ -161,8 +161,8 @@ def project_file(path):
     rules={'min_clearance':.2,'min_track_width':.2,'min_via_diameter':.6,'min_through_hole_diameter':.3,
            'min_hole_clearance':.25,'min_copper_edge_clearance':.5}
     classes=[]
-    for name,width,clearance in [('Default',.25,.2),('Power',.6,.3),('GDI_HV',.8,.6),('Ignition_HV',1.5,2.5),('Logic',.25,.2)]:
-        classes.append({'name':name,'priority':{'Default':2147483647,'Ignition_HV':0,'GDI_HV':1,'Power':2,'Logic':3}[name],
+    for name,width,clearance in [('Default',.25,.2),('Power',.6,.3),('GDI_HV',.8,.6),('Ignition_HV',1.5,2.5),('LogicSupply',.4,.2),('Logic',.25,.2)]:
+        classes.append({'name':name,'priority':{'Default':2147483647,'Ignition_HV':0,'GDI_HV':1,'Power':2,'LogicSupply':3,'Logic':4}[name],
                         'clearance':clearance,'track_width':width,'via_diameter':.65,'via_drill':.3,
                         'microvia_diameter':.3,'microvia_drill':.1,'diff_pair_width':.2,'diff_pair_gap':.2,
                         'diff_pair_via_gap':.25,'wire_width':6,'bus_width':12,'line_style':0,'pcb_color':'rgba(0,0,0,0)',
@@ -171,13 +171,16 @@ def project_file(path):
          'meta':{'filename':'board_design_settings.json','version':2},'rules':rules,'drc_exclusions':[]}},
          'net_settings':{'meta':{'version':4},'classes':classes,'netclass_assignments':{},'netclass_patterns':[{'pattern':'PT*_Vdrive*','netclass':'GDI_HV'},
                          {'pattern':'PT*_VBOOST','netclass':'GDI_HV'},{'pattern':'HARNESS_IGN*','netclass':'Ignition_HV'},
-                         {'pattern':'VBAT*','netclass':'Power'},{'pattern':'+5V*','netclass':'Power'},{'pattern':'+3V3*','netclass':'Power'}]}}
+                         {'pattern':'VBAT*','netclass':'Power'},{'pattern':'+5V*','netclass':'LogicSupply'},{'pattern':'+3V3*','netclass':'LogicSupply'}]}}
     path.write_text(json.dumps(doc,indent=2)+'\n')
     # Explicit equivalent rules make these safety-relevant classes auditable
     # even in CLI consumers that fail to resolve project pattern assignments.
     high=['PT'+s+n for s in ('A','B') for n in ('_VBOOST','_Vdrive_coil','_Vdrive_shunt')]
-    supplies=['+3V3','+3V3_A','+5V_CORE','+5V_GDI_A','+5V_GDI_B',
-              'VBAT_MAIN_FUSED','VBAT_LOGIC_PROTECTED','VBAT_GDI_A','VBAT_GDI_B','VBAT_DBW_FUSED','VBAT_EWG_FUSED']
+    # Regulated 3.3/5 V rails use the ordinary 0.2 mm electrical clearance.
+    # Their 0.5 mm-pitch packages have 0.25 mm intrinsic adjacent-pad gaps;
+    # the previous battery-class rule imposed 0.3 mm even on those pad pairs.
+    # This classification changes no battery, boost or ignition isolation rule.
+    supplies=['VBAT_MAIN_FUSED','VBAT_LOGIC_PROTECTED','VBAT_GDI_A','VBAT_GDI_B','VBAT_DBW_FUSED','VBAT_EWG_FUSED']
     rules_text=['(version 1)']
     for label,names,clearance in [('Power clearance',supplies,.3),('GDI high voltage clearance',high,.6),
         ('Ignition preliminary isolation target - qualification pending',[f'HARNESS_IGN{i}' for i in range(1,9)],2.5)]:
@@ -385,7 +388,7 @@ def build(args):
            'C398':(37,109,0),'C399':(44,106,0),'R398':(49,104,90)}
     if args.functional_layout:
         from functional_layout import place
-        bank_placements=place(board,footprints,imported,root_path,manifest,nets,add_track,ground_pad)
+        bank_placements=place(board,footprints,imported,root_path,manifest,nets,add_track,ground_pad,args.prepack_output)
         from route_ignition_local import route as route_ignition
         ignition_routes=route_ignition(board,footprints,nets,add_track)
         unplaced=[]
@@ -448,5 +451,7 @@ if __name__=='__main__':
     parser.add_argument('--pinout',type=Path,default=HERE.parents[2]/'pinout/power8gdi_revA_pinout.csv')
     parser.add_argument('--output-dir',type=Path,default=HERE/'review')
     parser.add_argument('--grouped-outputs',action='store_true',help='Require four-channel LS banks to fit together; fail on current geometry conflicts')
-    parser.add_argument('--functional-layout',action='store_true',help='Use functional regions within the original245x165 outline')
+    parser.add_argument('--functional-layout',action='store_true',default=True,help='Use functional regions within the original245x165 outline (default)')
+    parser.add_argument('--legacy-placement',dest='functional_layout',action='store_false',help='Reproduce the obsolete staging placement for diagnosis only')
+    parser.add_argument('--prepack-output',type=Path,help='Save unplaced diagnostic input and fixed-reference list for local module development')
     build(parser.parse_args())

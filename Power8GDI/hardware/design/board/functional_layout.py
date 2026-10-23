@@ -5,6 +5,7 @@ is retained by the caller's audited transfer; placements cannot erase it.
 """
 from collections import defaultdict
 import math
+import json
 import xml.etree.ElementTree as ET
 import pcbnew as p
 from build_connector import vec
@@ -21,7 +22,7 @@ def move(fp,x,y,angle=0,back=False):
     fp.SetOrientationDegrees(angle);fp.SetPosition(vec(x,y))
 
 
-def place(board,fps,imported,netlist,manifest,nets,add_track,ground_pad):
+def place(board,fps,imported,netlist,manifest,nets,add_track,ground_pad,prepack_output=None):
     groups=defaultdict(list)
     for comp in ET.parse(netlist).findall('components/comp'):
         ref=comp.attrib['ref'];name=comp.find('sheetpath').get('names').strip('/')
@@ -57,6 +58,17 @@ def place(board,fps,imported,netlist,manifest,nets,add_track,ground_pad):
         # resistor at -8 mm overlays the actual gate/emitter lands.
         move(fps[f'R{n+5}'],x-13,y-2.54,0);placed.add(f'R{n+5}')
         move(fps[f'R{n+6}'],x-13,y+1,270);placed.add(f'R{n+6}')
+    if prepack_output:
+        prepack_output.parent.mkdir(parents=True,exist_ok=True)
+        p.SaveBoard(str(prepack_output),board)
+        prepack_output.with_suffix('.fixed.json').write_text(json.dumps({'status':'UNPLACED_DIAGNOSTIC_INPUT_ONLY','fixed_references':sorted(placed)},indent=2)+'\n')
+    # Switching supply geometry owns the first choice of free space. Generic
+    # area packing cannot substitute for Cin/IC/L/Cout loop placement.
+    from route_logic_power_local import place_and_route as logic_power
+    supply=logic_power(board,fps,nets,placed,region=(5,5,151,55))
+    if any(c.get('anchor_mm') is None for c in supply['cells'].values()):
+        raise ValueError('Compact logic supply placement failed: '+str(supply))
+    placed.update(supply['placed_references']);report.append({'domain':'compact logic supply','local_module':supply})
     # Register copper and component obstacles independently for each assembly side.
     occupied={p.F_Cu:Spatial(),p.B_Cu:Spatial()}
     copper_obstacles={layer:Spatial() for layer in (p.F_Cu,p.In1_Cu,p.In2_Cu,p.B_Cu)}
@@ -87,14 +99,17 @@ def place(board,fps,imported,netlist,manifest,nets,add_track,ground_pad):
             return (x,y,x+24,y+23),(x+12,y+11),0
         if name.startswith('Ignition permission'):return (49,91,151,142),(99,113),1
         if 'low-side' in name.lower():return (5,55,151,92),(75,75),2
-        if 'H-bridge' in name or name.startswith('motor4 '):return (60,5,151,55),(110,25),3
+        if 'H-bridge' in name or name.startswith('motor4 '):return (5,5,151,55),(110,25),3
         if 'battery' in name or '3V3 logic' in name or name.startswith('logic power'):return (5,5,58,52),(30,25),3
+        if name in ('gdi/protection b','GDI bank B reference candidate'):return (156,5,239,52),(190,24),4
         if 'gdi/' in name or 'GDI bank' in name:return (5,5,151,55),(75,45),4
         if 'wbo' in name.lower():
-            x=156 if 'wbo1' in name else 199
-            return (x,52,x+40,142),(x+20,108),5
+            x=153 if 'wbo1' in name else 198
+            return (x,52,x+44,142),(x+22,108),5
         if 'MCU' in name or 'permission' in name:return (5,94,48,142),(26,116),6
         if 'USB' in name or 'microSD' in name:return (5,94,48,142),(12,103),0
+        if 'knock' in name.lower():return (156,5,239,82),(220,18),6
+        if name=='Hall and SENT receiver bank 2':return (146,94,155,142),(151,116),7
         # Quiet inputs may share unused space at the top of the WBO region;
         # actual placed bodies/pads remain hard obstacles on that same side.
         return (156,5,239,82),(195,28),7

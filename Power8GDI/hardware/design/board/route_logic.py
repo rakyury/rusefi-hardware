@@ -9,6 +9,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import shutil
@@ -16,13 +17,15 @@ import pcbnew as p
 
 
 ALLOW = {
-    'CAN1_TX','CAN1_RX','CAN1_STB','LIN1_TX','LIN1_RX','LIN1_EN',
+    *{f'{bus}{n}_{sig}' for n in (1,2) for bus,sigs in [('CAN',('TX','RX','STB')),('LIN',('TX','RX','EN'))] for sig in sigs},
     'SWDIO','SWCLK','SWO','BOOT0',
     'SAFETY_ARM_REQUEST','SAFETY_CLEAR_N','SAFETY_FAULT_N','SAFETY_HEARTBEAT',
     'HW_KILL_N','HW_ACTUATOR_ENABLE','HW_ACTUATOR_ENABLE_N',
-    *{f'IGN{i}{suffix}' for i in range(1,9) for suffix in ('','_GATED','_BUFFER','_LOGIC_OUT')},
-    *{f'{domain}_{suffix}' for domain in ('DBW','EWG') for suffix in
-      ('DIR','DIR_N','DISABLE','ENABLE','NOT_DISABLED','PWM','PWM_ENABLED','IN1_GATED','IN2_GATED')},
+    *{f'IGN{i}{suffix}' for i in range(1,9) for suffix in ('','_WINDOW','_GUARDED')},
+    'IGN_OC_OK','IGN_OC_OK_CLEAN','IGN_SAFE_EN',
+    *{f'{domain}_{suffix}' for domain in ('DBW','EWG','MOTOR3','MOTOR4') for suffix in
+      ('DIR','DIR_FILTERED','DISABLE','DIS_GATED','PWM','PWM_FILTERED','SPI_SO')},
+    'MOTOR_CS_N','MOTOR_MISO_BUFFERED','MOTOR_SPI_SCK','MOTOR_SPI_SI',
     *{f'{name}{i}' for name in ('CAM','SENT') for i in range(1,5)},
     'CRANK',
 }
@@ -46,7 +49,7 @@ def block_end(text, start):
 def signature(item):
     """Integer KiCad geometry; never compare copper merely by reference UUID."""
     if isinstance(item,p.PCB_VIA):
-        return ('via',item.GetNetname(),item.GetPosition().x,item.GetPosition().y,item.GetWidth(),item.GetDrillValue())
+        return ('via',item.GetNetname(),item.GetPosition().x,item.GetPosition().y,item.GetWidth(p.F_Cu),item.GetDrillValue())
     return ('track',item.GetNetname(),int(item.GetLayer()),item.GetStart().x,item.GetStart().y,
             item.GetEnd().x,item.GetEnd().y,item.GetWidth())
 
@@ -55,24 +58,14 @@ def export(board_path,dsn):
     board=p.LoadBoard(str(board_path))
     names={pad.GetNetname() for fp in board.GetFootprints() for pad in fp.Pads() if pad.GetNetname()}
     allowed=sorted(names & ALLOW);protected=sorted(names-ALLOW)
-    # Reserve the two entire GDI domains, instead of asking a generic router
-    # to normalize thousands of donor power/sense segments. This is an export
-    # proxy ONLY; the source board stays unchanged, and import only adds copper.
-    regions=[(0,0,155,93),(155,0,245,148)]
-    inside=lambda q:any(x0<=p.ToMM(q.x)<=x1 and y0<=p.ToMM(q.y)<=y1 for x0,y0,x1,y1 in regions)
-    removed=0
-    for t in list(board.GetTracks()):
-        if (isinstance(t,p.PCB_VIA) and inside(t.GetPosition())) or (
-            not isinstance(t,p.PCB_VIA) and inside(t.GetStart()) and inside(t.GetEnd())):
-            if t.GetNetname() in ALLOW:raise ValueError('Allowed net intersects reserved GDI export region')
-            board.RemoveNative(t);removed+=1
-    for x0,y0,x1,y1 in regions:
-        for layer in [p.F_Cu,p.In2_Cu,p.B_Cu]:
-            zone=p.ZONE(board);zone.SetLayer(layer);zone.SetIsRuleArea(True)
-            zone.SetDoNotAllowTracks(True);zone.SetDoNotAllowVias(True);zone.SetDoNotAllowCopperPour(True)
-            poly=zone.Outline();poly.NewOutline()
-            for x,y in [(x0,y0),(x1,y0),(x1,y1),(x0,y1)]:poly.Append(p.FromMM(x),p.FromMM(y))
-            board.Add(zone)
+    # Keep every real segment/via as a protected physical obstacle. The former
+    # whole-island B.Cu keepouts incorrectly blocked all newly placed B.Cu IO.
+    # In1 is reserved for ground, independently of external router settings.
+    zone=p.ZONE(board);zone.SetLayer(p.In1_Cu);zone.SetIsRuleArea(True)
+    zone.SetDoNotAllowTracks(True);zone.SetDoNotAllowVias(False);zone.SetDoNotAllowCopperPour(False)
+    poly=zone.Outline();poly.NewOutline()
+    for x,y in [(0,0),(245,0),(245,165),(0,165)]:poly.Append(p.FromMM(x),p.FromMM(y))
+    board.Add(zone)
     assert p.ExportSpecctraDSN(board,str(dsn))
     text=dsn.read_text()
     # Only the reviewed allowlist has connection targets in the export proxy.
@@ -94,22 +87,37 @@ def export(board_path,dsn):
     # the routing rules explicitly, never accept the export's implicit defaults.
     quote=lambda name:json.dumps(name)
     classes=[]
-    for name,members in [('RouteLogic',allowed),('Protected',protected)]:
+    ignition=[n for n in protected if re.fullmatch(r'HARNESS_IGN[1-8]',n)]
+    boost=[n for n in protected if n.startswith(('PTA_VBOOST','PTB_VBOOST','PTA_Vdrive','PTB_Vdrive'))]
+    battery=[n for n in protected if n.startswith('VBAT')]
+    ordinary=sorted(set(protected)-set(ignition+boost+battery))
+    for name,members,width,clearance in [('RouteLogic',allowed,250,200),('Protected',ordinary,250,200),
+                                       ('ProtectedBattery',battery,600,300),('ProtectedBoost',boost,800,600),
+                                       ('ProtectedIgnition',ignition,1500,2500)]:
         classes.append('(class '+name+' '+' '.join(map(quote,members))+
-                       ' (circuit (use_via "Via[0-3]_600:300_um")) (rule (width 250) (clearance 200)))')
+                       f' (circuit (use_via "Via[0-3]_600:300_um")) (rule (width {width}) (clearance {clearance})))')
     text=text[:start]+'\n'.join(classes)+text[end:]
     text=text.replace('(type route)','(type protect)')
     dsn.write_text(text)
     metadata={'source_board_sha256':hashlib.sha256(board_path.read_bytes()).hexdigest(),
+              'source_project_sha256':hashlib.sha256(board_path.with_suffix('.kicad_pro').read_bytes()).hexdigest(),
+              'source_custom_rules_sha256':hashlib.sha256(board_path.with_suffix('.kicad_dru').read_bytes()).hexdigest(),
               'allowed_nets':allowed,'protected_nets':protected,'all_existing_copper_protected':True,
               'routing_width_mm':.25,'clearance_mm':.2,'via_mm':[.6,.3],
               'routable_layers':['F.Cu','In2.Cu','B.Cu'],'ground_plane_reserved':'In1.Cu',
-              'export_only_gdi_keepout_regions_mm':regions,'donor_copper_replaced_by_keepout_in_export_only':removed}
+              'export_only_gdi_keepout_regions_mm':[],'donor_copper_replaced_by_keepout_in_export_only':0,
+              'protected_netclasses':['Protected','ProtectedBattery','ProtectedBoost','ProtectedIgnition']}
     dsn.with_suffix('.scope.json').write_text(json.dumps(metadata,indent=2)+'\n')
     print(f'Exported {len(allowed)} allowed / {len(protected)} protected nets')
 
 
 def import_session(board_path,ses,output):
+    scope=json.loads(ses.with_suffix('.scope.json').read_text())
+    if scope['source_board_sha256']!=hashlib.sha256(board_path.read_bytes()).hexdigest():
+        raise ValueError('Routing source board changed after DSN export; refusing stale SES')
+    for key,suffix in [('source_project_sha256','.kicad_pro'),('source_custom_rules_sha256','.kicad_dru')]:
+        if scope[key]!=hashlib.sha256(board_path.with_suffix(suffix).read_bytes()).hexdigest():
+            raise ValueError('Routing source rules changed after DSN export; refusing stale SES')
     original=p.LoadBoard(str(board_path));routed=p.LoadBoard(str(board_path))
     before=Counter(signature(t) for t in original.GetTracks())
     assert p.ImportSpecctraSES(routed,str(ses))
@@ -129,12 +137,18 @@ def import_session(board_path,ses,output):
     assert before <= Counter(signature(t) for t in original.GetTracks())
     output.parent.mkdir(parents=True,exist_ok=True)
     p.SaveBoard(str(output),original)
-    for name in (board_path.with_suffix('.kicad_pro').name,'fp-lib-table'):
-        source=board_path.parent/name
-        target=output.with_suffix('.kicad_pro') if name.endswith('.kicad_pro') else output.parent/name
-        if source.resolve()!=target.resolve():shutil.copy2(source,target)
     original=p.LoadBoard(str(output));original.BuildConnectivity();p.ZONE_FILLER(original).Fill(original.Zones())
     p.SaveBoard(str(output),original)
+    # Restore authoritative rules AFTER SaveBoard (KiCad may persist cached defaults).
+    for name in (board_path.with_suffix('.kicad_pro').name,board_path.with_suffix('.kicad_dru').name,'fp-lib-table'):
+        source=board_path.parent/name
+        target=output.with_suffix(source.suffix) if source.suffix in ('.kicad_pro','.kicad_dru') else output.parent/name
+        if source.resolve()!=target.resolve():
+            if name=='fp-lib-table':
+                text=source.read_text()
+                text=re.sub(r'\$\{KIPRJMOD\}/([^\"]+)',lambda m:'${KIPRJMOD}/'+os.path.relpath((board_path.parent/m.group(1)).resolve(),output.parent),text)
+                target.write_text(text)
+            else:shutil.copy2(source,target)
     (output.parent/'logic_routing_report.json').write_text(json.dumps({
         'source_board_sha256':hashlib.sha256(board_path.read_bytes()).hexdigest(),
         'session_sha256':hashlib.sha256(ses.read_bytes()).hexdigest(),
