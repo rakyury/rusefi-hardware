@@ -11,7 +11,9 @@ from audit_gdi_voltage_domains import discover
 
 _gdi=None
 _source=None
-_battery_aliases=frozenset({'PTA_+Batt_filtered','PTB_+Batt_filtered'})
+# LM76003-Q1 SW follows VIN; BOOT floats above SW (datasheet Rev B 6.1).
+# These receive the battery-domain target rather than the regulated-logic one.
+_battery_aliases=frozenset({'PTA_+Batt_filtered','PTB_+Batt_filtered','LP5_SW','LP5_BOOT'})
 
 
 def configure(netlist):
