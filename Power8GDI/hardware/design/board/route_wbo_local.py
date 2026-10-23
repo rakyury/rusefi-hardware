@@ -255,6 +255,65 @@ def place_and_route(board, fps, nets, fixed_references, regions=None):
             mx=(a[0]+b[0])/2+offset;my=(a[1]+b[1])/2+offset
             yield [a,(mx,a[1]),(mx,b[1]),b]
             yield [a,(a[0],my),(b[0],my),b]
+    def region_for(q):
+        return regions[1 if int(q.GetParentFootprint().GetReference()[1:])<5800 else 2]
+    def checked_path(a,b,layer,name,region):
+        for points in paths(a,b):
+            if not all(region[0] <= x <= region[2] and region[1] <= y <= region[3] for x,y in points):continue
+            segments=[(u,v) for u,v in zip(points,points[1:]) if math.dist(u,v)>.00001]
+            if all(copper.clear(p.SHAPE_SEGMENT(vec(*u),vec(*v),p.FromMM(.2)),
+                                (min(u[0],v[0])-.11,min(u[1],v[1])-.11,max(u[0],v[0])+.11,max(u[1],v[1])+.11),layer,name)
+                   for u,v in segments):return segments
+        return None
+    def emit(segments,layer,name):
+        for u,v in segments:
+            t=p.PCB_TRACK(board);t.SetStart(vec(*u));t.SetEnd(vec(*v));t.SetWidth(p.FromMM(.2));t.SetLayer(layer);t.SetNet(nets[name]);board.Add(t);copper.add(t,layer)
+    def via_clear(point,name,region):
+        x,y=point;b=(x-.325,y-.325,x+.325,y+.325)
+        if not inside(b,region):return False
+        shape=p.SHAPE_CIRCLE(vec(x,y),p.FromMM(.325))
+        if not all(copper.clear(shape,b,layer,name) for layer in LAYERS):return False
+        # No via-in-pad process is specified. Same-net pads must also be kept
+        # clear of the via annulus, although electrical clearance allows them.
+        for item,other,othernet,ob in copper.items:
+            if isinstance(item,p.PAD) and othernet==name and overlap(b,ob) and other.Collide(shape,p.FromMM(.1)):
+                return False
+        return True
+    def add_via(point,name):
+        v=p.PCB_VIA(board);v.SetPosition(vec(*point));v.SetWidth(p.FromMM(.65));v.SetDrill(p.FromMM(.3))
+        v.SetViaType(p.VIATYPE_THROUGH);v.SetLayerPair(p.F_Cu,p.B_Cu);v.SetNet(nets[name]);board.Add(v)
+        for layer in LAYERS:copper.add(v,layer)
+    def escapes(q,layer,name,limit=6):
+        x,y=xy(q);region=region_for(q);result=[]
+        for radius in (1,1.5,2,2.5,3):
+            for dx,dy in ((1,0),(-1,0),(0,1),(0,-1),(1,1),(-1,1),(1,-1),(-1,-1)):
+                point=(x+dx*radius,y+dy*radius)
+                if not via_clear(point,name,region):continue
+                segments=checked_path((x,y),point,layer,name,region)
+                if segments is not None:
+                    result.append((point,segments))
+                    if len(result)>=limit:return result
+        return result
+    def via_route(a,b,name):
+        first=a.GetParentFootprint().GetLayer();last=b.GetParentFootprint().GetLayer()
+        region=region_for(a);starts=escapes(a,first,name)
+        if first!=last:
+            for point,stub in starts:
+                path=checked_path(point,xy(b),last,name,region)
+                if path is None:continue
+                emit(stub,first,name);add_via(point,name);emit(path,last,name)
+                return {'vias_mm':[point],'length_mm':round(sum(math.dist(u,v) for u,v in stub+path),3)}
+        else:
+            middle=p.F_Cu if first==p.B_Cu else p.B_Cu
+            ends=escapes(b,last,name)
+            choices=sorted(((math.dist(x,y),x,sx,y,sy) for x,sx in starts for y,sy in ends),key=lambda t:t[0])
+            for distance,x,sx,y,sy in choices:
+                if distance<.9:continue
+                path=checked_path(x,y,middle,name,region)
+                if path is None:continue
+                emit(sx,first,name);add_via(x,name);emit(path,middle,name);add_via(y,name);emit(sy,last,name)
+                return {'vias_mm':[x,y],'length_mm':round(sum(math.dist(u,v) for u,v in sx+path+sy),3)}
+        return None
     pairs=[]
     pair_keys=set()
     def add_pair(a,b,priority=1):
@@ -287,28 +346,79 @@ def place_and_route(board, fps, nets, fixed_references, regions=None):
         endpoint=lambda q:q.GetParentFootprint().GetReference()+'.'+q.GetNumber()
         entry={'net':name,'from':endpoint(a),'to':endpoint(b),'distance_mm':round(distance,3)}
         common=[l for l in (p.F_Cu,p.B_Cu) if a.IsOnLayer(l) and b.IsOnLayer(l)]
-        if distance>16 or not common:
+        if distance>16 or (not common and priority!=0):
             entry['reason']='distance >16 mm' if distance>16 else 'opposite sides; intentional via routing pending'
             report['unrouted_local_pairs'].append(entry);continue
         success=False
         for layer in common:
-            for points in paths(xy(a),xy(b)):
-                segments=[(u,v) for u,v in zip(points,points[1:]) if math.dist(u,v)>.00001]
-                if not all(copper.clear(p.SHAPE_SEGMENT(vec(*u),vec(*v),p.FromMM(.2)),
-                                       (min(u[0],v[0])-.11,min(u[1],v[1])-.11,max(u[0],v[0])+.11,max(u[1],v[1])+.11),layer,name)
-                           for u,v in segments):continue
-                for u,v in segments:
-                    t=p.PCB_TRACK(board);t.SetStart(vec(*u));t.SetEnd(vec(*v));t.SetWidth(p.FromMM(.2));t.SetLayer(layer);t.SetNet(nets[name]);board.Add(t);copper.add(t,layer)
+            segments=checked_path(xy(a),xy(b),layer,name,region_for(a))
+            if segments is not None:
+                emit(segments,layer,name)
                 entry.update({'layer':board.GetLayerName(layer),'segments':len(segments),'length_mm':round(sum(math.dist(u,v) for u,v in segments),3)})
                 report['local_routes'].append(entry);success=True;break
-            if success:break
+        if not success and priority==0:
+            crossing=via_route(a,b,name)
+            if crossing:
+                entry.update(crossing);entry['layer']='F.Cu/B.Cu';report['local_routes'].append(entry);success=True
         if not success:
             entry['reason']='all short candidate paths obstructed';report['unrouted_local_pairs'].append(entry)
+    report['ground_drops']=[];report['ground_drops_pending']=[]
+    for ch in (1,2):
+        n=5600+200*(ch-1)
+        # Low-current precision/control returns only; heater power return is
+        # deliberately excluded from these 0.2mm stubs.
+        for rr,pin in [('C1',2),('C15',2),('C40',2),('C41',2),('C60',2),('C61',2),('C62',2),('C63',2),('C64',2),('U3',3),('U4',11),('U12',2)]:
+            ref=rr[0]+str(n+int(rr[1:]));q=pad(ref,pin)
+            if q.GetNetname()!='GND':raise ValueError('Ground drop pin contract changed: '+ref)
+            candidates=escapes(q,fps[ref].GetLayer(),'GND',1)
+            if not candidates:report['ground_drops_pending'].append(ref+'.'+str(pin));continue
+            point,segments=candidates[0];emit(segments,fps[ref].GetLayer(),'GND');add_via(point,'GND')
+            report['ground_drops'].append({'pad':ref+'.'+str(pin),'via_mm':point,'stub_length_mm':round(sum(math.dist(u,v) for u,v in segments),3),'ground_plane_refill_required':True})
+    # Two native-DRC findings in the integrated board. The capacitor line is
+    # HALF OF A POLARITY PLUS: relocate both strokes together, never erase it.
+    report['silk_repairs']=[]
+    visible=[fps[r] for r in refs|set(fixed_references)]
+    def silk_clear(shape,layer,ignore):
+        copper_layer=p.B_Cu if layer==p.B_SilkS else p.F_Cu
+        mask=p.B_Mask if layer==p.B_SilkS else p.F_Mask
+        for f in visible:
+            for q in f.Pads():
+                if q.IsOnLayer(mask) and q.GetEffectiveShape(copper_layer).Collide(shape,p.FromMM(.16)+max(0,q.GetSolderMaskExpansion(mask))):return False
+            for g in f.GraphicalItems():
+                if isinstance(g,p.PCB_SHAPE) and g.m_Uuid.AsString() not in ignore and g.GetLayer()==layer:
+                    if g.GetEffectiveShape().Collide(shape,p.FromMM(.16)):return False
+        return True
+    f=fps['R5840'];silk=p.B_SilkS if f.GetLayer()==p.B_Cu else p.F_SilkS
+    for g in list(f.GraphicalItems()):
+        if isinstance(g,p.PCB_SHAPE) and g.GetLayer()==silk:
+            if not silk_clear(g.GetEffectiveShape(),silk,{g.m_Uuid.AsString()}):
+                g.SetLayer(p.B_Fab if silk==p.B_SilkS else p.F_Fab)
+                report['silk_repairs'].append({'ref':'R5840','action':'conflicting body stroke to Fab; pads unchanged'})
+    f=fps['C5851'];silk=p.B_SilkS if f.GetLayer()==p.B_Cu else p.F_SilkS
+    mark=[g for g in f.GraphicalItems() if isinstance(g,p.PCB_SHAPE) and g.GetLayer()==silk and g.GetShape()==p.SHAPE_T_SEGMENT
+          and abs(math.hypot(p.ToMM(g.GetEnd().x-g.GetStart().x),p.ToMM(g.GetEnd().y-g.GetStart().y))-1)<.001]
+    if len(mark)!=2:raise ValueError('C5851 polarity marker changed; do not alter guessed strokes')
+    ignored={g.m_Uuid.AsString() for g in mark}
+    if not all(silk_clear(g.GetEffectiveShape(),silk,ignored) for g in mark):
+        saved=[(g.GetStart(),g.GetEnd()) for g in mark]
+        centre=tuple(sum(p.ToMM((a.x+b.x) if i==0 else (a.y+b.y))/2 for a,b in saved)/2 for i in (0,1))
+        positive=xy(pad('C5851',1));fx,fy=xy(f);found=False
+        for dx,dy in offsets(4,.5):
+            proposed=(centre[0]+dx,centre[1]+dy)
+            if (proposed[0]-fx)*(positive[0]-fx)+(proposed[1]-fy)*(positive[1]-fy)<=0:continue
+            if math.dist(proposed,(fx,fy))<4.9:continue
+            for g,(a,b) in zip(mark,saved):g.SetStart(a+vec(dx,dy));g.SetEnd(b+vec(dx,dy))
+            if all(silk_clear(g.GetEffectiveShape(),silk,ignored) for g in mark):found=True;break
+        if not found:
+            for g,(a,b) in zip(mark,saved):g.SetStart(a);g.SetEnd(b)
+            report['silk_repairs'].append({'ref':'C5851','action':'no safe marker relocation; retained both strokes, manual review pending'})
+        else:report['silk_repairs'].append({'ref':'C5851','action':'both polarity plus strokes relocated together; positive pin side preserved','delta_mm':[dx,dy]})
     assert all(fingerprint(fps[r])==state for r,state in originals.items()), 'Non-WBO footprint mutated'
     assert old_ids <= {t.m_Uuid.AsString() for t in board.GetTracks()}, 'Original copper removed'
     assert old_geometry == [track_fingerprint(t) for t in old_tracks], 'Original copper geometry changed'
     report['non_wbo_footprints_unchanged']=True
     report['original_copper_preserved']=True
+    report['added_copper_uuids']=sorted(t.m_Uuid.AsString() for t in board.GetTracks() if t.m_Uuid.AsString() not in old_ids)
     report['original_copper_geometry_sha256']=hashlib.sha256(repr(old_geometry).encode()).hexdigest()
     return report
 

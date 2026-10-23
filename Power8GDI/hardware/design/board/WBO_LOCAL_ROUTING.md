@@ -23,8 +23,12 @@ zone refill. NPTH hole clearance is checked independently of copper clearance.
 The shared voltage policy reserves0.6mm around all60 discovered PT switching
 nets,2.5mm around ignition collectors and0.3mm around battery supplies.
 
-Checkpoint:174 placed,60 short same-side local pad connections routed at0.2mm;
-107 local pairs intentionally remain unrouted. Global CAN, harness, heater
+Checkpoint:174 placed,61 local pad connections routed at0.2mm (one precision
+supply connection uses two checked0.65/0.30mm through vias);106 local pairs
+remain unrouted. Eight low-current ground drops have short traces and vias;
+sixteen planned drops remain blocked. The eight vias still need the ground
+plane refill and show expected via-dangling warnings before it. No heater
+power return is routed with these narrow stubs. Global CAN, harness, heater
 power paths, main-control signals, ground distribution and long rail links
 remain for subsequent routing. This is not complete WBO routing or a supply
 decoupling/thermal approval. In particular, local rail routing and ground vias
@@ -36,12 +40,33 @@ already routed WBO board is rejected.
 input/output SHA256 and shared voltage-policy provenance. The test input was
 the PCB owner's1262-part prepack snapshot, input SHA256
 `a1e919fd6ab78ba3482a52c7e49fb6cc0dba6e6f6fe0ef6786ac8af731aef197`.
-An isolated diagnostic DRC retained all fixed components and WBO while removing
-only other not-yet-placed components. It used the real project rules plus a
-stronger explicit0.6mm rule for the60 domains (no relaxation/exclusions).
-There were **zero WBO copper/hole/short/track-width violations**. Existing donor
-DRC failures, unconnected items and WBO silkscreen collisions remain, recorded
-in the report. This is explicitly not a full-board DRC pass.
+The first broad DRC evidence exceeded KiCad's500-item limit. Absence of WBO
+findings in those capped reports did **not** prove zero local violations;
+that wording is corrected by the present evidence.
+
+The current native DRC evidence uses26 quadtree leaf fixtures covering both
+entire WBO bounding rectangles. Every leaf keeps all actual nearby placed
+components/pads, tracks/vias and zones on all layers in a3mm boundary margin.
+Tracks are clipped only outside that expanded boundary and pads outside it
+are removed only in the diagnostic copy. Nets and rules remain unchanged;
+the60 PT-domain0.6mm rule is additionally enforced. All leaf type counts are
+below450 (maximum386), so none reaches the500-item cap. There are **zero WBO
+copper-clearance/hole/short/track-width findings** across this complete cover.
+Existing donor violations, expected cropping footprint/dangling warnings,
+silkscreen collisions, unfinished connections and the eight ground vias pending
+plane refill remain. This is explicitly not a full-board DRC pass.
+
+`verify_wbo_local_fixture.py` reproduces one leaf with explicit board, placement
+report, fixed references, real project, output directory, channel and tile.
+The committed checkpoint lists all26 accepted leaves, their bounds, counts,
+rule/project hashes and DRC hashes. Quadtree children0..3 cover their parent;
+use a complete leaf cover and subdivide any tile reaching450 reports of one
+type. Diagnostic clipping is never applied to the real board.
+
+The targeted silk fix moves only the offending R5840 body stroke to Fab.
+C5851's offending line was half of its positive polarity mark: both strokes
+are relocated together by(-1,+0.5)mm after mask/silk collision checks, staying
+on the positive pin side. Footprint position, pads and copper are unchanged.
 
 CLI (use separate output, not the PCB owner's original):
 

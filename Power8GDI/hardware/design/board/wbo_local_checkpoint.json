@@ -312,6 +312,24 @@
       "length_mm": 5.45
     },
     {
+      "net": "WBO2_REF_SET",
+      "from": "U5804.7",
+      "to": "R5863.2",
+      "distance_mm": 6.209,
+      "vias_mm": [
+        [
+          206.65,
+          86.0
+        ],
+        [
+          203.5,
+          92.175
+        ]
+      ],
+      "length_mm": 11.825,
+      "layer": "F.Cu/B.Cu"
+    },
+    {
       "net": "+5V_CORE",
       "from": "U5604.1",
       "to": "C5661.1",
@@ -723,7 +741,7 @@
       "from": "U5804.1",
       "to": "C5861.1",
       "distance_mm": 2.829,
-      "reason": "opposite sides; intentional via routing pending"
+      "reason": "all short candidate paths obstructed"
     },
     {
       "net": "WBO1_REF_SET",
@@ -765,20 +783,13 @@
       "from": "U5812.6",
       "to": "C5863.1",
       "distance_mm": 5.482,
-      "reason": "opposite sides; intentional via routing pending"
+      "reason": "all short candidate paths obstructed"
     },
     {
       "net": "+5V_CORE",
       "from": "U5811.5",
       "to": "C5841.1",
       "distance_mm": 6.115,
-      "reason": "all short candidate paths obstructed"
-    },
-    {
-      "net": "WBO2_REF_SET",
-      "from": "U5804.7",
-      "to": "R5863.2",
-      "distance_mm": 6.209,
       "reason": "all short candidate paths obstructed"
     },
     {
@@ -821,7 +832,7 @@
       "from": "R5863.1",
       "to": "U5803.2",
       "distance_mm": 13.525,
-      "reason": "opposite sides; intentional via routing pending"
+      "reason": "all short candidate paths obstructed"
     },
     {
       "net": "WBO2_REF3V3",
@@ -3108,25 +3119,1235 @@
     "gdi_target_mm": 0.6,
     "ignition_target_mm": 2.5
   },
+  "ground_drops": [
+    {
+      "pad": "C5615.2",
+      "via_mm": [
+        167.00295,
+        55.1125
+      ],
+      "stub_length_mm": 1.0,
+      "ground_plane_refill_required": true
+    },
+    {
+      "pad": "C5661.2",
+      "via_mm": [
+        158.475,
+        81.5
+      ],
+      "stub_length_mm": 1.0,
+      "ground_plane_refill_required": true
+    },
+    {
+      "pad": "C5664.2",
+      "via_mm": [
+        169.0,
+        77.225
+      ],
+      "stub_length_mm": 1.0,
+      "ground_plane_refill_required": true
+    },
+    {
+      "pad": "U5604.11",
+      "via_mm": [
+        159.0,
+        83.0
+      ],
+      "stub_length_mm": 2.828,
+      "ground_plane_refill_required": true
+    },
+    {
+      "pad": "C5815.2",
+      "via_mm": [
+        205.00295,
+        53.1125
+      ],
+      "stub_length_mm": 1.0,
+      "ground_plane_refill_required": true
+    },
+    {
+      "pad": "C5841.2",
+      "via_mm": [
+        233.275,
+        83.5
+      ],
+      "stub_length_mm": 1.0,
+      "ground_plane_refill_required": true
+    },
+    {
+      "pad": "C5862.2",
+      "via_mm": [
+        210.525,
+        92.5
+      ],
+      "stub_length_mm": 1.0,
+      "ground_plane_refill_required": true
+    },
+    {
+      "pad": "C5863.2",
+      "via_mm": [
+        216.775,
+        85.0
+      ],
+      "stub_length_mm": 1.414,
+      "ground_plane_refill_required": true
+    }
+  ],
+  "ground_drops_pending": [
+    "C5601.2",
+    "C5640.2",
+    "C5641.2",
+    "C5660.2",
+    "C5662.2",
+    "C5663.2",
+    "U5603.3",
+    "U5612.2",
+    "C5801.2",
+    "C5840.2",
+    "C5860.2",
+    "C5861.2",
+    "C5864.2",
+    "U5803.3",
+    "U5804.11",
+    "U5812.2"
+  ],
+  "silk_repairs": [
+    {
+      "ref": "R5840",
+      "action": "conflicting body stroke to Fab; pads unchanged"
+    },
+    {
+      "ref": "C5851",
+      "action": "both polarity plus strokes relocated together; positive pin side preserved",
+      "delta_mm": [
+        -1.0,
+        0.5
+      ]
+    }
+  ],
   "non_wbo_footprints_unchanged": true,
   "original_copper_preserved": true,
+  "added_copper_uuids": [
+    "004051af-af50-4cc6-9de7-2aa7e3843601",
+    "02cf346b-067b-43ff-91ab-cc3b6060a97d",
+    "0692c704-1480-45ae-83ce-a91faf28ab9d",
+    "075dcac8-38e0-43a7-b43c-509e38be07a8",
+    "08dd0ebf-7c08-4c5d-a107-e223f65aa59f",
+    "091ab7e2-02fe-430a-b12d-ee049ff67d55",
+    "0addcaaf-952e-4535-a33e-c2efa1cc8c3b",
+    "1229249f-91a1-4145-a9c7-b0d40d17bebf",
+    "1232db7b-1c6a-473a-9276-80f4e33a017e",
+    "12f76425-b04e-424c-b623-28bd7e6245bc",
+    "15433bd0-fd88-4ff1-8870-7f07cafa7c12",
+    "158e1dd1-237c-4c77-968b-333e9b39dae0",
+    "16f773ab-1bd0-4f1f-97ca-420f005bb0ce",
+    "1934df80-5fcd-41d6-84f2-7c5e22f5d16b",
+    "1b6c3c98-8558-4f3e-969c-aea0559a54a2",
+    "1bf6c6c3-e9e3-4793-b90f-23166c650640",
+    "1c869ac5-9cd9-4603-8229-40ebade374ad",
+    "1d436c5a-36b9-4cc5-89fb-a219267bfec4",
+    "21ea461f-2ccf-4216-a0b9-ba1f478056c0",
+    "23c62aab-3296-4dbd-8f2c-ad04ebb6a86f",
+    "24d99e2f-3e09-4b3a-b5aa-30c33dab6751",
+    "27e07d32-5681-4026-bb23-beda07a9f543",
+    "27ee0ba4-7063-4223-963b-5a3903f80251",
+    "28ff27d3-b857-4737-8557-faea98fee9d3",
+    "293fd9b4-ce6b-4171-9409-14b22d87002c",
+    "299e3fb3-d2f3-49e3-b330-acc47ca76ff8",
+    "2bbca0ec-9f8f-4bf9-8162-9cdb41fab22c",
+    "335cf09d-80b2-4573-b705-db14c483753c",
+    "403bb410-3ce6-4827-81e1-aa1bf86aaf5e",
+    "496e190d-bb86-4894-bc74-eed360b89489",
+    "4c8f1395-11f8-4b45-a5e1-1701b18a5282",
+    "4d0bbccf-3ccc-4fc3-9e17-6100af587cd0",
+    "50ef4bab-be81-4372-a214-eea0e7259cd3",
+    "52c774f1-9175-477b-bb35-c0d3009e5f3c",
+    "547bd89e-875c-4709-9628-801b2d8d9fa8",
+    "5a58ebc8-72aa-45ba-b28f-47ba83b148b9",
+    "5a8fff18-65d8-47f0-bd39-81f5cdf3ee09",
+    "5aee77c7-4fb5-4777-8695-e7e3e15810aa",
+    "5c85240e-8c94-4a16-8e7e-df784b0e5661",
+    "5cb4157e-be07-421b-8634-150f7d02c7f8",
+    "5f8a7ff6-a63d-402a-b87a-8de1f49062b2",
+    "61fdcc52-f666-4a78-bf28-b0feee932608",
+    "66b6aa83-d906-4bf5-b10d-40a672336d49",
+    "671e428e-3847-4807-bf8e-f6e637c2983a",
+    "673e91bb-a1d0-4f6d-8ddc-99f069ca349d",
+    "6cf13af2-2e7f-4fed-8c80-8285cff5d52b",
+    "6d1560d5-fa96-4e13-8f6d-c14754174edd",
+    "70f0b6f1-7dc4-46bd-b09d-e699051671c3",
+    "71e4b078-f5a0-4a79-ada9-4da0cd253426",
+    "7264abf6-21f7-46e5-a13b-dca94a745383",
+    "779ec7ac-df82-41b4-b5ce-af415cf4e920",
+    "780e29b2-cbf7-4d64-bb2e-c9b53ae19cf8",
+    "7b24634f-fa7f-4cdb-a0d6-cbb3b43e0cdb",
+    "7cacdaee-0521-4463-a714-3f91701d1431",
+    "7f205700-126f-4f18-9d98-121bbe46927f",
+    "7fc6c5d6-2932-4ad2-bd87-ac453ae76e71",
+    "869c4b98-84a5-4bcf-8f99-9bd72cb746f5",
+    "882fb5bc-2ce7-428f-8537-7a003f25a475",
+    "8bcc9f5d-a080-4f2f-b491-42be868bcbf6",
+    "8c7199c6-e437-4a50-ba73-4373091046cb",
+    "8e35f8e2-9bce-4042-8032-ce7857d76761",
+    "907d1aca-4df5-4290-bb4b-7ea75027f9ce",
+    "91a335b5-2ea2-48d7-9cdf-568cf57e3243",
+    "92fd3b8b-81dc-4ad0-a543-5f6a46e189ae",
+    "947b3162-a36d-4eb6-84c8-24e26b8721a3",
+    "985c315e-5a67-43c9-8a78-df42250f811b",
+    "9bc0d1d4-3ba0-4a23-9069-9e1a568b5fbc",
+    "9dd9c554-e3a8-432c-aae1-9a0fcde4da4f",
+    "9de27fb3-c535-4496-8f1d-28b03c168851",
+    "9edbcd06-09ac-47c9-8cfa-ff5c46fa53f3",
+    "9f2b90d0-71a5-4b7a-837d-061397ee70dc",
+    "a0d97a2c-58d4-44b8-946e-ad40129aa04d",
+    "a71a4ccf-3b9d-4673-9ede-ade6ee4cce5e",
+    "a845aded-8b9b-4883-ab2d-9d8e181f97ab",
+    "a9170c95-f01e-4d51-9ee6-8527a8ed85ac",
+    "a98c5cf1-ca71-49f3-affb-e0f48423a06e",
+    "aba5d38f-1360-4096-a509-c9c58c6f7689",
+    "b521dd1e-51f7-4845-9218-83a325d22bd9",
+    "b603541f-a3eb-49ef-aea8-3fad6fd42d58",
+    "b985983b-e601-40ad-ab08-03126caad197",
+    "bba2bfb5-1a36-41c8-a9eb-9ec68e0f96d1",
+    "bf4cdf4e-ecff-4e18-8f3b-20b7c23ddb45",
+    "c0baa18f-f34d-45c9-aa1d-f0d81c2465e5",
+    "c16eb9a2-9d4f-40a9-8e64-1b6bed20c592",
+    "c2f3f33f-84c7-495f-88f1-0686e4ade12e",
+    "c4a2966c-3bdc-495e-90ca-c9abd7cf2273",
+    "c5e3be07-2f7c-496d-98bd-3ab27e22c2a2",
+    "c62d7d83-7f4b-44a6-8b2f-e376fd0074f7",
+    "c6691050-1651-4d04-a7e7-0cddc9f49d06",
+    "c8e6f20a-f4fc-4ef1-b5fe-87ca68f7d56b",
+    "cada74fc-bc18-498e-8e95-ab8edbeec3ad",
+    "cec6991b-908a-4e91-b5f4-5137872396bb",
+    "d0105891-1ee1-41f8-a19d-448eb221709e",
+    "d037737d-5d21-4d44-9bb1-fd7d39b9dff6",
+    "d14d2eb8-b5fd-45f8-99bd-2dbcc9516459",
+    "d1fb497e-f289-44d7-bdef-619ef851e12b",
+    "d2975b2a-4eb6-4364-8b83-3e925dbc3937",
+    "d2c49fed-3470-4e5a-910a-23f57fe2b70d",
+    "d7a143ba-0118-460d-a061-c9819a1f8000",
+    "d8bda1d6-96a0-43bd-88b6-bfae50f2f89a",
+    "db7fad05-3d00-4c8d-92b4-7136964cf50f",
+    "dbff8ed2-51f2-4f28-9647-7a28553529ef",
+    "dd33cf8f-02bd-4ac6-b5e2-d03008e42fcd",
+    "ddb39ac6-37f0-4692-824b-77a00959ce57",
+    "e3291c50-5792-4491-97a0-85f2992ed050",
+    "e32c5cf3-f50a-4293-a557-5dc2e47b0363",
+    "e75eb762-a6f5-4dce-a843-64416f1f848e",
+    "e9241518-4f62-4ec3-9706-5fbaf5e7ec55",
+    "ec090a83-5303-43e8-9c33-b01ca7c0ba21",
+    "ed09fe48-f706-4d5e-9ad1-bc21bb16dece",
+    "f1d51c5e-5417-4e28-a8e9-66ef7c8df8b3",
+    "f5104c87-f7e4-4019-8547-4c0488e19a7e",
+    "f6df5c47-763c-475e-ada1-b0aa0be5f506",
+    "f73aefbf-3793-446f-98f3-809cf07d5322",
+    "f863790d-cb95-46fc-82be-f101b47e4615",
+    "f8fb138c-06ac-45bf-a9b4-e65e563df99f",
+    "fac23df4-3018-4647-bb71-c2b368c1b554",
+    "ff7dcfc8-8f6e-42bc-b012-8ef63a786ae0"
+  ],
   "original_copper_geometry_sha256": "85156ac53400e19c818d8cefdc33057f52dc5c2a3c67cf6cd0d76e2fb434f343",
   "input_board_sha256": "a1e919fd6ab78ba3482a52c7e49fb6cc0dba6e6f6fe0ef6786ac8af731aef197",
-  "output_board_sha256": "c830714e72cea01897718f0722feb17e2b136ee35407351aced2d6ecdcd373ad",
+  "output_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
   "drc_scope": {
-    "method": "KiCad9.0.9 on diagnostic copy retaining fixed donor/connector/MCU/IGN and174WBO. Other unplaced footprints removed only on DRC copy. Actual shared project rules, explicit60PT-domain0.6mm, no exclusions/relaxations.",
-    "wbo_non_silkscreen_violations": [],
-    "whole_diagnostic_copy_counts": {
-      "clearance": 504,
-      "track_width": 199,
-      "track_dangling": 17,
-      "via_dangling": 32,
-      "text_height": 24,
-      "silk_over_copper": 141,
-      "silk_overlap": 199
-    },
-    "whole_diagnostic_copy_unconnected_items": 499,
-    "drc_json_sha256": "92a9e30ff74e0073728be48473b63a6a78326c6702ec4ec757ab165109723ce3",
-    "not_a_full_board_drc_pass": true
+    "method": "26 native KiCad9.0.9 quadtree leaf fixtures cover both entire WBO bounding rectangles. Each includes every actual nearby placed footprint/pad, track/via, zone on all layers in core+3mm; tracks clipped only outside expanded ROI, pads outside ROI removed only in diagnostic copies. Actual nets and rules unchanged; explicit60-domain0.6mm added when absent. No rule exclusions/relaxations. Each type count<450, hence below KiCad500-item cap.",
+    "whole_wbo_area_covered": true,
+    "wbo_copper_hole_short_width_findings": [],
+    "accepted_leaf_count": 26,
+    "largest_reported_type_count": 386,
+    "ground_via_warnings_before_plane_refill": [
+      {
+        "description": "Via [GND] on F.Cu - B.Cu",
+        "pos": {
+          "x": 210.525,
+          "y": 92.5
+        },
+        "uuid": "7264abf6-21f7-46e5-a13b-dca94a745383"
+      },
+      {
+        "description": "Via [GND] on F.Cu - B.Cu",
+        "pos": {
+          "x": 216.775,
+          "y": 85.0
+        },
+        "uuid": "12f76425-b04e-424c-b623-28bd7e6245bc"
+      },
+      {
+        "description": "Via [GND] on F.Cu - B.Cu",
+        "pos": {
+          "x": 233.275,
+          "y": 83.5
+        },
+        "uuid": "547bd89e-875c-4709-9628-801b2d8d9fa8"
+      },
+      {
+        "description": "Via [GND] on F.Cu - B.Cu",
+        "pos": {
+          "x": 169.0,
+          "y": 77.225
+        },
+        "uuid": "21ea461f-2ccf-4216-a0b9-ba1f478056c0"
+      },
+      {
+        "description": "Via [GND] on F.Cu - B.Cu",
+        "pos": {
+          "x": 158.475,
+          "y": 81.5
+        },
+        "uuid": "4c8f1395-11f8-4b45-a5e1-1701b18a5282"
+      },
+      {
+        "description": "Via [GND] on F.Cu - B.Cu",
+        "pos": {
+          "x": 159.0,
+          "y": 83.0
+        },
+        "uuid": "9dd9c554-e3a8-432c-aae1-9a0fcde4da4f"
+      },
+      {
+        "description": "Via [GND] on F.Cu - B.Cu",
+        "pos": {
+          "x": 167.00295,
+          "y": 55.1125
+        },
+        "uuid": "ed09fe48-f706-4d5e-9ad1-bc21bb16dece"
+      },
+      {
+        "description": "Via [GND] on F.Cu - B.Cu",
+        "pos": {
+          "x": 205.00295,
+          "y": 53.1125
+        },
+        "uuid": "bba2bfb5-1a36-41c8-a9eb-9ec68e0f96d1"
+      }
+    ],
+    "fixtures": [
+      {
+        "file": "wbo1_3-0_scoped_drc.json",
+        "sha256": "766df4609984e2e376e169af3a2f4176d35f1593b4a0e85c7874ba1c8e4dfbdf",
+        "counts": {
+          "clearance": 171,
+          "track_width": 14,
+          "track_dangling": 32,
+          "via_dangling": 2,
+          "lib_footprint_mismatch": 5,
+          "silk_over_copper": 6,
+          "silk_overlap": 11
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.0",
+        "roi_mm": [
+          171.34,
+          79.28125,
+          187.6725,
+          99.028125
+        ],
+        "core_mm": [
+          174.34,
+          82.28125,
+          184.6725,
+          96.028125
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 1,
+        "footprints_retained": 22,
+        "tracks_vias_retained": 115,
+        "zones_retained": 1,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo1_3-1_scoped_drc.json",
+        "sha256": "98f9bedf0a42a9aba1fd009ac3d0dd804e83066af4c55702ce37a969a1b39dc5",
+        "counts": {
+          "clearance": 290,
+          "track_width": 11,
+          "track_dangling": 43,
+          "via_dangling": 1,
+          "lib_footprint_mismatch": 5,
+          "silk_over_copper": 1,
+          "silk_overlap": 8
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.1",
+        "roi_mm": [
+          181.6725,
+          79.28125,
+          198.005,
+          99.028125
+        ],
+        "core_mm": [
+          184.6725,
+          82.28125,
+          195.005,
+          96.028125
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 1,
+        "footprints_retained": 20,
+        "tracks_vias_retained": 144,
+        "zones_retained": 1,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo1_3-2_scoped_drc.json",
+        "sha256": "d7f7467d8da5de97aedd8d525bd0fc7bd300808dfcc848b4218e8f08d78a7c70",
+        "counts": {
+          "clearance": 280,
+          "track_dangling": 40,
+          "via_dangling": 3,
+          "lib_footprint_mismatch": 4,
+          "silk_over_copper": 2
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.2",
+        "roi_mm": [
+          171.34,
+          93.028125,
+          187.6725,
+          112.775
+        ],
+        "core_mm": [
+          174.34,
+          96.028125,
+          184.6725,
+          109.775
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 1,
+        "footprints_retained": 12,
+        "tracks_vias_retained": 129,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo1_3-3_scoped_drc.json",
+        "sha256": "546c180a12ca97c7a80850411a8bfe20731f9cd8a1a05bba6ceb6a5bbbd115e6",
+        "counts": {
+          "clearance": 309,
+          "track_dangling": 34,
+          "lib_footprint_mismatch": 7
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.3",
+        "roi_mm": [
+          181.6725,
+          93.028125,
+          198.005,
+          112.775
+        ],
+        "core_mm": [
+          184.6725,
+          96.028125,
+          195.005,
+          109.775
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 1,
+        "footprints_retained": 11,
+        "tracks_vias_retained": 120,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_2-0_scoped_drc.json",
+        "sha256": "a9d7e75d8f5d10cf484fb8c8890ee6bd07a4b649f5e4e53f5a68356bcc711539",
+        "counts": {
+          "clearance": 91,
+          "via_dangling": 1,
+          "track_dangling": 35,
+          "lib_footprint_mismatch": 4,
+          "text_height": 4,
+          "silk_over_copper": 11,
+          "silk_overlap": 28
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "2.0",
+        "roi_mm": [
+          195.675,
+          76.02625,
+          212.38750000000002,
+          95.34812500000001
+        ],
+        "core_mm": [
+          198.675,
+          79.02625,
+          209.38750000000002,
+          92.34812500000001
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 20,
+        "tracks_vias_retained": 61,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_2-1-0_scoped_drc.json",
+        "sha256": "8219d895cfee726ddd5991ba9e0e0ea4981da5954f662a179ccfd543b1a261ac",
+        "counts": {
+          "clearance": 119,
+          "via_dangling": 2,
+          "track_dangling": 31,
+          "lib_footprint_mismatch": 3,
+          "text_height": 4,
+          "silk_over_copper": 8,
+          "silk_overlap": 18
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "2.1.0",
+        "roi_mm": [
+          206.38750000000002,
+          76.02625,
+          217.74375000000003,
+          88.68718750000001
+        ],
+        "core_mm": [
+          209.38750000000002,
+          79.02625,
+          214.74375000000003,
+          85.68718750000001
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 15,
+        "tracks_vias_retained": 59,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_2-1-1_scoped_drc.json",
+        "sha256": "db76c92199c96ab1e7fc4c85f08c4e92dd037c0a0766ec894abe1f83f94e9f23",
+        "counts": {
+          "clearance": 386,
+          "via_dangling": 1,
+          "track_dangling": 35,
+          "lib_footprint_mismatch": 6,
+          "text_height": 4,
+          "silk_over_copper": 3,
+          "silk_overlap": 9
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "2.1.1",
+        "roi_mm": [
+          211.74375000000003,
+          76.02625,
+          223.10000000000002,
+          88.68718750000001
+        ],
+        "core_mm": [
+          214.74375000000003,
+          79.02625,
+          220.10000000000002,
+          85.68718750000001
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 14,
+        "tracks_vias_retained": 117,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_2-1-2_scoped_drc.json",
+        "sha256": "d9d7bcb6d83e955605daae3655fd02148ae44264d705383570b224eedd34c2bb",
+        "counts": {
+          "clearance": 73,
+          "via_dangling": 3,
+          "track_dangling": 15,
+          "lib_footprint_mismatch": 4,
+          "text_height": 4,
+          "silk_over_copper": 7,
+          "silk_overlap": 12
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "2.1.2",
+        "roi_mm": [
+          206.38750000000002,
+          82.68718750000001,
+          217.74375000000003,
+          95.34812500000001
+        ],
+        "core_mm": [
+          209.38750000000002,
+          85.68718750000001,
+          214.74375000000003,
+          92.34812500000001
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 14,
+        "tracks_vias_retained": 50,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_2-1-3_scoped_drc.json",
+        "sha256": "cd3dd0e150bad339ec0f62f8c0da954beb8f93efe9eec442dc128200d49b5f46",
+        "counts": {
+          "clearance": 322,
+          "via_dangling": 4,
+          "track_dangling": 17,
+          "lib_footprint_mismatch": 5,
+          "text_height": 4,
+          "silk_over_copper": 3,
+          "silk_overlap": 10
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "2.1.3",
+        "roi_mm": [
+          211.74375000000003,
+          82.68718750000001,
+          223.10000000000002,
+          95.34812500000001
+        ],
+        "core_mm": [
+          214.74375000000003,
+          85.68718750000001,
+          220.10000000000002,
+          92.34812500000001
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 15,
+        "tracks_vias_retained": 108,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_2-2_scoped_drc.json",
+        "sha256": "7322c2ab17a84b4cda0a0d1de4d3137f381a428096487d9be211eebc451eab9e",
+        "counts": {
+          "clearance": 28,
+          "via_dangling": 1,
+          "track_dangling": 16,
+          "lib_footprint_mismatch": 2,
+          "silk_over_copper": 2,
+          "silk_overlap": 1
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "2.2",
+        "roi_mm": [
+          195.675,
+          89.34812500000001,
+          212.38750000000002,
+          108.67
+        ],
+        "core_mm": [
+          198.675,
+          92.34812500000001,
+          209.38750000000002,
+          105.67
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 8,
+        "tracks_vias_retained": 28,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_2-3_scoped_drc.json",
+        "sha256": "abd57582248d3a30adcad200b68dd4a58045ae7894827e5fa8bced65352f82b7",
+        "counts": {
+          "clearance": 179,
+          "track_dangling": 23,
+          "via_dangling": 4,
+          "lib_footprint_mismatch": 5,
+          "text_height": 4,
+          "silk_over_copper": 4,
+          "silk_overlap": 12
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "2.3",
+        "roi_mm": [
+          206.38750000000002,
+          89.34812500000001,
+          223.10000000000002,
+          108.67
+        ],
+        "core_mm": [
+          209.38750000000002,
+          92.34812500000001,
+          220.10000000000002,
+          105.67
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 17,
+        "tracks_vias_retained": 97,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_3-0-0-0_scoped_drc.json",
+        "sha256": "ee7cfbaa8c62c56e0b41765d334872ebe569e74b9a51846c72b0be6d44e94ca0",
+        "counts": {
+          "clearance": 325,
+          "via_dangling": 3,
+          "track_dangling": 32,
+          "lib_footprint_mismatch": 3,
+          "silk_overlap": 2
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.0.0.0",
+        "roi_mm": [
+          217.10000000000002,
+          76.02625,
+          225.77812500000002,
+          85.35671875
+        ],
+        "core_mm": [
+          220.10000000000002,
+          79.02625,
+          222.77812500000002,
+          82.35671875
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 4,
+        "tracks_vias_retained": 119,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_3-0-0-1_scoped_drc.json",
+        "sha256": "ec94c5535b62895510f8207dbf0467ef878064fbbbf5a26722aff268d243eabe",
+        "counts": {
+          "clearance": 184,
+          "track_dangling": 29,
+          "via_dangling": 1,
+          "lib_footprint_mismatch": 4,
+          "silk_overlap": 3
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.0.0.1",
+        "roi_mm": [
+          219.77812500000002,
+          76.02625,
+          228.45625,
+          85.35671875
+        ],
+        "core_mm": [
+          222.77812500000002,
+          79.02625,
+          225.45625,
+          82.35671875
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 7,
+        "tracks_vias_retained": 105,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_3-0-0-2_scoped_drc.json",
+        "sha256": "d5e6788672099de5a282271bcc304ff97d7de00dd7870e7cd04e2b15a4339669",
+        "counts": {
+          "clearance": 356,
+          "via_dangling": 3,
+          "track_dangling": 29,
+          "lib_footprint_mismatch": 3,
+          "silk_overlap": 2
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.0.0.2",
+        "roi_mm": [
+          217.10000000000002,
+          79.35671875,
+          225.77812500000002,
+          88.68718750000001
+        ],
+        "core_mm": [
+          220.10000000000002,
+          82.35671875,
+          222.77812500000002,
+          85.68718750000001
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 5,
+        "tracks_vias_retained": 129,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_3-0-0-3_scoped_drc.json",
+        "sha256": "c91157fa0cad430e682db4c8e7562a341d8a0a2bedf539d786a415372e3c4d2a",
+        "counts": {
+          "clearance": 204,
+          "track_dangling": 31,
+          "via_dangling": 1,
+          "lib_footprint_mismatch": 3,
+          "silk_over_copper": 1,
+          "silk_overlap": 3
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.0.0.3",
+        "roi_mm": [
+          219.77812500000002,
+          79.35671875,
+          228.45625,
+          88.68718750000001
+        ],
+        "core_mm": [
+          222.77812500000002,
+          82.35671875,
+          225.45625,
+          85.68718750000001
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 5,
+        "tracks_vias_retained": 108,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_3-0-1_scoped_drc.json",
+        "sha256": "592b2b379f084c66c19e14280a56ca6087e3f5504b99ffae4c66ad5c167da23b",
+        "counts": {
+          "clearance": 303,
+          "track_width": 12,
+          "via_dangling": 1,
+          "track_dangling": 26,
+          "lib_footprint_mismatch": 4,
+          "silk_over_copper": 3,
+          "silk_overlap": 7
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.0.1",
+        "roi_mm": [
+          222.45625,
+          76.02625,
+          233.8125,
+          88.68718750000001
+        ],
+        "core_mm": [
+          225.45625,
+          79.02625,
+          230.8125,
+          85.68718750000001
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 13,
+        "tracks_vias_retained": 143,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_3-0-2_scoped_drc.json",
+        "sha256": "e9ffd9dd325c239d636c766bdfd6e4dd3a78f0ce1cd346749ba2cd8fbb33a154",
+        "counts": {
+          "clearance": 327,
+          "via_dangling": 4,
+          "track_dangling": 23,
+          "lib_footprint_mismatch": 5,
+          "silk_over_copper": 3,
+          "silk_overlap": 4
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.0.2",
+        "roi_mm": [
+          217.10000000000002,
+          82.68718750000001,
+          228.45625,
+          95.34812500000001
+        ],
+        "core_mm": [
+          220.10000000000002,
+          85.68718750000001,
+          225.45625,
+          92.34812500000001
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 12,
+        "tracks_vias_retained": 129,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_3-0-3_scoped_drc.json",
+        "sha256": "3ef75037efb360f7b6f41c4505f84415ba37c22ab16d75de786664566ecddc68",
+        "counts": {
+          "clearance": 143,
+          "track_width": 2,
+          "via_dangling": 1,
+          "track_dangling": 23,
+          "lib_footprint_mismatch": 2,
+          "silk_over_copper": 5,
+          "silk_overlap": 8
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.0.3",
+        "roi_mm": [
+          222.45625,
+          82.68718750000001,
+          233.8125,
+          95.34812500000001
+        ],
+        "core_mm": [
+          225.45625,
+          85.68718750000001,
+          230.8125,
+          92.34812500000001
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 8,
+        "tracks_vias_retained": 83,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_3-1_scoped_drc.json",
+        "sha256": "26d02fbec0dbcbd313c0538fe463d983dc7b962d421a011c937d9e22a76574ca",
+        "counts": {
+          "clearance": 173,
+          "track_width": 44,
+          "via_dangling": 4,
+          "track_dangling": 17,
+          "lib_footprint_mismatch": 3,
+          "silk_over_copper": 7,
+          "silk_overlap": 9
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.1",
+        "roi_mm": [
+          227.8125,
+          76.02625,
+          244.525,
+          95.34812500000001
+        ],
+        "core_mm": [
+          230.8125,
+          79.02625,
+          241.525,
+          92.34812500000001
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 24,
+        "tracks_vias_retained": 131,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_3-2_scoped_drc.json",
+        "sha256": "7b604dbd0ceff156d9cf402a2e65bdb53bfe67c32407bb0b3e486051ccdf42ba",
+        "counts": {
+          "clearance": 176,
+          "track_width": 7,
+          "track_dangling": 26,
+          "via_dangling": 1,
+          "lib_footprint_mismatch": 8,
+          "text_height": 4,
+          "silk_over_copper": 4,
+          "silk_overlap": 9
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.2",
+        "roi_mm": [
+          217.10000000000002,
+          89.34812500000001,
+          233.8125,
+          108.67
+        ],
+        "core_mm": [
+          220.10000000000002,
+          92.34812500000001,
+          230.8125,
+          105.67
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 15,
+        "tracks_vias_retained": 147,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_3-3_scoped_drc.json",
+        "sha256": "4da28ddc6ee0d428b3ecef06ea1372b45ab7aa305cc843e5e79a50a7b6c153cc",
+        "counts": {
+          "clearance": 10,
+          "track_width": 10,
+          "via_dangling": 3,
+          "track_dangling": 7,
+          "lib_footprint_mismatch": 4,
+          "text_height": 2,
+          "silk_over_copper": 4,
+          "silk_overlap": 6
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "3.3",
+        "roi_mm": [
+          227.8125,
+          89.34812500000001,
+          244.525,
+          108.67
+        ],
+        "core_mm": [
+          230.8125,
+          92.34812500000001,
+          241.525,
+          105.67
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 13,
+        "tracks_vias_retained": 49,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo1_0_scoped_drc.json",
+        "sha256": "b480e5f00d9cce2be033c2b56e13962064ac48710bd4b46926a0554e6157dcfe",
+        "counts": {
+          "clearance": 17,
+          "track_width": 10,
+          "track_dangling": 20,
+          "via_dangling": 4,
+          "lib_footprint_mismatch": 6,
+          "silk_over_copper": 25,
+          "silk_overlap": 50
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "0",
+        "roi_mm": [
+          150.675,
+          51.7875,
+          177.34,
+          85.28125
+        ],
+        "core_mm": [
+          153.675,
+          54.7875,
+          174.34,
+          82.28125
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 1,
+        "footprints_retained": 53,
+        "tracks_vias_retained": 96,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo1_1_scoped_drc.json",
+        "sha256": "ef252b28b3c890dde3d7dd67bdfc0f006784a55ca12a8eaf3465896fab232a86",
+        "counts": {
+          "clearance": 294,
+          "track_width": 40,
+          "via_dangling": 1,
+          "track_dangling": 45,
+          "lib_footprint_mismatch": 9,
+          "silk_over_copper": 19,
+          "silk_overlap": 44
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "1",
+        "roi_mm": [
+          171.34,
+          51.7875,
+          198.005,
+          85.28125
+        ],
+        "core_mm": [
+          174.34,
+          54.7875,
+          195.005,
+          82.28125
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 1,
+        "footprints_retained": 53,
+        "tracks_vias_retained": 201,
+        "zones_retained": 3,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo1_2_scoped_drc.json",
+        "sha256": "42b992eaae589ca9bab8a08d9d5ba49eb6069364aba19ace7ed23d381e564449",
+        "counts": {
+          "clearance": 98,
+          "track_width": 5,
+          "track_dangling": 23,
+          "via_dangling": 4,
+          "lib_footprint_mismatch": 7,
+          "silk_over_copper": 10,
+          "silk_overlap": 17
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "2",
+        "roi_mm": [
+          150.675,
+          79.28125,
+          177.34,
+          112.775
+        ],
+        "core_mm": [
+          153.675,
+          82.28125,
+          174.34,
+          109.775
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 1,
+        "footprints_retained": 39,
+        "tracks_vias_retained": 140,
+        "zones_retained": 0,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_0_scoped_drc.json",
+        "sha256": "7778c36e2afa6b48f4f89bb9b4cee8ebcfa7be44718527054594a45369cd4e6e",
+        "counts": {
+          "clearance": 235,
+          "track_width": 11,
+          "via_dangling": 1,
+          "track_dangling": 44,
+          "lib_footprint_mismatch": 6,
+          "silk_over_copper": 22,
+          "silk_overlap": 53
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "0",
+        "roi_mm": [
+          195.675,
+          49.3825,
+          223.10000000000002,
+          82.02625
+        ],
+        "core_mm": [
+          198.675,
+          52.3825,
+          220.10000000000002,
+          79.02625
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 40,
+        "tracks_vias_retained": 119,
+        "zones_retained": 2,
+        "all_layer_obstacles_within_roi_retained": true
+      },
+      {
+        "file": "wbo2_1_scoped_drc.json",
+        "sha256": "0021a4270ae5118f1cc41a81490bbf9bdb6fa74ce7f93a27b937a3bce4054ddd",
+        "counts": {
+          "clearance": 308,
+          "track_width": 23,
+          "track_dangling": 45,
+          "via_dangling": 1,
+          "lib_footprint_mismatch": 2,
+          "silk_over_copper": 21,
+          "silk_overlap": 45
+        },
+        "input_board_sha256": "774d6195928e120e8f2ab99787b9ce3627b8dea211dfcc924f9a444a840f2f6c",
+        "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+        "rules_sha256": "47cdc600f5cf83d68a3549425b3a143668866e9f51f4dac7de827068285a94e4",
+        "tile": "1",
+        "roi_mm": [
+          217.10000000000002,
+          49.3825,
+          244.525,
+          82.02625
+        ],
+        "core_mm": [
+          220.10000000000002,
+          52.3825,
+          241.525,
+          79.02625
+        ],
+        "track_clip_only_outside_roi": true,
+        "pads_removed_only_outside_roi": true,
+        "channel": 2,
+        "footprints_retained": 46,
+        "tracks_vias_retained": 148,
+        "zones_retained": 2,
+        "all_layer_obstacles_within_roi_retained": true
+      }
+    ],
+    "not_a_full_board_drc_pass": true,
+    "correction_to_earlier_evidence": "Earlier broad fixture counts exceeded500; absence of reported WBO violations there was only a capped sample, not proof. This uncapped tiled evidence supersedes it."
   }
 }
