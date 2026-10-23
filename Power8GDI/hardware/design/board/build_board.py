@@ -160,8 +160,8 @@ def project_file(path):
     rules={'min_clearance':.2,'min_track_width':.2,'min_via_diameter':.6,'min_through_hole_diameter':.3,
            'min_hole_clearance':.25,'min_copper_edge_clearance':.5}
     classes=[]
-    for name,width,clearance in [('Default',.25,.2),('Power',.6,.3),('GDI_HV',.8,.6),('Logic',.25,.2)]:
-        classes.append({'name':name,'priority':{'Default':2147483647,'GDI_HV':0,'Power':1,'Logic':2}[name],
+    for name,width,clearance in [('Default',.25,.2),('Power',.6,.3),('GDI_HV',.8,.6),('Ignition_HV',1.5,2.5),('Logic',.25,.2)]:
+        classes.append({'name':name,'priority':{'Default':2147483647,'Ignition_HV':0,'GDI_HV':1,'Power':2,'Logic':3}[name],
                         'clearance':clearance,'track_width':width,'via_diameter':.65,'via_drill':.3,
                         'microvia_diameter':.3,'microvia_drill':.1,'diff_pair_width':.2,'diff_pair_gap':.2,
                         'diff_pair_via_gap':.25,'wire_width':6,'bus_width':12,'line_style':0,'pcb_color':'rgba(0,0,0,0)',
@@ -169,7 +169,7 @@ def project_file(path):
     doc={'meta':{'filename':path.name,'version':1},'board':{'design_settings':{
          'meta':{'filename':'board_design_settings.json','version':2},'rules':rules,'drc_exclusions':[]}},
          'net_settings':{'meta':{'version':4},'classes':classes,'netclass_assignments':{},'netclass_patterns':[{'pattern':'PT*_Vdrive*','netclass':'GDI_HV'},
-                         {'pattern':'PT*_VBOOST','netclass':'GDI_HV'},
+                         {'pattern':'PT*_VBOOST','netclass':'GDI_HV'},{'pattern':'HARNESS_IGN*','netclass':'Ignition_HV'},
                          {'pattern':'VBAT*','netclass':'Power'},{'pattern':'+5V*','netclass':'Power'},{'pattern':'+3V3*','netclass':'Power'}]}}
     path.write_text(json.dumps(doc,indent=2)+'\n')
     # Explicit equivalent rules make these safety-relevant classes auditable
@@ -178,7 +178,8 @@ def project_file(path):
     supplies=['+3V3','+3V3_A','+5V_CORE','+5V_GDI_A','+5V_GDI_B',
               'VBAT_MAIN_FUSED','VBAT_LOGIC_PROTECTED','VBAT_GDI_A','VBAT_GDI_B','VBAT_DBW_FUSED','VBAT_EWG_FUSED']
     rules_text=['(version 1)']
-    for label,names,clearance in [('Power clearance',supplies,.3),('GDI high voltage clearance',high,.6)]:
+    for label,names,clearance in [('Power clearance',supplies,.3),('GDI high voltage clearance',high,.6),
+        ('Ignition preliminary isolation target - qualification pending',[f'HARNESS_IGN{i}' for i in range(1,9)],2.5)]:
         condition=' || '.join("A.NetName == '"+name+"'" for name in names)
         rules_text.append(f'(rule "{label}" (condition "{condition}") (constraint clearance (min {clearance}mm)))')
     path.with_suffix('.kicad_dru').write_text('\n'.join(rules_text)+'\n')
@@ -370,7 +371,7 @@ def build(args):
             key=(ref,pad.GetNumber());pad.SetNet(nets[assignments[key]]) if key in assignments else pad.SetNetCode(0)
     manifest=json.loads((design/'core_manifest.json').read_text())
     print('Placing core and power input',flush=True)
-    placed=core_placement(board,footprints,manifest,nets)|imported
+    placed=core_placement(board,footprints,manifest,nets)|imported if not args.functional_layout else set(imported)
     fixed={'J601':(37,161.5,0),'J602':(85,161.5,0),'J603':(133,161.5,0),'J604':(208,161.5,0),
            'R299':(48,90,0),'R399':(154,120,90),
            'U501':(112,103,0),'D501':(98,98,0),'D502':(98,105,90),
@@ -381,11 +382,16 @@ def build(args):
            'C507':(119,117,0),'C508':(123,120,0),
            'U249':(25,117,0),'U349':(44,117,0),'C298':(17,109,0),'C299':(33,109,0),'R298':(34,112,90),
            'C398':(37,109,0),'C399':(44,106,0),'R398':(49,104,90)}
-    for ref,(x,y,a) in fixed.items():
-        if ref in footprints:footprints[ref].SetPosition(vec(x,y));footprints[ref].SetOrientationDegrees(a);placed.add(ref)
-    bank_refs,bank_placements=place_output_banks(board,footprints) if args.grouped_outputs else (set(),[])
-    placed|=bank_refs
-    unplaced=place_candidate_domains(board,footprints,set(components)-placed)
+    if args.functional_layout:
+        from functional_layout import place
+        bank_placements=place(board,footprints,imported,root_path,manifest,nets,add_track,ground_pad)
+        unplaced=[]
+    else:
+        for ref,(x,y,a) in fixed.items():
+            if ref in footprints:footprints[ref].SetPosition(vec(x,y));footprints[ref].SetOrientationDegrees(a);placed.add(ref)
+        bank_refs,bank_placements=place_output_banks(board,footprints) if args.grouped_outputs else (set(),[])
+        placed|=bank_refs
+        unplaced=place_candidate_domains(board,footprints,set(components)-placed)
     add_plane(board,nets)
     title=board.GetTitleBlock();title.SetTitle('Power8GDI routed subdomains / INCOMPLETE ENGINEERING REVIEW');title.SetRevision('A engineering candidate')
     label=p.PCB_TEXT(board);label.SetText('Power8GDI RevA - INCOMPLETE / DO NOT FABRICATE');label.SetPosition(vec(70,92));label.SetTextSize(vec(1.3,1.3));label.SetLayer(p.F_SilkS);board.Add(label)
@@ -436,4 +442,5 @@ if __name__=='__main__':
     parser.add_argument('--pinout',type=Path,default=HERE.parents[2]/'pinout/power8gdi_revA_pinout.csv')
     parser.add_argument('--output-dir',type=Path,default=HERE/'review')
     parser.add_argument('--grouped-outputs',action='store_true',help='Require four-channel LS banks to fit together; fail on current geometry conflicts')
+    parser.add_argument('--functional-layout',action='store_true',help='Use functional regions within the original245x165 outline')
     build(parser.parse_args())
