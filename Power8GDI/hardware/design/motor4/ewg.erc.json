@@ -1,0 +1,229 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T17:22:29+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/2fad8777-507f-5874-a505-376795615aac",
+            "violations": [
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U6051 Pin 1 [A, Input, Line]",
+                            "pos": {
+                                "x": 0.6985,
+                                "y": 0.8763
+                            },
+                            "uuid": "f5041395-fd0f-53b1-9005-f15e1e773c0e"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U6050 Pin 9 [CSN, Input, Line]",
+                            "pos": {
+                                "x": 2.5908,
+                                "y": 0.9271
+                            },
+                            "uuid": "447ab598-9f92-598f-8fce-c00cfe01f708"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U6050 Pin 10 [SCK, Input, Line]",
+                            "pos": {
+                                "x": 2.5908,
+                                "y": 0.9779
+                            },
+                            "uuid": "c462b6f2-f351-5e88-905c-9ee150009052"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U6050 Pin 8 [SI, Input, Line]",
+                            "pos": {
+                                "x": 2.5908,
+                                "y": 1.0287
+                            },
+                            "uuid": "c691aee4-dbb8-5904-b507-e838e12d4d13"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U6050 Pin 2 [VSO, Power input, Line]",
+                            "pos": {
+                                "x": 2.5908,
+                                "y": 1.0795
+                            },
+                            "uuid": "a53ca897-999c-5e99-8cc3-159fbb52a473"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U6050 Pin 4 [VS, Power input, Line]",
+                            "pos": {
+                                "x": 2.9972,
+                                "y": 0.8763
+                            },
+                            "uuid": "bb5c1674-7509-5e24-9203-f57366864108"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U6050 Pin 6 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.9972,
+                                "y": 0.9779
+                            },
+                            "uuid": "efa9c1c1-aecb-5fb9-94b8-70b8cac66eea"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HW_ACTUATOR_ENABLE_N'",
+                            "pos": {
+                                "x": 0.6223,
+                                "y": 0.8763
+                            },
+                            "uuid": "dd4b6ca0-3235-5b4b-9762-72ff6413f56f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'EWG_PWM'",
+                            "pos": {
+                                "x": 0.6731,
+                                "y": 1.8542
+                            },
+                            "uuid": "ddbcef91-cae5-591b-9535-a4b7884aac20"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'MOTOR_CS_N'",
+                            "pos": {
+                                "x": 2.5146,
+                                "y": 0.9271
+                            },
+                            "uuid": "f43d4952-289f-5cc8-a555-11b53c55fd8b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'MOTOR_SPI_SCK'",
+                            "pos": {
+                                "x": 2.5146,
+                                "y": 0.9779
+                            },
+                            "uuid": "7ce63da4-e0e9-5924-ba5f-8afbafb17b70"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'DBW_SPI_SO'",
+                            "pos": {
+                                "x": 2.5146,
+                                "y": 1.0287
+                            },
+                            "uuid": "2787bd4e-26e2-59c6-a068-1a29273a01cf"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'EWG_DIR'",
+                            "pos": {
+                                "x": 2.0193,
+                                "y": 1.8542
+                            },
+                            "uuid": "427d5e55-11c9-5522-95dc-93d95f56f14f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'EWG_SPI_SO'",
+                            "pos": {
+                                "x": 3.0734,
+                                "y": 0.9271
+                            },
+                            "uuid": "bc8bf4b1-da6e-574c-b78b-916299528810"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "ewg.kicad_sch"
+}
