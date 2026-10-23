@@ -52,3 +52,12 @@ Feedback tolerances plus specified reference/leakage produce static5V4.921..5.09
 Reproduction: run `build_logic_power.py`, `calculate.py`, then KiCad9.0.9 XML-netlist/ERC exports of both sheets to ignored `work/`; run `check_footprints.py` inside the pinned KiCad Docker image and `check_logic_power.py`. `validation.json` records results. The tests independently assert manufacturer pin wiring and reject reversed input diode, bootstrap-to-ground, circular3V3 PG pullup, wrong TPS frequency strap and a retained old LDO. Standalone ERC source warnings are kept visible; no suppression or synthetic power flags are inserted.
 
 GDI is still blocked on authoritative PT2001 full electrical thresholds/shutdown semantics and verification that the loaded microcode maps HPFP commands to START6 and disables those outputs under DRVEN/fault. Shared high-side scheduling also prevents a blanket arbitrary-overlap promise. The real GDI input protection and gates do not remove those firmware/device qualification gates.
+
+## Explicit unresolved loads
+
+The 0.700 A allocation excludes neither the SD card nor PT2001 VCCIO by
+assumption: those loads are now separately listed as unresolved in power_budget.json.
+The remaining 0.300 A envelope must cover their measured/qualified peaks and
+margin; it is not proven spare capacity. No selected SD-card or full PT VCCIO
+maximum is available. The 5 V calculation already reserves a full 1 A of 3.3 V
+conversion load. The allocation_complete flag stays false until these rows close.

@@ -157,10 +157,10 @@ class Sheet:
             self.label(net, ex, ey, angle=pin["angle"], global_=global_nets)
         self.parts.append({"ref":ref,"value":value,"footprint":fp,"pins":nets,"dnp":dnp,"note":note,"sheet":self.name})
 
-    def add_child(self, sheet, x, y, width=65, height=40, ports=()):
+    def add_child(self, sheet, x, y, width=65, height=40, ports=(), title_size=1.27, file_size=1.27):
         x,y,width,height=map(snap,(x,y,width,height))
-        fields = [f'(property "Sheetname" {q(sheet.title)} (at {num(x)} {num(y-1.27)} 0) {effect(1.27, "left")})',
-                  f'(property "Sheetfile" {q(sheet.name+".kicad_sch")} (at {num(x)} {num(y+height+1.27)} 0) {effect(1.27, "left")})']
+        fields = [f'(property "Sheetname" {q(sheet.title)} (at {num(x)} {num(y-title_size)} 0) {effect(title_size, "left")})',
+                  f'(property "Sheetfile" {q(sheet.name+".kicad_sch")} (at {num(x)} {num(y+height+file_size)} 0) {effect(file_size, "left")})']
         for i,(name,direction) in enumerate(ports):
             py=y+7.62+i*7.62
             fields.append(f'(pin {q(name)} {direction} (at {num(x)} {num(py)} 180) {effect(1.27, "left")} (uuid {q(uid(sheet.name+":"+name))}))')

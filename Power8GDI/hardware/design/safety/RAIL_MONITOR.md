@@ -20,3 +20,15 @@ fast collapse, loading and partial-power behavior need measurements. This
 circuit does not guarantee an arbitrary fast transient is intercepted before
 a driver's supply leaves its operating range. All other hardware inhibit,
 UVLO and coil-current protections remain necessary.
+
+## Positive permission output fanout after WBO inhibit correction
+
+The actual root network contains six 100R + 10k LS enable branches, four
+1k + 10k protected-feed enable branches, and R806=10k to ground. These draw
+approximately 3.60mA at 3.408V before input currents. The two WBO NPN base
+branches add approximately 1.1mA, plus component tolerance and leakage.
+[TI SCES563C](https://www.ti.com/lit/ds/symlink/sn74lvc2g74-q1.pdf) specifies
+U804 output drive at VCC=3V, including VOH>=2.4V at16mA. The static resistor
+and base loads therefore leave current margin; input thresholds, total input
+currents and transition/capacitance limits must still be checked. This is not
+a measured partial-power or edge-timing result.

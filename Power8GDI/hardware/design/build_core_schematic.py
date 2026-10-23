@@ -170,7 +170,8 @@ def generate():
     ports={mcu.name:[("+3V3","input"),("GND","input")],
            comm.name:[("+3V3","input"),("+5V_CORE","input"),("GND","input")]}
     for i,leaf in enumerate(leaves):
-        root.add_child(leaf,40+190*(i%6),65+75*(i//6),width=155,height=55,ports=ports.get(leaf.name,[]))
+        title_size=min(3.81,148/max(1,len(leaf.title)))
+        root.add_child(leaf,40+190*(i%6),65+75*(i//6),width=155,height=55,ports=ports.get(leaf.name,[]),title_size=title_size,file_size=2.54)
     root.text("Each sheet uses explicit global net names. HARNESS names remain separate from MCU logic.\nNo ERC exclusions or power flags conceal missing supplies. DNP assembly flags must be preserved.\nGDI enable, injector/pump models, missing domains and full routing remain release blockers.",25.4,745)
     for sheet in sheets: sheet.write(HERE)
     all_symbols={n:s for sheet in sheets for n,s in sheet.symbols.items()}
