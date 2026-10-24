@@ -162,6 +162,7 @@ def place_and_route(board, fps, nets, fixed_references, regions=None):
               'source_layout_only_no_copper_import': True, 'production_ready': False}
     report['switching_domain_nets'] = sorted(domains)
     report['voltage_domains'] = voltage_domains.provenance()
+    report['critical_proximity']=[]
 
     def valid(f, region):
         b = bounds(f, .2)
@@ -211,16 +212,59 @@ def place_and_route(board, fps, nets, fixed_references, regions=None):
         channel = [r for r in refs if base <= int(r[1:]) < base+200]
         if set(channel) != set(target):
             raise ValueError('Missing placement targets: '+str(set(channel)-set(target)))
-        # ICs first, then large power packages, then source analog passives.
-        channel.sort(key=lambda r: (0 if r.startswith('U') else 1 if r.startswith(('Q','D','J')) or r.endswith('51') else 2, r))
+        # Reserve original IC/power-package positions, then place precision
+        # decoupling against actual IC pads before other passives consume space.
+        # All these assignments preserve the manifest's exact electrical nets.
+        proximity={
+            'C60':('U4',7,1,3.5),'C62':('U4',10,1,4),'C61':('U4',1,1,4),
+            'C64':('U3',2,1,3.5),'C63':('U12',6,1,3.5),
+            'C40':('U10',5,1,3.5),'C41':('U11',5,1,3.5),
+            'C1':('U0',4,1,3.5),'C2':('U1',5,1,3.5),
+            'C12':('U2',1,1,3.5),'C14':('U2',5,1,3.5),'C15':('U2',17,1,3.5),
+            'C11':('U2',5,1,4),'C13':('U5',3,1,3.5),'C18':('U5',5,1,3.5),
+            'C17':('U3',1,1,3.5),'R63':('U4',7,2,4.5),'R60':('U4',7,1,4.5),
+        }
+        full=lambda key:key[0]+str(base+int(key[1:]))
+        priorities={full(key):(full(a),ap,cp,limit) for key,(a,ap,cp,limit) in proximity.items()}
+        # Reserve each IC's bypass parts immediately, before another IC or
+        # heater package can consume its only short legal escape corridor.
+        sequence=[]
+        for ic in ('U4','U3','U12','U10','U11','U0','U1','U2','U5'):
+            anchor=full(ic)
+            if anchor in channel:sequence.append(anchor)
+            sequence.extend(r for r,(a,_,_,_) in priorities.items() if a==anchor)
+        priority_order={r:i for i,r in enumerate(sequence)}
+        channel.sort(key=lambda r: (0 if r in priority_order else 1 if r.startswith(('U','Q','D','J')) or r.endswith('51') else 2,priority_order.get(r,999),r))
         for r in channel:
             f=fps[r]; x,y,a,back=target[r]
             found=False
-            for side in (back, not back):
-                for dx,dy in offsets(6, .5):
-                    move(f,x+dx,y+dy,a,side)
-                    if valid(f,region):found=True;break
-                if found:break
+            if r in priorities:
+                anchor,ap,cp,limit=priorities[r];af=fps[anchor]
+                aq=next(q for q in af.Pads() if q.GetNumber()==str(ap))
+                cq=next(q for q in f.Pads() if q.GetNumber()==str(cp))
+                if aq.GetNetname()!=cq.GetNetname():raise ValueError('Critical placement net changed: '+r)
+                ax,ay=xy(aq);outward=(ax-xy(af)[0],ay-xy(af)[1])
+                dirs=sorted([(math.cos(i*math.pi/8),math.sin(i*math.pi/8)) for i in range(16)],key=lambda v:-(v[0]*outward[0]+v[1]*outward[1]))
+                # Same side first, then the other side only within the strict
+                # pin-to-pin budget. A blocked cap is not silently scattered.
+                for side in (af.GetLayer()==p.B_Cu,af.GetLayer()!=p.B_Cu):
+                    for radius in [i*.25 for i in range(3,round(limit*4)+1)]:
+                        for dx,dy in dirs:
+                            for angle in (0,90,180,270):
+                                move(f,0,0,angle,side);px,py=xy(cq)
+                                move(f,ax+dx*radius-px,ay+dy*radius-py,angle,side)
+                                if valid(f,region):found=True;break
+                            if found:break
+                        if found:break
+                    if found:break
+                if not found:raise RuntimeError(f'Critical proximity blocked: {r} to {anchor}.{ap} within {limit}mm')
+                report['critical_proximity'].append({'ref':r,'anchor':anchor+'.'+str(ap),'pad':str(cp),'pad_distance_mm':round(math.dist(xy(aq),xy(cq)),3),'maximum_mm':limit,'same_side':f.GetLayer()==af.GetLayer()})
+            else:
+                for side in (back, not back):
+                    for dx,dy in offsets(6, .5):
+                        move(f,x+dx,y+dy,a,side)
+                        if valid(f,region):found=True;break
+                    if found:break
             if not found:
                 # Explicit finite fallback remains in the owned region/side.
                 positions=[(xx/2,yy/2) for xx in range(round(region[0]*2)+4,round(region[2]*2)-4)
@@ -427,9 +471,11 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('input',type=Path);parser.add_argument('output',type=Path)
     parser.add_argument('--fixed',type=Path,required=True);parser.add_argument('--report',type=Path,required=True)
+    parser.add_argument('--netlist',type=Path,help='Authoritative core.net for the PCB snapshot')
     args=parser.parse_args()
     if args.input.resolve()==args.output.resolve():raise ValueError('Use a separate output board')
     board=p.LoadBoard(str(args.input));fps={f.GetReference():f for f in board.GetFootprints()}
+    if args.netlist:voltage_domains.configure(args.netlist)
     nets={n.GetNetname():n for n in board.GetNetsByNetcode().values()}
     report=place_and_route(board,fps,nets,json.loads(args.fixed.read_text())['fixed_references'])
     p.SaveBoard(str(args.output),board)
