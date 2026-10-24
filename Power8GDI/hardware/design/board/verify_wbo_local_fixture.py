@@ -5,11 +5,13 @@ geometry. Straight tracks are clipped only outside this expanded boundary;
 only pads outside it are removed. Actual nets/widths/layers/clearance rules are
 preserved. Footprint mismatch and dangling endpoints are expected artifacts of
 cropping. This is evidence for local copper clearance, not a whole-board pass.
-Subdivide any tile with >=450 reported violations of one type: KiCad's 500-item
-cap otherwise makes zero-findings claims invalid. Tiles0,1,2,3 cover the entire
+Subdivide tiles with >=450 clearance findings or >=190 findings of any other
+violation type. KiCad also caps some types at 199, not only 499; truncated output
+cannot prove zero findings. Tiles0,1,2,3 cover the entire
 channel; dotted paths recursively quarter a tile. Use a complete leaf cover.
 """
 import argparse
+from collections import Counter
 import hashlib
 import tempfile
 import json, shutil, subprocess, re,sys
@@ -89,4 +91,10 @@ def cp(m):
 condition=' || '.join("A.NetName == '"+n+"'" for n in report['switching_domain_nets'])
 with out.with_suffix('.kicad_dru').open('a') as f:f.write('\n(rule "PT switching domains target" (condition "'+condition+'") (constraint clearance (min 0.6mm)))\n')
 subprocess.run(['kicad-cli','pcb','drc','--format','json','--all-track-errors','--severity-all','-o',str(local/(name+'_scoped_drc.json')),str(out)],check=True)
+drc=json.loads((local/(name+'_scoped_drc.json')).read_text())
+counts=Counter(item['type'] for item in drc.get('violations',[]))
+near_cap={kind:count for kind,count in counts.items() if count >= (450 if kind=='clearance' else 190)}
+(local/(name+'_coverage.json')).write_text(json.dumps({'type_counts':dict(counts),'subdivision_thresholds':{'clearance':450,'other_violation_types':190},'requires_subdivision':bool(near_cap),'near_cap_types':near_cap},indent=2)+'\n')
+if near_cap:
+ raise RuntimeError('DRC tile requires subdivision before local zero-findings claims: '+str(near_cap))
 (local/(name+'_fixture.json')).write_text(json.dumps({'input_board_sha256':hashlib.sha256(args.board.read_bytes()).hexdigest(),'project_sha256':hashlib.sha256(out.with_suffix('.kicad_pro').read_bytes()).hexdigest(),'rules_sha256':hashlib.sha256(out.with_suffix('.kicad_dru').read_bytes()).hexdigest(),'tile':args.tile,'roi_mm':roi,'core_mm':core,'track_clip_only_outside_roi':True,'pads_removed_only_outside_roi':True,'channel':ch,'footprints_retained':len(list(b.GetFootprints())),'tracks_vias_retained':len(list(b.GetTracks())),'zones_retained':len(list(b.Zones())),'all_layer_obstacles_within_roi_retained':True},indent=2)+'\n')

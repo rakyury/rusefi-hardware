@@ -50,7 +50,8 @@ components/pads, tracks/vias and zones on all layers in a3mm boundary margin.
 Tracks are clipped only outside that expanded boundary and pads outside it
 are removed only in the diagnostic copy. Nets and rules remain unchanged;
 the60 PT-domain0.6mm rule is additionally enforced. All leaf type counts are
-below450 (maximum386), so none reaches the500-item cap. There are **zero WBO
+below their type-specific limits: clearance peaks at386 (below499), and all
+other violation types peak at53 (below199; track width peaks at44). There are **zero WBO
 copper-clearance/hole/short/track-width findings** across this complete cover.
 Existing donor violations, expected cropping footprint/dangling warnings,
 silkscreen collisions, unfinished connections and the eight ground vias pending
@@ -60,8 +61,12 @@ plane refill remain. This is explicitly not a full-board DRC pass.
 report, fixed references, real project, output directory, channel and tile.
 The committed checkpoint lists all26 accepted leaves, their bounds, counts,
 rule/project hashes and DRC hashes. Quadtree children0..3 cover their parent;
-use a complete leaf cover and subdivide any tile reaching450 reports of one
-type. Diagnostic clipping is never applied to the real board.
+use a complete leaf cover and subdivide any tile reaching450 clearance reports
+or190 reports of any other violation type. The verifier writes a coverage
+sidecar and fails when subdivision is required; KiCad has different reporting
+caps across categories. Diagnostic clipping is never applied to the real board.
+These saved results describe the committed fixture, not subsequent placement
+changes; a new board requires fresh native DRC evidence.
 
 The targeted silk fix moves only the offending R5840 body stroke to Fab.
 C5851's offending line was half of its positive polarity mark: both strokes
