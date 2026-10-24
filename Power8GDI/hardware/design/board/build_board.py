@@ -158,7 +158,7 @@ def core_placement(board, footprints, manifest, nets):
     return set(fixed)|decoupled|io
 
 
-def project_file(path,netlist=None):
+def project_file(path,netlist=None,board=None):
     voltage_domains.configure(netlist or HERE.parent/'core.net')
     rules={'min_clearance':.2,'min_track_width':.2,'min_via_diameter':.6,'min_through_hole_diameter':.3,
            'min_hole_clearance':.25,'min_copper_edge_clearance':.5}
@@ -188,6 +188,10 @@ def project_file(path,netlist=None):
         ('Ignition preliminary isolation target - qualification pending',[f'HARNESS_IGN{i}' for i in range(1,9)],2.5)]:
         condition=' || '.join("A.NetName == '"+name+"'" for name in names)
         rules_text.append(f'(rule "{label}" (condition "{condition}") (constraint clearance (min {clearance}mm)))')
+    if board is not None:
+        from package_clearance import validate_lm76003,lm76003_rule_text
+        validate_lm76003(board)
+        rules_text.append(lm76003_rule_text())
     path.with_suffix('.kicad_dru').write_text('\n'.join(rules_text)+'\n')
 
 
@@ -415,7 +419,7 @@ def build(args):
     errors=compare_pad_assignments(assignments,actual)
     if errors:raise ValueError('\n'.join(errors))
     silk_report=arrange_references(board)
-    dest=out/'Power8GDI_Review.kicad_pcb';p.SaveBoard(str(dest),board);insert_stackup(dest);project_file(dest.with_suffix('.kicad_pro'),root_path)
+    dest=out/'Power8GDI_Review.kicad_pcb';p.SaveBoard(str(dest),board);insert_stackup(dest);project_file(dest.with_suffix('.kicad_pro'),root_path,board)
     libs={'Power8GDI_Board':HERE/'Power8GDI_Board.pretty','Power8GDI_Core':design/'Power8GDI_Core.pretty','Power8GDI_GDI':design/'gdi/Power8GDI_GDI.pretty',
           'Power8GDI_Interfaces':design/'interfaces/Power8GDI_Interfaces.pretty','Power8GDI_GDIProtection':design/'gdi/Power8GDI_GDIProtection.pretty',
           'Power8GDI_Motor4':design/'motor4/Power8GDI_Motor4.pretty'}
@@ -434,7 +438,7 @@ def build(args):
     # SaveBoard persists the in-process project cache, which began with default
     # rules before our generated .pro existed. Write the authoritative project
     # AFTER the final save; otherwise KiCad overwrites .2 mm with its 0 mm default.
-    project_file(dest.with_suffix('.kicad_pro'),root_path)
+    project_file(dest.with_suffix('.kicad_pro'),root_path,board)
     report={'kicad_version':p.GetBuildVersion(),'qualification':'INCOMPLETE_ENGINEERING_REVIEW_DO_NOT_FABRICATE',
             'outline_mm':[245,165],'copper_layers':4,'thickness_mm':1.6,'source_netlists':sources,
             'source_reference_pcb_sha256':digest(args.source_board),'source_reference_mapping_sha256':digest(design/'gdi/reference_mapping.json'),
