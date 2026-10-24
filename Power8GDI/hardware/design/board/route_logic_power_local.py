@@ -10,6 +10,7 @@ import argparse, json, math, hashlib
 from pathlib import Path
 import pcbnew as p
 import voltage_domains
+import lm_boot_escape
 
 REGION=(5.,5.,151.,55.)
 # x,y,angle in B.Cu local coordinates. Dense supply/BOOT/FB placement has a
@@ -19,7 +20,7 @@ CELLS={
  'U5200':(0,0,90),'L5200':(8,2,0),
  'C5200':(0,-8,90),'C5201':(-4,-8,90),'C5202':(1.5,-4,0),
  'C5203':(2,5,0),'C5204':(-1,5.5,270),'C5205':(-4.5,5.5,270),
- 'C5206':(-8.5,4.7,0),'C5207':(-9,-.5,90),
+ 'C5206':(-8.5,4.7,180),'C5207':(-9,-.5,90),
  'C5208':(14,0,90),'C5209':(18,0,90),'C5210':(14,5.5,90),'C5211':(18,5.5,90),
  'R5200':(-5.7,.8,0),'R5201':(-5.7,-1.7,0),
  'R5202':(-4.5,-4,0),'R5203':(-8.5,-3.8,0),
@@ -181,31 +182,36 @@ def segment_distance(a,b,c,d):
 class LocalRouter:
  def __init__(self,board,fps,fixed,report):
   self.board,self.fps,self.fixed,self.report=board,fps,set(fixed),report
-  self.tracks=[];self.vias=[];self.blocked=[]
+  self.tracks=[];self.vias=[];self.blocked=[];self.cache={};self.pad_shapes={}
  def obstacles(self,layer):
+  if layer in self.cache:return self.cache[layer]
   out=[]
   for f in self.board.GetFootprints():
    if f.GetReference() not in self.fixed and not ref_owned(f.GetReference()):continue
    for q in f.Pads():
-    if q.IsOnLayer(layer):out.append((rect(q),q.GetNetname(),f.GetReference()+'.'+q.GetNumber(),None))
+    if q.IsOnLayer(layer):
+     owner=f.GetReference()+'.'+q.GetNumber()
+     out.append((rect(q),q.GetNetname(),owner,None))
+     self.pad_shapes[(layer,owner)]=q.GetEffectiveShape(layer)
   for t in self.board.GetTracks():
    if t.IsOnLayer(layer):out.append((rect(t),t.GetNetname(),'copper:'+t.GetNetname()+':'+t.m_Uuid.AsString(),(mm(t.GetStart()),mm(t.GetEnd()),p.ToMM(t.GetWidth(layer) if isinstance(t,p.PCB_VIA) else t.GetWidth())/2)))
+  self.cache[layer]=out
   return out
- def path(self,net,pts,width=.2,label='',check_only=False):
-  layer=p.B_Cu;obs=self.obstacles(layer);bad=[]
+ def path(self,net,pts,width=.2,label='',check_only=False,layer=p.B_Cu):
+  obs=self.obstacles(layer);bad=[]
   for a,b in zip(pts,pts[1:]):
    for r,n,owner,shape in obs:
     if n==net:continue
-    # Local fine-pitch escape allowance is a geometry candidate filter;
-    # unchanged native project rules remain authoritative for acceptance.
-    clearance=.15 if owner.split('.')[0] in self.fps and ref_owned(owner.split('.')[0]) else .3
-    if n in voltage_domains.gdi_high_voltage_nets() or n.startswith('HARNESS_IGN'):
-     clearance=max(clearance,voltage_domains.clearance_mm(n))
+    # No fine-pitch exception is silently applied. A branch that cannot meet
+    # the shared voltage policy is rejected whole, even at its own IC pads.
+    clearance=max(voltage_domains.clearance_mm(n),voltage_domains.clearance_mm(net))
+    if lm_boot_escape.permits(self.board,net,a,b,width,layer,owner):clearance=.25
     e=clearance+width/2-1e-6
+    if not overlap((min(a[0],b[0])-e,min(a[1],b[1])-e,max(a[0],b[0])+e,max(a[1],b[1])+e),r):continue
     if shape:
      c,d,radius=shape
      hit=segment_distance(a,b,c,d)<e+radius
-    else:hit=segment_rect_hit(a,b,(r[0]-e,r[1]-e,r[2]+e,r[3]+e))
+    else:hit=self.pad_shapes[(layer,owner)].Collide(p.SHAPE_SEGMENT(v(*a),v(*b),p.FromMM(width)),p.FromMM(clearance-1e-6))
     if hit:bad.append(owner)
   if bad:
    
@@ -215,9 +221,10 @@ class LocalRouter:
   ni=self.board.FindNet(net)
   for a,b in zip(pts,pts[1:]):
    t=p.PCB_TRACK(self.board);t.SetStart(v(*a));t.SetEnd(v(*b));t.SetWidth(p.FromMM(width));t.SetLayer(layer);t.SetNet(ni);self.board.Add(t)
-   self.tracks.append({'uuid':t.m_Uuid.AsString(),'net':net,'start_mm':a,'end_mm':b,'width_mm':width,'layer':'B.Cu','label':label})
+   self.tracks.append({'uuid':t.m_Uuid.AsString(),'net':net,'start_mm':a,'end_mm':b,'width_mm':width,'layer':self.board.GetLayerName(layer),'label':label})
+  self.cache.clear()
   return True
- def via(self,xy,label,check_only=False):
+ def via(self,xy,label,check_only=False,net='GND'):
   r=(xy[0]-.3,xy[1]-.3,xy[0]+.3,xy[1]+.3);bad=[]
   # Same-net copper may merge, but drilled holes still require a physical
   # web of laminate. Check all holes, including GND vias and NPTH pads.
@@ -234,16 +241,46 @@ class LocalRouter:
      bad.append('hole:'+f.GetReference()+'.'+pad.GetNumber())
   for layer in (p.F_Cu,p.In1_Cu,p.In2_Cu,p.B_Cu):
    for foreign,n,owner,shape in self.obstacles(layer):
-    if n=='GND':continue
-    gap=max(.3,voltage_domains.clearance_mm(n))
+    if n==net:continue
+    gap=max(.3,voltage_domains.clearance_mm(n),voltage_domains.clearance_mm(net))
     hit=segment_distance(xy,xy,shape[0],shape[1])<.3+gap+shape[2] if shape else overlap(r,foreign,gap)
     if hit:bad.append(owner)
   if bad:
-   if not check_only:self.blocked.append({'label':label,'net':'GND','obstacles':sorted(set(bad))})
+   if not check_only:self.blocked.append({'label':label,'net':net,'obstacles':sorted(set(bad))})
    return False
   if check_only:return True
-  q=p.PCB_VIA(self.board);q.SetPosition(v(*xy));q.SetWidth(p.FromMM(.6));q.SetDrill(p.FromMM(.3));q.SetViaType(p.VIATYPE_THROUGH);q.SetLayerPair(p.F_Cu,p.B_Cu);q.SetNet(self.board.FindNet('GND'));self.board.Add(q)
-  self.vias.append({'uuid':q.m_Uuid.AsString(),'net':'GND','xy_mm':xy,'diameter_mm':.6,'drill_mm':.3,'label':label});return True
+  q=p.PCB_VIA(self.board);q.SetPosition(v(*xy));q.SetWidth(p.FromMM(.6));q.SetDrill(p.FromMM(.3));q.SetViaType(p.VIATYPE_THROUGH);q.SetLayerPair(p.F_Cu,p.B_Cu);q.SetNet(self.board.FindNet(net));self.board.Add(q)
+  self.cache.clear()
+  self.vias.append({'uuid':q.m_Uuid.AsString(),'net':net,'xy_mm':xy,'diameter_mm':.6,'drill_mm':.3,'label':label});return True
+ def front_bridge(self,net,start,end,label):
+  # Only an explicitly requested low-current sense/control connection is
+  # considered: short B.Cu pad exits, all-layer-checked vias, and a checked
+  # F.Cu dogleg shielded from B.Cu switching by the inner ground plane.
+  def candidates(xy):
+   found=[]
+   for distance in (1.2,1.5,1.8,2.2):
+    for dx,dy in ((1,0),(-1,0),(0,1),(0,-1)):
+     point=(xy[0]+dx*distance,xy[1]+dy*distance)
+     if self.via(point,label,True,net) and self.path(net,[xy,point],.2,label,True):found.append(point)
+   return found[:8]
+  for a in candidates(start):
+   for b in candidates(end):
+    paths=[[a,b],[a,(a[0],b[1]),b],[a,(b[0],a[1]),b]]
+    for offset in (-3.,3.,-6.,6.):
+     y=max(a[1],b[1])+offset
+     paths.append([a,(a[0],y),(b[0],y),b])
+    for pts in paths:
+     if not self.path(net,pts,.2,label,True,p.F_Cu):continue
+     # The accepted branch is inserted atomically after all its obstacles
+     # were checked. Same-net segments may join but no foreign item moves.
+     assert self.path(net,[start,a],.2,label)
+     assert self.path(net,[end,b],.2,label)
+     assert self.via(a,label,False,net)
+     assert self.via(b,label,False,net)
+     assert self.path(net,pts,.2,label,False,p.F_Cu)
+     return True
+  self.blocked.append({'label':label,'net':net,'obstacles':['No checked B.Cu exit / all-layer via / F.Cu sense corridor']})
+  return False
 
 def route_cells(board,fps,fixed,report):
  router=LocalRouter(board,fps,fixed,report)
@@ -264,6 +301,9 @@ def route_cells(board,fps,fixed,report):
  ('+5V_CORE',[(1.4625,-.25),(3,-.25),(6,-1.55)],.2,'TPS AVIN bypass'),
  ('+5V_CORE',[(.25,-1.4625),(.25,-2.5),(1,-2.5),(1,-4.7),(7.5,-4.7),(7.5,-1.55),(6,-1.55)],.2,'TPS FSW high'),
  ('LP33_FB',[(-.75,-1.4625),(-.75,-3),(-.825,-5.5),(-2.375,-5.5)],.2,'TPS quiet FB divider'),
+ ('+3V3',[(-10.8,1.975),(-13,1.975),(-13,-4.675),(-6,-4.675),(-4.025,-4.675),(-4.025,-5.5)],.2,'TPS divider and PG pullup output sense'),
+ ('GND',[(.825,-5.5),(.825,-6.7),(.25,-6.7),(.25,-3.2),(-.25,-3.2),(-.25,-1.4625)],.2,'TPS divider quiet AGND return'),
+ ('+3V3',[(-11.625,5),(-13,5),(-13,1.975)],.2,'TPS output bleed supply'),
  ('LP33_SS',[(1.4625,-.75),(2.05,-.75),(2.05,-3.5)],.2,'TPS soft start'),
  ('+3V3',[(.25,1.4625),(.25,3.5),(-7.655,3.5),(-7.655,.5)],.2,'TPS VOS separate output sense'),
  ('GND',[(-.25,-1.4625),(-.25,0)],.2,'TPS AGND to EP'),
@@ -273,7 +313,7 @@ def route_cells(board,fps,fixed,report):
  ('LP5_PG_RAW',[(.75,1.4625),(.75,3.8),(2,3.8)],.2,'TPS EN breakout; connect LM PG globally'),
  ])
  run('5v',[
- ('VBAT_LOGIC_PROTECTED',[(-.5,-1.8625),(-.5,-2.7),(.5,-2.7),(.5,-1.8625)],.2,'LM PVIN bus'),
+ ('VBAT_LOGIC_PROTECTED',[(-.45,-1.8625),(-.45,-2.7),(.45,-2.7),(.45,-1.8625)],.2,'LM PVIN bus'),
  ('VBAT_LOGIC_PROTECTED',[(0,-1.8625),(0,-2.7)],.2,'LM PVIN middle'),
  ('VBAT_LOGIC_PROTECTED',[(0,-2.7),(0,-4),(.55,-4)],.5,'LM HF input cap'),
  ('VBAT_LOGIC_PROTECTED',[(0,-4),(0,-6.525),(-4,-6.525)],.7,'LM bulk input cap pair'),
@@ -283,31 +323,52 @@ def route_cells(board,fps,fixed,report):
  ('GND',[(1.5,-1.8625),(1.5,-.35)],.4,'LM PGND to exposed pad'),
  ('GND',[(0,-9.475),(4,-9.475),(4,-4),(2.45,-4)],.6,'LM bulk input return to HF ground'),
  ('GND',[(-4,-9.475),(0,-9.475)],.6,'LM bulk capacitor ground pair'),
- ('LP5_SW',[(.5,1.8625),(.5,2.8),(2.5,2.8),(2.5,1.8625)],.2,'LM SW pin bus'),
+ ('LP5_SW',[(.55,1.8625),(.55,2.8),(2.5,2.8),(2.5,1.8625)],.2,'LM SW pin bus'),
  ('LP5_SW',[(1,1.8625),(1,2.8)],.2,'LM SW pin4'),
  ('LP5_SW',[(1.5,1.8625),(1.5,2.8)],.2,'LM SW pin3'),
  ('LP5_SW',[(2,1.8625),(2,2.8)],.2,'LM SW pin2'),
  ('LP5_SW',[(2.5,2.8),(4.4,2.8),(5.59,2)],.8,'LM SW to inductor'),
  ('LP5_SW',[(2.95,5),(2.95,3.55),(2.5,2.8)],.2,'LM BOOT capacitor SW return'),
- ('LP5_BOOT',[(0,1.8625),(0,3.5),(1.05,3.5),(1.05,5)],.2,'LM BOOT short local loop'),
  ('+5V_CORE',[(10.41,2),(12,2),(14,1.475),(18,1.475)],.8,'LM output capacitor row1'),
  ('+5V_CORE',[(12,2),(12,6.975),(14,6.975),(18,6.975)],.8,'LM output capacitor row2'),
  ('LP5_FB',[(-2.9875,.75),(-4,.75),(-4.875,.8)],.2,'LM FB to upper resistor'),
  ('GND',[(-2.9875,.25),(-1.5,.25)],.2,'LM AGND13 to EP'),
  ('GND',[(-2.9875,-.25),(-1.5,-.25)],.2,'LM AGND14 to EP'),
  ('GND',[(-2.9875,-.75),(-1.5,-.75)],.2,'LM AGND15 to EP'),
+ ('GND',[(-.55,1.8625),(-.55,.4)],.2,'LM PGND7 to EP'),
+ ('GND',[(-2,-1.8625),(-2,-.4)],.2,'LM MODE to EP'),
+ ('GND',[(-1.05,-1.8625),(-1.05,-.4)],.2,'LM NC19 ground to EP'),
+ ('GND',[(1.05,-1.8625),(1.05,-.4)],.2,'LM NC23 ground to EP'),
+ ('GND',[(2.9875,-.75),(1.5,-.75)],.2,'LM NC27 ground to EP'),
+ ('GND',[(2.9875,-.25),(1.5,-.25)],.2,'LM NC28 ground to EP'),
+ ('GND',[(2.9875,.25),(1.5,.25)],.2,'LM NC29 ground to EP'),
+ ('GND',[(2.9875,.75),(1.5,.75)],.2,'LM NC30 ground to EP'),
+ ('LP5_EN',[(-1.5,-1.8625),(-1.5,-3),(-3.675,-4)],.2,'LM EN divider to pin'),
+ ('LP5_EN',[(-3.675,-4),(-3.675,-2.9),(-9.325,-2.9),(-9.325,-3.8)],.2,'LM EN divider midpoint'),
  ('LP5_VCC',[(-1,1.8625),(-1,4.55)],.2,'LM VCC bypass'),
  ('+5V_CORE',[(-1.5,1.8625),(-1.5,3.3),(-4.5,3.3),(-4.5,4.55)],.2,'LM BIAS local bypass'),
- ('LP5_SS',[(-2.5,1.8625),(-2.5,2.75),(-9.45,2.75),(-9.45,4.7)],.2,'LM soft start'),
+ ('LP5_SS',[(-2.5,1.8625),(-2.5,2.75),(-7.55,2.75),(-7.55,4.7)],.2,'LM soft start'),
  ('LP5_FB',[(-9,-1.45),(-6.525,-1.7),(-6.525,-.45),(-4.875,-.45),(-4.875,.8)],.2,'LM FB lower resistor and Cff'),
  ('+5V_CORE',[(-9,.45),(-6.525,.8)],.2,'LM Cff parallel upper resistor'),
  ('GND',[(-4.875,-1.7),(-4,-1.7),(-4,-.25),(-2.9875,-.25)],.2,'LM divider quiet AGND return'),
- ('GND',[(-7.55,4.7),(-7.55,5.9),(-10.7,5.9),(-10.7,-2.8),(-4.875,-2.8),(-4.875,-1.7)],.2,'LM SS quiet AGND return'),
+ ('GND',[(-9.45,4.7),(-10.5,4.7),(-10.5,1.7),(-3.8,1.7),(-3.8,1.2),(-2.9875,1.2),(-2,1.2),(-2,.4)],.2,'LM SS quiet AGND return'),
  ('+5V_CORE',[(-9,.45),(-11.7,.45),(-11.7,12),(20,12),(20,6.975),(18,6.975)],.3,'LM output sense away from SW'),
  
  ('+5V_CORE',[(-4.825,12),(-4.825,10)],.2,'LM PG pullup feed'),
  ('LP5_PG_RAW',[(-3.175,10),(-1.325,10)],.2,'LM PG bias divider'),
  ])
+ anchor=report['cells']['5v']['anchor_mm']
+ if anchor is not None:
+  x,y=anchor
+  escape=[(x,y+1.8625),(x,y+2.54)]
+  continuation=[(x,y+2.54),(x,y+3.5),(x+1.05,y+3.5),(x+1.05,y+5)]
+  if router.path('LP5_BOOT',escape,.2,'LM bounded BOOT escape',True) and router.path('LP5_BOOT',continuation,.2,'LM BOOT capacitor continuation',True):
+   report['boot_escape_area']=lm_boot_escape.add_area(board)
+   report['additional_rules']=lm_boot_escape.rule_text()
+   report['rules_modified']=True
+   assert router.path('LP5_BOOT',escape,.2,'LM bounded BOOT escape')
+   assert router.path('LP5_BOOT',continuation,.2,'LM BOOT capacitor continuation')
+  else:router.blocked.append({'label':'LM BOOT loop','net':'LP5_BOOT','obstacles':['Bounded escape or ordinary continuation obstructed']})
  for name in ('5v','3v3'):
   anchor=report['cells'][name]['anchor_mm']
   if anchor is None:continue
