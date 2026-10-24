@@ -30,6 +30,7 @@ ALLOW = {
     *{f'{name}{i}' for name in ('CAM','SENT') for i in range(1,5)},
     'CRANK',
 }
+PRECISION_REGIONS=((153,52,197,142),(198,52,242,142))
 
 
 def block_end(text, start):
@@ -59,7 +60,22 @@ def export(board_path,dsn):
     voltage_domains.configure(Path(__file__).resolve().parent.parent/'core.net')
     board=p.LoadBoard(str(board_path))
     names={pad.GetNetname() for fp in board.GetFootprints() for pad in fp.Pads() if pad.GetNetname()}
-    allowed=sorted(names & ALLOW);protected=sorted(names-ALLOW)
+    # Preserve all pads' original net membership: deleting protected net pins
+    # from DSN would silently turn HV pads into ordinary no-net obstacles.
+    rules=board_path.with_suffix('.kicad_dru').read_text()
+    explicit={}
+    for line in rules.splitlines():
+        match=re.search(r'\(constraint clearance \(min ([\d.]+)mm\)',line)
+        if match:
+            for name in re.findall(r"A\.NetName == '([^']+)'",line):explicit[name]=max(explicit.get(name,0),float(match.group(1)))
+    missing=[n for n in names if voltage_domains.clearance_mm(n)>.2 and explicit.get(n,0)<voltage_domains.clearance_mm(n)]
+    if missing:raise ValueError('Saved source rules do not cover current voltage policy: '+str(sorted(missing)))
+    deferred=set()
+    for fp in board.GetFootprints():
+        for pad in fp.Pads():
+            x,y=p.ToMM(pad.GetPosition().x),p.ToMM(pad.GetPosition().y)
+            if any(x0<=x<=x1 and y0<=y<=y1 for x0,y0,x1,y1 in PRECISION_REGIONS):deferred.add(pad.GetNetname())
+    allowed=sorted((names & ALLOW)-deferred);protected=sorted(names-set(allowed))
     # Keep every real segment/via as a protected physical obstacle. The former
     # whole-island B.Cu keepouts incorrectly blocked all newly placed B.Cu IO.
     # In1 is reserved for ground, independently of external router settings.
@@ -68,22 +84,17 @@ def export(board_path,dsn):
     poly=zone.Outline();poly.NewOutline()
     for x,y in [(0,0),(245,0),(245,165),(0,165)]:poly.Append(p.FromMM(x),p.FromMM(y))
     board.Add(zone)
+    # WBO precision placement is still being refined. Do not freeze it by
+    # routing unrelated digital copper under or across either analogue island.
+    for layer in (p.F_Cu,p.In2_Cu,p.B_Cu):
+        for x0,y0,x1,y1 in PRECISION_REGIONS:
+            region=p.ZONE(board);region.SetLayer(layer);region.SetIsRuleArea(True)
+            region.SetDoNotAllowTracks(True);region.SetDoNotAllowVias(True);region.SetDoNotAllowCopperPour(False)
+            outline=region.Outline();outline.NewOutline()
+            for x,y in ((x0,y0),(x1,y0),(x1,y1),(x0,y1)):outline.Append(p.FromMM(x),p.FromMM(y))
+            board.Add(region)
     assert p.ExportSpecctraDSN(board,str(dsn))
     text=dsn.read_text()
-    # Only the reviewed allowlist has connection targets in the export proxy.
-    # Other pads stay physical obstacles. This also protects against a router
-    # version accidentally ignoring the ignored-net-class option.
-    network_start=text.index('(network');network_end=block_end(text,network_start)
-    network=text[network_start:network_end]
-    starts=list(re.finditer(r'\(net ("(?:[^"\\]|\\.)*"|[^\s()]+)\s',network))
-    for match in reversed(starts):
-        raw=match.group(1);name=json.loads(raw) if raw.startswith('"') else raw
-        if name in ALLOW:continue
-        end=block_end(network,match.start());part=network[match.start():end]
-        pins=re.search(r'\(pins\s+([^\s()]+)(?:\s+[^()]*)?\)',part)
-        if pins:part=part[:pins.start()]+'(pins '+pins.group(1)+')'+part[pins.end():]
-        network=network[:match.start()]+part+network[end:]
-    text=text[:network_start]+network+text[network_end:]
     start=text.index('(class ');end=block_end(text,start)
     # pcbnew LoadBoard does not import the project netclasses into DSN. Supply
     # the routing rules explicitly, never accept the export's implicit defaults.
@@ -106,6 +117,9 @@ def export(board_path,dsn):
               'source_custom_rules_sha256':hashlib.sha256(board_path.with_suffix('.kicad_dru').read_bytes()).hexdigest(),
               'voltage_domains':voltage_domains.provenance(),
               'allowed_nets':allowed,'protected_nets':protected,'all_existing_copper_protected':True,
+              'deferred_allowlist_nets_inside_precision_regions':sorted(deferred & ALLOW),
+              'precision_region_export_keepouts_mm':PRECISION_REGIONS,
+              'all_pad_net_memberships_preserved':True,
               'routing_width_mm':.25,'clearance_mm':.2,'via_mm':[.6,.3],
               'routable_layers':['F.Cu','In2.Cu','B.Cu'],'ground_plane_reserved':'In1.Cu',
               'export_only_gdi_keepout_regions_mm':[],'donor_copper_replaced_by_keepout_in_export_only':0,
@@ -122,13 +136,15 @@ def import_session(board_path,ses,output):
     for key,suffix in [('source_project_sha256','.kicad_pro'),('source_custom_rules_sha256','.kicad_dru')]:
         if scope[key]!=hashlib.sha256(board_path.with_suffix(suffix).read_bytes()).hexdigest():
             raise ValueError('Routing source rules changed after DSN export; refusing stale SES')
+    allowed=set(scope['allowed_nets'])
+    if not allowed<=ALLOW:raise ValueError('Scope contains nets outside reviewed digital allowlist')
     original=p.LoadBoard(str(board_path));routed=p.LoadBoard(str(board_path))
     before=Counter(signature(t) for t in original.GetTracks())
     assert p.ImportSpecctraSES(routed,str(ses))
     nets={n.GetNetname():n for n in original.GetNetsByNetcode().values()}
     additions=[]; seen=set(before)
     for track in routed.GetTracks():
-        if track.GetNetname() not in ALLOW or signature(track) in seen:continue
+        if track.GetNetname() not in allowed or signature(track) in seen:continue
         if not isinstance(track,p.PCB_VIA) and track.GetLayer()==p.In1_Cu:
             raise ValueError('Router attempted to route on the reserved ground plane')
         # Export rounds to 0.1um; retain originals and avoid duplicated imports
