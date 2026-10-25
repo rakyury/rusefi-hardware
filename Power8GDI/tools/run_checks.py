@@ -78,6 +78,7 @@ def main(argv=None):
             "dual-hpfp": ["dual_hpfp/dual_hpfp_supervisor.cpp", "tests/test_dual_hpfp_supervisor.cpp"],
             "dual-hpfp-safety": ["dual_hpfp/dual_hpfp_supervisor.cpp", "tests/test_dual_hpfp_safety.cpp"],
             "dual-pt2001-safety": ["dual_gdi/dual_pt2001_safety.cpp", "tests/test_dual_pt2001_safety.cpp"],
+            "fuel-gdi6": ["fuel/allocation_gdi6.cpp", "tests/test_fuel_gdi6.cpp"],
         }
         with tempfile.TemporaryDirectory(prefix="power8gdi-host-") as build:
             for name, files in sources.items():

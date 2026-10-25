@@ -1,9 +1,11 @@
 #include "dual_pt2001_safety.h"
 #include <cassert>
+#include <initializer_list>
 using namespace power8gdi;
 
 static GdiSafetySnapshot good() {
     GdiSafetySnapshot s;
+    s.injectorProfile = GdiInjectorProfile::LegacyGdi8;
     s.emergencyStopReleased = true;
     s.supplyHealthy = true;
     s.synchronizationValid = true;
@@ -34,6 +36,47 @@ static bool allAllowed(const GdiPermits& p) {
 }
 
 int main() {
+    // Unsupported/unconfigured profiles fail closed. GDI6 disables 7 and 8.
+    for (unsigned profile = 0; profile < 256; ++profile) {
+        auto s = good();
+        s.injectorProfile = static_cast<GdiInjectorProfile>(profile);
+        DualPt2001Safety safety;
+        const auto p = safety.update(s);
+        if (profile == 8) {
+            assert(allAllowed(p));
+        } else if (profile == 6) {
+            assert(p.state == GdiState::Armed && !p.requestHardwareKill);
+            assert(p.drvenAllowed[0] && p.drvenAllowed[1]);
+            for (unsigned i = 0; i < 8; ++i) assert(p.injectorCommand[i] == (i < 6));
+        } else {
+            assert(allDisabled(p));
+            assert(p.state == GdiState::Disarmed);
+        }
+    }
+    // Profile changes while armed latch a fault; restoring it cannot re-arm.
+    for (const auto replacement : {GdiInjectorProfile::LegacyGdi8,
+                                   GdiInjectorProfile::Unconfigured}) {
+        auto s = good();
+        s.injectorProfile = GdiInjectorProfile::SportGdi6;
+        DualPt2001Safety safety;
+        assert(safety.update(s).state == GdiState::Armed);
+        s.injectorProfile = replacement;
+        const auto p = safety.update(s);
+        assert(allDisabled(p) && p.fault == GdiFault::ConfigurationInvalid);
+        s.injectorProfile = GdiInjectorProfile::SportGdi6;
+        assert(allDisabled(safety.update(s)));
+    }
+    // Both banks remain mandatory in GDI6 (three logical cylinders per bank).
+    {
+        auto s = good();
+        s.injectorProfile = GdiInjectorProfile::SportGdi6;
+        DualPt2001Safety safety;
+        assert(safety.update(s).state == GdiState::Armed);
+        s.chip[1].ready = false;
+        assert(allDisabled(safety.update(s)));
+        s.chip[1].ready = true;
+        assert(allDisabled(safety.update(s)));
+    }
     {
         DualPt2001Safety onBoot;
         assert(onBoot.state() == GdiState::Disarmed);

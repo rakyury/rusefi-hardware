@@ -30,6 +30,11 @@ enum class GdiState : std::uint8_t {
 };
 
 enum class GdiRailTopology : std::uint8_t { Shared = 0, Independent = 1 };
+enum class GdiInjectorProfile : std::uint8_t {
+    Unconfigured = 0,
+    SportGdi6 = 6,
+    LegacyGdi8 = 8,
+};
 
 struct PtChipSnapshot {
     bool ready = false;             // fully initialized/calibrated; current profile verified
@@ -40,8 +45,9 @@ struct PtChipSnapshot {
 struct GdiSafetySnapshot {
     PtChipSnapshot chip[2];
     // Immutable, validated calibration for duration of engine operation.
-    // Both PT2001 ICs are ALWAYS required when 8 DI channels are assigned.
+    // Both PT2001 ICs are required by either supported board profile.
     // Shared rails may use one pump/sensor; independent rails require both.
+    GdiInjectorProfile injectorProfile = GdiInjectorProfile::Unconfigured;
     GdiRailTopology railTopology = GdiRailTopology::Shared;
     bool pumpConfigured[2] = {false, false};
     bool railSensorConfigured[2] = {false, false};
@@ -57,6 +63,8 @@ struct GdiSafetySnapshot {
 };
 
 struct GdiPermits {
+    // Logical cylinders, NOT raw START pins. SportGdi6 never permits 7 or 8.
+    // The board adapter must map logical 1..3 to PT A and 4..6 to PT B.
     bool injectorCommand[8] = {false, false, false, false,
                                false, false, false, false};
     bool hpfpCommand[2] = {false, false};
