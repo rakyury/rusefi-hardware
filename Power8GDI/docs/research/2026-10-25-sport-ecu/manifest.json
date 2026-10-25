@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-25",
+  "kind": "static research and planning; not implemented ECU validation",
+  "documents": [
+    {
+      "file": "requirements_ru.md",
+      "source_filename": "sport_ecu_requirements.md",
+      "source_sha256": "c6b1a9c74556db163994477c4a079e3c07e9597bb0df86e7e753fbf4a966dd54",
+      "repository_sha256": "ddb4c17036d8adeec7ff357c5fa5be6442f683241ad6e5a8242656878f042516",
+      "transformations": []
+    },
+    {
+      "file": "audit_ru.md",
+      "source_filename": "Аудит ТЗ спортивного ECU.md",
+      "source_sha256": "5d3afea552dccc8f9b79ce0fd984d9ff8eec0e5c7ec8f78c8a8a4f34d3e1837e",
+      "repository_sha256": "5d3afea552dccc8f9b79ce0fd984d9ff8eec0e5c7ec8f78c8a8a4f34d3e1837e",
+      "transformations": []
+    },
+    {
+      "file": "implementation_plan_ru.md",
+      "source_filename": "План разработки спортивного ECU.md",
+      "source_sha256": "8fc8df867a3887326a0ceb3b38d359536058fa7067d015e12ad4d966a86068d0",
+      "repository_sha256": "978cff1349eb709c6992c01349b1c74a8a18b743c009790f246f2a5c8b7348b9",
+      "transformations": [
+        "E0: 4 machine-local links replaced with evidence inventory anchor",
+        "E1: 8 machine-local links replaced with evidence inventory anchor",
+        "E2: 7 machine-local links replaced with evidence inventory anchor",
+        "E3: 5 machine-local links replaced with evidence inventory anchor",
+        "E4: 4 machine-local links replaced with evidence inventory anchor",
+        "E5: 5 machine-local links replaced with evidence inventory anchor",
+        "E6: 4 machine-local links replaced with evidence inventory anchor",
+        "E7: 7 machine-local links replaced with evidence inventory anchor",
+        "E8: 5 machine-local links replaced with evidence inventory anchor",
+        "E9: 5 machine-local links replaced with evidence inventory anchor",
+        "E10: 2 machine-local links replaced with evidence inventory anchor"
+      ]
+    },
+    {
+      "file": "fork_comparison_ru.md",
+      "source_filename": "Сравнение открытых форков rusEFI.md",
+      "source_sha256": "0b3b254a4c05c71977ef6da6d63f0f1509ed7b527745f74f056e98c25d7f8c5a",
+      "repository_sha256": "b59cfa4193d8385eae1de128b370ab9a0ff5b83b741b94e66fa0048190cc363b",
+      "transformations": []
+    },
+    {
+      "file": "rusefi_fome_sport_audit.pdf",
+      "source_filename": "rusefi_fome_sport_audit.pdf",
+      "source_sha256": "54fb17c05dcf9fe255595151cdb26c8d116e57cef2c592a62c1fe97208dcd2b0",
+      "repository_sha256": "54fb17c05dcf9fe255595151cdb26c8d116e57cef2c592a62c1fe97208dcd2b0",
+      "transformations": []
+    },
+    {
+      "file": "rusefi_sport_implementation_plan.pdf",
+      "source_filename": "rusefi_sport_implementation_plan.pdf",
+      "source_sha256": "4fb9b79ff6806da8c36a193996a3c33d37536dad9015ba33dc8cab42d5935afd",
+      "repository_sha256": "4fb9b79ff6806da8c36a193996a3c33d37536dad9015ba33dc8cab42d5935afd",
+      "transformations": []
+    }
+  ],
+  "private_evidence": [
+    {
+      "id": "E0",
+      "source_relative_path": "engine_logic/README_RU.md",
+      "present_at_import": true,
+      "sha256": "164e72347fdebea8f0fe3ca8487dd0b7f733a236fd81e5e273aeb9a4f2abbfb4",
+      "bytes": 9767
+    },
+    {
+      "id": "E1",
+      "source_relative_path": "engine_logic/FUEL_RU.md",
+      "present_at_import": true,
+      "sha256": "109f38ff427ef8c9b07c81f147d592c669d0d74c9fffba2000e5af26ee9fa9a2",
+      "bytes": 11222
+    },
+    {
+      "id": "E2",
+      "source_relative_path": "engine_logic/GDI_RU.md",
+      "present_at_import": true,
+      "sha256": "447d0f28f3c8255ff86957c1568e912b52cc3846d5866de5f825e28bba4d58c5",
+      "bytes": 6172
+    },
+    {
+      "id": "E3",
+      "source_relative_path": "engine_logic/BOOST_RU.md",
+      "present_at_import": true,
+      "sha256": "b78fb0f230dc5d987a5d4ad7e2e96c3a0589eab2e7ec003385dacf4b9c85be63",
+      "bytes": 5138
+    },
+    {
+      "id": "E4",
+      "source_relative_path": "engine_logic/ALS_RU.md",
+      "present_at_import": true,
+      "sha256": "cc64c9024410a026041ab3ae5fb0c98b507facc0e3f257e7509f23090a77551d",
+      "bytes": 6137
+    },
+    {
+      "id": "E5",
+      "source_relative_path": "engine_logic/IGNITION_RU.md",
+      "present_at_import": true,
+      "sha256": "081d926d8a3a26d7a43534d3e0bc32c02ce93e2230940168710e9a29d07f4e95",
+      "bytes": 6368
+    },
+    {
+      "id": "E6",
+      "source_relative_path": "engine_logic/PROTECTIONS_RU.md",
+      "present_at_import": true,
+      "sha256": "dea3d9e8a27ec31cc4795a1b316a4083db1c977c2e60b61713d49ff81f565d9c",
+      "bytes": 7226
+    },
+    {
+      "id": "E7",
+      "source_relative_path": "version_comparison/runtime_channel_map.json",
+      "present_at_import": true,
+      "sha256": "70647117b24a928e01465aa97730861221f84d01bdceac723bc7cf748eb8e674",
+      "bytes": 402055
+    },
+    {
+      "id": "E8",
+      "source_relative_path": "version_comparison/reference_xml/project0_261_02.xml",
+      "present_at_import": true,
+      "sha256": "0567624d527cccb49de2e5fb988e930d448d67f1aba0bf5cbd7ad80a16138eb8",
+      "bytes": 672801
+    },
+    {
+      "id": "E9",
+      "source_relative_path": "engine_logic/DECODER_NOTES_RU.md",
+      "present_at_import": true,
+      "sha256": "1f83b817f9d5045e57cbe53f47e179692cb846efeb6e81ef11a412551bfa6f68",
+      "bytes": 6308
+    },
+    {
+      "id": "E10",
+      "source_relative_path": "version_comparison/REPORT_RU.md",
+      "present_at_import": true,
+      "sha256": "2ebb6cbd8ba877bdac5e618aeb7529cab8e7aab8277ad24a58e44bd6a463ee45",
+      "bytes": 14300
+    }
+  ]
+}

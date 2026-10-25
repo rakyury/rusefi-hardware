@@ -1,5 +1,23 @@
 # Power8GDI task allocation
 
+## Active continuation: 2026-10-25
+
+The user has explicitly superseded the Huge/GDI8 channel counts with a strict
+six-cylinder hardware redesign. Read [active scope](../docs/SCOPE_2026_10_25_SPORT_GDI6.md)
+and [the imported analysis](../docs/research/2026-10-25-sport-ecu/README_RU.md).
+Integration branch: `codex/sport-gdi6-20261025`, starting from local `2d0e66e`.
+The original checkout and interrupted changes are preserved.
+
+Execution order is schematic, derived BOM and 1/10 PCBA estimate, PCB/routing,
+firmware integration, and the existing own configurator. Independent software
+contracts may be developed while the hardware is being revised. The client must
+reuse the user's Racing Dash VM and CAN work and include the requested service
+tools. Three worker slots cover HW/GDI, FW/MAP, and UI with dependent CAD/QA
+reviews queued; integration is coordinated separately. Current work is ongoing,
+not a new production or hardware-validation milestone.
+
+The following entries describe the previous eight-channel checkpoint.
+
 **Integration target:** `power8gdi-rev-a`
 
 **Review branch:** `codex/power8gdi-resume-20261021`
