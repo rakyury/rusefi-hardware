@@ -1,6 +1,7 @@
 """Explicit provenance refresh; never invoked by the offline verification runner."""
 from pathlib import Path
 import hashlib,json,subprocess,urllib.request
+from source_provenance import text_fingerprints
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[3]
 DOCS=[
@@ -27,8 +28,12 @@ def main():
     for name in FILES:
         raw=(ROOT/name).read_bytes()
         blob=subprocess.check_output(['git','rev-parse','HEAD:'+name],cwd=ROOT,text=True).strip()
-        files.append({'path':name,'git_blob':blob,'sha256':hashlib.sha256(raw).hexdigest(),'disposition':'Read-only comparison; no original board file modified or copied into aux'})
+        sha,actual_blob=text_fingerprints(raw)
+        if actual_blob!=blob:raise RuntimeError('Source differs from pinned Git blob: '+name)
+        files.append({'path':name,'git_blob':blob,'lf_sha256':sha,'disposition':'Read-only comparison; no original board file modified or copied into aux'})
     result={'schema_version':1,'review_date':'2026-10-21','review_base':'daf7c81','documents':docs,'source_files':files,'sensor_connector':{'url':'https://www.bosch-motorsport.com/content/downloads/Raceparts/en-GB/51865867208058251.html','publisher':'Bosch Motorsport','device':'LSU4.9','pins':{'1':'IP','2':'VM','3':'H-','4':'H+','5':'IA trim','6':'UN'}},'attribution':'Application networks derived from TI and Bosch primary documentation; independent project implementation does not imply independently invented analogue topology. No NXP evaluation schematic is copied. Existing fork upstream licensing unresolved; no new license is asserted. KiCad standard library footprints are referenced under their own license and exception.'}
-    (HERE/'sources.json').write_text(json.dumps(result,indent=2)+'\n')
+    result['schema_version']=2
+    result['source_text_hash_policy']='CRLF_TO_LF_ONLY'
+    (HERE/'sources.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(f'Captured {len(docs)} primary document hashes and {len(files)} read-only upstream blobs')
 if __name__=='__main__':main()

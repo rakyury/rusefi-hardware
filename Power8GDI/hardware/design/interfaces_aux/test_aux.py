@@ -3,6 +3,7 @@ from pathlib import Path
 from copy import deepcopy
 import argparse,hashlib,json,unittest
 import xml.etree.ElementTree as ET
+from source_provenance import text_fingerprints
 HERE=Path(__file__).resolve().parent
 NETLIST=None
 
@@ -46,11 +47,33 @@ class AuxTests(unittest.TestCase):
         self.assertEqual([x['name'] for x in m['sheets']],['knock_dual'])
     def test_primary_source_provenance_and_upstream_blobs(self):
         m=json.loads((HERE/'sources.json').read_text(encoding='utf-8'));self.assertEqual(len(m['documents']),7)
+        self.assertEqual(m['schema_version'],2)
+        self.assertEqual(m['source_text_hash_policy'],'CRLF_TO_LF_ONLY')
         for doc in m['documents']:
             self.assertTrue(doc['url'].startswith('https://'));self.assertEqual(len(doc['sha256']),64);self.assertGreater(doc['bytes'],10000)
         for item in m['source_files']:
             raw=(HERE.parents[3]/item['path']).read_bytes()
-            self.assertEqual(hashlib.sha256(raw).hexdigest(),item['sha256'])
+            self.assertEqual(text_fingerprints(raw),(item['lf_sha256'],item['git_blob']),item['path'])
+
+    def test_source_provenance_accepts_lf_and_crlf_checkouts(self):
+        m=json.loads((HERE/'sources.json').read_text(encoding='utf-8'))
+        for item in m['source_files']:
+            lf=(HERE.parents[3]/item['path']).read_bytes().replace(b'\r\n',b'\n')
+            expected=(item['lf_sha256'],item['git_blob'])
+            for raw in (lf,lf.replace(b'\n',b'\r\n')):
+                with self.subTest(path=item['path'],crlf=b'\r\n' in raw):
+                    self.assertEqual(text_fingerprints(raw),expected)
+
+    def test_source_provenance_rejects_content_and_whitespace_changes(self):
+        m=json.loads((HERE/'sources.json').read_text(encoding='utf-8'))
+        for item in m['source_files']:
+            raw=(HERE.parents[3]/item['path']).read_bytes()
+            expected=(item['lf_sha256'],item['git_blob'])
+            for changed in (b'X'+raw[1:],raw+b' ',raw+b'\r'):
+                with self.subTest(path=item['path']):
+                    sha,blob=text_fingerprints(changed)
+                    self.assertNotEqual(sha,expected[0])
+                    self.assertNotEqual(blob,expected[1])
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--netlist',type=Path)
