@@ -74,7 +74,7 @@ def make_ignition(syms, root_id, variant="passive"):
         s.component(syms["R"],ref,val,x,y,{"1":a,"2":b},footprint=footprint,note=note)
     def cap(s, ref, x, y, rail, value="100n 25V X7R"):
         s.component(syms["C"],ref,value,x,y,{"1":rail,"2":"GND"},footprint=FP_C)
-    common = Sheet(stem+"/ignition_common", "Ignition permission and four dual gate drivers", root=root_id, paper="A2")
+    common = Sheet(stem+"/ignition_common", "Ignition permission and three dual gate drivers", root=root_id, paper="A2")
     sheets = [common]
     common.text("PASSIVE PRIMARY OUTPUT ASSEMBLY" if variant == "passive" else "SEPARATE LOGIC OUTPUT ASSEMBLY - NOT B58 PASSIVE COILS",25,20,2)
     common.text("IGN_OC_OK is open drain, healthy high. Parent connects to HW_KILL_N.\nNo firmware-only current limit. Fault turn-off can cause an unintended spark.\nCoil +12V feed must be removed on fault; see HW_IGNITION_B58.md.",25,35)
@@ -84,13 +84,13 @@ def make_ignition(syms, root_id, variant="passive"):
     res(common,"R5401","1k",480,70,"IGN_SAFE_EN","GND","3.3mA load; holds driver EN below threshold against internal 200k typical pullups when logic is unpowered.")
     cap(common,"C5400",420,130,"+3V3")
     cap(common,"C5401",480,130,"+3V3")
-    for pair in range(4):
+    for pair in range(3):
         a,b=pair*2+1,pair*2+2
         x,y=110+(pair%2)*270,210+(pair//2)*100
         common.component(d["driver"],f"U{5402+pair}","UCC27524AQDRQ1",x,y,{"1":"IGN_SAFE_EN","2":f"IGN{a}_GUARDED","3":"GND","4":f"IGN{b}_GUARDED","5":f"IGN{b}_DRIVE","6":"+5V_CORE","7":f"IGN{a}_DRIVE","8":"IGN_SAFE_EN"},note="Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current.")
         cap(common,f"C{5402+pair*2}",x+85,y-20,"+5V_CORE")
         cap(common,f"C{5403+pair*2}",x+85,y+20,"+5V_CORE","1u 25V X7R")
-    for ch in range(1,9):
+    for ch in range(1,7):
         n=5420+(ch-1)*20
         p=f"IGN{ch}"
         s=Sheet(f"{stem}/ignition_{ch}",f"Ignition {ch} - {'timed primary and OC latch' if variant=='passive' else 'timed logic output'}",root=root_id,paper="A2")

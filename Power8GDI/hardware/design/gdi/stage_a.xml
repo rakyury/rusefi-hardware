@@ -2,11 +2,11 @@
 <export version="E">
   <design>
     <source>/src/Power8GDI/hardware/design/gdi/stage_a.kicad_sch</source>
-    <date>2026-10-23T18:13:20+0000</date>
+    <date>2026-10-25T20:56:40+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
-        <title>Power8GDI Stage A - reference draft</title>
+        <title>Power6GDI Stage A - 3 DI + 1 HPFP candidate</title>
         <company/>
         <rev>engineering draft 0.1</rev>
         <date>2026-10-21</date>
@@ -462,22 +462,6 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>d20ffe73-418a-5b3a-8f1e-7e84b47470d1</tstamps>
     </comp>
-    <comp ref="C227">
-      <value>4700p</value>
-      <footprint>Power8GDI_GDI:REF_C50</footprint>
-      <fields>
-        <field name="LCSC">C342899</field>
-        <field name="Footprint">Power8GDI_GDI:REF_C50</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_GDI" part="hellen_one_common_Cap" description="Capacitor"/>
-      <property name="LCSC" value="C342899"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="stage_a.kicad_sch"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>5b56ac68-363f-581d-b980-e73e5263ed21</tstamps>
-    </comp>
     <comp ref="C228">
       <value>1000pF</value>
       <footprint>Power8GDI_GDI:REF_C52</footprint>
@@ -635,24 +619,6 @@
       <property name="Sheetfile" value="stage_a.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>c98b73dc-5cc2-54c5-b7dd-7914ad73bb07</tstamps>
-    </comp>
-    <comp ref="C237">
-      <value>1000pF</value>
-      <footprint>Power8GDI_GDI:REF_C61</footprint>
-      <fields>
-        <field name="LCSC">C106247</field>
-        <field name="Footprint">Power8GDI_GDI:REF_C61</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_GDI" part="Device_C" description="Unpolarized capacitor"/>
-      <property name="LCSC" value="C106247"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="stage_a.kicad_sch"/>
-      <property name="ki_keywords" value="cap capacitor"/>
-      <property name="ki_fp_filters" value="C_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>c99a9ef4-bf00-5be6-8585-c249c6667d24</tstamps>
     </comp>
     <comp ref="C238">
       <value>1000pF</value>
@@ -1069,25 +1035,6 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>212b88c1-6351-570b-9175-bb5107dd0c94</tstamps>
     </comp>
-    <comp ref="D206">
-      <value>STPS2H100UY</value>
-      <footprint>Power8GDI_GDI:REF_D14</footprint>
-      <datasheet>~</datasheet>
-      <fields>
-        <field name="LCSC">C163541</field>
-        <field name="Footprint">Power8GDI_GDI:REF_D14</field>
-        <field name="Datasheet">~</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_GDI" part="Device_D_Schottky_Small" description="Schottky diode, small symbol"/>
-      <property name="LCSC" value="C163541"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="stage_a.kicad_sch"/>
-      <property name="ki_keywords" value="diode Schottky"/>
-      <property name="ki_fp_filters" value="TO-???* *_Diode_* *SingleDiode* D_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>83063851-f032-52d1-b990-b93c94a17a03</tstamps>
-    </comp>
     <comp ref="D207">
       <value>STPS2H100UY</value>
       <footprint>Power8GDI_GDI:REF_D15</footprint>
@@ -1443,29 +1390,6 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>a2b3ef65-0107-5cb4-85e7-ae7350acab98</tstamps>
     </comp>
-    <comp ref="Q210">
-      <value>BUK9230-100B</value>
-      <footprint>Power8GDI_GDI:REF_Q10</footprint>
-      <fields>
-        <field name="MFG,MFG#">Nexperia,BUK9230-100B</field>
-        <field name="VEND1,VEND1#">DIGI,1727-4708-1-ND</field>
-        <field name="VEND2,VEND2#">,</field>
-        <field name="LCSC">C89735</field>
-        <field name="Footprint">Power8GDI_GDI:REF_Q10</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_GDI" part="Device_Q_NMOS_GDS" description="N-MOSFET transistor, gate/drain/source"/>
-      <property name="MFG,MFG#" value="Nexperia,BUK9230-100B"/>
-      <property name="VEND1,VEND1#" value="DIGI,1727-4708-1-ND"/>
-      <property name="VEND2,VEND2#" value=","/>
-      <property name="LCSC" value="C89735"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="stage_a.kicad_sch"/>
-      <property name="ki_keywords" value="transistor NMOS N-MOS N-MOSFET"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>00e0fdf0-3297-5ed8-b175-de5f35ec4f16</tstamps>
-    </comp>
     <comp ref="Q211">
       <value>BUK9230-100B</value>
       <footprint>Power8GDI_GDI:REF_Q11</footprint>
@@ -1679,24 +1603,6 @@
       <property name="ki_fp_filters" value="R_*"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>04e5f7d5-a2d0-5532-bb4a-dbfa2a6cd215</tstamps>
-    </comp>
-    <comp ref="R209">
-      <value>10</value>
-      <footprint>Power8GDI_GDI:REF_R18</footprint>
-      <fields>
-        <field name="LCSC">C22859</field>
-        <field name="Footprint">Power8GDI_GDI:REF_R18</field>
-        <field name="Datasheet"/>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_GDI" part="Device_R" description="Resistor"/>
-      <property name="LCSC" value="C22859"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="stage_a.kicad_sch"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <property name="ki_fp_filters" value="R_*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>675578f6-df34-5a6b-a03a-ab9ba5441f53</tstamps>
     </comp>
     <comp ref="R210">
       <value>10</value>
@@ -2253,6 +2159,22 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>7d635312-fdb6-5a4f-adf2-f2b98cdea4ed</tstamps>
     </comp>
+    <comp ref="R297">
+      <value>10k 1%</value>
+      <footprint>Power8GDI_GDI:REF_R123</footprint>
+      <fields>
+        <field name="Footprint">Power8GDI_GDI:REF_R123</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_GDI" part="Device_R" description="Resistor"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="stage_a.kicad_sch"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <property name="ki_fp_filters" value="R_*"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cdb3c747-a1a8-56eb-af83-e5dd3cf23251</tstamps>
+    </comp>
     <comp ref="R298">
       <value>910 1% minimum load</value>
       <footprint>Power8GDI_GDI:REF_R123</footprint>
@@ -2338,23 +2260,6 @@
       <property name="ki_fp_filters" value="Pin* Test*"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>86fb81e9-a46a-5742-897c-a8ce7426adb0</tstamps>
-    </comp>
-    <comp ref="TP204">
-      <value>TestPoint</value>
-      <footprint>Power8GDI_GDI:REF_S4</footprint>
-      <datasheet>~</datasheet>
-      <fields>
-        <field name="Footprint">Power8GDI_GDI:REF_S4</field>
-        <field name="Datasheet">~</field>
-        <field name="Description"/>
-      </fields>
-      <libsource lib="Power8GDI_GDI" part="Connector_TestPoint" description="test point"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="stage_a.kicad_sch"/>
-      <property name="ki_keywords" value="test point tp"/>
-      <property name="ki_fp_filters" value="Pin* Test*"/>
-      <sheetpath names="/" tstamps="/"/>
-      <tstamps>afed3d3d-5d6e-521c-9ca1-a49ae35a3ab5</tstamps>
     </comp>
     <comp ref="TP205">
       <value>TestPoint</value>
@@ -2833,20 +2738,16 @@
       <node ref="TP203" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U201" pin="6" pinfunction="START3" pintype="bidirectional"/>
     </net>
-    <net code="6" name="DI4" class="Default">
-      <node ref="TP204" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U201" pin="7" pinfunction="START4" pintype="bidirectional"/>
-    </net>
-    <net code="7" name="GDI_SPI2_MISO" class="Default">
+    <net code="6" name="GDI_SPI2_MISO" class="Default">
       <node ref="U201" pin="15" pinfunction="MISO" pintype="tri_state"/>
     </net>
-    <net code="8" name="GDI_SPI2_MOSI" class="Default">
+    <net code="7" name="GDI_SPI2_MOSI" class="Default">
       <node ref="U201" pin="14" pinfunction="MOSI" pintype="input"/>
     </net>
-    <net code="9" name="GDI_SPI2_SCK" class="Default">
+    <net code="8" name="GDI_SPI2_SCK" class="Default">
       <node ref="U201" pin="16" pinfunction="SCLK" pintype="input"/>
     </net>
-    <net code="10" name="GND" class="Default">
+    <net code="9" name="GND" class="Default">
       <node ref="C201" pin="1" pintype="passive"/>
       <node ref="C205" pin="2" pintype="passive"/>
       <node ref="C206" pin="2" pintype="passive"/>
@@ -2863,7 +2764,6 @@
       <node ref="C224" pin="1" pintype="passive"/>
       <node ref="C225" pin="1" pintype="passive"/>
       <node ref="C226" pin="1" pintype="passive"/>
-      <node ref="C227" pin="1" pintype="passive"/>
       <node ref="C235" pin="1" pintype="passive"/>
       <node ref="C241" pin="1" pintype="passive"/>
       <node ref="C242" pin="1" pintype="passive"/>
@@ -2888,6 +2788,7 @@
       <node ref="R229" pin="2" pintype="passive"/>
       <node ref="R230" pin="2" pintype="passive"/>
       <node ref="R231" pin="2" pintype="passive"/>
+      <node ref="R297" pin="2" pintype="passive"/>
       <node ref="R298" pin="2" pintype="passive"/>
       <node ref="U201" pin="19" pinfunction="DGND" pintype="power_in"/>
       <node ref="U201" pin="24" pinfunction="AGND" pintype="power_in"/>
@@ -2895,238 +2796,224 @@
       <node ref="U249" pin="2" pinfunction="GND" pintype="power_in"/>
       <node ref="Y201" pin="2" pinfunction="GND" pintype="power_in"/>
     </net>
-    <net code="11" name="HPFP1" class="Default">
+    <net code="10" name="HPFP1" class="Default">
       <node ref="TP206" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U201" pin="9" pinfunction="START6" pintype="bidirectional"/>
     </net>
-    <net code="12" name="Net-(C236-Pad2)" class="Default">
+    <net code="11" name="Net-(C236-Pad2)" class="Default">
       <node ref="C236" pin="2" pintype="passive"/>
       <node ref="R217" pin="1" pintype="passive"/>
     </net>
-    <net code="13" name="Net-(C244-Pad2)" class="Default">
+    <net code="12" name="Net-(C244-Pad2)" class="Default">
       <node ref="C244" pin="2" pintype="passive"/>
       <node ref="R219" pin="1" pintype="passive"/>
     </net>
-    <net code="14" name="Net-(D211-A)" class="Default">
+    <net code="13" name="Net-(D211-A)" class="Default">
       <node ref="D211" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="R220" pin="1" pintype="passive"/>
     </net>
-    <net code="15" name="Net-(Q201-G)" class="Default">
+    <net code="14" name="Net-(Q201-G)" class="Default">
       <node ref="C252" pin="2" pintype="passive"/>
       <node ref="Q201" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R226" pin="2" pintype="passive"/>
     </net>
-    <net code="16" name="Net-(Q202-G)" class="Default">
+    <net code="15" name="Net-(Q202-G)" class="Default">
       <node ref="C245" pin="2" pintype="passive"/>
       <node ref="Q202" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R214" pin="1" pintype="passive"/>
     </net>
-    <net code="17" name="Net-(Q203-G)" class="Default">
+    <net code="16" name="Net-(Q203-G)" class="Default">
       <node ref="C228" pin="2" pintype="passive"/>
       <node ref="Q203" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R201" pin="2" pintype="passive"/>
     </net>
-    <net code="18" name="Net-(Q203-S)" class="Default">
+    <net code="17" name="Net-(Q203-S)" class="Default">
       <node ref="C216" pin="2" pintype="passive"/>
       <node ref="C228" pin="1" pintype="passive"/>
       <node ref="D202" pin="3" pinfunction="A" pintype="passive"/>
       <node ref="Q203" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="U201" pin="63" pinfunction="S_HS1" pintype="input"/>
     </net>
-    <net code="19" name="Net-(Q204-G)" class="Default">
+    <net code="18" name="Net-(Q204-G)" class="Default">
       <node ref="C229" pin="2" pintype="passive"/>
       <node ref="Q204" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R202" pin="2" pintype="passive"/>
     </net>
-    <net code="20" name="Net-(Q205-G)" class="Default">
+    <net code="19" name="Net-(Q205-G)" class="Default">
       <node ref="C232" pin="2" pintype="passive"/>
       <node ref="Q205" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R206" pin="2" pintype="passive"/>
     </net>
-    <net code="21" name="Net-(Q205-S)" class="Default">
+    <net code="20" name="Net-(Q205-S)" class="Default">
       <node ref="C217" pin="2" pintype="passive"/>
       <node ref="C232" pin="1" pintype="passive"/>
       <node ref="D203" pin="3" pinfunction="A" pintype="passive"/>
       <node ref="Q205" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="U201" pin="57" pinfunction="S_HS3" pintype="input"/>
     </net>
-    <net code="22" name="Net-(Q206-G)" class="Default">
+    <net code="21" name="Net-(Q206-G)" class="Default">
       <node ref="C233" pin="2" pintype="passive"/>
       <node ref="Q206" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R207" pin="2" pintype="passive"/>
     </net>
-    <net code="23" name="Net-(Q207-G)" class="Default">
+    <net code="22" name="Net-(Q207-G)" class="Default">
       <node ref="C231" pin="2" pintype="passive"/>
       <node ref="Q207" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R205" pin="2" pintype="passive"/>
     </net>
-    <net code="24" name="Net-(Q208-G)" class="Default">
+    <net code="23" name="Net-(Q208-G)" class="Default">
       <node ref="C230" pin="2" pintype="passive"/>
       <node ref="Q208" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R204" pin="2" pintype="passive"/>
     </net>
-    <net code="25" name="Net-(Q209-G)" class="Default">
+    <net code="24" name="Net-(Q209-G)" class="Default">
       <node ref="C234" pin="2" pintype="passive"/>
       <node ref="Q209" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R208" pin="2" pintype="passive"/>
     </net>
-    <net code="26" name="Net-(Q210-G)" class="Default">
-      <node ref="C237" pin="2" pintype="passive"/>
-      <node ref="Q210" pin="1" pinfunction="G" pintype="input"/>
-      <node ref="R209" pin="2" pintype="passive"/>
-    </net>
-    <net code="27" name="Net-(Q211-G)" class="Default">
+    <net code="25" name="Net-(Q211-G)" class="Default">
       <node ref="C238" pin="2" pintype="passive"/>
       <node ref="Q211" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R210" pin="2" pintype="passive"/>
     </net>
-    <net code="28" name="Net-(Q212-G)" class="Default">
+    <net code="26" name="Net-(Q212-G)" class="Default">
       <node ref="C239" pin="2" pintype="passive"/>
       <node ref="C254" pin="2" pintype="passive"/>
       <node ref="Q212" pin="1" pinfunction="G" pintype="input"/>
       <node ref="Q213" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R211" pin="2" pintype="passive"/>
     </net>
-    <net code="29" name="Net-(Q212-S)" class="Default">
+    <net code="27" name="Net-(Q212-S)" class="Default">
       <node ref="C239" pin="1" pintype="passive"/>
       <node ref="Q212" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="R215" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="30" name="Net-(U201-B_HS1)" class="Default">
+    <net code="28" name="Net-(U201-B_HS1)" class="Default">
       <node ref="C216" pin="1" pintype="passive"/>
       <node ref="U201" pin="61" pinfunction="B_HS1" pintype="input"/>
     </net>
-    <net code="31" name="Net-(U201-B_HS2)" class="Default">
+    <net code="29" name="Net-(U201-B_HS2)" class="Default">
       <node ref="C218" pin="1" pintype="passive"/>
       <node ref="U201" pin="58" pinfunction="B_HS2" pintype="input"/>
     </net>
-    <net code="32" name="Net-(U201-B_HS3)" class="Default">
+    <net code="30" name="Net-(U201-B_HS3)" class="Default">
       <node ref="C217" pin="1" pintype="passive"/>
       <node ref="U201" pin="55" pinfunction="B_HS3" pintype="input"/>
     </net>
-    <net code="33" name="Net-(U201-B_HS4)" class="Default">
+    <net code="31" name="Net-(U201-B_HS4)" class="Default">
       <node ref="C219" pin="1" pintype="passive"/>
       <node ref="U201" pin="52" pinfunction="B_HS4" pintype="input"/>
     </net>
-    <net code="34" name="Net-(U201-B_HS5)" class="Default">
+    <net code="32" name="Net-(U201-B_HS5)" class="Default">
       <node ref="C240" pin="1" pintype="passive"/>
       <node ref="U201" pin="49" pinfunction="B_HS5" pintype="input"/>
     </net>
-    <net code="35" name="Net-(U201-DBG)" class="Default">
+    <net code="33" name="Net-(U201-DBG)" class="Default">
       <node ref="R225" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U201" pin="18" pinfunction="DBG" pintype="bidirectional"/>
     </net>
-    <net code="36" name="Net-(U201-D_LS6)" class="Default">
+    <net code="34" name="Net-(U201-D_LS6)" class="Default">
       <node ref="R216" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R218" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U201" pin="33" pinfunction="D_LS6" pintype="input"/>
     </net>
-    <net code="37" name="Net-(U201-FLAG1)" class="Default">
+    <net code="35" name="Net-(U201-FLAG1)" class="Default">
       <node ref="R223" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U201" pin="11" pinfunction="FLAG1" pintype="bidirectional"/>
     </net>
-    <net code="38" name="Net-(U201-FLAG2)" class="Default">
+    <net code="36" name="Net-(U201-FLAG2)" class="Default">
       <node ref="R224" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U201" pin="12" pinfunction="FLAG2" pintype="bidirectional"/>
     </net>
-    <net code="39" name="Net-(U201-G_HS1)" class="Default">
+    <net code="37" name="Net-(U201-G_HS1)" class="Default">
       <node ref="R201" pin="1" pintype="passive"/>
       <node ref="U201" pin="62" pinfunction="G_HS1" pintype="output"/>
     </net>
-    <net code="40" name="Net-(U201-G_HS2)" class="Default">
+    <net code="38" name="Net-(U201-G_HS2)" class="Default">
       <node ref="R202" pin="1" pintype="passive"/>
       <node ref="U201" pin="59" pinfunction="G_HS2" pintype="output"/>
     </net>
-    <net code="41" name="Net-(U201-G_HS3)" class="Default">
+    <net code="39" name="Net-(U201-G_HS3)" class="Default">
       <node ref="R206" pin="1" pintype="passive"/>
       <node ref="U201" pin="56" pinfunction="G_HS3" pintype="output"/>
     </net>
-    <net code="42" name="Net-(U201-G_HS4)" class="Default">
+    <net code="40" name="Net-(U201-G_HS4)" class="Default">
       <node ref="R207" pin="1" pintype="passive"/>
       <node ref="U201" pin="53" pinfunction="G_HS4" pintype="output"/>
     </net>
-    <net code="43" name="Net-(U201-G_HS5)" class="Default">
+    <net code="41" name="Net-(U201-G_HS5)" class="Default">
       <node ref="R210" pin="1" pintype="passive"/>
       <node ref="U201" pin="50" pinfunction="G_HS5" pintype="output"/>
     </net>
-    <net code="44" name="Net-(U201-G_LS1)" class="Default">
+    <net code="42" name="Net-(U201-G_LS1)" class="Default">
       <node ref="R204" pin="1" pintype="passive"/>
       <node ref="U201" pin="47" pinfunction="G_LS1" pintype="output"/>
     </net>
-    <net code="45" name="Net-(U201-G_LS2)" class="Default">
+    <net code="43" name="Net-(U201-G_LS2)" class="Default">
       <node ref="R205" pin="1" pintype="passive"/>
       <node ref="U201" pin="46" pinfunction="G_LS2" pintype="output"/>
     </net>
-    <net code="46" name="Net-(U201-G_LS3)" class="Default">
+    <net code="44" name="Net-(U201-G_LS3)" class="Default">
       <node ref="R208" pin="1" pintype="passive"/>
       <node ref="U201" pin="45" pinfunction="G_LS3" pintype="output"/>
     </net>
-    <net code="47" name="Net-(U201-G_LS4)" class="Default">
-      <node ref="R209" pin="1" pintype="passive"/>
-      <node ref="U201" pin="44" pinfunction="G_LS4" pintype="output"/>
-    </net>
-    <net code="48" name="Net-(U201-G_LS5)" class="Default">
+    <net code="45" name="Net-(U201-G_LS5)" class="Default">
       <node ref="R226" pin="1" pintype="passive"/>
       <node ref="U201" pin="43" pinfunction="G_LS5" pintype="output"/>
     </net>
-    <net code="49" name="Net-(U201-G_LS6)" class="Default">
+    <net code="46" name="Net-(U201-G_LS6)" class="Default">
       <node ref="R211" pin="1" pintype="passive"/>
       <node ref="U201" pin="42" pinfunction="G_LS6" pintype="output"/>
     </net>
-    <net code="50" name="Net-(U201-G_LS7)" class="Default">
+    <net code="47" name="Net-(U201-G_LS7)" class="Default">
       <node ref="R214" pin="2" pintype="passive"/>
       <node ref="U201" pin="41" pinfunction="G_LS7" pintype="output"/>
     </net>
-    <net code="51" name="Net-(U201-IRQ)" class="Default">
+    <net code="48" name="Net-(U201-IRQ)" class="Default">
       <node ref="R222" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U201" pin="64" pinfunction="IRQ" pintype="bidirectional"/>
     </net>
-    <net code="52" name="Net-(U201-VCCIO)" class="Default">
-      <node ref="C235" pin="2" pintype="passive"/>
-      <node ref="R221" pin="4" pinfunction="4" pintype="passive"/>
-      <node ref="U201" pin="17" pinfunction="VCCIO" pintype="power_in"/>
-    </net>
-    <net code="53" name="Net-(U201-VSENSEN1)" class="Default">
+    <net code="49" name="Net-(U201-VSENSEN1)" class="Default">
       <node ref="C202" pin="1" pintype="passive"/>
       <node ref="R212" pin="3" pinfunction="3" pintype="passive"/>
       <node ref="U201" pin="25" pinfunction="VSENSEN1" pintype="input"/>
     </net>
-    <net code="54" name="Net-(U201-VSENSEN2)" class="Default">
+    <net code="50" name="Net-(U201-VSENSEN2)" class="Default">
       <node ref="C203" pin="1" pintype="passive"/>
       <node ref="R213" pin="3" pinfunction="3" pintype="passive"/>
       <node ref="U201" pin="27" pinfunction="VSENSEN2" pintype="input"/>
     </net>
-    <net code="55" name="Net-(U201-VSENSEN3)" class="Default">
+    <net code="51" name="Net-(U201-VSENSEN3)" class="Default">
       <node ref="C204" pin="1" pintype="passive"/>
       <node ref="R215" pin="3" pinfunction="3" pintype="passive"/>
       <node ref="U201" pin="29" pinfunction="VSENSEN3" pintype="input"/>
     </net>
-    <net code="56" name="Net-(U201-VSENSEN4)" class="Default">
+    <net code="52" name="Net-(U201-VSENSEN4)" class="Default">
       <node ref="C211" pin="1" pintype="passive"/>
       <node ref="R203" pin="3" pinfunction="3" pintype="passive"/>
       <node ref="U201" pin="31" pinfunction="VSENSEN4" pintype="input"/>
     </net>
-    <net code="57" name="Net-(U201-VSENSEP1)" class="Default">
+    <net code="53" name="Net-(U201-VSENSEP1)" class="Default">
       <node ref="C202" pin="2" pintype="passive"/>
       <node ref="R212" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U201" pin="26" pinfunction="VSENSEP1" pintype="input"/>
     </net>
-    <net code="58" name="Net-(U201-VSENSEP2)" class="Default">
+    <net code="54" name="Net-(U201-VSENSEP2)" class="Default">
       <node ref="C203" pin="2" pintype="passive"/>
       <node ref="R213" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U201" pin="28" pinfunction="VSENSEP2" pintype="input"/>
     </net>
-    <net code="59" name="Net-(U201-VSENSEP3)" class="Default">
+    <net code="55" name="Net-(U201-VSENSEP3)" class="Default">
       <node ref="C204" pin="2" pintype="passive"/>
       <node ref="R215" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U201" pin="30" pinfunction="VSENSEP3" pintype="input"/>
     </net>
-    <net code="60" name="Net-(U201-VSENSEP4)" class="Default">
+    <net code="56" name="Net-(U201-VSENSEP4)" class="Default">
       <node ref="C211" pin="2" pintype="passive"/>
       <node ref="R203" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U201" pin="32" pinfunction="VSENSEP4" pintype="input"/>
     </net>
-    <net code="61" name="PTA_+Batt_filtered" class="Default">
+    <net code="57" name="PTA_+Batt_filtered" class="Default">
       <node ref="C206" pin="1" pintype="passive"/>
       <node ref="C246" pin="1" pintype="passive"/>
       <node ref="L201" pin="2" pinfunction="2" pintype="passive"/>
@@ -3134,35 +3021,35 @@
       <node ref="R230" pin="1" pintype="passive"/>
       <node ref="R231" pin="1" pintype="passive"/>
     </net>
-    <net code="62" name="PTA_CLK" class="Default">
+    <net code="58" name="PTA_CLK" class="Default">
       <node ref="U201" pin="1" pinfunction="CLK" pintype="input"/>
       <node ref="Y201" pin="3" pinfunction="RFout" pintype="output"/>
     </net>
-    <net code="63" name="PTA_CS" class="Default">
+    <net code="59" name="PTA_CS" class="Default">
       <node ref="U201" pin="13" pinfunction="CSB" pintype="input"/>
     </net>
-    <net code="64" name="PTA_DBG" class="Default">
+    <net code="60" name="PTA_DBG" class="Default">
       <node ref="R225" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="65" name="PTA_DEVICE_DRVEN" class="Default">
+    <net code="61" name="PTA_DEVICE_DRVEN" class="Default">
       <node ref="R227" pin="1" pintype="passive"/>
       <node ref="R299" pin="2" pintype="passive"/>
       <node ref="U201" pin="2" pinfunction="DRVEN" pintype="input"/>
     </net>
-    <net code="66" name="PTA_DRVEN_GATED" class="Default">
+    <net code="62" name="PTA_DRVEN_GATED" class="Default">
       <node ref="R299" pin="1" pintype="passive"/>
     </net>
-    <net code="67" name="PTA_FLAG" class="Default">
+    <net code="63" name="PTA_FLAG" class="Default">
       <node ref="R229" pin="1" pintype="passive"/>
       <node ref="U201" pin="10" pinfunction="FLAG0" pintype="bidirectional"/>
     </net>
-    <net code="68" name="PTA_FLAG_1" class="Default">
+    <net code="64" name="PTA_FLAG_1" class="Default">
       <node ref="R223" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="69" name="PTA_FLAG_2" class="Default">
+    <net code="65" name="PTA_FLAG_2" class="Default">
       <node ref="R224" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="70" name="PTA_H1" class="Default">
+    <net code="66" name="PTA_H1" class="Default">
       <node ref="C218" pin="2" pintype="passive"/>
       <node ref="C220" pin="2" pintype="passive"/>
       <node ref="C221" pin="2" pintype="passive"/>
@@ -3172,7 +3059,7 @@
       <node ref="Q204" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="U201" pin="60" pinfunction="S_HS2" pintype="input"/>
     </net>
-    <net code="71" name="PTA_H3" class="Default">
+    <net code="67" name="PTA_H3" class="Default">
       <node ref="C219" pin="2" pintype="passive"/>
       <node ref="C224" pin="2" pintype="passive"/>
       <node ref="C225" pin="2" pintype="passive"/>
@@ -3182,7 +3069,7 @@
       <node ref="Q206" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="U201" pin="54" pinfunction="S_HS4" pintype="input"/>
     </net>
-    <net code="72" name="PTA_H5PUMP" class="Default">
+    <net code="68" name="PTA_H5PUMP" class="Default">
       <node ref="C238" pin="1" pintype="passive"/>
       <node ref="C240" pin="2" pintype="passive"/>
       <node ref="C241" pin="2" pintype="passive"/>
@@ -3190,66 +3077,64 @@
       <node ref="Q211" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="U201" pin="51" pinfunction="S_HS5" pintype="input"/>
     </net>
-    <net code="73" name="PTA_IRQ" class="Default">
+    <net code="69" name="PTA_IRQ" class="Default">
       <node ref="R222" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="74" name="PTA_L1" class="Default">
+    <net code="70" name="PTA_L1" class="Default">
       <node ref="C222" pin="2" pintype="passive"/>
       <node ref="D201" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="Q208" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="U201" pin="38" pinfunction="D_LS1" pintype="input"/>
     </net>
-    <net code="75" name="PTA_L2" class="Default">
+    <net code="71" name="PTA_L2" class="Default">
       <node ref="C223" pin="2" pintype="passive"/>
       <node ref="D204" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="Q207" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="U201" pin="37" pinfunction="D_LS2" pintype="input"/>
     </net>
-    <net code="76" name="PTA_L3" class="Default">
+    <net code="72" name="PTA_L3" class="Default">
       <node ref="C226" pin="2" pintype="passive"/>
       <node ref="D205" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="Q209" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="U201" pin="36" pinfunction="D_LS3" pintype="input"/>
     </net>
-    <net code="77" name="PTA_L4" class="Default">
-      <node ref="C227" pin="2" pintype="passive"/>
-      <node ref="D206" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="Q210" pin="2" pinfunction="D" pintype="passive"/>
-      <node ref="U201" pin="35" pinfunction="D_LS4" pintype="input"/>
-    </net>
-    <net code="78" name="PTA_L5" class="Default">
+    <net code="73" name="PTA_L5" class="Default">
       <node ref="C251" pin="2" pintype="passive"/>
       <node ref="D209" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="Q201" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="U201" pin="34" pinfunction="D_LS5" pintype="input"/>
     </net>
-    <net code="79" name="PTA_L6" class="Default">
+    <net code="74" name="PTA_L6" class="Default">
       <node ref="C253" pin="2" pintype="passive"/>
       <node ref="D210" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="Q213" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="R218" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="80" name="PTA_L6PUMP" class="Default">
+    <net code="75" name="PTA_L6PUMP" class="Default">
       <node ref="C242" pin="2" pintype="passive"/>
       <node ref="D208" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="Q212" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="R216" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="81" name="PTA_OA_1" class="Default">
+    <net code="76" name="PTA_OA_1" class="Default">
       <node ref="U201" pin="22" pinfunction="OA_1" pintype="bidirectional"/>
     </net>
-    <net code="82" name="PTA_OA_2" class="Default">
+    <net code="77" name="PTA_OA_2" class="Default">
       <node ref="U201" pin="23" pinfunction="OA_2" pintype="bidirectional"/>
     </net>
-    <net code="83" name="PTA_RESET" class="Default">
+    <net code="78" name="PTA_RESET" class="Default">
       <node ref="R228" pin="1" pintype="passive"/>
       <node ref="U201" pin="3" pinfunction="RESETB" pintype="input"/>
     </net>
-    <net code="84" name="PTA_START5" class="Default">
+    <net code="79" name="PTA_START5" class="Default">
       <node ref="TP205" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U201" pin="8" pinfunction="START5" pintype="bidirectional"/>
     </net>
-    <net code="85" name="PTA_VBOOST" class="Default">
+    <net code="80" name="PTA_UNUSED_START4" class="Default">
+      <node ref="R297" pin="1" pintype="passive"/>
+      <node ref="U201" pin="7" pinfunction="START4" pintype="bidirectional"/>
+    </net>
+    <net code="81" name="PTA_VBOOST" class="Default">
       <node ref="C207" pin="1" pintype="passive"/>
       <node ref="C209" pin="1" pintype="passive"/>
       <node ref="C247" pin="1" pintype="passive"/>
@@ -3257,7 +3142,6 @@
       <node ref="D201" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="D204" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="D205" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="D206" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="D209" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="D210" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="D212" pin="2" pinfunction="K" pintype="passive"/>
@@ -3276,17 +3160,22 @@
       <node ref="R240" pin="1" pintype="passive"/>
       <node ref="U201" pin="48" pinfunction="VBOOST" pintype="power_in"/>
     </net>
-    <net code="86" name="PTA_VCC1P5" class="Default">
+    <net code="82" name="PTA_VCC1P5" class="Default">
       <node ref="C201" pin="2" pintype="passive"/>
       <node ref="C214" pin="2" pintype="passive"/>
       <node ref="U201" pin="20" pinfunction="VCC1P5" pintype="power_out"/>
     </net>
-    <net code="87" name="PTA_VCCP" class="Default">
+    <net code="83" name="PTA_VCCIO" class="Default">
+      <node ref="C235" pin="2" pintype="passive"/>
+      <node ref="R221" pin="4" pinfunction="4" pintype="passive"/>
+      <node ref="U201" pin="17" pinfunction="VCCIO" pintype="power_in"/>
+    </net>
+    <net code="84" name="PTA_VCCP" class="Default">
       <node ref="C212" pin="2" pintype="passive"/>
       <node ref="C213" pin="2" pintype="passive"/>
       <node ref="U201" pin="40" pinfunction="VCCP" pintype="power_out"/>
     </net>
-    <net code="88" name="PTA_VSENSE1" class="Default">
+    <net code="85" name="PTA_VSENSE1" class="Default">
       <node ref="C230" pin="1" pintype="passive"/>
       <node ref="C231" pin="1" pintype="passive"/>
       <node ref="C252" pin="1" pintype="passive"/>
@@ -3295,23 +3184,21 @@
       <node ref="Q208" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="R212" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="89" name="PTA_VSENSE2" class="Default">
+    <net code="86" name="PTA_VSENSE2" class="Default">
       <node ref="C234" pin="1" pintype="passive"/>
-      <node ref="C237" pin="1" pintype="passive"/>
       <node ref="C254" pin="1" pintype="passive"/>
       <node ref="Q209" pin="3" pinfunction="S" pintype="passive"/>
-      <node ref="Q210" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="Q213" pin="3" pinfunction="S" pintype="passive"/>
       <node ref="R213" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="90" name="PTA_Vdrive_coil" class="Default">
+    <net code="87" name="PTA_Vdrive_coil" class="Default">
       <node ref="D212" pin="1" pinfunction="A" pintype="input"/>
       <node ref="D212" pin="3" pinfunction="A" pintype="passive"/>
       <node ref="L202" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="Q202" pin="2" pinfunction="D" pintype="passive"/>
       <node ref="R217" pin="2" pintype="passive"/>
     </net>
-    <net code="91" name="PTA_Vdrive_shunt" class="Default">
+    <net code="88" name="PTA_Vdrive_shunt" class="Default">
       <node ref="C207" pin="2" pintype="passive"/>
       <node ref="C209" pin="2" pintype="passive"/>
       <node ref="C236" pin="1" pintype="passive"/>
@@ -3331,7 +3218,7 @@
       <node ref="R239" pin="2" pintype="passive"/>
       <node ref="R240" pin="2" pintype="passive"/>
     </net>
-    <net code="92" name="VBAT_GDI_A" class="Default">
+    <net code="89" name="VBAT_GDI_A" class="Default">
       <node ref="C205" pin="1" pintype="passive"/>
       <node ref="C208" pin="1" pintype="passive"/>
       <node ref="C210" pin="2" pintype="passive"/>
@@ -3344,13 +3231,19 @@
       <node ref="U201" pin="39" pinfunction="VBATT" pintype="power_in"/>
       <node ref="U249" pin="1" pinfunction="VI" pintype="power_in"/>
     </net>
-    <net code="93" name="unconnected-(R221-Pad2)" class="Default">
+    <net code="90" name="unconnected-(R221-Pad2)" class="Default">
       <node ref="R221" pin="2" pinfunction="2" pintype="passive+no_connect"/>
     </net>
-    <net code="94" name="unconnected-(R221-Pad3)" class="Default">
+    <net code="91" name="unconnected-(R221-Pad3)" class="Default">
       <node ref="R221" pin="3" pinfunction="3" pintype="passive+no_connect"/>
     </net>
-    <net code="95" name="unconnected-(Y201-Vctrl-Pad1)" class="Default">
+    <net code="92" name="unconnected-(U201-D_LS4-Pad35)" class="Default">
+      <node ref="U201" pin="35" pinfunction="D_LS4" pintype="input+no_connect"/>
+    </net>
+    <net code="93" name="unconnected-(U201-G_LS4-Pad44)" class="Default">
+      <node ref="U201" pin="44" pinfunction="G_LS4" pintype="output+no_connect"/>
+    </net>
+    <net code="94" name="unconnected-(Y201-Vctrl-Pad1)" class="Default">
       <node ref="Y201" pin="1" pinfunction="Vctrl" pintype="input+no_connect"/>
     </net>
   </nets>

@@ -1,6 +1,6 @@
 """Small deterministic KiCad schematic writer; electrical pins remain explicit.
 
-No ERC exclusions or synthetic power flags are emitted. Not an electrical solver.
+No ERC exclusions are emitted; documented source flags live in power_sources.py. Not an electrical solver.
 """
 from __future__ import annotations
 

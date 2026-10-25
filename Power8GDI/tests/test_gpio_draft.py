@@ -21,7 +21,7 @@ class GpioDraftContract(unittest.TestCase):
         self.assertEqual(len(assigned), len(set(assigned)))
 
     def test_gdi_resources(self):
-        for prefix, n in [('DI', 8), ('IGN', 8), ('HPFP', 2)]:
+        for prefix, n in [('DI', 6), ('IGN', 6), ('HPFP', 2)]:
             for i in range(1, n + 1):
                 self.assertNotEqual('UNASSIGNED', self.pins[f'{prefix}{i}'])
         for prefix in ('PTA', 'PTB'):
@@ -45,9 +45,9 @@ class GpioDraftContract(unittest.TestCase):
                 self.assertEqual(row['status'],'proposed')
 
     def test_requirements_dont_fit_only_four_tle9104(self):
-        # Eight PI + four VVT + eight general-purpose PWM + four service low-side.
-        required_low_sides = 8 + 4 + 8 + 4
-        self.assertEqual(required_low_sides, 24)
+        # Six PI + four VVT + eight general-purpose PWM + four service low-side.
+        required_low_sides = 6 + 4 + 8 + 4
+        self.assertEqual(required_low_sides, 22)
         self.assertGreater(required_low_sides, 4 * 4)
         self.assertEqual((required_low_sides + 3) // 4, 6)
 

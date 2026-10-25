@@ -17,10 +17,10 @@ class BatteryDomainTests(unittest.TestCase):
             p=Path(d)/'changed.xml';root.write(p);return discover(p)
 
     def test_renamed_motor_power_net_keeps_domain(self):
-        def edit(root):root.find("nets/net[@name='MOTOR3_MOTOR_A']").set('name','renamed_output_without_voltage_hint')
+        def edit(root):root.find("nets/net[@name='EWG_MOTOR_A']").set('name','renamed_output_without_voltage_hint')
         domains=self.edited(edit)
         self.assertIn('renamed_output_without_voltage_hint',domains)
-        self.assertNotIn('MOTOR3_DIR_FILTERED',domains)
+        self.assertNotIn('EWG_DIR_FILTERED',domains)
         self.assertNotIn('+3V3',domains)
 
     def test_wrong_pin_function_is_rejected(self):

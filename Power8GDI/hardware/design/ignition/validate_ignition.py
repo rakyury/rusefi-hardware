@@ -29,9 +29,9 @@ def prepare():
     # Fixture lives next to leaves; production root lives one directory above.
     root.items=[item.replace('"ignition/','"') for item in root.items]
     names=[("+3V3","power_out"),("+5V_CORE","power_out"),("GND","power_out")]
-    names += [(f"IGN{i}","output") for i in range(1,9)]
+    names += [(f"IGN{i}","output") for i in range(1,7)]
     names += [("HW_ACTUATOR_ENABLE","output"),("IGN_OC_OK","input")]
-    names += [(f"HARNESS_IGN{i}","passive") for i in range(1,9)]
+    names += [(f"HARNESS_IGN{i}","passive") for i in range(1,7)]
     pins=[(str(i+1),name,kind,-20.32,48.26-i*5.08,0) for i,(name,kind) in enumerate(names)]
     fixture=box_symbol("IGN_External_Test_Fixture",pins,width=35.56,height=110,prefix="X")
     root.component(fixture,"X5599","EXTERNAL_TEST_FIXTURE_ONLY",100,310,
@@ -62,7 +62,7 @@ def audit(footprints):
         for pin,net in p["pins"].items():
             assert actual.get((ref,pin))==net,(ref,pin,net,actual.get((ref,pin)))
     # Independent datasheet-sensitive net expectations; no manifest-only assertions.
-    for ch in range(1,9):
+    for ch in range(1,7):
         n=5420+(ch-1)*20
         p=f"IGN{ch}"
         expected={f"Q{n}":{"1":p+"_GATE","2":f"HARNESS_IGN{ch}","3":p+"_SHUNT_HI"},

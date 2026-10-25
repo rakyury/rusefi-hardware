@@ -28,9 +28,10 @@ class PinoutTests(unittest.TestCase):
 
     def test_required_channels(self):
         nets = {row["net"] for row in self.rows}
-        for i in range(1, 9):
-            for name in (f"DI{i}_HIGH", f"DI{i}_LOW", f"IGN{i}", f"AUX_PWM{i}"):
+        for i in range(1, 7):
+            for name in (f"DI{i}_HIGH", f"DI{i}_LOW", f"IGN{i}"):
                 self.assertIn(name, nets)
+        for i in range(1,9): self.assertIn(f"AUX_PWM{i}", nets)
         for i in (1, 2):
             for name in (f"HPFP{i}_HIGH", f"HPFP{i}_LOW"):
                 self.assertIn(name, nets)

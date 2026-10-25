@@ -73,14 +73,14 @@ class ResourceAuditTests(unittest.TestCase):
         findings = self.report()['findings']
         matches = [f for f in findings if f['detail'].startswith('SDMMC1_4bit:')]
         self.assertEqual(matches[0]['category'], 'conditional_conflict')
-        self.assertEqual(matches[0]['functions'], ['EWG_PWM', 'MOTOR4_PWM', 'SD_SPI3_SCK', 'SD_SPI3_MISO', 'SD_SPI3_MOSI', 'LS_AUX1'])
+        self.assertEqual(matches[0]['functions'], ['EWG_PWM', 'SD_SPI3_SCK', 'SD_SPI3_MISO', 'SD_SPI3_MOSI', 'LS_AUX1'])
         self.contract['decisions']['storage_interface'] = 'SDMMC1_4bit'
         matches = [f for f in self.report()['findings'] if f['detail'].startswith('SDMMC1_4bit:')]
         self.assertEqual(matches[0]['category'], 'collision')
 
     def test_timer_timebase_and_pc13_require_review_without_false_collision(self):
         findings = self.report()['findings']
-        self.assertTrue(any(f['code'] == 'SHARED_TIMER_TIMEBASE' and set(f['functions']) == {'DBW_PWM', 'EWG_PWM', 'MOTOR3_PWM', 'MOTOR4_PWM'} for f in findings))
+        self.assertTrue(any(f['code'] == 'SHARED_TIMER_TIMEBASE' and set(f['functions']) == {'DBW_PWM', 'EWG_PWM'} for f in findings))
         self.assertTrue(any(f['code'] == 'PC13_ELECTRICAL_REVIEW' and f['functions'] == ['IGN1'] for f in findings))
 
     def test_new_connector_function_cannot_disappear_from_requirements(self):

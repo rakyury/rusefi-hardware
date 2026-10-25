@@ -49,9 +49,9 @@ def place(board,fps,imported,netlist,manifest,nets,add_track,ground_pad,prepack_
         a=next(q for q in cap.Pads() if q.GetNumber()=='1');g=next(q for q in cap.Pads() if q.GetNumber()=='2')
         add_track(board,nets[pad.GetNetname()],[(x,y),(p.ToMM(a.GetPosition().x),p.ToMM(a.GetPosition().y))],.25)
         ground_pad(board,g,nets,out);placed.add(ref)
-    # Eight D2PAK power cells, two rows. Gate at left, emitter below left;
+    # Six D2PAK power cells, two rows. Gate at left, emitter below left;
     # shunt sits immediately below emitter, with sense comparator on reverse.
-    for ch in range(1,9):
+    for ch in range(1,7):
         n=5420+(ch-1)*20;x=61+24*((ch-1)%4);y=101+23*((ch-1)//4)
         move(fps[f'Q{n}'],x,y);placed.add(f'Q{n}')
         move(fps[f'R{n+7}'],x-8,y+10,0);placed.add(f'R{n+7}')
@@ -71,8 +71,8 @@ def place(board,fps,imported,netlist,manifest,nets,add_track,ground_pad,prepack_
         raise ValueError('Compact logic supply placement failed: '+str(supply))
     placed.update(supply['placed_references']);report.append({'domain':'compact logic supply','local_module':supply})
     from route_wbo_local import place_and_route as wbo_local
-    wbo=wbo_local(board,fps,nets,placed,regions={1:(153,52,197,142),2:(198,52,242,142)})
-    placed.update(wbo['placed_references']);report.append({'domain':'dual WBO local circuits','local_module':wbo})
+    wbo=wbo_local(board,fps,nets,placed,regions={1:(153,52,197,142)})
+    placed.update(wbo['placed_references']);report.append({'domain':'single WBO local circuit','local_module':wbo})
     # Register copper and component obstacles independently for each assembly side.
     occupied={p.F_Cu:Spatial(),p.B_Cu:Spatial()}
     copper_obstacles={layer:Spatial() for layer in (p.F_Cu,p.In1_Cu,p.In2_Cu,p.B_Cu)}

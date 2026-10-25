@@ -25,6 +25,11 @@ def audited_copper(source, refmap, assignments):
             if not pad.GetNumber() or key not in assignments:
                 continue
             oldnet, newnet = pad.GetNetname(), assignments[key]
+            # NC on a retained IC is not an invitation to copy the old removed
+            # channel's copper or zones. The physical pad stays on the PCB,
+            # but its historical net is excluded from the donor graph.
+            if newnet.startswith('unconnected-'):
+                continue
             if not oldnet:
                 raise ValueError(f"Reference pad {oldref}.{pad.GetNumber()} has no copper net")
             remap[oldnet].add(newnet)

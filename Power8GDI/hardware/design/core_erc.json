@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.kicad.org/erc.v1.json",
     "coordinate_units": "mm",
-    "date": "2026-10-23T18:13:58+0000",
+    "date": "2026-10-25T20:57:19+0000",
     "included_severities": [
         "error",
         "warning"
@@ -197,92 +197,15 @@
         {
             "path": "/MCU, power decoupling and debug/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/79938eac-2cdc-5293-a8d5-13bb90492b1e",
-            "violations": [
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U101 Pin 6 [VBAT, Power input, Line]",
-                            "pos": {
-                                "x": 1.3208,
-                                "y": 0.6096
-                            },
-                            "uuid": "85e924a2-f50a-5d67-a95e-848ce01bbac2"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                },
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U101 Pin 39 [VDDA, Power input, Line]",
-                            "pos": {
-                                "x": 1.6764,
-                                "y": 0.6096
-                            },
-                            "uuid": "5ddc5478-50b4-52fb-b207-2da48b05640c"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                },
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U101 Pin 14 [VSS, Power input, Line]",
-                            "pos": {
-                                "x": 1.524,
-                                "y": 2.921
-                            },
-                            "uuid": "e4d79354-dff7-5b43-a3de-e2e80329d074"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                }
-            ]
+            "violations": []
         },
         {
             "path": "/CAN1 and LIN1 physical interfaces/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a46f09d2-745d-5ec9-9128-e45b02fcfc2a",
-            "violations": [
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U103 Pin 3 [VCC, Power input, Line]",
-                            "pos": {
-                                "x": 1.2192,
-                                "y": 0.7493
-                            },
-                            "uuid": "4af3a9a3-cc2f-5fb3-ac69-e273948d81a9"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                },
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U104 Pin 7 [VSUP, Power input, Line]",
-                            "pos": {
-                                "x": 4.2037,
-                                "y": 0.7493
-                            },
-                            "uuid": "bfe973ab-57ca-5af6-bf1d-fb7052e623c6"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                }
-            ]
+            "violations": []
         },
         {
-            "path": "/Ignition permission and four dual gate drivers/",
+            "path": "/Ignition permission and three dual gate drivers/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8",
             "violations": []
         },
@@ -314,16 +237,6 @@
         {
             "path": "/Ignition 6 - timed primary and OC latch/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/05da4600-9317-567d-a07f-98baaf7bdafd",
-            "violations": []
-        },
-        {
-            "path": "/Ignition 7 - timed primary and OC latch/",
-            "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/178bc220-ea1a-5c79-8b8e-3a73021c4677",
-            "violations": []
-        },
-        {
-            "path": "/Ignition 8 - timed primary and OC latch/",
-            "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/e478d2a4-611a-5d11-8f3c-05d11d143bdd",
             "violations": []
         },
         {
@@ -372,27 +285,27 @@
             "violations": []
         },
         {
-            "path": "/Direct protected low-side PI5, PI6, PI7, PI8/",
+            "path": "/Direct protected low-side PI5, PI6, VVT1, VVT2/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/d843c910-30ab-5a6f-a300-527efc7109da",
             "violations": []
         },
         {
-            "path": "/Direct protected low-side VVT1, VVT2, VVT3, VVT4/",
+            "path": "/Direct protected low-side VVT3, VVT4, AUX_PWM1, AUX_PWM2/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/f9a94962-d999-5dbe-8395-385e6ce67c0c",
             "violations": []
         },
         {
-            "path": "/Direct protected low-side AUX_PWM1, AUX_PWM2, AUX_PWM3, AUX_PWM4/",
+            "path": "/Direct protected low-side AUX_PWM3, AUX_PWM4, AUX_PWM5, AUX_PWM6/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/fb6964ba-9cbe-5476-9cb5-5c5e531dfe4a",
             "violations": []
         },
         {
-            "path": "/Direct protected low-side AUX_PWM5, AUX_PWM6, AUX_PWM7, AUX_PWM8/",
+            "path": "/Direct protected low-side AUX_PWM7, AUX_PWM8, LS_AUX1, LS_AUX2/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/4aff0344-b316-57b4-a5a3-0cd6cf125b53",
             "violations": []
         },
         {
-            "path": "/Direct protected low-side LS_AUX1, LS_AUX2, LS_AUX3, LS_AUX4/",
+            "path": "/Direct protected low-side LS_AUX3, LS_AUX4/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/e7178a38-ebc8-5bcd-b87f-33cdc0605f4a",
             "violations": []
         },
@@ -402,106 +315,19 @@
             "violations": []
         },
         {
+            "path": "/Documented power sources across passive paths/",
+            "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/290b6ee4-154f-549a-86ea-0c88f6ec39ac",
+            "violations": []
+        },
+        {
             "path": "/GDI bank A reference candidate/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a05bbd47-81aa-5269-b9b3-0a4b9afd615c",
-            "violations": [
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U201 Pin 48 [VBOOST, Power input, Line]",
-                            "pos": {
-                                "x": 1.6764,
-                                "y": 1.3462
-                            },
-                            "uuid": "7b81590c-f03b-5871-a3cd-2d0197dab375"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                },
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U201 Pin 39 [VBATT, Power input, Line]",
-                            "pos": {
-                                "x": 1.6764,
-                                "y": 1.397
-                            },
-                            "uuid": "c632b79c-cd22-599c-9850-9c59009bf30d"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                },
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U201 Pin 17 [VCCIO, Power input, Line]",
-                            "pos": {
-                                "x": 1.6764,
-                                "y": 1.9939
-                            },
-                            "uuid": "03148a03-f504-5590-9afd-fa45c09049ae"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                }
-            ]
+            "violations": []
         },
         {
             "path": "/GDI bank B reference candidate/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/2aa9486d-083b-53a0-b9ea-735fb5a4b253",
-            "violations": [
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U301 Pin 48 [VBOOST, Power input, Line]",
-                            "pos": {
-                                "x": 1.6764,
-                                "y": 1.3462
-                            },
-                            "uuid": "8f6d6140-ab77-542e-84fa-8b209893326f"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                },
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U301 Pin 39 [VBATT, Power input, Line]",
-                            "pos": {
-                                "x": 1.6764,
-                                "y": 1.397
-                            },
-                            "uuid": "430ecdf3-cf4e-5521-9237-6cb3b579bcb0"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                },
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U301 Pin 17 [VCCIO, Power input, Line]",
-                            "pos": {
-                                "x": 1.6764,
-                                "y": 1.9939
-                            },
-                            "uuid": "00ada80a-afd1-569c-a77f-e92590ec023d"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                }
-            ]
+            "violations": []
         },
         {
             "path": "/Latched hardware permission/",
@@ -516,23 +342,7 @@
         {
             "path": "/CAN2 and LIN2 physical interfaces/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/aef4a5ed-16a9-5635-82f1-5a0caf432873",
-            "violations": [
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U1502 Pin 7 [VSUP, Power input, Line]",
-                            "pos": {
-                                "x": 4.2545,
-                                "y": 0.7493
-                            },
-                            "uuid": "a206497b-05e9-5a70-97c6-b730678d9629"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                }
-            ]
+            "violations": []
         },
         {
             "path": "/Self-powered USB FS device: host VBUS never powers ECU/",
@@ -547,38 +357,7 @@
         {
             "path": "/Dual sensor trackers and star returns/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f",
-            "violations": [
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U1530 Pin 8 [IN, Power input, Line]",
-                            "pos": {
-                                "x": 2.6416,
-                                "y": 0.8001
-                            },
-                            "uuid": "45666f92-aef1-5f40-bdc8-c3f68df45d50"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                },
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U1531 Pin 8 [IN, Power input, Line]",
-                            "pos": {
-                                "x": 2.6416,
-                                "y": 2.2479
-                            },
-                            "uuid": "158279e7-9f7a-5b6b-a88d-bb08384a2223"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                }
-            ]
+            "violations": []
         },
         {
             "path": "/Additional Hall, flex and digital inputs bank 1/",
@@ -593,44 +372,12 @@
         {
             "path": "/gdi/protection a/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/60b7457e-0f05-55b9-96ab-6c0b4d8affa4",
-            "violations": [
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U5001 Pin 10 [VS, Power input, Line]",
-                            "pos": {
-                                "x": 2.4511,
-                                "y": 1.4478
-                            },
-                            "uuid": "51d1702c-e4e5-51af-bee1-4b6bd017f243"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                }
-            ]
+            "violations": []
         },
         {
             "path": "/gdi/protection b/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/53820cc1-2a51-5440-8cbb-507f45b916cc",
-            "violations": [
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U5051 Pin 10 [VS, Power input, Line]",
-                            "pos": {
-                                "x": 2.4511,
-                                "y": 1.4478
-                            },
-                            "uuid": "e6349d18-d537-50ca-8fc8-0f6c367aa3a8"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                }
-            ]
+            "violations": []
         },
         {
             "path": "/gdi/permission/",
@@ -653,40 +400,9 @@
             "violations": []
         },
         {
-            "path": "/wbo/wbo2 analog/",
-            "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/852d5cb7-b555-5512-bc7b-6a6a13df9b36",
-            "violations": []
-        },
-        {
-            "path": "/wbo/wbo2 control/",
-            "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a4442b16-6d3e-55d7-87df-a3bdfaa6c095",
-            "violations": []
-        },
-        {
-            "path": "/wbo/wbo2 heater feed/",
-            "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/cccd9144-7da5-572f-923b-d8d84647036e",
-            "violations": []
-        },
-        {
             "path": "/logic power/logic 5v/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/61ce6944-66a3-57e1-9204-f75037bec847",
-            "violations": [
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U5200 Pin 20 [PVIN1, Power input, Line]",
-                            "pos": {
-                                "x": 1.9558,
-                                "y": 1.4224
-                            },
-                            "uuid": "440275ae-aace-5f64-8e33-f93294385e4c"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                }
-            ]
+            "violations": []
         },
         {
             "path": "/logic power/logic 3v3/",
@@ -696,53 +412,11 @@
         {
             "path": "/motor4/dbw/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/2f292352-1fdf-5f42-825f-c0663cc19609",
-            "violations": [
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U6000 Pin 4 [VS, Power input, Line]",
-                            "pos": {
-                                "x": 2.9972,
-                                "y": 0.8763
-                            },
-                            "uuid": "9f924aef-ba4e-5780-bbfc-5748818a8d87"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                }
-            ]
+            "violations": []
         },
         {
             "path": "/motor4/ewg/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/001b4bf6-7a89-52c1-b644-282f1c625f1a",
-            "violations": [
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U6050 Pin 4 [VS, Power input, Line]",
-                            "pos": {
-                                "x": 2.9972,
-                                "y": 0.8763
-                            },
-                            "uuid": "bb5c1674-7509-5e24-9203-f57366864108"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                }
-            ]
-        },
-        {
-            "path": "/motor4/motor3/",
-            "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a1d874ec-6625-54ba-9750-9693738ed94b",
-            "violations": []
-        },
-        {
-            "path": "/motor4/motor4/",
-            "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/fea959af-0a72-5725-83c1-637b9f1048bb",
             "violations": []
         },
         {
@@ -753,44 +427,12 @@
         {
             "path": "/motor4/motor13 power/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/5fe5f832-a00e-5bb4-8ef3-f4d0733d2003",
-            "violations": [
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U6200 Pin 10 [VS, Power input, Line]",
-                            "pos": {
-                                "x": 2.4511,
-                                "y": 1.4986
-                            },
-                            "uuid": "03b031b5-e1a7-51e2-b7d0-b8087878134d"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                }
-            ]
+            "violations": []
         },
         {
             "path": "/motor4/motor24 power/",
             "uuid_path": "/f4d21065-0a5b-5086-a08e-1af9469f04bd/e1c53cf8-3531-5132-a5f0-e5fe28fd72f9",
-            "violations": [
-                {
-                    "description": "Input Power pin not driven by any Output Power pins",
-                    "items": [
-                        {
-                            "description": "Symbol U6250 Pin 10 [VS, Power input, Line]",
-                            "pos": {
-                                "x": 2.4511,
-                                "y": 1.4986
-                            },
-                            "uuid": "4f235f64-c495-5c6b-b33c-79aa0668accc"
-                        }
-                    ],
-                    "severity": "error",
-                    "type": "power_pin_not_driven"
-                }
-            ]
+            "violations": []
         }
     ],
     "source": "Power8GDI_Core.kicad_sch"

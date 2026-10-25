@@ -47,19 +47,15 @@
         "111": "DI1",
         "112": "DI2",
         "99": "DI3",
-        "98": "DI4",
-        "97": "DI5",
-        "60": "DI6",
-        "63": "DI7",
-        "64": "DI8",
+        "97": "DI4",
+        "60": "DI5",
+        "63": "DI6",
         "8": "IGN1",
         "4": "IGN2",
         "3": "IGN3",
         "2": "IGN4",
         "1": "IGN5",
         "167": "IGN6",
-        "168": "IGN7",
-        "5": "IGN8",
         "96": "HPFP1",
         "100": "HPFP2",
         "93": "GDI_SPI2_SCK",
@@ -100,8 +96,6 @@
         "69": "PI4",
         "73": "PI5",
         "16": "PI6",
-        "17": "PI7",
-        "18": "PI8",
         "27": "VVT1",
         "59": "VVT2",
         "65": "VVT3",
@@ -167,13 +161,6 @@
         "132": "KNOCK_CS_N",
         "11": "KNOCK_INT_HOLD",
         "121": "WBO1_HEATER_PWM",
-        "58": "WBO2_HEATER_PWM",
-        "116": "MOTOR3_PWM",
-        "134": "MOTOR3_DIR",
-        "12": "MOTOR3_DISABLE",
-        "118": "MOTOR4_PWM",
-        "173": "MOTOR4_DIR",
-        "13": "MOTOR4_DISABLE",
         "162": "MOTOR_CS_N",
         "31": "NRST",
         "166": "BOOT0",
@@ -975,48 +962,6 @@
     },
     {
       "ref": "C5407",
-      "value": "1u 25V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+5V_CORE",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_common"
-    },
-    {
-      "ref": "U5405",
-      "value": "UCC27524AQDRQ1",
-      "footprint": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
-      "pins": {
-        "1": "IGN_SAFE_EN",
-        "2": "IGN7_GUARDED",
-        "3": "GND",
-        "4": "IGN8_GUARDED",
-        "5": "IGN8_DRIVE",
-        "6": "+5V_CORE",
-        "7": "IGN7_DRIVE",
-        "8": "IGN_SAFE_EN"
-      },
-      "dnp": false,
-      "note": "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current.",
-      "sheet": "ignition/ignition_common"
-    },
-    {
-      "ref": "C5408",
-      "value": "100n 25V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+5V_CORE",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_common"
-    },
-    {
-      "ref": "C5409",
       "value": "1u 25V X7R",
       "footprint": "Capacitor_SMD:C_0603_1608Metric",
       "pins": {
@@ -2268,420 +2213,6 @@
       "dnp": false,
       "note": "",
       "sheet": "ignition/ignition_6"
-    },
-    {
-      "ref": "U5540",
-      "value": "LTC6993HS6-1#WTRPBF",
-      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
-      "pins": {
-        "1": "IGN7",
-        "2": "GND",
-        "3": "IGN7_SET",
-        "4": "IGN7_DIV",
-        "5": "+3V3",
-        "6": "IGN7_WINDOW"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "U5541",
-      "value": "SN74LVC1G11BDCKRQ1",
-      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
-      "pins": {
-        "1": "IGN7",
-        "2": "GND",
-        "3": "IGN7_WINDOW",
-        "4": "IGN7_GUARDED",
-        "5": "+3V3",
-        "6": "IGN_SAFE_EN"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "R5540",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN7",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "R5541",
-      "value": "147k 1% 25ppm",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN7_SET",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "R5542",
-      "value": "100k 1%",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "IGN7_DIV"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "R5543",
-      "value": "39.2k 1%",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN7_DIV",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "R5544",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN7_GUARDED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "C5540",
-      "value": "100n 25V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "C5541",
-      "value": "100n 25V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "Q5540",
-      "value": "STGB18N40LZT4",
-      "footprint": "Package_TO_SOT_SMD:TO-263-2",
-      "pins": {
-        "1": "IGN7_GATE",
-        "2": "HARNESS_IGN7",
-        "3": "IGN7_SHUNT_HI"
-      },
-      "dnp": false,
-      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "R5545",
-      "value": "10R",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN7_DRIVE",
-        "2": "IGN7_GATE"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "R5546",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN7_GATE",
-        "2": "IGN7_SHUNT_HI"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "R5547",
-      "value": "WSLP2512R0100FEA",
-      "footprint": "Resistor_SMD:R_2512_6332Metric",
-      "pins": {
-        "1": "IGN7_SHUNT_HI",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "U5542",
-      "value": "INA300AQDGSRQ1",
-      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
-      "pins": {
-        "1": "IGN7_SHUNT_HI",
-        "2": "GND",
-        "3": "IGN7_ILIMIT",
-        "4": "+3V3",
-        "5": "IGN_OC_OK",
-        "6": "+3V3",
-        "8": "GND",
-        "9": "+3V3"
-      },
-      "dnp": false,
-      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "R5548",
-      "value": "4.99k 1% 25ppm",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN7_ILIMIT",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "C5542",
-      "value": "100n 25V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_7"
-    },
-    {
-      "ref": "U5560",
-      "value": "LTC6993HS6-1#WTRPBF",
-      "footprint": "Package_TO_SOT_SMD:TSOT-23-6",
-      "pins": {
-        "1": "IGN8",
-        "2": "GND",
-        "3": "IGN8_SET",
-        "4": "IGN8_DIV",
-        "5": "+3V3",
-        "6": "IGN8_WINDOW"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "U5561",
-      "value": "SN74LVC1G11BDCKRQ1",
-      "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
-      "pins": {
-        "1": "IGN8",
-        "2": "GND",
-        "3": "IGN8_WINDOW",
-        "4": "IGN8_GUARDED",
-        "5": "+3V3",
-        "6": "IGN_SAFE_EN"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "R5560",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN8",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "R5561",
-      "value": "147k 1% 25ppm",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN8_SET",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "R5562",
-      "value": "100k 1%",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "IGN8_DIV"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "R5563",
-      "value": "39.2k 1%",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN8_DIV",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "R5564",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN8_GUARDED",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "C5560",
-      "value": "100n 25V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "C5561",
-      "value": "100n 25V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "Q5560",
-      "value": "STGB18N40LZT4",
-      "footprint": "Package_TO_SOT_SMD:TO-263-2",
-      "pins": {
-        "1": "IGN8_GATE",
-        "2": "HARNESS_IGN8",
-        "3": "IGN8_SHUNT_HI"
-      },
-      "dnp": false,
-      "note": "Collector/tab 360..420V clamp. No low-voltage TVS or flyback diode across coil.",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "R5565",
-      "value": "10R",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN8_DRIVE",
-        "2": "IGN8_GATE"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "R5566",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN8_GATE",
-        "2": "IGN8_SHUNT_HI"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "R5567",
-      "value": "WSLP2512R0100FEA",
-      "footprint": "Resistor_SMD:R_2512_6332Metric",
-      "pins": {
-        "1": "IGN8_SHUNT_HI",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "10mOhm 1% 3W; Kelvin sense; dedicated power return copper.",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "U5562",
-      "value": "INA300AQDGSRQ1",
-      "footprint": "Package_SO:VSSOP-10_3x3mm_P0.5mm",
-      "pins": {
-        "1": "IGN8_SHUNT_HI",
-        "2": "GND",
-        "3": "IGN8_ILIMIT",
-        "4": "+3V3",
-        "5": "IGN_OC_OK",
-        "6": "+3V3",
-        "8": "GND",
-        "9": "+3V3"
-      },
-      "dnp": false,
-      "note": "DELAY and HYS intentionally float: 10us typical, 2mV. LATCH high; power cycle required to clear.",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "R5568",
-      "value": "4.99k 1% 25ppm",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "IGN8_ILIMIT",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "E96 value; initial nominal 9.93A trip; not a qualified B58 full-power limit.",
-      "sheet": "ignition/ignition_8"
-    },
-    {
-      "ref": "C5562",
-      "value": "100n 25V X7R",
-      "footprint": "Capacitor_SMD:C_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "",
-      "sheet": "ignition/ignition_8"
     },
     {
       "ref": "R700",
@@ -4997,19 +4528,19 @@
       "pins": {
         "14": "+3V3",
         "7": "GND",
+        "1": "PI1",
+        "3": "PI2",
+        "5": "PI3",
+        "9": "PI4",
         "11": "GND",
         "13": "GND",
-        "1": "PI1",
         "2": "PI1_INV",
-        "3": "PI2",
         "4": "PI2_INV",
-        "5": "PI3",
         "6": "PI3_INV",
-        "9": "PI4",
         "8": "PI4_INV"
       },
       "dnp": false,
-      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "note": "TI SCAS705B. Only assigned gates invert MCU commands; all unused inputs tied low and outputs no-connect.",
       "sheet": "outputs/ls_bank_1"
     },
     {
@@ -5031,12 +4562,12 @@
         "13": "LS_RESET_N",
         "14": "LS1_ENABLE",
         "3": "PI1_IN_N",
-        "1": "HARNESS_PI1",
         "18": "PI2_IN_N",
-        "20": "HARNESS_PI2",
         "4": "PI3_IN_N",
-        "10": "HARNESS_PI3",
         "17": "PI4_IN_N",
+        "1": "HARNESS_PI1",
+        "20": "HARNESS_PI2",
+        "10": "HARNESS_PI3",
         "11": "HARNESS_PI4"
       },
       "dnp": false,
@@ -5228,7 +4759,7 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "PI7",
+        "1": "VVT1",
         "2": "GND"
       },
       "dnp": false,
@@ -5240,8 +4771,8 @@
       "value": "100R",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "PI7_INV",
-        "2": "PI7_IN_N"
+        "1": "VVT1_INV",
+        "2": "VVT1_IN_N"
       },
       "dnp": false,
       "note": "Input current/edge damping; direct timing path, not SPI control",
@@ -5253,7 +4784,7 @@
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
         "1": "+3V3",
-        "2": "PI7_IN_N"
+        "2": "VVT1_IN_N"
       },
       "dnp": false,
       "note": "Default high is OFF at TLE input; essential active-low pin polarity",
@@ -5264,7 +4795,7 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "PI8",
+        "1": "VVT2",
         "2": "GND"
       },
       "dnp": false,
@@ -5276,8 +4807,8 @@
       "value": "100R",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "PI8_INV",
-        "2": "PI8_IN_N"
+        "1": "VVT2_INV",
+        "2": "VVT2_IN_N"
       },
       "dnp": false,
       "note": "Input current/edge damping; direct timing path, not SPI control",
@@ -5289,7 +4820,7 @@
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
         "1": "+3V3",
-        "2": "PI8_IN_N"
+        "2": "VVT2_IN_N"
       },
       "dnp": false,
       "note": "Default high is OFF at TLE input; essential active-low pin polarity",
@@ -5302,19 +4833,19 @@
       "pins": {
         "14": "+3V3",
         "7": "GND",
+        "1": "PI5",
+        "3": "PI6",
+        "5": "VVT1",
+        "9": "VVT2",
         "11": "GND",
         "13": "GND",
-        "1": "PI5",
         "2": "PI5_INV",
-        "3": "PI6",
         "4": "PI6_INV",
-        "5": "PI7",
-        "6": "PI7_INV",
-        "9": "PI8",
-        "8": "PI8_INV"
+        "6": "VVT1_INV",
+        "8": "VVT2_INV"
       },
       "dnp": false,
-      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "note": "TI SCAS705B. Only assigned gates invert MCU commands; all unused inputs tied low and outputs no-connect.",
       "sheet": "outputs/ls_bank_2"
     },
     {
@@ -5336,13 +4867,13 @@
         "13": "LS_RESET_N",
         "14": "LS2_ENABLE",
         "3": "PI5_IN_N",
-        "1": "HARNESS_PI5",
         "18": "PI6_IN_N",
+        "4": "VVT1_IN_N",
+        "17": "VVT2_IN_N",
+        "1": "HARNESS_PI5",
         "20": "HARNESS_PI6",
-        "4": "PI7_IN_N",
-        "10": "HARNESS_PI7",
-        "17": "PI8_IN_N",
-        "11": "HARNESS_PI8"
+        "10": "HARNESS_VVT1",
+        "11": "HARNESS_VVT2"
       },
       "dnp": false,
       "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
@@ -5461,7 +4992,7 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "VVT1",
+        "1": "VVT3",
         "2": "GND"
       },
       "dnp": false,
@@ -5473,8 +5004,8 @@
       "value": "100R",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "VVT1_INV",
-        "2": "VVT1_IN_N"
+        "1": "VVT3_INV",
+        "2": "VVT3_IN_N"
       },
       "dnp": false,
       "note": "Input current/edge damping; direct timing path, not SPI control",
@@ -5486,7 +5017,7 @@
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
         "1": "+3V3",
-        "2": "VVT1_IN_N"
+        "2": "VVT3_IN_N"
       },
       "dnp": false,
       "note": "Default high is OFF at TLE input; essential active-low pin polarity",
@@ -5494,78 +5025,6 @@
     },
     {
       "ref": "R1144",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "VVT2",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
-      "sheet": "outputs/ls_bank_3"
-    },
-    {
-      "ref": "R1145",
-      "value": "100R",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "VVT2_INV",
-        "2": "VVT2_IN_N"
-      },
-      "dnp": false,
-      "note": "Input current/edge damping; direct timing path, not SPI control",
-      "sheet": "outputs/ls_bank_3"
-    },
-    {
-      "ref": "R1146",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "VVT2_IN_N"
-      },
-      "dnp": false,
-      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
-      "sheet": "outputs/ls_bank_3"
-    },
-    {
-      "ref": "R1147",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "VVT3",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
-      "sheet": "outputs/ls_bank_3"
-    },
-    {
-      "ref": "R1148",
-      "value": "100R",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "VVT3_INV",
-        "2": "VVT3_IN_N"
-      },
-      "dnp": false,
-      "note": "Input current/edge damping; direct timing path, not SPI control",
-      "sheet": "outputs/ls_bank_3"
-    },
-    {
-      "ref": "R1149",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "VVT3_IN_N"
-      },
-      "dnp": false,
-      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
-      "sheet": "outputs/ls_bank_3"
-    },
-    {
-      "ref": "R1150",
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
@@ -5577,7 +5036,7 @@
       "sheet": "outputs/ls_bank_3"
     },
     {
-      "ref": "R1151",
+      "ref": "R1145",
       "value": "100R",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
@@ -5589,12 +5048,84 @@
       "sheet": "outputs/ls_bank_3"
     },
     {
-      "ref": "R1152",
+      "ref": "R1146",
       "value": "10k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
         "1": "+3V3",
         "2": "VVT4_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1147",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1148",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM1_INV",
+        "2": "AUX_PWM1_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1149",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM1_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1150",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1151",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM2_INV",
+        "2": "AUX_PWM2_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_3"
+    },
+    {
+      "ref": "R1152",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM2_IN_N"
       },
       "dnp": false,
       "note": "Default high is OFF at TLE input; essential active-low pin polarity",
@@ -5607,19 +5138,19 @@
       "pins": {
         "14": "+3V3",
         "7": "GND",
+        "1": "VVT3",
+        "3": "VVT4",
+        "5": "AUX_PWM1",
+        "9": "AUX_PWM2",
         "11": "GND",
         "13": "GND",
-        "1": "VVT1",
-        "2": "VVT1_INV",
-        "3": "VVT2",
-        "4": "VVT2_INV",
-        "5": "VVT3",
-        "6": "VVT3_INV",
-        "9": "VVT4",
-        "8": "VVT4_INV"
+        "2": "VVT3_INV",
+        "4": "VVT4_INV",
+        "6": "AUX_PWM1_INV",
+        "8": "AUX_PWM2_INV"
       },
       "dnp": false,
-      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "note": "TI SCAS705B. Only assigned gates invert MCU commands; all unused inputs tied low and outputs no-connect.",
       "sheet": "outputs/ls_bank_3"
     },
     {
@@ -5640,14 +5171,14 @@
         "7": "LS3_CS_N",
         "13": "LS_RESET_N",
         "14": "LS3_ENABLE",
-        "3": "VVT1_IN_N",
-        "1": "HARNESS_VVT1",
-        "18": "VVT2_IN_N",
-        "20": "HARNESS_VVT2",
-        "4": "VVT3_IN_N",
-        "10": "HARNESS_VVT3",
-        "17": "VVT4_IN_N",
-        "11": "HARNESS_VVT4"
+        "3": "VVT3_IN_N",
+        "18": "VVT4_IN_N",
+        "4": "AUX_PWM1_IN_N",
+        "17": "AUX_PWM2_IN_N",
+        "1": "HARNESS_VVT3",
+        "20": "HARNESS_VVT4",
+        "10": "HARNESS_AUX_PWM1",
+        "11": "HARNESS_AUX_PWM2"
       },
       "dnp": false,
       "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
@@ -5766,7 +5297,7 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "AUX_PWM1",
+        "1": "AUX_PWM3",
         "2": "GND"
       },
       "dnp": false,
@@ -5778,8 +5309,8 @@
       "value": "100R",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "AUX_PWM1_INV",
-        "2": "AUX_PWM1_IN_N"
+        "1": "AUX_PWM3_INV",
+        "2": "AUX_PWM3_IN_N"
       },
       "dnp": false,
       "note": "Input current/edge damping; direct timing path, not SPI control",
@@ -5791,7 +5322,7 @@
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
         "1": "+3V3",
-        "2": "AUX_PWM1_IN_N"
+        "2": "AUX_PWM3_IN_N"
       },
       "dnp": false,
       "note": "Default high is OFF at TLE input; essential active-low pin polarity",
@@ -5799,78 +5330,6 @@
     },
     {
       "ref": "R1164",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "AUX_PWM2",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
-      "sheet": "outputs/ls_bank_4"
-    },
-    {
-      "ref": "R1165",
-      "value": "100R",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "AUX_PWM2_INV",
-        "2": "AUX_PWM2_IN_N"
-      },
-      "dnp": false,
-      "note": "Input current/edge damping; direct timing path, not SPI control",
-      "sheet": "outputs/ls_bank_4"
-    },
-    {
-      "ref": "R1166",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "AUX_PWM2_IN_N"
-      },
-      "dnp": false,
-      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
-      "sheet": "outputs/ls_bank_4"
-    },
-    {
-      "ref": "R1167",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "AUX_PWM3",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
-      "sheet": "outputs/ls_bank_4"
-    },
-    {
-      "ref": "R1168",
-      "value": "100R",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "AUX_PWM3_INV",
-        "2": "AUX_PWM3_IN_N"
-      },
-      "dnp": false,
-      "note": "Input current/edge damping; direct timing path, not SPI control",
-      "sheet": "outputs/ls_bank_4"
-    },
-    {
-      "ref": "R1169",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "AUX_PWM3_IN_N"
-      },
-      "dnp": false,
-      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
-      "sheet": "outputs/ls_bank_4"
-    },
-    {
-      "ref": "R1170",
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
@@ -5882,7 +5341,7 @@
       "sheet": "outputs/ls_bank_4"
     },
     {
-      "ref": "R1171",
+      "ref": "R1165",
       "value": "100R",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
@@ -5894,12 +5353,84 @@
       "sheet": "outputs/ls_bank_4"
     },
     {
-      "ref": "R1172",
+      "ref": "R1166",
       "value": "10k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
         "1": "+3V3",
         "2": "AUX_PWM4_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1167",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM5",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1168",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM5_INV",
+        "2": "AUX_PWM5_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1169",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM5_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1170",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM6",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1171",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "AUX_PWM6_INV",
+        "2": "AUX_PWM6_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_4"
+    },
+    {
+      "ref": "R1172",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "AUX_PWM6_IN_N"
       },
       "dnp": false,
       "note": "Default high is OFF at TLE input; essential active-low pin polarity",
@@ -5912,19 +5443,19 @@
       "pins": {
         "14": "+3V3",
         "7": "GND",
+        "1": "AUX_PWM3",
+        "3": "AUX_PWM4",
+        "5": "AUX_PWM5",
+        "9": "AUX_PWM6",
         "11": "GND",
         "13": "GND",
-        "1": "AUX_PWM1",
-        "2": "AUX_PWM1_INV",
-        "3": "AUX_PWM2",
-        "4": "AUX_PWM2_INV",
-        "5": "AUX_PWM3",
-        "6": "AUX_PWM3_INV",
-        "9": "AUX_PWM4",
-        "8": "AUX_PWM4_INV"
+        "2": "AUX_PWM3_INV",
+        "4": "AUX_PWM4_INV",
+        "6": "AUX_PWM5_INV",
+        "8": "AUX_PWM6_INV"
       },
       "dnp": false,
-      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "note": "TI SCAS705B. Only assigned gates invert MCU commands; all unused inputs tied low and outputs no-connect.",
       "sheet": "outputs/ls_bank_4"
     },
     {
@@ -5945,14 +5476,14 @@
         "7": "LS4_CS_N",
         "13": "LS_RESET_N",
         "14": "LS4_ENABLE",
-        "3": "AUX_PWM1_IN_N",
-        "1": "HARNESS_AUX_PWM1",
-        "18": "AUX_PWM2_IN_N",
-        "20": "HARNESS_AUX_PWM2",
-        "4": "AUX_PWM3_IN_N",
-        "10": "HARNESS_AUX_PWM3",
-        "17": "AUX_PWM4_IN_N",
-        "11": "HARNESS_AUX_PWM4"
+        "3": "AUX_PWM3_IN_N",
+        "18": "AUX_PWM4_IN_N",
+        "4": "AUX_PWM5_IN_N",
+        "17": "AUX_PWM6_IN_N",
+        "1": "HARNESS_AUX_PWM3",
+        "20": "HARNESS_AUX_PWM4",
+        "10": "HARNESS_AUX_PWM5",
+        "11": "HARNESS_AUX_PWM6"
       },
       "dnp": false,
       "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
@@ -6071,7 +5602,7 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "AUX_PWM5",
+        "1": "AUX_PWM7",
         "2": "GND"
       },
       "dnp": false,
@@ -6083,8 +5614,8 @@
       "value": "100R",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "AUX_PWM5_INV",
-        "2": "AUX_PWM5_IN_N"
+        "1": "AUX_PWM7_INV",
+        "2": "AUX_PWM7_IN_N"
       },
       "dnp": false,
       "note": "Input current/edge damping; direct timing path, not SPI control",
@@ -6096,7 +5627,7 @@
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
         "1": "+3V3",
-        "2": "AUX_PWM5_IN_N"
+        "2": "AUX_PWM7_IN_N"
       },
       "dnp": false,
       "note": "Default high is OFF at TLE input; essential active-low pin polarity",
@@ -6104,78 +5635,6 @@
     },
     {
       "ref": "R1184",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "AUX_PWM6",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
-      "sheet": "outputs/ls_bank_5"
-    },
-    {
-      "ref": "R1185",
-      "value": "100R",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "AUX_PWM6_INV",
-        "2": "AUX_PWM6_IN_N"
-      },
-      "dnp": false,
-      "note": "Input current/edge damping; direct timing path, not SPI control",
-      "sheet": "outputs/ls_bank_5"
-    },
-    {
-      "ref": "R1186",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "AUX_PWM6_IN_N"
-      },
-      "dnp": false,
-      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
-      "sheet": "outputs/ls_bank_5"
-    },
-    {
-      "ref": "R1187",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "AUX_PWM7",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
-      "sheet": "outputs/ls_bank_5"
-    },
-    {
-      "ref": "R1188",
-      "value": "100R",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "AUX_PWM7_INV",
-        "2": "AUX_PWM7_IN_N"
-      },
-      "dnp": false,
-      "note": "Input current/edge damping; direct timing path, not SPI control",
-      "sheet": "outputs/ls_bank_5"
-    },
-    {
-      "ref": "R1189",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "AUX_PWM7_IN_N"
-      },
-      "dnp": false,
-      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
-      "sheet": "outputs/ls_bank_5"
-    },
-    {
-      "ref": "R1190",
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
@@ -6187,7 +5646,7 @@
       "sheet": "outputs/ls_bank_5"
     },
     {
-      "ref": "R1191",
+      "ref": "R1185",
       "value": "100R",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
@@ -6199,12 +5658,84 @@
       "sheet": "outputs/ls_bank_5"
     },
     {
-      "ref": "R1192",
+      "ref": "R1186",
       "value": "10k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
         "1": "+3V3",
         "2": "AUX_PWM8_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1187",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX1",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1188",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX1_INV",
+        "2": "LS_AUX1_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1189",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS_AUX1_IN_N"
+      },
+      "dnp": false,
+      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1190",
+      "value": "100k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX2",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1191",
+      "value": "100R",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "LS_AUX2_INV",
+        "2": "LS_AUX2_IN_N"
+      },
+      "dnp": false,
+      "note": "Input current/edge damping; direct timing path, not SPI control",
+      "sheet": "outputs/ls_bank_5"
+    },
+    {
+      "ref": "R1192",
+      "value": "10k",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "LS_AUX2_IN_N"
       },
       "dnp": false,
       "note": "Default high is OFF at TLE input; essential active-low pin polarity",
@@ -6217,19 +5748,19 @@
       "pins": {
         "14": "+3V3",
         "7": "GND",
+        "1": "AUX_PWM7",
+        "3": "AUX_PWM8",
+        "5": "LS_AUX1",
+        "9": "LS_AUX2",
         "11": "GND",
         "13": "GND",
-        "1": "AUX_PWM5",
-        "2": "AUX_PWM5_INV",
-        "3": "AUX_PWM6",
-        "4": "AUX_PWM6_INV",
-        "5": "AUX_PWM7",
-        "6": "AUX_PWM7_INV",
-        "9": "AUX_PWM8",
-        "8": "AUX_PWM8_INV"
+        "2": "AUX_PWM7_INV",
+        "4": "AUX_PWM8_INV",
+        "6": "LS_AUX1_INV",
+        "8": "LS_AUX2_INV"
       },
       "dnp": false,
-      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "note": "TI SCAS705B. Only assigned gates invert MCU commands; all unused inputs tied low and outputs no-connect.",
       "sheet": "outputs/ls_bank_5"
     },
     {
@@ -6250,14 +5781,14 @@
         "7": "LS5_CS_N",
         "13": "LS_RESET_N",
         "14": "LS5_ENABLE",
-        "3": "AUX_PWM5_IN_N",
-        "1": "HARNESS_AUX_PWM5",
-        "18": "AUX_PWM6_IN_N",
-        "20": "HARNESS_AUX_PWM6",
-        "4": "AUX_PWM7_IN_N",
-        "10": "HARNESS_AUX_PWM7",
-        "17": "AUX_PWM8_IN_N",
-        "11": "HARNESS_AUX_PWM8"
+        "3": "AUX_PWM7_IN_N",
+        "18": "AUX_PWM8_IN_N",
+        "4": "LS_AUX1_IN_N",
+        "17": "LS_AUX2_IN_N",
+        "1": "HARNESS_AUX_PWM7",
+        "20": "HARNESS_AUX_PWM8",
+        "10": "HARNESS_LS_AUX1",
+        "11": "HARNESS_LS_AUX2"
       },
       "dnp": false,
       "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
@@ -6376,7 +5907,7 @@
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "LS_AUX1",
+        "1": "LS_AUX3",
         "2": "GND"
       },
       "dnp": false,
@@ -6388,8 +5919,8 @@
       "value": "100R",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
-        "1": "LS_AUX1_INV",
-        "2": "LS_AUX1_IN_N"
+        "1": "LS_AUX3_INV",
+        "2": "LS_AUX3_IN_N"
       },
       "dnp": false,
       "note": "Input current/edge damping; direct timing path, not SPI control",
@@ -6401,7 +5932,7 @@
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
         "1": "+3V3",
-        "2": "LS_AUX1_IN_N"
+        "2": "LS_AUX3_IN_N"
       },
       "dnp": false,
       "note": "Default high is OFF at TLE input; essential active-low pin polarity",
@@ -6409,78 +5940,6 @@
     },
     {
       "ref": "R1204",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "LS_AUX2",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
-      "sheet": "outputs/ls_bank_6"
-    },
-    {
-      "ref": "R1205",
-      "value": "100R",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "LS_AUX2_INV",
-        "2": "LS_AUX2_IN_N"
-      },
-      "dnp": false,
-      "note": "Input current/edge damping; direct timing path, not SPI control",
-      "sheet": "outputs/ls_bank_6"
-    },
-    {
-      "ref": "R1206",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "LS_AUX2_IN_N"
-      },
-      "dnp": false,
-      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
-      "sheet": "outputs/ls_bank_6"
-    },
-    {
-      "ref": "R1207",
-      "value": "100k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "LS_AUX3",
-        "2": "GND"
-      },
-      "dnp": false,
-      "note": "MCU high-Z/reset command OFF; high command turns load ON through inverter",
-      "sheet": "outputs/ls_bank_6"
-    },
-    {
-      "ref": "R1208",
-      "value": "100R",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "LS_AUX3_INV",
-        "2": "LS_AUX3_IN_N"
-      },
-      "dnp": false,
-      "note": "Input current/edge damping; direct timing path, not SPI control",
-      "sheet": "outputs/ls_bank_6"
-    },
-    {
-      "ref": "R1209",
-      "value": "10k",
-      "footprint": "Resistor_SMD:R_0603_1608Metric",
-      "pins": {
-        "1": "+3V3",
-        "2": "LS_AUX3_IN_N"
-      },
-      "dnp": false,
-      "note": "Default high is OFF at TLE input; essential active-low pin polarity",
-      "sheet": "outputs/ls_bank_6"
-    },
-    {
-      "ref": "R1210",
       "value": "100k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
@@ -6492,7 +5951,7 @@
       "sheet": "outputs/ls_bank_6"
     },
     {
-      "ref": "R1211",
+      "ref": "R1205",
       "value": "100R",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
@@ -6504,7 +5963,7 @@
       "sheet": "outputs/ls_bank_6"
     },
     {
-      "ref": "R1212",
+      "ref": "R1206",
       "value": "10k",
       "footprint": "Resistor_SMD:R_0603_1608Metric",
       "pins": {
@@ -6522,19 +5981,17 @@
       "pins": {
         "14": "+3V3",
         "7": "GND",
+        "1": "LS_AUX3",
+        "3": "LS_AUX4",
+        "5": "GND",
+        "9": "GND",
         "11": "GND",
         "13": "GND",
-        "1": "LS_AUX1",
-        "2": "LS_AUX1_INV",
-        "3": "LS_AUX2",
-        "4": "LS_AUX2_INV",
-        "5": "LS_AUX3",
-        "6": "LS_AUX3_INV",
-        "9": "LS_AUX4",
-        "8": "LS_AUX4_INV"
+        "2": "LS_AUX3_INV",
+        "4": "LS_AUX4_INV"
       },
       "dnp": false,
-      "note": "TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.",
+      "note": "TI SCAS705B. Only assigned gates invert MCU commands; all unused inputs tied low and outputs no-connect.",
       "sheet": "outputs/ls_bank_6"
     },
     {
@@ -6555,14 +6012,12 @@
         "7": "LS6_CS_N",
         "13": "LS_RESET_N",
         "14": "LS6_ENABLE",
-        "3": "LS_AUX1_IN_N",
-        "1": "HARNESS_LS_AUX1",
-        "18": "LS_AUX2_IN_N",
-        "20": "HARNESS_LS_AUX2",
-        "4": "LS_AUX3_IN_N",
-        "10": "HARNESS_LS_AUX3",
-        "17": "LS_AUX4_IN_N",
-        "11": "HARNESS_LS_AUX4"
+        "3": "LS_AUX3_IN_N",
+        "18": "LS_AUX4_IN_N",
+        "4": "+3V3",
+        "17": "+3V3",
+        "1": "HARNESS_LS_AUX3",
+        "20": "HARNESS_LS_AUX4"
       },
       "dnp": false,
       "note": "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.",
@@ -6884,18 +6339,6 @@
       "instance_uuid": "30a46de9-e11a-54b6-8706-ae1bab93f93c"
     },
     {
-      "path": "wbo/wbo2_analog.kicad_sch",
-      "instance_uuid": "852d5cb7-b555-5512-bc7b-6a6a13df9b36"
-    },
-    {
-      "path": "wbo/wbo2_control.kicad_sch",
-      "instance_uuid": "a4442b16-6d3e-55d7-87df-a3bdfaa6c095"
-    },
-    {
-      "path": "wbo/wbo2_heater_feed.kicad_sch",
-      "instance_uuid": "cccd9144-7da5-572f-923b-d8d84647036e"
-    },
-    {
       "path": "logic_power/logic_5v.kicad_sch",
       "instance_uuid": "61ce6944-66a3-57e1-9204-f75037bec847"
     },
@@ -6910,14 +6353,6 @@
     {
       "path": "motor4/ewg.kicad_sch",
       "instance_uuid": "001b4bf6-7a89-52c1-b644-282f1c625f1a"
-    },
-    {
-      "path": "motor4/motor3.kicad_sch",
-      "instance_uuid": "a1d874ec-6625-54ba-9750-9693738ed94b"
-    },
-    {
-      "path": "motor4/motor4.kicad_sch",
-      "instance_uuid": "fea959af-0a72-5725-83c1-637b9f1048bb"
     },
     {
       "path": "motor4/spi.kicad_sch",
@@ -6970,7 +6405,7 @@
     {
       "pad": "5",
       "name": "PE6",
-      "net": "IGN8"
+      "net": null
     },
     {
       "pad": "6",
@@ -7005,12 +6440,12 @@
     {
       "pad": "12",
       "name": "PI10",
-      "net": "MOTOR3_DISABLE"
+      "net": null
     },
     {
       "pad": "13",
       "name": "PI11",
-      "net": "MOTOR4_DISABLE"
+      "net": null
     },
     {
       "pad": "14",
@@ -7030,12 +6465,12 @@
     {
       "pad": "17",
       "name": "PF1",
-      "net": "PI7"
+      "net": null
     },
     {
       "pad": "18",
       "name": "PF2",
-      "net": "PI8"
+      "net": null
     },
     {
       "pad": "19",
@@ -7235,7 +6670,7 @@
     {
       "pad": "58",
       "name": "PB2",
-      "net": "WBO2_HEATER_PWM"
+      "net": null
     },
     {
       "pad": "59",
@@ -7245,7 +6680,7 @@
     {
       "pad": "60",
       "name": "PF12",
-      "net": "DI6"
+      "net": "DI5"
     },
     {
       "pad": "61",
@@ -7260,12 +6695,12 @@
     {
       "pad": "63",
       "name": "PF13",
-      "net": "DI7"
+      "net": "DI6"
     },
     {
       "pad": "64",
       "name": "PF14",
-      "net": "DI8"
+      "net": null
     },
     {
       "pad": "65",
@@ -7430,12 +6865,12 @@
     {
       "pad": "97",
       "name": "PD9",
-      "net": "DI5"
+      "net": "DI4"
     },
     {
       "pad": "98",
       "name": "PD10",
-      "net": "DI4"
+      "net": null
     },
     {
       "pad": "99",
@@ -7525,7 +6960,7 @@
     {
       "pad": "116",
       "name": "PC7",
-      "net": "MOTOR3_PWM"
+      "net": null
     },
     {
       "pad": "117",
@@ -7535,7 +6970,7 @@
     {
       "pad": "118",
       "name": "PC9",
-      "net": "MOTOR4_PWM"
+      "net": null
     },
     {
       "pad": "119",
@@ -7615,7 +7050,7 @@
     {
       "pad": "134",
       "name": "PI3",
-      "net": "MOTOR3_DIR"
+      "net": null
     },
     {
       "pad": "135",
@@ -7785,7 +7220,7 @@
     {
       "pad": "168",
       "name": "PB9",
-      "net": "IGN7"
+      "net": null
     },
     {
       "pad": "169",
@@ -7810,7 +7245,7 @@
     {
       "pad": "173",
       "name": "PI4",
-      "net": "MOTOR4_DIR"
+      "net": null
     },
     {
       "pad": "174",

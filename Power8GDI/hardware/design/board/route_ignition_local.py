@@ -1,4 +1,4 @@
-"""Explicit gate/emitter paths for the eight fixed power cells.
+"""Explicit gate/emitter paths for the six fixed power cells.
 
 No collector, shared power return or Kelvin lead is autorouted here. The emitter
 neck is a preliminary 1.0 mm geometry, not a current/temperature qualification.
@@ -20,7 +20,7 @@ def route(board, footprints, nets, add_track):
         add_track(board,nets[a.GetNetname()],[xy(a),*bends,xy(b)],width,p.F_Cu)
         report.append({'net':a.GetNetname(),'from':a.GetParentFootprint().GetReference()+'.'+a.GetNumber(),
                        'to':b.GetParentFootprint().GetReference()+'.'+b.GetNumber(),'width_mm':width})
-    for ch in range(1,9):
+    for ch in range(1,7):
         n=5420+20*(ch-1)
         gate=pad(f'Q{n}',1);emitter=pad(f'Q{n}',3)
         series=pad(f'R{n+5}',2);pulldown_g=pad(f'R{n+6}',1);pulldown_e=pad(f'R{n+6}',2)
@@ -47,7 +47,7 @@ if __name__=='__main__':
     data=json.loads(report_path.read_text())
     if data.get('ignition_local_routes'):raise ValueError('Local ignition routes already applied')
     board=p.LoadBoard(str(args.board));fps={f.GetReference():f for f in board.GetFootprints()}
-    for ch in range(1,9):fps[f'R{5426+20*(ch-1)}'].SetOrientationDegrees(270)
+    for ch in range(1,7):fps[f'R{5426+20*(ch-1)}'].SetOrientationDegrees(270)
     nets={n.GetNetname():n for n in board.GetNetsByNetcode().values()}
     data['ignition_local_routes']=route(board,fps,nets,add_track)
     board.BuildConnectivity();p.ZONE_FILLER(board).Fill(board.Zones());board.BuildConnectivity()
@@ -55,4 +55,4 @@ if __name__=='__main__':
     data['tracks_vias']=len(list(board.GetTracks()))
     data['unconnected_count']=board.GetConnectivity().GetUnconnectedCount(False)
     report_path.write_text(json.dumps(data,indent=2)+'\n')
-    print('Added 32 checked local ignition connections; harness/return/Kelvin paths remain open')
+    print('Added 24 checked local ignition connections; harness/return/Kelvin paths remain open')

@@ -10,16 +10,14 @@ IGN3,HARNESS_IGN3,Passive coil IGBT collector; up to420V clamp. Never smart-coil
 IGN4,HARNESS_IGN4,Passive coil IGBT collector; up to420V clamp. Never smart-coil logic input.
 IGN5,HARNESS_IGN5,Passive coil IGBT collector; up to420V clamp. Never smart-coil logic input.
 IGN6,HARNESS_IGN6,Passive coil IGBT collector; up to420V clamp. Never smart-coil logic input.
-IGN7,HARNESS_IGN7,Passive coil IGBT collector; up to420V clamp. Never smart-coil logic input.
-IGN8,HARNESS_IGN8,Passive coil IGBT collector; up to420V clamp. Never smart-coil logic input.
 VBAT_MAIN_2,VBAT_DBW_FUSED,Separate fused motor feed candidate; contact and load rating pending
 VBAT_MAIN_3,VBAT_EWG_FUSED,Separate fused motor feed candidate; contact and load rating pending
 PGND_MAIN_2,GND,Motor ground return candidate; current and routing pending
 PGND_MAIN_3,GND,Motor ground return candidate; current and routing pending
-DBW_MOTOR_A,DBW_MOTOR_A,DRV8871 physical output; load and current budget unqualified
-DBW_MOTOR_B,DBW_MOTOR_B,DRV8871 physical output; load and current budget unqualified
-EWG_MOTOR_A,EWG_MOTOR_A,DRV8871 physical output; load and current budget unqualified
-EWG_MOTOR_B,EWG_MOTOR_B,DRV8871 physical output; load and current budget unqualified
+DBW_MOTOR_A,DBW_MOTOR_A,TLE9201 physical output; load and current budget unqualified
+DBW_MOTOR_B,DBW_MOTOR_B,TLE9201 physical output; load and current budget unqualified
+EWG_MOTOR_A,EWG_MOTOR_A,TLE9201 physical output; load and current budget unqualified
+EWG_MOTOR_B,EWG_MOTOR_B,TLE9201 physical output; load and current budget unqualified
 PGND_MAIN_4,GND,Explicit common power return; contact current sharing and copper thermal budget remain unqualified
 PGND_MAIN_B,GND,Explicit common power return; contact current sharing and copper thermal budget remain unqualified
 PGND_GDI_A_1,GND,Explicit common power return; contact current sharing and copper thermal budget remain unqualified
@@ -38,25 +36,17 @@ DI2_HIGH,PTA_H1,GDI4 revision-matched source + libfirmware78cec274 microcode map
 DI2_LOW,PTA_L2,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
 DI3_HIGH,PTA_H3,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
 DI3_LOW,PTA_L3,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
-DI4_HIGH,PTA_H3,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
-DI4_LOW,PTA_L4,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
 HPFP1_HIGH,PTA_H5PUMP,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
 HPFP1_LOW,PTA_L6PUMP,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI4_HIGH,PTB_H1,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI4_LOW,PTB_L1,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
 DI5_HIGH,PTB_H1,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
-DI5_LOW,PTB_L1,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
-DI6_HIGH,PTB_H1,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
-DI6_LOW,PTB_L2,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
-DI7_HIGH,PTB_H3,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
-DI7_LOW,PTB_L3,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
-DI8_HIGH,PTB_H3,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
-DI8_LOW,PTB_L4,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI5_LOW,PTB_L2,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI6_HIGH,PTB_H3,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI6_LOW,PTB_L3,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
 HPFP2_HIGH,PTB_H5PUMP,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
 HPFP2_LOW,PTB_L6PUMP,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
 VBAT_GDI_A_1,VBAT_GDI_A_FUSED,Separate externally fused bank feed upstream of LM74800 reverse/OV disconnect
 VBAT_GDI_A_2,VBAT_GDI_A_FUSED,Separate externally fused bank feed upstream of LM74800 reverse/OV disconnect
 VBAT_GDI_B_1,VBAT_GDI_B_FUSED,Separate externally fused bank feed upstream of LM74800 reverse/OV disconnect
 VBAT_GDI_B_2,VBAT_GDI_B_FUSED,Separate externally fused bank feed upstream of LM74800 reverse/OV disconnect
-MOTOR3_MOTOR_A,MOTOR3_MOTOR_A,Spare H-bridge output; current budget and thermal qualification pending
-MOTOR3_MOTOR_B,MOTOR3_MOTOR_B,Spare H-bridge output; current budget and thermal qualification pending
-MOTOR4_MOTOR_A,MOTOR4_MOTOR_A,Spare H-bridge output; current budget and thermal qualification pending
-MOTOR4_MOTOR_B,MOTOR4_MOTOR_B,Spare H-bridge output; current budget and thermal qualification pending

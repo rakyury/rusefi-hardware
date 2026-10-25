@@ -1,4 +1,4 @@
-"""24 direct, active-high MCU commands into six TLE9104SH low-side ICs.
+"""22 direct, active-high MCU commands into six TLE9104SH low-side ICs.
 
 Pin facts: Infineon TLE9104SH Rev1.31, Tables3-1/5-1/5-2 and p24.
 Board-level current, repeated avalanche and timing qualification remains open.
@@ -9,7 +9,7 @@ import json
 from core_schlib import Sheet, box_symbol
 
 HERE=Path(__file__).resolve().parent
-CHANNELS=[*[f'PI{i}' for i in range(1,9)],*[f'VVT{i}' for i in range(1,5)],
+CHANNELS=[*[f'PI{i}' for i in range(1,7)],*[f'VVT{i}' for i in range(1,5)],
           *[f'AUX_PWM{i}' for i in range(1,9)],*[f'LS_AUX{i}' for i in range(1,5)]]
 FP_R='Resistor_SMD:R_0603_1608Metric'
 FP_C='Capacitor_SMD:C_0603_1608Metric'
@@ -72,7 +72,8 @@ def make_outputs(syms,root_id):
         dn={str(n):'GND' for n in [2,9,12,19,21]}
         dn.update({'15':'+3V3','16':'+5V_CORE','5':f'LS{bank+1}_SO','6':'LS_SPI_MOSI','8':'LS_SPI_SCK',
                    '7':f'LS{bank+1}_CS_N','13':'LS_RESET_N','14':f'LS{bank+1}_ENABLE'})
-        gn={'14':'+3V3','7':'GND','11':'GND','13':'GND'}
+        gn={'14':'+3V3','7':'GND', **{str(p):'GND' for p in in_pads}}
+        for pad in [3,18,4,17]: dn[str(pad)]='+3V3'  # unused active-low inputs held OFF
         for i,name in enumerate(names):
             dn[str([3,18,4,17][i])]=name+'_IN_N'
             dn[str([1,20,10,11][i])]='HARNESS_'+name
@@ -82,7 +83,7 @@ def make_outputs(syms,root_id):
             res(sheet,f'R{b+i*3+2}','100R',110,y,name+'_INV',name+'_IN_N','Input current/edge damping; direct timing path, not SPI control')
             res(sheet,f'R{b+i*3+3}','10k',165,y,'+3V3',name+'_IN_N','Default high is OFF at TLE input; essential active-low pin polarity')
         sheet.component(inv,f'U{1121+bank}','SN74LVC14AQPWRQ1',260,100,gn,
-                        note='TI SCAS705B. Used gates1..4 invert MCU commands; inputs5/6 tied low and outputs no-connect.')
+                        note='TI SCAS705B. Only assigned gates invert MCU commands; all unused inputs tied low and outputs no-connect.')
         sheet.component(driver,f'U{1101+bank}','TLE9104SHXUMA1',440,115,dn,
                         note='Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels.')
         res(sheet,f'R{b+13}','47R',260,220,f'LS_CS{bank+1}',f'LS{bank+1}_CS_N')
@@ -104,7 +105,7 @@ def make_outputs(syms,root_id):
     cap(ctrl,'C1241','100n 16V X7R',200,90,'+3V3')
     res(ctrl,'R1243','33R',260,90,'GDI_SPI2_SCK','LS_SPI_SCK','Branch damping; validate signal integrity across6drivers and2PT chips')
     res(ctrl,'R1244','33R',260,150,'GDI_SPI2_MOSI','LS_SPI_MOSI')
-    ctrl.text('Startup: all24 commands low, sixCS high, reset-release low. Stabilize 3V3/5V; hold RESN low >=10us.\nRelease reset; verify POR, keep outputs disabled, set direct-drive/no-parallel CFG bits.\nSet OUT_EN only after configuration readback and healthy watchdog; then arm hardware permission.\nMaintain communication watchdog (default50ms); 16-bit odd-parity frames; bus mode/clock changed only with allCS high.\nNo automatic fault clearing/re-enable. External watchdog is not a per-injector maximum pulse timer.\nSPI scheduling, rail sequencing, current/flyback/thermal and engine timing need hardware verification.',25.4,200)
+    ctrl.text('Startup: all22 commands low, sixCS high, reset-release low. Stabilize 3V3/5V; hold RESN low >=10us.\nRelease reset; verify POR, keep outputs disabled, set direct-drive/no-parallel CFG bits.\nSet OUT_EN only after configuration readback and healthy watchdog; then arm hardware permission.\nMaintain communication watchdog (default50ms); 16-bit odd-parity frames; bus mode/clock changed only with allCS high.\nNo automatic fault clearing/re-enable. External watchdog is not a per-injector maximum pulse timer.\nSPI scheduling, rail sequencing, current/flyback/thermal and engine timing need hardware verification.',25.4,200)
     fp,sha=footprint()
     result={'schema_version':1,'channels':CHANNELS,'bank_channels':[CHANNELS[4*i:4*i+4] for i in range(6)],
             'parts':[part for s in sheets for part in s.parts],'footprint':fp,'footprint_sha256':sha,

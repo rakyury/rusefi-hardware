@@ -8,7 +8,7 @@ def electrical_errors(nets):
     errors=[]
     def need(ref,pin,net):
         if nets.get((ref,str(pin)))!=net:errors.append(f'{ref}.{pin} expected {net}')
-    channels=[('DBW',6000,'MOTOR13','MOTOR_SPI_SI'),('EWG',6050,'MOTOR24','DBW_SPI_SO'),('MOTOR3',6100,'MOTOR13','EWG_SPI_SO'),('MOTOR4',6150,'MOTOR24','MOTOR3_SPI_SO')]
+    channels=[('DBW',6000,'MOTOR13','MOTOR_SPI_SI'),('EWG',6050,'MOTOR24','DBW_SPI_SO')]
     for ch,b,feed,si in channels:
         # Infineon p4 physical pin map, not extracted from generator manifest.
         expected={1:ch+'_DIR_FILTERED',2:'+3V3',3:ch+'_SPI_SO',4:feed+'_VS',5:ch+'_MOTOR_A',6:'GND',7:ch+'_MOTOR_B',8:si,9:'MOTOR_CS_N',10:'MOTOR_SPI_SCK',11:ch+'_DIS_GATED',12:ch+'_PWM_FILTERED',13:'GND'}
@@ -18,7 +18,7 @@ def electrical_errors(nets):
             need(f'R{b+offset}',1,net);need(f'R{b+offset}',2,other)
         need(f'C{b+4}',1,feed+'_VS');need(f'C{b+4}',2,'GND')
         need(f'D{b}',1,feed+'_VS');need(f'D{b}',2,'GND')
-    for pin,net in {1:'MOTOR_CS_N',2:'MOTOR4_SPI_SO',3:'GND',4:'MOTOR_MISO_BUFFERED',5:'+3V3'}.items():need('U6190',pin,net)
+    for pin,net in {1:'MOTOR_CS_N',2:'EWG_SPI_SO',3:'GND',4:'MOTOR_MISO_BUFFERED',5:'+3V3'}.items():need('U6190',pin,net)
     need('R6192',1,'MOTOR_MISO_BUFFERED');need('R6192',2,'GDI_SPI2_MISO')
     need('R6193',1,'MOTOR_CS_N');need('R6193',2,'+3V3')
     for feed,b,raw in [('MOTOR13',6200,'VBAT_DBW_FUSED'),('MOTOR24',6250,'VBAT_EWG_FUSED')]:
@@ -33,21 +33,22 @@ def main():
     def check(name,ok):
         checks.append({'check':name,'passed':bool(ok)})
         if not ok:errors.append(name)
-    for path in sorted(HERE.glob('*.xml')):
+    for entry in json.loads((HERE/'interface.json').read_text())['sheets']:
+        path=HERE/(Path(entry['name']).name+'.xml')
         root=ET.parse(path).getroot()
         for c in root.findall('./components/comp'):
             ref=c.get('ref');check(ref+' unique export',ref not in exported);exported[ref]=c
         for n in root.findall('./nets/net'):
             name=n.get('name');name=None if name.startswith('unconnected-') else name
             for pin in n.findall('node'):nets[(pin.get('ref'),pin.get('pin'))]=name
-    check('Exactly106 expected parts in exports',len(exported)==106 and set(exported)==set(manifest))
+    check('Exactly two bridge assemblies in exports',len(exported)==74 and set(exported)==set(manifest))
     for ref,p in manifest.items():
         check(ref+' every exported net matches',all(nets.get((ref,pin))==net for pin,net in p['pins'].items()))
         c=exported[ref];check(ref+' footprint matches',c.findtext('footprint')==p['footprint'])
         check(ref+' dedicated symbol namespace',c.find('libsource').get('lib')=='Power8GDI_Motor4')
     critical=electrical_errors(nets);check('Independent critical manufacturer/safety contracts',not critical);errors.extend(critical)
     # These mutations must be detected by the independently specified contract.
-    for ref,pin,badnet in [('U6000','2','MOTOR13_VS'),('U6000','11','DBW_DISABLE'),('U6190','1','GND'),('U6100','8','MOTOR_SPI_SI'),('Q6200','3','MOTOR13_MID'),('U6200','13','GND'),('C6201','2','GND'),('R6253','2','+3V3')]:
+    for ref,pin,badnet in [('U6000','2','MOTOR13_VS'),('U6000','11','DBW_DISABLE'),('U6190','1','GND'),('U6050','8','MOTOR_SPI_SI'),('Q6200','3','MOTOR13_MID'),('U6200','13','GND'),('C6201','2','GND'),('R6253','2','+3V3')]:
         changed=dict(nets);changed[(ref,pin)]=badnet
         check(f'Fault mutation caught {ref}.{pin}->{badnet}',bool(electrical_errors(changed)))
     check('All functional components fitted',not any(p['dnp'] for p in manifest.values()))
@@ -82,7 +83,7 @@ def main():
         check('TLE EPland4.5x8.1 covers slug4.2x7.8',len(ep)==1 and tuple(round(pcb.ToMM(v),3) for v in (ep[0].GetSize().x,ep[0].GetSize().y))==(4.5,8.1))
         check('TLE18 ground thermal vias present',sum(1 for p in tle.Pads() if p.GetNumber()=='13' and p.GetDrillSize().x>0)==18)
     interface=json.loads((HERE/'interface.json').read_text());check('Static max OV disconnect below28V normal limit',interface['normal_supply_ov_v']['static_max']<28)
-    power={'continuous_target_A_per_channel':2,'TLE_path_R_ohm_max_at150C':.4,'conduction_W_each_at2A':2**2*.4,'conduction_W_four_at2A':4*2**2*.4,'conduction_W_each_at6A_notcontinuous':6**2*.4,'reference_JEDEC_RthetaJA_CperW':30,'illustrative_rise_C_at2A_excluding_switching':2**2*.4*30,'feed_pair_bulk_F':200e-6,'bulk_energy_margin_J_14V_to28V':.5*200e-6*(28**2-14**2),'qualification':'Illustrative budgets; actual PCB thermal impedance, load regen, dynamic overshoot and fuse coordination unknown'}
+    power={'continuous_target_A_per_channel':2,'TLE_path_R_ohm_max_at150C':.4,'conduction_W_each_at2A':2**2*.4,'conduction_W_two_at2A':2*2**2*.4,'conduction_W_each_at6A_notcontinuous':6**2*.4,'reference_JEDEC_RthetaJA_CperW':30,'illustrative_rise_C_at2A_excluding_switching':2**2*.4*30,'feed_bulk_F':100e-6,'bulk_energy_margin_J_14V_to28V':.5*100e-6*(28**2-14**2),'qualification':'Illustrative budgets; actual PCB thermal impedance, load regen, dynamic overshoot and fuse coordination unknown'}
     report={'passed':not errors,'check_count':len(checks),'errors':errors,'checks':checks,'erc_leaf_counts':checks_erc,'footprints':footprints,'power_budget':power,'schematic_hashes':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in HERE.glob('*.kicad_sch')},'scope':'Electrical export and footprint checks, not integrated ERC/DRC or hardware certification'}
     (HERE/'checks.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({'checks':len(checks),'passed':not errors,'errors':errors},indent=2))
     raise SystemExit(0 if not errors else 1)

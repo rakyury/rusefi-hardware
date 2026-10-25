@@ -28,7 +28,6 @@
       "C47": "C224",
       "C48": "C225",
       "C49": "C226",
-      "C50": "C227",
       "C52": "C228",
       "C53": "C229",
       "C54": "C230",
@@ -38,7 +37,6 @@
       "C58": "C234",
       "C59": "C235",
       "C60": "C236",
-      "C61": "C237",
       "C62": "C238",
       "C63": "C239",
       "C64": "C240",
@@ -61,7 +59,6 @@
       "D11": "D203",
       "D12": "D204",
       "D13": "D205",
-      "D14": "D206",
       "D15": "D207",
       "D16": "D208",
       "D17": "D209",
@@ -79,7 +76,6 @@
       "Q7": "Q207",
       "Q8": "Q208",
       "Q9": "Q209",
-      "Q10": "Q210",
       "Q11": "Q211",
       "Q12": "Q212",
       "Q16": "Q213",
@@ -91,7 +87,6 @@
       "R15": "R206",
       "R16": "R207",
       "R17": "R208",
-      "R18": "R209",
       "R19": "R210",
       "R20": "R211",
       "R21": "R212",
@@ -126,14 +121,41 @@
       "S1": "TP201",
       "S2": "TP202",
       "S3": "TP203",
-      "S4": "TP204",
       "S5": "TP205",
       "S6": "TP206",
       "U1": "U201",
       "Y2": "Y201"
     },
     "isolation_reference": "R299",
-    "source_component_count": 129
+    "source_component_count": 123,
+    "removed_source_references": [
+      "C50",
+      "C61",
+      "D14",
+      "Q10",
+      "R18",
+      "S4"
+    ],
+    "disconnected_source_pins": [
+      [
+        "U1",
+        "35"
+      ],
+      [
+        "U1",
+        "44"
+      ],
+      [
+        "U1",
+        "7"
+      ]
+    ],
+    "unused_start4": "U1 pin7 externally pulled low by 10k; firmware must leave input/disabled; pins35/44 no-connect",
+    "injector_commands": {
+      "START1": "DI1",
+      "START2": "DI2",
+      "START3": "DI3"
+    }
   },
   "B": {
     "sheet_uuid": "2aa9486d-083b-53a0-b9ea-735fb5a4b253",
@@ -164,7 +186,6 @@
       "C47": "C324",
       "C48": "C325",
       "C49": "C326",
-      "C50": "C327",
       "C52": "C328",
       "C53": "C329",
       "C54": "C330",
@@ -174,7 +195,6 @@
       "C58": "C334",
       "C59": "C335",
       "C60": "C336",
-      "C61": "C337",
       "C62": "C338",
       "C63": "C339",
       "C64": "C340",
@@ -197,7 +217,6 @@
       "D11": "D303",
       "D12": "D304",
       "D13": "D305",
-      "D14": "D306",
       "D15": "D307",
       "D16": "D308",
       "D17": "D309",
@@ -215,7 +234,6 @@
       "Q7": "Q307",
       "Q8": "Q308",
       "Q9": "Q309",
-      "Q10": "Q310",
       "Q11": "Q311",
       "Q12": "Q312",
       "Q16": "Q313",
@@ -227,7 +245,6 @@
       "R15": "R306",
       "R16": "R307",
       "R17": "R308",
-      "R18": "R309",
       "R19": "R310",
       "R20": "R311",
       "R21": "R312",
@@ -262,13 +279,40 @@
       "S1": "TP301",
       "S2": "TP302",
       "S3": "TP303",
-      "S4": "TP304",
       "S5": "TP305",
       "S6": "TP306",
       "U1": "U301",
       "Y2": "Y301"
     },
     "isolation_reference": "R399",
-    "source_component_count": 129
+    "source_component_count": 123,
+    "removed_source_references": [
+      "C50",
+      "C61",
+      "D14",
+      "Q10",
+      "R18",
+      "S4"
+    ],
+    "disconnected_source_pins": [
+      [
+        "U1",
+        "35"
+      ],
+      [
+        "U1",
+        "44"
+      ],
+      [
+        "U1",
+        "7"
+      ]
+    ],
+    "unused_start4": "U1 pin7 externally pulled low by 10k; firmware must leave input/disabled; pins35/44 no-connect",
+    "injector_commands": {
+      "START1": "DI4",
+      "START2": "DI5",
+      "START3": "DI6"
+    }
   }
 }

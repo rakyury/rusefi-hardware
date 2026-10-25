@@ -26,13 +26,17 @@ def pin_nets(tree):
 
 
 def topology_errors(tree, stage):
-    mapping = json.loads((HERE/'reference_mapping.json').read_text())[stage]['reference_map']
+    manifest = json.loads((HERE/'reference_mapping.json').read_text())[stage]
+    mapping = manifest['reference_map']
+    disconnected = {tuple(p) for p in manifest['disconnected_source_pins']}
     source = json.loads((HERE/'source_pin_nets.json').read_text())['nets']
-    actual = {name: {(r,p) for r,p in group if r in mapping.values()} for name,group in nets(tree).items()}
+    excluded = {(mapping[r],p) for r,p in disconnected}
+    actual = {name: {(r,p) for r,p in group if r in mapping.values() and (r,p) not in excluded} for name,group in nets(tree).items()}
     lookup = {p:name for name,group in actual.items() for p in group}
     errors=[]
     for name,nodes in source.items():
-        expected={(mapping[n['ref']],n['pin']) for n in nodes}
+        expected={(mapping[n['ref']],n['pin']) for n in nodes if n['ref'] in mapping and (n['ref'],n['pin']) not in disconnected}
+        if not expected: continue
         found={lookup.get(p) for p in expected}
         if len(found)!=1 or None in found:
             errors.append(('split_or_missing',name));continue
@@ -107,10 +111,10 @@ class SchematicTests(unittest.TestCase):
 
     def test_bom_and_export_are_consistent(self):
         with (HERE/'bom_reference.csv').open(newline='',encoding='utf-8') as f:rows=list(csv.DictReader(f))
-        self.assertEqual(len(rows),268)
+        self.assertEqual(len(rows),258)
         for stage in 'AB':
             tree=load(stage);actual={c.attrib['ref']:c for c in tree.findall('.//components/comp')}
-            self.assertEqual(len(actual),134)
+            self.assertEqual(len(actual),129)
             for row in rows:
                 if row['stage']!=stage:continue
                 self.assertEqual(actual[row['reference']].findtext('value'),row['value'])
@@ -129,6 +133,20 @@ class SchematicTests(unittest.TestCase):
             lookup=pin_nets(load(stage))
             self.assertEqual(lookup[('U'+str(base+1),'9')],pump)
             self.assertEqual(lookup[('U'+str(base+1),'8')],'PT'+stage+'_START5')
+
+    def test_exactly_three_physical_injector_branches_per_bank(self):
+        for stage,base,offset in [('A',200,0),('B',300,3)]:
+            lookup=pin_nets(load(stage));u='U'+str(base+1)
+            self.assertEqual(lookup[(u,'7')],'PT'+stage+'_UNUSED_START4')
+            self.assertEqual(lookup[('R'+str(base+97),'1')],lookup[(u,'7')])
+            self.assertEqual(lookup[('R'+str(base+97),'2')],'GND')
+            for pin in ('35','44'):
+                self.assertTrue(lookup[(u,pin)].startswith('unconnected-'))
+            for i in range(1,4): self.assertEqual(lookup[(u,str(i+3))],f'DI{i+offset}')
+            self.assertNotIn('PT'+stage+'_L4',lookup.values())
+            manifest=json.loads((HERE/'reference_mapping.json').read_text())[stage]
+            self.assertEqual(set(manifest['removed_source_references']),{'Q10','D14','C50','C61','R18','S4'})
+            self.assertEqual(set(manifest['reference_map']) & set(manifest['removed_source_references']),set())
 
     def test_provenance_blocks_release(self):
         report=json.loads((HERE/'provenance.json').read_text())

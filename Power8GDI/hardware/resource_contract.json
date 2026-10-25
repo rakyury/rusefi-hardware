@@ -13,7 +13,7 @@
     "debug_interface": "SWD",
     "hse_clock": "HSE_bypass_8MHz",
     "lse_clock": null,
-    "motor_pwm_timebase": "TIM3_CH1_to_CH4_shared_frequency"
+    "motor_pwm_timebase": "TIM3_CH1_CH3_shared_frequency"
   },
   "sources": {
     "DS11532": {
@@ -61,11 +61,11 @@
   "numbered_requirements": [
     {
       "prefix": "DI",
-      "count": 8
+      "count": 6
     },
     {
       "prefix": "IGN",
-      "count": 8
+      "count": 6
     },
     {
       "prefix": "HPFP",
@@ -73,7 +73,7 @@
     },
     {
       "prefix": "PI",
-      "count": 8
+      "count": 6
     },
     {
       "prefix": "VVT",
@@ -148,15 +148,8 @@
     "KNOCK_CS_N",
     "KNOCK_INT_HOLD",
     "WBO1_HEATER_PWM",
-    "WBO2_HEATER_PWM",
     "CAN2_STB",
     "LIN2_EN",
-    "MOTOR3_PWM",
-    "MOTOR3_DIR",
-    "MOTOR3_DISABLE",
-    "MOTOR4_PWM",
-    "MOTOR4_DIR",
-    "MOTOR4_DISABLE",
     "MOTOR_CS_N"
   ],
   "direct_connector_groups": [
@@ -463,14 +456,6 @@
         "port": "PF0",
         "mode": "GPIO direct to inverter/TLE9104; scheduled timing not qualified"
       },
-      "PI7": {
-        "port": "PF1",
-        "mode": "GPIO direct to inverter/TLE9104; scheduled timing not qualified"
-      },
-      "PI8": {
-        "port": "PF2",
-        "mode": "GPIO direct to inverter/TLE9104; scheduled timing not qualified"
-      },
       "VVT1": {
         "port": "PF9",
         "mode": "GPIO direct to inverter/TLE9104; scheduled timing not qualified"
@@ -669,36 +654,6 @@
         "mode": "GPIO",
         "note": "Direction GPIO moved offPC7 to reserve TIM3_CH2"
       },
-      "MOTOR3_PWM": {
-        "port": "PC7",
-        "mode": "TIM3_CH2",
-        "note": "DS11532 Table11 p78/AF2; same PWM frequency as other motor bridges"
-      },
-      "MOTOR3_DIR": {
-        "port": "PI3",
-        "mode": "GPIO",
-        "note": "Reserve motor direction; default low"
-      },
-      "MOTOR3_DISABLE": {
-        "port": "PI10",
-        "mode": "GPIO",
-        "note": "Reserve motor disable; external default high"
-      },
-      "MOTOR4_PWM": {
-        "port": "PC9",
-        "mode": "TIM3_CH4",
-        "note": "DS11532 Table11 p78/AF2; same PWM frequency as other motor bridges"
-      },
-      "MOTOR4_DIR": {
-        "port": "PI4",
-        "mode": "GPIO",
-        "note": "Reserve motor direction; default low"
-      },
-      "MOTOR4_DISABLE": {
-        "port": "PI11",
-        "mode": "GPIO",
-        "note": "Reserve motor disable; external default high"
-      },
       "MOTOR_CS_N": {
         "port": "PB4",
         "mode": "GPIO",
@@ -706,11 +661,6 @@
       },
       "WBO1_HEATER_PWM": {
         "port": "PA10",
-        "mode": "GPIO",
-        "note": "Main-MCU heater permission, default low; local F042 supplies actual PWM"
-      },
-      "WBO2_HEATER_PWM": {
-        "port": "PB2",
         "mode": "GPIO",
         "note": "Main-MCU heater permission, default low; local F042 supplies actual PWM"
       }

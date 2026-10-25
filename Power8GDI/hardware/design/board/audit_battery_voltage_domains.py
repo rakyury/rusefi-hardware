@@ -28,7 +28,7 @@ def discover(netlist):
     reasons=defaultdict(set);gate_seeds=set()
     for refs,value,pins in [
       (('U5001','U5051','U6200','U6250'),'LM74800QDRRRQ1',LM_PINS),
-      (('U6000','U6050','U6100','U6150'),'TLE9201SG',BRIDGE_PINS),
+      (('U6000','U6050'),'TLE9201SG',BRIDGE_PINS),
     ]:
         for ref in refs:
             if parts.get(ref)!=value:raise ValueError(f'{ref}: device changed; voltage-domain review required')

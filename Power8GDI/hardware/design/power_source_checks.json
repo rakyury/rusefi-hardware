@@ -1,0 +1,192 @@
+{
+  "status": "PASS_DOCUMENTED_SOURCE_PATHS",
+  "source_sha256": "fcd49be128a233d138ffe949dd3d85216f9c81f62d1246e440ed6321cc35eb07",
+  "assertions": [
+    {
+      "net": "GND",
+      "reason": "External battery return at harness; not a self-powered synthetic rail",
+      "required_physical_connections": {
+        "J602.34": "GND"
+      }
+    },
+    {
+      "net": "+5V_CORE",
+      "reason": "LM76003 SW output through L5200",
+      "required_physical_connections": {
+        "U5200.1": "LP5_SW",
+        "L5200.1": "LP5_SW",
+        "L5200.2": "+5V_CORE"
+      }
+    },
+    {
+      "net": "+3V3",
+      "reason": "TPS62130A SW output through L5300",
+      "required_physical_connections": {
+        "U5300.1": "LP33_SW",
+        "L5300.1": "LP33_SW",
+        "L5300.2": "+3V3"
+      }
+    },
+    {
+      "net": "+3V3_A",
+      "reason": "Main 3V3 through fitted R101 filter feed",
+      "required_physical_connections": {
+        "R101.1": "+3V3",
+        "R101.2": "+3V3_A"
+      }
+    },
+    {
+      "net": "VBAT_LOGIC_PROTECTED",
+      "reason": "Main externally fused input through series diode D5200",
+      "required_physical_connections": {
+        "J602.33": "VBAT_MAIN_FUSED",
+        "D5200.3": "VBAT_MAIN_FUSED",
+        "D5200.2": "VBAT_LOGIC_PROTECTED"
+      }
+    },
+    {
+      "net": "LIN1_VSUP",
+      "reason": "Protected battery through fitted 0R R111",
+      "required_physical_connections": {
+        "R111.1": "VBAT_LOGIC_PROTECTED",
+        "R111.2": "LIN1_VSUP"
+      }
+    },
+    {
+      "net": "LIN2_VSUP",
+      "reason": "Protected battery through fitted 0R R1506",
+      "required_physical_connections": {
+        "R1506.1": "VBAT_LOGIC_PROTECTED",
+        "R1506.2": "LIN2_VSUP"
+      }
+    },
+    {
+      "net": "SENSOR_A_IN",
+      "reason": "Protected battery through D1530, anode2 to cathode1",
+      "required_physical_connections": {
+        "D1530.2": "VBAT_LOGIC_PROTECTED",
+        "D1530.1": "SENSOR_A_IN"
+      }
+    },
+    {
+      "net": "SENSOR_B_IN",
+      "reason": "Protected battery through D1531, anode2 to cathode1",
+      "required_physical_connections": {
+        "D1531.2": "VBAT_LOGIC_PROTECTED",
+        "D1531.1": "SENSOR_B_IN"
+      }
+    },
+    {
+      "net": "GDI_A_MID",
+      "reason": "Protected-input MOSFET midpoint; gate/state/thermal qualification is separate",
+      "required_physical_connections": {
+        "J601.21": "VBAT_GDI_A_FUSED",
+        "Q5001.3": "VBAT_GDI_A_FUSED",
+        "Q5001.2": "GDI_A_MID"
+      }
+    },
+    {
+      "net": "VBAT_GDI_A",
+      "reason": "Protected bank output through second MOSFET",
+      "required_physical_connections": {
+        "Q5002.2": "GDI_A_MID",
+        "Q5002.3": "VBAT_GDI_A"
+      }
+    },
+    {
+      "net": "PTA_VBOOST",
+      "reason": "Reference PT-controlled boost converter, rectifier cathode D12.2; not a guaranteed voltage",
+      "required_physical_connections": {
+        "L201.1": "VBAT_GDI_A",
+        "L201.2": "PTA_+Batt_filtered",
+        "L202.1": "PTA_+Batt_filtered",
+        "L202.2": "PTA_Vdrive_coil",
+        "D212.1": "PTA_Vdrive_coil",
+        "D212.2": "PTA_VBOOST"
+      }
+    },
+    {
+      "net": "PTA_VCCIO",
+      "reason": "Main3V3 through fitted source sense resistor, power pads1/4",
+      "required_physical_connections": {
+        "R221.1": "+3V3",
+        "R221.4": "PTA_VCCIO",
+        "U201.17": "PTA_VCCIO"
+      }
+    },
+    {
+      "net": "GDI_B_MID",
+      "reason": "Protected-input MOSFET midpoint; gate/state/thermal qualification is separate",
+      "required_physical_connections": {
+        "J601.23": "VBAT_GDI_B_FUSED",
+        "Q5051.3": "VBAT_GDI_B_FUSED",
+        "Q5051.2": "GDI_B_MID"
+      }
+    },
+    {
+      "net": "VBAT_GDI_B",
+      "reason": "Protected bank output through second MOSFET",
+      "required_physical_connections": {
+        "Q5052.2": "GDI_B_MID",
+        "Q5052.3": "VBAT_GDI_B"
+      }
+    },
+    {
+      "net": "PTB_VBOOST",
+      "reason": "Reference PT-controlled boost converter, rectifier cathode D12.2; not a guaranteed voltage",
+      "required_physical_connections": {
+        "L301.1": "VBAT_GDI_B",
+        "L301.2": "PTB_+Batt_filtered",
+        "L302.1": "PTB_+Batt_filtered",
+        "L302.2": "PTB_Vdrive_coil",
+        "D312.1": "PTB_Vdrive_coil",
+        "D312.2": "PTB_VBOOST"
+      }
+    },
+    {
+      "net": "PTB_VCCIO",
+      "reason": "Main3V3 through fitted source sense resistor, power pads1/4",
+      "required_physical_connections": {
+        "R321.1": "+3V3",
+        "R321.4": "PTB_VCCIO",
+        "U301.17": "PTB_VCCIO"
+      }
+    },
+    {
+      "net": "MOTOR13_MID",
+      "reason": "Motor protected-input MOSFET midpoint; dependent on enable",
+      "required_physical_connections": {
+        "J601.33": "VBAT_DBW_FUSED",
+        "Q6200.3": "VBAT_DBW_FUSED",
+        "Q6200.2": "MOTOR13_MID"
+      }
+    },
+    {
+      "net": "MOTOR13_VS",
+      "reason": "Motor protected output through second MOSFET; dependent on enable",
+      "required_physical_connections": {
+        "Q6201.2": "MOTOR13_MID",
+        "Q6201.3": "MOTOR13_VS"
+      }
+    },
+    {
+      "net": "MOTOR24_MID",
+      "reason": "Motor protected-input MOSFET midpoint; dependent on enable",
+      "required_physical_connections": {
+        "J601.34": "VBAT_EWG_FUSED",
+        "Q6250.3": "VBAT_EWG_FUSED",
+        "Q6250.2": "MOTOR24_MID"
+      }
+    },
+    {
+      "net": "MOTOR24_VS",
+      "reason": "Motor protected output through second MOSFET; dependent on enable",
+      "required_physical_connections": {
+        "Q6251.2": "MOTOR24_MID",
+        "Q6251.3": "MOTOR24_VS"
+      }
+    }
+  ],
+  "errors": [],
+  "qualification": "ERC semantics only; no power/thermal/startup guarantee"
+}

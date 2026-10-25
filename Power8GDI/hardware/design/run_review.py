@@ -52,14 +52,13 @@ def main():
         # runs in order and fails immediately with its original command/output.
         batch="import json,subprocess,sys\nfor cmd in json.loads(sys.argv[1]):\n print(json.dumps(cmd),flush=True)\n subprocess.run(cmd,check=True)\n"
         cad('python3','-c',batch,json.dumps(exports),label=f'Export {len(exports)} schematic netlists')
-        doc=ET.parse(HERE/'core.net')
-        with (HERE/'integrated_bom.csv').open('w',newline='',encoding='utf-8') as f:
-            w=csv.writer(f);w.writerow(['Reference','Value','Footprint','DNP','Sheet'])
-            for c in doc.findall('components/comp'):
-                w.writerow([c.get('ref'),c.findtext('value'),c.findtext('footprint'),any(p.get('name')=='dnp' for p in c.findall('property')),c.find('sheetpath').get('names')])
+        from export_integrated_bom import export as export_bom
+        summary['bom']=export_bom()
         summary['erc_native_exit']=cad('kicad-cli','sch','erc','--format','json','--exit-code-violations','-o',BASE+'core_erc.json',BASE+'Power8GDI_Core.kicad_sch',allowed=(0,5))
         host(BASE+'verify_core.py','--erc',BASE+'core_erc.json','--output',BASE+'core_checks.json')
         host(BASE+'verify_integration.py')
+        host(BASE+'check_sport_profile.py')
+        host(BASE+'power_sources.py')
         host('-m','unittest','discover','-s',BASE+'core_tests','-v')
         cad('python3','-m','unittest','discover','-s',BASE+'board/tests','-v')
         for script in ['outputs/check_outputs.py','interfaces/check_interfaces.py','interfaces_aux/test_aux.py','safety/test_safety.py','gdi/test_schematic.py']:
@@ -92,11 +91,7 @@ def main():
         cad('kicad-cli','sch','export','pdf','-o',BASE+'core_preview.pdf',BASE+'Power8GDI_Core.kicad_sch')
         for label,layers in [('front','F.Cu,F.SilkS,Edge.Cuts'),('back','B.Cu,B.SilkS,Edge.Cuts')]:
             cad('kicad-cli','pcb','export','svg','--layers',layers,'--mode-single','--page-size-mode','2','--exclude-drawing-sheet','-o',BASE+'board/review/'+label+'.svg',board)
-        doc=ET.parse(HERE/'core.net')
-        with (HERE/'integrated_bom.csv').open('w',newline='',encoding='utf-8') as f:
-            w=csv.writer(f);w.writerow(['Reference','Value','Footprint','DNP','Sheet'])
-            for c in doc.findall('components/comp'):
-                w.writerow([c.get('ref'),c.findtext('value'),c.findtext('footprint'),any(p.get('name')=='dnp' for p in c.findall('property')),c.find('sheetpath').get('names')])
+        summary['bom']=export_bom()
         erc=json.loads((HERE/'core_erc.json').read_text());summary['erc_counts']=dict(Counter(v['type'] for s in erc['sheets'] for v in s['violations']))
         coverage=json.loads((out/'net_coverage.json').read_text())
         summary['drc_counts']=coverage['violations']

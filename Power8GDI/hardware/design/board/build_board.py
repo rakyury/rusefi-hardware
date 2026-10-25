@@ -50,6 +50,7 @@ def connector_contract(pinout, output):
     if len(rows)!=136 or len({(r['connector'],r['position']) for r in rows})!=136:
         raise ValueError('Connector pinout must contain exactly4x34 unique positions')
     for row in rows:
+        if row['net'].startswith('UNUSED_'): continue
         name=aliases.get(row['net'],'HARNESS_'+row['net'])
         nets.setdefault(name,[]).append((f'J60{"ABCD".index(row["connector"])+1}',row['position']))
     outnets=ET.SubElement(root,'nets')
@@ -185,7 +186,7 @@ def project_file(path,netlist=None,board=None):
     supplies=['VBAT_MAIN_FUSED','VBAT_LOGIC_PROTECTED','VBAT_GDI_A','VBAT_GDI_B','VBAT_DBW_FUSED','VBAT_EWG_FUSED']+sorted(voltage_domains.battery_alias_nets())
     rules_text=['(version 1)']
     for label,names,clearance in [('Power clearance',supplies,.3),('GDI high voltage clearance',high,.6),
-        ('Ignition preliminary isolation target - qualification pending',[f'HARNESS_IGN{i}' for i in range(1,9)],2.5)]:
+        ('Ignition preliminary isolation target - qualification pending',[f'HARNESS_IGN{i}' for i in range(1,7)],2.5)]:
         condition=' || '.join("A.NetName == '"+name+"'" for name in names)
         rules_text.append(f'(rule "{label}" (condition "{condition}") (constraint clearance (min {clearance}mm)))')
     if board is not None:
@@ -410,7 +411,7 @@ def build(args):
     local_copper_ids={t.m_Uuid.AsString() for t in board.GetTracks()}-donor_copper_ids
     add_plane(board,nets)
     title=board.GetTitleBlock();title.SetTitle('Power8GDI routed subdomains / INCOMPLETE ENGINEERING REVIEW');title.SetRevision('A engineering candidate')
-    label=p.PCB_TEXT(board);label.SetText('Power8GDI RevA - INCOMPLETE / DO NOT FABRICATE');label.SetPosition(vec(70,92));label.SetTextSize(vec(1.3,1.3));label.SetLayer(p.F_SilkS);board.Add(label)
+    label=p.PCB_TEXT(board);label.SetText('Power6GDI RevA - INCOMPLETE / DO NOT FABRICATE');label.SetPosition(vec(70,92));label.SetTextSize(vec(1.3,1.3));label.SetLayer(p.F_SilkS);board.Add(label)
     # Assign every source component and audit all pads before saving anything.
     actual=defaultdict(list)
     for fp in board.GetFootprints():

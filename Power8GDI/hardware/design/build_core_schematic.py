@@ -135,11 +135,14 @@ def generate():
     comm.component(r,"R112","1k 1% 0.5W",390,220,{"1":"LIN1_COMMANDER_DIODE","2":"LIN1_BUS"},footprint="Resistor_SMD:R_1206_3216Metric",note="16V dominant bound0.256W; pulse/voltage derating must be checked")
     comm.text("LIN1 commander assembly: MCU PH3 pad44 enables high; default sleep.\nOne commander per bus. Responder assembly omits BOTH D102/R112.\nVSUP4..36V operating,45V absolute. SMBJ24CA clamp38.9V is below absolute\nlimit, not proof of operation during transients or pulse qualification.",300,270)
 
-    root.text("Power8GDI electrical candidate / NOT RELEASED\nConnected hierarchy: MCU, input supply, two GDI stages, safety, motor candidates, sensor frontends and harness.\nOutstanding channels and load qualification are tracked in INTEGRATION_2026_10_21_ELECTRICAL.md.",25.4,20)
+    root.text("Power6GDI electrical candidate / NOT RELEASED\nConnected hierarchy: MCU, input supply, two GDI stages, safety, motor candidates, sensor frontends and harness.\nOutstanding channels and load qualification are tracked in INTEGRATION_2026_10_21_ELECTRICAL.md.",25.4,20)
     io_sheets=make_io(syms,ROOT_ID)
     output_sheets=make_outputs(syms,ROOT_ID)
     sheets.extend(io_sheets+output_sheets)
-    leaves=[mcu,comm]+ignition_sheets+io_sheets+output_sheets
+    from power_sources import make_sheet
+    power_sources=make_sheet(ROOT_ID)
+    sheets.append(power_sources)
+    leaves=[mcu,comm]+ignition_sheets+io_sheets+output_sheets+[power_sources]
     external=[]
     for name,title,instance in [
         ("gdi/stage_a","GDI bank A reference candidate","a05bbd47-81aa-5269-b9b3-0a4b9afd615c"),
@@ -172,7 +175,7 @@ def generate():
     for i,leaf in enumerate(leaves):
         title_size=min(3.81,148/max(1,len(leaf.title)))
         root.add_child(leaf,40+190*(i%6),65+75*(i//6),width=155,height=55,ports=ports.get(leaf.name,[]),title_size=title_size,file_size=2.54)
-    root.text("Each sheet uses explicit global net names. HARNESS names remain separate from MCU logic.\nNo ERC exclusions or power flags conceal missing supplies. DNP assembly flags must be preserved.\nGDI enable, injector/pump models, missing domains and full routing remain release blockers.",25.4,745)
+    root.text("Each sheet uses explicit global net names. HARNESS names remain separate from MCU logic.\nNo ERC exclusions. Power flags have explicit independently checked source paths. DNP assembly flags must be preserved.\nGDI enable, injector/pump models, missing domains and full routing remain release blockers.",25.4,745)
     for sheet in sheets: sheet.write(HERE)
     all_symbols={n:s for sheet in sheets for n,s in sheet.symbols.items()}
     for library in ["interfaces/interfaces.kicad_sym"]:

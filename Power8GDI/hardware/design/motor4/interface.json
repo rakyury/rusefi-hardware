@@ -17,18 +17,6 @@
       "components": 16
     },
     {
-      "name": "motor4/motor3",
-      "uuid": "720e095c-0cf2-58d0-8963-25fc089db708",
-      "sheet_id": "a1d874ec-6625-54ba-9750-9693738ed94b",
-      "components": 16
-    },
-    {
-      "name": "motor4/motor4",
-      "uuid": "f191355a-cfaf-5a82-a6b4-3dc2bf9b5ce5",
-      "sheet_id": "fea959af-0a72-5725-83c1-637b9f1048bb",
-      "components": 16
-    },
-    {
       "name": "motor4/spi",
       "uuid": "73a8af16-0669-5b86-9557-39b951c36023",
       "sheet_id": "653a7828-1657-5b98-8bae-fc4d9e0f409d",
@@ -47,7 +35,7 @@
       "components": 17
     }
   ],
-  "parts": 106,
+  "parts": 74,
   "channels": [
     {
       "name": "DBW",
@@ -72,30 +60,6 @@
         "EWG_MOTOR_A",
         "EWG_MOTOR_B"
       ]
-    },
-    {
-      "name": "MOTOR3",
-      "ref": "U6100",
-      "protected_feed": "MOTOR13_VS",
-      "pwm": "PC7",
-      "dir": "PI3",
-      "disable": "PI10",
-      "output_nets": [
-        "MOTOR3_MOTOR_A",
-        "MOTOR3_MOTOR_B"
-      ]
-    },
-    {
-      "name": "MOTOR4",
-      "ref": "U6150",
-      "protected_feed": "MOTOR24_VS",
-      "pwm": "PC9",
-      "dir": "PI4",
-      "disable": "PI11",
-      "output_nets": [
-        "MOTOR4_MOTOR_A",
-        "MOTOR4_MOTOR_B"
-      ]
     }
   ],
   "feed_input_nets": [
@@ -113,22 +77,18 @@
     "GDI_SPI2_MISO"
   ],
   "pwm_frequency_max_hz": 20000,
-  "pwm_timer": "TIM3 shared allfour",
+  "pwm_timer": "TIM3 shared DBW/EWG",
   "spi": {
     "cs": "PB4",
     "mode": 1,
     "max_initial_hz": 1000000,
-    "frame_bits": 32,
+    "frame_bits": 16,
     "minimum_cs_high_us": 2,
     "physical_order": [
       "DBW",
-      "EWG",
-      "MOTOR3",
-      "MOTOR4"
+      "EWG"
     ],
     "wire_byte_order": [
-      "MOTOR4",
-      "MOTOR3",
       "EWG",
       "DBW"
     ],
@@ -143,8 +103,8 @@
   },
   "continuous_current_A_design_target_only": {
     "each_channel": 2,
-    "each_feed_sum": 4,
-    "all_channels_sum": 8
+    "each_feed_sum": 2,
+    "all_channels_sum": 4
   },
   "remove_old_sheets": [
     "motor/dbw_driver",

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 import json
+import re
 import sys
 from pathlib import Path
 import xml.etree.ElementTree as ET
@@ -57,7 +58,7 @@ def verify(xml_path, manifest_path=HERE/"core_manifest.json", erc_path=None):
         if not endpoints.get(("U101",str(pad)),"").startswith("unconnected-"):
             errors.append("Reserved oscillator pad unexpectedly connected: "+str(pad))
     if len({pin for ref,pin in endpoints if ref=="U101"})!=176: errors.append("Not all 176 MCU pads exported")
-    for i in range(1,9):
+    for i in range(1,7):
         ref="Q"+str(5420+(i-1)*20)
         if endpoints.get((ref,"2"))!=f"HARNESS_IGN{i}": errors.append("Ignition collector boundary "+str(i))
         if endpoints.get((ref,"1"))!=f"IGN{i}_GATE": errors.append("Ignition gate bypass "+str(i))
@@ -77,13 +78,26 @@ def verify(xml_path, manifest_path=HERE/"core_manifest.json", erc_path=None):
         # Open supply semantics and unused boundaries remain visible release
         # gates. Library mismatches and electrical conflicts are regressions,
         # not something a successful XML export can excuse.
-        unexpected=set(counts)-{'power_pin_not_driven','global_label_dangling'}
+        unexpected=set(counts)-{'global_label_dangling'}
         if unexpected:errors.append('Unexpected integrated ERC findings: '+', '.join(sorted(unexpected)))
+        allowed={f'PT{bank}_{name}' for bank in 'AB' for name in ['IRQ','OA_1','OA_2','FLAG_1','FLAG_2','DBG']}
+        reviews=[]
+        for sheet in erc['sheets']:
+            for finding in sheet['violations']:
+                names=[name for item in finding.get('items',[]) for name in re.findall(r"Global Label '([^']+)'",item.get('description',''))]
+                if finding['type']=='global_label_dangling' and (len(names)!=1 or names[0] not in allowed):
+                    errors.append('Unreviewed dangling global label: '+str(names))
+                for name in names:
+                    reviews.append({'net':name,'physical_endpoints':[f'{r}.{p}' for r,p in sorted(net_nodes.get(name,set()))],
+                        'reason':'Retained source PT diagnostic/optional output has no consumer in six-cylinder target; not a supply or injector command',
+                        'severity':finding['severity'],'excluded':False})
+        (HERE/'erc_review.json').write_text(json.dumps({'errors':[e for e in errors if 'ERC' in e or 'dangling' in e],
+            'warnings':reviews,'suppression_added':False},indent=2)+'\n')
     return {"schema_version":1,"structural_status":"FAIL" if errors else "PASS",
             "release_status":"BLOCKED","core_components":len(manifest["parts"]),
             "integrated_components":len(components),"checked_mcu_pads":176,
             "errors":errors,"erc_counts":dict(counts),
-            "blockers":["ERC findings remain; power-source semantics and functional boundaries need review",
+            "blockers":["Documented unused PT diagnostics remain as native warnings; no ERC exclusions",
                         "MCU GPIO AF/DMA/timing and added PH2/PH3 firmware are not qualified",
                         "3V3/5V allocated budgets pass; capacitor derating, hot regulator thermal and transient energy remain unqualified",
                         "Independent actuator inhibit and actual coil/injector/pump models unresolved",

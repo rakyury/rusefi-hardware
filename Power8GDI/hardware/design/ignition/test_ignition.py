@@ -66,14 +66,14 @@ class IgnitionTest(unittest.TestCase):
             self.assertFalse(IdealChannel().step(0,True,**kwargs))
 
     def test_bank_fault_is_physical_wired_bus_and_enable_path(self):
-        for i in range(8):
+        for i in range(6):
             n=5420+i*20
             self.assertEqual(self.parts[f"U{n+2}"]["pins"]["5"],"IGN_OC_OK")
             self.assertEqual(self.parts[f"U{n+2}"]["pins"]["6"],"+3V3")
             self.assertEqual(self.parts[f"U{n+1}"]["pins"]["6"],"IGN_SAFE_EN")
         self.assertEqual(self.parts["U5400"]["pins"]["2"],"IGN_OC_OK")
         self.assertEqual(self.parts["U5401"]["pins"]["3"],"IGN_OC_OK_CLEAN")
-        for ref in ("U5402","U5403","U5404","U5405"):
+        for ref in ("U5402","U5403","U5404"):
             self.assertEqual(self.parts[ref]["pins"]["1"],"IGN_SAFE_EN")
             self.assertEqual(self.parts[ref]["pins"]["8"],"IGN_SAFE_EN")
 
@@ -86,7 +86,7 @@ class IgnitionTest(unittest.TestCase):
         values=[p["value"] for s in other for p in s.parts]
         self.assertNotIn("STGB18N40LZT4",values)
         self.assertNotIn("INA300AQDGSRQ1",values)
-        for ch in range(1,9):
+        for ch in range(1,7):
             connected=[p for p in self.parts.values() if f"HARNESS_IGN{ch}" in p["pins"].values()]
             self.assertEqual(len(connected),1)
             self.assertTrue(connected[0]["ref"].startswith("Q"))

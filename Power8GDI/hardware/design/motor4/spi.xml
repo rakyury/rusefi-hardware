@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/src/Power8GDI/hardware/design/motor4/spi.kicad_sch</source>
-    <date>2026-10-23T18:13:29+0000</date>
+    <date>2026-10-25T20:56:48+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -209,26 +209,26 @@
       <node ref="R6194" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U6190" pin="5" pinfunction="VCC" pintype="power_in"/>
     </net>
-    <net code="2" name="GDI_SPI2_MISO" class="Default">
+    <net code="2" name="EWG_SPI_SO" class="Default">
+      <node ref="R6195" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U6190" pin="2" pinfunction="A" pintype="input"/>
+    </net>
+    <net code="3" name="GDI_SPI2_MISO" class="Default">
       <node ref="R6192" pin="2" pinfunction="2" pintype="passive"/>
     </net>
-    <net code="3" name="GDI_SPI2_MOSI" class="Default">
+    <net code="4" name="GDI_SPI2_MOSI" class="Default">
       <node ref="R6190" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="4" name="GDI_SPI2_SCK" class="Default">
+    <net code="5" name="GDI_SPI2_SCK" class="Default">
       <node ref="R6191" pin="1" pinfunction="1" pintype="passive"/>
     </net>
-    <net code="5" name="GND" class="Default">
+    <net code="6" name="GND" class="Default">
       <node ref="C6190" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="R6195" pin="2" pinfunction="2" pintype="passive"/>
       <node ref="U6190" pin="3" pinfunction="GND" pintype="power_in"/>
     </net>
-    <net code="6" name="HW_ACTUATOR_ENABLE_N" class="Default">
+    <net code="7" name="HW_ACTUATOR_ENABLE_N" class="Default">
       <node ref="R6194" pin="1" pinfunction="1" pintype="passive"/>
-    </net>
-    <net code="7" name="MOTOR4_SPI_SO" class="Default">
-      <node ref="R6195" pin="1" pinfunction="1" pintype="passive"/>
-      <node ref="U6190" pin="2" pinfunction="A" pintype="input"/>
     </net>
     <net code="8" name="MOTOR_CS_N" class="Default">
       <node ref="R6193" pin="1" pinfunction="1" pintype="passive"/>

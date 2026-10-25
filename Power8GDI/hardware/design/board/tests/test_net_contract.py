@@ -39,8 +39,8 @@ class NetContractTests(unittest.TestCase):
         for n in range(1,9):self.assertNotEqual(aliases.get(f'IGN{n}'),f'IGN{n}')
         self.assertEqual(aliases['PGND_MAIN_4'],'GND')
         # GDI harness contacts now connect to physical power outputs, never START GPIO.
-        for bank,first in [('A',1),('B',5)]:
-            for channel in range(4):
+        for bank,first in [('A',1),('B',4)]:
+            for channel in range(3):
                 self.assertEqual(aliases[f'DI{first+channel}_HIGH'],f'PT{bank}_H{1 if channel<2 else 3}')
                 self.assertEqual(aliases[f'DI{first+channel}_LOW'],f'PT{bank}_L{channel+1}')
         self.assertEqual(aliases['VBAT_MAIN_2'],'VBAT_DBW_FUSED')

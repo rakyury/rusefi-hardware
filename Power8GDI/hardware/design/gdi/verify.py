@@ -37,8 +37,10 @@ def main():
         base='/repo/Power8GDI/hardware/design/gdi/'
         cli('sch','export','netlist','--format','kicadxml','-o',base+'work/reference.xml','/repo/GDI-4ch/GDI-4ch.kicad_sch')
         source=ET.parse(work/'reference.xml')
-        expected=json.loads((HERE/'source_pin_nets.json').read_text())['nets']
+        original=json.loads((HERE/'source_pin_nets.json').read_text())['nets']
         selected=mapping['A']['reference_map']
+        expected={name:[p for p in nodes if p['ref'] in selected] for name,nodes in original.items()}
+        expected={name:nodes for name,nodes in expected.items() if nodes}
         fresh={n.attrib['name']:sorted([dict(p.attrib) for p in n.findall('node') if p.attrib['ref'] in selected],key=lambda p:(p['ref'],p['pin'])) for n in source.findall('.//nets/net')}
         fresh={n:p for n,p in fresh.items() if p}
         if fresh!=expected:raise SystemExit('Fresh source XML differs from reviewed source_pin_nets.json')
@@ -59,8 +61,10 @@ def main():
         for stage in 'AB':
             lookup=pin_nets(ET.parse(HERE/('stage_'+stage.lower()+'.xml')))
             refmap=mapping[stage]['reference_map'];netmap={}
+            disconnected={tuple(p) for p in mapping[stage]['disconnected_source_pins']}
             for name,nodes in fresh.items():
-                values={lookup[(refmap[n['ref']],n['pin'])] for n in nodes}
+                values={lookup[(refmap[n['ref']],n['pin'])] for n in nodes if (n['ref'],n['pin']) not in disconnected}
+                if not values:continue
                 if len(values)!=1:raise SystemExit('Source net split during extraction')
                 netmap[name]=next(iter(values))
             handoff['stages'][stage]={'reference_map':refmap,'net_map':netmap}

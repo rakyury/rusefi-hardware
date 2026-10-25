@@ -1,4 +1,4 @@
-"""Conservative MCU signal budget audit for Power8GDI Rev A.
+"""Conservative MCU signal budget audit for Power6GDI Rev A.
 
 Checks *logical* signal ownership and provisional pin-name collisions.
 Does NOT replace STM32CubeMX AF/ADC/DMA allocation or KiCad ERC/DRC.
@@ -19,10 +19,10 @@ RESOURCE = HERE / "mcu_gpio_draft.csv"
 # Internal logical signals on the MCU side; some outputs MAY eventually be
 # implemented via a suitable external driver instead of one MCU pin per channel.
 REQUIRED = {
-    "Timed GDI commands": [*(f"DI{i}" for i in range(1, 9)),
+    "Timed GDI commands": [*(f"DI{i}" for i in range(1, 7)),
                             *(f"HPFP{i}" for i in range(1, 3))],
-    "Ignition & optional PI": [*(f"IGN{i}" for i in range(1, 9)),
-                               *(f"PI{i}" for i in range(1, 9))],
+    "Ignition & optional PI": [*(f"IGN{i}" for i in range(1, 7)),
+                               *(f"PI{i}" for i in range(1, 7))],
     "PT2001 controls": [f"PT{chip}_{mode}" for chip in "AB"
                          for mode in ("CS", "RESET", "DRVEN", "FLAG")],
     "Motor bridges": [f"{act}_{cmd}" for act in ("DBW", "EWG")
@@ -90,10 +90,10 @@ def audit(rows: list[dict[str, str]]) -> dict:
         "known_hardware_conflicts": [
             "STM32 PC6 TIM3_CH1 and PC8 TIM3_CH3 share timer frequency",
             "PA15 provisional PTB_CS overlaps Hellen H_SPI3_CS/CAN termination pattern",
-            "DI6/DI7/DI8 reuse Power4GDI LS6 HPFP / LS7 DRVEN / LS8 RESET",
+            "DI5/DI6 reuse Power4GDI LS6 HPFP / LS7 DRVEN; new PT controls are separate",
             "Knock1/2 use TPIC8101 multiplexed SPI; timing and DSP configuration unqualified",
-            "24 LS outputs require high-current/timing/PWM-specific hardware; TLE9104 count alone insufficient",
-            "WBO1/2 6-pin connectors are not analog sensors: require qualified wideband analog front-end",
+            "22 LS outputs require high-current/timing/PWM-specific hardware; TLE9104 count alone insufficient",
+            "WBO1 6-pin connector are not analog sensors: require qualified wideband analog front-end",
         ],
     }
 
@@ -101,11 +101,13 @@ def audit(rows: list[dict[str, str]]) -> dict:
 def validate_connector_groups() -> None:
     with PINOUT.open(newline="", encoding="utf-8") as stream:
         nets = {row["net"] for row in csv.DictReader(stream)}
-    for i in range(1, 9):
-        for signal in (f"DI{i}_HIGH", f"DI{i}_LOW", f"PI{i}", f"IGN{i}", f"AUX_PWM{i}"):
+    for i in range(1, 7):
+        for signal in (f"DI{i}_HIGH", f"DI{i}_LOW", f"PI{i}", f"IGN{i}"):
             if signal not in nets:
                 raise ResourceConflict(f"Missing connector signal {signal}")
-    for x in ("WBO1_CONTACT1", "WBO2_CONTACT1", "HPFP1_HIGH", "HPFP2_HIGH",
+    for i in range(1,9):
+        if f"AUX_PWM{i}" not in nets: raise ResourceConflict(f"Missing AUX_PWM{i}")
+    for x in ("WBO1_CONTACT1", "HPFP1_HIGH", "HPFP2_HIGH",
               "SENT1", "SENT4", "LIN1_BUS", "LIN2_BUS"):
         if x not in nets:
             raise ResourceConflict(f"Missing connector signal {x}")

@@ -172,5 +172,5 @@
 (global_label "GND" (shape bidirectional) (at 497.84 92.71 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "c2f9c075-69b9-5f1f-a265-b3791457f93f"))
 (text "Place VS bypass and TVS close to pins4/6; EP13 solid GND with thermal vias. Power returns avoid sensor ground necks." (at 20 355 0) (effects (font (size 1.27 1.27)) (justify left top)) (uuid "098fec42-5a18-55b6-8fec-6b8ee662a6df"))
 (text "Current chopping6..10A is NOT a precise operating current limit; no current ADC. Stall timeout and position plausibility required." (at 20 364 0) (effects (font (size 1.27 1.27)) (justify left top)) (uuid "c84d82a8-7ecd-5b14-ad66-7cea8b61b91b"))
-(text "All four PWM pins share TIM3 frequency. Use <=20kHz; begin bench bring-up at2kHz and validate final switching/EMI losses." (at 20 373 0) (effects (font (size 1.27 1.27)) (justify left top)) (uuid "8f99b352-80e9-58d5-bf5a-a489f59846a9"))
+(text "Both PWM pins share TIM3 frequency. Use <=20kHz; begin bench bring-up at2kHz and validate final switching/EMI losses." (at 20 373 0) (effects (font (size 1.27 1.27)) (justify left top)) (uuid "29f848d9-d528-557a-9f6d-30e06af4c8b9"))
 (sheet_instances (path "/" (page "1"))))

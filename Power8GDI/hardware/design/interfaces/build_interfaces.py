@@ -195,7 +195,7 @@ def generate():
             r(s,1602+3*i,"10k DNP",475,y,"+5V_CORE","HARNESS_"+name,dnp=True,note="Optional open-drain sensor pullup; fit only after sensor/wiring review")
         s.component(syms["SN74LVC14A_Q1"],f"U{1600+group}","SN74LVC14AQPWRQ1",90,95,nets,note="2..3.6V supply,5.5V tolerant inputs, all channels INVERT. Unused inputsGND and outputsNC")
         c(s,1610+group,"100n 16V X7R",90,160,"+3V3")
-        s.text("HALL1..4 and FLEX_FREQ use EXTI14/15/0/7/8. Former DIN5..8 connector sites now serve MOTOR3/4.\nInput low/high thresholds, cable faults, power-off rail injection and flex frequency timing are not qualified.\nEvery active channel inverts. Optional open-drain pullups remain DNP until actual sensor models are known.",25.4,370)
+        s.text("HALL1..4 and FLEX_FREQ use EXTI14/15/0/7/8. Former DIN5..8 connector sites are NC in the six-cylinder target.\nInput low/high thresholds, cable faults, power-off rail injection and flex frequency timing are not qualified.\nEvery active channel inverts. Optional open-drain pullups remain DNP until actual sensor models are known.",25.4,370)
 
     all_symbols={}
     for s in sheets:

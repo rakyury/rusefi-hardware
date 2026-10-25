@@ -55,7 +55,7 @@ def verify(path):
         expect('U101',route['package_pad'],route['function'])
     # Independent physical fault path and UCC27524A/STGB18N40LZ pin facts.
     expect('R6500',1,'IGN_OC_OK');expect('R6500',2,'HW_KILL_N');expect('U802',3,'HW_KILL_N')
-    for i in range(1,9):
+    for i in range(1,7):
         base=5420+(i-1)*20
         expect(f'U{base}',1,f'IGN{i}')
         expect(f'U{base+1}',6,'IGN_SAFE_EN')
@@ -81,7 +81,7 @@ def verify(path):
         if ref=='U101' and net.startswith('HARNESS_'):errors.append('Harness directly on MCU pad '+pin)
     connector_rows=list(csv.DictReader((HERE.parents[1]/'pinout/power8gdi_revA_pinout.csv').read_text(encoding='utf-8').splitlines()))
     aliases={r['pinout_net']:r['board_net'] for r in csv.DictReader((HERE/'board/connector_aliases.csv').read_text(encoding='utf-8').splitlines())}
-    for row in connector_rows:expect('J60'+str('ABCD'.index(row['connector'])+1),row['position'],aliases.get(row['net'],'HARNESS_'+row['net']))
+    for row in connector_rows:expect('J60'+str('ABCD'.index(row['connector'])+1),row['position'],None if row['net'].startswith('UNUSED_') else aliases.get(row['net'],'HARNESS_'+row['net']))
     counts={}
     for net in pins.values():counts[net]=counts.get(net,0)+1
     return {'status':'FAIL' if errors else 'PASS_STATIC_INTEGRATION','components':len(parts),'exported_pins':len(pins),

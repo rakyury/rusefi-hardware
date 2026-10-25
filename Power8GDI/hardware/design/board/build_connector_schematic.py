@@ -14,14 +14,14 @@ def build(helper_dir, pinout):
     aliases={r['pinout_net']:r['board_net'] for r in csv.DictReader((HERE/'connector_aliases.csv').open())}
     rows=list(csv.DictReader(Path(pinout).open()))
     rootid=json.loads((helper_dir/'core_manifest.json').read_text())['root_uuid']
-    sheet=Sheet('board/connectors','Power8GDI TE34 harness boundary / UNQUALIFIED',root=rootid,paper='A2')
+    sheet=Sheet('board/connectors','Power6GDI TE34 harness boundary / UNQUALIFIED',root=rootid,paper='A2')
     pins=[]
     for n in range(1,35):
         side=0 if n<=17 else 1
         pins.append((str(n),str(n),'passive',-12.7 if not side else 12.7,20.32-((n-1)%17)*2.54,0 if not side else 180))
     symbol=box_symbol('TE_6437288_1_34',pins,'Power8GDI_Board:TE_6437288-1_34way',width=20.32,height=45.72,prefix='J')
     for index,connector in enumerate('ABCD'):
-        nets={r['position']:aliases.get(r['net'],'HARNESS_'+r['net']) for r in rows if r['connector']==connector}
+        nets={r['position']:(None if r['net'].startswith('UNUSED_') else aliases.get(r['net'],'HARNESS_'+r['net'])) for r in rows if r['connector']==connector}
         sheet.component(symbol,f'J60{index+1}','6437288-1 / KEY1 CANDIDATE',140+(index%2)*280,100+(index//2)*160,nets,
                         note='TE header C-9-1437287-8 A1 sheet2; numbering from mating housing RevP sheet3. Mechanical/continuity/keying review pending. Unimplemented circuits remain isolated HARNESS nets.')
     sheet.text('Four34-way SUPERSEAL1.0 headers. 4xKEY1 is provisional and NOT protected against cross-mating.\nHARNESS_ prefix separates vehicle-side pins from MCU-side logic. Only connector_aliases.csv joins reviewed circuits.\nNo pin current/thermal qualification, high-side bank allocation, loom approval, EMC or engine approval.',25.4,20)

@@ -11,9 +11,9 @@
   },
   "errors": [],
   "summary": {
-    "gpio_rows": 131,
-    "assigned_pins": 131,
-    "required_functions": 133,
+    "gpio_rows": 118,
+    "assigned_pins": 118,
+    "required_functions": 120,
     "missing_functions": 0,
     "unassigned_functions": 0,
     "collision_findings": 0,
@@ -76,11 +76,11 @@
       "missing": []
     },
     "Ignition": {
-      "required": 8,
+      "required": 6,
       "missing": []
     },
     "Port Injection": {
-      "required": 8,
+      "required": 6,
       "missing": []
     },
     "SENT": {
@@ -150,9 +150,6 @@
       "overlaps": {
         "PC8": [
           "EWG_PWM"
-        ],
-        "PC9": [
-          "MOTOR4_PWM"
         ],
         "PC10": [
           "SD_SPI3_SCK"
@@ -335,9 +332,7 @@
       "detail": "TIM3 channels share counter/prescaler/auto-reload; compatible periods/modes not proved",
       "functions": [
         "DBW_PWM",
-        "EWG_PWM",
-        "MOTOR3_PWM",
-        "MOTOR4_PWM"
+        "EWG_PWM"
       ],
       "source": "RM0410",
       "blocks_release": true
@@ -368,10 +363,9 @@
     {
       "code": "INTERFACE_PIN_CONFLICT",
       "category": "conditional_conflict",
-      "detail": "SDMMC1_4bit: PC8=EWG_PWM, PC9=MOTOR4_PWM, PC10=SD_SPI3_SCK, PC11=SD_SPI3_MISO, PC12=SD_SPI3_MOSI, PD2=LS_AUX1",
+      "detail": "SDMMC1_4bit: PC8=EWG_PWM, PC10=SD_SPI3_SCK, PC11=SD_SPI3_MISO, PC12=SD_SPI3_MOSI, PD2=LS_AUX1",
       "functions": [
         "EWG_PWM",
-        "MOTOR4_PWM",
         "SD_SPI3_SCK",
         "SD_SPI3_MISO",
         "SD_SPI3_MOSI",
@@ -474,7 +468,7 @@
     {
       "code": "MODE_SELECTION_UNREVIEWED",
       "category": "unverified_resource",
-      "detail": "motor_pwm_timebase=TIM3_CH1_to_CH4_shared_frequency: selection is not qualification evidence",
+      "detail": "motor_pwm_timebase=TIM3_CH1_CH3_shared_frequency: selection is not qualification evidence",
       "functions": [],
       "source": "project_requirements",
       "blocks_release": true
@@ -609,17 +603,17 @@
     "gpio_csv": {
       "name": "mcu_gpio_draft.csv",
       "canonicalization": "UTF-8 without BOM; LF newlines",
-      "sha256": "c3d113d291b7adae331af235f31138fd037070967f5eafe2d6b4000a5cfcfb89"
+      "sha256": "fd2189af62129b9d2069485b6aaf60f438c0e7c4ea4232cbc0efad2befe63468"
     },
     "connector_csv": {
       "name": "power8gdi_revA_pinout.csv",
       "canonicalization": "UTF-8 without BOM; LF newlines",
-      "sha256": "5bc59596b74eb463f9e8e138bce5e032bcdc90393c8d8790acffd0948d83aaf9"
+      "sha256": "9253ec456885ced7a99f414cb2fed466b4035002265d067090f1b24f7ac89f34"
     },
     "contract": {
       "name": "resource_contract.json",
       "canonicalization": "UTF-8 without BOM; LF newlines",
-      "sha256": "904886bea0372f51e3f0af3f0b5a91ae9c32dde5b245e9b8b0df0002e1ab9fba"
+      "sha256": "b1e56e1c8c0829caee725246850a62db0bf23461d30d85b97eae22c7f7d3c35a"
     }
   }
 }

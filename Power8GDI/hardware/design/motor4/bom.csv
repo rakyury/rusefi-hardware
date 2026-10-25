@@ -31,38 +31,6 @@ C6054,100u 50V low ESR,Capacitor_SMD:CP_Elec_10x10.5,motor4/ewg,False,"Bulk capa
 C6055,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,motor4/ewg,False,Place output EMI capacitor at IC; Infineon application limit <33nF.
 C6056,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,motor4/ewg,False,Place output EMI capacitor at IC; Infineon application limit <33nF.
 D6050,SMCJ18CA,Diode_SMD:D_SMC,motor4/ewg,False,"18V standoff, 29.2V rated pulse clamp; input OV disconnect limits normal supply. Local regeneration/overshoot may exceed28V operating limit but must stay below40V ABSMAX. Energy/hot clamp not qualified."
-U6100,TLE9201SG,Package_SO:Infineon_PG-DSO-12-11_ThermalVias,motor4/motor3,False,Infineon Rev1.0 p4: pin13 here denotes exposed ground slug. PG-DSO-12-17 dimensions checked against KiCad PG-DSO-12-11 land pattern; see checks.
-U6101,SN74LVC1G32QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,motor4/motor3,False,High means DISABLE. Either global latch or per-channel command forces both bridge outputs off; reset defaults are high.
-R6100,100R,Resistor_SMD:R_0603_1608Metric,motor4/motor3,False,
-R6101,100R,Resistor_SMD:R_0603_1608Metric,motor4/motor3,False,
-R6102,10k,Resistor_SMD:R_0603_1608Metric,motor4/motor3,False,
-R6103,10k,Resistor_SMD:R_0603_1608Metric,motor4/motor3,False,
-R6104,10k,Resistor_SMD:R_0603_1608Metric,motor4/motor3,False,
-R6105,10k,Resistor_SMD:R_0603_1608Metric,motor4/motor3,False,
-C6100,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor3,False,
-C6101,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor3,False,
-C6102,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor3,False,
-C6103,1u 50V X7R,Capacitor_SMD:C_1206_3216Metric,motor4/motor3,False,
-C6104,100u 50V low ESR,Capacitor_SMD:CP_Elec_10x10.5,motor4/motor3,False,"Bulk capacitor exact MPN, cold ESR/ripple and height not qualified."
-C6105,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,motor4/motor3,False,Place output EMI capacitor at IC; Infineon application limit <33nF.
-C6106,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,motor4/motor3,False,Place output EMI capacitor at IC; Infineon application limit <33nF.
-D6100,SMCJ18CA,Diode_SMD:D_SMC,motor4/motor3,False,"18V standoff, 29.2V rated pulse clamp; input OV disconnect limits normal supply. Local regeneration/overshoot may exceed28V operating limit but must stay below40V ABSMAX. Energy/hot clamp not qualified."
-U6150,TLE9201SG,Package_SO:Infineon_PG-DSO-12-11_ThermalVias,motor4/motor4,False,Infineon Rev1.0 p4: pin13 here denotes exposed ground slug. PG-DSO-12-17 dimensions checked against KiCad PG-DSO-12-11 land pattern; see checks.
-U6151,SN74LVC1G32QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,motor4/motor4,False,High means DISABLE. Either global latch or per-channel command forces both bridge outputs off; reset defaults are high.
-R6150,100R,Resistor_SMD:R_0603_1608Metric,motor4/motor4,False,
-R6151,100R,Resistor_SMD:R_0603_1608Metric,motor4/motor4,False,
-R6152,10k,Resistor_SMD:R_0603_1608Metric,motor4/motor4,False,
-R6153,10k,Resistor_SMD:R_0603_1608Metric,motor4/motor4,False,
-R6154,10k,Resistor_SMD:R_0603_1608Metric,motor4/motor4,False,
-R6155,10k,Resistor_SMD:R_0603_1608Metric,motor4/motor4,False,
-C6150,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor4,False,
-C6151,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor4,False,
-C6152,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor4,False,
-C6153,1u 50V X7R,Capacitor_SMD:C_1206_3216Metric,motor4/motor4,False,
-C6154,100u 50V low ESR,Capacitor_SMD:CP_Elec_10x10.5,motor4/motor4,False,"Bulk capacitor exact MPN, cold ESR/ripple and height not qualified."
-C6155,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,motor4/motor4,False,Place output EMI capacitor at IC; Infineon application limit <33nF.
-C6156,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,motor4/motor4,False,Place output EMI capacitor at IC; Infineon application limit <33nF.
-D6150,SMCJ18CA,Diode_SMD:D_SMC,motor4/motor4,False,"18V standoff, 29.2V rated pulse clamp; input OV disconnect limits normal supply. Local regeneration/overshoot may exceed28V operating limit but must stay below40V ABSMAX. Energy/hot clamp not qualified."
 U6190,SN74LVC1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,motor4/spi,False,"Extra explicit MISO isolation. TLE SO is tri-state at CSN high; asynchronous fault flag exists while CSN low before first clock, per Infineon4.12.1."
 R6190,47R,Resistor_SMD:R_0603_1608Metric,motor4/spi,False,
 R6191,47R,Resistor_SMD:R_0603_1608Metric,motor4/spi,False,

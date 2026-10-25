@@ -91,7 +91,8 @@ def partial_power_oe_bound(observed,index):
 def verify():
     parts={p['ref']:p for p in json.loads((HERE/'parts.json').read_text())}
     observed={};errors=[];checks=[]
-    for f in HERE.glob('wbo*.xml'):
+    for sheet in json.loads((HERE/'interface.json').read_text())['sheets']:
+        f=HERE/(Path(sheet['name']).name+'.xml')
         r=ET.parse(f).getroot()
         for c in r.findall('./components/comp'):
             ref=c.get('ref')
@@ -103,12 +104,12 @@ def verify():
     def check(label,condition):
         checks.append({'check':label,'passed':bool(condition)})
         if not condition:errors.append(label)
-    check('All174parts exported exactly once',set(observed)==set(parts) and len(parts)==174)
+    check('All87parts exported exactly once',set(observed)==set(parts) and len(parts)==87)
     for ref,p in parts.items():
         o=observed.get(ref,{})
         check(ref+' exported electrical pins match manifest',all(o.get('pins',{}).get(pin)==net for pin,net in p['pins'].items()))
         check(ref+' footprint preserved',o.get('footprint')==p['footprint'])
-    for i,b in [(1,5600),(2,5800)]:
+    for i,b in [(1,5600)]:
         p=lambda r,n:observed[f'{r}{b+n}']['pins']
         pre=f'WBO{i}_'
         check(pre+'CAN polarity datasheet6L7H',p('U',5)['6']=='CAN2_L' and p('U',5)['7']=='CAN2_H')
@@ -128,12 +129,12 @@ def verify():
         check(pre+'CAN termination DNP',parts[f'R{b+29}']['dnp'])
         check(pre+'WBO all functionalICs fitted',not any(x['dnp'] for ref,x in parts.items() if ref.startswith('U') and b<=int(ref[1:])<b+200))
     check('Index0 low/floating',parts['R5644']['pins']=={'1':'WBO1_SEL1','2':'GND'} and observed['U5602']['pins'].get('18') is None)
-    check('Index1 floating/high',parts['R5844']['pins']=={'1':'WBO2_SEL2','2':'WBO2_3V3'} and observed['U5802']['pins'].get('15') is None)
+    check('No second WBO assembly', not any(r.startswith('U58') for r in observed))
     # Ensure semantic adaptation does not accidentally join the two sensor analog loops.
     check('No formerCJ125 paths',not any('CJ125' in p['value'] or 'VCCSS' in str(p['pins']) for p in parts.values()))
     topology=[]
     from copy import deepcopy
-    for index,base in [(1,5600),(2,5800)]:
+    for index,base in [(1,5600)]:
         problems,counts=source_partition_errors(observed,index)
         topology.append({'channel':index,**counts,'errors':problems})
         check(f'WBO{index} original source pinsets preserve every connectivity partition',not problems)

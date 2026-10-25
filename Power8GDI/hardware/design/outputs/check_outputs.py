@@ -1,4 +1,4 @@
-"""Independent physical-net checks and fault mutations for all24 TLE channels."""
+"""Independent physical-net checks and fault mutations for all22 TLE channels."""
 from pathlib import Path
 import json
 import tempfile
@@ -6,7 +6,7 @@ import unittest
 import xml.etree.ElementTree as ET
 
 ROOT=Path(__file__).resolve().parents[1]
-FUNCTIONS=[*[f'PI{i}' for i in range(1,9)],*[f'VVT{i}' for i in range(1,5)],*[f'AUX_PWM{i}' for i in range(1,9)],*[f'LS_AUX{i}' for i in range(1,5)]]
+FUNCTIONS=[*[f'PI{i}' for i in range(1,7)],*[f'VVT{i}' for i in range(1,5)],*[f'AUX_PWM{i}' for i in range(1,9)],*[f'LS_AUX{i}' for i in range(1,5)]]
 
 def verify(path):
     doc=ET.parse(path); pin={}; errors=[]
@@ -30,6 +30,10 @@ def verify(path):
         expect(f'R{base+16}',1,'HW_ACTUATOR_ENABLE');expect(f'R{base+16}',2,f'LS{b+1}_ENABLE')
         expect(f'R{base+17}',1,f'LS{b+1}_ENABLE');expect(f'R{base+17}',2,'GND')
         expect(f'R{base+13}',1,f'LS_CS{b+1}');expect(f'R{base+14}',1,'+3V3')
+    for pad in [4,17]: expect('U1106',pad,'+3V3')
+    for pad in [5,9,11,13]: expect('U1126',pad,'GND')
+    for pad in [10,11]:
+        if not pin.get(('U1106',str(pad)),'').startswith('unconnected-'): errors.append('Unused low-side output must be NC')
     expect('U1140',2,'LS_RESET_RELEASE');expect('U1140',4,'LS_RESET_N')
     expect('R1242',1,'LS_RESET_N');expect('R1242',2,'GND')
     if values.get('R1242')!='1k 1%':errors.append('Reset pulldown must sink six internal100uA pullups')
@@ -38,7 +42,7 @@ def verify(path):
     assert worst_reset_v<1
     e_limit=.007; vbat=16; clamp=50; current=1.4
     max_l=2*e_limit/current**2*(clamp-vbat)/clamp
-    return {'status':'FAIL' if errors else 'PASS_STATIC_NETWORK','errors':errors,'output_channels':24,
+    return {'status':'FAIL' if errors else 'PASS_STATIC_NETWORK','errors':errors,'output_channels':22,
             'shared_reset_pullup_worst_v':worst_reset_v,'candidate_max_inductance_mH_at_1p4A_16V_7mJ':max_l*1000,
             'six_driver_5V_supply_budget_mA':60,'full_load_thermal_rating_approved':False,
             'timing_15us':'typical only; no maximum injector timing guarantee','release_status':'BLOCKED'}

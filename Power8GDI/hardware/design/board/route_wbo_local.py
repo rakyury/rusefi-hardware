@@ -109,8 +109,8 @@ def place_and_route(board, fps, nets, fixed_references, regions=None):
     regions = {int(k): tuple(v) for k, v in (regions or DEFAULT_REGIONS).items()}
     manifest = json.loads((HERE.parent/'wbo/parts.json').read_text())
     refs = {r['ref'] for r in manifest}
-    if len(refs) != 174 or not refs <= set(fps):
-        raise ValueError('Current 174-part WBO manifest/footprints required; old 148-part board is unsafe')
+    if len(refs) != 87 or not refs <= set(fps):
+        raise ValueError('Current 87-part WBO manifest/footprints required; old 148-part board is unsafe')
     if refs & set(fixed_references):
         raise ValueError('WBO cannot move fixed references')
     for r in manifest:
@@ -156,7 +156,7 @@ def place_and_route(board, fps, nets, fixed_references, regions=None):
             for layer in LAYERS:
                 copper.add(z, layer)
     source = json.loads((HERE.parent/'wbo/layout_reference.json').read_text())['footprints']
-    seed = {s[f'target_ref_ch{ch}']: s for ch in (1, 2) for s in source}
+    seed = {s[f'target_ref_ch{ch}']: s for ch in (1,) for s in source}
     report = {'placed_references': [], 'local_routes': [], 'unrouted_local_pairs': [],
               'placements': [], 'original_copper_count': len(old_tracks),
               'source_layout_only_no_copper_import': True, 'production_ready': False}
@@ -180,7 +180,7 @@ def place_and_route(board, fps, nets, fixed_references, regions=None):
             ring = [(i*step, j*step) for i in range(-n, n+1) for j in range(-n, n+1) if max(abs(i), abs(j)) == n]
             yield from sorted(ring, key=lambda q: q[0]**2+q[1]**2)
 
-    for ch in (1, 2):
+    for ch in (1,):
         base = 5600+(ch-1)*200
         region = regions[ch]
         origin = (region[0]+3, region[1]+4)
@@ -369,7 +369,7 @@ def place_and_route(board, fps, nets, fixed_references, regions=None):
         return next(q for q in fps[ref].Pads() if q.GetNumber()==str(number))
     # Explicit high-fanout rail branches are otherwise excluded from the MST.
     # These actual pin contracts take precedence over general signal routing.
-    for ch in (1,2):
+    for ch in (1,):
         n=5600+200*(ch-1)
         critical=[('U4',1,'C61',1),('U4',1,'U4',2),('U4',2,'U4',3),('U4',3,'U4',6),
                   ('U4',9,'U4',10),('U4',10,'C62',1),('U4',7,'C60',1),
@@ -407,7 +407,7 @@ def place_and_route(board, fps, nets, fixed_references, regions=None):
         if not success:
             entry['reason']='all short candidate paths obstructed';report['unrouted_local_pairs'].append(entry)
     report['ground_drops']=[];report['ground_drops_pending']=[]
-    for ch in (1,2):
+    for ch in (1,):
         n=5600+200*(ch-1)
         # Low-current precision/control returns only; heater power return is
         # deliberately excluded from these 0.2mm stubs.
@@ -432,31 +432,7 @@ def place_and_route(board, fps, nets, fixed_references, regions=None):
                 if isinstance(g,p.PCB_SHAPE) and g.m_Uuid.AsString() not in ignore and g.GetLayer()==layer:
                     if g.GetEffectiveShape().Collide(shape,p.FromMM(.16)):return False
         return True
-    f=fps['R5840'];silk=p.B_SilkS if f.GetLayer()==p.B_Cu else p.F_SilkS
-    for g in list(f.GraphicalItems()):
-        if isinstance(g,p.PCB_SHAPE) and g.GetLayer()==silk:
-            if not silk_clear(g.GetEffectiveShape(),silk,{g.m_Uuid.AsString()}):
-                g.SetLayer(p.B_Fab if silk==p.B_SilkS else p.F_Fab)
-                report['silk_repairs'].append({'ref':'R5840','action':'conflicting body stroke to Fab; pads unchanged'})
-    f=fps['C5851'];silk=p.B_SilkS if f.GetLayer()==p.B_Cu else p.F_SilkS
-    mark=[g for g in f.GraphicalItems() if isinstance(g,p.PCB_SHAPE) and g.GetLayer()==silk and g.GetShape()==p.SHAPE_T_SEGMENT
-          and abs(math.hypot(p.ToMM(g.GetEnd().x-g.GetStart().x),p.ToMM(g.GetEnd().y-g.GetStart().y))-1)<.001]
-    if len(mark)!=2:raise ValueError('C5851 polarity marker changed; do not alter guessed strokes')
-    ignored={g.m_Uuid.AsString() for g in mark}
-    if not all(silk_clear(g.GetEffectiveShape(),silk,ignored) for g in mark):
-        saved=[(g.GetStart(),g.GetEnd()) for g in mark]
-        centre=tuple(sum(p.ToMM((a.x+b.x) if i==0 else (a.y+b.y))/2 for a,b in saved)/2 for i in (0,1))
-        positive=xy(pad('C5851',1));fx,fy=xy(f);found=False
-        for dx,dy in offsets(4,.5):
-            proposed=(centre[0]+dx,centre[1]+dy)
-            if (proposed[0]-fx)*(positive[0]-fx)+(proposed[1]-fy)*(positive[1]-fy)<=0:continue
-            if math.dist(proposed,(fx,fy))<4.9:continue
-            for g,(a,b) in zip(mark,saved):g.SetStart(a+vec(dx,dy));g.SetEnd(b+vec(dx,dy))
-            if all(silk_clear(g.GetEffectiveShape(),silk,ignored) for g in mark):found=True;break
-        if not found:
-            for g,(a,b) in zip(mark,saved):g.SetStart(a);g.SetEnd(b)
-            report['silk_repairs'].append({'ref':'C5851','action':'no safe marker relocation; retained both strokes, manual review pending'})
-        else:report['silk_repairs'].append({'ref':'C5851','action':'both polarity plus strokes relocated together; positive pin side preserved','delta_mm':[dx,dy]})
+    # Former second-node silk repairs are inapplicable: WBO2 is absent.
     assert all(fingerprint(fps[r])==state for r,state in originals.items()), 'Non-WBO footprint mutated'
     assert old_ids <= {t.m_Uuid.AsString() for t in board.GetTracks()}, 'Original copper removed'
     assert old_geometry == [track_fingerprint(t) for t in old_tracks], 'Original copper geometry changed'
