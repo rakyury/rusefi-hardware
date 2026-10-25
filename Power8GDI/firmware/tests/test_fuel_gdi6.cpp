@@ -66,6 +66,57 @@ int main() {
     near(output.pumpFeedForwardPct[0], 13.75f);
     near(output.pumpFeedForwardPct[1], 25.0f);
 
+    // PI wall film is applied AFTER partition, without altering DI rail demand.
+    for (auto& c : input.cylinder) c.piTransientDeltaMg = 2.0f;
+    output = allocateFuelCycle(config, input);
+    assert(output.disposition == FuelDisposition::Accepted);
+    near(output.diRailMassMg[0], 55.0f);
+    near(output.diRailMassMg[1], 50.0f);
+    near(output.piTotalMassMg, 117.0f);
+    // Signed release corrections are allowed; a negative final dose is not.
+    input.cylinder[0].piTransientDeltaMg = -5.0f;
+    output = allocateFuelCycle(config, input);
+    assert(output.disposition == FuelDisposition::Accepted);
+    assert(output.cylinder[0].piMassMg == 0.0f && !output.cylinder[0].piEventRequired);
+    input.cylinder[0].piTransientDeltaMg = -5.01f;
+    rejected(allocateFuelCycle(config, input), FuelFault::DemandInvalid);
+    input = request();
+
+    // Final group doses, including transients, determine both capacities.
+    input.cylinder[5].diCapacityMg = 30.0f;
+    input.cylinder[5].diTransientDeltaMg = 1.0f;
+    rejected(allocateFuelCycle(config, input), FuelFault::DiCapacityExceeded);
+    input.cylinder[5].diTransientDeltaMg = 0.0f;
+    input.cylinder[5].piCapacityMg = 30.0f;
+    input.cylinder[5].piTransientDeltaMg = 1.0f;
+    rejected(allocateFuelCycle(config, input), FuelFault::PiCapacityExceeded);
+    input = request();
+    input.pumpCapacityMgPerCycle = {55.0f, 50.0f};
+    input.cylinder[5].diTransientDeltaMg = 1.0f;
+    rejected(allocateFuelCycle(config, input), FuelFault::PumpCapacityExceeded);
+    input = request();
+
+    // Every cut cancels both base and transient injection, not film state.
+    for (unsigned cuts = 0; cuts < 64; ++cuts) {
+        input = request();
+        float expectedDi = 0, expectedPi = 0;
+        for (unsigned i = 0; i < CylinderCount; ++i) {
+            auto& c = input.cylinder[i];
+            c.diTransientDeltaMg = 1.0f;
+            c.piTransientDeltaMg = -1.0f;
+            c.fuelCut = (cuts & (1u << i)) != 0;
+            if (!c.fuelCut) {
+                expectedDi += c.totalMassMg * 0.5f + 1.0f;
+                expectedPi += c.totalMassMg * 0.5f - 1.0f;
+            }
+        }
+        output = allocateFuelCycle(config, input);
+        assert(output.disposition == FuelDisposition::Accepted);
+        near(output.diRailMassMg[0] + output.diRailMassMg[1], expectedDi);
+        near(output.piTotalMassMg, expectedPi);
+    }
+    input = request();
+
     // Every cut pattern and several DI fractions conserve accepted mass.
     const float fractions[] = {0.0f, 0.125f, 0.5f, 0.75f, 1.0f};
     for (unsigned cuts = 0; cuts < 64; ++cuts) {
@@ -112,6 +163,8 @@ int main() {
     assert(output.disposition == FuelDisposition::Accepted);
     near(output.diRailMassMg[0], 210.0f);
     assert(output.piTotalMassMg == 0.0f);
+    input.cylinder[0].piTransientDeltaMg = 1.0f;
+    rejected(allocateFuelCycle(config, input), FuelFault::ConfigurationInvalid);
 
     // Either single pump can serve a shared rail. Inactive outputs remain zero.
     for (unsigned activePump = 0; activePump < 2; ++activePump) {
@@ -210,6 +263,19 @@ int main() {
         input.pumpCapacityMgPerCycle[1] = value;
         rejected(allocateFuelCycle(config, input), FuelFault::ConfigurationInvalid);
     }
+    const float badDelta[] = {std::numeric_limits<float>::quiet_NaN(),
+                             std::numeric_limits<float>::infinity(),
+                             -std::numeric_limits<float>::infinity()};
+    for (float value : badDelta) {
+        input = request();
+        input.cylinder[5].diTransientDeltaMg = value;
+        rejected(allocateFuelCycle(config, input), FuelFault::DemandInvalid);
+        input = request();
+        input.cylinder[5].piTransientDeltaMg = value;
+        rejected(allocateFuelCycle(config, input), FuelFault::DemandInvalid);
+        input.cylinder[5].fuelCut = true;
+        rejected(allocateFuelCycle(config, input), FuelFault::DemandInvalid);
+    }
     input = request();
     input.cylinder[0].diFraction = 1.01f;
     rejected(allocateFuelCycle(config, input), FuelFault::DemandInvalid);
@@ -230,6 +296,11 @@ int main() {
              std::numeric_limits<float>::max(), 0.0f};
     input.pumpCapacityMgPerCycle = {std::numeric_limits<float>::max(),
                                   std::numeric_limits<float>::max()};
+    rejected(allocateFuelCycle(config, input), FuelFault::NumericOverflow);
+    input = request();
+    input.cylinder[0] = {std::numeric_limits<float>::max(), 1.0f, false,
+                        std::numeric_limits<float>::max(), 0.0f,
+                        std::numeric_limits<float>::max(), 0.0f};
     rejected(allocateFuelCycle(config, input), FuelFault::NumericOverflow);
     std::cout << "GDI6 DI/PI mass and rail feed-forward contract: PASS\n";
 }

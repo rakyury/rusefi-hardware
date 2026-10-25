@@ -56,11 +56,14 @@ CycleFuelPlan6 allocateFuelCycle(const FuelConfig6& config,
         const auto& demand = request.cylinder[cylinder];
         if (!nonnegative(demand.totalMassMg) || !nonnegative(demand.diFraction) ||
             demand.diFraction > 1.0f || !nonnegative(demand.diCapacityMg) ||
-            !nonnegative(demand.piCapacityMg)) {
+            !nonnegative(demand.piCapacityMg) ||
+            !std::isfinite(demand.diTransientDeltaMg) ||
+            !std::isfinite(demand.piTransientDeltaMg)) {
             return reject(FuelFault::DemandInvalid,
                           static_cast<std::uint8_t>(cylinder));
         }
-        if (!config.piInstalled && demand.diFraction != 1.0f) {
+        if (!config.piInstalled &&
+            (demand.diFraction != 1.0f || demand.piTransientDeltaMg != 0.0f)) {
             return reject(FuelFault::ConfigurationInvalid,
                           static_cast<std::uint8_t>(cylinder));
         }
@@ -77,13 +80,25 @@ CycleFuelPlan6 allocateFuelCycle(const FuelConfig6& config,
     double piTotal = 0.0;
     for (unsigned cylinder = 0; cylinder < CylinderCount; ++cylinder) {
         const auto& demand = request.cylinder[cylinder];
-        if (demand.fuelCut || demand.totalMassMg == 0.0f) continue;
+        if (demand.fuelCut) continue;
         const double total = demand.totalMassMg;
         // The injector interface consumes binary32 doses. Compare those same
         // rounded doses with its binary32 capacity (70 * 0.1f must not reject a
         // representable 7 mg dose against a 7 mg capacity).
-        const float di = static_cast<float>(total * demand.diFraction);
-        const float pi = static_cast<float>(total - di);
+        const float baseDi = static_cast<float>(total * demand.diFraction);
+        const float basePi = static_cast<float>(total - baseDi);
+        const double correctedDi = static_cast<double>(baseDi) + demand.diTransientDeltaMg;
+        const double correctedPi = static_cast<double>(basePi) + demand.piTransientDeltaMg;
+        if (correctedDi < 0.0 || correctedPi < 0.0) {
+            return reject(FuelFault::DemandInvalid,
+                          static_cast<std::uint8_t>(cylinder));
+        }
+        if (!fitsFloat(correctedDi) || !fitsFloat(correctedPi)) {
+            return reject(FuelFault::NumericOverflow,
+                          static_cast<std::uint8_t>(cylinder));
+        }
+        const float di = static_cast<float>(correctedDi);
+        const float pi = static_cast<float>(correctedPi);
         if (di > demand.diCapacityMg) {
             return reject(FuelFault::DiCapacityExceeded,
                           static_cast<std::uint8_t>(cylinder));

@@ -36,8 +36,9 @@ struct FuelConfig6 {
 };
 
 struct CylinderFuelRequest {
-    // Final corrected total mass before this cycle's fuel cut, mg/cylinder per
-    // 720 crank degrees. Wall-film/STFT/etc. must already be accounted for.
+    // Base total mass, mg/cylinder per 720 crank degrees. Only corrections
+    // shared by both injector groups (e.g. STFT) belong here. Group-specific
+    // transient/PI wall-film corrections are applied AFTER partition below.
     float totalMassMg = 0.0f;
     float diFraction = 1.0f;
     bool fuelCut = false; // Cuts BOTH DI and PI for this cylinder this cycle.
@@ -45,6 +46,11 @@ struct CylinderFuelRequest {
     // windows at the CURRENT pressure/voltage/RPM, not catalog flow ratings.
     float diCapacityMg = 0.0f;
     float piCapacityMg = 0.0f;
+    // Signed finite group corrections, mg, applied after the base DI/PI split
+    // and before capacity checks/rail aggregation. PI film must affect only PI.
+    // A negative resulting group dose is rejected, never silently clipped.
+    float diTransientDeltaMg = 0.0f;
+    float piTransientDeltaMg = 0.0f;
 };
 
 struct CycleFuelRequest6 {
@@ -81,6 +87,8 @@ struct CycleFuelPlan6 {
 // over-capacity returns a rejected plan with EVERY mass/event zero. No clipping,
 // DI/PI redistribution or single-cylinder partial result is silently performed.
 // Recompute the whole plan after any cut, split or capability change.
+// This pure function owns no film state: the caller must commit film/integrator
+// state using the ACTUAL scheduled group masses after downstream gates/cuts.
 CycleFuelPlan6 allocateFuelCycle(const FuelConfig6& config,
                                const CycleFuelRequest6& request) noexcept;
 

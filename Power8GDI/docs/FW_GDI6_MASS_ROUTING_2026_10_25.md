@@ -9,15 +9,20 @@ existing development history. New mass-domain code uses namespace `power6gdi`.
 
 ## Implemented path
 
-`firmware/fuel/allocation_gdi6.{h,cpp}` takes six individually corrected masses
+`firmware/fuel/allocation_gdi6.{h,cpp}` takes six base masses
 in **mg per cylinder per 720 crank degrees**, a DI fraction, a per-cylinder fuel
-cut, separate DI/PI capacities, and the hydraulic configuration.
+cut, separate signed DI/PI transient corrections and capacities, and the hydraulic
+configuration. Only shared mass corrections (such as STFT) belong in the base.
 
 1. Reject non-six-cylinder imported configurations, missing/invalid rail and
-   pump assignments, non-finite/negative inputs and split fuel with no PI fitted.
+   pump assignments, non-finite inputs, negative base masses/capacities and split
+   fuel or a PI transient correction with no PI fitted.
 2. Return an all-zero inhibited plan when fuel permission is absent.
 3. Apply cylinder fuel cut to both DI and PI before generating an event request.
-4. Split the total into separate binary32 DI/PI masses. Compare the actual
+4. Split the base into separate binary32 DI/PI masses, then add the independent
+   signed group corrections. PI wall-film buildup/release affects PI only.
+   A negative final group dose rejects the whole plan without clipping.
+   Compare the actual
    representable output doses against independently supplied injector/window
    capacities. No implicit redistribution or clipping occurs.
 5. Sum each cylinder's final DI mass into its assigned **hydraulic** HP rail.
@@ -40,6 +45,15 @@ mean the pressure controller can stop maintaining rail pressure. The existing
 dual-HPFP supervisor remains separately tested; no unreviewed mg-to-valve bridge
 has been introduced.
 
+Example with PI film: adding +2mg PI correction to each of the six cylinders
+above yields 105mg DI and117mg PI; HPFP feed-forward remains70/35mg. Capacity
+checks use the final group doses, including transients. Cuts remove both base
+and transient injection. The allocator is stateless: the caller must update film
+and other integrators from the **actual scheduled** group masses after downstream
+gates/cuts, not merely from this accepted candidate. Film evaporation/state
+evolution during cut is the responsibility of the separate model, not a reason
+to inject fuel while cut is active. No completed film-model integration is claimed.
+
 ## Explicit PT2001 board profile
 
 `dual_gdi/dual_pt2001_safety.*` now requires an explicit `SportGdi6` or
@@ -50,9 +64,10 @@ A profile change while armed latches a configuration fault and requires the
 existing deliberate stopped-engine recovery path.
 
 These are logical cylinder permits, not raw START pin numbers. The hardware
-workstream's proposed GDI6 mapping is PTA START1-3 for cylinders1-3, PTB START1-3
-for cylinders4-6, and START6 on each chip for its pump. The physical adapter and
-generated netlist must verify this separately. It must not use the first six
+workstream has verified in KiCad XML that the GDI6 mapping is PTA START1-3 for
+cylinders1-3, PTB START1-3 for cylinders4-6, and START6 on each chip for its pump.
+Both START4 inputs are held low. The firmware physical adapter is still pending.
+It must not use the first six
 slots of an old four-plus-four physical output map.
 
 ## Verification
@@ -69,6 +84,9 @@ pass. Cases include 320 cut/split combinations, all256 imported cylinder counts,
 all256 driver profile values, shared/independent rails, one/two pumps, late
 cylinder capacity failures, invalid numeric values, float aggregate overflow,
 no partial results, zero-dose/no-event, and the 70mg*0.1f capacity boundary.
+An additional64 cut combinations verify group transients; tests cover PI film
+isolation from DI consumption, negative release, post-correction injector/pump
+capacity failures, absent-PI correction rejection and transient numeric overflow.
 
 The broader portable runner additionally builds and passes Map4D, P4DM blob,
 dual-HPFP allocator and dual-HPFP safety suites. The full host runner is **not
