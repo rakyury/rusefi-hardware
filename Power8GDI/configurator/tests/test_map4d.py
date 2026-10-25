@@ -78,6 +78,9 @@ class Map4DTests(unittest.TestCase):
             self.assertEqual(p.to_dict(), CalibrationProject.load(f).to_dict())
             dct = json.loads(f.read_text())
             dct['format_version'] = 1
+            dct['cylinders'] = 8
+            dct.pop('profile_id')
+            dct.pop('imported_format_version')
             dct['tables'] = {k:v for k,v in dct['tables'].items() if 'z_bins' not in v}
             migrated = CalibrationProject.from_dict(dct)
             self.assertEqual(migrated.format_version, FORMAT_VERSION)

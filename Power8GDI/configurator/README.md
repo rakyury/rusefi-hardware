@@ -1,13 +1,38 @@
-# Power8GDI Configurator — separate desktop application
+# R2 ECU Studio — separate desktop application
 
-Offline Python/Qt calibration editor inspired by the architecture of
+Offline Python/Qt calibration editor based on the existing project and the architecture of
 [rakyury/racing_dash](https://github.com/rakyury/racing_dash): a versioned document
 model, a responsive editor, UI independent of hardware transports, tests.
 
-**Status: 0.1.0.dev1 developer preview / OFFLINE ONLY.** The map values are examples,
+**Status: developer preview / OFFLINE EDITOR + DISPLAY SIMULATOR.** The map values are examples,
 not engine-safe calibrations. There is **no functioning communication with ECU**,
 no Flash/Burn, no rusEFI memory page importer, and no claim of protocol
 compatibility. It cannot be used to operate an engine.
+
+New projects use the explicit `sport-gdi6` target: 6 DI + optional 6 PI, two
+HPFP, six ignition channels, one DBW, one EWG, one lambda, two knock inputs,
+two CAN buses and required SENT/LIN. These are **project requirements**, not
+hardware-discovered capabilities or evidence that the board is ready.
+
+The package/command name `power8gdi_configurator` is retained for existing
+installations. The user-facing client is independent of TunerStudio and INI
+files. Its future transport and typed firmware metadata require an agreed,
+verified ECU contract; selecting a map does not imply a firmware address.
+
+## Existing projects and simulation
+
+JSON format v3 stores the target profile explicitly. Opening v1/v2 preserves
+all maps and their eight-cylinder identity as `legacy-power8gdi`. It does not
+truncate channels or convert the project to six cylinders. A visible legacy
+notice explains that saving writes v3; use **Save as** to retain the original.
+Unknown profiles, conflicting counts and unknown top-level fields are rejected.
+Hardware details absent from old files remain unspecified.
+
+**Start simulator** produces bounded artificial display channels and an RPM
+trace. It does not execute fuel/ignition strategies, decode CAN, connect to an
+ECU or alter calibration. Units accompany every signal; the RPM trace retains
+120 samples. Stop, successful New/Open, and Close clear simulated data. Legacy
+projects cannot start this six-cylinder display fixture.
 
 ## Run (desktop, Python 3.11+)
 
@@ -50,15 +75,21 @@ The regression scope and remaining limits are recorded in
 
 ## Roadmap
 
-- Read board-specific generated rusEFI `rusefi.ini` with verified offsets,
-  endianness, page sizes, data types, scaling and signature.
-- Implement binary TunerStudio communication in a dedicated transport module
-  with CRC, page read/write and explicit flash commit guardrails.
-- Export/import native `.msq` based on schema; include offline diffs and logs.
-- Connect real ECU telemetry with recorder, safe status and bounded update rates.
-- Bench-test over USB + CAN with firmware simulator, then validate on Power8GDI ECU.
-- Implement EMU-Pro-style sensor, trigger, fuel, injection, ignition, boost,
-  two-pump, DBW/EWG, knock, protection and ALS editors.
+- Define typed parameters, units, revisions, writable ranges, device identity,
+  capability discovery and schema migration jointly with firmware.
+- Reuse racing_dash's native C VM and CAN stack through narrow adapters;
+  retain shared PC/firmware behavior, with validated instruction budgets and
+  permissions before ECU use. Do not introduce a parallel Python VM.
+- Reuse applicable rusEFI console concepts after source review: discovery,
+  connection lifecycle, diagnostics, logging and calibration tools. This is
+  not a claim that its Java implementation has been ported into this Qt client.
+- Implement project diff/merge, partial imports/exports, offline log playback,
+  device selector, typed parameter tree and calibration assistants.
+- Add real ECU telemetry only after verified framing and identity tests;
+  memory writes, permanent save, output tests and firmware update follow their
+  own protocol and bench acceptance tests.
+- Implement sensor, trigger, modelled fuel, DI/PI, two-pump, ignition, boost,
+  DBW/EWG, knock, protection, idle, overrun, launch, ALS and shift editors.
 
 The project is isolated from hardware files. It will be split to a dedicated
 GitHub repository once repository creation is available for the connected account.

@@ -11,7 +11,7 @@ class ProjectContract(unittest.TestCase):
         self.project=default_project()
 
     def test_default_dimensions(self):
-        self.assertEqual((8,2),(self.project.cylinders,self.project.pumps))
+        self.assertEqual((6,2),(self.project.cylinders,self.project.pumps))
         self.assertEqual(11,len(self.project.tables))
         self.assertEqual(11,len(self.project.tables['Boost / Target'].x_bins))
 
@@ -71,7 +71,7 @@ class ProjectContract(unittest.TestCase):
         with self.assertRaises(ValueError):CalibrationProject.from_dict(d)
 
     def test_injector_count_does_not_change(self):
-        d=self.project.to_dict();d['cylinders']=6
+        d=self.project.to_dict();d['cylinders']=8
         with self.assertRaises(ValueError):CalibrationProject.from_dict(d)
 
     def test_never_allow_bool_as_number(self):

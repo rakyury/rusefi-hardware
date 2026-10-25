@@ -1,21 +1,23 @@
-"""Power8GDI desktop editor in the visual spirit of EMU Pro / R2 Racing Dash.
+"""R2 ECU Studio: offline calibration and clearly separated display simulation.
 
 This is offline software: no connection, burn, engine control or ECU protocol
 is implied by its windows or by edits made to JSON calibration documents.
 """
 from __future__ import annotations
 import sys
+from collections import deque
 from pathlib import Path
 from .project import default_project,CalibrationProject,CalibrationTable4D
+from .simulator import DisplaySimulator, CHANNELS
 
 try:
-    from PyQt6.QtCore import Qt,QSignalBlocker
-    from PyQt6.QtGui import QColor,QAction,QKeySequence,QUndoCommand,QUndoStack
+    from PyQt6.QtCore import Qt,QSignalBlocker,QTimer,QPointF
+    from PyQt6.QtGui import QColor,QAction,QKeySequence,QUndoCommand,QUndoStack,QPainter,QPen
     from PyQt6.QtWidgets import (
        QApplication,QMainWindow,QWidget,QSplitter,QTreeWidget,QTreeWidgetItem,
        QVBoxLayout,QHBoxLayout,QLabel,QTableWidget,QTableWidgetItem,
        QToolBar,QFileDialog,QMessageBox,QStatusBar,QPushButton,QFrame,
-       QAbstractItemView,QLineEdit,QHeaderView,QComboBox)
+       QAbstractItemView,QLineEdit,QHeaderView,QComboBox,QDockWidget)
 except ImportError as exc:
     raise SystemExit('PyQt6 is required for the GUI. Install: pip install -e .') from exc
 
@@ -48,17 +50,65 @@ class CellEdit(QUndoCommand):
     def redo(self):self.window._set_cell(self.name,self.x,self.y,self.z,self.new)
     def undo(self):self.window._set_cell(self.name,self.x,self.y,self.z,self.old)
 
+
+class SimulationPlot(QWidget):
+    """A bounded, read-only RPM trace. No calibration value is updated here."""
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.samples = deque(maxlen=120)
+        self.setMinimumSize(320, 140)
+        self.setAccessibleName('Simulated engine speed graph')
+
+    def clear(self):
+        self.samples.clear()
+        self.update()
+
+    def append(self, time_s, rpm):
+        self.samples.append((time_s, rpm))
+        self.update()
+
+    def paintEvent(self, event):
+        painter = QPainter(self)
+        painter.setRenderHint(QPainter.RenderHint.Antialiasing)
+        left, top = 55., 25.
+        width, height = max(1., self.width()-70.), max(1., self.height()-55.)
+        painter.setPen(QPen(QColor('#36505f'), 1))
+        for ratio in (0., .5, 1.):
+            y = top + height * ratio
+            painter.drawLine(QPointF(left, y), QPointF(left+width, y))
+            painter.drawText(0, int(y+4), f'{10000*(1-ratio):.0f}')
+        painter.setPen(QColor('#83a9bb'))
+        painter.drawText(0, 15, 'rpm — SIMULATED')
+        painter.drawText(int(left), self.height()-5, 'Simulation time [s]')
+        if not self.samples:
+            painter.drawText(int(left+15), int(top+height/2), 'No simulated data')
+            return
+        end = self.samples[-1][0]
+        start = max(0., end-24.)
+        painter.drawText(self.width()-90, self.height()-5, f'{end:.1f} s')
+        painter.setPen(QPen(QColor('#73cad5'), 2))
+        points = [QPointF(left+(t-start)/24.*width, top+(1-rpm/10000.)*height)
+                  for t, rpm in self.samples]
+        for first, second in zip(points, points[1:]):
+            painter.drawLine(first, second)
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.project=default_project();self.path:Path|None=None
         self.active_name='Boost / Target';self._in_update=False
+        self.simulator = DisplaySimulator()
+        self.simulation_timer = QTimer(self)
+        self.simulation_timer.setInterval(200)
+        self.simulation_timer.timeout.connect(self._simulation_tick)
         self.undo_stack=QUndoStack(self)
         self.undo_stack.cleanChanged.connect(self._clean_changed)
         self._update_window_title()
         self.resize(1520,910)
         self.setStyleSheet(STYLE)
         self._init_ui()
+        self._refresh_profile()
         self._rebuild_tree()
         self._select_table(self.active_name)
 
@@ -83,10 +133,11 @@ class MainWindow(QMainWindow):
         toolbar.addSeparator()
         off=action('ECU: disconnected',self.offline_notice)
         off.setEnabled(True)
+        self.simulation_action = action('Start simulator', self.toggle_simulator)
 
         split=QSplitter(Qt.Orientation.Horizontal);split.setChildrenCollapsible(False)
         left=QWidget();lv=QVBoxLayout(left);lv.setContentsMargins(10,18,10,10)
-        brand=QLabel('POWER8GDI');brand.setObjectName('headline');lv.addWidget(brand)
+        self.brand=QLabel('R2 SPORT GDI6');self.brand.setObjectName('headline');lv.addWidget(self.brand)
         desc=QLabel('ECU CALIBRATION STUDIO');desc.setObjectName('muted');lv.addWidget(desc)
         lv.addSpacing(14)
         tree_label=QLabel('CALIBRATION TREE');tree_label.setObjectName('section')
@@ -107,6 +158,8 @@ class MainWindow(QMainWindow):
         self.addAction(self.find_action)
         note=QLabel('Prototype editor · no ECU connection')
         note.setObjectName('warning');note.setWordWrap(True);lv.addWidget(note)
+        self.profile_notice=QLabel('');self.profile_notice.setWordWrap(True)
+        self.profile_notice.setObjectName('warning');lv.addWidget(self.profile_notice)
         split.addWidget(left)
 
         center=QWidget();cv=QVBoxLayout(center);cv.setContentsMargins(16,15,16,12)
@@ -140,16 +193,14 @@ class MainWindow(QMainWindow):
         split.addWidget(center)
 
         right=QWidget();rv=QVBoxLayout(right);rv.setContentsMargins(12,18,12,10)
-        io=QLabel('HARDWARE STATUS');io.setObjectName('section');rv.addWidget(io)
-        for label,value in (
-          ('Controller','Power8GDI Rev A'),('MCU','STM32F7 target'),
-          ('Injection','8 DI / 8 PI provision'),('Ignition','8 smart coils'),
-          ('HPFP','2 channels'),('Knock','2 sensors (planned)'),
-          ('ETB / EWG','2 independent bridges'),('Connection','Not connected'),
-          ('Burn/Flash','Unavailable'),('Live telemetry','Unavailable')):
+        io=QLabel('PROJECT TARGET');io.setObjectName('section');rv.addWidget(io)
+        self.hardware_labels={}
+        for label in ('Controller','Injection','Ignition','HPFP','DBW / EWG',
+                      'Sensors','Interfaces','Connection','Burn/Flash'):
             item=QWidget();iv=QVBoxLayout(item);iv.setContentsMargins(0,8,0,5)
             head=QLabel(label.upper());head.setObjectName('muted');iv.addWidget(head)
-            val=QLabel(value);val.setWordWrap(True);iv.addWidget(val)
+            val=QLabel('');val.setWordWrap(True);iv.addWidget(val)
+            self.hardware_labels[label]=val
             rv.addWidget(item)
         rv.addStretch(1)
         self.note=QLabel('WARNING: sample tables are not validated engine calibrations.')
@@ -158,6 +209,77 @@ class MainWindow(QMainWindow):
         split.setSizes([285,1030,215]);self.setCentralWidget(split)
         status=QStatusBar();self.setStatusBar(status)
         self.statusBar().showMessage('No ECU connection · documents are stored locally as versioned JSON')
+        dock=QDockWidget('DISPLAY SIMULATOR — artificial data, no hardware connection',self)
+        dock.setFeatures(QDockWidget.DockWidgetFeature.DockWidgetMovable)
+        container=QWidget();layout=QHBoxLayout(container)
+        self.telemetry=QTableWidget(len(CHANNELS),3)
+        self.telemetry.setHorizontalHeaderLabels(['Simulated channel','Value','Unit'])
+        self.telemetry.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.telemetry.verticalHeader().hide()
+        self.telemetry.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        for row, channel in enumerate(CHANNELS):
+            for col, value in enumerate((channel.label, '—', channel.unit)):
+                self.telemetry.setItem(row,col,QTableWidgetItem(value))
+        self.simulation_plot=SimulationPlot()
+        layout.addWidget(self.telemetry,1);layout.addWidget(self.simulation_plot,2)
+        dock.setWidget(container)
+        self.addDockWidget(Qt.DockWidgetArea.BottomDockWidgetArea,dock)
+        self.resizeDocks([dock],[215],Qt.Orientation.Vertical)
+
+    def _refresh_profile(self):
+        p=self.project.profile
+        self.brand.setText('LEGACY POWER8GDI' if self.project.is_legacy else 'R2 SPORT GDI6')
+        values={
+            'Controller':p.label,
+            'Injection':f'{p.di_channels} DI / {p.pi_channels} PI (optional)',
+            'Ignition':f'{p.ignition_channels} channels · coil type unverified',
+            'HPFP':f'{p.hpfp_channels} channels',
+            'DBW / EWG':f'{p.dbw_channels} DBW / {p.ewg_channels} EWG',
+            'Sensors':f'{p.lambda_channels} lambda / {p.knock_channels} knock',
+            'Interfaces':f'{p.can_buses} CAN / SENT / LIN',
+            'Connection':'No physical ECU connected', 'Burn/Flash':'Unavailable'}
+        if self.project.is_legacy:
+            values.update({'Injection':'Legacy 8-cylinder calibration',
+                           'Ignition':'Unspecified in legacy file',
+                           'DBW / EWG':'Unspecified in legacy file',
+                           'Sensors':'Unspecified in legacy file',
+                           'Interfaces':'Unspecified in legacy file'})
+        for label,value in values.items():
+            self.hardware_labels[label].setText(value)
+        self.profile_notice.setText(
+            'Legacy 8-cylinder project preserved. No conversion to 6 cylinders. '
+            'Save writes format v3; use Save as to keep the original file.'
+            if self.project.is_legacy else
+            '6-cylinder target · hardware validation pending')
+        self.simulation_action.setEnabled(not self.project.is_legacy)
+
+    def toggle_simulator(self):
+        if self.simulator.connected:
+            self._stop_simulator()
+            return
+        try:
+            self.project.validate()
+            self.simulator.connect(self.project.profile_id)
+        except ValueError as exc:
+            QMessageBox.warning(self,'Cannot start simulator',str(exc))
+            return
+        self.simulation_action.setText('Stop simulator')
+        self.simulation_timer.start()
+        self.statusBar().showMessage('SIMULATED signals only · physical ECU remains disconnected')
+
+    def _simulation_tick(self):
+        sample=self.simulator.step(.2)
+        for row,value in enumerate(sample.values):
+            self.telemetry.item(row,1).setText(f'{value:.3f}')
+        self.simulation_plot.append(sample.simulation_time_s,sample.values[0])
+
+    def _stop_simulator(self):
+        self.simulation_timer.stop()
+        self.simulator.disconnect()
+        self.simulation_action.setText('Start simulator')
+        self.simulation_plot.clear()
+        for row in range(len(CHANNELS)):
+            self.telemetry.item(row,1).setText('—')
 
     def _rebuild_tree(self):
         self.tree.clear();parents={}
@@ -297,7 +419,7 @@ class MainWindow(QMainWindow):
 
     def _update_window_title(self):
         label=self.path.name if self.path else 'Untitled'
-        self.setWindowTitle(f'{label}[*] — R2 Power8GDI Configurator  •  OFFLINE')
+        self.setWindowTitle(f'{label}[*] — R2 ECU Studio  •  OFFLINE')
 
     def _finish_cell_edit(self):
         # File actions can run via a shortcut while a delegate still holds text
@@ -319,14 +441,16 @@ class MainWindow(QMainWindow):
 
     def new_project(self):
         if not self._confirm_discard():return False
+        self._stop_simulator()
         self.project=default_project();self.path=None;self.undo_stack.clear()
+        self._refresh_profile()
         self._rebuild_tree();self._select_table('Boost / Target')
         self._update_window_title()
         self.statusBar().showMessage('New offline project',7000)
         return True
 
     def open_project(self):
-        path,_=QFileDialog.getOpenFileName(self,'Open project','','Power8GDI (*.json);;All files (*)')
+        path,_=QFileDialog.getOpenFileName(self,'Open project','','R2 ECU projects (*.json);;All files (*)')
         if not path:return False
         if not self._confirm_discard():return False
         try:
@@ -336,7 +460,9 @@ class MainWindow(QMainWindow):
                 raise ValueError('Table descriptions must be text')
         except (ValueError,KeyError,OSError,TypeError) as exc:
             QMessageBox.critical(self,'Cannot load',str(exc));return False
+        self._stop_simulator()
         self.project=p;self.path=Path(path);self.undo_stack.clear()
+        self._refresh_profile()
         self._rebuild_tree();self._select_table(next(iter(p.tables)))
         self._update_window_title()
         self.statusBar().showMessage('Loaded '+path,7000)
@@ -359,12 +485,15 @@ class MainWindow(QMainWindow):
 
     def save_as(self):
         self._finish_cell_edit()
-        path,_=QFileDialog.getSaveFileName(self,'Save project','Power8GDI_Reference.p8gdi.json','Power8GDI (*.json)')
+        filename='Power8GDI_Legacy.json' if self.project.is_legacy else 'SportGDI6_Project.json'
+        path,_=QFileDialog.getSaveFileName(self,'Save project',filename,'R2 ECU projects (*.json)')
         if not path:return False
         return self._save_to(Path(path))
 
     def closeEvent(self,event):
-        if self._confirm_discard():event.accept()
+        if self._confirm_discard():
+            self._stop_simulator()
+            event.accept()
         else:event.ignore()
 
     def offline_notice(self):
@@ -376,7 +505,7 @@ class MainWindow(QMainWindow):
 
 def main(argv=None):
     argv=sys.argv if argv is None else argv
-    app=QApplication(argv);app.setApplicationName('R2 Power8GDI Configurator')
+    app=QApplication(argv);app.setApplicationName('R2 ECU Studio')
     window=MainWindow();window.show()
     return app.exec()
 
