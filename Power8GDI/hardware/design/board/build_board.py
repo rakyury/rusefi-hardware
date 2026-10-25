@@ -452,7 +452,7 @@ def build(args):
             'ignition_local_routes':ignition_routes}
     report['voltage_domains']=voltage_domains.provenance()
     (out/'board_report.json').write_text(json.dumps(report,indent=2)+'\n')
-    print(json.dumps({k:v for k,v in report.items() if k not in ('reference_copper','source_netlists','staged_unreviewed_placements')},indent=2))
+    print(json.dumps({k:report[k] for k in ['kicad_version','qualification','outline_mm','copper_layers','thickness_mm','components','assigned_component_pins','pad_net_mismatches','tracks_vias','zones','unconnected_count']},indent=2))
 
 
 if __name__=='__main__':

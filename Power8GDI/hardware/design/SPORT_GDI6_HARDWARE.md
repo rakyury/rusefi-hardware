@@ -101,3 +101,33 @@ netlist/PCB comparison and native DRC are required; the old eight-channel PCB
 reports are not evidence for this candidate. The board remains incomplete until
 routing, high-energy clearances, power/thermal calculations, device loads,
 startup/fault behavior, EMC and physical measurements are closed.
+
+### Matching PCB and PDF evidence, 2026-10-25
+
+The current `board/gdi6_candidate/Power8GDI_Review.kicad_pcb` was built from
+`core.net` SHA-256 `fcd49be128a233d138ffe949dd3d85216f9c81f62d1246e440ed6321cc35eb07`.
+Independent pad comparison passes for **1092 positions / 3464 assignments**,
+including all 34 DNP positions. Its 2652 track/via items and 16 zones include
+audited retained GDI donor copper; they do not imply completed routing.
+
+Native KiCad 9.0.9 DRC returns violations: **502 clearance, 199 track width,
+14 dangling vias, 4 dangling tracks, 2 silkscreen-over-copper = 721 reported**.
+No `shorting_items` are reported. The full connectivity residual is **2099**;
+the DRC file contains only 499 unconnected items because reporting is capped.
+The clearance and width categories also reach reporting limits. Therefore the
+absence of a particular net from the report is not evidence of completion.
+No exclusion or weaker design rule was added. Manufacturing remains **BLOCKED**.
+
+`sport_gdi6_schematic.pdf` is the native **49-page** export of the same hierarchy.
+All pages were rendered as a contact sheet; root, MCU, GDI and motor-protection
+pages were inspected at larger scale. Front/back PNGs are renders of the actual
+PCB, not a proposed finished layout. Detailed evidence and file hashes are in
+`board/gdi6_candidate/artifact_manifest.json`.
+
+The assembly BOM was corrected after the schematic-only review run: eight GDI
+radial capacitors C205/C206/C207/C209 and C305/C306/C307/C309 are through-hole.
+Final counts are **1034 SMT placements + 13 through-hole placements = 1047
+installed parts**, plus 11 bare PCB features and 34 DNP positions. Reference
+MPNs, reference quantities and electrical nets are unchanged. The current
+`integrated_bom_manifest.json` supersedes the assembly counts embedded in the
+earlier `review_validation.json`; four BOM regression tests verify this correction.

@@ -1,0 +1,108 @@
+{
+  "profile": "2026-10-25-sport-gdi6",
+  "qualification": "INCOMPLETE_ENGINEERING_REVIEW_DO_NOT_FABRICATE",
+  "schematic_source_commit": "2466500",
+  "kicad_version": "9.0.9",
+  "kicad_image": "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
+  "source_netlist_sha256": "fcd49be128a233d138ffe949dd3d85216f9c81f62d1246e440ed6321cc35eb07",
+  "schematic_pdf_pages": 49,
+  "pdf_visual_review": {
+    "all_pages_contact_sheet": true,
+    "larger_scale_pages": [
+      1,
+      2,
+      27,
+      49
+    ]
+  },
+  "pad_comparison": "PASS",
+  "physical_positions": 1092,
+  "pad_net_assignments": 3464,
+  "manufacturing_gate": "BLOCKED",
+  "connectivity_unconnected_count": 2099,
+  "reported_drc_violations": 721,
+  "drc_report_may_be_truncated": true,
+  "design_rule_exclusions_added": false,
+  "assembly_bom_after_classification_fix": {
+    "installed": 1047,
+    "smt": 1034,
+    "through_hole": 13,
+    "bare_pcb_features": 11,
+    "dnp": 34,
+    "unclassified": 0
+  },
+  "bom_regression_tests": {
+    "command": "python -m unittest discover -s Power8GDI/hardware/design/core_tests -p test_integrated_bom.py -v",
+    "passed": 4
+  },
+  "files": {
+    "core.net": {
+      "sha256": "fcd49be128a233d138ffe949dd3d85216f9c81f62d1246e440ed6321cc35eb07",
+      "bytes": 1402543
+    },
+    "sport_gdi6_schematic.pdf": {
+      "sha256": "af84bbc7780c3d4029490a5898e9fe5824b362ce2e903dfaa4d5c94a26db8274",
+      "bytes": 8649231
+    },
+    "integrated_bom.csv": {
+      "sha256": "0cc84e1e3725d2f3511385570515d06f362d505dd7ca4d5b1384257a14a86b3f",
+      "bytes": 419771
+    },
+    "integrated_bom_manifest.json": {
+      "sha256": "921dd560f0e7459eed669c87d13554478cd48002b25d4e077b881a60ed6582e0",
+      "bytes": 2641
+    },
+    "board\\gdi6_candidate\\Power8GDI_Review.kicad_pcb": {
+      "sha256": "a77315ff4992c805b2252ecb11cd4dbd73ce9ef75033670a0ff413a18bb5f150",
+      "bytes": 5217793
+    },
+    "board\\gdi6_candidate\\Power8GDI_Review.kicad_pro": {
+      "sha256": "e153a914608b366089817c7aadf84b03e1ca04ef461e0a4ed1fc27788eae4874",
+      "bytes": 10096
+    },
+    "board\\gdi6_candidate\\Power8GDI_Review.kicad_dru": {
+      "sha256": "620a6d1068a42427366375e1aed25e446c0e3ffc86ce1d7a81f9b8526dd480df",
+      "bytes": 5188
+    },
+    "board\\gdi6_candidate\\board_report.json": {
+      "sha256": "f716f1ec3c3efed460fabcb90e2dd2d170c0c5bff6253a7f7cf6981e746e0ba5",
+      "bytes": 526423
+    },
+    "board\\gdi6_candidate\\pad_validation.json": {
+      "sha256": "69f9c516ce68111f3bd82976261e6f43b1da652e3e529f5a170eeca8bd17a20a",
+      "bytes": 96
+    },
+    "board\\gdi6_candidate\\drc.json": {
+      "sha256": "c656004fcb367cf4682f9f7e040a4bd26fc3647d542f211de0cc998a2ed54b0d",
+      "bytes": 958400
+    },
+    "board\\gdi6_candidate\\drc.provenance.json": {
+      "sha256": "776389301ea163bb6d6ca4d54a0c71b7bd1c70ca2b795d7f28dd97dbed50109b",
+      "bytes": 627
+    },
+    "board\\gdi6_candidate\\net_coverage.json": {
+      "sha256": "d760776d0b144f6be4062ce4fcff5aa229fa44c0f8dd2b02bcf80c7ed60959f0",
+      "bytes": 134937
+    },
+    "board\\gdi6_candidate\\front.svg": {
+      "sha256": "8771fcf64bb9d90a8658a2a3aaae6da4fdb474193e2d19369393117b9eef810a",
+      "bytes": 1652660
+    },
+    "board\\gdi6_candidate\\back.svg": {
+      "sha256": "51e318fbf21575fe1b5e2fe4714034fde03d6232263b2c6183ac3cce25f29baf",
+      "bytes": 2967418
+    },
+    "board\\gdi6_candidate\\front.png": {
+      "sha256": "ca4a5c68b677f0c20bc0e546b0937a9afbf74f4acc2db5d637b13e8f8feadc00",
+      "bytes": 450260
+    },
+    "board\\gdi6_candidate\\back.png": {
+      "sha256": "5685e619a8d98ff4e3a07dc246a037928dfdf4f2031412703442ce1fce4dfb21",
+      "bytes": 734312
+    }
+  },
+  "core_regression_tests": {
+    "command": "python -m unittest discover -s Power8GDI/hardware/design/core_tests -v",
+    "passed": 25
+  }
+}
