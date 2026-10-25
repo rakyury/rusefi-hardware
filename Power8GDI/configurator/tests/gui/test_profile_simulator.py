@@ -1,6 +1,9 @@
 import json
 from test_app import window, qapp, dialogs, choose_open, choose_save
+from PyQt6.QtWidgets import QAbstractItemView, QInputDialog, QFileDialog
 
+from power8gdi_configurator.app import CANPreviewDialog
+from power8gdi_configurator.can_preview import CANPreview, CANSignalPreview
 from power8gdi_configurator.project import CalibrationProject
 
 
@@ -63,3 +66,23 @@ def test_invalid_open_leaves_simulator_and_project_intact(window, monkeypatch, t
     assert window.simulator.connected
     assert window.project is original
 
+
+def test_can_preview_dialog_is_read_only_and_displays_warnings(window):
+    before = window.project.to_dict()
+    preview = CANPreview('test.dbc', (CANSignalPreview(
+        'RPM', 'Engine', 'CAN2', '0x600 (11 bit)', 'rpm', 'raw × 1/1 + 0', False),),
+        ('PREVIEW ONLY', 'Example skipped signal'))
+    dialog = CANPreviewDialog(preview, window)
+    assert dialog.table.editTriggers() == QAbstractItemView.EditTrigger.NoEditTriggers
+    assert dialog.table.item(0, 2).text() == 'CAN2'
+    assert 'Example skipped' in dialog.warnings.toPlainText()
+    assert window.project.to_dict() == before
+    dialog.close()
+
+
+def test_can_preview_bus_cancel_does_not_read_or_change_project(window, monkeypatch):
+    before = window.project.to_dict()
+    monkeypatch.setattr(QFileDialog, 'getOpenFileName', lambda *a: ('missing.dbc', ''))
+    monkeypatch.setattr(QInputDialog, 'getItem', lambda *a: ('CAN1', False))
+    window.preview_can_definitions()
+    assert window.project.to_dict() == before

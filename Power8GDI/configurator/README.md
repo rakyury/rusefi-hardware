@@ -34,6 +34,18 @@ ECU or alter calibration. Units accompany every signal; the RPM trace retains
 120 samples. Stop, successful New/Open, and Close clear simulated data. Legacy
 projects cannot start this six-cylinder display fixture.
 
+**CAN definitions…** previews UTF-8 `.dbc`/`.canx` files using the existing
+racing_dash parser, with CAN1/CAN2/both/file-default selection, message and
+signal IDs, units, scaling and import warnings. It reads files only: no
+transmission, live decoder, ECU installation or persistent CAN node import is
+implemented. Files are limited to 2 MiB/2048 signals. The importer retains
+CANX's tolerant defaults, explicitly warns about them, and rejects unsupported
+DBC numeric conversions instead of silently truncating them. Source pin and
+local fixes: [provenance](power8gdi_configurator/vendor/racing_dash/PROVENANCE.md).
+
+The complete requested tool inventory and reuse plan are recorded in
+[UI_TOOLS_2026_10_25.md](../docs/UI_TOOLS_2026_10_25.md).
+
 ## Run (desktop, Python 3.11+)
 
 ```bash

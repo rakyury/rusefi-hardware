@@ -9,6 +9,7 @@ from collections import deque
 from pathlib import Path
 from .project import default_project,CalibrationProject,CalibrationTable4D
 from .simulator import DisplaySimulator, CHANNELS
+from .can_preview import CANPreview, load_can_preview
 
 try:
     from PyQt6.QtCore import Qt,QSignalBlocker,QTimer,QPointF
@@ -17,7 +18,8 @@ try:
        QApplication,QMainWindow,QWidget,QSplitter,QTreeWidget,QTreeWidgetItem,
        QVBoxLayout,QHBoxLayout,QLabel,QTableWidget,QTableWidgetItem,
        QToolBar,QFileDialog,QMessageBox,QStatusBar,QPushButton,QFrame,
-       QAbstractItemView,QLineEdit,QHeaderView,QComboBox,QDockWidget)
+       QAbstractItemView,QLineEdit,QHeaderView,QComboBox,QDockWidget,
+       QDialog,QDialogButtonBox,QPlainTextEdit,QInputDialog)
 except ImportError as exc:
     raise SystemExit('PyQt6 is required for the GUI. Install: pip install -e .') from exc
 
@@ -93,6 +95,34 @@ class SimulationPlot(QWidget):
             painter.drawLine(first, second)
 
 
+class CANPreviewDialog(QDialog):
+    def __init__(self, preview: CANPreview, parent=None):
+        super().__init__(parent)
+        self.setWindowTitle(f'CAN definition preview — {preview.source}')
+        self.resize(1100, 620)
+        layout = QVBoxLayout(self)
+        label = QLabel(f'{len(preview.signals)} signals · OFFLINE PREVIEW · racing_dash importer')
+        label.setObjectName('section')
+        layout.addWidget(label)
+        self.table = QTableWidget(len(preview.signals), 7)
+        self.table.setHorizontalHeaderLabels(['Signal', 'Message', 'Bus', 'CAN ID', 'Unit', 'Scale', 'Mux'])
+        self.table.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.ResizeToContents)
+        for row, signal in enumerate(preview.signals):
+            values = (signal.name, signal.message, signal.bus, signal.can_id,
+                      signal.unit, signal.scale, 'Yes' if signal.multiplexed else 'No')
+            for column, value in enumerate(values):
+                self.table.setItem(row, column, QTableWidgetItem(value))
+        layout.addWidget(self.table, stretch=1)
+        self.warnings = QPlainTextEdit('\n'.join(preview.warnings))
+        self.warnings.setReadOnly(True)
+        self.warnings.setMaximumHeight(160)
+        layout.addWidget(self.warnings)
+        buttons = QDialogButtonBox(QDialogButtonBox.StandardButton.Close)
+        buttons.rejected.connect(self.reject)
+        layout.addWidget(buttons)
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -134,6 +164,7 @@ class MainWindow(QMainWindow):
         off=action('ECU: disconnected',self.offline_notice)
         off.setEnabled(True)
         self.simulation_action = action('Start simulator', self.toggle_simulator)
+        action('CAN definitions…', self.preview_can_definitions)
 
         split=QSplitter(Qt.Orientation.Horizontal);split.setChildrenCollapsible(False)
         left=QWidget();lv=QVBoxLayout(left);lv.setContentsMargins(10,18,10,10)
@@ -225,6 +256,24 @@ class MainWindow(QMainWindow):
         dock.setWidget(container)
         self.addDockWidget(Qt.DockWidgetArea.BottomDockWidgetArea,dock)
         self.resizeDocks([dock],[215],Qt.Orientation.Vertical)
+
+    def preview_can_definitions(self):
+        path, _ = QFileDialog.getOpenFileName(
+            self, 'Preview CAN definition', '', 'CAN definitions (*.dbc *.canx)')
+        if not path:
+            return
+        choices = ['File default (DBC: CAN1)', 'CAN1', 'CAN2', 'CAN1 + CAN2']
+        choice, accepted = QInputDialog.getItem(
+            self, 'Preview bus selection', 'Receive bus', choices, 0, False)
+        if not accepted:
+            return
+        bus = [None, 0, 1, 2][choices.index(choice)]
+        try:
+            preview = load_can_preview(path, bus)
+        except (OSError, ValueError, UnicodeError) as exc:
+            QMessageBox.warning(self, 'Cannot preview CAN definition', str(exc))
+            return
+        CANPreviewDialog(preview, self).exec()
 
     def _refresh_profile(self):
         p=self.project.profile
