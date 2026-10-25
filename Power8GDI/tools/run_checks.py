@@ -89,6 +89,10 @@ def main(argv=None):
                 if record(f"cpp-{name}-build", [compiler, *flags, "-Iinclude", "-Idual_gdi", *files, "-o", str(exe)],
                           cwd=ROOT / "firmware"):
                     record(f"cpp-{name}", [str(exe)], cwd=ROOT / "firmware")
+        native_command = [sys.executable, "firmware/tests/run_racing_dash_tests.py"]
+        if args.sanitizers:
+            native_command.append("--sanitizers")
+        record("racing-dash-native", native_command, blocked=compiler_error)
         if record("qt-runtime", [sys.executable, "-c", "from PyQt6.QtWidgets import QApplication; app=QApplication([])"]):
             if compiler_error:
                 record("python-configurator", blocked="C++ compiler required for cross-language parity tests.")

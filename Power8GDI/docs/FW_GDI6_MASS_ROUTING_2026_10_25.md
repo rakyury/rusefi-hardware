@@ -66,7 +66,10 @@ existing deliberate stopped-engine recovery path.
 These are logical cylinder permits, not raw START pin numbers. The hardware
 workstream has verified in KiCad XML that the GDI6 mapping is PTA START1-3 for
 cylinders1-3, PTB START1-3 for cylinders4-6, and START6 on each chip for its pump.
-Both START4 inputs are held low. The firmware physical adapter is still pending.
+Both unused START4 pins have separate 10k pull-downs (R297/R397), rather than
+hard-grounding the bidirectional pins. Firmware must keep them configured as
+inputs/disabled and must never pulse them; both fourth power channels are
+removed. The firmware physical/register adapter is still pending.
 It must not use the first six
 slots of an old four-plus-four physical output map.
 

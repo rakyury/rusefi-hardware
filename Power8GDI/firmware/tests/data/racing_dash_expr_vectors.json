@@ -1,0 +1,102 @@
+{
+  "source_commit": "2c66c178083ae4bd0f2f0afe928ecd799af6347c",
+  "compiler_path": "configurator_qt/src/core/expr_compiler.py",
+  "compiler_sha256_lf": "87987afd8808d0a566e62cba25e4dc7542735dc3e809cf48d429ddf2e55d4a5a",
+  "compiler_git_blob": "e3662e0c15e5e2f4a3c6c8a797549c471a92c9d1",
+  "channels": {
+    "rpm": 100,
+    "pressure": 101
+  },
+  "vectors": [
+    {
+      "formula": "rpm / 60",
+      "input": [
+        6000,
+        0
+      ],
+      "expected": 100,
+      "bytecode_hex": "026400013c00000013ff"
+    },
+    {
+      "formula": "clamp(rpm / 60 + pressure, 0, 200)",
+      "input": [
+        6000,
+        40
+      ],
+      "expected": 140,
+      "bytecode_hex": "026400013c0000001302650010010000000001c800000052ff"
+    },
+    {
+      "formula": "if(rpm > 3000 && pressure < 200, 7, 3)",
+      "input": [
+        4000,
+        150
+      ],
+      "expected": 7,
+      "bytecode_hex": "02640001b80b00003402650001c800000032400107000000010300000060ff"
+    },
+    {
+      "formula": "abs(pressure) + sign(rpm)",
+      "input": [
+        -1,
+        -12
+      ],
+      "expected": 11,
+      "bytecode_hex": "026500160264001710ff"
+    },
+    {
+      "formula": "band(rpm, 255) + shl(pressure, 2)",
+      "input": [
+        291,
+        3
+      ],
+      "expected": 47,
+      "bytecode_hex": "02640001ff0000002002650001020000002410ff"
+    },
+    {
+      "formula": "lerp(rpm, pressure, 250)",
+      "input": [
+        100,
+        200
+      ],
+      "expected": 125,
+      "bytecode_hex": "02640002650001fa00000054ff"
+    },
+    {
+      "formula": "rpm / -1",
+      "input": [
+        -2147483648,
+        0
+      ],
+      "expected": -2147483648,
+      "bytecode_hex": "02640001010000001513ff"
+    },
+    {
+      "formula": "rpm + pressure",
+      "input": [
+        2147483647,
+        1
+      ],
+      "expected": -2147483648,
+      "bytecode_hex": "02640002650010ff"
+    },
+    {
+      "formula": "shr(rpm, 2)",
+      "input": [
+        -16,
+        0
+      ],
+      "expected": -4,
+      "bytecode_hex": "026400010200000025ff"
+    },
+    {
+      "formula": "rpm % 7",
+      "input": [
+        11,
+        0
+      ],
+      "expected": 4,
+      "bytecode_hex": "026400010700000014ff"
+    }
+  ]
+}
