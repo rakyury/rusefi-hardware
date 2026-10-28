@@ -72,9 +72,9 @@
   "components": 1092,
   "assigned_component_pins": 3464,
   "pad_net_mismatches": [],
-  "tracks_vias": 2654,
+  "tracks_vias": 2665,
   "zones": 16,
-  "unconnected_count": 2099,
+  "unconnected_count": 2097,
   "dnp_references": [
     "R105",
     "R106",
@@ -22580,6 +22580,53 @@
             "layer": "F.Cu",
             "segments": 3,
             "length_mm": 15.11
+          },
+          {
+            "net": "WBO1_CAN_TX",
+            "from": "U5602.22",
+            "to": "U5605.1",
+            "distance_mm": 2.709,
+            "via_mm": [
+              169.5,
+              62.75
+            ],
+            "width_mm": 0.2,
+            "via_diameter_mm": 0.65,
+            "drill_mm": 0.3,
+            "added_uuids": [
+              "9c2d0ecc-935c-4e9e-86d3-b8053cdb85fb",
+              "17a372df-e3ae-4276-821c-8e2e65a90c61",
+              "82730feb-ef3d-433c-bb1c-29f97a0f15c5",
+              "15dbf95f-90ae-47c5-af84-dda16ad32af1",
+              "98cb7383-6548-41ff-8ba7-e73419cc7b7f"
+            ],
+            "segments": 4,
+            "length_mm": 8.835526,
+            "layer": "F.Cu/B.Cu"
+          },
+          {
+            "net": "WBO1_CAN_RX",
+            "from": "U5602.21",
+            "to": "U5605.4",
+            "distance_mm": 2.993,
+            "via_mm": [
+              169.5,
+              63.75
+            ],
+            "width_mm": 0.2,
+            "via_diameter_mm": 0.65,
+            "drill_mm": 0.3,
+            "added_uuids": [
+              "b673c002-8e7c-44dd-b7d7-46f187a8bf37",
+              "b4e9b5cd-a0b8-405e-918f-8d35279b4acf",
+              "d8c03cf5-172e-40d8-bcdc-f82b6907e209",
+              "bd17e83e-ac3a-4c84-b371-4fa573b794d1",
+              "72eb3c81-4fd1-4bb8-ba19-ecbc75cb7eb3",
+              "7e5499a4-81d2-4c6d-bb0f-85938d5306d5"
+            ],
+            "segments": 5,
+            "length_mm": 8.799658,
+            "layer": "F.Cu/B.Cu"
           }
         ],
         "unrouted_local_pairs": [
@@ -22603,20 +22650,6 @@
             "to": "R5660.1",
             "distance_mm": 5.287,
             "reason": "all short candidate paths obstructed"
-          },
-          {
-            "net": "WBO1_CAN_TX",
-            "from": "U5602.22",
-            "to": "U5605.1",
-            "distance_mm": 2.709,
-            "reason": "opposite sides; intentional via routing pending"
-          },
-          {
-            "net": "WBO1_CAN_RX",
-            "from": "U5602.21",
-            "to": "U5605.4",
-            "distance_mm": 2.993,
-            "reason": "opposite sides; intentional via routing pending"
           },
           {
             "net": "WBO1_REF_SET",
@@ -25541,5 +25574,46 @@
     "silk_findings": 0,
     "lib_footprint_mismatch": 0,
     "full_connectivity_residual": 2099
-  }
+  },
+  "reviewed_wbo_can_routes": [
+    {
+      "net": "WBO1_CAN_RX",
+      "via_mm": [
+        169.5,
+        63.75
+      ],
+      "width_mm": 0.2,
+      "via_diameter_mm": 0.65,
+      "drill_mm": 0.3,
+      "added_uuids": [
+        "b673c002-8e7c-44dd-b7d7-46f187a8bf37",
+        "b4e9b5cd-a0b8-405e-918f-8d35279b4acf",
+        "d8c03cf5-172e-40d8-bcdc-f82b6907e209",
+        "bd17e83e-ac3a-4c84-b371-4fa573b794d1",
+        "72eb3c81-4fd1-4bb8-ba19-ecbc75cb7eb3",
+        "7e5499a4-81d2-4c6d-bb0f-85938d5306d5"
+      ],
+      "segments": 5,
+      "length_mm": 8.799658
+    },
+    {
+      "net": "WBO1_CAN_TX",
+      "via_mm": [
+        169.5,
+        62.75
+      ],
+      "width_mm": 0.2,
+      "via_diameter_mm": 0.65,
+      "drill_mm": 0.3,
+      "added_uuids": [
+        "9c2d0ecc-935c-4e9e-86d3-b8053cdb85fb",
+        "17a372df-e3ae-4276-821c-8e2e65a90c61",
+        "82730feb-ef3d-433c-bb1c-29f97a0f15c5",
+        "15dbf95f-90ae-47c5-af84-dda16ad32af1",
+        "98cb7383-6548-41ff-8ba7-e73419cc7b7f"
+      ],
+      "segments": 4,
+      "length_mm": 8.835526
+    }
+  ]
 }
