@@ -4,6 +4,7 @@ on:
     paths:
       - 'Power8GDI/hardware/**'
       - 'Power8GDI/pinout/**'
+      - 'Power8GDI/procurement/**'
       - '.github/workflows/power8gdi-electrical.yml'
   workflow_dispatch:
 jobs:
@@ -33,4 +34,6 @@ jobs:
             Power8GDI/hardware/design/core_erc.json
             Power8GDI/hardware/design/integration_checks.json
             Power8GDI/hardware/design/integrated_bom.csv
+            Power8GDI/hardware/design/integrated_bom_manifest.json
+            Power8GDI/hardware/design/selection_validation.json
             Power8GDI/hardware/design/board/review/

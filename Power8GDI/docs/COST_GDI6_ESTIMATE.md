@@ -98,4 +98,4 @@ python -m unittest discover -s Power8GDI/procurement/costing -p test_estimate.py
 
 Для нового подбора добавьте --selection Power8GDI/procurement/selection/bom_selection.json. Скрипт сохраняет hash входа, объединённую постатейную закупку и суммы; никаких сетевых запросов или заказов он не выполняет.
 
-SHA256 исходного подбора: `904b1a58bac9b66ef3785bbd1836a99488c64b3ec55a7f1b01a991299e557b4e`.
+SHA256 исходного подбора: `7e9d221aeb9504f4a88a13b53773fce778d71bfa90cf127fc0613dc7718d926a`.

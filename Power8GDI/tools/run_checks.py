@@ -79,6 +79,7 @@ def main(argv=None):
             "dual-hpfp-safety": ["dual_hpfp/dual_hpfp_supervisor.cpp", "tests/test_dual_hpfp_safety.cpp"],
             "dual-pt2001-safety": ["dual_gdi/dual_pt2001_safety.cpp", "tests/test_dual_pt2001_safety.cpp"],
             "fuel-gdi6": ["fuel/allocation_gdi6.cpp", "tests/test_fuel_gdi6.cpp"],
+            "gdi6-schedule": ["dual_gdi/gdi6_schedule_admission.cpp", "tests/test_gdi6_schedule.cpp"],
         }
         with tempfile.TemporaryDirectory(prefix="power8gdi-host-") as build:
             for name, files in sources.items():
@@ -106,6 +107,12 @@ def main(argv=None):
         record("mcu-audit-structure", [sys.executable, "hardware/audit_resources.py", "--gate", "structure"])
         record("gdi-audit-contracts", [sys.executable, "-m", "unittest", "discover", "-s", "hardware/gdi", "-p", "test_*.py", "-v"])
         record("gdi-audit-structure", [sys.executable, "hardware/gdi/validate_interface_contract.py"])
+        record("gdi6-resource-map", [sys.executable, "firmware/dual_gdi/generate_resource_map.py", "--check"])
+        record("gdi6-resource-mutations", [sys.executable, "-m", "unittest", "discover", "-s", "firmware/tests", "-p", "test_gdi6_resource_map.py", "-v"])
+        env["REQUIRE_BOM_BINDING"] = "1"
+        record("bom-selection", [sys.executable, "-m", "unittest", "discover", "-s", "procurement/selection", "-p", "test_selection.py", "-v"])
+        env["GDI6_COST_REQUIRE_INTEGRATED_INPUTS"] = "1"
+        record("bom-costing", [sys.executable, "-m", "unittest", "discover", "-s", "procurement/costing", "-p", "test_*.py", "-v"])
 
     if args.suite in ("cad", "all"):
         cad_output = args.output / "cad-assets"
