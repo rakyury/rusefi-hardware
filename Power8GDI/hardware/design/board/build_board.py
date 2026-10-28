@@ -421,6 +421,9 @@ def build(args):
     wbo_can_routes=route_wbo_can(board,root_path) if args.functional_layout else []
     from route_wbo_vio import route as route_wbo_vio
     wbo_vio_routes=route_wbo_vio(board,root_path) if args.functional_layout else []
+    from route_wbo_reset import route as route_wbo_reset, update_report as update_wbo_reset_report
+    wbo_reset_routes=route_wbo_reset(board,root_path) if args.functional_layout else []
+    update_wbo_reset_report(bank_placements,wbo_reset_routes)
     update_wbo_can_report(bank_placements,wbo_can_routes)
     local_copper_ids={t.m_Uuid.AsString() for t in board.GetTracks()}-donor_copper_ids
     add_plane(board,nets)
@@ -463,7 +466,7 @@ def build(args):
             'dnp_references':sorted(ref for ref,comp in components.items() if comp['dnp']),
             'staged_unreviewed_placements':unplaced,'reference_copper':audit,
             'silkscreen_geometry':silk_report,'copper_cleanup':cleanup_report,'output_bank_placement':bank_placements,
-            'ignition_local_routes':ignition_routes,'reviewed_shunt_return_repairs':return_repairs,'reviewed_wbo_can_routes':wbo_can_routes,'reviewed_wbo_vio_routes':wbo_vio_routes}
+            'ignition_local_routes':ignition_routes,'reviewed_shunt_return_repairs':return_repairs,'reviewed_wbo_can_routes':wbo_can_routes,'reviewed_wbo_vio_routes':wbo_vio_routes,'reviewed_wbo_reset_routes':wbo_reset_routes}
     report['voltage_domains']=voltage_domains.provenance()
     (out/'board_report.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({k:report[k] for k in ['kicad_version','qualification','outline_mm','copper_layers','thickness_mm','components','assigned_component_pins','pad_net_mismatches','tracks_vias','zones','unconnected_count']},indent=2))
