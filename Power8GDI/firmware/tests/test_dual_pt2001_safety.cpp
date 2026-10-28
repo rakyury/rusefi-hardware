@@ -1,9 +1,11 @@
 #include "dual_pt2001_safety.h"
 #include <cassert>
+#include <initializer_list>
 using namespace power8gdi;
 
 static GdiSafetySnapshot good() {
     GdiSafetySnapshot s;
+    s.injectorProfile = GdiInjectorProfile::LegacyGdi8;
     s.emergencyStopReleased = true;
     s.supplyHealthy = true;
     s.synchronizationValid = true;
@@ -34,6 +36,47 @@ static bool allAllowed(const GdiPermits& p) {
 }
 
 int main() {
+    // Unsupported/unconfigured profiles fail closed. GDI6 disables 7 and 8.
+    for (unsigned profile = 0; profile < 256; ++profile) {
+        auto s = good();
+        s.injectorProfile = static_cast<GdiInjectorProfile>(profile);
+        DualPt2001Safety safety;
+        const auto p = safety.update(s);
+        if (profile == 8) {
+            assert(allAllowed(p));
+        } else if (profile == 6) {
+            assert(p.state == GdiState::Armed && !p.requestHardwareKill);
+            assert(p.drvenAllowed[0] && p.drvenAllowed[1]);
+            for (unsigned i = 0; i < 8; ++i) assert(p.injectorCommand[i] == (i < 6));
+        } else {
+            assert(allDisabled(p));
+            assert(p.state == GdiState::Disarmed);
+        }
+    }
+    // Profile changes while armed latch a fault; restoring it cannot re-arm.
+    for (const auto replacement : {GdiInjectorProfile::LegacyGdi8,
+                                   GdiInjectorProfile::Unconfigured}) {
+        auto s = good();
+        s.injectorProfile = GdiInjectorProfile::SportGdi6;
+        DualPt2001Safety safety;
+        assert(safety.update(s).state == GdiState::Armed);
+        s.injectorProfile = replacement;
+        const auto p = safety.update(s);
+        assert(allDisabled(p) && p.fault == GdiFault::ConfigurationInvalid);
+        s.injectorProfile = GdiInjectorProfile::SportGdi6;
+        assert(allDisabled(safety.update(s)));
+    }
+    // Both banks remain mandatory in GDI6 (three logical cylinders per bank).
+    {
+        auto s = good();
+        s.injectorProfile = GdiInjectorProfile::SportGdi6;
+        DualPt2001Safety safety;
+        assert(safety.update(s).state == GdiState::Armed);
+        s.chip[1].ready = false;
+        assert(allDisabled(safety.update(s)));
+        s.chip[1].ready = true;
+        assert(allDisabled(safety.update(s)));
+    }
     {
         DualPt2001Safety onBoot;
         assert(onBoot.state() == GdiState::Disarmed);
@@ -52,11 +95,14 @@ int main() {
         assert(!safety.acknowledgeStopped(s)); // engine running
         s.runRequested = false;
         s.synchronizationValid = false;
+        assert(!safety.acknowledgeStopped(s)); // no independent standstill evidence
+        s.engineStoppedConfirmed = true;
         assert(safety.acknowledgeStopped(s));
         assert(safety.state() == GdiState::Disarmed);
         assert(allDisabled(safety.update(s)));
         s.runRequested = true;
         s.synchronizationValid = true;
+        s.engineStoppedConfirmed = false;
         assert(allAllowed(safety.update(s)));
     }
     // Every prerequisite must safely kill BOTH PTs and all injector/pump commands.
@@ -92,9 +138,28 @@ int main() {
         const auto p = safety.update(s);
         assert(allDisabled(p) && p.fault == GdiFault::SynchronizationLost);
         s.runRequested = false;
+        // A rotating engine with a failed crank sensor is also unsynchronized.
+        // Clearing the run request must not turn that into a stopped engine.
+        assert(!s.engineStoppedConfirmed);
+        assert(!safety.acknowledgeStopped(s));
+        assert(safety.fault() == GdiFault::SynchronizationLost);
+        assert(allDisabled(safety.update(good()))); // restored sync cannot re-arm
+        // Even confirmed standstill cannot bypass the other recovery gates.
+        s.engineStoppedConfirmed = true;
+        s.runRequested = true;
+        assert(!safety.acknowledgeStopped(s));
+        s.runRequested = false;
+        s.synchronizationValid = true;
+        assert(!safety.acknowledgeStopped(s));
+        s.synchronizationValid = false;
+        s.chip[1].diagnosticsFresh = false;
+        assert(!safety.acknowledgeStopped(s));
+        s.chip[1].diagnosticsFresh = true;
         assert(safety.acknowledgeStopped(s));
+        assert(allDisabled(safety.update(s)));
         s.runRequested = true;
         s.synchronizationValid = true;
+        s.engineStoppedConfirmed = false;
         assert(allAllowed(safety.update(s)));
     }
     {
@@ -117,6 +182,7 @@ int main() {
         auto s = good();
         s.runRequested = false;
         s.synchronizationValid = false;
+        s.engineStoppedConfirmed = true;
         assert(safety.acknowledgeStopped(s));
         assert(allDisabled(safety.update(s)));
     }
@@ -150,6 +216,31 @@ int main() {
         s.railSensorConfigured[0] = false;
         assert(allDisabled(safety.update(s)));
         assert(safety.state() == GdiState::Disarmed);
+    }
+    // Independent rails serve all eight DI channels. Every combination that
+    // omits either pump or pressure sensor must keep BOTH driver banks disabled,
+    // including a complete pump/sensor pair on just one side.
+    for (unsigned configuration = 0; configuration < 16; ++configuration) {
+        DualPt2001Safety safety;
+        auto s = good();
+        s.pumpConfigured[0] = (configuration & 1u) != 0;
+        s.pumpConfigured[1] = (configuration & 2u) != 0;
+        s.railSensorConfigured[0] = (configuration & 4u) != 0;
+        s.railSensorConfigured[1] = (configuration & 8u) != 0;
+        const auto p = safety.update(s);
+        if (configuration == 15) {
+            assert(allAllowed(p));
+        } else {
+            assert(allDisabled(p));
+            assert(p.state == GdiState::Disarmed);
+            // The same incomplete configuration must not clear a fault latch.
+            safety.latchFault(GdiFault::DriverA);
+            s.runRequested = false;
+            s.synchronizationValid = false;
+            s.engineStoppedConfirmed = true;
+            assert(!safety.acknowledgeStopped(s));
+            assert(safety.fault() == GdiFault::DriverA);
+        }
     }
     // Intentional run-request cancellation is a normal stop, even if the
     // crank/cam synchronization disappears in that same control cycle.

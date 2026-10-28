@@ -1,0 +1,4090 @@
+(kicad_sch
+  (version 20250114)
+  (generator "eeschema")
+  (uuid "b310568d-b3ba-54de-b7c7-d09916e07eb0")
+  (paper "A2")
+  (title_block
+    (title "Direct protected low-side PI1, PI2, PI3, PI4")
+    (rev "Engineering draft 0.1")
+    (comment 1 "UNQUALIFIED: no manufacturing or engine approval"))
+  (lib_symbols
+    (symbol "Power8GDI_Core:R"
+      (pin_numbers
+        (hide yes))
+      (pin_names
+        (offset 0))
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "R"
+        (at 2.032 0 90)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "R"
+        (at 0 0 90)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" ""
+        (at -1.778 0 90)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Description" "Resistor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_keywords" "R res resistor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_fp_filters" "R_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "R_0_1"
+        (rectangle
+          (start -1.016 -2.54)
+          (end 1.016 2.54)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type none))))
+      (symbol "R_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 1.27)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 1.27)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27))))))
+      (embedded_fonts no))
+    (symbol "Power8GDI_Core:SN74LVC14A_Q1"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 0 25.4 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "SN74LVC14A_Q1"
+        (at 0 -25.4 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "SN74LVC14A_Q1_0_1"
+        (rectangle
+          (start -12.7 22.86)
+          (end 12.7 -22.86)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "SN74LVC14A_Q1_1_1"
+        (pin power_in line
+          (at 0 25.4 270)
+          (length 2.54)
+          (name "VCC"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "14"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 0 -25.4 90)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "7"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -15.24 19.05 0)
+          (length 2.54)
+          (name "1A"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at 15.24 19.05 180)
+          (length 2.54)
+          (name "1Y_INV"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -15.24 11.43 0)
+          (length 2.54)
+          (name "2A"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "3"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at 15.24 11.43 180)
+          (length 2.54)
+          (name "2Y_INV"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "4"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -15.24 3.81 0)
+          (length 2.54)
+          (name "3A"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "5"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at 15.24 3.81 180)
+          (length 2.54)
+          (name "3Y_INV"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "6"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -15.24 -3.81 0)
+          (length 2.54)
+          (name "4A"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "9"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at 15.24 -3.81 180)
+          (length 2.54)
+          (name "4Y_INV"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "8"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -15.24 -11.43 0)
+          (length 2.54)
+          (name "5A"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "11"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at 15.24 -11.43 180)
+          (length 2.54)
+          (name "5Y_INV"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "10"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -15.24 -19.05 0)
+          (length 2.54)
+          (name "6A"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "13"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at 15.24 -19.05 180)
+          (length 2.54)
+          (name "6Y_INV"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "12"
+            (effects
+              (font
+                (size 1.016 1.016)))))))
+    (symbol "Power8GDI_Core:TLE9104SH"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 0 43.18 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "TLE9104SH"
+        (at 0 -43.18 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Power8GDI_Core:TLE9104SH_PG-DSO-20-88"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "TLE9104SH_0_1"
+        (rectangle
+          (start -22.86 40.64)
+          (end 22.86 -40.64)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "TLE9104SH_1_1"
+        (pin input line
+          (at -25.4 30.48 0)
+          (length 2.54)
+          (name "IN1_N"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "3"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -25.4 22.86 0)
+          (length 2.54)
+          (name "IN2_N"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "18"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -25.4 15.24 0)
+          (length 2.54)
+          (name "IN3_N"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "4"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -25.4 7.62 0)
+          (length 2.54)
+          (name "IN4_N"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "17"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -25.4 0 0)
+          (length 2.54)
+          (name "SI"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "6"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -25.4 -7.62 0)
+          (length 2.54)
+          (name "SCK"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "8"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -25.4 -15.24 0)
+          (length 2.54)
+          (name "CSN"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "7"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -25.4 -22.86 0)
+          (length 2.54)
+          (name "RESN"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "13"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -25.4 -30.48 0)
+          (length 2.54)
+          (name "EN"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "14"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin open_collector line
+          (at 25.4 30.48 180)
+          (length 2.54)
+          (name "OUT1"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin open_collector line
+          (at 25.4 20.32 180)
+          (length 2.54)
+          (name "OUT2"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "20"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin open_collector line
+          (at 25.4 10.16 180)
+          (length 2.54)
+          (name "OUT3"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "10"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin open_collector line
+          (at 25.4 0 180)
+          (length 2.54)
+          (name "OUT4"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "11"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin tri_state line
+          (at 25.4 -10.16 180)
+          (length 2.54)
+          (name "SO"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "5"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at -10.16 43.18 270)
+          (length 2.54)
+          (name "VIO"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "15"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 10.16 43.18 270)
+          (length 2.54)
+          (name "VDD"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "16"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at -20.32 -43.18 90)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at -10.16 -43.18 90)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "9"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 0 -43.18 90)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "12"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 10.16 -43.18 90)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "19"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 20.32 -43.18 90)
+          (length 2.54)
+          (name "EP_GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "21"
+            (effects
+              (font
+                (size 1.016 1.016)))))))
+    (symbol "Power8GDI_Core:C"
+      (pin_numbers
+        (hide yes))
+      (pin_names
+        (offset 0.254))
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "C"
+        (at 0.635 2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (justify left)))
+      (property "Value" "C"
+        (at 0.635 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (justify left)))
+      (property "Footprint" ""
+        (at 0.9652 -3.81 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Description" "Unpolarized capacitor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_keywords" "cap capacitor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_fp_filters" "C_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "C_0_1"
+        (polyline
+          (pts
+            (xy -2.032 0.762)
+            (xy 2.032 0.762))
+          (stroke
+            (width 0.508)
+            (type default))
+          (fill
+            (type none)))
+        (polyline
+          (pts
+            (xy -2.032 -0.762)
+            (xy 2.032 -0.762))
+          (stroke
+            (width 0.508)
+            (type default))
+          (fill
+            (type none))))
+      (symbol "C_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 2.794)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 2.794)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27))))))
+      (embedded_fonts no)))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 54.61 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "024aec2d-ee58-5521-8ed5-8d293fe4ff61")
+    (property "Reference" "R1101"
+      (at 58.61 88.9 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100k"
+      (at 58.61 91.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 54.61 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "MCU high-Z/reset command OFF; high command turns load ON through inverter"
+      (at 54.61 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "24ffc5bb-4f4f-57af-b12c-dae0138733c6"))
+    (pin "2"
+      (uuid "30c34923-e824-56dc-be6b-97866a319fa9"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1101")
+          (unit 1))))
+    (property "MPN" "CRCW0603100KFKEA"
+      (at 54.61 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 54.61 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4e3f06cba0aa"
+      (at 54.61 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 54.61 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 54.61 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 54.61 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 54.61 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 54.61 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 54.61 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 54.61 86.36)
+      (xy 54.61 78.74))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "caa56949-1d0d-5b05-aa06-bd5b929775e6"))
+  (global_label "PI1"
+    (shape bidirectional)
+    (at 54.61 78.74 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "b109e7c0-6a66-5aa2-bb17-140d7b7153e2"))
+  (wire
+    (pts
+      (xy 54.61 93.98)
+      (xy 54.61 101.6))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "a48c1832-ffa8-5c51-b8fa-8776acc16935"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 54.61 101.6 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "b6d587dd-0d58-5cdf-bd64-1c04b67c3e06"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 110.49 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "a8c33fd1-0e40-56e0-b93b-6786a6cdb882")
+    (property "Reference" "R1102"
+      (at 114.49 88.9 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100R"
+      (at 114.49 91.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 110.49 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Input current/edge damping; direct timing path, not SPI control"
+      (at 110.49 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "f8d85266-9232-55cc-9952-fcad3130788a"))
+    (pin "2"
+      (uuid "e7aa4612-8894-5fa8-872f-bb45302110b4"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1102")
+          (unit 1))))
+    (property "MPN" "CRCW0603100RFKEA"
+      (at 110.49 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 110.49 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-319468e4af3f"
+      (at 110.49 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 110.49 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 110.49 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 110.49 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 110.49 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 110.49 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 110.49 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 110.49 86.36)
+      (xy 110.49 78.74))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "cae7c725-0400-5d60-b8a9-79ab5293f452"))
+  (global_label "PI1_INV"
+    (shape bidirectional)
+    (at 110.49 78.74 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "d8e1e36c-f70f-5cc6-b07b-7df3043fb13a"))
+  (wire
+    (pts
+      (xy 110.49 93.98)
+      (xy 110.49 101.6))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "85e41da5-0515-5414-aee8-2d3e25a1c40a"))
+  (global_label "PI1_IN_N"
+    (shape bidirectional)
+    (at 110.49 101.6 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "ebd54e49-365f-51d7-9990-9eb0f157f6b8"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 165.1 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "ad0c5eda-3cfb-5750-b131-0a977a916e71")
+    (property "Reference" "R1103"
+      (at 169.1 88.9 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10k"
+      (at 169.1 91.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 165.1 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Default high is OFF at TLE input; essential active-low pin polarity"
+      (at 165.1 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "fd78184d-7ab8-57fd-aeba-4ac26204c21d"))
+    (pin "2"
+      (uuid "75eca5dc-6ac9-5249-86bd-7f470ae7c2e3"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1103")
+          (unit 1))))
+    (property "MPN" "CRCW060310K0FKEA"
+      (at 165.1 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 165.1 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-9c0806476875"
+      (at 165.1 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 165.1 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 165.1 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 165.1 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 10000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 165.1 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 165.1 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 165.1 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 165.1 86.36)
+      (xy 165.1 78.74))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "d9e5886a-2373-5b16-96ca-c08f2e17b41e"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 165.1 78.74 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "6377cc66-806c-51f5-b8a5-f7b07195b58d"))
+  (wire
+    (pts
+      (xy 165.1 93.98)
+      (xy 165.1 101.6))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "78bb18b7-bf44-53ad-9ae6-3d699a234f34"))
+  (global_label "PI1_IN_N"
+    (shape bidirectional)
+    (at 165.1 101.6 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "ff6cbd15-1708-5f32-8884-4646e379fc5d"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 54.61 154.94 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "d3b6d20a-b15f-53fa-984c-99011e17f051")
+    (property "Reference" "R1104"
+      (at 58.61 153.67 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100k"
+      (at 58.61 156.21 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 54.61 154.94 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "MCU high-Z/reset command OFF; high command turns load ON through inverter"
+      (at 54.61 154.94 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "41f7aa9f-6fed-5e4b-93bb-ef424b4222df"))
+    (pin "2"
+      (uuid "5c974411-bc27-53ac-b4bd-68bf91192f51"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1104")
+          (unit 1))))
+    (property "MPN" "CRCW0603100KFKEA"
+      (at 54.61 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 54.61 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4e3f06cba0aa"
+      (at 54.61 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 54.61 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 54.61 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 54.61 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 54.61 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 54.61 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 54.61 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 54.61 151.13)
+      (xy 54.61 143.51))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "2d8df799-26ad-5410-9b34-e4dc2c4a9428"))
+  (global_label "PI2"
+    (shape bidirectional)
+    (at 54.61 143.51 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "abb1baeb-c6fc-5b69-8b86-4f0409603117"))
+  (wire
+    (pts
+      (xy 54.61 158.75)
+      (xy 54.61 166.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "0cbc4b68-6fc5-553c-b0f0-bd9ee212bada"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 54.61 166.37 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "868bf77a-0a40-5f7e-b8ef-c2bfad46c1b1"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 110.49 154.94 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "53f43109-23a6-576b-9f5a-745132cc15a3")
+    (property "Reference" "R1105"
+      (at 114.49 153.67 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100R"
+      (at 114.49 156.21 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 110.49 154.94 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Input current/edge damping; direct timing path, not SPI control"
+      (at 110.49 154.94 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "b4f5dec1-f0b7-5209-bbd6-f15101471d1b"))
+    (pin "2"
+      (uuid "f5898291-d29a-5749-aff8-3827e7ec0906"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1105")
+          (unit 1))))
+    (property "MPN" "CRCW0603100RFKEA"
+      (at 110.49 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 110.49 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-319468e4af3f"
+      (at 110.49 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 110.49 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 110.49 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 110.49 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 110.49 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 110.49 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 110.49 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 110.49 151.13)
+      (xy 110.49 143.51))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "db147b1e-0cd7-5a3f-8dc7-42b37e639d1a"))
+  (global_label "PI2_INV"
+    (shape bidirectional)
+    (at 110.49 143.51 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "36a89fcb-43aa-545e-b650-787e8a5d0273"))
+  (wire
+    (pts
+      (xy 110.49 158.75)
+      (xy 110.49 166.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "90395985-3795-5f08-bfbf-2d962b763fc4"))
+  (global_label "PI2_IN_N"
+    (shape bidirectional)
+    (at 110.49 166.37 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "d692a5b0-8284-5cb0-83b2-1629c3f9c68a"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 165.1 154.94 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "4b416a5f-22c7-5d60-97eb-9b715181c6fb")
+    (property "Reference" "R1106"
+      (at 169.1 153.67 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10k"
+      (at 169.1 156.21 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 165.1 154.94 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Default high is OFF at TLE input; essential active-low pin polarity"
+      (at 165.1 154.94 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "9b78e1a8-72df-544b-b322-758fa35ee8f9"))
+    (pin "2"
+      (uuid "540c50bc-81b2-5cec-a3f3-46d8016d89c7"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1106")
+          (unit 1))))
+    (property "MPN" "CRCW060310K0FKEA"
+      (at 165.1 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 165.1 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-9c0806476875"
+      (at 165.1 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 165.1 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 165.1 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 165.1 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 10000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 165.1 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 165.1 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 165.1 154.94 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 165.1 151.13)
+      (xy 165.1 143.51))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "58f83a1d-c2b5-50a7-83ae-aeee4e8bb3e8"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 165.1 143.51 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "558a8d3c-9a56-5734-b43d-527a300ef3ef"))
+  (wire
+    (pts
+      (xy 165.1 158.75)
+      (xy 165.1 166.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "77ce522e-8667-5e0f-b478-c4cf031f5d11"))
+  (global_label "PI2_IN_N"
+    (shape bidirectional)
+    (at 165.1 166.37 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "87a3ad40-94d6-5430-acfa-74cfe5279273"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 54.61 219.71 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "45ef5370-6488-5731-b2dd-b09f51a91b41")
+    (property "Reference" "R1107"
+      (at 58.61 218.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100k"
+      (at 58.61 220.98 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 54.61 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "MCU high-Z/reset command OFF; high command turns load ON through inverter"
+      (at 54.61 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "2a18de7a-1f5d-534e-812a-c67fcbb8f84b"))
+    (pin "2"
+      (uuid "693f094f-089a-5608-af49-9411bc78e50f"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1107")
+          (unit 1))))
+    (property "MPN" "CRCW0603100KFKEA"
+      (at 54.61 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 54.61 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4e3f06cba0aa"
+      (at 54.61 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 54.61 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 54.61 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 54.61 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 54.61 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 54.61 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 54.61 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 54.61 215.9)
+      (xy 54.61 208.28))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "8704b5de-d412-5589-ae4f-617be4223524"))
+  (global_label "PI3"
+    (shape bidirectional)
+    (at 54.61 208.28 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "59a05797-1d5a-5c24-b4a2-c4a7f2045a29"))
+  (wire
+    (pts
+      (xy 54.61 223.52)
+      (xy 54.61 231.14))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "cfa41738-e1f9-5eb1-b5ca-df5ec80a4747"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 54.61 231.14 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "d24204fc-cc6a-5838-ac70-260559e63b00"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 110.49 219.71 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "e0b0d70b-b9d7-56a9-88cb-3402a0cfc8bc")
+    (property "Reference" "R1108"
+      (at 114.49 218.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100R"
+      (at 114.49 220.98 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 110.49 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Input current/edge damping; direct timing path, not SPI control"
+      (at 110.49 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "e9c5f6ad-e97a-56c9-8867-0cab3e973b6e"))
+    (pin "2"
+      (uuid "f0e94b22-059e-5b3d-be92-358bdccabfdf"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1108")
+          (unit 1))))
+    (property "MPN" "CRCW0603100RFKEA"
+      (at 110.49 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 110.49 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-319468e4af3f"
+      (at 110.49 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 110.49 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 110.49 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 110.49 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 110.49 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 110.49 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 110.49 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 110.49 215.9)
+      (xy 110.49 208.28))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "2cf3ade6-23d6-52dd-97c7-57e72b79f2df"))
+  (global_label "PI3_INV"
+    (shape bidirectional)
+    (at 110.49 208.28 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "67feaab8-0bbe-57d8-9030-bca918d00552"))
+  (wire
+    (pts
+      (xy 110.49 223.52)
+      (xy 110.49 231.14))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "82a55ea6-b7ed-5acf-baa5-9d3a67ff8463"))
+  (global_label "PI3_IN_N"
+    (shape bidirectional)
+    (at 110.49 231.14 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "946a613b-efef-5f0c-a87a-fd5069a0e3b1"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 165.1 219.71 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "06e771e1-0d05-5d76-8a65-6cad1e50e1de")
+    (property "Reference" "R1109"
+      (at 169.1 218.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10k"
+      (at 169.1 220.98 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 165.1 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Default high is OFF at TLE input; essential active-low pin polarity"
+      (at 165.1 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "9cc649f9-9d78-545d-933e-adec28fff0e3"))
+    (pin "2"
+      (uuid "81cd4ae9-9df2-5e3a-84bd-8578ebe73461"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1109")
+          (unit 1))))
+    (property "MPN" "CRCW060310K0FKEA"
+      (at 165.1 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 165.1 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-9c0806476875"
+      (at 165.1 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 165.1 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 165.1 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 165.1 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 10000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 165.1 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 165.1 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 165.1 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 165.1 215.9)
+      (xy 165.1 208.28))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3014a07d-696d-595c-aac0-644c27ec3f14"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 165.1 208.28 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "908e3f88-813e-5dda-9a3a-002d6237c362"))
+  (wire
+    (pts
+      (xy 165.1 223.52)
+      (xy 165.1 231.14))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "701a6451-683e-5046-a214-1e6be5c24f73"))
+  (global_label "PI3_IN_N"
+    (shape bidirectional)
+    (at 165.1 231.14 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "f2bf5009-125c-55e2-97f6-5c97b221bef2"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 54.61 284.48 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "981e1b17-411f-5f1b-932c-3626d8145652")
+    (property "Reference" "R1110"
+      (at 58.61 283.21 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100k"
+      (at 58.61 285.75 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 54.61 284.48 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "MCU high-Z/reset command OFF; high command turns load ON through inverter"
+      (at 54.61 284.48 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "5a9e009b-33d4-5a7c-8335-990ac0127d83"))
+    (pin "2"
+      (uuid "9fabbbb6-9dda-5af7-9af1-202689d7b2ba"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1110")
+          (unit 1))))
+    (property "MPN" "CRCW0603100KFKEA"
+      (at 54.61 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 54.61 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4e3f06cba0aa"
+      (at 54.61 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 54.61 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 54.61 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 54.61 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 54.61 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 54.61 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 54.61 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 54.61 280.67)
+      (xy 54.61 273.05))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "fd48d5bf-f584-53a4-b9fd-0f3349f67000"))
+  (global_label "PI4"
+    (shape bidirectional)
+    (at 54.61 273.05 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "bc60d14e-52d6-5b5d-9104-14bc1846139f"))
+  (wire
+    (pts
+      (xy 54.61 288.29)
+      (xy 54.61 295.91))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3d01e3c1-ea59-5446-9f95-25db632399de"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 54.61 295.91 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "254463e4-e47b-54d5-ba05-3b8d8fa563e8"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 110.49 284.48 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "16b4270e-0200-52e7-837e-64c520f2220a")
+    (property "Reference" "R1111"
+      (at 114.49 283.21 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100R"
+      (at 114.49 285.75 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 110.49 284.48 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Input current/edge damping; direct timing path, not SPI control"
+      (at 110.49 284.48 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "b24a6586-a110-57cf-b965-a7b4bbbf13d4"))
+    (pin "2"
+      (uuid "00bb8711-8941-5ed0-9c90-2316dde5ee9a"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1111")
+          (unit 1))))
+    (property "MPN" "CRCW0603100RFKEA"
+      (at 110.49 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 110.49 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-319468e4af3f"
+      (at 110.49 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 110.49 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 110.49 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 110.49 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 110.49 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 110.49 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 110.49 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 110.49 280.67)
+      (xy 110.49 273.05))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "5f1c065f-aac7-5e11-bed9-523b01e5adf8"))
+  (global_label "PI4_INV"
+    (shape bidirectional)
+    (at 110.49 273.05 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "a6ffb201-20e9-5b76-a181-8cba4d320927"))
+  (wire
+    (pts
+      (xy 110.49 288.29)
+      (xy 110.49 295.91))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "72c4e949-b98e-533a-a767-aa9999920bff"))
+  (global_label "PI4_IN_N"
+    (shape bidirectional)
+    (at 110.49 295.91 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "f7711c5b-be5a-5a54-9c6b-ce104a69c43b"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 165.1 284.48 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "f36f415c-a26c-5847-9867-2f27db03e514")
+    (property "Reference" "R1112"
+      (at 169.1 283.21 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10k"
+      (at 169.1 285.75 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 165.1 284.48 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Default high is OFF at TLE input; essential active-low pin polarity"
+      (at 165.1 284.48 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "ceed0d72-9744-5421-ac32-1e136e6782e6"))
+    (pin "2"
+      (uuid "3da6b475-dc92-5867-97c4-c684e31396d6"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1112")
+          (unit 1))))
+    (property "MPN" "CRCW060310K0FKEA"
+      (at 165.1 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 165.1 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-9c0806476875"
+      (at 165.1 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 165.1 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 165.1 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 165.1 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 10000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 165.1 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 165.1 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 165.1 284.48 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 165.1 280.67)
+      (xy 165.1 273.05))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "d69557ac-8fa0-5773-a0a1-6f93bf50d2e7"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 165.1 273.05 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "1adeaa74-8185-5bd6-a966-1bee19c15aac"))
+  (wire
+    (pts
+      (xy 165.1 288.29)
+      (xy 165.1 295.91))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "230c9285-0e70-576c-9fa8-65b8f01126c9"))
+  (global_label "PI4_IN_N"
+    (shape bidirectional)
+    (at 165.1 295.91 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "c4a78718-5b5c-54f5-ae61-d6ee8292d750"))
+  (symbol
+    (lib_id "Power8GDI_Core:SN74LVC14A_Q1")
+    (at 260.35 100.33 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "d6f6eb72-3c9c-5830-86e9-5a4188178bed")
+    (property "Reference" "U1121"
+      (at 260.35 72.39 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "SN74LVC14AQPWRQ1"
+      (at 260.35 128.27 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Package_SO:TSSOP-14_4.4x5mm_P0.65mm"
+      (at 260.35 100.33 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "TI SCAS705B. Only assigned gates invert MCU commands; all unused inputs tied low and outputs no-connect."
+      (at 260.35 100.33 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "14"
+      (uuid "8c495bea-7f32-549e-a2fc-a2206fddfe57"))
+    (pin "7"
+      (uuid "ec9514cb-45c3-5a4b-b409-f4458566e4a7"))
+    (pin "1"
+      (uuid "6e31454b-a1b3-5746-9e17-a527da1731e2"))
+    (pin "2"
+      (uuid "f752b562-794b-5cbb-9f03-9f7dad0130f5"))
+    (pin "3"
+      (uuid "6878d000-1174-5302-8c7f-752a081af762"))
+    (pin "4"
+      (uuid "e1ebbf83-03ec-5843-835c-fb0b7cd91906"))
+    (pin "5"
+      (uuid "5de295da-84dc-5438-b0df-4c7b1ac3ebce"))
+    (pin "6"
+      (uuid "86ccc237-fe64-55e7-9294-df878b39099f"))
+    (pin "9"
+      (uuid "c0cd0054-3055-5af9-a3a3-76f739353212"))
+    (pin "8"
+      (uuid "9fd81c05-449f-53cf-b20b-733197461a0a"))
+    (pin "11"
+      (uuid "8f91b015-d550-5835-8324-d49087c55933"))
+    (pin "10"
+      (uuid "3afd4617-f5e7-5eff-8066-0e4bbc9e5d65"))
+    (pin "13"
+      (uuid "cf6f06e1-57bb-56cb-9982-718daea0559a"))
+    (pin "12"
+      (uuid "b25f8d95-5148-5683-be8a-01c139894975"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "U1121")
+          (unit 1))))
+    (property "MPN" "SN74LVC14AQPWRQ1"
+      (at 260.35 100.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Texas Instruments"
+      (at 260.35 100.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-90b5d0e9725e"
+      (at 260.35 100.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 260.35 100.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 260.35 100.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 260.35 100.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 260.35 100.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.ti.com/product/SN74LVC14A-Q1/part-details/SN74LVC14AQPWRQ1"
+      (at 260.35 100.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 260.35 100.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 260.35 74.93)
+      (xy 260.35 67.31))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "03a8030f-68aa-5297-a7dd-e52fdb38468c"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 260.35 67.31 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "09cab3ad-1abf-5b15-bceb-d5f76a7b819c"))
+  (wire
+    (pts
+      (xy 260.35 125.73)
+      (xy 260.35 133.35))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "00363187-ef61-506c-b882-5920a90cbca7"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 260.35 133.35 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "37300926-a43b-565e-be49-de7fa0abd51e"))
+  (wire
+    (pts
+      (xy 245.11 81.28)
+      (xy 237.49 81.28))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "b0426294-1c7a-54f3-a66d-6d36d2b1b465"))
+  (global_label "PI1"
+    (shape bidirectional)
+    (at 237.49 81.28 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "94b4feb4-52bf-5dc6-8c21-87a2b80ff1c6"))
+  (wire
+    (pts
+      (xy 275.59 81.28)
+      (xy 283.21 81.28))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "90afb108-430e-5edc-8b94-1e0b4c40500b"))
+  (global_label "PI1_INV"
+    (shape bidirectional)
+    (at 283.21 81.28 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "0a72c466-636a-555e-8434-2d9a640d7f47"))
+  (wire
+    (pts
+      (xy 245.11 88.9)
+      (xy 237.49 88.9))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "290792e2-2457-5eb5-8f9c-fa2e5bf9e665"))
+  (global_label "PI2"
+    (shape bidirectional)
+    (at 237.49 88.9 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "92257fab-9098-5dab-990a-6495de27b520"))
+  (wire
+    (pts
+      (xy 275.59 88.9)
+      (xy 283.21 88.9))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "898a6390-cdea-5984-9a81-d00e977acb92"))
+  (global_label "PI2_INV"
+    (shape bidirectional)
+    (at 283.21 88.9 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "70e7aa5a-2aad-5de0-8c57-3acd5abfc26b"))
+  (wire
+    (pts
+      (xy 245.11 96.52)
+      (xy 237.49 96.52))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "00a22455-de44-51fc-8ccf-feea2fc4845e"))
+  (global_label "PI3"
+    (shape bidirectional)
+    (at 237.49 96.52 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "3eb586cc-3160-5978-8cf1-299a8dc71ee1"))
+  (wire
+    (pts
+      (xy 275.59 96.52)
+      (xy 283.21 96.52))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "f516a089-8da2-5c58-b086-85ac1c645fa6"))
+  (global_label "PI3_INV"
+    (shape bidirectional)
+    (at 283.21 96.52 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "a3a8c0c9-25d1-5ba4-b005-49a20fd1e1ba"))
+  (wire
+    (pts
+      (xy 245.11 104.14)
+      (xy 237.49 104.14))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3ae7feb7-0f54-5514-a488-f070683ff94d"))
+  (global_label "PI4"
+    (shape bidirectional)
+    (at 237.49 104.14 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "6a34cc47-f4c7-581a-949c-a77c668a1c29"))
+  (wire
+    (pts
+      (xy 275.59 104.14)
+      (xy 283.21 104.14))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "b3df4221-db11-50e1-9f6b-0d630dbd4fd1"))
+  (global_label "PI4_INV"
+    (shape bidirectional)
+    (at 283.21 104.14 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "44754983-4851-566e-accb-56cf2fac6eeb"))
+  (wire
+    (pts
+      (xy 245.11 111.76)
+      (xy 237.49 111.76))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "6c8ea607-b46d-570e-9f00-869fee3502fd"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 237.49 111.76 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "e01d3af9-1e62-5dc1-80ac-8148a38df875"))
+  (no_connect
+    (at 275.59 111.76)
+    (uuid "9243dee2-595b-5eff-9e0b-8b5588727367"))
+  (wire
+    (pts
+      (xy 245.11 119.38)
+      (xy 237.49 119.38))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "22ad797b-81cb-54dc-8dd5-97f5b6b2ae9a"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 237.49 119.38 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "9471ab31-d0fb-5c88-a1b1-c89d25b38464"))
+  (no_connect
+    (at 275.59 119.38)
+    (uuid "d048ad3e-2659-546f-a035-a966cb4b1a27"))
+  (symbol
+    (lib_id "Power8GDI_Core:TLE9104SH")
+    (at 439.42 115.57 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "db8c72a0-935c-5d02-982f-ccc015928c06")
+    (property "Reference" "U1101"
+      (at 439.42 69.85 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "TLE9104SHXUMA1"
+      (at 439.42 161.29 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Power8GDI_Core:TLE9104SH_PG-DSO-20-88"
+      (at 439.42 115.57 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Infineon Rev1.31. INx ACTIVE LOW; EN high AND CTRL.OUT_EN=1 required. All4GNDs and floatingEP connected. No parallel channels."
+      (at 439.42 115.57 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "3"
+      (uuid "ae8c8bea-cd20-5197-9f8a-cf55a64ea7fa"))
+    (pin "18"
+      (uuid "2c5c5c39-1367-538f-929a-8feb77644369"))
+    (pin "4"
+      (uuid "fa4e76e5-ee9a-5770-919b-676069e5b044"))
+    (pin "17"
+      (uuid "5b5ef3f1-d507-5599-81bb-d0beac3fc6f5"))
+    (pin "6"
+      (uuid "b2a7686e-2b29-5ee8-ab02-7c071a58a61c"))
+    (pin "8"
+      (uuid "d3f1e3f9-03cf-5793-b8ec-fce66a89f960"))
+    (pin "7"
+      (uuid "b8ab3ad8-b1a4-567d-9bad-a3defba68e94"))
+    (pin "13"
+      (uuid "18f69ab4-75eb-53c9-8a69-46c6174684c2"))
+    (pin "14"
+      (uuid "b919193b-327e-56be-ad1a-290ec03aebd7"))
+    (pin "1"
+      (uuid "5b3c1e75-5151-5e21-ab13-97226811f03f"))
+    (pin "20"
+      (uuid "a33ba72f-24e3-532d-8491-088a9d764e48"))
+    (pin "10"
+      (uuid "01d134f2-b60b-5e70-8edb-1f1654c2ceb2"))
+    (pin "11"
+      (uuid "bfd428db-088a-50da-b2c6-7306899fe8ea"))
+    (pin "5"
+      (uuid "2671a7bb-8652-5ab7-b59d-460fd03e1e97"))
+    (pin "15"
+      (uuid "e627643e-93ca-5702-a00e-0bd4e72af367"))
+    (pin "16"
+      (uuid "65d9390b-3978-59d8-a8ea-f1e023f6b468"))
+    (pin "2"
+      (uuid "9009e599-8d3b-5b7e-bed5-39c3cd125825"))
+    (pin "9"
+      (uuid "1b55d0f4-249b-559a-874a-a58e9db2a3ff"))
+    (pin "12"
+      (uuid "4d512281-2ad0-5e40-ac04-7bde11ff2376"))
+    (pin "19"
+      (uuid "77600694-cade-54fd-8b32-054c00c38979"))
+    (pin "21"
+      (uuid "4460b1b1-9ea2-5840-b6a3-512afc9b4e91"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "U1101")
+          (unit 1))))
+    (property "MPN" "TLE9104SHXUMA1"
+      (at 439.42 115.57 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Infineon Technologies"
+      (at 439.42 115.57 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-05b4f44d8450"
+      (at 439.42 115.57 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 439.42 115.57 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 439.42 115.57 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 439.42 115.57 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 439.42 115.57 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.infineon.com/part/TLE9104SHXUMA1"
+      (at 439.42 115.57 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 439.42 115.57 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 414.02 85.09)
+      (xy 406.4 85.09))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "b61c3f87-d17b-5f11-9ad8-a1fef95c29bf"))
+  (global_label "PI1_IN_N"
+    (shape bidirectional)
+    (at 406.4 85.09 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "98a99c2a-2f69-50cc-98b0-0c2ac1784d7d"))
+  (wire
+    (pts
+      (xy 414.02 92.71)
+      (xy 406.4 92.71))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "bf2a418f-48ee-5828-bdef-8e773f2130f9"))
+  (global_label "PI2_IN_N"
+    (shape bidirectional)
+    (at 406.4 92.71 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "78b967e0-d202-5cb6-bbbd-431e58a3f66a"))
+  (wire
+    (pts
+      (xy 414.02 100.33)
+      (xy 406.4 100.33))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "eddf7f6e-87c1-50db-a494-40eaafaa5d09"))
+  (global_label "PI3_IN_N"
+    (shape bidirectional)
+    (at 406.4 100.33 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "e0bf6b91-5d84-5bfd-8301-9ef8c2c3f137"))
+  (wire
+    (pts
+      (xy 414.02 107.95)
+      (xy 406.4 107.95))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "8ee69b4c-6a64-51d1-8a2f-eb15846b7dc9"))
+  (global_label "PI4_IN_N"
+    (shape bidirectional)
+    (at 406.4 107.95 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "03433b00-4987-54ab-9969-8ec36b36f439"))
+  (wire
+    (pts
+      (xy 414.02 115.57)
+      (xy 406.4 115.57))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "2e4abf1f-318f-52a1-98b4-f1bbffad4fa8"))
+  (global_label "LS_SPI_MOSI"
+    (shape bidirectional)
+    (at 406.4 115.57 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "20a70319-548c-5c8f-80cc-42ed4594a678"))
+  (wire
+    (pts
+      (xy 414.02 123.19)
+      (xy 406.4 123.19))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "51b3e3c6-857d-5f89-b996-ef6a7831d1c4"))
+  (global_label "LS_SPI_SCK"
+    (shape bidirectional)
+    (at 406.4 123.19 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "5ab6296e-5d25-5d5b-9ac1-b8cbc098961c"))
+  (wire
+    (pts
+      (xy 414.02 130.81)
+      (xy 406.4 130.81))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "f8898425-5db9-5790-87f1-ddd111ed97ee"))
+  (global_label "LS1_CS_N"
+    (shape bidirectional)
+    (at 406.4 130.81 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "3b969a82-1025-5987-9bc9-126d48b17b78"))
+  (wire
+    (pts
+      (xy 414.02 138.43)
+      (xy 406.4 138.43))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "765d9569-3dd7-52d1-a2d2-0f1695e3ae10"))
+  (global_label "LS_RESET_N"
+    (shape bidirectional)
+    (at 406.4 138.43 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "21a33940-252e-5617-b7ee-8c7039f344f7"))
+  (wire
+    (pts
+      (xy 414.02 146.05)
+      (xy 406.4 146.05))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "132e2d41-e2ed-5b67-8639-a1cf4b05603f"))
+  (global_label "LS1_ENABLE"
+    (shape bidirectional)
+    (at 406.4 146.05 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "a18fd974-e188-5206-aaad-b63dba1761e6"))
+  (wire
+    (pts
+      (xy 464.82 85.09)
+      (xy 472.44 85.09))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "469f4212-9fa0-516c-955a-9db311e3600e"))
+  (global_label "HARNESS_PI1"
+    (shape bidirectional)
+    (at 472.44 85.09 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "0eac2ee1-a963-5627-98c3-c1e28789282a"))
+  (wire
+    (pts
+      (xy 464.82 95.25)
+      (xy 472.44 95.25))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "a76d0262-31df-5925-b24b-efe256e82140"))
+  (global_label "HARNESS_PI2"
+    (shape bidirectional)
+    (at 472.44 95.25 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "8bb456b6-5f49-5ad1-8627-8c459ca6c3f5"))
+  (wire
+    (pts
+      (xy 464.82 105.41)
+      (xy 472.44 105.41))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "33f7fa7b-0c8c-5f4e-8404-73c7c1c34e98"))
+  (global_label "HARNESS_PI3"
+    (shape bidirectional)
+    (at 472.44 105.41 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "e4f67e52-3818-5815-80ee-e455437d8194"))
+  (wire
+    (pts
+      (xy 464.82 115.57)
+      (xy 472.44 115.57))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "68dd39d4-4753-5ba9-9bda-a433d771ee72"))
+  (global_label "HARNESS_PI4"
+    (shape bidirectional)
+    (at 472.44 115.57 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "8fc843b3-cc3e-50f9-bae5-c2bf7bdb993f"))
+  (wire
+    (pts
+      (xy 464.82 125.73)
+      (xy 472.44 125.73))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "b14a11b2-28e2-5d09-9f5d-37d3608f5381"))
+  (global_label "LS1_SO"
+    (shape bidirectional)
+    (at 472.44 125.73 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "52232501-832f-5b42-9619-d2f680ea3a3a"))
+  (wire
+    (pts
+      (xy 429.26 72.39)
+      (xy 429.26 64.77))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "8d8c7d87-64c6-58ca-9be0-4e7719473212"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 429.26 64.77 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "c48f065a-3eb1-509f-abc0-5fbf29922618"))
+  (wire
+    (pts
+      (xy 449.58 72.39)
+      (xy 449.58 64.77))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "fb1afdb8-49e5-5dfb-8a00-2127d1599c06"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 449.58 64.77 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "8abfb407-8a4e-5102-ac97-7f4d84fd83cc"))
+  (wire
+    (pts
+      (xy 419.1 158.75)
+      (xy 419.1 166.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "2e0f4d52-b384-5ba6-a85e-fce516778ee4"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 419.1 166.37 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "f51fdfd8-c7c7-5cc8-a6a5-4eeff24fa10f"))
+  (wire
+    (pts
+      (xy 429.26 158.75)
+      (xy 429.26 166.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "72b9e152-a2f4-5434-892c-a1ef984ef50f"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 429.26 166.37 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "c7e86a18-45e2-51b4-b8ab-46672312bdbc"))
+  (wire
+    (pts
+      (xy 439.42 158.75)
+      (xy 439.42 166.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "1916017f-919a-5bec-9c33-83e2ff9f17e7"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 439.42 166.37 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "62f59a7e-b938-5b0d-9dbb-330b711ad81c"))
+  (wire
+    (pts
+      (xy 449.58 158.75)
+      (xy 449.58 166.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "2d50800e-e12e-5341-9e2b-a81a01d6500f"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 449.58 166.37 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "091ec30f-ff86-5e29-9341-1ed64d78914c"))
+  (wire
+    (pts
+      (xy 459.74 158.75)
+      (xy 459.74 166.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "9a58a128-a328-59b3-801d-a7c525b3285d"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 459.74 166.37 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "e163c4d8-a702-506d-a9b4-dc9d573498c1"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 260.35 219.71 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "f61386e1-a611-5e5a-9f53-e9519313b92c")
+    (property "Reference" "R1113"
+      (at 264.35 218.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "47R"
+      (at 264.35 220.98 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 260.35 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 260.35 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "55780a3a-b7fb-5de0-81fc-73e84761b846"))
+    (pin "2"
+      (uuid "1b42b643-998b-5c76-bc27-23793846ccf2"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1113")
+          (unit 1))))
+    (property "MPN" "CRCW060347R0FKEA"
+      (at 260.35 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 260.35 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-092784c899c7"
+      (at 260.35 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 260.35 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 260.35 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 260.35 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 47.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 260.35 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 260.35 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 260.35 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 260.35 215.9)
+      (xy 260.35 208.28))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "650bb312-1970-5e0a-9cba-008ecc6991f4"))
+  (global_label "LS_CS1"
+    (shape bidirectional)
+    (at 260.35 208.28 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "1b278ecd-765b-52c5-a548-e6852a0c277c"))
+  (wire
+    (pts
+      (xy 260.35 223.52)
+      (xy 260.35 231.14))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "b2ad5a0b-5329-5ece-914c-a4db0616ca37"))
+  (global_label "LS1_CS_N"
+    (shape bidirectional)
+    (at 260.35 231.14 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "edcf7e90-bdbb-5c9f-89ce-9f6d36806a0a"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 314.96 219.71 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "d2ece970-69e9-5173-a4a2-ef03f8a50aaa")
+    (property "Reference" "R1114"
+      (at 318.96 218.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10k"
+      (at 318.96 220.98 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 314.96 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Deselected during reset"
+      (at 314.96 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "3802d399-1d25-50ea-8de5-706b080b7d1f"))
+    (pin "2"
+      (uuid "08035f75-4249-572f-9452-1a0aa6118554"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1114")
+          (unit 1))))
+    (property "MPN" "CRCW060310K0FKEA"
+      (at 314.96 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 314.96 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-9c0806476875"
+      (at 314.96 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 314.96 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 314.96 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 314.96 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 10000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 314.96 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 314.96 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 314.96 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 314.96 215.9)
+      (xy 314.96 208.28))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "d788e385-8b37-5720-a71f-070141c97f1c"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 314.96 208.28 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "15166e78-b76b-599e-bac1-e3c63a1e4187"))
+  (wire
+    (pts
+      (xy 314.96 223.52)
+      (xy 314.96 231.14))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "fe36a0e5-6fb8-58b3-b7df-b7c8c05b4c2b"))
+  (global_label "LS1_CS_N"
+    (shape bidirectional)
+    (at 314.96 231.14 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "42428f71-cd2b-547a-b6ea-36a34a4a4c63"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 369.57 219.71 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "84bdae50-ff47-52f7-b7d0-8edffcce97b2")
+    (property "Reference" "R1115"
+      (at 373.57 218.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100R"
+      (at 373.57 220.98 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 369.57 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Shared SPI2; high-Z SO while CSN high, 8MHz device maximum"
+      (at 369.57 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "909455a0-962a-5662-a8b4-bd3e1d81ae3f"))
+    (pin "2"
+      (uuid "2024f368-86ea-50d1-ab6c-1b827524592d"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1115")
+          (unit 1))))
+    (property "MPN" "CRCW0603100RFKEA"
+      (at 369.57 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 369.57 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-319468e4af3f"
+      (at 369.57 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 369.57 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 369.57 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 369.57 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 369.57 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 369.57 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 369.57 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 369.57 215.9)
+      (xy 369.57 208.28))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "09640024-6088-5bfe-bd83-a6436fc4d350"))
+  (global_label "LS1_SO"
+    (shape bidirectional)
+    (at 369.57 208.28 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "8a8ad86f-cdea-5d18-99d7-b1ea66f5e833"))
+  (wire
+    (pts
+      (xy 369.57 223.52)
+      (xy 369.57 231.14))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "f0f69154-15d1-5720-a604-7eb8833c9ca9"))
+  (global_label "GDI_SPI2_MISO"
+    (shape bidirectional)
+    (at 369.57 231.14 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "4b5858e2-faf9-5860-b717-bf35f270e7fb"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 425.45 219.71 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "d9fd08aa-e767-5072-90bd-d9d4b699fd65")
+    (property "Reference" "R1116"
+      (at 429.45 218.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100R"
+      (at 429.45 220.98 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 425.45 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Dedicated EN physical kill independent of direct IN commands"
+      (at 425.45 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "26e6bd31-1f29-5803-94ae-bff68cf8de00"))
+    (pin "2"
+      (uuid "d82ff807-08f8-5447-8f6b-0fa37b42ed8a"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1116")
+          (unit 1))))
+    (property "MPN" "CRCW0603100RFKEA"
+      (at 425.45 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 425.45 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-319468e4af3f"
+      (at 425.45 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 425.45 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 425.45 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 425.45 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 425.45 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 425.45 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 425.45 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 425.45 215.9)
+      (xy 425.45 208.28))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "a2c466a2-1bf7-5a37-9070-0bedffc695d2"))
+  (global_label "HW_ACTUATOR_ENABLE"
+    (shape bidirectional)
+    (at 425.45 208.28 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "ec90799e-4178-58c3-8950-a7b28fb14a48"))
+  (wire
+    (pts
+      (xy 425.45 223.52)
+      (xy 425.45 231.14))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "d98201f9-c886-510d-9215-b05ad3261252"))
+  (global_label "LS1_ENABLE"
+    (shape bidirectional)
+    (at 425.45 231.14 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "790b6b3c-1363-52ac-90fb-174726c15302"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 480.06 219.71 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "c6815ab2-abb9-513a-8303-830f88f8883f")
+    (property "Reference" "R1117"
+      (at 484.06 218.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10k"
+      (at 484.06 220.98 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 480.06 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Default hardware inhibit"
+      (at 480.06 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "0fe2050a-5586-501d-829a-f86cc90fc7b5"))
+    (pin "2"
+      (uuid "22295bfe-5a1c-5613-9cc6-40ec50442ab2"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "R1117")
+          (unit 1))))
+    (property "MPN" "CRCW060310K0FKEA"
+      (at 480.06 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 480.06 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-9c0806476875"
+      (at 480.06 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 480.06 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 480.06 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 480.06 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 10000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 480.06 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 480.06 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 480.06 219.71 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 480.06 215.9)
+      (xy 480.06 208.28))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "c951bcc2-cf4e-5c59-94ff-05de4e6f899c"))
+  (global_label "LS1_ENABLE"
+    (shape bidirectional)
+    (at 480.06 208.28 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "cfcb9a17-8caf-5b58-841e-0a3c792f2285"))
+  (wire
+    (pts
+      (xy 480.06 223.52)
+      (xy 480.06 231.14))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "eda5f9bd-f41d-59d0-a1dc-0c5e43533f44"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 480.06 231.14 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "7376a629-ae1a-5cce-8859-a55bcf004a1c"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 260.35 275.59 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "f301fec5-5020-5478-bbed-38111dc3d2c9")
+    (property "Reference" "C1101"
+      (at 264.35 274.32 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 16V X7R"
+      (at 264.35 276.86 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 260.35 275.59 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 260.35 275.59 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "ea4154a7-1af0-5e65-b010-5b35593c6c85"))
+    (pin "2"
+      (uuid "6f565c0e-63f6-53f3-8954-95b932fc7597"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "C1101")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 260.35 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 260.35 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 260.35 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 260.35 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 260.35 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 260.35 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 260.35 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 260.35 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 260.35 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 260.35 271.78)
+      (xy 260.35 264.16))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "7860e4df-c927-5945-93db-40af514fcdfc"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 260.35 264.16 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "5cd578f3-a6bd-56a5-ad35-4f4d6f494729"))
+  (wire
+    (pts
+      (xy 260.35 279.4)
+      (xy 260.35 287.02))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "0fb580dd-01ac-5107-bcaf-c3b734fffff9"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 260.35 287.02 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "469ec542-7a88-530d-8476-8943781fbb2b"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 314.96 275.59 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "9e2bd713-315e-57d2-b271-d552e7e75ab1")
+    (property "Reference" "C1102"
+      (at 318.96 274.32 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 16V X7R"
+      (at 318.96 276.86 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 314.96 275.59 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 314.96 275.59 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "4bf199c4-be42-5281-91c2-c0f7be29043e"))
+    (pin "2"
+      (uuid "5a85d3b2-bb74-5d66-8a67-9cfa0cc55f7a"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "C1102")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 314.96 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 314.96 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 314.96 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 314.96 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 314.96 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 314.96 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 314.96 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 314.96 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 314.96 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 314.96 271.78)
+      (xy 314.96 264.16))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "02eb4e0a-ec44-5e8b-9e54-c81342bb02d6"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 314.96 264.16 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "591c3862-f86e-5fb0-b356-b6d5e6824da5"))
+  (wire
+    (pts
+      (xy 314.96 279.4)
+      (xy 314.96 287.02))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "0759df93-8bd3-5bbf-98f1-9dc42d1f6ae9"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 314.96 287.02 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "69baaf06-baf1-5b15-b0f0-8d81de51b31f"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 369.57 275.59 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "988b0eb4-2a96-508a-9394-5b11c52dea5b")
+    (property "Reference" "C1103"
+      (at 373.57 274.32 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 16V X7R"
+      (at 373.57 276.86 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 369.57 275.59 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 369.57 275.59 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "d9c5d157-578c-51e8-a7f3-27cee6a7cf90"))
+    (pin "2"
+      (uuid "58771161-90b1-54bd-a481-fecd26915247"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "C1103")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 369.57 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 369.57 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 369.57 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 369.57 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 369.57 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 369.57 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 369.57 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 369.57 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 369.57 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 369.57 271.78)
+      (xy 369.57 264.16))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "26433857-ef48-5e75-87e1-98a348db884d"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 369.57 264.16 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "5f4937b6-3193-50b3-8ad1-66dd9bf7b070"))
+  (wire
+    (pts
+      (xy 369.57 279.4)
+      (xy 369.57 287.02))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "842037e3-e932-5faa-8e73-81c3c7cb66ef"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 369.57 287.02 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "98484574-5dbb-5d51-adfc-daf975a88ecc"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 425.45 275.59 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "569e57b5-4ecb-51b8-99e5-dcd35e2314ea")
+    (property "Reference" "C1104"
+      (at 429.45 274.32 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "1u 16V X7R"
+      (at 429.45 276.86 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 425.45 275.59 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 425.45 275.59 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "2ebadc34-c5ef-500f-ad5e-d977ef482ceb"))
+    (pin "2"
+      (uuid "dda046b4-74bf-555c-9cae-5a22ff8ad317"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/0600f9f6-675b-5097-9f87-65bf79110ac0"
+          (reference "C1104")
+          (unit 1))))
+    (property "MPN" "C0603C105K3RACTU"
+      (at 425.45 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 425.45 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4bca20b134b8"
+      (at 425.45 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 425.45 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 425.45 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 425.45 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 1000000, \"dc_bias_qualification\": \"PENDING_AT_ACTUAL_NODE_VOLTAGE\", \"dielectric\": \"X7R\", \"effective_capacitance_min_pf\": null, \"rated_voltage_v\": 25, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 425.45 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C105K3RACTU"
+      (at 425.45 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 425.45 275.59 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 425.45 271.78)
+      (xy 425.45 264.16))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "36d8d86e-46ab-5cbe-a193-79f4631896a7"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 425.45 264.16 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "3717403f-3485-576b-9414-6d1c3d029b22"))
+  (wire
+    (pts
+      (xy 425.45 279.4)
+      (xy 425.45 287.02))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "e23f7f83-f363-5a90-b7aa-fb56a18142f2"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 425.45 287.02 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "6d2b17df-5dd3-54a4-b9f2-171e9ad90af3"))
+  (text "LOW-SIDE ONLY: external loads connect to separately fused +12V; return current through all driver GND/EP pads.\n3V3 MCU high -> inverter low -> load ON, only with hardware EN and SPI OUT_EN. MCU reset -> OFF.\nCandidate envelope for initial calculation: <=1.4A turn-off; repeated clamp energy <=7mJ, NOT an approved rating.\nNo low-impedance peak/hold injector support. VVT/AUX frequencies require scheduled GPIO implementation.\nDriver fault thresholds, load L/R, simultaneous dissipation, harness fuses and board heat sinking remain unqualified."
+    (at 25.4 335 0)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left top))
+    (uuid "6949499b-ed36-51ea-aeab-7562a09d4251"))
+  (sheet_instances
+    (path "/"
+      (page "1"))))

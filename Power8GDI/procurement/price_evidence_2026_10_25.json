@@ -1,0 +1,1261 @@
+{
+  "schema_version": 1,
+  "observed_on": "2026-10-25",
+  "currency": "USD",
+  "purpose": "Partial BOM cost evidence for one board and one batch of ten boards; not a quotation or manufacturing release.",
+  "bom_snapshot": {
+    "repository_path": "Power8GDI/hardware/design/integrated_bom.csv",
+    "read_from_worktree": "sport-gdi6-hardware",
+    "sha256": "1b271d76ff05fba18cd44f48c903ff507ad9a806afd3b260bfbaca74929df30d",
+    "rows": 1090,
+    "source_netlist_sha256": [
+      "a8caaa464c2c149f9546932c81e21e909b6a8ee83a95858a65629cff7975c26d"
+    ]
+  },
+  "pricing_method": {
+    "quantity": "Exact fitted quantity per board or ten-board batch, using the highest published break not exceeding that quantity.",
+    "tier_application": "Estimated from public catalog break table; actual checkout not verified.",
+    "currency_conversion": "None; USD catalog pages only.",
+    "packaging": "Cut Tape where available; Tray/Tube for their exact SKUs. Digi-Reel fees are excluded.",
+    "exclusions": [
+      "unpriced BOM rows",
+      "attrition/spares except separate optional_buy_up",
+      "shipping",
+      "VAT/sales tax",
+      "import duty/tariffs",
+      "brokerage",
+      "reeling/setup fees",
+      "PCB fabrication",
+      "stencil",
+      "assembly",
+      "programming",
+      "test",
+      "enclosure",
+      "harness"
+    ],
+    "freshness": "Observation date is the research date. Web content may be cached at the per-source reported age; no authenticated live stock or negotiated quote is claimed.",
+    "purchasing_actions": "No RFQ, cart submission, order, payment or stock reservation."
+  },
+  "coverage": {
+    "reviewed_mpn_count": 15,
+    "priced_mpn_count": 13,
+    "unpriced_reviewed_mpn": [
+      "BUK9230-100B",
+      "LT3042IMSE#WTRPBF"
+    ],
+    "reviewed_fitted_positions": 73,
+    "priced_fitted_positions": 48,
+    "is_complete_bom_cost": false
+  },
+  "partial_totals": {
+    "one_board_partial_subtotal_usd": 292.72,
+    "ten_boards_partial_subtotal_usd": 2154.3384,
+    "ten_board_partial_per_board_usd": 215.43384
+  },
+  "components": [
+    {
+      "bom_mpn": "BUK9230-100B",
+      "priced_orderable_mpn": "BUK9230-100B,118",
+      "manufacturer": "Nexperia",
+      "quantity_per_board": 24,
+      "references": [
+        "Q201",
+        "Q202",
+        "Q203",
+        "Q204",
+        "Q205",
+        "Q206",
+        "Q207",
+        "Q208",
+        "Q209",
+        "Q211",
+        "Q212",
+        "Q213",
+        "Q301",
+        "Q302",
+        "Q303",
+        "Q304",
+        "Q305",
+        "Q306",
+        "Q307",
+        "Q308",
+        "Q309",
+        "Q311",
+        "Q312",
+        "Q313"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "1727-4708-2-ND",
+        "url": "https://www.digikey.com/en/products/detail/nexperia-usa-inc/BUK9230-100B-118/1163576",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "last month",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": "https://www.nexperia.com/product/BUK9230-100B"
+      },
+      "supply_status": "obsolete_no_current_price",
+      "stock": {
+        "reported_units": null,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Tape & Reel",
+      "listed_unit_price_breaks": [],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 24,
+          "purchase_quantity": 24,
+          "applied_price_break_minimum": null,
+          "unit_price_usd": null,
+          "component_subtotal_usd": null,
+          "per_board_usd": null,
+          "reported_stock_covers_quantity": null
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 240,
+          "purchase_quantity": 240,
+          "applied_price_break_minimum": null,
+          "unit_price_usd": null,
+          "component_subtotal_usd": null,
+          "per_board_usd": null,
+          "reported_stock_covers_quantity": null
+        }
+      },
+      "caveats": [
+        "Original Nexperia part is listed obsolete/no longer manufactured. No current original-part price was displayed.",
+        "Similar-part and clone prices are excluded; any replacement needs electrical review."
+      ]
+    },
+    {
+      "bom_mpn": "IPD90N10S4-06",
+      "priced_orderable_mpn": "IPD90N10S406ATMA1",
+      "manufacturer": "Infineon",
+      "quantity_per_board": 8,
+      "references": [
+        "Q5001",
+        "Q5002",
+        "Q5051",
+        "Q5052",
+        "Q6200",
+        "Q6201",
+        "Q6250",
+        "Q6251"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "448-IPD90N10S406ATMA1CT-ND",
+        "url": "https://www.digikey.com/en/products/detail/infineon-technologies/IPD90N10S406ATMA1/5960269",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "2 weeks ago",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": "https://www.infineon.com/part/IPD90N10S4-06"
+      },
+      "supply_status": "catalog_in_stock",
+      "stock": {
+        "reported_units": 3409,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Cut Tape",
+      "listed_unit_price_breaks": [
+        {
+          "minimum_quantity": 1,
+          "unit_price_usd": 3.05
+        },
+        {
+          "minimum_quantity": 10,
+          "unit_price_usd": 1.971
+        },
+        {
+          "minimum_quantity": 50,
+          "unit_price_usd": 1.5074
+        },
+        {
+          "minimum_quantity": 100,
+          "unit_price_usd": 1.358
+        },
+        {
+          "minimum_quantity": 500,
+          "unit_price_usd": 1.09584
+        }
+      ],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 8,
+          "purchase_quantity": 8,
+          "applied_price_break_minimum": 1,
+          "unit_price_usd": 3.05,
+          "component_subtotal_usd": 24.4,
+          "per_board_usd": 24.4,
+          "reported_stock_covers_quantity": true
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 80,
+          "purchase_quantity": 80,
+          "applied_price_break_minimum": 50,
+          "unit_price_usd": 1.5074,
+          "component_subtotal_usd": 120.592,
+          "per_board_usd": 12.0592,
+          "reported_stock_covers_quantity": true
+        }
+      },
+      "caveats": [
+        "Manufacturer maps the family name to the exact OPN IPD90N10S406ATMA1.",
+        "For one board, purchasing 10 rather than 8 is cheaper at the displayed tiers; see optional_buy_up."
+      ],
+      "optional_buy_up": {
+        "scenario": "one_board",
+        "purchase_quantity": 10,
+        "spares": 2,
+        "unit_price_usd": 1.971,
+        "subtotal_usd": 19.71,
+        "savings_vs_exact_requirement_usd": 4.69,
+        "included_in_baseline": false
+      }
+    },
+    {
+      "bom_mpn": "TLE9201SG",
+      "priced_orderable_mpn": "TLE9201SGAUMA1",
+      "manufacturer": "Infineon",
+      "quantity_per_board": 2,
+      "references": [
+        "U6000",
+        "U6050"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "TLE9201SGAUMA1CT-ND",
+        "url": "https://www.digikey.com/en/products/detail/infineon-technologies/TLE9201SGAUMA1/5960696",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "3 weeks ago",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": "https://www.infineon.com/part/TLE9201SG"
+      },
+      "supply_status": "catalog_in_stock",
+      "stock": {
+        "reported_units": 2817,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Cut Tape",
+      "listed_unit_price_breaks": [
+        {
+          "minimum_quantity": 1,
+          "unit_price_usd": 4.19
+        },
+        {
+          "minimum_quantity": 10,
+          "unit_price_usd": 3.165
+        },
+        {
+          "minimum_quantity": 25,
+          "unit_price_usd": 2.908
+        },
+        {
+          "minimum_quantity": 100,
+          "unit_price_usd": 2.6256
+        },
+        {
+          "minimum_quantity": 250,
+          "unit_price_usd": 2.49088
+        },
+        {
+          "minimum_quantity": 500,
+          "unit_price_usd": 2.47454
+        }
+      ],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 2,
+          "purchase_quantity": 2,
+          "applied_price_break_minimum": 1,
+          "unit_price_usd": 4.19,
+          "component_subtotal_usd": 8.38,
+          "per_board_usd": 8.38,
+          "reported_stock_covers_quantity": true
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 20,
+          "purchase_quantity": 20,
+          "applied_price_break_minimum": 10,
+          "unit_price_usd": 3.165,
+          "component_subtotal_usd": 63.3,
+          "per_board_usd": 6.33,
+          "reported_stock_covers_quantity": true
+        }
+      },
+      "caveats": [
+        "Manufacturer maps TLE9201SG to exact order code TLE9201SGAUMA1."
+      ]
+    },
+    {
+      "bom_mpn": "INA300AQDGSRQ1",
+      "priced_orderable_mpn": "INA300AQDGSRQ1",
+      "manufacturer": "Texas Instruments",
+      "quantity_per_board": 6,
+      "references": [
+        "U5422",
+        "U5442",
+        "U5462",
+        "U5482",
+        "U5502",
+        "U5522"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "296-44721-1-ND",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/INA300AQDGSRQ1/6181555",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "last month",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": null
+      },
+      "supply_status": "catalog_in_stock",
+      "stock": {
+        "reported_units": 113,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Cut Tape",
+      "listed_unit_price_breaks": [
+        {
+          "minimum_quantity": 1,
+          "unit_price_usd": 1.91
+        },
+        {
+          "minimum_quantity": 10,
+          "unit_price_usd": 1.402
+        },
+        {
+          "minimum_quantity": 25,
+          "unit_price_usd": 1.2756
+        },
+        {
+          "minimum_quantity": 100,
+          "unit_price_usd": 1.1369
+        },
+        {
+          "minimum_quantity": 250,
+          "unit_price_usd": 1.07076
+        },
+        {
+          "minimum_quantity": 500,
+          "unit_price_usd": 1.03092
+        },
+        {
+          "minimum_quantity": 1000,
+          "unit_price_usd": 1.02969
+        }
+      ],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 6,
+          "purchase_quantity": 6,
+          "applied_price_break_minimum": 1,
+          "unit_price_usd": 1.91,
+          "component_subtotal_usd": 11.46,
+          "per_board_usd": 11.46,
+          "reported_stock_covers_quantity": true
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 60,
+          "purchase_quantity": 60,
+          "applied_price_break_minimum": 25,
+          "unit_price_usd": 1.2756,
+          "component_subtotal_usd": 76.536,
+          "per_board_usd": 7.6536,
+          "reported_stock_covers_quantity": true
+        }
+      },
+      "caveats": [
+        "Displayed stock exceeds the exact 60-piece ten-board requirement but is not reserved."
+      ]
+    },
+    {
+      "bom_mpn": "LM74800QDRRRQ1",
+      "priced_orderable_mpn": "LM74800QDRRRQ1",
+      "manufacturer": "Texas Instruments",
+      "quantity_per_board": 4,
+      "references": [
+        "U5001",
+        "U5051",
+        "U6200",
+        "U6250"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "296-LM74800QDRRRQ1CT-ND",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/LM74800QDRRRQ1/13627158",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "today",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": null
+      },
+      "supply_status": "catalog_out_of_stock",
+      "stock": {
+        "reported_units": 0,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Cut Tape",
+      "listed_unit_price_breaks": [
+        {
+          "minimum_quantity": 1,
+          "unit_price_usd": 3.0
+        },
+        {
+          "minimum_quantity": 10,
+          "unit_price_usd": 2.244
+        },
+        {
+          "minimum_quantity": 25,
+          "unit_price_usd": 2.0544
+        },
+        {
+          "minimum_quantity": 100,
+          "unit_price_usd": 1.8462
+        },
+        {
+          "minimum_quantity": 250,
+          "unit_price_usd": 1.74688
+        },
+        {
+          "minimum_quantity": 500,
+          "unit_price_usd": 1.71512
+        }
+      ],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 4,
+          "purchase_quantity": 4,
+          "applied_price_break_minimum": 1,
+          "unit_price_usd": 3.0,
+          "component_subtotal_usd": 12.0,
+          "per_board_usd": 12.0,
+          "reported_stock_covers_quantity": false
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 40,
+          "purchase_quantity": 40,
+          "applied_price_break_minimum": 25,
+          "unit_price_usd": 2.0544,
+          "component_subtotal_usd": 82.176,
+          "per_board_usd": 8.2176,
+          "reported_stock_covers_quantity": false
+        }
+      },
+      "caveats": [
+        "Opened page: zero stock; 3000 expected 03-Nov-2026. Expected arrival is not guaranteed.",
+        "Older search results reported stock and different pricing. The opened Cut Tape tier was selected; no stock inferred from cached snippets."
+      ]
+    },
+    {
+      "bom_mpn": "TPIC8101DWR",
+      "priced_orderable_mpn": "TPIC8101DWR",
+      "manufacturer": "Texas Instruments",
+      "quantity_per_board": 1,
+      "references": [
+        "U1701"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "296-15132-1-ND",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/TPIC8101DWR/565628",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "last month",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": null
+      },
+      "supply_status": "catalog_in_stock",
+      "stock": {
+        "reported_units": 1943,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Cut Tape",
+      "listed_unit_price_breaks": [
+        {
+          "minimum_quantity": 1,
+          "unit_price_usd": 5.51
+        },
+        {
+          "minimum_quantity": 10,
+          "unit_price_usd": 4.21
+        },
+        {
+          "minimum_quantity": 25,
+          "unit_price_usd": 3.8844
+        },
+        {
+          "minimum_quantity": 100,
+          "unit_price_usd": 3.5262
+        },
+        {
+          "minimum_quantity": 250,
+          "unit_price_usd": 3.37824
+        }
+      ],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 1,
+          "purchase_quantity": 1,
+          "applied_price_break_minimum": 1,
+          "unit_price_usd": 5.51,
+          "component_subtotal_usd": 5.51,
+          "per_board_usd": 5.51,
+          "reported_stock_covers_quantity": true
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 10,
+          "purchase_quantity": 10,
+          "applied_price_break_minimum": 10,
+          "unit_price_usd": 4.21,
+          "component_subtotal_usd": 42.1,
+          "per_board_usd": 4.21,
+          "reported_stock_covers_quantity": true
+        }
+      },
+      "caveats": [
+        "Main 296-15132-1-ND listing is used. Separate Rochester marketplace stock/prices are not combined."
+      ]
+    },
+    {
+      "bom_mpn": "LM76003QRNPRQ1",
+      "priced_orderable_mpn": "LM76003QRNPRQ1",
+      "manufacturer": "Texas Instruments",
+      "quantity_per_board": 1,
+      "references": [
+        "U5200"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "296-LM76003QRNPRQ1CT-ND",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/LM76003QRNPRQ1/25880236",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "last month",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": null
+      },
+      "supply_status": "catalog_out_of_stock",
+      "stock": {
+        "reported_units": 0,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Cut Tape",
+      "listed_unit_price_breaks": [
+        {
+          "minimum_quantity": 1,
+          "unit_price_usd": 6.16
+        },
+        {
+          "minimum_quantity": 10,
+          "unit_price_usd": 4.725
+        },
+        {
+          "minimum_quantity": 25,
+          "unit_price_usd": 4.3652
+        },
+        {
+          "minimum_quantity": 100,
+          "unit_price_usd": 3.97
+        },
+        {
+          "minimum_quantity": 250,
+          "unit_price_usd": 3.82348
+        }
+      ],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 1,
+          "purchase_quantity": 1,
+          "applied_price_break_minimum": 1,
+          "unit_price_usd": 6.16,
+          "component_subtotal_usd": 6.16,
+          "per_board_usd": 6.16,
+          "reported_stock_covers_quantity": false
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 10,
+          "purchase_quantity": 10,
+          "applied_price_break_minimum": 10,
+          "unit_price_usd": 4.725,
+          "component_subtotal_usd": 47.25,
+          "per_board_usd": 4.725,
+          "reported_stock_covers_quantity": false
+        }
+      },
+      "caveats": [
+        "Opened page says zero stock and 3000 expected 12-Oct-2026, already before observation date. Arrival information is stale/uncertain.",
+        "Search snippets showed different prices/arrival dates. Exact opened SKU tiers used; no variant substituted."
+      ]
+    },
+    {
+      "bom_mpn": "TPS62130AQRGTRQ1",
+      "priced_orderable_mpn": "TPS62130AQRGTRQ1",
+      "manufacturer": "Texas Instruments",
+      "quantity_per_board": 1,
+      "references": [
+        "U5300"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "296-40834-1-ND",
+        "url": "https://www.digikey.com/en/products/detail/texas-instruments/TPS62130AQRGTRQ1/4876431",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "3 weeks ago",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": null
+      },
+      "supply_status": "catalog_in_stock",
+      "stock": {
+        "reported_units": 2441,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Cut Tape",
+      "listed_unit_price_breaks": [
+        {
+          "minimum_quantity": 1,
+          "unit_price_usd": 2.94
+        },
+        {
+          "minimum_quantity": 10,
+          "unit_price_usd": 2.2
+        },
+        {
+          "minimum_quantity": 25,
+          "unit_price_usd": 2.0132
+        },
+        {
+          "minimum_quantity": 100,
+          "unit_price_usd": 1.8086
+        },
+        {
+          "minimum_quantity": 250,
+          "unit_price_usd": 1.71092
+        },
+        {
+          "minimum_quantity": 500,
+          "unit_price_usd": 1.6784
+        }
+      ],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 1,
+          "purchase_quantity": 1,
+          "applied_price_break_minimum": 1,
+          "unit_price_usd": 2.94,
+          "component_subtotal_usd": 2.94,
+          "per_board_usd": 2.94,
+          "reported_stock_covers_quantity": true
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 10,
+          "purchase_quantity": 10,
+          "applied_price_break_minimum": 10,
+          "unit_price_usd": 2.2,
+          "component_subtotal_usd": 22.0,
+          "per_board_usd": 2.2,
+          "reported_stock_covers_quantity": true
+        }
+      },
+      "caveats": []
+    },
+    {
+      "bom_mpn": "LT3042IMSE#WTRPBF",
+      "priced_orderable_mpn": "LT3042IMSE#WTRPBF",
+      "manufacturer": "Analog Devices",
+      "quantity_per_board": 1,
+      "references": [
+        "U5604"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": null,
+        "supplier_sku": null,
+        "url": "https://www.analog.com/en/products/lt3042.html",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "today",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": "https://www.analog.com/media/en/technical-documentation/data-sheets/lt3042.pdf"
+      },
+      "supply_status": "exact_mpn_valid_price_unverified",
+      "stock": {
+        "reported_units": null,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Tape & Reel",
+      "listed_unit_price_breaks": [],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 1,
+          "purchase_quantity": 1,
+          "applied_price_break_minimum": null,
+          "unit_price_usd": null,
+          "component_subtotal_usd": null,
+          "per_board_usd": null,
+          "reported_stock_covers_quantity": null
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 10,
+          "purchase_quantity": 10,
+          "applied_price_break_minimum": null,
+          "unit_price_usd": null,
+          "component_subtotal_usd": null,
+          "per_board_usd": null,
+          "reported_stock_covers_quantity": null
+        }
+      },
+      "caveats": [
+        "Exact automotive #WTRPBF part exists in ADI product/order tables and is marked PRODUCTION.",
+        "No public small-quantity price/stock for the exact MPN was verified. Non-W LT3042IMSE#TRPBF prices are not substituted."
+      ]
+    },
+    {
+      "bom_mpn": "LTC6993HS6-1#WTRPBF",
+      "priced_orderable_mpn": "LTC6993HS6-1#WTRPBF",
+      "manufacturer": "Analog Devices",
+      "quantity_per_board": 6,
+      "references": [
+        "U5420",
+        "U5440",
+        "U5460",
+        "U5480",
+        "U5500",
+        "U5520"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "505-LTC6993HS6-1#WTRPBFCT-ND",
+        "url": "https://www.digikey.com/en/products/detail/analog-devices-inc/LTC6993HS6-1-WTRPBF/17039075",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "last week",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": null
+      },
+      "supply_status": "catalog_in_stock",
+      "stock": {
+        "reported_units": 404,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Cut Tape",
+      "listed_unit_price_breaks": [
+        {
+          "minimum_quantity": 1,
+          "unit_price_usd": 7.96
+        },
+        {
+          "minimum_quantity": 10,
+          "unit_price_usd": 6.165
+        },
+        {
+          "minimum_quantity": 25,
+          "unit_price_usd": 5.716
+        },
+        {
+          "minimum_quantity": 100,
+          "unit_price_usd": 5.2479
+        }
+      ],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 6,
+          "purchase_quantity": 6,
+          "applied_price_break_minimum": 1,
+          "unit_price_usd": 7.96,
+          "component_subtotal_usd": 47.76,
+          "per_board_usd": 47.76,
+          "reported_stock_covers_quantity": true
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 60,
+          "purchase_quantity": 60,
+          "applied_price_break_minimum": 25,
+          "unit_price_usd": 5.716,
+          "component_subtotal_usd": 342.96,
+          "per_board_usd": 34.296,
+          "reported_stock_covers_quantity": true
+        }
+      },
+      "caveats": []
+    },
+    {
+      "bom_mpn": "STM32F767IIT6",
+      "priced_orderable_mpn": "STM32F767IIT6",
+      "manufacturer": "STMicroelectronics",
+      "quantity_per_board": 1,
+      "references": [
+        "U101"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "497-16639-ND",
+        "url": "https://www.digikey.com/en/products/detail/stmicroelectronics/STM32F767IIT6/6137850",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "last week",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": null
+      },
+      "supply_status": "catalog_in_stock",
+      "stock": {
+        "reported_units": 3034,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Tray",
+      "listed_unit_price_breaks": [
+        {
+          "minimum_quantity": 1,
+          "unit_price_usd": 28.09
+        },
+        {
+          "minimum_quantity": 10,
+          "unit_price_usd": 22.516
+        },
+        {
+          "minimum_quantity": 50,
+          "unit_price_usd": 20.2832
+        },
+        {
+          "minimum_quantity": 100,
+          "unit_price_usd": 19.5918
+        },
+        {
+          "minimum_quantity": 400,
+          "unit_price_usd": 18.5543
+        }
+      ],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 1,
+          "purchase_quantity": 1,
+          "applied_price_break_minimum": 1,
+          "unit_price_usd": 28.09,
+          "component_subtotal_usd": 28.09,
+          "per_board_usd": 28.09,
+          "reported_stock_covers_quantity": true
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 10,
+          "purchase_quantity": 10,
+          "applied_price_break_minimum": 10,
+          "unit_price_usd": 22.516,
+          "component_subtotal_usd": 225.16,
+          "per_board_usd": 22.516,
+          "reported_stock_covers_quantity": true
+        }
+      },
+      "caveats": [
+        "Quantity below standard tray size can be repackaged by distributor."
+      ]
+    },
+    {
+      "bom_mpn": "MC33PT2001AE",
+      "priced_orderable_mpn": "MC33PT2001AE",
+      "manufacturer": "NXP",
+      "quantity_per_board": 2,
+      "references": [
+        "U201",
+        "U301"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "568-MC33PT2001AE-ND",
+        "url": "https://www.digikey.com/en/products/detail/nxp-usa-inc/MC33PT2001AE/11590177",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "yesterday",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": null
+      },
+      "supply_status": "catalog_in_stock",
+      "stock": {
+        "reported_units": 71,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Tray",
+      "listed_unit_price_breaks": [
+        {
+          "minimum_quantity": 1,
+          "unit_price_usd": 16.2
+        },
+        {
+          "minimum_quantity": 10,
+          "unit_price_usd": 12.823
+        },
+        {
+          "minimum_quantity": 25,
+          "unit_price_usd": 11.9792
+        },
+        {
+          "minimum_quantity": 160,
+          "unit_price_usd": 10.81
+        },
+        {
+          "minimum_quantity": 320,
+          "unit_price_usd": 10.50775
+        },
+        {
+          "minimum_quantity": 640,
+          "unit_price_usd": 10.25903
+        }
+      ],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 2,
+          "purchase_quantity": 2,
+          "applied_price_break_minimum": 1,
+          "unit_price_usd": 16.2,
+          "component_subtotal_usd": 32.4,
+          "per_board_usd": 32.4,
+          "reported_stock_covers_quantity": true
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 20,
+          "purchase_quantity": 20,
+          "applied_price_break_minimum": 10,
+          "unit_price_usd": 12.823,
+          "component_subtotal_usd": 256.46,
+          "per_board_usd": 25.646,
+          "reported_stock_covers_quantity": true
+        }
+      },
+      "caveats": [
+        "Exact two-bank requirement is 2 or 20 pieces. Manufacturer standard lead time displayed: 39 weeks; stock is not reserved."
+      ]
+    },
+    {
+      "bom_mpn": "TLE9104SHXUMA1",
+      "priced_orderable_mpn": "TLE9104SHXUMA1",
+      "manufacturer": "Infineon",
+      "quantity_per_board": 6,
+      "references": [
+        "U1101",
+        "U1102",
+        "U1103",
+        "U1104",
+        "U1105",
+        "U1106"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "TLE9104SHXUMA1CT-ND",
+        "url": "https://www.digikey.com/en/products/detail/infineon-technologies/TLE9104SHXUMA1/8627206",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "5 days ago",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": null
+      },
+      "supply_status": "catalog_in_stock",
+      "stock": {
+        "reported_units": 13021,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Cut Tape",
+      "listed_unit_price_breaks": [
+        {
+          "minimum_quantity": 1,
+          "unit_price_usd": 4.84
+        },
+        {
+          "minimum_quantity": 10,
+          "unit_price_usd": 3.68
+        },
+        {
+          "minimum_quantity": 25,
+          "unit_price_usd": 3.3896
+        },
+        {
+          "minimum_quantity": 100,
+          "unit_price_usd": 3.0706
+        },
+        {
+          "minimum_quantity": 250,
+          "unit_price_usd": 2.9232
+        }
+      ],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 6,
+          "purchase_quantity": 6,
+          "applied_price_break_minimum": 1,
+          "unit_price_usd": 4.84,
+          "component_subtotal_usd": 29.04,
+          "per_board_usd": 29.04,
+          "reported_stock_covers_quantity": true
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 60,
+          "purchase_quantity": 60,
+          "applied_price_break_minimum": 25,
+          "unit_price_usd": 3.3896,
+          "component_subtotal_usd": 203.376,
+          "per_board_usd": 20.3376,
+          "reported_stock_covers_quantity": true
+        }
+      },
+      "caveats": [
+        "Search result showed higher tiers; this record uses the opened page, not a mixed set of observations."
+      ]
+    },
+    {
+      "bom_mpn": "STGB18N40LZT4",
+      "priced_orderable_mpn": "STGB18N40LZT4",
+      "manufacturer": "STMicroelectronics",
+      "quantity_per_board": 6,
+      "references": [
+        "Q5420",
+        "Q5440",
+        "Q5460",
+        "Q5480",
+        "Q5500",
+        "Q5520"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "497-7006-1-ND",
+        "url": "https://www.digikey.com/en/products/detail/stmicroelectronics/STGB18N40LZT4/1880196",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "2 months ago",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": null
+      },
+      "supply_status": "catalog_in_stock",
+      "stock": {
+        "reported_units": 1376,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Cut Tape",
+      "listed_unit_price_breaks": [
+        {
+          "minimum_quantity": 1,
+          "unit_price_usd": 2.63
+        },
+        {
+          "minimum_quantity": 10,
+          "unit_price_usd": 1.69
+        },
+        {
+          "minimum_quantity": 100,
+          "unit_price_usd": 1.1548
+        },
+        {
+          "minimum_quantity": 500,
+          "unit_price_usd": 0.92604
+        }
+      ],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 6,
+          "purchase_quantity": 6,
+          "applied_price_break_minimum": 1,
+          "unit_price_usd": 2.63,
+          "component_subtotal_usd": 15.78,
+          "per_board_usd": 15.78,
+          "reported_stock_covers_quantity": true
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 60,
+          "purchase_quantity": 60,
+          "applied_price_break_minimum": 10,
+          "unit_price_usd": 1.69,
+          "component_subtotal_usd": 101.4,
+          "per_board_usd": 10.14,
+          "reported_stock_covers_quantity": true
+        }
+      },
+      "caveats": [
+        "Opened page crawl was 2 months old; a newer search snippet reported 1=$2.98, 10=$1.925, 100=$1.3212, 500=$1.06276. Baseline uses one coherent opened observation; confirm before procurement."
+      ],
+      "alternate_observation": {
+        "kind": "search_snippet_not_opened_page",
+        "crawl_age": "last week",
+        "stock_units": 1370,
+        "price_breaks": [
+          [
+            1,
+            "2.98"
+          ],
+          [
+            10,
+            "1.925"
+          ],
+          [
+            100,
+            "1.32120"
+          ],
+          [
+            500,
+            "1.06276"
+          ]
+        ]
+      }
+    },
+    {
+      "bom_mpn": "6437288-1",
+      "priced_orderable_mpn": "6437288-1",
+      "manufacturer": "TE Connectivity",
+      "quantity_per_board": 4,
+      "references": [
+        "J601",
+        "J602",
+        "J603",
+        "J604"
+      ],
+      "bom_mpn_status": [
+        "REFERENCE_VALUE_CANDIDATE"
+      ],
+      "source": {
+        "supplier": "DigiKey",
+        "supplier_sku": "A124384-ND",
+        "url": "https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/6437288-1/5428601",
+        "observed_on": "2026-10-25",
+        "web_source_crawl_age_as_reported": "5 days ago",
+        "evidence_kind": "opened_primary_catalog_page",
+        "currency": "USD",
+        "identity_support_url": null
+      },
+      "supply_status": "catalog_in_stock",
+      "stock": {
+        "reported_units": 560,
+        "reserved": false,
+        "live_stock_confirmed": false
+      },
+      "packaging_used_for_price": "Tube",
+      "listed_unit_price_breaks": [
+        {
+          "minimum_quantity": 1,
+          "unit_price_usd": 17.2
+        },
+        {
+          "minimum_quantity": 14,
+          "unit_price_usd": 14.27571
+        },
+        {
+          "minimum_quantity": 112,
+          "unit_price_usd": 12.32732
+        },
+        {
+          "minimum_quantity": 504,
+          "unit_price_usd": 11.0873
+        }
+      ],
+      "scenarios": {
+        "one_board": {
+          "boards": 1,
+          "required_quantity": 4,
+          "purchase_quantity": 4,
+          "applied_price_break_minimum": 1,
+          "unit_price_usd": 17.2,
+          "component_subtotal_usd": 68.8,
+          "per_board_usd": 68.8,
+          "reported_stock_covers_quantity": true
+        },
+        "ten_boards": {
+          "boards": 10,
+          "required_quantity": 40,
+          "purchase_quantity": 40,
+          "applied_price_break_minimum": 14,
+          "unit_price_usd": 14.27571,
+          "component_subtotal_usd": 571.0284,
+          "per_board_usd": 57.10284,
+          "reported_stock_covers_quantity": true
+        }
+      },
+      "caveats": [
+        "Board-side 34-position header only. Mating housing, terminals, wire seals and harness are not included."
+      ]
+    }
+  ],
+  "name_preservation": [
+    "CLVC1G125QDBVRQ1 is a valid TI name; no BOM part names were changed. It was outside this key-component pricing subset."
+  ]
+}

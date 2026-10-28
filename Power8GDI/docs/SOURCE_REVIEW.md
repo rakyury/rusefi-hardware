@@ -25,3 +25,31 @@ This directory is a **new original design**, not a claim that existing public bo
 3. Keep the four 34-pin connector labels **provisional** pending high-voltage spacing, pin current and connector derating verification.
 4. Reserve at least one protected auxiliary PWM for BMW B58 oil-pressure solenoid; actual electrical rating and fail state must come from valve characterization.
 5. Hardware-in-loop and fault-injection bench testing is mandatory before vehicle or engine use.
+
+## Follow-up requested by the user: Power4GDI, GDI8 and E92 (2026-10-25)
+
+- The public [Power4GDI/AlphaECU 4K GDI schematic](https://wiki.rusefi.com/Hardware-files/Hellen/alphax-4K-GDI-a-schematic.pdf)
+  identifies revision `a`, 2024-07-21, KiCad 8.0.4. Its root has four DI
+  outputs with paired positive feeds, one pump output and START1..6. This is
+  useful connection evidence, but does not establish a B58 Gen2 injector
+  current profile or an orderable BOM for the new six-cylinder board.
+- The [GDI8 documentation](https://wiki.rusefi.com/GDI8/) explicitly describes
+  eight injectors and two HPFP outputs, with pressure control performed by the
+  external ECU. It also warns of limited main-ECU integration and one-HPFP
+  firmware support. Treat that warning as documentation evidence, not a
+  substitute for auditing a pinned current firmware revision. Our two-pump
+  controller and no-Lua integration remain required work.
+- The [GM E92 project](https://wiki.rusefi.com/PnP-E92/) is a V8 Ecotec3 ECU
+  prototype. The public page distinguishes harness compatibility from full
+  vehicle CAN integration and links a
+  [public firmware bundle](https://rusefi.com/fw-private/rusefi_bundle_pnp-e92_obfuscated_public.zip)
+  and [pinout](https://rusefi.com/docs/pinouts/GM-E92/). It is a relevant V8 DI
+  reference, but those resources do not supply a verified editable complete
+  schematic/PCB/BOM or qualify BMW B58 Gen2 injectors. No complete public
+  E92 manufacturing source set was established in this review; this is a
+  search result, not a claim that such sources cannot exist.
+
+The approved physical target remains six DI, six optional PI, two HPFPs,
+DBW + EWG and one lambda controller. The user has now selected B58B30 Gen2
+DI and `IDX1050` PI injectors; see the active scope for the remaining exact
+part/characterization checks. Channel counts alone are not load compatibility.

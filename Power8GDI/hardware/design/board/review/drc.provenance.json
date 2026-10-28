@@ -1,0 +1,19 @@
+{
+  "board_sha256": "d39db4eb70924f06eaed51a75fded7158b93262c3a0460253a9538ec1df71d37",
+  "project_sha256": "4f57b78be7164b1d55f1f72c6b2a99c60046453681e3f2112b84fad76dee2b09",
+  "command": [
+    "kicad-cli",
+    "pcb",
+    "drc",
+    "--format",
+    "json",
+    "--all-track-errors",
+    "--severity-all",
+    "--exit-code-violations",
+    "-o",
+    "/src/Power8GDI/hardware/design/board/review/drc.json",
+    "/tmp/power8gdi-drc-07arpkcg/Power8GDI_Review.kicad_pcb"
+  ],
+  "returncode": 5,
+  "rule_exclusions_added": false
+}

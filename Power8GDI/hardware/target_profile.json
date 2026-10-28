@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "revision": "2026-10-25-sport-gdi6",
+  "supersedes": "2026-10-23-huge-gdi8",
+  "user_confirmed": {
+    "gdi_injectors_onboard": 6,
+    "hpfp_control_valves": 2,
+    "port_injectors_high_z": 6,
+    "ignition_channels": 6,
+    "retain_stock_coils_example": "BMW G42 M240i; passive B58 coil variant, exact part confirmation pending",
+    "h_bridges": 2,
+    "h_bridge_roles": [
+      "DBW",
+      "EWG"
+    ],
+    "wideband_controllers_onboard": 1,
+    "sent_required": true,
+    "lin_required": true,
+    "egt_channels_onboard": 0,
+    "egt_location": "separate module",
+    "di_injector_application": "B58B30 Gen2 DI injectors (user wording; exact OE/manufacturer PN unverified)",
+    "pi_injector_application": "IDX1050 PI injectors (user wording; exact variant unverified)"
+  },
+  "working_architecture": {
+    "sent_inputs": 4,
+    "lin_buses": 2,
+    "can_buses": 2,
+    "can_type": "classic CAN 2.0B",
+    "external_egt_transport": "CAN; node protocol and module selection pending",
+    "vvt_low_sides": 4,
+    "aux_pwm_low_sides": 8,
+    "service_low_sides": 4,
+    "total_low_sides_including_pi": 22,
+    "wideband_sensor": "Bosch LSU4.9",
+    "gdi_driver_banks": 2,
+    "gdi_channels_per_bank": 3,
+    "hpfp_channels_per_bank": 1,
+    "mcu": "STM32F767IIT6",
+    "nominal_battery_v": 12,
+    "pcb_layers": 4,
+    "pcb_width_mm": 245,
+    "pcb_height_mm": 165,
+    "pcb_thickness_mm": 1.6,
+    "gdi_command_map": {
+      "PTA": {
+        "START1": "DI1",
+        "START2": "DI2",
+        "START3": "DI3",
+        "START4": "UNUSED_INPUT_10K_PULLDOWN",
+        "START6": "HPFP1"
+      },
+      "PTB": {
+        "START1": "DI4",
+        "START2": "DI5",
+        "START3": "DI6",
+        "START4": "UNUSED_INPUT_10K_PULLDOWN",
+        "START6": "HPFP2"
+      }
+    },
+    "pi_assembly": "Six high-impedance channels; application optional, shared ICs with auxiliary outputs remain fitted"
+  },
+  "unfrozen": [
+    "B58B30 Gen2 DI exact part number, current waveform and Vboost; IDX1050 PI exact variant/electrical data; HPFP valve profile",
+    "Exact stock ignition coil part number and dwell/current profile",
+    "SENT sensor list and electrical/protocol profiles",
+    "LIN node models and message schedules",
+    "Motor actuator loads and simultaneous current budget",
+    "PCB size, cooling, environmental and qualification limits",
+    "EGT external CAN is retained working assumption; final module/protocol pending"
+  ],
+  "qualification": "development candidate; no hardware or manufacturing qualification"
+}

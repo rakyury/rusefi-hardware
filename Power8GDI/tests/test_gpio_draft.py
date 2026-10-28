@@ -21,7 +21,7 @@ class GpioDraftContract(unittest.TestCase):
         self.assertEqual(len(assigned), len(set(assigned)))
 
     def test_gdi_resources(self):
-        for prefix, n in [('DI', 8), ('IGN', 8), ('HPFP', 2)]:
+        for prefix, n in [('DI', 6), ('IGN', 6), ('HPFP', 2)]:
             for i in range(1, n + 1):
                 self.assertNotEqual('UNASSIGNED', self.pins[f'{prefix}{i}'])
         for prefix in ('PTA', 'PTB'):
@@ -33,14 +33,21 @@ class GpioDraftContract(unittest.TestCase):
             for suffix in ('PWM', 'DIR', 'DISABLE'):
                 self.assertNotEqual('UNASSIGNED', self.pins[f'{prefix}_{suffix}'])
 
-    def test_unresolved_stay_explicit(self):
-        for signal in ('SENT3', 'SENT4', 'LIN2_TX', 'LIN2_RX', 'CAN2_RX', 'CAN2_TX'):
-            self.assertEqual('UNASSIGNED', self.pins[signal])
+    def test_new_serial_routes_are_allocated(self):
+        for signal,pin in {'LIN2_TX':'PB10','LIN2_RX':'PB11','CAN2_RX':'PB5','CAN2_TX':'PB6'}.items():
+            self.assertEqual(pin, self.pins[signal])
+
+    def test_new_receiver_assignments_remain_proposed(self):
+        expected={'SENT3':'PE11','SENT4':'PB7','CAM3':'PI5','CAM4':'PI6'}
+        for row in self.data:
+            if row['function'] in expected:
+                self.assertEqual(row['stm32_pin'],expected[row['function']])
+                self.assertEqual(row['status'],'proposed')
 
     def test_requirements_dont_fit_only_four_tle9104(self):
-        # Eight PI + four VVT + eight general-purpose PWM + four service low-side.
-        required_low_sides = 8 + 4 + 8 + 4
-        self.assertEqual(required_low_sides, 24)
+        # Six PI + four VVT + eight general-purpose PWM + four service low-side.
+        required_low_sides = 6 + 4 + 8 + 4
+        self.assertEqual(required_low_sides, 22)
         self.assertGreater(required_low_sides, 4 * 4)
         self.assertEqual((required_low_sides + 3) // 4, 6)
 

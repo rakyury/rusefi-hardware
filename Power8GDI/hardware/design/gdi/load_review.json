@@ -1,0 +1,83 @@
+{
+  "status": "STRUCTURE_PASS_LOAD_QUALIFICATION_BLOCKED",
+  "errors": [],
+  "netlist_sha256": "abd9c0533019b9811a75fa73c46c1a9d9b97511d5f858edb2b88ae1e98a87462",
+  "shunt_stencil_review": {
+    "source_footprints": [
+      "REF_R12",
+      "REF_R21",
+      "REF_R22",
+      "REF_R26",
+      "REF_R45"
+    ],
+    "power_pad_numbers": [
+      "1",
+      "4"
+    ],
+    "power_layers": [
+      "F.Cu",
+      "F.Paste",
+      "F.Mask"
+    ],
+    "kelvin_pad_numbers": [
+      "2",
+      "3"
+    ],
+    "kelvin_layers": [
+      "F.Cu"
+    ],
+    "separate_paste_primitives_allowed": false,
+    "scope": "Derived library checked here; all ten saved PCB instances covered by test_actual_board_shunts_have_stencil"
+  },
+  "requested_loads": {
+    "DI": "B58B30 Gen2",
+    "PI": "IDX1050"
+  },
+  "family_reference_only": {
+    "family": "Bosch HDEV6 solenoid",
+    "boost_V": 65,
+    "boost_A_range": [
+      12,
+      13
+    ],
+    "pickup_A": 5.3,
+    "pickup_duration_us": 600,
+    "hold_A_range": [
+      2.6,
+      3.6
+    ],
+    "coil_ohm_ambient": 1.83,
+    "boost_duration_us": null,
+    "injector_inductance_H": null,
+    "exact_OEM_current_profile_verified": false
+  },
+  "pt2001": {
+    "device": "MC33PT2001AE",
+    "nominal_gate_V": 7,
+    "ordering_table_VBOOST_max_V": 72,
+    "recommended_operating_VBOOST_max_V": null,
+    "absolute_max_VBOOST_V": null,
+    "HAE_ordering_table_max_V": 80,
+    "HAE_drop_in_qualification": false
+  },
+  "arithmetic_examples_not_operating_limits": {
+    "nominal_bank_Cboost_F": 0.00094,
+    "stored_energy_65V_J": 1.98575,
+    "Cboost_energy_65_to_60V_J": 0.29375,
+    "13A_no_recharge_droop_V_per_100us": 1.3829787234042554,
+    "shunt_10mohm_13A_instantaneous_W": 1.69,
+    "selected_mosfet_15mohm_13A_25C_instantaneous_W": 2.5349999999999997,
+    "boost_12V_to_65V_ideal_duty": 0.8153846153846154,
+    "boost_10uH_100kHz_12V_ideal_ripple_A": 9.784615384615385,
+    "all_12_gates_per_bank_49nC_100kHz_charge_current_A": 0.058800000000000005
+  },
+  "blocked": [
+    "Exact OEM injector identity/current waveform/inductance and pump load",
+    "Full PT electrical data and approved 65V regulation/transient margin",
+    "Independent hardware VBOOST overvoltage/shutdown and returned-energy clamp",
+    "Boost L202/L302 saturation/RMS and diode dynamic/thermal qualification",
+    "Capacitor voltage/ripple/lifetime and pulse shunt temperature qualification",
+    "Gate drive/switching/SOA/avalanche and PCB heat-spreading bench evidence",
+    "Qualified demagnetization guard and real scheduler integration"
+  ]
+}

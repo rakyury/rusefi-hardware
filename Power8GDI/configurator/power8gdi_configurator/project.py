@@ -1,16 +1,18 @@
-"""Versioned, validated offline calibration model for Power8GDI.
+"""Versioned, validated offline calibration model for R2 ECU Studio.
 
-No claim of rusEFI memory-layout compatibility is made. Until matching
-Power8GDI firmware/INI exists, exported JSON is an editor-only format.
+No claim of rusEFI memory-layout compatibility is made. Exported JSON is an
+editor-only format until the matching versioned firmware API is implemented.
 """
 from __future__ import annotations
 from dataclasses import dataclass, field
 from pathlib import Path
 import json
 import math
+import tempfile
 from typing import Any
+from .profiles import SPORT_GDI6, LEGACY_POWER8GDI, target_profile, TargetProfile
 
-FORMAT_VERSION = 2
+FORMAT_VERSION = 3
 
 
 def _finite_number(value: Any) -> float:
@@ -46,6 +48,9 @@ class CalibrationTable:
     safety_class: str = 'calibration'
 
     def validate(self) -> None:
+        for key in ('name', 'description', 'x_label', 'y_label', 'value_unit'):
+            if not isinstance(getattr(self, key), str):
+                raise ValueError(f'{key} must be text')
         if not self.name or self.safety_class not in ('calibration', 'safety_critical'):
             raise ValueError('Invalid name or safety class')
         self.x_bins = _axis(self.x_bins, 'X axis')
@@ -121,6 +126,9 @@ class CalibrationTable4D:
     safety_class: str = 'calibration'
 
     def validate(self) -> None:
+        for key in ('name', 'description', 'x_label', 'y_label', 'z_label', 'value_unit'):
+            if not isinstance(getattr(self, key), str):
+                raise ValueError(f'{key} must be text')
         if not self.name or self.safety_class not in ('calibration', 'safety_critical'):
             raise ValueError('Invalid map name or safety class')
         self.x_bins = _axis(self.x_bins, 'X axis')
@@ -192,18 +200,38 @@ class CalibrationTable4D:
 
 @dataclass
 class CalibrationProject:
-    name: str = 'Power8GDI — V8 Reference'
-    cylinders: int = 8
+    name: str = 'R2 Sport GDI6 — offline sample'
+    cylinders: int = 6
     pumps: int = 2
     format_version: int = FORMAT_VERSION
     tables: dict[str, CalibrationTable | CalibrationTable4D] = field(default_factory=dict)
     notes: str = 'Calibration data only. NEVER flash or run directly on an engine.'
+    profile_id: str = SPORT_GDI6
+    imported_format_version: int | None = None
+
+    @property
+    def profile(self) -> TargetProfile:
+        return target_profile(self.profile_id)
+
+    @property
+    def is_legacy(self) -> bool:
+        return self.profile_id == LEGACY_POWER8GDI
 
     def validate(self) -> None:
-        if self.format_version != FORMAT_VERSION:
+        if type(self.format_version) is not int or self.format_version != FORMAT_VERSION:
             raise ValueError('Unsupported project version')
-        if self.cylinders != 8 or self.pumps != 2:
-            raise ValueError('This project is for eight cylinders and two HPFP channels')
+        profile = self.profile
+        if (type(self.cylinders) is not int or type(self.pumps) is not int or
+                self.cylinders != profile.cylinders or self.pumps != profile.hpfp_channels):
+            raise ValueError('Cylinder/HPFP counts do not match the explicit target profile')
+        if not isinstance(self.name, str) or not self.name or not isinstance(self.notes, str):
+            raise ValueError('Project name and notes must be text; name must not be empty')
+        if self.imported_format_version is not None:
+            if (type(self.imported_format_version) is not int or
+                    self.imported_format_version not in (1, 2) or not self.is_legacy):
+                raise ValueError('Invalid legacy import provenance')
+        if not isinstance(self.tables, dict) or len(self.tables) > 128:
+            raise ValueError('Invalid table collection')
         for name, table in self.tables.items():
             if name != table.name:
                 raise ValueError(f'Table key and name mismatch: {name}')
@@ -214,23 +242,34 @@ class CalibrationProject:
         return {
             'format_version': self.format_version,
             'name': self.name, 'cylinders': self.cylinders, 'pumps': self.pumps,
+            'profile_id': self.profile_id,
+            'imported_format_version': self.imported_format_version,
             'notes': self.notes,
             'tables': {name: obj.to_dict() for name, obj in self.tables.items()}
         }
 
     @classmethod
     def from_dict(cls, obj: dict[str, Any]) -> 'CalibrationProject':
+        if not isinstance(obj, dict):
+            raise ValueError('Expected project object')
+        version = obj.get('format_version')
+        if type(version) is not int or version not in (1, 2, FORMAT_VERSION):
+            raise ValueError('Unsupported project version')
         allowed={'format_version','name','cylinders','pumps','notes','tables'}
-        if not isinstance(obj,dict) or set(obj) - allowed:
+        if version == FORMAT_VERSION:
+            allowed.update({'profile_id', 'imported_format_version'})
+        if set(obj) - allowed:
             raise ValueError('Unexpected fields in project')
         ts=obj.get('tables',{})
         if not isinstance(ts,dict) or len(ts)>128:
             raise ValueError('Invalid table collection')
-        version = obj['format_version']
-        if type(version) is not int or version not in (1, FORMAT_VERSION):
-            raise ValueError('Unsupported project version')
+        # Older files were exclusively eight-cylinder projects. Upgrade the
+        # envelope, never reinterpret/truncate their calibrations as six-cylinder.
+        profile_id = obj['profile_id'] if version == FORMAT_VERSION else LEGACY_POWER8GDI
+        imported_version = obj.get('imported_format_version') if version == FORMAT_VERSION else version
         result=cls(format_version=FORMAT_VERSION,
                    name=obj['name'],cylinders=obj['cylinders'], pumps=obj['pumps'],
+                   profile_id=profile_id, imported_format_version=imported_version,
                    notes=obj.get('notes',''),
                    tables={name:(CalibrationTable4D.from_dict(v) if 'z_bins' in v
                                  else CalibrationTable.from_dict(v)) for name,v in ts.items()})
@@ -240,10 +279,19 @@ class CalibrationProject:
     def save(self, path: Path | str) -> None:
         path=Path(path)
         path.parent.mkdir(parents=True,exist_ok=True)
-        # Atomic replacement protects existing calibration file on write failures.
-        temp=path.with_name(path.name+'.tmp')
-        temp.write_text(json.dumps(self.to_dict(),indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
-        temp.replace(path)
+        payload=json.dumps(self.to_dict(),indent=2,ensure_ascii=False)+'\n'
+        # A unique sibling permits atomic replacement without consuming another
+        # window's temporary file or an existing user recovery sidecar.
+        temp=None
+        try:
+            with tempfile.NamedTemporaryFile(mode='w',encoding='utf-8',dir=path.parent,
+                    prefix=path.name+'.',suffix='.tmp',delete=False) as stream:
+                temp=Path(stream.name)
+                stream.write(payload)
+            temp.replace(path)
+        finally:
+            if temp is not None:
+                temp.unlink(missing_ok=True)
 
     @classmethod
     def load(cls, path: Path | str) -> 'CalibrationProject':

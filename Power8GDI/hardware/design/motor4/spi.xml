@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/src/Power8GDI/hardware/design/motor4/spi.kicad_sch</source>
+    <date>2026-10-28T09:48:22+0000</date>
+    <tool>Eeschema 9.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Motor daisy chain and shared SPI isolation</title>
+        <company/>
+        <rev>Engineering draft 0.1</rev>
+        <date/>
+        <source>spi.kicad_sch</source>
+        <comment number="1" value="UNQUALIFIED: no manufacturing or engine approval"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C6190">
+      <value>100n 25V X7R</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">C0805C104K1RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-50b208aec5b1</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 100, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://www.mouser.com/datasheet/3/72/1/C0805C104K1RACTU.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_C" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="C0805C104K1RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-50b208aec5b1"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 100, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://www.mouser.com/datasheet/3/72/1/C0805C104K1RACTU.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="spi.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c48696c9-0fb0-596c-addc-08de51048387</tstamps>
+    </comp>
+    <comp ref="R6190">
+      <value>47R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW060347R0FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-092784c899c7</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 47.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW060347R0FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-092784c899c7"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 47.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="spi.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>dc24b18a-4923-5753-9cda-a981115e1968</tstamps>
+    </comp>
+    <comp ref="R6191">
+      <value>47R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW060347R0FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-092784c899c7</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 47.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW060347R0FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-092784c899c7"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 47.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="spi.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1a78fb56-0b68-5758-a948-3b3a69f84f6d</tstamps>
+    </comp>
+    <comp ref="R6192">
+      <value>47R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW060347R0FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-092784c899c7</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 47.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW060347R0FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-092784c899c7"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 47.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="spi.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>7f1e348e-b96f-56e6-a4ed-3f37d5670f23</tstamps>
+    </comp>
+    <comp ref="R6193">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW060310K0FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-9c0806476875</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 10000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW060310K0FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-9c0806476875"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 10000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="spi.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6ab4cb9d-73a3-5ec1-843c-3c47ce484080</tstamps>
+    </comp>
+    <comp ref="R6194">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW060310K0FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-9c0806476875</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 10000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW060310K0FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-9c0806476875"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 10000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="spi.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00041bf1-79a9-55ce-b483-0038cdd1ec74</tstamps>
+    </comp>
+    <comp ref="R6195">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW0603100KFKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-4e3f06cba0aa</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 100000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="Motor_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW0603100KFKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-4e3f06cba0aa"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 100000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="spi.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>292765ec-81d8-587e-bb67-ead157cb1e06</tstamps>
+    </comp>
+    <comp ref="U6190">
+      <value>SN74LVC1G125QDBVRQ1</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="Design note">Extra explicit MISO isolation. TLE SO is tri-state at CSN high; asynchronous fault flag exists while CSN low before first clock, per Infineon4.12.1.</field>
+        <field name="MPN">SN74LVC1G125QDBVRQ1</field>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="Selection_ID">SEL-7081e006b06b</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.ti.com/product/SN74LVC1G125-Q1/part-details/SN74LVC1G125QDBVRQ1</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_Motor4" part="SN74LVC1G125_Q1" description=""/>
+      <property name="Design note" value="Extra explicit MISO isolation. TLE SO is tri-state at CSN high; asynchronous fault flag exists while CSN low before first clock, per Infineon4.12.1."/>
+      <property name="MPN" value="SN74LVC1G125QDBVRQ1"/>
+      <property name="Manufacturer" value="Texas Instruments"/>
+      <property name="Selection_ID" value="SEL-7081e006b06b"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.ti.com/product/SN74LVC1G125-Q1/part-details/SN74LVC1G125QDBVRQ1"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="spi.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>08576419-392b-501b-b9b9-8eadc020a4fc</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Power8GDI_Motor4" part="Motor_C">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">Motor_C</field>
+        <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Motor4" part="Motor_R">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">Motor_R</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_Motor4" part="SN74LVC1G125_Q1">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SN74LVC1G125_Q1</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="~{OE}" type="input"/>
+        <pin num="2" name="A" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="Y" type="tri_state"/>
+        <pin num="5" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Power8GDI_Motor4">
+      <uri>/src/Power8GDI/hardware/design/motor4/Power8GDI_Motor4.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3" class="Default">
+      <node ref="C6190" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R6193" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R6194" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U6190" pin="5" pinfunction="VCC" pintype="power_in"/>
+    </net>
+    <net code="2" name="EWG_SPI_SO" class="Default">
+      <node ref="R6195" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U6190" pin="2" pinfunction="A" pintype="input"/>
+    </net>
+    <net code="3" name="GDI_SPI2_MISO" class="Default">
+      <node ref="R6192" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="4" name="GDI_SPI2_MOSI" class="Default">
+      <node ref="R6190" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="5" name="GDI_SPI2_SCK" class="Default">
+      <node ref="R6191" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="6" name="GND" class="Default">
+      <node ref="C6190" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R6195" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U6190" pin="3" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="7" name="HW_ACTUATOR_ENABLE_N" class="Default">
+      <node ref="R6194" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="8" name="MOTOR_CS_N" class="Default">
+      <node ref="R6193" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U6190" pin="1" pinfunction="~{OE}" pintype="input"/>
+    </net>
+    <net code="9" name="MOTOR_MISO_BUFFERED" class="Default">
+      <node ref="R6192" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U6190" pin="4" pinfunction="Y" pintype="tri_state"/>
+    </net>
+    <net code="10" name="MOTOR_SPI_SCK" class="Default">
+      <node ref="R6191" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="11" name="MOTOR_SPI_SI" class="Default">
+      <node ref="R6190" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+  </nets>
+</export>

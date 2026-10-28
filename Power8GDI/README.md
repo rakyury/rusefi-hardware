@@ -1,5 +1,12 @@
 # Power8GDI Rev A — preliminary design package
 
+**Active scope changed on 2026-10-25:** the user selected a physical Power6GDI
+redesign: 6 DI + 6 PI, 2 HPFP, DBW + EWG, one wideband controller. Start with
+[the active scope](docs/SCOPE_2026_10_25_SPORT_GDI6.md) and
+[the imported audit and implementation plan](docs/research/2026-10-25-sport-ecu/README_RU.md).
+The eight-channel descriptions below are historical context until regenerated
+artifacts and their evidence are explicitly updated.
+
 **Status: interface definition / floorplan only; NOT an electrically completed PCB or a fabrication deliverable.**
 
 ## Connector decision

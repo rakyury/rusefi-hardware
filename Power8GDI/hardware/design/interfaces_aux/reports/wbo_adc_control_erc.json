@@ -1,0 +1,259 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-21T05:51:55+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/bfe056a8-f8a6-5464-91ba-555843602cef",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U2001 Pin 7 [DGND, Power input, Line]",
+                            "pos": {
+                                "x": 0.7239,
+                                "y": 1.0287
+                            },
+                            "uuid": "b657b405-30b9-5cfd-b7c2-929ca42524e5"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U2001 Pin 13 [VREF, Power input, Line]",
+                            "pos": {
+                                "x": 1.0795,
+                                "y": 0.9017
+                            },
+                            "uuid": "d545cd66-3c34-5c62-a9f7-aca50818d4f3"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U2001 Pin 11 [CLK, Input, Line]",
+                            "pos": {
+                                "x": 1.0795,
+                                "y": 0.9525
+                            },
+                            "uuid": "3689dc83-e979-5cd5-a58a-21a5394a03de"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U2001 Pin 9 [DIN, Input, Line]",
+                            "pos": {
+                                "x": 1.0795,
+                                "y": 1.0033
+                            },
+                            "uuid": "65464007-d529-50b2-94db-90757af69851"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U2002 Pin 20 [VCC, Power input, Line]",
+                            "pos": {
+                                "x": 2.4765,
+                                "y": 0.8255
+                            },
+                            "uuid": "fc583066-1a44-57a8-af78-f89b000e3590"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U2003 Pin 3 [IN1+, Input, Line]",
+                            "pos": {
+                                "x": 4.2672,
+                                "y": 0.8763
+                            },
+                            "uuid": "148c6dc7-f221-5a19-a72b-ce6ceb639760"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U2003 Pin 5 [IN2+, Input, Line]",
+                            "pos": {
+                                "x": 4.2672,
+                                "y": 0.9271
+                            },
+                            "uuid": "4fd7dbc8-caa6-5450-a582-4cbbf2eee7b4"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U2003 Pin 10 [IN3+, Input, Line]",
+                            "pos": {
+                                "x": 4.2672,
+                                "y": 0.9779
+                            },
+                            "uuid": "c23327c7-7dec-5b91-b1cd-b6102e497f0d"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U2003 Pin 12 [IN4+, Input, Line]",
+                            "pos": {
+                                "x": 4.2672,
+                                "y": 1.0287
+                            },
+                            "uuid": "293e2bd6-854c-54ca-b487-b9bbc6e49e0a"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'GDI_SPI2_SCK'",
+                            "pos": {
+                                "x": 1.1557,
+                                "y": 0.9525
+                            },
+                            "uuid": "fd11a222-291a-5ee7-9dcb-ea63a928c5c0"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'GDI_SPI2_MISO'",
+                            "pos": {
+                                "x": 1.1557,
+                                "y": 0.9779
+                            },
+                            "uuid": "bc36558f-b32e-5896-88c0-5be65282e079"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'GDI_SPI2_MOSI'",
+                            "pos": {
+                                "x": 1.1557,
+                                "y": 1.0033
+                            },
+                            "uuid": "b8028c96-547a-5169-97cf-0c0d4c627e8b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_UA'",
+                            "pos": {
+                                "x": 4.191,
+                                "y": 0.8763
+                            },
+                            "uuid": "3adf1095-8b8f-5bdb-9ae0-43ae9b68cdc8"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_UR'",
+                            "pos": {
+                                "x": 4.191,
+                                "y": 0.9271
+                            },
+                            "uuid": "994ef5e8-f613-534b-93c8-f7e9fa733032"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO2_UA'",
+                            "pos": {
+                                "x": 4.191,
+                                "y": 0.9779
+                            },
+                            "uuid": "cd70fa3c-2fc3-53ee-859d-8fee5eb941b6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO2_UR'",
+                            "pos": {
+                                "x": 4.191,
+                                "y": 1.0287
+                            },
+                            "uuid": "cd606a3d-f071-5ce3-a011-c8d7e410a6a7"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "wbo_adc_control.kicad_sch"
+}

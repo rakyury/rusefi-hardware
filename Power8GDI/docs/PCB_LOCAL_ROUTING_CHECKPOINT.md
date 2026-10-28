@@ -1,0 +1,17 @@
+# Local routing checkpoint — 1262 components
+
+The separate `hardware/design/board/local_routing_candidate/Power8GDI_Review.kicad_pcb` preserves the earlier `layout_candidate` checkpoint. It is a partially routed engineering artifact, not a fabrication release. The outline remains 245 x 165 mm, four layers. Root netlist SHA256 remains `d7fb0ddc652c735b1617ddce309dcb4ca93b4729c80044e7e9be3e5e50e74ae7`.
+
+The actual combined board contains 30 compact buck components with 106 new segments and 19 accepted ground vias, and 174 WBO components with 68 local routed pin pairs. These numbers come from this board's report: isolated peer fixtures had different obstacle geometry and different route/via counts. Generic placement reserves both modules and their copper first, then fits other components against the audited voltage-domain obstacles. Quiet inputs use available space around the WBO region. This does not establish analogue noise or thermal performance.
+
+The board contains 2834 track/via items. The full connectivity residual decreased from 2602 in the preceding checkpoint to **2471**. Board-to-netlist verification passes all 1262 components and 3951 pin assignments, with 35 DNP components and zero mismatches. Ten regression checks pass, including a test that intentional local breakout segments survive donor dangling-tail cleanup. The two unfinished buck breakouts are retained and remain visible to DRC.
+
+KiCad 9.0.9 reports 730 violations: 510 clearance, 199 track width, 12 dangling vias, 4 dangling tracks, 4 silk-over-mask and 1 silk overlap. Clearance and width lists reach internal reporting caps; 730 is not the complete violation count. The separate 499-entry unconnected list is capped too. No routing completion percentage is claimed.
+
+Reference fields without room on silkscreen were physically moved to the corresponding Fab assembly layer, remaining visible and retaining their identifiers. This moved 342 fields; polarity marks, connector labels and package graphics were preserved. Silk findings decreased from 221 to 5 without changing rule severity. Remaining silk conflicts involve R316, R5840 and polarized C5851; the latter's markings were deliberately not blindly removed.
+
+All 60 discovered PT2001 switching nets retain explicit 0.6 mm targets. Filtered battery aliases and the LM76003 SW/BOOT nets use 0.3 mm; ignition primary nets use the provisional 2.5 mm target. No clearance exceptions are introduced. The uncapped local buck diagnostic exposes **nine LM76003 clearance findings**: four intrinsic 0.25 mm adjacent-pad gaps against the 0.3 mm target and five 0.275 mm escape gaps. These remain defects/qualification decisions in this candidate. The earlier capped fixture could not prove their absence; `LOGIC_POWER_LOCAL.md` and its machine-readable review now explicitly correct that limitation. Motor protected-supply/charge-pump domain coverage remains a separate pending review.
+
+The board, project and rules hashes match `drc.provenance.json` after the front/back PNG exports. Preview images show the actual saved copper without a drawing-sheet overlay; back uses the same coordinates as front. SVG rendering intermediates remain in the ignored build directory.
+
+To repeat verification, use the commands in `PCB_LAYOUT_CHECKPOINT_1262.md`, replacing every `layout_candidate` path with `local_routing_candidate`. Run `build_board.py --output-dir <new-directory>` in the pinned KiCad 9 container to rebuild without overwriting either retained checkpoint. The DRC command is expected to exit nonzero.

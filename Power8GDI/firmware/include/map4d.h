@@ -7,6 +7,7 @@
 #include <cmath>
 #include <cstddef>
 #include <cstdint>
+#include <limits>
 
 namespace power8gdi {
 
@@ -24,7 +25,8 @@ struct Map4DView {
     float scale = 1.0f;
     float offset = 0.0f;
 
-    // Call at configuration load/Burn time, rather than every real-time lookup.
+    // Full bounded validation, also used by this stand-alone lookup. MCU
+    // integration must budget this O(cell count) scan and binary64 arithmetic.
     bool validate() const noexcept {
         if (!x_bins || !y_bins || !z_bins || !values ||
             nx == 0 || ny == 0 || nz == 0 ||
@@ -33,8 +35,14 @@ struct Map4DView {
             !std::isfinite(scale) || !std::isfinite(offset) || scale == 0) {
             return false;
         }
-        return axisValid(x_bins, nx) && axisValid(y_bins, ny) &&
-               axisValid(z_bins, nz);
+        if (!axisValid(x_bins, nx) || !axisValid(y_bins, ny) ||
+            !axisValid(z_bins, nz)) return false;
+        for (std::size_t i = 0; i < nx * ny * nz; ++i) {
+            const double value = static_cast<double>(values[i]) * scale + offset;
+            if (!std::isfinite(value) ||
+                std::fabs(value) > std::numeric_limits<float>::max()) return false;
+        }
+        return true;
     }
 
     // Return false and do not modify output for an invalid live input or map.
@@ -45,14 +53,13 @@ struct Map4DView {
         const auto ax = axisLookup(x_bins, nx, x);
         const auto ay = axisLookup(y_bins, ny, y);
         const auto az = axisLookup(z_bins, nz, z);
-        const float low = bilinear(ax, ay, az.lo);
-        const float high = bilinear(ax, ay, az.hi);
-        const float raw = lerp(low, high, az.factor);
-        const float result = raw * scale + offset;
-        if (!std::isfinite(result)) {
+        const double low = bilinear(ax, ay, az.lo);
+        const double high = bilinear(ax, ay, az.hi);
+        const double result = lerp(low, high, az.factor);
+        if (!std::isfinite(result) || std::fabs(result) > std::numeric_limits<float>::max()) {
             return false;
         }
-        out = result;
+        out = static_cast<float>(result);
         return true;
     }
 
@@ -60,7 +67,7 @@ private:
     struct Location {
         std::size_t lo;
         std::size_t hi;
-        float factor;
+        double factor;
     };
 
     static bool axisValid(const float* bins, std::size_t count) noexcept {
@@ -76,23 +83,27 @@ private:
         if (v >= bins[count - 1]) return {count - 1, count - 1, 0.f};
         for (std::size_t i = 1; i < count; ++i) {
             if (v <= bins[i]) {
-                return {i - 1, i, (v - bins[i - 1]) / (bins[i] - bins[i - 1])};
+                // Finite float32 endpoints may have a difference above FLT_MAX.
+                return {i - 1, i, (double(v) - bins[i - 1]) /
+                                  (double(bins[i]) - bins[i - 1])};
             }
         }
         return {count - 1, count - 1, 0.f};
     }
 
-    static float lerp(float a, float b, float t) noexcept {
+    static double lerp(double a, double b, double t) noexcept {
         return a + (b - a) * t;
     }
 
-    float at(std::size_t ix, std::size_t iy, std::size_t iz) const noexcept {
-        return static_cast<float>(values[(iz * ny + iy) * nx + ix]);
+    double at(std::size_t ix, std::size_t iy, std::size_t iz) const noexcept {
+        // Canonical engineering cell: multiply/add in binary64, round once to
+        // binary32. The offline Python decoder interpolates these same cells.
+        return static_cast<float>(double(values[(iz * ny + iy) * nx + ix]) * scale + offset);
     }
 
-    float bilinear(Location x, Location y, std::size_t z) const noexcept {
-        const float a = lerp(at(x.lo, y.lo, z), at(x.hi, y.lo, z), x.factor);
-        const float b = lerp(at(x.lo, y.hi, z), at(x.hi, y.hi, z), x.factor);
+    double bilinear(Location x, Location y, std::size_t z) const noexcept {
+        const double a = lerp(at(x.lo, y.lo, z), at(x.hi, y.lo, z), x.factor);
+        const double b = lerp(at(x.lo, y.hi, z), at(x.hi, y.hi, z), x.factor);
         return lerp(a, b, y.factor);
     }
 };

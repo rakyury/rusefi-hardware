@@ -23,10 +23,9 @@ class ResourceAuditContract(unittest.TestCase):
     def test_unresolved_still_block_release(self):
         r = audit(read_rows())
         self.assertFalse(r['complete'])
-        self.assertGreater(len(r['unassigned_required']), 10)
-        self.assertIn('PI1', r['unassigned_required'])
-        self.assertIn('SENT3', r['unassigned_required'])
-        self.assertIn('AUX_PWM8', r['unassigned_required'])
+        self.assertTrue(r['allocation_complete'])
+        self.assertFalse(r['release_eligible'])
+        self.assertEqual(r['unassigned_required'], [])
 
     def test_mcu_collision_detected(self):
         rows = read_rows()

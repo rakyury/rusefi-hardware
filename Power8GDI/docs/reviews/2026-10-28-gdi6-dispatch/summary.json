@@ -1,0 +1,467 @@
+{
+  "generated_at": "2026-10-28T19:07:08.690601+00:00",
+  "revision": "d08daa8b309578f46bb4604f3adba12eba7fa6d4",
+  "working_tree_dirty": false,
+  "suite": "host",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "cpp-map4d-build",
+      "command": [
+        "C:/Users/User/AppData/Local/Programs/Swift/Toolchains/6.3.3+Asserts/usr/bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-ffp-contract=off",
+        "-UNDEBUG",
+        "-Iinclude",
+        "-Idual_gdi",
+        "tests/test_map4d.cpp",
+        "-o",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\map4d.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-map4d-build.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-map4d",
+      "command": [
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\map4d.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-map4d.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-map4d-blob-build",
+      "command": [
+        "C:/Users/User/AppData/Local/Programs/Swift/Toolchains/6.3.3+Asserts/usr/bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-ffp-contract=off",
+        "-UNDEBUG",
+        "-Iinclude",
+        "-Idual_gdi",
+        "tests/test_map4d_blob.cpp",
+        "-o",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\map4d-blob.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-map4d-blob-build.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-map4d-blob",
+      "command": [
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\map4d-blob.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-map4d-blob.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-dual-hpfp-build",
+      "command": [
+        "C:/Users/User/AppData/Local/Programs/Swift/Toolchains/6.3.3+Asserts/usr/bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-ffp-contract=off",
+        "-UNDEBUG",
+        "-Iinclude",
+        "-Idual_gdi",
+        "dual_hpfp/dual_hpfp_supervisor.cpp",
+        "tests/test_dual_hpfp_supervisor.cpp",
+        "-o",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\dual-hpfp.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-dual-hpfp-build.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-dual-hpfp",
+      "command": [
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\dual-hpfp.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-dual-hpfp.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-dual-hpfp-safety-build",
+      "command": [
+        "C:/Users/User/AppData/Local/Programs/Swift/Toolchains/6.3.3+Asserts/usr/bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-ffp-contract=off",
+        "-UNDEBUG",
+        "-Iinclude",
+        "-Idual_gdi",
+        "dual_hpfp/dual_hpfp_supervisor.cpp",
+        "tests/test_dual_hpfp_safety.cpp",
+        "-o",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\dual-hpfp-safety.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-dual-hpfp-safety-build.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-dual-hpfp-safety",
+      "command": [
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\dual-hpfp-safety.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-dual-hpfp-safety.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-dual-pt2001-safety-build",
+      "command": [
+        "C:/Users/User/AppData/Local/Programs/Swift/Toolchains/6.3.3+Asserts/usr/bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-ffp-contract=off",
+        "-UNDEBUG",
+        "-Iinclude",
+        "-Idual_gdi",
+        "dual_gdi/dual_pt2001_safety.cpp",
+        "tests/test_dual_pt2001_safety.cpp",
+        "-o",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\dual-pt2001-safety.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-dual-pt2001-safety-build.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-dual-pt2001-safety",
+      "command": [
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\dual-pt2001-safety.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-dual-pt2001-safety.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-fuel-gdi6-build",
+      "command": [
+        "C:/Users/User/AppData/Local/Programs/Swift/Toolchains/6.3.3+Asserts/usr/bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-ffp-contract=off",
+        "-UNDEBUG",
+        "-Iinclude",
+        "-Idual_gdi",
+        "fuel/allocation_gdi6.cpp",
+        "tests/test_fuel_gdi6.cpp",
+        "-o",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\fuel-gdi6.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-fuel-gdi6-build.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-fuel-gdi6",
+      "command": [
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\fuel-gdi6.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-fuel-gdi6.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-gdi6-schedule-build",
+      "command": [
+        "C:/Users/User/AppData/Local/Programs/Swift/Toolchains/6.3.3+Asserts/usr/bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-ffp-contract=off",
+        "-UNDEBUG",
+        "-Iinclude",
+        "-Idual_gdi",
+        "dual_gdi/gdi6_schedule_admission.cpp",
+        "tests/test_gdi6_schedule.cpp",
+        "-o",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\gdi6-schedule.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-gdi6-schedule-build.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-gdi6-schedule",
+      "command": [
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\gdi6-schedule.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-gdi6-schedule.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-gdi6-dispatch-build",
+      "command": [
+        "C:/Users/User/AppData/Local/Programs/Swift/Toolchains/6.3.3+Asserts/usr/bin\\clang++.exe",
+        "-std=c++17",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-ffp-contract=off",
+        "-UNDEBUG",
+        "-Iinclude",
+        "-Idual_gdi",
+        "dual_gdi/dual_pt2001_safety.cpp",
+        "dual_gdi/gdi6_schedule_admission.cpp",
+        "dual_gdi/gdi6_dispatch_guard.cpp",
+        "tests/test_gdi6_dispatch_guard.cpp",
+        "-o",
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\gdi6-dispatch.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-gdi6-dispatch-build.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "cpp-gdi6-dispatch",
+      "command": [
+        "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\root-test-tmp\\power8gdi-host-apydgz_4\\gdi6-dispatch.exe"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\firmware",
+      "log": "cpp-gdi6-dispatch.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "racing-dash-native",
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "firmware/tests/run_racing_dash_tests.py"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI",
+      "log": "racing-dash-native.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "qt-runtime",
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-c",
+        "from PyQt6.QtWidgets import QApplication; app=QApplication([])"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI",
+      "log": "qt-runtime.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "python-configurator",
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "pytest",
+        "tests",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI\\configurator",
+      "log": "python-configurator.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "static-interface",
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI",
+      "log": "static-interface.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "mcu-audit-contracts",
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "hardware/tests",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI",
+      "log": "mcu-audit-contracts.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "mcu-audit-structure",
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "hardware/audit_resources.py",
+        "--gate",
+        "structure"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI",
+      "log": "mcu-audit-structure.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "gdi-audit-contracts",
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "hardware/gdi",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI",
+      "log": "gdi-audit-contracts.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "gdi-audit-structure",
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "hardware/gdi/validate_interface_contract.py"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI",
+      "log": "gdi-audit-structure.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "gdi6-resource-map",
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "firmware/dual_gdi/generate_resource_map.py",
+        "--check"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI",
+      "log": "gdi6-resource-map.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "gdi6-resource-mutations",
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "firmware/tests",
+        "-p",
+        "test_gdi6_resource_map.py",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI",
+      "log": "gdi6-resource-mutations.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "bom-selection",
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "procurement/selection",
+        "-p",
+        "test_selection.py",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI",
+      "log": "bom-selection.log",
+      "status": "PASS",
+      "returncode": 0
+    },
+    {
+      "name": "bom-costing",
+      "command": [
+        "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "procurement/costing",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "C:\\Users\\User\\Documents\\Codex\\2026-10-25\\x20\\work\\sport-gdi6\\Power8GDI",
+      "log": "bom-costing.log",
+      "status": "PASS",
+      "returncode": 0
+    }
+  ],
+  "not_validated": [
+    "Power8GDI MCU firmware build",
+    "KiCad ERC/DRC",
+    "vendor connector fit",
+    "physical fault injection",
+    "thermal/EMC",
+    "engine operation"
+  ]
+}

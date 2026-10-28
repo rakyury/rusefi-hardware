@@ -1,0 +1,41 @@
+test_ignition_collector_swapped_to_gate_is_rejected (test_connectivity.ConnectivityTests) ... ok
+test_incompatible_root_tvs_is_rejected (test_connectivity.ConnectivityTests) ... ok
+test_parallel_legacy_regulator_is_rejected (test_connectivity.ConnectivityTests) ... ok
+test_real_kicad_export (test_connectivity.ConnectivityTests) ... ok
+test_reversed_supply_pad_is_rejected (test_connectivity.ConnectivityTests) ... ok
+test_vcap_external_load_is_rejected (test_connectivity.ConnectivityTests) ... ok
+test_actual_board_shunts_have_stencil (test_gdi_load_review.LoadReview) ... ok
+test_actual_netlist_shared_paths (test_gdi_load_review.LoadReview) ... ok
+test_all_shunt_stencil_layers_and_mutations (test_gdi_load_review.LoadReview) ... ok
+test_mosfet_manufacturer_land_pattern (test_gdi_load_review.LoadReview) ... ok
+test_reject_shunt_whole_device_net_tie (test_gdi_load_review.LoadReview) ... ok
+test_reject_unsafe_overlap_contract (test_gdi_load_review.LoadReview) ... ok
+test_reject_wrong_kelvin_connection (test_gdi_load_review.LoadReview) ... ok
+test_physical_assembly_totals (test_integrated_bom.IntegratedBomTests) ... ok
+test_radial_capacitor_is_not_smt (test_integrated_bom.IntegratedBomTests) ... ok
+test_smt_ic_with_thermal_holes_remains_smt (test_integrated_bom.IntegratedBomTests) ... ok
+test_unrecognized_package_is_not_silently_counted_as_smt (test_integrated_bom.IntegratedBomTests) ... ok
+test_actual_export (test_integration.IntegrationTests) ... ok
+test_circular_power_sequence_rejected (test_integration.IntegrationTests) ... ok
+test_connector_motor_swap_rejected (test_integration.IntegrationTests) ... ok
+test_ewg_permission_bypass_rejected (test_integration.IntegrationTests) ... ok
+test_ewg_spi_bypass_rejected (test_integration.IntegrationTests) ... ok
+test_ignition_bypass_rejected (test_integration.IntegrationTests) ... ok
+test_mcu_harness_bypass_rejected (test_integration.IntegrationTests) ... ok
+test_motor_permission_bypass_rejected (test_integration.IntegrationTests) ... ok
+test_overcurrent_global_shutdown_bypass_rejected (test_integration.IntegrationTests) ... ok
+test_wrong_vr_mode_rejected (test_integration.IntegrationTests) ... ok
+test_disconnected_buck_output_rejected (test_power_sources.PowerSourceTests) ... ok
+test_missing_external_motor_feed_rejected (test_power_sources.PowerSourceTests) ... ok
+test_real_sources (test_power_sources.PowerSourceTests) ... ok
+test_removed_gdi_boost_rectifier_rejected (test_power_sources.PowerSourceTests) ... ok
+test_unpopulated_analog_supply_filter_rejected (test_power_sources.PowerSourceTests) ... ok
+test_explicit_mcu_deviation (test_selection_binding.SelectionBinding) ... ok
+test_lower_voltage_and_dielectric_rejected (test_selection_binding.SelectionBinding) ... ok
+test_map_approval_cannot_change_circuit (test_selection_binding.SelectionBinding) ... ok
+test_nominal_match (test_selection_binding.SelectionBinding) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 13.954s
+
+OK

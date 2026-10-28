@@ -1,0 +1,36 @@
+{
+  "accessed_date": "2026-10-21",
+  "kicad_version": "9.0.9",
+  "kicad_container_digest": "sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
+  "custom_footprint": {
+    "name": "TPS7B4253_DDA0008J_C02",
+    "source": "https://www.ti.com/lit/ds/symlink/tps7b4253-q1.pdf",
+    "revision": "SLVSCP3D November2025; drawing4231348/A November2024",
+    "download_sha256": "a045677f8bb2b173e62689f5a7998a3c4afb7b1b9949a1d0e82e67803771b37a",
+    "verified_pages": [3,5,11,24,25,26],
+    "mechanical_check": "Page25 rendered and inspected; footprint lead+central-pad dimensions checked with pcbnew",
+    "qualification": "BLOCKED; PCB copper, thermal vias, assembly stencil and actual loads not approved"
+  },
+  "connectors": [
+    {
+      "part": "Molex1050170001",
+      "drawing": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/105/105017/1050170001_sd.pdf",
+      "footprint": "Connector_USB:USB_Micro-B_Molex-105017-0001",
+      "pad_numbers": ["1","2","3","4","5","6"],
+      "source_read": "Web source service; local PDF download timed out",
+      "mechanical_overlay": "NOT_PERFORMED"
+    },
+    {
+      "part": "Molex1040310811",
+      "drawing": "https://www.molex.com/content/dam/molex/molex-dot-com/products/automated/en-us/salesdrawingpdf/104/104031/1040310811_sd.pdf",
+      "footprint": "Connector_Card:microSD_HC_Molex_104031-0811",
+      "card_pin_map": {"1":"DAT2","2":"CD/DAT3","3":"CMD","4":"VDD","5":"CLK","6":"VSS","7":"DAT0","8":"DAT1"},
+      "switch_behavior": "Separate switch closes on insertion",
+      "footprint_local_numbers": {"9":"switch terminal at(-5.74,0.7)","10":"detect terminal at(-5.74,4.4)","11":"four shell pads"},
+      "source_read": "Web source service extracted manufacturer drawing table; local PDF download timed out",
+      "mechanical_overlay": "NOT_PERFORMED"
+    }
+  ],
+  "library_origin": "Common symbols from previously reviewed core and power_input candidate; new symbols authored from the manufacturer pin tables listed in README.md",
+  "license_note": "Official KiCad symbol/footprint license information is retained in ../core_sources/KICAD_LICENSE.md; manufacturer PDFs are external references, not redistributed here."
+}

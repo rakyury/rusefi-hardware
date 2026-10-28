@@ -2,20 +2,16 @@ function,stm32_pin,mcu_resource,status,notes
 DI1,PG7,GPIO,existing_macro,H144_LS_1; driver control only
 DI2,PG8,GPIO,existing_macro,H144_LS_2; driver control only
 DI3,PD11,GPIO,existing_macro,H144_LS_3; driver control only
-DI4,PD10,GPIO,existing_macro,H144_LS_4; driver control only
-DI5,PD9,GPIO,proposed,H144_LS_5; connector path not validated
-DI6,PF12,GPIO,proposed,H144_LS_6 assigned HPFP in Power4GDI and must move
-DI7,PF13,GPIO,proposed,H144_LS_7 assigned PT DRVEN in Power4GDI and must move
-DI8,PF14,GPIO,proposed,H144_LS_8 assigned PT RESET in Power4GDI and must move
+DI4,PD9,GPIO,proposed,Power6GDI PTB START1; scheduled DI command; firmware timing qualification pending
+DI5,PF12,GPIO,proposed,Power6GDI PTB START2; scheduled DI command; firmware timing qualification pending
+DI6,PF13,GPIO,proposed,Power6GDI PTB START3; scheduled DI command; firmware timing qualification pending
 IGN1,PC13,GPIO,existing_macro,H144_IGN_1
 IGN2,PE5,GPIO,existing_macro,H144_IGN_2
 IGN3,PE4,GPIO,existing_macro,H144_IGN_3
 IGN4,PE3,GPIO,existing_macro,H144_IGN_4
 IGN5,PE2,GPIO,proposed,H144_IGN_5
 IGN6,PB8,GPIO,proposed,H144_IGN_6
-IGN7,PB9,GPIO,proposed,H144_IGN_7
-IGN8,PE6,GPIO,proposed,H144_IGN_8
-HPFP1,PC9,GPIO_TIMED,proposed,Relocated from PF12 to release DI6
+HPFP1,PD8,GPIO_TIMED,proposed,Dedicated scheduled pump command; moved offPC9 to reserve TIM3_CH4
 HPFP2,PD12,GPIO_TIMED,proposed,Must not reuse for SENT3 TIM4 input capture
 GDI_SPI2_SCK,PB13,SPI2,existing_macro,H_SPI2_SCK
 GDI_SPI2_MISO,PB14,SPI2,existing_macro,H_SPI2_MISO
@@ -26,10 +22,10 @@ PTA_RESET,PE12,GPIO,proposed,Previously PT reset PF14 now DI8
 PTB_RESET,PE14,GPIO,proposed,Independent power-stage reset
 PTA_DRVEN,PE13,GPIO,proposed,Previously PT driven PF13 now DI7
 PTB_DRVEN,PE15,GPIO,proposed,Independent safety inhibit
-PTA_FLAG,PF8,GPIO_EXTI,proposed,H144_IN_RES3 source PT flag
-PTB_FLAG,PF9,GPIO_EXTI,proposed,H144_IN_RES1 candidate - ADC pin conflicts must be checked
+PTA_FLAG,PG10,GPIO_EXTI,proposed,Moved from PF8 to preserve ADC3_IN6; LQFP176 pad153 EXTI10; polarity/voltage pending
+PTB_FLAG,PG9,GPIO_EXTI,proposed,Moved from PF9 to preserve ADC3_IN7; LQFP176 pad152 EXTI9; polarity/voltage pending
 DBW_PWM,PC6,TIM3_CH1,proposed,First H bridge control
-DBW_DIR,PC7,GPIO,proposed,First H bridge direction
+DBW_DIR,PI2,GPIO,proposed,Direction GPIO moved offPC7 to reserve TIM3_CH2
 DBW_DISABLE,PD13,GPIO,proposed,First H bridge disable
 EWG_PWM,PC8,TIM3_CH3,proposed,Second H bridge control
 EWG_DIR,PD14,GPIO,proposed,Second H bridge direction
@@ -40,40 +36,84 @@ LIN1_TX,PD5,USART2,proposed,Requires automotive LIN transceiver
 LIN1_RX,PD6,USART2,proposed,Requires automotive LIN transceiver
 SENT1,PE9,TIM1_CH1,proposed,H144_IN_AUX2_DIGITAL
 SENT2,PA1,TIM2_CH2,proposed,H144_IN_O2S2_DIGITAL; ensure not used as lambda analog
-KNOCK1,PF7,ADC3,existing_macro,Knock input analog
-KNOCK2,PF5,ADC3,proposed,Use only if CAM3 and other PF5 uses relocated
-CRANK,PB1,TRIGGER_INPUT,existing_macro,H144_IN_CRANK
-CAM1,PF3,CAM_INPUT,existing_macro,H144_IN_SENS1
-CAM2,PF4,CAM_INPUT,existing_macro,H144_IN_SENS2
-SENT3,UNASSIGNED,TIM4_CAPTURE,unassigned,PD12 presently HPFP2; choose another pin/driver
-SENT4,UNASSIGNED,ICU_CAPTURE,unassigned,Current SENT hardware 1 channel; separate driver needed
-LIN2_TX,UNASSIGNED,USART3_OR_UART4,unassigned,No pin until protocol plan
-LIN2_RX,UNASSIGNED,USART3_OR_UART4,unassigned,No pin until protocol plan
-CAN2_RX,UNASSIGNED,CAN2,unassigned,Pending board use of PB5/PB6 or alternate
-CAN2_TX,UNASSIGNED,CAN2,unassigned,Pending board use of PB5/PB6 or alternate
-PI1,UNASSIGNED,TIMED_GPIO,unassigned,Dedicated engine-scheduled low-side smart driver; no SPI polling timing
-PI2,UNASSIGNED,TIMED_GPIO,unassigned,Dedicated engine-scheduled low-side smart driver; no SPI polling timing
-PI3,UNASSIGNED,TIMED_GPIO,unassigned,Dedicated engine-scheduled low-side smart driver; no SPI polling timing
-PI4,UNASSIGNED,TIMED_GPIO,unassigned,Dedicated engine-scheduled low-side smart driver; no SPI polling timing
-PI5,UNASSIGNED,TIMED_GPIO,unassigned,Dedicated engine-scheduled low-side smart driver; no SPI polling timing
-PI6,UNASSIGNED,TIMED_GPIO,unassigned,Dedicated engine-scheduled low-side smart driver; no SPI polling timing
-PI7,UNASSIGNED,TIMED_GPIO,unassigned,Dedicated engine-scheduled low-side smart driver; no SPI polling timing
-PI8,UNASSIGNED,TIMED_GPIO,unassigned,Dedicated engine-scheduled low-side smart driver; no SPI polling timing
-VVT1,UNASSIGNED,PWM_SMART_LS,unassigned,Independent frequency and fail-safe required
-VVT2,UNASSIGNED,PWM_SMART_LS,unassigned,Independent frequency and fail-safe required
-VVT3,UNASSIGNED,PWM_SMART_LS,unassigned,Independent frequency and fail-safe required
-VVT4,UNASSIGNED,PWM_SMART_LS,unassigned,Independent frequency and fail-safe required
-AUX_PWM1,UNASSIGNED,PWM_SMART_LS,unassigned,Protected auxiliary PWM including B58 oil pressure valve
-AUX_PWM2,UNASSIGNED,PWM_SMART_LS,unassigned,Protected auxiliary PWM including B58 oil pressure valve
-AUX_PWM3,UNASSIGNED,PWM_SMART_LS,unassigned,Protected auxiliary PWM including B58 oil pressure valve
-AUX_PWM4,UNASSIGNED,PWM_SMART_LS,unassigned,Protected auxiliary PWM including B58 oil pressure valve
-AUX_PWM5,UNASSIGNED,PWM_SMART_LS,unassigned,Protected auxiliary PWM including B58 oil pressure valve
-AUX_PWM6,UNASSIGNED,PWM_SMART_LS,unassigned,Protected auxiliary PWM including B58 oil pressure valve
-AUX_PWM7,UNASSIGNED,PWM_SMART_LS,unassigned,Protected auxiliary PWM including B58 oil pressure valve
-AUX_PWM8,UNASSIGNED,PWM_SMART_LS,unassigned,Protected auxiliary PWM including B58 oil pressure valve
-LS_AUX1,UNASSIGNED,PROTECTED_LS,unassigned,Service main relay fuel pump fan control
-LS_AUX2,UNASSIGNED,PROTECTED_LS,unassigned,Service main relay fuel pump fan control
-LS_AUX3,UNASSIGNED,PROTECTED_LS,unassigned,Service main relay fuel pump fan control
-LS_AUX4,UNASSIGNED,PROTECTED_LS,unassigned,Service main relay fuel pump fan control
-CAM3,UNASSIGNED,INPUT_CAPTURE,unassigned,Cam Hall/VR frontend and trigger event
-CAM4,UNASSIGNED,INPUT_CAPTURE,unassigned,Cam Hall/VR frontend and trigger event
+CRANK,PB1,GPIO_EXTI,proposed,MAX9924 open-drain 3V3; EXTI1 timestamp on TIM5 scheduler; interrupt budget pending
+CAM1,PF3,GPIO_EXTI,proposed,Hall receiver inverted; EXTI3; no VR sensor compatibility claim
+CAM2,PF4,GPIO_EXTI,proposed,Hall receiver inverted; EXTI4; no VR sensor compatibility claim
+SENT3,PE11,TIM1_CH2,proposed,LQFP176 pad74; AF1 TIM1_CH2; relocate from PB6; shared timer with SENT1; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+SENT4,PB7,TIM4_CH2,proposed,DS11532 Table13 AF2; LQFP176 pad165; inverted receiver; shared TIM4 timebase/DMA pending
+LIN2_TX,PB10,USART3,proposed,LQFP176 pad79; AF7 USART3_TX; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+LIN2_RX,PB11,USART3,proposed,LQFP176 pad80; AF7 USART3_RX; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+CAN2_RX,PB5,CAN2,proposed,LQFP176 pad163; AF9 CAN2_RX; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+CAN2_TX,PB6,CAN2,proposed,LQFP176 pad164; AF9 CAN2_TX; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+PI1,PE0,GPIO_TIMED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Engine scheduled pulse; timing qualification pending.
+PI2,PE1,GPIO_TIMED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Engine scheduled pulse; timing qualification pending.
+PI3,PE7,GPIO_TIMED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Engine scheduled pulse; timing qualification pending.
+PI4,PE8,GPIO_TIMED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Engine scheduled pulse; timing qualification pending.
+PI5,PE10,GPIO_TIMED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Engine scheduled pulse; timing qualification pending.
+PI6,PF0,GPIO_TIMED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Engine scheduled pulse; timing qualification pending.
+VVT1,PF9,GPIO_PWM_SCHEDULED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Software-scheduled PWM; no independent hardware timer claim.
+VVT2,PF11,GPIO_PWM_SCHEDULED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Software-scheduled PWM; no independent hardware timer claim.
+VVT3,PF15,GPIO_PWM_SCHEDULED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Software-scheduled PWM; no independent hardware timer claim.
+VVT4,PG0,GPIO_PWM_SCHEDULED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Software-scheduled PWM; no independent hardware timer claim.
+AUX_PWM1,PG1,GPIO_PWM_SCHEDULED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Software-scheduled PWM; no independent hardware timer claim.
+AUX_PWM2,PG2,GPIO_PWM_SCHEDULED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Software-scheduled PWM; no independent hardware timer claim.
+AUX_PWM3,PG3,GPIO_PWM_SCHEDULED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Software-scheduled PWM; no independent hardware timer claim.
+AUX_PWM4,PG4,GPIO_PWM_SCHEDULED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Software-scheduled PWM; no independent hardware timer claim.
+AUX_PWM5,PG5,GPIO_PWM_SCHEDULED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Software-scheduled PWM; no independent hardware timer claim.
+AUX_PWM6,PG6,GPIO_PWM_SCHEDULED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Software-scheduled PWM; no independent hardware timer claim.
+AUX_PWM7,PG14,GPIO_PWM_SCHEDULED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Software-scheduled PWM; no independent hardware timer claim.
+AUX_PWM8,PG15,GPIO_PWM_SCHEDULED,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Software-scheduled PWM; no independent hardware timer claim.
+LS_AUX1,PD2,GPIO,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Low-side relay command; fused load and thermal budget pending.
+LS_AUX2,PD3,GPIO,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Low-side relay command; fused load and thermal budget pending.
+LS_AUX3,PD4,GPIO,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Low-side relay command; fused load and thermal budget pending.
+LS_AUX4,PD7,GPIO,proposed,TLE9104 direct input through inverter; MCU high=ON; hardware EN kill. Low-side relay command; fused load and thermal budget pending.
+CAM3,PI5,TIM8_CH1,proposed,DS11532 Table13 AF3; LQFP176 pad174; inverted Hall frontend; timer/DMA budget pending
+CAM4,PI6,TIM8_CH2,proposed,DS11532 Table13 AF3; LQFP176 pad175; inverted Hall frontend; shared TIM8 timebase pending
+TPS1,PA0,ADC1_IN0,proposed,DS11532 Table11; LQFP176 pad40; buffered divide-by-2 input ADC_TPS1; sample-time/calibration pending
+TPS2,PA2,ADC1_IN2,proposed,DS11532 Table11; LQFP176 pad42; buffered divide-by-2 input ADC_TPS2; sample-time/calibration pending
+PPS1,PA3,ADC1_IN3,proposed,DS11532 Table11; LQFP176 pad47; buffered divide-by-2 input ADC_PPS1; sample-time/calibration pending
+PPS2,PA4,ADC1_IN4,proposed,DS11532 Table11; LQFP176 pad50; buffered divide-by-2 input ADC_PPS2; sample-time/calibration pending
+MAP_MAIN,PA5,ADC1_IN5,proposed,DS11532 Table11; LQFP176 pad51; buffered divide-by-2 input ADC_MAP_MAIN; sample-time/calibration pending
+BARO_EXT,PA6,ADC1_IN6,proposed,DS11532 Table11; LQFP176 pad52; buffered divide-by-2 input ADC_BARO_EXT; sample-time/calibration pending
+CLT,PA7,ADC1_IN7,proposed,DS11532 Table11; LQFP176 pad53; buffered divide-by-2 input ADC_CLT; sample-time/calibration pending
+IAT,PB0,ADC1_IN8,proposed,DS11532 Table11; LQFP176 pad56; buffered divide-by-2 input ADC_IAT; sample-time/calibration pending
+OIL_PRESS,PC0,ADC1_IN10,proposed,DS11532 Table11; LQFP176 pad32; buffered divide-by-2 input ADC_OIL_PRESS; sample-time/calibration pending
+OIL_TEMP,PC1,ADC1_IN11,proposed,DS11532 Table11; LQFP176 pad33; buffered divide-by-2 input ADC_OIL_TEMP; sample-time/calibration pending
+FRP1,PC2,ADC1_IN12,proposed,DS11532 Table11; LQFP176 pad34; buffered divide-by-2 input ADC_FRP1; sample-time/calibration pending
+FRP2,PC3,ADC1_IN13,proposed,DS11532 Table11; LQFP176 pad35; buffered divide-by-2 input ADC_FRP2; sample-time/calibration pending
+LPFP_PRESS,PC4,ADC1_IN14,proposed,DS11532 Table11; LQFP176 pad54; buffered divide-by-2 input ADC_LPFP_PRESS; sample-time/calibration pending
+EXH_PRESS,PC5,ADC1_IN15,proposed,DS11532 Table11; LQFP176 pad55; buffered divide-by-2 input ADC_EXH_PRESS; sample-time/calibration pending
+EWG_POS,PF6,ADC3_IN4,proposed,DS11532 Table11; LQFP176 pad24; buffered divide-by-2 input ADC_EWG_POS; sample-time/calibration pending
+AUX_ANALOG1,PF10,ADC3_IN8,proposed,DS11532 Table11; LQFP176 pad28; buffered divide-by-2 input ADC_AUX_ANALOG1; sample-time/calibration pending
+AUX_ANALOG2,PF8,ADC3_IN6,proposed,DS11532 Table11; LQFP176 pad26; buffered divide-by-2 input ADC_AUX_ANALOG2; sample-time/calibration pending
+CAN1_STB,PH2,GPIO,proposed,pad43; default high standby
+LIN1_EN,PH3,GPIO,proposed,pad44; default low sleep
+SAFETY_HEARTBEAT,PH4,GPIO,proposed,"pad45; external watchdog pulse, timing pending"
+SAFETY_ARM_REQUEST,PH5,GPIO,proposed,pad46; explicit rising edge to rearm hardware permission
+SAFETY_FAULT_N,PH6,GPIO_EXTI,proposed,pad83; active-low open-drain hardware supervisor fault EXTI6
+LS_CS1,PH7,GPIO,proposed,TLE9104 shared SPI2 individual active-low select; external10k pullup
+LS_CS2,PH8,GPIO,proposed,TLE9104 shared SPI2 individual active-low select; external10k pullup
+LS_CS3,PH9,GPIO,proposed,TLE9104 shared SPI2 individual active-low select; external10k pullup
+LS_CS4,PH10,GPIO,proposed,TLE9104 shared SPI2 individual active-low select; external10k pullup
+LS_CS5,PH11,GPIO,proposed,TLE9104 shared SPI2 individual active-low select; external10k pullup
+LS_CS6,PH12,GPIO,proposed,TLE9104 shared SPI2 individual active-low select; external10k pullup
+LS_RESET_RELEASE,PH13,GPIO,proposed,High releases six TLE9104 resets through Schmitt buffer; low >=10us after5V stable
+USB_DM,PA11,OTG_FS,proposed,LQFP176 pad122; AF10 OTG_FS_DM; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+USB_DP,PA12,OTG_FS,proposed,LQFP176 pad123; AF10 OTG_FS_DP; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+USB_VBUS_PRESENT_N,PA9,GPIO,proposed,LQFP176 pad120; GPIO input active low; native VBUS detection disabled; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+SD_SPI3_SCK,PC10,SPI3,proposed,LQFP176 pad139; AF6 SPI3_SCK; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+SD_SPI3_MISO,PC11,SPI3,proposed,LQFP176 pad140; AF6 SPI3_MISO; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+SD_SPI3_MOSI,PC12,SPI3,proposed,LQFP176 pad141; AF6 SPI3_MOSI; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+SD_CS,PA8,GPIO,proposed,"LQFP176 pad119; GPIO output, default high; interfaces/interfaces_manifest.json; firmware/electrical qualification pending"
+SD_CD,PG11,GPIO,proposed,"LQFP176 pad154; GPIO input polling, active low; not EXTI11; interfaces/interfaces_manifest.json; firmware/electrical qualification pending"
+CAN2_STB,PG12,GPIO,proposed,"LQFP176 pad155; GPIO output, default high standby; interfaces/interfaces_manifest.json; firmware/electrical qualification pending"
+LIN2_EN,PG13,GPIO,proposed,"LQFP176 pad156; GPIO output, default low sleep; interfaces/interfaces_manifest.json; firmware/electrical qualification pending"
+HALL1,PH14,GPIO_EXTI,proposed,LQFP176 pad129; GPIO EXTI14; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+HALL2,PH15,GPIO_EXTI,proposed,LQFP176 pad130; GPIO EXTI15; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+HALL3,PI0,GPIO_EXTI,proposed,LQFP176 pad131; GPIO EXTI0; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+HALL4,PI7,GPIO_EXTI,proposed,LQFP176 pad176; GPIO EXTI7; inverted; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+FLEX_FREQ,PI8,GPIO_EXTI,proposed,LQFP176 pad7; GPIO EXTI8; inverted; timing not qualified; interfaces/interfaces_manifest.json; firmware/electrical qualification pending
+KNOCK_CS_N,PI1,GPIO,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
+KNOCK_INT_HOLD,PI9,GPIO,proposed,Aux SPI2 frontend; logic control only; CJ125/heater power qualification unresolved
+WBO1_HEATER_PWM,PA10,GPIO,proposed,"Main-MCU heater permission, default low; local F042 supplies actual PWM"
+MOTOR_CS_N,PB4,GPIO,proposed,"Two TLE9201 diagnostic daisy chain; 16 clocks, EWG then DBW wire order"

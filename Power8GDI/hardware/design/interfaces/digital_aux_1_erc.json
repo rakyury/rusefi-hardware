@@ -1,0 +1,139 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-21T05:54:59+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/0cc8a8a2-d389-592e-87a8-c2300ca42c23",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1600 Pin 14 [VCC, Power input, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 0.6985
+                            },
+                            "uuid": "eecfc534-d071-5c67-ba5f-9bbebef621e5"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U1600 Pin 7 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 0.9017,
+                                "y": 1.2065
+                            },
+                            "uuid": "62d24bd3-8b15-5beb-89aa-834d7bee30ee"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HALL1'",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 0.762
+                            },
+                            "uuid": "e0135bae-72e3-5a86-8070-ebd23e8ae2aa"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HALL2'",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 0.8382
+                            },
+                            "uuid": "7c321f79-39af-500b-8eba-00a4c4965524"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HALL3'",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 0.9144
+                            },
+                            "uuid": "e9d9ae96-d372-52cc-b523-3e0ac6c3a251"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HALL4'",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 0.9906
+                            },
+                            "uuid": "41296763-8ed1-5f0a-ab95-7ac347cebf2f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'FLEX_FREQ'",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 1.0668
+                            },
+                            "uuid": "cd3f280b-b890-56de-81ce-618d77fb97e9"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'DIN5'",
+                            "pos": {
+                                "x": 1.1303,
+                                "y": 1.143
+                            },
+                            "uuid": "b747231f-d9d8-546d-b6a4-06b218093871"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "digital_aux_1.kicad_sch"
+}

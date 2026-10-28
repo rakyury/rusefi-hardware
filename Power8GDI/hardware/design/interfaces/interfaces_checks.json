@@ -1,0 +1,21 @@
+{
+  "structural_status": "PASS",
+  "release_status": "BLOCKED",
+  "components": 106,
+  "exported_connected_pins": 288,
+  "footprints_checked": 106,
+  "erc_findings": {
+    "global_label_dangling": 19,
+    "pin_not_driven": 1,
+    "power_pin_not_driven": 11
+  },
+  "errors": [],
+  "release_blockers": [
+    "Firmware pinmux, USB VBUS GPIO/native detect and48MHz clock",
+    "SD card peak current and3V3 LDO thermal budget",
+    "Sensor load/thermal/dropout and effective capacitance",
+    "Automotive transients, cable inductance, ESD, EMC and simultaneous unpowered faults",
+    "Connector enclosure/sealing and shield bonding",
+    "PCB connectivity/DRC/SI and hardware timing/fault measurements"
+  ]
+}

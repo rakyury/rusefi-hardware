@@ -1,15 +1,12 @@
 """Render views from CAD STL solids with VTK. These are CAD-derived mockup views.
-Run using: xvfb-run -a python mechanical/render_views.py
+Run using: python mechanical/render_views.py --input-dir mechanical/build/assembly
 """
 from pathlib import Path
+import argparse
+from functools import partial
 import json
-import vtk
-from PIL import Image,ImageDraw,ImageFont
 
 HERE=Path(__file__).resolve().parent
-OUT=HERE/'renders';OUT.mkdir(exist_ok=True)
-manifest=json.loads((HERE/'assembly_manifest.json').read_text())
-parts=manifest['solids']
 colors={
  'Base':(0.22,0.27,0.33),'Lid':(0.29,0.34,0.4),'PCB':(0.05,0.32,0.27),
  'MCU_F7':(0.07,0.09,0.12),'PT2001_A':(0.07,0.09,0.12),'PT2001_B':(0.07,0.09,0.12),
@@ -18,10 +15,10 @@ colors={
  'H_BRIDGE_B':(0.08,0.09,0.11),'KNOCK_ANALOG':(0.17,0.19,0.24),
  'POWER_IN':(0.45,0.47,0.49),'LIN_CAN':(0.12,0.14,0.18),
 }
-for p in parts:
- if p.startswith('J_'):colors[p]=(0.09,0.12,0.16)
-
-def render(name,title,subtitle,cam,focus=(0,0,13),explode=False,show_lid=True,pcb_only=False):
+def render(name,title,subtitle,cam,focus=(0,0,13),explode=False,show_lid=True,pcb_only=False,*,source_dir,output_dir,parts):
+ import vtk
+ from PIL import Image,ImageDraw,ImageFont
+ OUT=output_dir
  rend=vtk.vtkRenderer();rend.SetBackground(0.045,0.075,0.12)
  rend.GradientBackgroundOn();rend.SetBackground2(0.10,0.15,0.22)
  win=vtk.vtkRenderWindow();win.SetOffScreenRendering(1);win.SetSize(1500,1050);win.SetMultiSamples(8)
@@ -29,12 +26,12 @@ def render(name,title,subtitle,cam,focus=(0,0,13),explode=False,show_lid=True,pc
  for n in parts:
   if pcb_only and n in {'Base','Lid'}:continue
   if n=='Lid' and not show_lid:continue
-  reader=vtk.vtkSTLReader(); reader.SetFileName(str(HERE/'stl'/f'{n}.stl'));reader.Update()
+  reader=vtk.vtkSTLReader(); reader.SetFileName(str(source_dir/'stl'/f'{n}.stl'));reader.Update()
   normals=vtk.vtkPolyDataNormals();normals.SetInputConnection(reader.GetOutputPort());normals.SetFeatureAngle(45)
   normals.SplittingOn();normals.ConsistencyOn();normals.Update()
   mapper=vtk.vtkPolyDataMapper();mapper.SetInputConnection(normals.GetOutputPort())
   actor=vtk.vtkActor();actor.SetMapper(mapper)
-  actor.GetProperty().SetColor(*colors[n]);actor.GetProperty().SetAmbient(0.23)
+  actor.GetProperty().SetColor(*colors.get(n,(0.09,0.12,0.16)));actor.GetProperty().SetAmbient(0.23)
   actor.GetProperty().SetDiffuse(0.66);actor.GetProperty().SetSpecular(0.38)
   actor.GetProperty().SetSpecularPower(45)
   if n=='PCB': actor.GetProperty().SetSpecular(0.15)
@@ -55,9 +52,13 @@ def render(name,title,subtitle,cam,focus=(0,0,13),explode=False,show_lid=True,pc
  img=Image.open(OUT/f'{name}_raw.png').convert('RGB')
  (OUT/f'{name}_raw.png').unlink()
  dr=ImageDraw.Draw(img)
- fontpath='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
- boldpath='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
- f1=ImageFont.truetype(boldpath,36);f2=ImageFont.truetype(fontpath,20)
+ def font(size,bold=False):
+  candidates=[Path('C:/Windows/Fonts')/('segoeuib.ttf' if bold else 'segoeui.ttf'),
+              Path('/usr/share/fonts/truetype/dejavu')/('DejaVuSans-Bold.ttf' if bold else 'DejaVuSans.ttf')]
+  for candidate in candidates:
+   if candidate.is_file():return ImageFont.truetype(str(candidate),size)
+  return ImageFont.load_default(size=size)
+ f1=font(36,True);f2=font(20)
  dr.rounded_rectangle((28,30,950,139),radius=14,fill=(9,21,34))
  dr.text((50,47),title,font=f1,fill=(240,246,253))
  dr.text((52,103),subtitle,font=f2,fill=(152,189,204))
@@ -67,9 +68,23 @@ def render(name,title,subtitle,cam,focus=(0,0,13),explode=False,show_lid=True,pc
  win.Finalize()
  print(name, (OUT/f'{name}.png').stat().st_size)
 
-render('01_assembly_isometric','Power8GDI Rev A / Assembly','Base + lid + 4 x 34-pin connector envelope',(370,-400,285))
-render('02_assembly_rear','Enclosure / Rear view','Solid aluminum envelope / lid fasteners conceptual',(-330,330,210))
-render('03_connectors_front','Connector face / 136 contacts','Four 34-pin connector body envelopes; TE geometry pending',(65,-450,124),focus=(0,-38,24))
-render('04_exploded','Power8GDI / Exploded assembly','Board and component spatial mockup; lid lifted',(360,-360,310),focus=(0,0,45),explode=True)
-render('05_pcb_top','PCB envelope / Top side','Component placement concept only; NO pads or routed copper',(230,-230,360),focus=(0,0,12),show_lid=False,pcb_only=True)
-render('06_pcb_back','PCB envelope / Underside','Board envelope and connector bodies; no electrical layout',(285,200,-290),focus=(0,0,11),show_lid=False,pcb_only=True)
+def main(argv=None):
+ parser=argparse.ArgumentParser(description=__doc__)
+ parser.add_argument('--input-dir',type=Path,default=HERE/'build'/'assembly')
+ parser.add_argument('--output-dir',type=Path,default=HERE/'build'/'renders')
+ args=parser.parse_args(argv)
+ manifest=json.loads((args.input_dir/'assembly_manifest.json').read_text(encoding='utf-8'))
+ parts=manifest['solids']
+ for part in parts:
+  if not (args.input_dir/'stl'/f'{part}.stl').is_file():raise FileNotFoundError(f'Missing STL: {part}')
+ args.output_dir.mkdir(parents=True,exist_ok=True)
+ draw=partial(render,source_dir=args.input_dir,output_dir=args.output_dir,parts=parts)
+ draw('01_assembly_isometric','Power8GDI Rev A / Assembly','Base + lid + 4 x 34-pin connector envelope',(370,-400,285))
+ draw('02_assembly_rear','Enclosure / Rear view','Solid enclosure envelope / lid fasteners conceptual',(-330,330,210))
+ draw('03_connectors_front','Connector face / Concept','Four 34-pin connector body envelopes; TE geometry pending',(65,-450,124),focus=(0,-38,24))
+ draw('04_exploded','Power8GDI / Exploded assembly','Board and component spatial mockup; lid lifted',(360,-360,310),focus=(0,0,45),explode=True)
+ draw('05_pcb_top','PCB envelope / Top side','Component placement concept only; NO pads or routed copper',(230,-230,360),focus=(0,0,12),show_lid=False,pcb_only=True)
+ draw('06_pcb_back','PCB envelope / Underside','Board envelope and connector bodies; no electrical layout',(285,200,-290),focus=(0,0,11),show_lid=False,pcb_only=True)
+ return 0
+
+if __name__=='__main__':raise SystemExit(main())

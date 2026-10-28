@@ -1,0 +1,431 @@
+[
+  {
+    "ref": "D5200",
+    "value": "STPS5H100BY-TR",
+    "footprint": "Package_TO_SOT_SMD:TO-252-2",
+    "pins": {
+      "1": null,
+      "2": "VBAT_LOGIC_PROTECTED",
+      "3": "VBAT_MAIN_FUSED"
+    },
+    "dnp": false,
+    "note": "100V 5A DPAK automotive diode; pin1 NC, pin2/tab cathode, pin3 anode. 5A is not a PCB current rating.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "D5201",
+    "value": "SMBJ24CA",
+    "footprint": "Diode_SMD:D_SMB",
+    "pins": {
+      "1": "VBAT_MAIN_FUSED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Inherited 24V standoff / 38.9V rated-clamp candidate. Dynamic clamp, pulse energy and fuse coordination remain unqualified.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "U5200",
+    "value": "LM76003QRNPRQ1",
+    "footprint": "Package_DFN_QFN:Texas_RNP0030B_WQFN-30-1EP_4x6mm_P0.5mm_EP1.8x4.5mm",
+    "pins": {
+      "1": "LP5_SW",
+      "2": "LP5_SW",
+      "3": "LP5_SW",
+      "4": "LP5_SW",
+      "5": "LP5_SW",
+      "6": "LP5_BOOT",
+      "7": "GND",
+      "8": "LP5_VCC",
+      "9": "+5V_CORE",
+      "10": null,
+      "11": "LP5_SS",
+      "12": "LP5_FB",
+      "13": "GND",
+      "14": "GND",
+      "15": "GND",
+      "16": "LP5_PG_RAW",
+      "17": "GND",
+      "18": "LP5_EN",
+      "19": "GND",
+      "20": "VBAT_LOGIC_PROTECTED",
+      "21": "VBAT_LOGIC_PROTECTED",
+      "22": "VBAT_LOGIC_PROTECTED",
+      "23": "GND",
+      "24": "GND",
+      "25": "GND",
+      "26": "GND",
+      "27": "GND",
+      "28": "GND",
+      "29": "GND",
+      "30": "GND",
+      "31": "GND"
+    },
+    "dnp": false,
+    "note": "TI SNVSAU3B pin table. RT open => 500kHz. MODE low => auto PFM/PWM. NC pads intentionally GND per datasheet. 3.5A silicon; 2A target load.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "L5200",
+    "value": "XAL7070-682MEC 6.8uH",
+    "footprint": "Inductor_SMD:L_Coilcraft_XAL7070-XXX",
+    "pins": {
+      "1": "LP5_SW",
+      "2": "+5V_CORE"
+    },
+    "dnp": false,
+    "note": "Coilcraft: 12.8A typical 30% Isat at25C, 19.62mOhm max DCR. Hot saturation/core loss require verification.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "C5200",
+    "value": "10u 100V X7R",
+    "footprint": "Capacitor_SMD:C_1210_3225Metric",
+    "pins": {
+      "1": "VBAT_LOGIC_PROTECTED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Input ceramics: combined effective >=10uF over qualified input range.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "C5201",
+    "value": "10u 100V X7R",
+    "footprint": "Capacitor_SMD:C_1210_3225Metric",
+    "pins": {
+      "1": "VBAT_LOGIC_PROTECTED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Adjacent PVIN/PGND, compact hot loop.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "C5202",
+    "value": "47n 100V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "VBAT_LOGIC_PROTECTED",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "High frequency bypass at PVIN/PGND.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "C5203",
+    "value": "470n 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "LP5_BOOT",
+      "2": "LP5_SW"
+    },
+    "dnp": false,
+    "note": "Bootstrap capacitor MUST connect BOOT to SW, not GND.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "C5204",
+    "value": "2.2u 16V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "LP5_VCC",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Internal VCC bypass; do not export VCC or parallel +3V3.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "C5205",
+    "value": "1u 16V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "BIAS bypass adjacent pin9.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "C5206",
+    "value": "22n 16V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "LP5_SS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Nominal 11ms external soft start at2uA; verify rise under full load.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "R5200",
+    "value": "100k 0.1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "LP5_FB"
+    },
+    "dnp": false,
+    "note": "Top feedback. 1.006V typical reference =>5.03V nominal.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "R5201",
+    "value": "25k 0.1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "LP5_FB",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Bottom feedback; quiet Kelvin return to AGND.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "C5207",
+    "value": "180p 50V C0G",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "LP5_FB"
+    },
+    "dnp": false,
+    "note": "Feedforward starting value for approx156uF effective load; loop validation required.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "R5202",
+    "value": "470k 0.1%",
+    "footprint": "Resistor_SMD:R_0805_2012Metric",
+    "pins": {
+      "1": "VBAT_LOGIC_PROTECTED",
+      "2": "LP5_EN"
+    },
+    "dnp": false,
+    "note": "EN upper divider; voltage-rated resistor. Nominal rising6.86V atprotected input.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "R5203",
+    "value": "100k 0.1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "LP5_EN",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Default low enable; 150mV typical comparator hysteresis.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "R5204",
+    "value": "100k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "LP5_PG_RAW"
+    },
+    "dnp": false,
+    "note": "PG pullup uses upstream5V, never3V3, avoiding sequencing deadlock. Sink <=51uA.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "R5205",
+    "value": "1M 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "LP5_PG_RAW",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "TPS enable fallback; allows nominal4.57V high. EN input <=1uA leakage.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "C5208",
+    "value": "47u 16V X7R",
+    "footprint": "Capacitor_SMD:C_1210_3225Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "CS3225X7R476K160NRL candidate at5V;4 ceramics nominal188uF. >=100uF effective after tolerance/DCbias/temp remains unverified.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "C5209",
+    "value": "47u 16V X7R",
+    "footprint": "Capacitor_SMD:C_1210_3225Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "CS3225X7R476K160NRL candidate at5V;4 ceramics nominal188uF. >=100uF effective after tolerance/DCbias/temp remains unverified.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "C5210",
+    "value": "47u 16V X7R",
+    "footprint": "Capacitor_SMD:C_1210_3225Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "CS3225X7R476K160NRL candidate at5V;4 ceramics nominal188uF. >=100uF effective after tolerance/DCbias/temp remains unverified.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "C5211",
+    "value": "47u 16V X7R",
+    "footprint": "Capacitor_SMD:C_1210_3225Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "CS3225X7R476K160NRL candidate at5V;4 ceramics nominal188uF. >=100uF effective after tolerance/DCbias/temp remains unverified.",
+    "sheet": "logic_power/logic_5v"
+  },
+  {
+    "ref": "U5300",
+    "value": "TPS62130AQRGTRQ1",
+    "footprint": "Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm",
+    "pins": {
+      "1": "LP33_SW",
+      "2": "LP33_SW",
+      "3": "LP33_SW",
+      "4": "PGOOD_3V3_CORE",
+      "5": "LP33_FB",
+      "6": "GND",
+      "7": "+5V_CORE",
+      "8": "GND",
+      "9": "LP33_SS",
+      "10": "+5V_CORE",
+      "11": "+5V_CORE",
+      "12": "+5V_CORE",
+      "13": "LP5_PG_RAW",
+      "14": "+3V3",
+      "15": "GND",
+      "16": "GND",
+      "17": "GND"
+    },
+    "dnp": false,
+    "note": "TI SLVSCC2E: adjustable variant; FSW HIGH selects1.25MHz, DEF LOW nominal voltage. VOS senses output directly; not FB.",
+    "sheet": "logic_power/logic_3v3"
+  },
+  {
+    "ref": "L5300",
+    "value": "XAL5030-222MEC 2.2uH",
+    "footprint": "Inductor_SMD:L_Coilcraft_XAL5030-XXX",
+    "pins": {
+      "1": "LP33_SW",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "Coilcraft 9.2A typical30% Isat at25C,14.5mOhm maxDCR. Hot/coreloss validation remains.",
+    "sheet": "logic_power/logic_3v3"
+  },
+  {
+    "ref": "C5300",
+    "value": "10u 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "PVIN input bypass; require >=5uF effective at5V.",
+    "sheet": "logic_power/logic_3v3"
+  },
+  {
+    "ref": "C5301",
+    "value": "100n 25V X7R",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "AVIN local bypass with quiet return.",
+    "sheet": "logic_power/logic_3v3"
+  },
+  {
+    "ref": "C5302",
+    "value": "22u 16V X7R",
+    "footprint": "Capacitor_SMD:C_1210_3225Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Nominal22uF output; require >=10uF effective. Include core decoupling in loop review.",
+    "sheet": "logic_power/logic_3v3"
+  },
+  {
+    "ref": "C5303",
+    "value": "3.3n 25V C0G",
+    "footprint": "Capacitor_SMD:C_0805_2012Metric",
+    "pins": {
+      "1": "LP33_SS",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Typical1.65ms soft start; actual ramp under load to verify.",
+    "sheet": "logic_power/logic_3v3"
+  },
+  {
+    "ref": "R5300",
+    "value": "100k 0.1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "LP33_FB"
+    },
+    "dnp": false,
+    "note": "Topfeedback. 0.8*(1+100/32)=3.300V nominal.",
+    "sheet": "logic_power/logic_3v3"
+  },
+  {
+    "ref": "R5301",
+    "value": "32k 0.1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "LP33_FB",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Bottomfeedback. Max100nA FB leakage contributes <=10mV output error.",
+    "sheet": "logic_power/logic_3v3"
+  },
+  {
+    "ref": "R5302",
+    "value": "100k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "PGOOD_3V3_CORE"
+    },
+    "dnp": false,
+    "note": "Diagnostic pullup only; not connected to safety fault bus without review.",
+    "sheet": "logic_power/logic_3v3"
+  },
+  {
+    "ref": "R5303",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Passive bleed; does not guarantee discharge time with external backfeed.",
+    "sheet": "logic_power/logic_3v3"
+  }
+]

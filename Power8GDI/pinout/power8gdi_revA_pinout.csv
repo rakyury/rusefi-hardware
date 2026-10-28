@@ -1,20 +1,20 @@
 connector,pin,position,net,group,notes
-A,A01,1,DI1_HIGH,GDI HV,DI1 injector terminal HIGH; electrically validate PT2001 polarity
-A,A02,2,DI1_LOW,GDI HV,DI1 injector terminal LOW; electrically validate PT2001 polarity
-A,A03,3,DI2_HIGH,GDI HV,DI2 injector terminal HIGH; electrically validate PT2001 polarity
-A,A04,4,DI2_LOW,GDI HV,DI2 injector terminal LOW; electrically validate PT2001 polarity
-A,A05,5,DI3_HIGH,GDI HV,DI3 injector terminal HIGH; electrically validate PT2001 polarity
-A,A06,6,DI3_LOW,GDI HV,DI3 injector terminal LOW; electrically validate PT2001 polarity
-A,A07,7,DI4_HIGH,GDI HV,DI4 injector terminal HIGH; electrically validate PT2001 polarity
-A,A08,8,DI4_LOW,GDI HV,DI4 injector terminal LOW; electrically validate PT2001 polarity
-A,A09,9,DI5_HIGH,GDI HV,DI5 injector terminal HIGH; electrically validate PT2001 polarity
-A,A10,10,DI5_LOW,GDI HV,DI5 injector terminal LOW; electrically validate PT2001 polarity
-A,A11,11,DI6_HIGH,GDI HV,DI6 injector terminal HIGH; electrically validate PT2001 polarity
-A,A12,12,DI6_LOW,GDI HV,DI6 injector terminal LOW; electrically validate PT2001 polarity
-A,A13,13,DI7_HIGH,GDI HV,DI7 injector terminal HIGH; electrically validate PT2001 polarity
-A,A14,14,DI7_LOW,GDI HV,DI7 injector terminal LOW; electrically validate PT2001 polarity
-A,A15,15,DI8_HIGH,GDI HV,DI8 injector terminal HIGH; electrically validate PT2001 polarity
-A,A16,16,DI8_LOW,GDI HV,DI8 injector terminal LOW; electrically validate PT2001 polarity
+A,A01,1,DI1_HIGH,GDI HV,Power6GDI DI1_HIGH; PT bank mapping in connector_aliases.csv
+A,A02,2,DI1_LOW,GDI HV,Power6GDI DI1_LOW; PT bank mapping in connector_aliases.csv
+A,A03,3,DI2_HIGH,GDI HV,Power6GDI DI2_HIGH; PT bank mapping in connector_aliases.csv
+A,A04,4,DI2_LOW,GDI HV,Power6GDI DI2_LOW; PT bank mapping in connector_aliases.csv
+A,A05,5,DI3_HIGH,GDI HV,Power6GDI DI3_HIGH; PT bank mapping in connector_aliases.csv
+A,A06,6,DI3_LOW,GDI HV,Power6GDI DI3_LOW; PT bank mapping in connector_aliases.csv
+A,A07,7,UNUSED_A07,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
+A,A08,8,UNUSED_A08,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
+A,A09,9,DI4_HIGH,GDI HV,Power6GDI DI4_HIGH; PT bank mapping in connector_aliases.csv
+A,A10,10,DI4_LOW,GDI HV,Power6GDI DI4_LOW; PT bank mapping in connector_aliases.csv
+A,A11,11,DI5_HIGH,GDI HV,Power6GDI DI5_HIGH; PT bank mapping in connector_aliases.csv
+A,A12,12,DI5_LOW,GDI HV,Power6GDI DI5_LOW; PT bank mapping in connector_aliases.csv
+A,A13,13,DI6_HIGH,GDI HV,Power6GDI DI6_HIGH; PT bank mapping in connector_aliases.csv
+A,A14,14,DI6_LOW,GDI HV,Power6GDI DI6_LOW; PT bank mapping in connector_aliases.csv
+A,A15,15,UNUSED_A15,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
+A,A16,16,UNUSED_A16,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
 A,A17,17,HPFP1_HIGH,HPFP,High-pressure pump 1 valve terminal HIGH
 A,A18,18,HPFP1_LOW,HPFP,High-pressure pump 1 valve terminal LOW
 A,A19,19,HPFP2_HIGH,HPFP,High-pressure pump 2 valve terminal HIGH
@@ -33,22 +33,22 @@ A,A31,31,PGND_MAIN_3,Power GND,Power ground parallel contact; rating pending
 A,A32,32,PGND_MAIN_4,Power GND,Power ground parallel contact; rating pending
 A,A33,33,VBAT_MAIN_2,Power,Main fused power; contact budget pending
 A,A34,34,VBAT_MAIN_3,Power,Main fused power; contact budget pending
-B,B01,1,IGN1,Ignition,5V logic for smart coil; check driver
-B,B02,2,IGN2,Ignition,5V logic for smart coil; check driver
-B,B03,3,IGN3,Ignition,5V logic for smart coil; check driver
-B,B04,4,IGN4,Ignition,5V logic for smart coil; check driver
-B,B05,5,IGN5,Ignition,5V logic for smart coil; check driver
-B,B06,6,IGN6,Ignition,5V logic for smart coil; check driver
-B,B07,7,IGN7,Ignition,5V logic for smart coil; check driver
-B,B08,8,IGN8,Ignition,5V logic for smart coil; check driver
+B,B01,1,IGN1,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
+B,B02,2,IGN2,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
+B,B03,3,IGN3,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
+B,B04,4,IGN4,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
+B,B05,5,IGN5,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
+B,B06,6,IGN6,Ignition,Passive B58 coil primary low-side; logic-coil assembly alternative must be mutually exclusive
+B,B07,7,UNUSED_B07,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
+B,B08,8,UNUSED_B08,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
 B,B09,9,PI1,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
 B,B10,10,PI2,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
 B,B11,11,PI3,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
 B,B12,12,PI4,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
 B,B13,13,PI5,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
 B,B14,14,PI6,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
-B,B15,15,PI7,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
-B,B16,16,PI8,Port Injection,Protected low-side for high-Z port injector; stage 2 optional
+B,B15,15,UNUSED_B15,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
+B,B16,16,UNUSED_B16,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
 B,B17,17,VVT1,VVT,Protected PWM-capable low-side
 B,B18,18,VVT2,VVT,Protected PWM-capable low-side
 B,B19,19,VVT3,VVT,Protected PWM-capable low-side
@@ -61,7 +61,7 @@ B,B25,25,AUX_PWM5,Aux PWM,Protected PWM channel; AUX_PWM1=B58 oil pressure contr
 B,B26,26,AUX_PWM6,Aux PWM,Protected PWM channel; AUX_PWM1=B58 oil pressure control
 B,B27,27,AUX_PWM7,Aux PWM,Protected PWM channel; AUX_PWM1=B58 oil pressure control
 B,B28,28,AUX_PWM8,Aux PWM,Protected PWM channel; AUX_PWM1=B58 oil pressure control
-B,B29,29,LS_AUX1,Aux Low-side,Protected output for relay or low side
+B,B29,29,LS_AUX1,Aux Low-side,External normally-open fused coil-supply relay; forced off by hardware fault; relay/contact/fuse sizing pending
 B,B30,30,LS_AUX2,Aux Low-side,Protected output for relay or low side
 B,B31,31,LS_AUX3,Aux Low-side,Protected output for relay or low side
 B,B32,32,LS_AUX4,Aux Low-side,Protected output for relay or low side
@@ -115,10 +115,10 @@ D,D11,11,CAN1_H,CAN,CAN1 differential high
 D,D12,12,CAN1_L,CAN,CAN1 differential low
 D,D13,13,CAN2_H,CAN,CAN2 differential high
 D,D14,14,CAN2_L,CAN,CAN2 differential low
-D,D15,15,DIN5,Digital,Protected general digital input
-D,D16,16,DIN6,Digital,Protected general digital input
-D,D17,17,DIN7,Digital,Protected general digital input
-D,D18,18,DIN8,Digital,Protected general digital input
+D,D15,15,UNUSED_D15,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
+D,D16,16,UNUSED_D16,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
+D,D17,17,UNUSED_D17,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
+D,D18,18,UNUSED_D18,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
 D,D19,19,AUX_ANALOG1,Analog,Spare ADC input
 D,D20,20,AUX_ANALOG2,Analog,Spare ADC input
 D,D21,21,WBO1_CONTACT1,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
@@ -127,11 +127,11 @@ D,D23,23,WBO1_CONTACT3,WBO,LSU4.9 sensor pin placeholder: validate harness and W
 D,D24,24,WBO1_CONTACT4,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
 D,D25,25,WBO1_CONTACT5,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
 D,D26,26,WBO1_CONTACT6,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
-D,D27,27,WBO2_CONTACT1,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
-D,D28,28,WBO2_CONTACT2,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
-D,D29,29,WBO2_CONTACT3,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
-D,D30,30,WBO2_CONTACT4,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
-D,D31,31,WBO2_CONTACT5,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
-D,D32,32,WBO2_CONTACT6,WBO,LSU4.9 sensor pin placeholder: validate harness and WBO frontend before electrical connection
+D,D27,27,UNUSED_D27,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
+D,D28,28,UNUSED_D28,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
+D,D29,29,UNUSED_D29,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
+D,D30,30,UNUSED_D30,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
+D,D31,31,UNUSED_D31,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
+D,D32,32,UNUSED_D32,NC,Intentionally unconnected in approved six-cylinder profile; no load permitted
 D,D33,33,CHASSIS_GND,Chassis,EMC chassis ground; connect policy pending
 D,D34,34,SENSOR_GND_C,Sensor GND,Additional analog ground

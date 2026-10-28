@@ -7,18 +7,23 @@ std::uint8_t DualPt2001Safety::configKey(const GdiSafetySnapshot& s) noexcept {
         (s.pumpConfigured[0] ? 2u : 0u) |
         (s.pumpConfigured[1] ? 4u : 0u) |
         (s.railSensorConfigured[0] ? 8u : 0u) |
-        (s.railSensorConfigured[1] ? 16u : 0u);
+        (s.railSensorConfigured[1] ? 16u : 0u) |
+        (s.injectorProfile == GdiInjectorProfile::SportGdi6 ? 32u : 0u) |
+        (s.injectorProfile == GdiInjectorProfile::LegacyGdi8 ? 64u : 0u);
 }
 
 bool DualPt2001Safety::configurationValid(const GdiSafetySnapshot& s) noexcept {
+    if (s.injectorProfile != GdiInjectorProfile::SportGdi6 &&
+        s.injectorProfile != GdiInjectorProfile::LegacyGdi8) return false;
     if (!s.pumpConfigured[0] && !s.pumpConfigured[1]) return false;
     if (!s.railSensorConfigured[0] && !s.railSensorConfigured[1]) return false;
     if (s.railTopology != GdiRailTopology::Shared &&
         s.railTopology != GdiRailTopology::Independent) return false;
     if (s.railTopology == GdiRailTopology::Independent) {
-        // Each installed pump must have an independently validated feedback sensor.
+        // Either profile requires both driver banks. Without a selective
+        // rail-deactivation policy, neither independent rail may be omitted.
         for (unsigned i = 0; i < 2; ++i) {
-            if (s.pumpConfigured[i] && !s.railSensorConfigured[i]) return false;
+            if (!s.pumpConfigured[i] || !s.railSensorConfigured[i]) return false;
         }
     }
     return true;
@@ -91,7 +96,9 @@ GdiPermits DualPt2001Safety::update(const GdiSafetySnapshot& s) noexcept {
     result.fault = fault_;
     if (state_ == GdiState::Armed) {
         result.requestHardwareKill = false;
-        for (auto& enabled : result.injectorCommand) enabled = true;
+        const unsigned count = static_cast<unsigned>(s.injectorProfile);
+        for (unsigned cylinder = 0; cylinder < count; ++cylinder)
+            result.injectorCommand[cylinder] = true;
         for (unsigned i = 0; i < 2; ++i) {
             result.hpfpCommand[i] = s.pumpConfigured[i];
         }
@@ -101,7 +108,7 @@ GdiPermits DualPt2001Safety::update(const GdiSafetySnapshot& s) noexcept {
 }
 
 bool DualPt2001Safety::acknowledgeStopped(const GdiSafetySnapshot& s) noexcept {
-    if (state_ != GdiState::FaultLatched || s.runRequested ||
+    if (state_ != GdiState::FaultLatched || !s.engineStoppedConfirmed || s.runRequested ||
         s.synchronizationValid || !inputsHealthy(s)) return false;
     // Re-arming occurs only during a subsequent explicit synchronized run.
     state_ = GdiState::Disarmed;
