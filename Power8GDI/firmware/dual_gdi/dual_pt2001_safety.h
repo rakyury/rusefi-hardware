@@ -76,6 +76,8 @@ struct GdiPermits {
 
 class DualPt2001Safety final {
 public:
+    // Mutable state is not atomic. Serialize every call (including getters)
+    // through one owner or a shared platform critical section.
     // Safe by default: no outputs are enabled until both drivers and rails
     // are valid, and the synchronized engine has explicitly requested a run.
     GdiPermits update(const GdiSafetySnapshot& snapshot) noexcept;
@@ -89,8 +91,10 @@ public:
     GdiState state() const noexcept { return state_; }
     GdiFault fault() const noexcept { return fault_; }
 
-    // A fault interrupt may invoke this without waiting for periodic update.
-    // Caller MUST also physically assert hardware disable immediately.
+    // A fault interrupt MUST physically assert hardware disable immediately.
+    // Publish its event to the serialized owner for this software latch, or
+    // use the same platform critical section as update/acknowledgeStopped.
+    // Direct unsynchronized ISR access is not supported.
     void latchFault(GdiFault fault) noexcept;
 
 private:
