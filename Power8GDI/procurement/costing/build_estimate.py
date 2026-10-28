@@ -25,6 +25,12 @@ def write(path, data):
     Path(path).write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def normalized_text_sha256(path):
+    """Stable text-artifact digest across LF/CRLF checkouts and UTF-8 BOMs."""
+    text = Path(path).read_bytes().decode("utf-8-sig").replace("\r\n", "\n")
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
 def money(value):
     return float(Decimal(str(value)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))
 
@@ -112,7 +118,7 @@ def compact_selection(selection_path):
     return {
         "is_costing_snapshot": True,
         "source_path": "Power8GDI/procurement/selection/bom_selection.json",
-        "source_sha256": hashlib.sha256(raw).hexdigest(),
+        "source_sha256": normalized_text_sha256(selection_path),
         "source_generated_date": d.get("generated_date"),
         "counts": d["counts"],
         "bom_snapshot": d["bom_snapshot"],

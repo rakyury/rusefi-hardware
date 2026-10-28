@@ -28,10 +28,21 @@ Rebuild with the final selection and then test:
 ```text
 python Power8GDI/procurement/costing/build_estimate.py --selection Power8GDI/procurement/selection/bom_selection.json
 python -m unittest discover -s Power8GDI/procurement/costing -p test_estimate.py -v
+python -m unittest discover -s Power8GDI/procurement/costing -p test_costing_freshness.py -v
 ```
 
 Omit `--selection` to reproduce the checked-in snapshot. The script works from any
 working directory. It writes only this directory and the COST report.
+
+The freshness suite reads saved artifacts without rewriting them. It compares
+saved `costed_bom.json` / `estimate_summary.json` with recomputation. If integrated
+selection and assembly artifacts exist, it also compares the frozen selection,
+the current physical land and X-ray counts, and the current PCB hash. In post-merge
+CI set `GDI6_COST_REQUIRE_INTEGRATED_INPUTS=1` so missing integrated inputs fail
+instead of being skipped. Selection and text PCB digests normalize CRLF to LF and
+ignore a UTF-8 BOM for consistent Windows/Linux checkouts. Hardware-generated
+land reports must use the same text normalization. Hashes still detect substantive
+content changes; normalization does not sort or reinterpret JSON.
 
 ## Important data distinctions
 
