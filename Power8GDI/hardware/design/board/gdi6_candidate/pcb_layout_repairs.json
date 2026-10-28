@@ -1,7 +1,7 @@
 {
   "baseline_commit": "2f4a527f3ff661de522f60de78b059fae9a89f07",
   "baseline_board_sha256": "fd6eac9f2f58decc4784a1798c5549be44b5b30f6b08d3ae6b5db59f9506fd1a",
-  "current_board_sha256": "3a6f881bd42b702a6e085e7eddefbcd569296583262431f3ccb02c25484b4f9b",
+  "current_board_sha256": "e1887db8720d0945f611a9e5fe935d72f429a886bd382a77690af20472098e17",
   "return_tracks": [
     {
       "reference": "R215",
@@ -156,7 +156,7 @@
       ]
     }
   ],
-  "full_connectivity_residual": 2092,
+  "full_connectivity_residual": 2089,
   "native_drc": "VERIFIED_SCOPED_AND_FULL_INCOMPLETE_BOARD",
   "idempotence": "PASS",
   "structural_delta_check": "SEE_FOLLOW_UP_JOURNALS_FOR_INCREMENTAL_COPPER_AND_FILLED_ZONE_DELTAS",
@@ -423,6 +423,99 @@
     ],
     "unconnected_before": 2093,
     "unconnected_after": 2092,
+    "full_board_zones_refilled": true,
+    "new_objects_native_drc_findings": 0,
+    "scoped_new_violation_signatures": 0
+  },
+  "follow_up_wbo_logic_grounds": {
+    "baseline_commit": "d35e9ab18a8e32a06d656628f132f3e9dfc8102f",
+    "baseline_board_sha256": "3a6f881bd42b702a6e085e7eddefbcd569296583262431f3ccb02c25484b4f9b",
+    "current_board_sha256": "e1887db8720d0945f611a9e5fe935d72f429a886bd382a77690af20472098e17",
+    "routes": [
+      {
+        "branch": "bypass_ground",
+        "net": "GND",
+        "ref": "C5612",
+        "pin": "2",
+        "layer": "F.Cu",
+        "points_mm": [
+          [
+            180.15295,
+            66.975
+          ],
+          [
+            180.15295,
+            67.975
+          ]
+        ],
+        "via_mm": [
+          180.15295,
+          67.975
+        ],
+        "width_mm": 0.25,
+        "added_uuids": [
+          "c9fc37d7-8eef-4988-b96d-19376c98373e",
+          "1888d374-54c4-4978-93da-76891a0eeeef"
+        ],
+        "length_mm": 1.0
+      },
+      {
+        "branch": "mcu_vss16",
+        "net": "GND",
+        "ref": "U5602",
+        "pin": "16",
+        "layer": "F.Cu",
+        "points_mm": [
+          [
+            169.37795,
+            60.0
+          ],
+          [
+            169.37795,
+            61.25
+          ]
+        ],
+        "via_mm": [
+          169.37795,
+          61.25
+        ],
+        "width_mm": 0.25,
+        "added_uuids": [
+          "898b0168-8d34-4c5a-a7f7-e03b0eab4e99",
+          "10a3df89-dd97-44a2-841b-367f8ed6591e"
+        ],
+        "length_mm": 1.25
+      },
+      {
+        "branch": "mcu_vss32",
+        "net": "GND",
+        "ref": "U5602",
+        "pin": "32",
+        "layer": "F.Cu",
+        "points_mm": [
+          [
+            174.97795,
+            68.35
+          ],
+          [
+            176.22795,
+            68.85
+          ]
+        ],
+        "via_mm": [
+          176.22795,
+          68.85
+        ],
+        "width_mm": 0.25,
+        "added_uuids": [
+          "3def2cdf-d2f4-4a84-85d5-ba42e84c340b",
+          "fe819242-3abb-43a3-929a-9a80ebfd7494"
+        ],
+        "length_mm": 1.346291
+      }
+    ],
+    "unconnected_before": 2092,
+    "unconnected_after": 2089,
     "full_board_zones_refilled": true,
     "new_objects_native_drc_findings": 0,
     "scoped_new_violation_signatures": 0
