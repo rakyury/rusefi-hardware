@@ -167,6 +167,7 @@ def verify():
         import pcbnew as pcb
         for fp in sorted({p['footprint'] for p in parts.values()}):
             library,name=fp.split(':'); directory=Path('/usr/share/kicad/footprints')/(library+'.pretty')
+            if library=='Power8GDI_Board':directory=HERE.parent/'board/Power8GDI_Board.pretty'
             f=pcb.FootprintLoad(str(directory),name)
             if f is None:errors.append('Missing footprint '+fp);continue
             pads={p.GetNumber() for p in f.Pads() if p.GetNumber()}

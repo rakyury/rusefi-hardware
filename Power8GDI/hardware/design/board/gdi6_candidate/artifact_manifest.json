@@ -8,13 +8,13 @@
   "hash_normalization": "CRLF_TO_LF_TEXT_ONLY; PDF/PNG raw bytes",
   "kicad_version": "9.0.9",
   "kicad_image": "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
-  "source_netlist_sha256": "40a7e18e334463119d4d387b05956dad5c26db4c65daa03aa1706900aad76cf2",
+  "source_netlist_sha256": "abd9c0533019b9811a75fa73c46c1a9d9b97511d5f858edb2b88ae1e98a87462",
   "selection_map_sha256": "7e9d221aeb9504f4a88a13b53773fce778d71bfa90cf127fc0613dc7718d926a",
   "schematic_pdf_pages": 49,
   "pdf_visual_review": {
     "all_pages_contact_sheet": true,
     "larger_scale_pages": [
-      27
+      41
     ]
   },
   "pad_comparison": "PASS",
@@ -45,14 +45,13 @@
     "global_label_dangling": 12
   },
   "connectivity_unconnected_count": 2099,
-  "reported_drc_violations": 721,
+  "reported_drc_violations": 722,
   "drc_report_may_be_truncated": true,
   "drc_categories": {
-    "clearance": 502,
+    "clearance": 505,
     "track_width": 199,
     "via_dangling": 14,
-    "track_dangling": 4,
-    "silk_over_copper": 2
+    "track_dangling": 4
   },
   "design_rule_exclusions_added": false,
   "assembly_bom_after_classification_fix": {
@@ -72,32 +71,36 @@
   },
   "files": {
     "core.net": {
-      "sha256": "40a7e18e334463119d4d387b05956dad5c26db4c65daa03aa1706900aad76cf2",
-      "bytes": 3321691
+      "sha256": "abd9c0533019b9811a75fa73c46c1a9d9b97511d5f858edb2b88ae1e98a87462",
+      "bytes": 3321748
     },
     "sport_gdi6_schematic.pdf": {
-      "sha256": "2efab9d0128148896ba0e82dd90b4d1a97ba7978baa0585c8944fcd794fc2916",
-      "bytes": 9383856
+      "sha256": "2b537c37f1466c9f46baceae1c3116110e9229d2213006a2b3685d14c109ff2c",
+      "bytes": 9383875
     },
     "integrated_bom.csv": {
-      "sha256": "fa8d2614e88d5aa8ef4e53ddec2b02e44c66f7c96a98b5cbf52b3df0c9d0875c",
-      "bytes": 1662468
+      "sha256": "2b792d6d6b4d1a75c388338357e849ad686927715af1d52ba0e110a63c34591b",
+      "bytes": 1662506
     },
     "integrated_bom_manifest.json": {
-      "sha256": "ca9e775be5bdf45a210fce5ba0f7acc8d121fb03ac5256e59954850a1ab7f5d3",
+      "sha256": "b9da23fa47e433036893414f803a07baf6d531080b7e724c718db87eb9f2d731",
       "bytes": 5901
     },
     "selection_validation.json": {
-      "sha256": "7d172459a6f29305bee1b8177994daeb24d5aadd45f25379a8f4758310e7f492",
-      "bytes": 483241
+      "sha256": "4cef54695f1c8c9c57ce849e380a45efbb7123c473f52824e85c13afafcc20a5",
+      "bytes": 496882
     },
     "gdi/load_review.json": {
-      "sha256": "1561d52db114d8939e50cfbd4ba8b0fc7c1ee3be4394ae302e25c88b5ecceeae",
-      "bytes": 2556
+      "sha256": "70b55f31ac4bd5d5e02cf0808d11244d8527a4764be6d2246da3b6ebcc5ce69c",
+      "bytes": 2639
+    },
+    "board/Power8GDI_Board.pretty/SOT-23_D5604_J5600_Clearance.kicad_mod": {
+      "sha256": "73393279e45d21eda7ad59913cfeafd0dbbf5765c2a62db0d3f897a8435983d4",
+      "bytes": 4930
     },
     "board/gdi6_candidate/Power8GDI_Review.kicad_pcb": {
-      "sha256": "25aa498aa4491da8bf1901736c84a1affb26e64c01c6b818565fbd7b30f6967a",
-      "bytes": 5177220
+      "sha256": "0ab109350b42bd0286b5aaaa88ac83b4ddd04a17f6802320568667b6ebe970c4",
+      "bytes": 5177236
     },
     "board/gdi6_candidate/Power8GDI_Review.kicad_pro": {
       "sha256": "e153a914608b366089817c7aadf84b03e1ca04ef461e0a4ed1fc27788eae4874",
@@ -108,35 +111,35 @@
       "bytes": 5188
     },
     "board/gdi6_candidate/board_report.json": {
-      "sha256": "a36c5a7117b536f857beccdf3a049d102e44126faf66605a61ebc49aebab660d",
-      "bytes": 554490
+      "sha256": "f67e869328c9a58e679023e6e418e1ad6d844f0ee2a63f14a40673f12d56c6d7",
+      "bytes": 554687
     },
     "board/gdi6_candidate/pad_validation.json": {
       "sha256": "78990731ba3f2ee54a63adfdd10bbcdb1561ed5e05f0267b2648568ac2eb27f8",
       "bytes": 413
     },
     "board/gdi6_candidate/drc.json": {
-      "sha256": "5be6e177d77b621ce98dbe79845098b948b4a8a030c82f024c9e4faa413a6c8a",
-      "bytes": 958438
+      "sha256": "65b43d6293813d5179fda0d3479eea618bbdb0f52fae68b77473cbabbddeed61",
+      "bytes": 960524
     },
     "board/gdi6_candidate/drc.provenance.json": {
-      "sha256": "7b0ed8a1b414c13913f7d290092fcb3e9f8a35f875a5d6acea01b959e73baf64",
+      "sha256": "d68c705751c482c5de590f3d2df0e5f0de1f1348b65b193e03aecac514faf04c",
       "bytes": 582
     },
     "board/gdi6_candidate/net_coverage.json": {
-      "sha256": "d760776d0b144f6be4062ce4fcff5aa229fa44c0f8dd2b02bcf80c7ed60959f0",
-      "bytes": 134937
+      "sha256": "1f8d7be26b172f1f932e7c72de991b277c906e9f388451a3fa4bd3ee5a559a1a",
+      "bytes": 134910
     },
     "board/gdi6_candidate/assembly_joints.json": {
-      "sha256": "b8b45437e362ca9ac7b0107083b4471a1683ab5f431fb0664a27c9cae5f24e33",
-      "bytes": 357432
+      "sha256": "45ca8a01534b54c58dfbb7e39abab292ebe20c1d0cdc33a873d398c9d6cc9e45",
+      "bytes": 357451
     },
     "board/gdi6_candidate/front.svg": {
-      "sha256": "1f607c649de99dfca70c2b67a86cefe9296aaf800ba26ee479238d0075d5ded8",
+      "sha256": "d8124cd6a077be3ad0f660436778f4f5374045a659217abebb1ed9b2c93c59a7",
       "bytes": 1652001
     },
     "board/gdi6_candidate/back.svg": {
-      "sha256": "b32d47f50ad2d3c3a12b2a4a39a63513432243bc9363cf8196c5b955dd627329",
+      "sha256": "a55fecebf867b5950f21d240fd86101a2169e67d220ff70e9a2cb5014742cf10",
       "bytes": 2953637
     },
     "board/gdi6_candidate/front.png": {
@@ -144,12 +147,12 @@
       "bytes": 424803
     },
     "board/gdi6_candidate/back.png": {
-      "sha256": "ab6f21d98b5f6f974207e9307e57b134fb459c04e84c9ed432b55e0a9632b24d",
-      "bytes": 627840
+      "sha256": "a5fdb179fb43480c0e5b6bb751e8daa20a546a18f77a15de1c6ab5a9e1c1bdd3",
+      "bytes": 627841
     },
     "board/gdi6_candidate/pcb_layout_repairs.json": {
-      "sha256": "7345f710713c7eef58efe32dfcbd155579ed5846fcbb746f5ce3f67806230a4f",
-      "bytes": 3734
+      "sha256": "51363d71b2ef87b1ed933339a9a03e7d23d409cb5873d1250894e8b0338287fe",
+      "bytes": 4582
     },
     "board/gdi6_candidate/shunt_stencil_delta.json": {
       "sha256": "d91cf889b149fe742d721b97614b4fe8fcca99aba76513e9c1460f49ce99bf6e",

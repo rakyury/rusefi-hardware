@@ -13,6 +13,8 @@ from gdi.sexpr import parse,dump,child,children,prop,Quoted as Q
 HERE=Path(__file__).resolve().parent
 SELECTION=HERE.parents[1]/'procurement/selection/bom_selection.json'
 DEVIATIONS={'C114':('10u 16V X7R','Capacitor_SMD:C_1206_3216Metric')}
+# D5604: same SOT-23 pads/mask/paste; local silk clears J5600, pin-1 marker unchanged.
+DEVIATIONS['D5604']=('PESD1CAN','Power8GDI_Board:SOT-23_D5604_J5600_Clearance')
 DEVIATIONS['C1511']=('1n 2kV C0G','Capacitor_SMD:C_1812_4532Metric')
 for ref in ('C1533','C1538'):DEVIATIONS[ref]=('22u 50V X7R','Power8GDI_Interfaces:CGA9P3_2220')
 for n in range(5208,5212):DEVIATIONS[f'C{n}']=('47u 16V X7R','Capacitor_SMD:C_1210_3225Metric')

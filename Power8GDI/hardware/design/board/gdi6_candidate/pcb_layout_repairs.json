@@ -1,7 +1,7 @@
 {
   "baseline_commit": "2f4a527f3ff661de522f60de78b059fae9a89f07",
   "baseline_board_sha256": "fd6eac9f2f58decc4784a1798c5549be44b5b30f6b08d3ae6b5db59f9506fd1a",
-  "current_board_sha256": "25aa498aa4491da8bf1901736c84a1affb26e64c01c6b818565fbd7b30f6967a",
+  "current_board_sha256": "0ab109350b42bd0286b5aaaa88ac83b4ddd04a17f6802320568667b6ebe970c4",
   "return_tracks": [
     {
       "reference": "R215",
@@ -159,11 +159,35 @@
   "full_connectivity_residual": 2099,
   "native_drc": "VERIFIED_SCOPED_AND_FULL_INCOMPLETE_BOARD",
   "idempotence": "PASS",
-  "structural_delta_check": "PASS_ONLY_2_TRACKS_AND_10_SILK_ENDPOINT_EDITS_WITH_LAYER_LIST_ORDER_NORMALIZED",
+  "structural_delta_check": "PASS_2_TRACKS_10_OSCILLATOR_SILK_EDITS_AND_D5604_FPID_WITH_2_SILK_EDITS",
   "local_drc_reports": [
     "../../../../docs/reviews/2026-10-28-gdi6-layout-fixes/R215_drc.json",
     "../../../../docs/reviews/2026-10-28-gdi6-layout-fixes/R315_drc.json"
   ],
   "repaired_objects_drc_findings": 0,
-  "shunt_stencil_preserved": 20
+  "shunt_stencil_preserved": 20,
+  "follow_up_d5604": {
+    "baseline_commit": "98208688a45204fe52cf7921d42b3367e5539ce5",
+    "baseline_board_sha256": "25aa498aa4491da8bf1901736c84a1affb26e64c01c6b818565fbd7b30f6967a",
+    "current_board_sha256": "0ab109350b42bd0286b5aaaa88ac83b4ddd04a17f6802320568667b6ebe970c4",
+    "changes": [
+      {
+        "uuid": "978c2cab-ac72-476d-b19a-12a3efedb6cd",
+        "change": "move non-orientation stub to shortened outline end"
+      },
+      {
+        "uuid": "ff66319e-48d5-4711-b40a-848a9af9af5b",
+        "change": "shorten outline",
+        "end_mm": [
+          160.91045,
+          71.64
+        ]
+      }
+    ],
+    "footprint": "Power8GDI_Board:SOT-23_D5604_J5600_Clearance",
+    "electrical_change": false,
+    "pad_net_check": "PASS",
+    "native_silk_findings": 0,
+    "native_library_mismatch_findings": 0
+  }
 }
