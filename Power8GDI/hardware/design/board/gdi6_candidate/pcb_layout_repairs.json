@@ -1,7 +1,7 @@
 {
   "baseline_commit": "2f4a527f3ff661de522f60de78b059fae9a89f07",
   "baseline_board_sha256": "fd6eac9f2f58decc4784a1798c5549be44b5b30f6b08d3ae6b5db59f9506fd1a",
-  "current_board_sha256": "cf36d99bb312769ed73cdec0149b5d2e6b9fb01143e814fb0145150245b02206",
+  "current_board_sha256": "75e98a2a132238da55b954a4b55d0bde57f14ed8334183e136645a9238173bdf",
   "return_tracks": [
     {
       "reference": "R215",
@@ -156,7 +156,7 @@
       ]
     }
   ],
-  "full_connectivity_residual": 2097,
+  "full_connectivity_residual": 2094,
   "native_drc": "VERIFIED_SCOPED_AND_FULL_INCOMPLETE_BOARD",
   "idempotence": "PASS",
   "structural_delta_check": "SEE_FOLLOW_UP_JOURNALS_FOR_INCREMENTAL_COPPER_AND_FILLED_ZONE_DELTAS",
@@ -237,6 +237,91 @@
     ],
     "unconnected_before": 2099,
     "unconnected_after": 2097,
+    "full_board_zones_refilled": true,
+    "new_objects_native_drc_findings": 0,
+    "scoped_new_violation_signatures": 0
+  },
+  "follow_up_wbo_vio": {
+    "baseline_commit": "e47f09301d6e3de56d04d71d60d73330b8800069",
+    "baseline_board_sha256": "cf36d99bb312769ed73cdec0149b5d2e6b9fb01143e814fb0145150245b02206",
+    "current_board_sha256": "75e98a2a132238da55b954a4b55d0bde57f14ed8334183e136645a9238173bdf",
+    "routes": [
+      {
+        "branch": "vio",
+        "net": "WBO1_3V3",
+        "points_mm": [
+          [
+            161.37795,
+            67.055558
+          ],
+          [
+            161.37795,
+            69.055558
+          ]
+        ],
+        "via_mm": null,
+        "width_mm": 0.25,
+        "added_uuids": [
+          "bf76cb49-00f6-427b-96ac-33e2201af876"
+        ],
+        "length_mm": 2.0
+      },
+      {
+        "branch": "cap_ground",
+        "net": "GND",
+        "points_mm": [
+          [
+            162.92795,
+            69.055558
+          ],
+          [
+            162.17795,
+            69.805558
+          ]
+        ],
+        "via_mm": [
+          162.17795,
+          69.805558
+        ],
+        "width_mm": 0.25,
+        "added_uuids": [
+          "6b4c8ea0-448f-45a9-83df-8844c9ce68c9",
+          "064b456a-fd3f-4663-8c54-dd889a4f5212"
+        ],
+        "length_mm": 1.06066
+      },
+      {
+        "branch": "ic_ground",
+        "net": "GND",
+        "points_mm": [
+          [
+            166.32795,
+            64.515558
+          ],
+          [
+            164.82795,
+            64.515558
+          ],
+          [
+            164.82795,
+            62.765558
+          ]
+        ],
+        "via_mm": [
+          164.82795,
+          62.765558
+        ],
+        "width_mm": 0.25,
+        "added_uuids": [
+          "45285a96-f51e-4715-a395-b33bea70a498",
+          "4cc25e4c-8255-48d2-aae3-afedc89e4079",
+          "d0e23836-f7e4-4f0d-91e2-c1bfa8f6d907"
+        ],
+        "length_mm": 3.25
+      }
+    ],
+    "unconnected_before": 2097,
+    "unconnected_after": 2094,
     "full_board_zones_refilled": true,
     "new_objects_native_drc_findings": 0,
     "scoped_new_violation_signatures": 0

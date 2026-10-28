@@ -72,9 +72,9 @@
   "components": 1092,
   "assigned_component_pins": 3464,
   "pad_net_mismatches": [],
-  "tracks_vias": 2665,
+  "tracks_vias": 2671,
   "zones": 16,
-  "unconnected_count": 2097,
+  "unconnected_count": 2094,
   "dnp_references": [
     "R105",
     "R106",
@@ -25614,6 +25614,81 @@
       ],
       "segments": 4,
       "length_mm": 8.835526
+    }
+  ],
+  "reviewed_wbo_vio_routes": [
+    {
+      "branch": "vio",
+      "net": "WBO1_3V3",
+      "points_mm": [
+        [
+          161.37795,
+          67.055558
+        ],
+        [
+          161.37795,
+          69.055558
+        ]
+      ],
+      "via_mm": null,
+      "width_mm": 0.25,
+      "added_uuids": [
+        "bf76cb49-00f6-427b-96ac-33e2201af876"
+      ],
+      "length_mm": 2.0
+    },
+    {
+      "branch": "cap_ground",
+      "net": "GND",
+      "points_mm": [
+        [
+          162.92795,
+          69.055558
+        ],
+        [
+          162.17795,
+          69.805558
+        ]
+      ],
+      "via_mm": [
+        162.17795,
+        69.805558
+      ],
+      "width_mm": 0.25,
+      "added_uuids": [
+        "6b4c8ea0-448f-45a9-83df-8844c9ce68c9",
+        "064b456a-fd3f-4663-8c54-dd889a4f5212"
+      ],
+      "length_mm": 1.06066
+    },
+    {
+      "branch": "ic_ground",
+      "net": "GND",
+      "points_mm": [
+        [
+          166.32795,
+          64.515558
+        ],
+        [
+          164.82795,
+          64.515558
+        ],
+        [
+          164.82795,
+          62.765558
+        ]
+      ],
+      "via_mm": [
+        164.82795,
+        62.765558
+      ],
+      "width_mm": 0.25,
+      "added_uuids": [
+        "45285a96-f51e-4715-a395-b33bea70a498",
+        "4cc25e4c-8255-48d2-aae3-afedc89e4079",
+        "d0e23836-f7e4-4f0d-91e2-c1bfa8f6d907"
+      ],
+      "length_mm": 3.25
     }
   ]
 }
