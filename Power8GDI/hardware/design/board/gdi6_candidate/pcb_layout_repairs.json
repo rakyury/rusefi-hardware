@@ -1,7 +1,7 @@
 {
   "baseline_commit": "2f4a527f3ff661de522f60de78b059fae9a89f07",
   "baseline_board_sha256": "fd6eac9f2f58decc4784a1798c5549be44b5b30f6b08d3ae6b5db59f9506fd1a",
-  "current_board_sha256": "7e7872186f98b95cc92002db7e7e9ce3789c719f5df7182711846a7bdf729be0",
+  "current_board_sha256": "3a6f881bd42b702a6e085e7eddefbcd569296583262431f3ccb02c25484b4f9b",
   "return_tracks": [
     {
       "reference": "R215",
@@ -156,7 +156,7 @@
       ]
     }
   ],
-  "full_connectivity_residual": 2093,
+  "full_connectivity_residual": 2092,
   "native_drc": "VERIFIED_SCOPED_AND_FULL_INCOMPLETE_BOARD",
   "idempotence": "PASS",
   "structural_delta_check": "SEE_FOLLOW_UP_JOURNALS_FOR_INCREMENTAL_COPPER_AND_FILLED_ZONE_DELTAS",
@@ -387,6 +387,42 @@
     ],
     "unconnected_before": 2094,
     "unconnected_after": 2093,
+    "full_board_zones_refilled": true,
+    "new_objects_native_drc_findings": 0,
+    "scoped_new_violation_signatures": 0
+  },
+  "follow_up_wbo_gate_ground": {
+    "baseline_commit": "671da0b525696f09387f7624e7eba2d8e55a1824",
+    "baseline_board_sha256": "7e7872186f98b95cc92002db7e7e9ce3789c719f5df7182711846a7bdf729be0",
+    "current_board_sha256": "3a6f881bd42b702a6e085e7eddefbcd569296583262431f3ccb02c25484b4f9b",
+    "routes": [
+      {
+        "branch": "gate_ground",
+        "net": "GND",
+        "points_mm": [
+          [
+            178.8625,
+            82.55
+          ],
+          [
+            178.8625,
+            81.8
+          ]
+        ],
+        "via_mm": [
+          178.8625,
+          81.8
+        ],
+        "width_mm": 0.25,
+        "added_uuids": [
+          "80b566d3-9e53-42f4-a2ae-aaad7354d7f6",
+          "186bf83f-c141-404b-b9d2-157cfde1ecee"
+        ],
+        "length_mm": 0.75
+      }
+    ],
+    "unconnected_before": 2093,
+    "unconnected_after": 2092,
     "full_board_zones_refilled": true,
     "new_objects_native_drc_findings": 0,
     "scoped_new_violation_signatures": 0
