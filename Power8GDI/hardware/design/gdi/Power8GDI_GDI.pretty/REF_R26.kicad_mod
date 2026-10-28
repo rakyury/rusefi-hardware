@@ -1,157 +1,129 @@
 (footprint "REF_R26"
-	(version 20241229)
-	(generator "pcbnew")
-	(generator_version "9.0")
-	(layer "F.Cu")
-	(tags "net tie")
-	(property "Reference" "REF**"
-		(at 1.7 1.5 180)
-		(layer "F.SilkS")
-		(uuid "ce2d3016-a2bd-48ae-b224-5879e0f39dd3")
-		(effects
-			(font
-				(size 0.82 0.82)
-				(thickness 0.17)
-			)
-		)
-	)
-	(property "Value" "0.01"
-		(at -0.05 1.225 180)
-		(layer "F.SilkS")
-		(hide yes)
-		(uuid "72c5a465-0f2a-4f51-818a-dc0f73e2ec23")
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "Datasheet" ""
-		(at 0 0 0)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "3563b256-fe48-45ee-b625-f066d3604f9f")
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "Description" "Shunt resistor"
-		(at 0 0 0)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "d25e8a37-367f-4ea1-b687-d994fa6b4fd2")
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "LCSC" "C309628"
-		(at 71.3 230.3 90)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "bd3aea33-a505-419f-963e-4bdc3eeafe70")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(zone_connect 2)
-	(attr smd)
-	(net_tie_pad_groups "1, 2, 3, 4")
-	(fp_poly
-		(pts
-			(xy -1.55004 -0.075) (xy -0.62504 -0.075) (xy -0.62504 0.075) (xy -1.55004 0.075)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill yes)
-		(layer "F.Cu")
-		(uuid "d2bee0b5-73ad-4bbf-af94-4ec410266442")
-	)
-	(fp_poly
-		(pts
-			(xy 1.56998 0.075) (xy 0.64498 0.075) (xy 0.64498 -0.075) (xy 1.56998 -0.075)
-		)
-		(stroke
-			(width 0)
-			(type solid)
-		)
-		(fill yes)
-		(layer "F.Cu")
-		(uuid "8849300c-0a8b-49e2-8153-7809d0646c05")
-	)
-	(fp_line
-		(start -0.65 -0.8)
-		(end 0.65 -0.802928)
-		(stroke
-			(width 0.2)
-			(type solid)
-		)
-		(layer "F.SilkS")
-		(uuid "0932794d-e694-46df-bad2-06836f9d0251")
-	)
-	(fp_line
-		(start -0.65 0.8)
-		(end 0.65 0.8)
-		(stroke
-			(width 0.2)
-			(type solid)
-		)
-		(layer "F.SilkS")
-		(uuid "584431e2-1b1c-4dd7-9714-d5ee4b5b9a0c")
-	)
-	(pad "1" smd roundrect
-		(at -1.45002 0 90)
-		(size 1.8 1.15)
-		(layers "F.Cu" "F.Mask")
-		(roundrect_rratio 0.2)
-		(zone_connect 2)
-		(uuid "8f179568-ec42-49dd-bace-7048c2d2165d")
-	)
-	(pad "2" smd roundrect
-		(at -0.6 0 90)
-		(size 0.15 0.15)
-		(layers "F.Cu")
-		(roundrect_rratio 0.2)
-		(zone_connect 2)
-		(uuid "cc845f4f-c85d-4c74-a7f3-773273ef56c3")
-	)
-	(pad "3" smd roundrect
-		(at 0.59998 0 270)
-		(size 0.15 0.15)
-		(layers "F.Cu")
-		(roundrect_rratio 0.2)
-		(zone_connect 2)
-		(uuid "1548440e-0e49-4a13-a92d-6ebba24b5eea")
-	)
-	(pad "4" smd roundrect
-		(at 1.45 0 270)
-		(size 1.8 1.15)
-		(layers "F.Cu" "F.Mask")
-		(roundrect_rratio 0.2)
-		(zone_connect 2)
-		(uuid "ba566fd6-3c00-4758-b55e-90b7e219eb11")
-	)
-	(embedded_fonts no)
-	(model ":hellen-one-models:1206 resistor.STEP"
-		(offset
-			(xyz 0.050102 0.625046 0)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz -90 -0 0)
-		)
-	)
-)
+  (version 20241229)
+  (generator "pcbnew")
+  (generator_version "9.0")
+  (layer "F.Cu")
+  (tags "net tie")
+  (property "Reference" "REF**"
+    (at 1.7 1.5 180)
+    (layer "F.SilkS")
+    (uuid "ce2d3016-a2bd-48ae-b224-5879e0f39dd3")
+    (effects
+      (font
+        (size 0.82 0.82)
+        (thickness 0.17))))
+  (property "Value" "0.01"
+    (at -0.05 1.225 180)
+    (layer "F.SilkS")
+    (hide yes)
+    (uuid "72c5a465-0f2a-4f51-818a-dc0f73e2ec23")
+    (effects
+      (font
+        (size 1.27 1.27)
+        (thickness 0.15))))
+  (property "Datasheet" ""
+    (at 0 0 0)
+    (layer "F.Fab")
+    (hide yes)
+    (uuid "3563b256-fe48-45ee-b625-f066d3604f9f")
+    (effects
+      (font
+        (size 1.27 1.27)
+        (thickness 0.15))))
+  (property "Description" "Shunt resistor"
+    (at 0 0 0)
+    (layer "F.Fab")
+    (hide yes)
+    (uuid "d25e8a37-367f-4ea1-b687-d994fa6b4fd2")
+    (effects
+      (font
+        (size 1.27 1.27)
+        (thickness 0.15))))
+  (property "LCSC" "C309628"
+    (at 71.3 230.3 90)
+    (layer "F.Fab")
+    (hide yes)
+    (uuid "bd3aea33-a505-419f-963e-4bdc3eeafe70")
+    (effects
+      (font
+        (size 1 1)
+        (thickness 0.15))))
+  (zone_connect 2)
+  (attr smd)
+  (net_tie_pad_groups "1,2" "3,4")
+  (fp_poly
+    (pts
+      (xy -1.55004 -0.075)
+      (xy -0.62504 -0.075)
+      (xy -0.62504 0.075)
+      (xy -1.55004 0.075))
+    (stroke
+      (width 0)
+      (type solid))
+    (fill yes)
+    (layer "F.Cu")
+    (uuid "d2bee0b5-73ad-4bbf-af94-4ec410266442"))
+  (fp_poly
+    (pts
+      (xy 1.56998 0.075)
+      (xy 0.64498 0.075)
+      (xy 0.64498 -0.075)
+      (xy 1.56998 -0.075))
+    (stroke
+      (width 0)
+      (type solid))
+    (fill yes)
+    (layer "F.Cu")
+    (uuid "8849300c-0a8b-49e2-8153-7809d0646c05"))
+  (fp_line
+    (start -0.65 -0.8)
+    (end 0.65 -0.802928)
+    (stroke
+      (width 0.2)
+      (type solid))
+    (layer "F.SilkS")
+    (uuid "0932794d-e694-46df-bad2-06836f9d0251"))
+  (fp_line
+    (start -0.65 0.8)
+    (end 0.65 0.8)
+    (stroke
+      (width 0.2)
+      (type solid))
+    (layer "F.SilkS")
+    (uuid "584431e2-1b1c-4dd7-9714-d5ee4b5b9a0c"))
+  (pad "1" smd roundrect
+    (at -1.725 0 90)
+    (size 1.93 1.65)
+    (layers "F.Cu" "F.Mask")
+    (roundrect_rratio 0.2)
+    (zone_connect 2)
+    (uuid "8f179568-ec42-49dd-bace-7048c2d2165d"))
+  (pad "2" smd roundrect
+    (at -0.6 0 90)
+    (size 0.15 0.15)
+    (layers "F.Cu")
+    (roundrect_rratio 0.2)
+    (zone_connect 2)
+    (uuid "cc845f4f-c85d-4c74-a7f3-773273ef56c3"))
+  (pad "3" smd roundrect
+    (at 0.59998 0 270)
+    (size 0.15 0.15)
+    (layers "F.Cu")
+    (roundrect_rratio 0.2)
+    (zone_connect 2)
+    (uuid "1548440e-0e49-4a13-a92d-6ebba24b5eea"))
+  (pad "4" smd roundrect
+    (at 1.725 0 90)
+    (size 1.93 1.65)
+    (layers "F.Cu" "F.Mask")
+    (roundrect_rratio 0.2)
+    (zone_connect 2)
+    (uuid "ba566fd6-3c00-4758-b55e-90b7e219eb11"))
+  (embedded_fonts no)
+  (model ":hellen-one-models:1206 resistor.STEP"
+    (offset
+      (xyz 0.050102 0.625046 0))
+    (scale
+      (xyz 1 1 1))
+    (rotate
+      (xyz -90 -0 0))))

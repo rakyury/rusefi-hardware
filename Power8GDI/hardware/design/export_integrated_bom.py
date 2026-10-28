@@ -72,15 +72,31 @@ def export(netlist=HERE/'core.net', output_dir=HERE):
                      'Exclude_From_BOM':excluded,'Reference_MPN':candidate,
                      'MPN_Status':'EXPLICIT_FIELD_CANDIDATE' if explicit else ('REFERENCE_VALUE_CANDIDATE' if candidate else 'ORDER_CODE_NOT_SELECTED'),
                      'Procurement_Status':'OBSOLETE_REFERENCE_REPLACEMENT_REVIEW_REQUIRED' if candidate.startswith('BUK9230-100B') else 'NOT_PURCHASE_QUALIFIED',
+                     'Orderable_MPN':fields.get('MPN',''),
+                     'Manufacturer':fields.get('Manufacturer',''),
+                     'Selection_ID':fields.get('Selection_ID',''),
+                     'Selection_Status':fields.get('Procurement_Status',''),
+                     'Hardware_Qualification':fields.get('Hardware_Qualification',''),
+                     'Selection_Gaps':fields.get('Selection_Gaps',''),
+                     'Selection_Ratings':fields.get('Selection_Ratings',''),
+                     'Selection_Source_URLs':fields.get('Selection_Source_URLs',''),
+                     'Purchase_Released':False,
                      'Sheet':c.find('sheetpath').get('names'),
                      'Datasheet':c.findtext('datasheet',''),
-                     'Source_LCSC':next((fields[k] for k in ['LCSC','LCSC Part','LCSC Part #'] if fields.get(k)),''),
+                     'Source_LCSC':next((fields[k] for k in ['LCSC','LCSC Part','LCSC Part #','Source_LCSC','Source_LCSC_obsolete_BUK','Source_LCSC_previous_value'] if fields.get(k)),''),
                      'Source_Fields_JSON':json.dumps(fields,sort_keys=True),
                      'Source_Netlist_SHA256':digest})
     rows.sort(key=lambda r:(re.sub(r'\d','',r['Reference']),int(re.search(r'\d+',r['Reference'])[0])))
     with (output_dir/'integrated_bom.csv').open('w',newline='',encoding='utf8') as f:
         writer=csv.DictWriter(f,list(rows[0]),lineterminator='\n');writer.writeheader();writer.writerows(rows)
     counts=Counter(r['Reference_MPN'] for r in rows if r['Reference_MPN'] and r['Quantity_Per_Board'])
+    purchase_gates={}
+    for row in rows:
+        if not row['Quantity_Per_Board']:continue
+        gaps=json.loads(row['Selection_Gaps'] or '[]')
+        for gap in gaps:
+            if re.search(r'\b(MOQ|stock|sourcing|reel)\b',gap,re.I):
+                purchase_gates.setdefault((row['Reference_MPN'],gap),[]).append(row['Reference'])
     report={'profile':'2026-10-25-sport-gdi6','source_netlist':str(netlist.name),'source_sha256':digest,
         'physical_positions':len(rows),'fitted_positions':sum(r['Quantity_Per_Board'] for r in rows),
         'bare_pcb_features':sum(r['Assembly_Class']=='BARE_PCB_FEATURE' for r in rows),
@@ -89,11 +105,14 @@ def export(netlist=HERE/'core.net', output_dir=HERE):
         'unclassified_placement_quantity':sum(r['Quantity_Per_Board'] for r in rows if r['Assembly_Class']=='UNCLASSIFIED'),
         'dnp_positions':sum(r['DNP'] for r in rows),'excluded_from_bom':sum(r['Exclude_From_BOM'] for r in rows),
         'fitted_positions_without_order_code':sum(not r['Reference_MPN'] and bool(r['Quantity_Per_Board']) for r in rows),
+        'fitted_positions_without_selected_orderable_mpn':sum(not r['Orderable_MPN'] and bool(r['Quantity_Per_Board']) for r in rows),
+        'selected_positions_with_open_review_gaps':sum(bool(json.loads(r['Selection_Gaps'] or '[]')) and bool(r['Quantity_Per_Board']) for r in rows),
         'reference_mpn_counts':dict(sorted(counts.items())),
-        'procurement_blockers':[{'reference_mpn':'BUK9230-100B','quantity':counts['BUK9230-100B'],
-            'reason':'Obsolete reference MOSFET; no unreviewed clone or alternative selected'}],
+        'procurement_blockers':([{'reference_mpn':'BUK9230-100B','quantity':counts['BUK9230-100B'],
+            'reason':'Obsolete reference MOSFET remains'}] if counts['BUK9230-100B'] else [])+
+            [{'reference_mpn':mpn,'references':refs,'reason':reason} for (mpn,reason),refs in purchase_gates.items()],
         'status':'SCHEMATIC_DERIVED_CANDIDATE_BOM_NOT_PURCHASE_RELEASE',
-        'limitations':['Generic passives and some source inductors lack selected manufacturer order codes',
+        'limitations':['Selected order codes are catalog candidates; not every package, rating, source quantity or load is qualified',
           'Temperature grades, stock, tolerances, DC bias and thermal limits need part-specific review',
           'PT enable boundary DNP remains intentional until physical qualification',
           'PI is optional in application; shared quad ICs remain fitted in this assembly baseline']}

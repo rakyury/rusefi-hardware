@@ -77,7 +77,7 @@ def main():
       (R,'R5205','1M 1%','LP5_PG_RAW','GND',RFP,'TPS enable fallback; allows nominal4.57V high. EN input <=1uA leakage.'),
     ]
     for i in range(4):
-        passives.append((C,f'C{5208+i}','47u 25V X7R','+5V_CORE','GND',BIGC,'4 output ceramics nominal188uF. Require >=100uF effective locally including tolerance/DC bias/temperature.'))
+        passives.append((C,f'C{5208+i}','47u 16V X7R','+5V_CORE','GND',BIGC,'CS3225X7R476K160NRL candidate at5V;4 ceramics nominal188uF. >=100uF effective after tolerance/DCbias/temp remains unverified.'))
     for i,(sym,ref,val,a,b,fp,note) in enumerate(passives):
         put(s,sym,ref,val,65+(i%4)*135,265+(i//4)*27,{1:a,2:b},note,fp)
     s.text('Input range is conditional: nominal EN rise6.86V atprotected rail; cold crank below this turns rails off.',20,395)

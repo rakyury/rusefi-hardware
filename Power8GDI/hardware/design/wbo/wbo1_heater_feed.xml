@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/src/Power8GDI/hardware/design/wbo/wbo1_heater_feed.kicad_sch</source>
-    <date>2026-10-25T20:56:46+0000</date>
+    <date>2026-10-28T09:48:20+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -29,12 +29,30 @@
       <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
       <fields>
         <field name="Design note"/>
+        <field name="MPN">C0805C104K1RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-50b208aec5b1</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 100, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://www.mouser.com/datasheet/3/72/1/C0805C104K1RACTU.pdf</field>
+        <field name="Purchase_Released">false</field>
         <field name="Footprint">Capacitor_SMD:C_0805_2012Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
       <property name="Design note" value=""/>
+      <property name="MPN" value="C0805C104K1RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-50b208aec5b1"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 100, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://www.mouser.com/datasheet/3/72/1/C0805C104K1RACTU.pdf"/>
+      <property name="Purchase_Released" value="false"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -45,12 +63,30 @@
       <footprint>Capacitor_SMD:CP_Elec_8x10</footprint>
       <fields>
         <field name="Design note">Provisional bulk MPN/ripple and cold ESR pending.</field>
+        <field name="MPN">EEH-ZC1J470P</field>
+        <field name="Manufacturer">Panasonic Industry</field>
+        <field name="Selection_ID">SEL-43cb48863fb5</field>
+        <field name="Procurement_Status">SELECTED_CONDITIONAL</field>
+        <field name="Hardware_Qualification">LAND_PATTERN_AND_RIPPLE_REVIEW_REQUIRED</field>
+        <field name="Selection_Gaps">["Source footprint CP_Elec_8x10; selected part maximum seated height10.5mm and8.3mm square land envelope require clearance verification."]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "capacitance_pf": 47000000, "diameter_mm": 8, "esr_max_mohm": 40, "height_max_mm": 10.5, "land_size_mm": [8.3, 8.3], "lifetime_h_at_max_temp": 4000, "rated_voltage_v": 63, "ripple_a_100hz": 0.165, "ripple_a_100khz": 1.1, "technology": "hybrid aluminum", "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 20}</field>
+        <field name="Selection_Source_URLs">https://www.digikey.com/en/products/detail/panasonic-industry/EEH-ZC1J470P/9842041</field>
+        <field name="Purchase_Released">false</field>
         <field name="Footprint">Capacitor_SMD:CP_Elec_8x10</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
       <property name="Design note" value="Provisional bulk MPN/ripple and cold ESR pending."/>
+      <property name="MPN" value="EEH-ZC1J470P"/>
+      <property name="Manufacturer" value="Panasonic Industry"/>
+      <property name="Selection_ID" value="SEL-43cb48863fb5"/>
+      <property name="Procurement_Status" value="SELECTED_CONDITIONAL"/>
+      <property name="Hardware_Qualification" value="LAND_PATTERN_AND_RIPPLE_REVIEW_REQUIRED"/>
+      <property name="Selection_Gaps" value="[&quot;Source footprint CP_Elec_8x10; selected part maximum seated height10.5mm and8.3mm square land envelope require clearance verification.&quot;]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;capacitance_pf&quot;: 47000000, &quot;diameter_mm&quot;: 8, &quot;esr_max_mohm&quot;: 40, &quot;height_max_mm&quot;: 10.5, &quot;land_size_mm&quot;: [8.3, 8.3], &quot;lifetime_h_at_max_temp&quot;: 4000, &quot;rated_voltage_v&quot;: 63, &quot;ripple_a_100hz&quot;: 0.165, &quot;ripple_a_100khz&quot;: 1.1, &quot;technology&quot;: &quot;hybrid aluminum&quot;, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 20}"/>
+      <property name="Selection_Source_URLs" value="https://www.digikey.com/en/products/detail/panasonic-industry/EEH-ZC1J470P/9842041"/>
+      <property name="Purchase_Released" value="false"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -61,12 +97,30 @@
       <footprint>Package_TO_SOT_SMD:TO-252-2</footprint>
       <fields>
         <field name="Design note">ST DS6906 page1 package: leftlead1 NC, tab2 K, rightlead3 A. External branch fuse coordination and diode thermal validation required.</field>
+        <field name="MPN">STPS5H100BY-TR</field>
+        <field name="Manufacturer">STMicroelectronics</field>
+        <field name="Selection_ID">SEL-474c4e2ea71d</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.st.com/en/search.html#q=STPS5H100BY-TR</field>
+        <field name="Purchase_Released">false</field>
         <field name="Footprint">Package_TO_SOT_SMD:TO-252-2</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_WBO" part="WBO_STPS5H100BY" description=""/>
       <property name="Design note" value="ST DS6906 page1 package: leftlead1 NC, tab2 K, rightlead3 A. External branch fuse coordination and diode thermal validation required."/>
+      <property name="MPN" value="STPS5H100BY-TR"/>
+      <property name="Manufacturer" value="STMicroelectronics"/>
+      <property name="Selection_ID" value="SEL-474c4e2ea71d"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.st.com/en/search.html#q=STPS5H100BY-TR"/>
+      <property name="Purchase_Released" value="false"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -77,12 +131,30 @@
       <footprint>Diode_SMD:D_SMB</footprint>
       <fields>
         <field name="Design note">38.9V ratedclamp nominal &lt;40V switch minimumclamp; overshoot/pulse energy still unqualified.</field>
+        <field name="MPN">SMBJ24CA</field>
+        <field name="Manufacturer">Littelfuse</field>
+        <field name="Selection_ID">SEL-9a26101f9da7</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.littelfuse.com/products/tvs-diodes/surface-mount/smbj</field>
+        <field name="Purchase_Released">false</field>
         <field name="Footprint">Diode_SMD:D_SMB</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_WBO" part="WBO_SMBJ24CA" description=""/>
       <property name="Design note" value="38.9V ratedclamp nominal &lt;40V switch minimumclamp; overshoot/pulse energy still unqualified."/>
+      <property name="MPN" value="SMBJ24CA"/>
+      <property name="Manufacturer" value="Littelfuse"/>
+      <property name="Selection_ID" value="SEL-9a26101f9da7"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.littelfuse.com/products/tvs-diodes/surface-mount/smbj"/>
+      <property name="Purchase_Released" value="false"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="wbo1_heater_feed.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>

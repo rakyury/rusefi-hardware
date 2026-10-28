@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "profile": "sport-gdi6",
+  "channel_numbering": "one-based DI1..DI6; PT-bank assignment is independent of fuel-rail assignment",
+  "status": "STRUCTURAL_ADMISSION_CONSTRAINTS_NOT_QUALIFIED_ENGINE_TIMING",
+  "engine_permission": false,
+  "phases_owning_shared_current_path": ["boost", "pickup", "hold", "demagnetization"],
+  "release_condition": "Current path remains reserved through demagnetization and a qualified guard interval; START falling alone does not release it",
+  "qualified_demagnetization_guard_us": null,
+  "deny_when_guard_is_unqualified": true,
+  "shared_current_paths": [
+    {"resource": "PTA_DI12", "channels": [1, 2], "max_simultaneously_active": 1, "high_side_net": "PTA_H1", "sense_resistor": "R212", "pt_device": "U201", "sense_pins": [26, 25], "low_side_devices": ["Q208", "Q207"]},
+    {"resource": "PTA_DI3", "channels": [3], "max_simultaneously_active": 1, "high_side_net": "PTA_H3", "sense_resistor": "R213", "pt_device": "U201", "sense_pins": [28, 27], "low_side_devices": ["Q209"]},
+    {"resource": "PTB_DI45", "channels": [4, 5], "max_simultaneously_active": 1, "high_side_net": "PTB_H1", "sense_resistor": "R312", "pt_device": "U301", "sense_pins": [26, 25], "low_side_devices": ["Q308", "Q307"]},
+    {"resource": "PTB_DI6", "channels": [6], "max_simultaneously_active": 1, "high_side_net": "PTB_H3", "sense_resistor": "R313", "pt_device": "U301", "sense_pins": [28, 27], "low_side_devices": ["Q309"]}
+  ],
+  "boost_supplies": [
+    {"resource": "PTA_VBOOST", "channels": [1, 2, 3], "max_simultaneous_boost_phases": 1},
+    {"resource": "PTB_VBOOST", "channels": [4, 5, 6], "max_simultaneous_boost_phases": 1}
+  ],
+  "boost_concurrency_basis": "Conservative admission policy until shared-converter peak/recharge/thermal capability is qualified; not an experimentally determined maximum",
+  "pump_paths": [
+    {"pump": "HPFP1", "pt_device": "U201", "start_pin": 9, "high_side_net": "PTA_H5PUMP", "low_side_net": "PTA_L6PUMP", "sense_resistor": "R215", "sense_pins": [30, 29]},
+    {"pump": "HPFP2", "pt_device": "U301", "start_pin": 9, "high_side_net": "PTB_H5PUMP", "low_side_net": "PTB_L6PUMP", "sense_resistor": "R315", "sense_pins": [30, 29]}
+  ],
+  "other_overlap_limitations": [
+    "Separate current paths permit independent control structurally; they do not establish shared supply or thermal capacity",
+    "HPFP current paths are distinct but HPFP/DI simultaneous power and microcode execution still require qualification",
+    "A fully serialized schedule may reject a requested injection; never silently move it outside the approved injection window",
+    "No exact B58B30 Gen2 boost duration, inductance, demagnetization timing or OEM current calibration is inferred from family data"
+  ]
+}

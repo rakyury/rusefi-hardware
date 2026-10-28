@@ -1,280 +1,4185 @@
-(kicad_sch (version 20250114) (generator "eeschema") (uuid "20465974-d3b0-5bf0-9403-bb1282024aae") (paper "A2") (title_block (title "Two-input TPIC8101 and 3.3/5 V serial interface") (rev "Engineering draft 0.1") (comment 1 "UNQUALIFIED: no manufacturing or engine approval"))
-(lib_symbols
-(symbol "Power8GDI_Aux:TPIC8101DWR" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-(property "Reference" "U" (at 0 17.78 0) (effects (font (size 1.27 1.27))))
-(property "Value" "TPIC8101DWR" (at 0 -17.78 0) (effects (font (size 1.27 1.27))))
-(property "Footprint" "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
-(symbol "TPIC8101DWR_0_1" (rectangle (start -15.24 15.24) (end 15.24 -15.24) (stroke (width 0.254) (type default)) (fill (type background))))
-(symbol "TPIC8101DWR_1_1"
-(pin power_in line (at -17.78 12.7 0) (length 2.54) (name "VDD" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
-(pin power_out line (at -17.78 10.16 0) (length 2.54) (name "Vref" (effects (font (size 1.016 1.016)))) (number "3" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 7.62 0) (length 2.54) (name "CH1P" (effects (font (size 1.016 1.016)))) (number "20" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 5.08 0) (length 2.54) (name "CH1N" (effects (font (size 1.016 1.016)))) (number "19" (effects (font (size 1.016 1.016)))))
-(pin output line (at -17.78 2.54 0) (length 2.54) (name "CH1FB" (effects (font (size 1.016 1.016)))) (number "18" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 0 0) (length 2.54) (name "CH2P" (effects (font (size 1.016 1.016)))) (number "15" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 -2.54 0) (length 2.54) (name "CH2N" (effects (font (size 1.016 1.016)))) (number "16" (effects (font (size 1.016 1.016)))))
-(pin output line (at -17.78 -5.08 0) (length 2.54) (name "CH2FB" (effects (font (size 1.016 1.016)))) (number "17" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 -7.62 0) (length 2.54) (name "XIN" (effects (font (size 1.016 1.016)))) (number "9" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at 17.78 12.7 180) (length 2.54) (name "GND" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
-(pin output line (at 17.78 10.16 180) (length 2.54) (name "OUT" (effects (font (size 1.016 1.016)))) (number "4" (effects (font (size 1.016 1.016)))))
-(pin no_connect line (at 17.78 7.62 180) (length 2.54) (name "NC" (effects (font (size 1.016 1.016)))) (number "5" (effects (font (size 1.016 1.016)))))
-(pin no_connect line (at 17.78 5.08 180) (length 2.54) (name "NC" (effects (font (size 1.016 1.016)))) (number "6" (effects (font (size 1.016 1.016)))))
-(pin input line (at 17.78 2.54 180) (length 2.54) (name "INT/HOLD" (effects (font (size 1.016 1.016)))) (number "7" (effects (font (size 1.016 1.016)))))
-(pin input line (at 17.78 0 180) (length 2.54) (name "~{CS}" (effects (font (size 1.016 1.016)))) (number "8" (effects (font (size 1.016 1.016)))))
-(pin output line (at 17.78 -2.54 180) (length 2.54) (name "XOUT" (effects (font (size 1.016 1.016)))) (number "10" (effects (font (size 1.016 1.016)))))
-(pin tri_state line (at 17.78 -5.08 180) (length 2.54) (name "SDO" (effects (font (size 1.016 1.016)))) (number "11" (effects (font (size 1.016 1.016)))))
-(pin input line (at 17.78 -7.62 180) (length 2.54) (name "SDI" (effects (font (size 1.016 1.016)))) (number "12" (effects (font (size 1.016 1.016)))))
-(pin input line (at 17.78 -10.16 180) (length 2.54) (name "SCLK" (effects (font (size 1.016 1.016)))) (number "13" (effects (font (size 1.016 1.016)))))
-(pin input line (at 17.78 -12.7 180) (length 2.54) (name "~{TEST}" (effects (font (size 1.016 1.016)))) (number "14" (effects (font (size 1.016 1.016)))))
-))
-(symbol "Power8GDI_Aux:SN74AHCT244QPWRQ1" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-(property "Reference" "U" (at 0 17.78 0) (effects (font (size 1.27 1.27))))
-(property "Value" "SN74AHCT244QPWRQ1" (at 0 -17.78 0) (effects (font (size 1.27 1.27))))
-(property "Footprint" "Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
-(symbol "SN74AHCT244QPWRQ1_0_1" (rectangle (start -15.24 15.24) (end 15.24 -15.24) (stroke (width 0.254) (type default)) (fill (type background))))
-(symbol "SN74AHCT244QPWRQ1_1_1"
-(pin power_in line (at -17.78 12.7 0) (length 2.54) (name "VCC" (effects (font (size 1.016 1.016)))) (number "20" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 10.16 0) (length 2.54) (name "~{1OE}" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 7.62 0) (length 2.54) (name "~{2OE}" (effects (font (size 1.016 1.016)))) (number "19" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 5.08 0) (length 2.54) (name "A1" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 2.54 0) (length 2.54) (name "A2" (effects (font (size 1.016 1.016)))) (number "4" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 0 0) (length 2.54) (name "A3" (effects (font (size 1.016 1.016)))) (number "6" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 -2.54 0) (length 2.54) (name "A4" (effects (font (size 1.016 1.016)))) (number "8" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 -5.08 0) (length 2.54) (name "A5" (effects (font (size 1.016 1.016)))) (number "11" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 -7.62 0) (length 2.54) (name "A6" (effects (font (size 1.016 1.016)))) (number "13" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 -10.16 0) (length 2.54) (name "A7" (effects (font (size 1.016 1.016)))) (number "15" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 -12.7 0) (length 2.54) (name "A8" (effects (font (size 1.016 1.016)))) (number "17" (effects (font (size 1.016 1.016)))))
-(pin tri_state line (at 17.78 12.7 180) (length 2.54) (name "Y1" (effects (font (size 1.016 1.016)))) (number "18" (effects (font (size 1.016 1.016)))))
-(pin tri_state line (at 17.78 10.16 180) (length 2.54) (name "Y2" (effects (font (size 1.016 1.016)))) (number "16" (effects (font (size 1.016 1.016)))))
-(pin tri_state line (at 17.78 7.62 180) (length 2.54) (name "Y3" (effects (font (size 1.016 1.016)))) (number "14" (effects (font (size 1.016 1.016)))))
-(pin tri_state line (at 17.78 5.08 180) (length 2.54) (name "Y4" (effects (font (size 1.016 1.016)))) (number "12" (effects (font (size 1.016 1.016)))))
-(pin tri_state line (at 17.78 2.54 180) (length 2.54) (name "Y5" (effects (font (size 1.016 1.016)))) (number "9" (effects (font (size 1.016 1.016)))))
-(pin tri_state line (at 17.78 0 180) (length 2.54) (name "Y6" (effects (font (size 1.016 1.016)))) (number "7" (effects (font (size 1.016 1.016)))))
-(pin tri_state line (at 17.78 -2.54 180) (length 2.54) (name "Y7" (effects (font (size 1.016 1.016)))) (number "5" (effects (font (size 1.016 1.016)))))
-(pin tri_state line (at 17.78 -5.08 180) (length 2.54) (name "Y8" (effects (font (size 1.016 1.016)))) (number "3" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at 17.78 -7.62 180) (length 2.54) (name "GND" (effects (font (size 1.016 1.016)))) (number "10" (effects (font (size 1.016 1.016)))))
-))
-(symbol "Power8GDI_Aux:CLVC1G125QDBVRQ1" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-(property "Reference" "U" (at 0 7.62 0) (effects (font (size 1.27 1.27))))
-(property "Value" "CLVC1G125QDBVRQ1" (at 0 -7.62 0) (effects (font (size 1.27 1.27))))
-(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
-(symbol "CLVC1G125QDBVRQ1_0_1" (rectangle (start -15.24 5.08) (end 15.24 -5.08) (stroke (width 0.254) (type default)) (fill (type background))))
-(symbol "CLVC1G125QDBVRQ1_1_1"
-(pin power_in line (at -17.78 2.54 0) (length 2.54) (name "VCC" (effects (font (size 1.016 1.016)))) (number "5" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 0 0) (length 2.54) (name "~{OE}" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
-(pin input line (at -17.78 -2.54 0) (length 2.54) (name "A" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
-(pin tri_state line (at 17.78 2.54 180) (length 2.54) (name "Y" (effects (font (size 1.016 1.016)))) (number "4" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at 17.78 0 180) (length 2.54) (name "GND" (effects (font (size 1.016 1.016)))) (number "3" (effects (font (size 1.016 1.016)))))
-))
-(symbol "Power8GDI_Aux:ASEM1_8MHz" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-(property "Reference" "Y" (at 0 6.35 0) (effects (font (size 1.27 1.27))))
-(property "Value" "ASEM1_8MHz" (at 0 -6.35 0) (effects (font (size 1.27 1.27))))
-(property "Footprint" "Power8GDI_Core:ASEM_3225" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
-(symbol "ASEM1_8MHz_0_1" (rectangle (start -15.24 3.81) (end 15.24 -3.81) (stroke (width 0.254) (type default)) (fill (type background))))
-(symbol "ASEM1_8MHz_1_1"
-(pin input line (at -17.78 1.27 0) (length 2.54) (name "EN" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at -17.78 -1.27 0) (length 2.54) (name "VDD" (effects (font (size 1.016 1.016)))) (number "4" (effects (font (size 1.016 1.016)))))
-(pin output line (at 17.78 1.27 180) (length 2.54) (name "OUT" (effects (font (size 1.016 1.016)))) (number "3" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at 17.78 -1.27 180) (length 2.54) (name "GND" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
-))
-(symbol "Power8GDI_Aux:C" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-(property "Reference" "C" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
-(property "Value" "C" (at 0 -3.81 0) (effects (font (size 1.27 1.27))))
-(property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
-(symbol "C_0_1" (polyline (pts (xy -1.27 2.54) (xy -1.27 -2.54)) (stroke (width 0.254) (type default)) (fill (type none))) (polyline (pts (xy 1.27 2.54) (xy 1.27 -2.54)) (stroke (width 0.254) (type default)) (fill (type none))))
-(symbol "C_1_1"
-(pin passive line (at -5.08 0 0) (length 3.81) (name "1" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
-(pin passive line (at 5.08 0 180) (length 3.81) (name "2" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
-))
-(symbol "Power8GDI_Aux:R" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-(property "Reference" "R" (at 0 3.81 0) (effects (font (size 1.27 1.27))))
-(property "Value" "R" (at 0 -3.81 0) (effects (font (size 1.27 1.27))))
-(property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
-(symbol "R_0_1" (rectangle (start -2.54 1.27) (end 2.54 -1.27) (stroke (width 0.254) (type default)) (fill (type background))))
-(symbol "R_1_1"
-(pin passive line (at -5.08 0 0) (length 2.54) (name "1" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
-(pin passive line (at 5.08 0 180) (length 2.54) (name "2" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
-))
-)
-(text "ENGINEERING CANDIDATE — NOT MANUFACTURING OR ENGINE APPROVED" (at 20 15 0) (effects (font (size 2 2)) (justify left top)) (uuid "fdcaca59-bbb4-5b0e-8153-54e4adc850b5"))
-(text "SPI digital readout: multiplexed dual sensors, not simultaneous acquisition. MCU ADC pins are not used.\nOwn 8 MHz oscillator; no added load on MCU oscillator. Sensor gain/window/filter/calibration remain unqualified." (at 20 24 0) (effects (font (size 1.27 1.27)) (justify left top)) (uuid "72bbe55b-1cc0-5f7c-8a26-9df979328e5f"))
-(symbol (lib_id "Power8GDI_Aux:TPIC8101DWR") (at 80.01 90.17 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "c95a9660-c54d-5f30-b718-7f861bda53c2") (property "Reference" "U1701" (at 80.01 72.39 0) (effects (font (size 1.27 1.27)))) (property "Value" "TPIC8101DWR" (at 80.01 107.95 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm" (at 80.01 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "TI SLIS110C p3 exact pins; TEST open per datasheet, NC5/6 no traces; OUT unused digital-readout mode" (at 80.01 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "c36c4689-760d-593b-be84-0b932d597258")) (pin "3" (uuid "6b5638d3-9377-5ac4-a6cd-49707498b787")) (pin "20" (uuid "588ced22-b7a1-5d02-993a-ddf2916ed545")) (pin "19" (uuid "589459c9-ee1b-5a8f-b1cd-8bab235bb831")) (pin "18" (uuid "fc054ed3-a0d1-5e0c-8bfe-17f8d01c9889")) (pin "15" (uuid "19ca09a5-ae0c-516d-8079-0b14f4f63864")) (pin "16" (uuid "3c485483-aa76-5c99-b79d-77beb2fecb05")) (pin "17" (uuid "fccb0c7b-4216-5635-bd81-2f96f9ba61eb")) (pin "9" (uuid "bc4bd5a3-94d5-5853-807d-3eeeb63194e3")) (pin "2" (uuid "731359ed-8c65-5055-8666-c53b3075b033")) (pin "4" (uuid "c3368b87-9291-5f23-8513-9b61e69fbf16")) (pin "5" (uuid "47ae0611-3046-51a2-838f-3a380d85f515")) (pin "6" (uuid "71333c30-315a-56d8-bb33-94a21f5cb00c")) (pin "7" (uuid "91ce0ed4-8f37-5e9e-9b18-c7e5209003fc")) (pin "8" (uuid "fc115d74-4b9b-5a77-b168-51e8d3d4fec2")) (pin "10" (uuid "3c9fabb0-6c71-50cf-a3bd-2fc01ac2568c")) (pin "11" (uuid "bc216b70-dcc4-5360-b80b-57f3256e1c5b")) (pin "12" (uuid "95fa4e68-2ac4-50e4-ac8b-c5afbcc25d03")) (pin "13" (uuid "03979e04-e50b-5c9a-ba0a-b31ffc456c85")) (pin "14" (uuid "53f471e7-2d7c-5165-bb54-acf76fc4413f")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "U1701") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "U1701") (unit 1)))))
-(wire (pts (xy 62.23 77.47) (xy 54.61 77.47)) (stroke (width 0) (type default)) (uuid "e8e17e41-50f8-588a-8f00-94d419b073b7"))
-(global_label "+5V_CORE" (shape bidirectional) (at 54.61 77.47 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "7e7c8042-b34a-5d72-923f-7edb5b415ca7"))
-(wire (pts (xy 62.23 80.01) (xy 54.61 80.01)) (stroke (width 0) (type default)) (uuid "5a7d021e-303c-5ff0-97c3-cacc6d8200d9"))
-(global_label "KNOCK_VREF" (shape bidirectional) (at 54.61 80.01 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "0f96245e-9e07-5828-b92c-926968b9fb0f"))
-(wire (pts (xy 62.23 82.55) (xy 54.61 82.55)) (stroke (width 0) (type default)) (uuid "9d760f3b-fb75-540e-a9ba-7982b08f9844"))
-(global_label "KNOCK_VREF" (shape bidirectional) (at 54.61 82.55 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "afa7162a-d77f-58be-a4d4-dc950f59578e"))
-(wire (pts (xy 62.23 85.09) (xy 54.61 85.09)) (stroke (width 0) (type default)) (uuid "3f6f07a6-e45e-5710-bb4c-197766c96d22"))
-(global_label "KNOCK1_INV" (shape bidirectional) (at 54.61 85.09 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "de0db9f6-ac94-5357-87f5-942f2bc142f9"))
-(wire (pts (xy 62.23 87.63) (xy 54.61 87.63)) (stroke (width 0) (type default)) (uuid "67f29a27-d8db-5efc-94d8-e864b5768bac"))
-(global_label "KNOCK1_FB" (shape bidirectional) (at 54.61 87.63 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "3a59028e-1aa6-5a7f-84c5-7cb708ea074f"))
-(wire (pts (xy 62.23 90.17) (xy 54.61 90.17)) (stroke (width 0) (type default)) (uuid "09876428-1505-584a-9110-31fae64a005e"))
-(global_label "KNOCK_VREF" (shape bidirectional) (at 54.61 90.17 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "7a1f1ddb-2098-5228-afc5-0429fef020e2"))
-(wire (pts (xy 62.23 92.71) (xy 54.61 92.71)) (stroke (width 0) (type default)) (uuid "8480edab-0b84-566c-8f8c-051b99cc5b84"))
-(global_label "KNOCK2_INV" (shape bidirectional) (at 54.61 92.71 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "c124acc8-032b-5c15-8822-a996276bbe4e"))
-(wire (pts (xy 62.23 95.25) (xy 54.61 95.25)) (stroke (width 0) (type default)) (uuid "f014549f-af91-5054-9c20-733aa495df65"))
-(global_label "KNOCK2_FB" (shape bidirectional) (at 54.61 95.25 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "461888e3-713d-5a25-8f51-e75c1e1402a0"))
-(wire (pts (xy 62.23 97.79) (xy 54.61 97.79)) (stroke (width 0) (type default)) (uuid "3fd01f20-7460-5907-b062-a87d0f9795e3"))
-(global_label "KNOCK_CLK_5V" (shape bidirectional) (at 54.61 97.79 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "d74c724c-ce25-5f24-9d44-22f75e4188d1"))
-(wire (pts (xy 97.79 77.47) (xy 105.41 77.47)) (stroke (width 0) (type default)) (uuid "7620a473-7631-5772-8b15-4cde23c1be74"))
-(global_label "GND" (shape bidirectional) (at 105.41 77.47 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "3a841b23-7f76-579d-ac4c-91cc7a61dc2d"))
-(no_connect (at 97.79 80.01) (uuid "9855f766-56c4-58b8-98b5-38724dd5d00c"))
-(no_connect (at 97.79 82.55) (uuid "0180a533-9cca-5ca7-983d-aa5e77a160b3"))
-(no_connect (at 97.79 85.09) (uuid "9bc38980-2698-5926-b8b6-8e10fb42b4f5"))
-(wire (pts (xy 97.79 87.63) (xy 105.41 87.63)) (stroke (width 0) (type default)) (uuid "c9739b83-4a3b-50ed-9a23-9e3555f41e49"))
-(global_label "KNOCK_INT_HOLD_5V" (shape bidirectional) (at 105.41 87.63 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "17106933-a7ae-53d8-8c07-7eb32355dba6"))
-(wire (pts (xy 97.79 90.17) (xy 105.41 90.17)) (stroke (width 0) (type default)) (uuid "a79f9aa8-1c55-5a50-b1f4-1547bc4bcd86"))
-(global_label "KNOCK_CS_N_5V" (shape bidirectional) (at 105.41 90.17 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "1d1d0a90-e773-51d8-9d60-b7b4667ffbdc"))
-(no_connect (at 97.79 92.71) (uuid "d882e529-ee4d-54cb-a167-2be436283e04"))
-(wire (pts (xy 97.79 95.25) (xy 105.41 95.25)) (stroke (width 0) (type default)) (uuid "3526326c-b7ca-571e-9311-fdf15be80755"))
-(global_label "KNOCK_SDO_5V" (shape bidirectional) (at 105.41 95.25 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "e49f21f6-3f0a-5ca0-9e31-1e980ad8a4e1"))
-(wire (pts (xy 97.79 97.79) (xy 105.41 97.79)) (stroke (width 0) (type default)) (uuid "0329ca8f-8315-58d2-860b-e78eaa6d99a6"))
-(global_label "AUX_SPI_MOSI_5V" (shape bidirectional) (at 105.41 97.79 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "8bf238bb-ad03-572b-b9f9-e5de6356526c"))
-(wire (pts (xy 97.79 100.33) (xy 105.41 100.33)) (stroke (width 0) (type default)) (uuid "dbcac700-9f37-57a3-ad47-72bc9f47166b"))
-(global_label "AUX_SPI_SCK_5V" (shape bidirectional) (at 105.41 100.33 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "cda45d11-aa8d-5d95-81bb-9457ccf23e4c"))
-(no_connect (at 97.79 102.87) (uuid "60ed1939-c17a-510b-9831-6599e191ddfb"))
-(symbol (lib_id "Power8GDI_Aux:SN74AHCT244QPWRQ1") (at 234.95 90.17 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "aacfa0b0-12dd-59fe-9f32-04c07699d9ae") (property "Reference" "U1702" (at 234.95 72.39 0) (effects (font (size 1.27 1.27)))) (property "Value" "SN74AHCT244QPWRQ1" (at 234.95 107.95 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm" (at 234.95 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "TTL VIH2V recognizes3.3V; five knock/SPI outputs used, unused inputs tied low. WBO now uses independent CAN nodes" (at 234.95 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "20" (uuid "01ef62b1-b08d-53ce-bed9-17b666beda78")) (pin "1" (uuid "445c5c48-c0d0-59a3-9194-429bd27ac741")) (pin "19" (uuid "d5a99e41-e693-58c0-92d5-f1ab8d477341")) (pin "2" (uuid "a030b877-e0a2-5afb-932a-29685fc7b323")) (pin "4" (uuid "ce55f1cb-62a6-5826-a6fe-82e3fa0d2b70")) (pin "6" (uuid "7277d43c-e542-5b0c-97e6-eff8934d2e6e")) (pin "8" (uuid "6149e810-d26a-5433-9804-b8cf5ef47be3")) (pin "11" (uuid "e736b5ba-2348-5afe-ba4a-48bd08b1ce80")) (pin "13" (uuid "9ee36f94-b59d-5c66-bfac-680baa866097")) (pin "15" (uuid "32948f23-65ee-51e8-a608-76575b06bac2")) (pin "17" (uuid "5bc5c2ca-70c0-5bdf-905b-8f96dd10b9a0")) (pin "18" (uuid "5b98daa2-81d2-5b08-8ad7-803db913ae7b")) (pin "16" (uuid "64e2e7b8-af74-5e2d-80aa-fb2bb393d1ac")) (pin "14" (uuid "9ed8af25-c27a-5335-b809-3b80a122c4d2")) (pin "12" (uuid "a7903269-b41f-5788-9779-dde339298ea6")) (pin "9" (uuid "15ba3828-d200-5879-a60f-221a091f5cbf")) (pin "7" (uuid "0cfb534d-041c-549f-b3f1-02e284e4ec1c")) (pin "5" (uuid "31332d56-e0d8-51c3-a675-89993c017a15")) (pin "3" (uuid "b66286e6-a4f2-5cad-88b4-48babc38e8ef")) (pin "10" (uuid "6802e869-da2b-5926-a505-9d0bb0e2fd94")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "U1702") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "U1702") (unit 1)))))
-(wire (pts (xy 217.17 77.47) (xy 209.55 77.47)) (stroke (width 0) (type default)) (uuid "a16cab3c-8b80-549b-bed7-0182415218ed"))
-(global_label "+5V_CORE" (shape bidirectional) (at 209.55 77.47 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "cee1d872-baaf-526a-94ec-4f2c565c27aa"))
-(wire (pts (xy 217.17 80.01) (xy 209.55 80.01)) (stroke (width 0) (type default)) (uuid "3761e607-66e0-5584-b4e4-816bdcd8b64e"))
-(global_label "GND" (shape bidirectional) (at 209.55 80.01 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "1c4a6639-a670-53a9-84e0-f9984b01a749"))
-(wire (pts (xy 217.17 82.55) (xy 209.55 82.55)) (stroke (width 0) (type default)) (uuid "73e88c57-2330-5269-aa61-3f89eb750863"))
-(global_label "GND" (shape bidirectional) (at 209.55 82.55 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "30f3ddbd-7c5a-5a9a-9bed-b04178dc29ba"))
-(wire (pts (xy 217.17 85.09) (xy 209.55 85.09)) (stroke (width 0) (type default)) (uuid "157c7310-c2b0-5c5a-af3a-c946e4680a50"))
-(global_label "GDI_SPI2_MOSI" (shape bidirectional) (at 209.55 85.09 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "70e87a1c-2c73-5856-887f-61db49e3c66a"))
-(wire (pts (xy 217.17 87.63) (xy 209.55 87.63)) (stroke (width 0) (type default)) (uuid "32e78a85-93fd-5466-be51-76f30e750be2"))
-(global_label "GDI_SPI2_SCK" (shape bidirectional) (at 209.55 87.63 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "65d5603b-91ef-5881-b469-6c482a108cb9"))
-(wire (pts (xy 217.17 90.17) (xy 209.55 90.17)) (stroke (width 0) (type default)) (uuid "d8837781-1ed2-5058-94c9-499509cf6997"))
-(global_label "KNOCK_CS_N" (shape bidirectional) (at 209.55 90.17 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "aeac29c9-060c-57cc-b9a1-d1d997dba3b6"))
-(wire (pts (xy 217.17 92.71) (xy 209.55 92.71)) (stroke (width 0) (type default)) (uuid "cf86eb94-831a-5ce7-9a0c-3000a1fe9b02"))
-(global_label "KNOCK_INT_HOLD" (shape bidirectional) (at 209.55 92.71 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "8c3beadb-4df3-56b6-968a-0a99765dc9b3"))
-(wire (pts (xy 217.17 95.25) (xy 209.55 95.25)) (stroke (width 0) (type default)) (uuid "64dc588c-8e56-5414-93a4-10855dba4ec2"))
-(global_label "KNOCK_OSC_3V3" (shape bidirectional) (at 209.55 95.25 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "3bc9d206-8248-5a24-b8cb-18cb422fd078"))
-(wire (pts (xy 217.17 97.79) (xy 209.55 97.79)) (stroke (width 0) (type default)) (uuid "8c842c10-0eee-50e4-8555-d806b242f11e"))
-(global_label "GND" (shape bidirectional) (at 209.55 97.79 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "35ad5fe4-da70-55df-8e12-1abc013712b8"))
-(wire (pts (xy 217.17 100.33) (xy 209.55 100.33)) (stroke (width 0) (type default)) (uuid "763b429c-2385-546d-bbb2-52d45b6cdc83"))
-(global_label "GND" (shape bidirectional) (at 209.55 100.33 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "2388534e-c01c-5878-8ad0-a6ca38fbe6a9"))
-(wire (pts (xy 217.17 102.87) (xy 209.55 102.87)) (stroke (width 0) (type default)) (uuid "5aa25a66-0857-51a9-add5-dce3767a6fcb"))
-(global_label "GND" (shape bidirectional) (at 209.55 102.87 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "afc5e704-c382-5584-a21a-d05cbe6c3633"))
-(wire (pts (xy 252.73 77.47) (xy 260.35 77.47)) (stroke (width 0) (type default)) (uuid "2825381b-9875-57f7-8a66-88259e798c8c"))
-(global_label "AUX_SPI_MOSI_5V" (shape bidirectional) (at 260.35 77.47 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "7a770fc2-95fe-51fe-8ece-53a9aec0f66a"))
-(wire (pts (xy 252.73 80.01) (xy 260.35 80.01)) (stroke (width 0) (type default)) (uuid "19723d7b-0acc-5fa8-a9a5-8078469e8b10"))
-(global_label "AUX_SPI_SCK_5V" (shape bidirectional) (at 260.35 80.01 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "53be723a-27d3-5802-bf9a-2df856f60591"))
-(wire (pts (xy 252.73 82.55) (xy 260.35 82.55)) (stroke (width 0) (type default)) (uuid "93ae3cd2-cc36-5fba-b76a-9c33b68a72bc"))
-(global_label "KNOCK_CS_N_5V" (shape bidirectional) (at 260.35 82.55 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "27f4471b-a78f-50ea-9378-322ed01cfa0b"))
-(wire (pts (xy 252.73 85.09) (xy 260.35 85.09)) (stroke (width 0) (type default)) (uuid "d0a035cb-8f7f-5f73-94f6-a9ab40f4074e"))
-(global_label "KNOCK_INT_HOLD_5V" (shape bidirectional) (at 260.35 85.09 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "4f9475a5-4fa9-55f3-9669-2f04bb160a03"))
-(wire (pts (xy 252.73 87.63) (xy 260.35 87.63)) (stroke (width 0) (type default)) (uuid "997b5f79-23d3-5cdc-80ba-a568237b77a5"))
-(global_label "KNOCK_CLK_5V" (shape bidirectional) (at 260.35 87.63 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "e51f4d8a-317b-51d7-baff-f600e7479826"))
-(no_connect (at 252.73 90.17) (uuid "251fce69-9dac-547c-86b1-c0acc1e1c23f"))
-(no_connect (at 252.73 92.71) (uuid "1c412db2-d01d-5248-8dbd-4abb8234344e"))
-(no_connect (at 252.73 95.25) (uuid "963eb324-6844-5398-ad12-7bfd5980df1e"))
-(wire (pts (xy 252.73 97.79) (xy 260.35 97.79)) (stroke (width 0) (type default)) (uuid "a6c158cc-506f-50f5-9791-fa38d8ade683"))
-(global_label "GND" (shape bidirectional) (at 260.35 97.79 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "408e45e5-0a5f-5abc-8eba-c4a881fcf866"))
-(symbol (lib_id "Power8GDI_Aux:CLVC1G125QDBVRQ1") (at 389.89 90.17 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "d1407435-0d1b-5e9e-ba58-4081e908c9b9") (property "Reference" "U1703" (at 389.89 82.55 0) (effects (font (size 1.27 1.27)))) (property "Value" "CLVC1G125QDBVRQ1" (at 389.89 97.79 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "Package_TO_SOT_SMD:SOT-23-5" (at 389.89 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "CS disables return buffer; input5.5V tolerant; shared MISO arbitration required" (at 389.89 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "5" (uuid "28d3b796-335d-5496-8a87-c925dce3923f")) (pin "1" (uuid "bbd885a7-3670-5436-852e-5732cb8d0d61")) (pin "2" (uuid "49a7ee3e-d39e-5cde-a109-9feb24c7c6ef")) (pin "4" (uuid "121b5e42-c9d1-5449-8626-4252d6dfc849")) (pin "3" (uuid "af4d699d-bdad-5aba-b0f5-b2f52c1e1c48")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "U1703") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "U1703") (unit 1)))))
-(wire (pts (xy 372.11 87.63) (xy 364.49 87.63)) (stroke (width 0) (type default)) (uuid "978d3ab3-eee9-5486-ae73-6db6f12c814a"))
-(global_label "+3V3" (shape bidirectional) (at 364.49 87.63 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "f434a12e-b671-58da-8c3c-91f01fc2c5d7"))
-(wire (pts (xy 372.11 90.17) (xy 364.49 90.17)) (stroke (width 0) (type default)) (uuid "6f940523-abe7-5b60-82ac-99c01a7a0cdd"))
-(global_label "KNOCK_CS_N" (shape bidirectional) (at 364.49 90.17 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "cc9cd86c-3852-5416-9df4-8b66c345d19a"))
-(wire (pts (xy 372.11 92.71) (xy 364.49 92.71)) (stroke (width 0) (type default)) (uuid "4e381de4-3035-5393-beb2-67bea5fd4d43"))
-(global_label "KNOCK_SDO_5V" (shape bidirectional) (at 364.49 92.71 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "7eb59ead-def9-59d7-bb85-ba6105ce065d"))
-(wire (pts (xy 407.67 87.63) (xy 415.29 87.63)) (stroke (width 0) (type default)) (uuid "79ac0768-210e-5ca1-8735-147657040ac9"))
-(global_label "GDI_SPI2_MISO" (shape bidirectional) (at 415.29 87.63 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "67b99fbc-b6a0-5504-8494-07e6e6843f8a"))
-(wire (pts (xy 407.67 90.17) (xy 415.29 90.17)) (stroke (width 0) (type default)) (uuid "4cdf51e6-9a77-5e7b-bfcf-286af3d6e982"))
-(global_label "GND" (shape bidirectional) (at 415.29 90.17 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "4bb62a26-04a5-5ea9-ab68-154359954b9a"))
-(symbol (lib_id "Power8GDI_Aux:ASEM1_8MHz") (at 389.89 144.78 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "f49eb4fa-3535-5c5f-ab0a-11a4ab20d69d") (property "Reference" "Y1701" (at 393.89 143.51 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "ASEM1-8.000MHZ-LC-T" (at 393.89 146.05 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Power8GDI_Core:ASEM_3225" (at 389.89 144.78 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "Own oscillator; manufacturer15pF load ceiling; temp−40..85C is a release constraint" (at 389.89 144.78 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "c950ba49-0c1b-57e9-a4ef-39a95d05e210")) (pin "4" (uuid "356e6a62-3055-544b-84b5-8671e48ef145")) (pin "3" (uuid "77f8b344-2f86-5d73-970d-c2801764dafc")) (pin "2" (uuid "c73e205b-521c-5f77-8160-4d7645c2a0df")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "Y1701") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "Y1701") (unit 1)))))
-(wire (pts (xy 372.11 143.51) (xy 364.49 143.51)) (stroke (width 0) (type default)) (uuid "3c3839a1-81f0-5037-a838-fbe4262d25ca"))
-(global_label "+3V3" (shape bidirectional) (at 364.49 143.51 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "4330212d-c45a-5729-9f1e-8008649bd0ad"))
-(wire (pts (xy 372.11 146.05) (xy 364.49 146.05)) (stroke (width 0) (type default)) (uuid "efd9281d-7553-5eb0-917a-e5be9ff882a2"))
-(global_label "+3V3" (shape bidirectional) (at 364.49 146.05 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "e91a4b9e-b73e-573f-aaf5-b7094118fd1c"))
-(wire (pts (xy 407.67 143.51) (xy 415.29 143.51)) (stroke (width 0) (type default)) (uuid "6d12d690-95c0-5e03-841c-f90366efe86d"))
-(global_label "KNOCK_OSC_3V3" (shape bidirectional) (at 415.29 143.51 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "1e78d97e-fdec-514d-a645-d958d1f06dc9"))
-(wire (pts (xy 407.67 146.05) (xy 415.29 146.05)) (stroke (width 0) (type default)) (uuid "f0b91710-de02-511a-af6a-ae71e67bd1c1"))
-(global_label "GND" (shape bidirectional) (at 415.29 146.05 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "935a0380-c796-51d6-8de5-70b66a54fca7"))
-(symbol (lib_id "Power8GDI_Aux:C") (at 69.85 204.47 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "828a0198-37e8-539c-b5e4-98beedadac65") (property "Reference" "C1701" (at 73.85 203.2 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "4.7uF 16V X7R" (at 73.85 205.74 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 69.85 204.47 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 69.85 204.47 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "a89caca8-a7f7-5402-8b9c-f01c50761583")) (pin "2" (uuid "b25bdb1c-42fa-5e58-9256-97523a872bb6")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "C1701") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "C1701") (unit 1)))))
-(wire (pts (xy 64.77 204.47) (xy 57.15 204.47)) (stroke (width 0) (type default)) (uuid "19800c57-4daa-58ca-ab32-8002225373f6"))
-(global_label "+5V_CORE" (shape bidirectional) (at 57.15 204.47 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "a06722be-d496-5714-85e2-9e0c74c01700"))
-(wire (pts (xy 74.93 204.47) (xy 82.55 204.47)) (stroke (width 0) (type default)) (uuid "e1a58dc4-9e3e-5b0c-b113-3ac6176450a9"))
-(global_label "GND" (shape bidirectional) (at 82.55 204.47 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "fcea6b68-116a-5782-9286-2458be0edb6b"))
-(symbol (lib_id "Power8GDI_Aux:C") (at 204.47 204.47 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "a8085023-a3a7-5936-a75a-8ea60f3d2a7b") (property "Reference" "C1702" (at 208.47 203.2 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100nF 25V X7R" (at 208.47 205.74 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 204.47 204.47 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 204.47 204.47 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "eca773f7-fa14-516c-974c-5889c5d01409")) (pin "2" (uuid "32584314-3ac2-5216-9f20-1bd65f2a59d1")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "C1702") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "C1702") (unit 1)))))
-(wire (pts (xy 199.39 204.47) (xy 191.77 204.47)) (stroke (width 0) (type default)) (uuid "40bb4fb4-4562-5d63-9911-9b1aeee6d9cd"))
-(global_label "+5V_CORE" (shape bidirectional) (at 191.77 204.47 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "7f53ca60-e681-5950-8ed3-0dec64e4994e"))
-(wire (pts (xy 209.55 204.47) (xy 217.17 204.47)) (stroke (width 0) (type default)) (uuid "83ebf2fe-8ade-5cff-bb0a-d247e18db98b"))
-(global_label "GND" (shape bidirectional) (at 217.17 204.47 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "19215b64-b268-5894-b6c3-b1af239cee33"))
-(symbol (lib_id "Power8GDI_Aux:C") (at 340.36 204.47 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "2efd402f-e230-5774-9085-69919d29f6aa") (property "Reference" "C1703" (at 344.36 203.2 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100nF 25V X7R" (at 344.36 205.74 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 340.36 204.47 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 340.36 204.47 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "4886d8af-d220-5507-9899-e8e74faf17aa")) (pin "2" (uuid "fb5e3228-d4bf-5327-ab14-5fdee7ec75ad")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "C1703") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "C1703") (unit 1)))))
-(wire (pts (xy 335.28 204.47) (xy 327.66 204.47)) (stroke (width 0) (type default)) (uuid "2ebd1cc1-c716-5c86-9609-0afd1cb123e4"))
-(global_label "KNOCK_VREF" (shape bidirectional) (at 327.66 204.47 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "83bb78df-2ea0-574a-ad1b-eb5f7b4b4be5"))
-(wire (pts (xy 345.44 204.47) (xy 353.06 204.47)) (stroke (width 0) (type default)) (uuid "6578a415-1a36-5479-b87b-9de64f817f81"))
-(global_label "GND" (shape bidirectional) (at 353.06 204.47 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "7ac893af-9e16-5c6d-a1b1-e306df55692a"))
-(symbol (lib_id "Power8GDI_Aux:C") (at 474.98 204.47 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "d02a7b5a-6ed6-589c-a354-d828707784a2") (property "Reference" "C1704" (at 478.98 203.2 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100nF 25V X7R" (at 478.98 205.74 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 474.98 204.47 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 474.98 204.47 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "c4428ab1-e17a-5351-8e98-0e1d9b30cf29")) (pin "2" (uuid "8bfc4f2c-1187-56a3-969f-aef47fd7f3ae")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "C1704") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "C1704") (unit 1)))))
-(wire (pts (xy 469.9 204.47) (xy 462.28 204.47)) (stroke (width 0) (type default)) (uuid "70ec6221-0a43-5d7a-84d4-a46469144a0f"))
-(global_label "+5V_CORE" (shape bidirectional) (at 462.28 204.47 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "8db3bc76-ce76-5500-be53-9d916bff8d3a"))
-(wire (pts (xy 480.06 204.47) (xy 487.68 204.47)) (stroke (width 0) (type default)) (uuid "a910dba2-8382-501f-ac9a-2108b39d5b77"))
-(global_label "GND" (shape bidirectional) (at 487.68 204.47 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "47dcb260-f54b-58cf-a782-b20465a5502d"))
-(symbol (lib_id "Power8GDI_Aux:C") (at 69.85 227.33 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "19b6ff7d-aee8-5bd9-a62d-810c6f4bc0a1") (property "Reference" "C1705" (at 73.85 226.06 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100nF 25V X7R" (at 73.85 228.6 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 69.85 227.33 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 69.85 227.33 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "644d61a5-1b52-5d60-a650-2d4fcdabccf2")) (pin "2" (uuid "db47f386-99e7-5e66-8556-88a311ce3bee")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "C1705") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "C1705") (unit 1)))))
-(wire (pts (xy 64.77 227.33) (xy 57.15 227.33)) (stroke (width 0) (type default)) (uuid "afc293f5-c65a-5769-a6f3-166f92514f60"))
-(global_label "+3V3" (shape bidirectional) (at 57.15 227.33 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "be974bd1-5b52-58b7-99a7-4c20d68d83cf"))
-(wire (pts (xy 74.93 227.33) (xy 82.55 227.33)) (stroke (width 0) (type default)) (uuid "b9b2384f-c7a6-5766-9b14-24c13023848f"))
-(global_label "GND" (shape bidirectional) (at 82.55 227.33 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "031fe85d-8240-5846-86ab-e5f7403c551e"))
-(symbol (lib_id "Power8GDI_Aux:C") (at 204.47 227.33 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "1bd9cfba-ba90-502f-a1c6-66e334013fd3") (property "Reference" "C1706" (at 208.47 226.06 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100nF 25V X7R" (at 208.47 228.6 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 204.47 227.33 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 204.47 227.33 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "a8257bc2-3ef6-5e6e-800d-1a1c32626812")) (pin "2" (uuid "3eaf6497-d230-5720-933a-d305e7cd1113")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "C1706") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "C1706") (unit 1)))))
-(wire (pts (xy 199.39 227.33) (xy 191.77 227.33)) (stroke (width 0) (type default)) (uuid "4390d00e-2bbf-5f47-8b16-50d455b2c149"))
-(global_label "+3V3" (shape bidirectional) (at 191.77 227.33 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "3545b6b0-6139-5ad9-a66c-44e4fc31c5c7"))
-(wire (pts (xy 209.55 227.33) (xy 217.17 227.33)) (stroke (width 0) (type default)) (uuid "f18a4f67-3be9-53b9-b0dc-f0d2d57d348c"))
-(global_label "GND" (shape bidirectional) (at 217.17 227.33 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "60848bc0-08e9-5d64-aa56-a40ac54bd726"))
-(symbol (lib_id "Power8GDI_Aux:C") (at 340.36 227.33 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "4c0d2761-8c88-50b1-915d-4a8f607d564d") (property "Reference" "C1711" (at 344.36 226.06 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "3.3nF 50V C0G" (at 344.36 228.6 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 340.36 227.33 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 340.36 227.33 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "0960abc6-2a71-5f8b-895e-8fe314c172f5")) (pin "2" (uuid "f7a5d6ff-8e83-56eb-93a2-dea9677cf3eb")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "C1711") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "C1711") (unit 1)))))
-(wire (pts (xy 335.28 227.33) (xy 327.66 227.33)) (stroke (width 0) (type default)) (uuid "81e96b4a-a3fa-5a38-9a9e-20d473376fb8"))
-(global_label "HARNESS_KNOCK1_SIG" (shape bidirectional) (at 327.66 227.33 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "d3082452-6ee4-52c3-b41b-4b4c80795357"))
-(wire (pts (xy 345.44 227.33) (xy 353.06 227.33)) (stroke (width 0) (type default)) (uuid "56d9015e-a4f5-55e4-b42b-de8222763c40"))
-(global_label "KNOCK1_AC" (shape bidirectional) (at 353.06 227.33 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "f30101cd-f1cf-5a41-8c72-f408029f8a55"))
-(symbol (lib_id "Power8GDI_Aux:R") (at 474.98 227.33 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "fce55428-a996-586d-87b3-ee21a9595d00") (property "Reference" "R1711" (at 478.98 226.06 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100k 1%" (at 478.98 228.6 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 474.98 227.33 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 474.98 227.33 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "61b1a8a4-ef08-5df3-a2aa-3ae757f0f631")) (pin "2" (uuid "9efd8992-0c6a-579e-89d1-b4d7e5f7bac1")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "R1711") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "R1711") (unit 1)))))
-(wire (pts (xy 469.9 227.33) (xy 462.28 227.33)) (stroke (width 0) (type default)) (uuid "a0950a25-8cad-5f46-acc2-7e8fc839dea4"))
-(global_label "KNOCK1_AC" (shape bidirectional) (at 462.28 227.33 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "e1fe3be7-a861-5633-9cdb-fb49e5189b47"))
-(wire (pts (xy 480.06 227.33) (xy 487.68 227.33)) (stroke (width 0) (type default)) (uuid "49f333d6-5179-5445-bb59-988a48048155"))
-(global_label "KNOCK1_INV" (shape bidirectional) (at 487.68 227.33 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "f9ae67ba-ad4b-532c-add9-1992d26add59"))
-(symbol (lib_id "Power8GDI_Aux:R") (at 69.85 248.92 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "328a80d1-2d3a-58a3-9401-7352c23cadee") (property "Reference" "R1712" (at 73.85 247.65 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100k 1%" (at 73.85 250.19 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 69.85 248.92 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 69.85 248.92 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "ac4dc2c0-dbd0-5fce-81ab-12122cead0d2")) (pin "2" (uuid "5bf7ee85-e106-592d-982f-66a61c7eeb1c")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "R1712") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "R1712") (unit 1)))))
-(wire (pts (xy 64.77 248.92) (xy 57.15 248.92)) (stroke (width 0) (type default)) (uuid "26f51812-4df0-5d4e-8116-b1163c0d7fd1"))
-(global_label "KNOCK1_FB" (shape bidirectional) (at 57.15 248.92 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "9e7a8e77-2acf-5a4f-8a26-a38c6c2a6c50"))
-(wire (pts (xy 74.93 248.92) (xy 82.55 248.92)) (stroke (width 0) (type default)) (uuid "354fc47f-d3fb-5e3f-a069-1b427848d090"))
-(global_label "KNOCK1_INV" (shape bidirectional) (at 82.55 248.92 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "67274f6c-8228-5241-a59b-38e721e71980"))
-(symbol (lib_id "Power8GDI_Aux:R") (at 204.47 248.92 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "943bcea0-acd7-52f4-a144-ec8fa19a2038") (property "Reference" "R1713" (at 208.47 247.65 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "0R" (at 208.47 250.19 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 204.47 248.92 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "Dedicated return routed to analogue ground entry; sensor cable/EMC review required" (at 204.47 248.92 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "120a7826-1ddf-53ba-ab83-eda7e54fe2ee")) (pin "2" (uuid "899ad291-5818-547c-9eeb-aa918ed4ad56")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "R1713") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "R1713") (unit 1)))))
-(wire (pts (xy 199.39 248.92) (xy 191.77 248.92)) (stroke (width 0) (type default)) (uuid "463c09b2-642c-51a3-a2f7-e459f5124d5d"))
-(global_label "HARNESS_KNOCK1_RETURN" (shape bidirectional) (at 191.77 248.92 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "e93eb637-3fbe-5714-b559-7e34a1f9812b"))
-(wire (pts (xy 209.55 248.92) (xy 217.17 248.92)) (stroke (width 0) (type default)) (uuid "db9324c6-543e-56cc-9bf6-c614fbc8efb3"))
-(global_label "GND" (shape bidirectional) (at 217.17 248.92 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "f862d096-ecd5-5f20-b022-170fad7cde74"))
-(symbol (lib_id "Power8GDI_Aux:C") (at 340.36 248.92 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "cc8339e2-411d-51dd-bbe3-de3002a412c0") (property "Reference" "C1721" (at 344.36 247.65 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "3.3nF 50V C0G" (at 344.36 250.19 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 340.36 248.92 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 340.36 248.92 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "b4f8a614-1039-5891-b751-56fb754e4e3d")) (pin "2" (uuid "b5ce3ea6-3198-5950-9391-dfa1b5feb91f")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "C1721") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "C1721") (unit 1)))))
-(wire (pts (xy 335.28 248.92) (xy 327.66 248.92)) (stroke (width 0) (type default)) (uuid "1ab5064e-dcde-5b4d-b1cb-ef7917513236"))
-(global_label "HARNESS_KNOCK2_SIG" (shape bidirectional) (at 327.66 248.92 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "9ba0063a-f2a1-5642-ba29-1a2e5c5d77ea"))
-(wire (pts (xy 345.44 248.92) (xy 353.06 248.92)) (stroke (width 0) (type default)) (uuid "b98d6a35-9f22-5e02-9cc4-a4cb8ae0a200"))
-(global_label "KNOCK2_AC" (shape bidirectional) (at 353.06 248.92 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "6d9d79d4-cdc8-538a-ab79-53ef2b0a5bdb"))
-(symbol (lib_id "Power8GDI_Aux:R") (at 474.98 248.92 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "24b0b13e-7eaa-5b41-9c44-40c0ee05465c") (property "Reference" "R1721" (at 478.98 247.65 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100k 1%" (at 478.98 250.19 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 474.98 248.92 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 474.98 248.92 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "a1a5f2f1-0b10-5958-ae6e-a4fa97ed586f")) (pin "2" (uuid "3289f880-5610-5763-a173-5ed029e156e6")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "R1721") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "R1721") (unit 1)))))
-(wire (pts (xy 469.9 248.92) (xy 462.28 248.92)) (stroke (width 0) (type default)) (uuid "cf9d6bd7-5674-5a76-8800-7180f9d8df63"))
-(global_label "KNOCK2_AC" (shape bidirectional) (at 462.28 248.92 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "e5590ae8-fa21-52ad-8995-f40251a468fa"))
-(wire (pts (xy 480.06 248.92) (xy 487.68 248.92)) (stroke (width 0) (type default)) (uuid "6bd2024c-1535-5d6e-b41d-6cc4486eecb7"))
-(global_label "KNOCK2_INV" (shape bidirectional) (at 487.68 248.92 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "06bb3adb-f19c-5ca3-9f45-ab05602179f9"))
-(symbol (lib_id "Power8GDI_Aux:R") (at 69.85 270.51 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "7c90d579-e9ed-56c1-80d7-ded669bb2bb3") (property "Reference" "R1722" (at 73.85 269.24 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100k 1%" (at 73.85 271.78 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 69.85 270.51 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 69.85 270.51 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "73e65b75-2205-5bce-b9a7-445b25b106fe")) (pin "2" (uuid "7548a71c-122a-52c1-9fb9-4eb24bafb3c3")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "R1722") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "R1722") (unit 1)))))
-(wire (pts (xy 64.77 270.51) (xy 57.15 270.51)) (stroke (width 0) (type default)) (uuid "c4655123-c425-509d-bf04-07d0c9d191aa"))
-(global_label "KNOCK2_FB" (shape bidirectional) (at 57.15 270.51 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "b7c1991e-3feb-591a-ad1c-f207ae93b8ee"))
-(wire (pts (xy 74.93 270.51) (xy 82.55 270.51)) (stroke (width 0) (type default)) (uuid "0ce3d42d-593c-5697-8673-5c7b6be8d68e"))
-(global_label "KNOCK2_INV" (shape bidirectional) (at 82.55 270.51 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "e89a5516-c1af-5867-b231-c5118057e7c5"))
-(symbol (lib_id "Power8GDI_Aux:R") (at 204.47 270.51 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "05244c28-b2f6-56ef-9cef-35411e35ddc8") (property "Reference" "R1723" (at 208.47 269.24 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "0R" (at 208.47 271.78 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 204.47 270.51 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "Dedicated return routed to analogue ground entry; sensor cable/EMC review required" (at 204.47 270.51 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "b4c7ce4a-790b-5033-84d8-811d7ebd006b")) (pin "2" (uuid "e8290277-b9e2-5d2e-acd3-95a395fdf29d")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "R1723") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "R1723") (unit 1)))))
-(wire (pts (xy 199.39 270.51) (xy 191.77 270.51)) (stroke (width 0) (type default)) (uuid "6532b2db-475d-59fb-baa1-f9fc8a2ee5de"))
-(global_label "HARNESS_KNOCK2_RETURN" (shape bidirectional) (at 191.77 270.51 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "6131e249-f394-50c1-94fc-c4c5bafdd9ad"))
-(wire (pts (xy 209.55 270.51) (xy 217.17 270.51)) (stroke (width 0) (type default)) (uuid "587598f4-da1a-55a3-9ab6-a1d50882e7f5"))
-(global_label "GND" (shape bidirectional) (at 217.17 270.51 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "b2b8436b-c966-535f-aeda-c63af469dbb6"))
-(symbol (lib_id "Power8GDI_Aux:R") (at 340.36 270.51 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "2d0facc8-f38b-5f10-88f7-1c100d75a7a1") (property "Reference" "R1701" (at 344.36 269.24 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "10k 1%" (at 344.36 271.78 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 340.36 270.51 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 340.36 270.51 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "04d1694b-3bb9-50a3-9f36-8ddd0fb85855")) (pin "2" (uuid "c15b5fe8-c6d9-5d80-a37b-b1d52bf6f5ea")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "R1701") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "R1701") (unit 1)))))
-(wire (pts (xy 335.28 270.51) (xy 327.66 270.51)) (stroke (width 0) (type default)) (uuid "bed8283f-4930-53e2-b219-b6b7333ca946"))
-(global_label "KNOCK_CS_N" (shape bidirectional) (at 327.66 270.51 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "2677d817-e60d-56c3-a487-432fa9756a11"))
-(wire (pts (xy 345.44 270.51) (xy 353.06 270.51)) (stroke (width 0) (type default)) (uuid "c7007537-cc1a-55be-a246-0ee71b07aa67"))
-(global_label "+3V3" (shape bidirectional) (at 353.06 270.51 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "3cd6dae4-1980-55e2-abc5-840b4462b219"))
-(symbol (lib_id "Power8GDI_Aux:R") (at 474.98 270.51 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "6bfafdb5-a0d7-53ae-9d0a-1b368778c2a0") (property "Reference" "R1702" (at 478.98 269.24 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "10k 1%" (at 478.98 271.78 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 474.98 270.51 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 474.98 270.51 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "7978e53d-5c74-5e6d-9619-274770de215d")) (pin "2" (uuid "9629d0ce-73ea-5c65-82d0-62fee3af276c")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "R1702") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "R1702") (unit 1)))))
-(wire (pts (xy 469.9 270.51) (xy 462.28 270.51)) (stroke (width 0) (type default)) (uuid "646cceb0-4d83-5d0d-b826-8bd00227bca6"))
-(global_label "KNOCK_INT_HOLD" (shape bidirectional) (at 462.28 270.51 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "a2135b45-fea9-5004-b7f9-b923d67e1475"))
-(wire (pts (xy 480.06 270.51) (xy 487.68 270.51)) (stroke (width 0) (type default)) (uuid "c266fa25-75a2-5708-99b0-068a0336cfd4"))
-(global_label "GND" (shape bidirectional) (at 487.68 270.51 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "fc467c99-b200-57f6-8a48-fbe3ae7832c5"))
-(symbol (lib_id "Power8GDI_Aux:R") (at 69.85 293.37 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "e688a84b-9995-5de8-8102-8496590b4b30") (property "Reference" "R1703" (at 73.85 292.1 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100k 1%" (at 73.85 294.64 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 69.85 293.37 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 69.85 293.37 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "3bd55b37-d067-5d06-aed1-1eea6a0b4de4")) (pin "2" (uuid "ad6119c2-1415-54f2-bd3a-86f542f68db7")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b" (reference "R1703") (unit 1))) (project "knock_dual" (path "/20465974-d3b0-5bf0-9403-bb1282024aae" (reference "R1703") (unit 1)))))
-(wire (pts (xy 64.77 293.37) (xy 57.15 293.37)) (stroke (width 0) (type default)) (uuid "5a0b0ee6-d4f8-5c4c-82fd-53e79ecd87a4"))
-(global_label "KNOCK_SDO_5V" (shape bidirectional) (at 57.15 293.37 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "c5a833fd-4351-5feb-9d80-dd908629cc32"))
-(wire (pts (xy 74.93 293.37) (xy 82.55 293.37)) (stroke (width 0) (type default)) (uuid "efd29d78-40cf-5d7b-9aa7-2cbec8711a53"))
-(global_label "GND" (shape bidirectional) (at 82.55 293.37 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "eba651ff-23fc-56b9-8465-4faf0d797179"))
-(sheet_instances (path "/" (page "1"))))
+(kicad_sch
+  (version 20250114)
+  (generator "eeschema")
+  (uuid "20465974-d3b0-5bf0-9403-bb1282024aae")
+  (paper "A2")
+  (title_block
+    (title "Two-input TPIC8101 and 3.3/5 V serial interface")
+    (rev "Engineering draft 0.1")
+    (comment 1 "UNQUALIFIED: no manufacturing or engine approval"))
+  (lib_symbols
+    (symbol "Power8GDI_Aux:TPIC8101DWR"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 0 17.78 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "TPIC8101DWR"
+        (at 0 -17.78 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "TPIC8101DWR_0_1"
+        (rectangle
+          (start -15.24 15.24)
+          (end 15.24 -15.24)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "TPIC8101DWR_1_1"
+        (pin power_in line
+          (at -17.78 12.7 0)
+          (length 2.54)
+          (name "VDD"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_out line
+          (at -17.78 10.16 0)
+          (length 2.54)
+          (name "Vref"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "3"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 7.62 0)
+          (length 2.54)
+          (name "CH1P"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "20"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 5.08 0)
+          (length 2.54)
+          (name "CH1N"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "19"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at -17.78 2.54 0)
+          (length 2.54)
+          (name "CH1FB"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "18"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 0 0)
+          (length 2.54)
+          (name "CH2P"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "15"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 -2.54 0)
+          (length 2.54)
+          (name "CH2N"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "16"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at -17.78 -5.08 0)
+          (length 2.54)
+          (name "CH2FB"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "17"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 -7.62 0)
+          (length 2.54)
+          (name "XIN"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "9"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 17.78 12.7 180)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at 17.78 10.16 180)
+          (length 2.54)
+          (name "OUT"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "4"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin no_connect line
+          (at 17.78 7.62 180)
+          (length 2.54)
+          (name "NC"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "5"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin no_connect line
+          (at 17.78 5.08 180)
+          (length 2.54)
+          (name "NC"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "6"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at 17.78 2.54 180)
+          (length 2.54)
+          (name "INT/HOLD"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "7"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at 17.78 0 180)
+          (length 2.54)
+          (name "~{CS}"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "8"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at 17.78 -2.54 180)
+          (length 2.54)
+          (name "XOUT"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "10"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin tri_state line
+          (at 17.78 -5.08 180)
+          (length 2.54)
+          (name "SDO"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "11"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at 17.78 -7.62 180)
+          (length 2.54)
+          (name "SDI"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "12"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at 17.78 -10.16 180)
+          (length 2.54)
+          (name "SCLK"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "13"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at 17.78 -12.7 180)
+          (length 2.54)
+          (name "~{TEST}"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "14"
+            (effects
+              (font
+                (size 1.016 1.016)))))))
+    (symbol "Power8GDI_Aux:SN74AHCT244QPWRQ1"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 0 17.78 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "SN74AHCT244QPWRQ1"
+        (at 0 -17.78 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "SN74AHCT244QPWRQ1_0_1"
+        (rectangle
+          (start -15.24 15.24)
+          (end 15.24 -15.24)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "SN74AHCT244QPWRQ1_1_1"
+        (pin power_in line
+          (at -17.78 12.7 0)
+          (length 2.54)
+          (name "VCC"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "20"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 10.16 0)
+          (length 2.54)
+          (name "~{1OE}"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 7.62 0)
+          (length 2.54)
+          (name "~{2OE}"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "19"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 5.08 0)
+          (length 2.54)
+          (name "A1"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 2.54 0)
+          (length 2.54)
+          (name "A2"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "4"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 0 0)
+          (length 2.54)
+          (name "A3"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "6"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 -2.54 0)
+          (length 2.54)
+          (name "A4"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "8"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 -5.08 0)
+          (length 2.54)
+          (name "A5"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "11"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 -7.62 0)
+          (length 2.54)
+          (name "A6"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "13"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 -10.16 0)
+          (length 2.54)
+          (name "A7"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "15"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 -12.7 0)
+          (length 2.54)
+          (name "A8"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "17"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin tri_state line
+          (at 17.78 12.7 180)
+          (length 2.54)
+          (name "Y1"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "18"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin tri_state line
+          (at 17.78 10.16 180)
+          (length 2.54)
+          (name "Y2"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "16"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin tri_state line
+          (at 17.78 7.62 180)
+          (length 2.54)
+          (name "Y3"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "14"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin tri_state line
+          (at 17.78 5.08 180)
+          (length 2.54)
+          (name "Y4"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "12"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin tri_state line
+          (at 17.78 2.54 180)
+          (length 2.54)
+          (name "Y5"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "9"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin tri_state line
+          (at 17.78 0 180)
+          (length 2.54)
+          (name "Y6"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "7"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin tri_state line
+          (at 17.78 -2.54 180)
+          (length 2.54)
+          (name "Y7"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "5"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin tri_state line
+          (at 17.78 -5.08 180)
+          (length 2.54)
+          (name "Y8"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "3"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 17.78 -7.62 180)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "10"
+            (effects
+              (font
+                (size 1.016 1.016)))))))
+    (symbol "Power8GDI_Aux:CLVC1G125QDBVRQ1"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 0 7.62 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "CLVC1G125QDBVRQ1"
+        (at 0 -7.62 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "CLVC1G125QDBVRQ1_0_1"
+        (rectangle
+          (start -15.24 5.08)
+          (end 15.24 -5.08)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "CLVC1G125QDBVRQ1_1_1"
+        (pin power_in line
+          (at -17.78 2.54 0)
+          (length 2.54)
+          (name "VCC"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "5"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 0 0)
+          (length 2.54)
+          (name "~{OE}"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -17.78 -2.54 0)
+          (length 2.54)
+          (name "A"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin tri_state line
+          (at 17.78 2.54 180)
+          (length 2.54)
+          (name "Y"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "4"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 17.78 0 180)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "3"
+            (effects
+              (font
+                (size 1.016 1.016)))))))
+    (symbol "Power8GDI_Aux:ASEM1_8MHz"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "Y"
+        (at 0 6.35 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "ASEM1_8MHz"
+        (at 0 -6.35 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Power8GDI_Core:ASEM_3225"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "ASEM1_8MHz_0_1"
+        (rectangle
+          (start -15.24 3.81)
+          (end 15.24 -3.81)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "ASEM1_8MHz_1_1"
+        (pin input line
+          (at -17.78 1.27 0)
+          (length 2.54)
+          (name "EN"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at -17.78 -1.27 0)
+          (length 2.54)
+          (name "VDD"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "4"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at 17.78 1.27 180)
+          (length 2.54)
+          (name "OUT"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "3"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 17.78 -1.27 180)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016)))))))
+    (symbol "Power8GDI_Aux:C"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "C"
+        (at 0 3.81 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "C"
+        (at 0 -3.81 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "C_0_1"
+        (polyline
+          (pts
+            (xy -1.27 2.54)
+            (xy -1.27 -2.54))
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type none)))
+        (polyline
+          (pts
+            (xy 1.27 2.54)
+            (xy 1.27 -2.54))
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type none))))
+      (symbol "C_1_1"
+        (pin passive line
+          (at -5.08 0 0)
+          (length 3.81)
+          (name "1"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin passive line
+          (at 5.08 0 180)
+          (length 3.81)
+          (name "2"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016)))))))
+    (symbol "Power8GDI_Aux:R"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "R"
+        (at 0 3.81 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "R"
+        (at 0 -3.81 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "R_0_1"
+        (rectangle
+          (start -2.54 1.27)
+          (end 2.54 -1.27)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "R_1_1"
+        (pin passive line
+          (at -5.08 0 0)
+          (length 2.54)
+          (name "1"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin passive line
+          (at 5.08 0 180)
+          (length 2.54)
+          (name "2"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016))))))))
+  (text "ENGINEERING CANDIDATE — NOT MANUFACTURING OR ENGINE APPROVED"
+    (at 20 15 0)
+    (effects
+      (font
+        (size 2 2))
+      (justify left top))
+    (uuid "fdcaca59-bbb4-5b0e-8153-54e4adc850b5"))
+  (text "SPI digital readout: multiplexed dual sensors, not simultaneous acquisition. MCU ADC pins are not used.\nOwn 8 MHz oscillator; no added load on MCU oscillator. Sensor gain/window/filter/calibration remain unqualified."
+    (at 20 24 0)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left top))
+    (uuid "72bbe55b-1cc0-5f7c-8a26-9df979328e5f"))
+  (symbol
+    (lib_id "Power8GDI_Aux:TPIC8101DWR")
+    (at 80.01 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "c95a9660-c54d-5f30-b718-7f861bda53c2")
+    (property "Reference" "U1701"
+      (at 80.01 72.39 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "TPIC8101DWR"
+      (at 80.01 107.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm"
+      (at 80.01 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "TI SLIS110C p3 exact pins; TEST open per datasheet, NC5/6 no traces; OUT unused digital-readout mode"
+      (at 80.01 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "c36c4689-760d-593b-be84-0b932d597258"))
+    (pin "3"
+      (uuid "6b5638d3-9377-5ac4-a6cd-49707498b787"))
+    (pin "20"
+      (uuid "588ced22-b7a1-5d02-993a-ddf2916ed545"))
+    (pin "19"
+      (uuid "589459c9-ee1b-5a8f-b1cd-8bab235bb831"))
+    (pin "18"
+      (uuid "fc054ed3-a0d1-5e0c-8bfe-17f8d01c9889"))
+    (pin "15"
+      (uuid "19ca09a5-ae0c-516d-8079-0b14f4f63864"))
+    (pin "16"
+      (uuid "3c485483-aa76-5c99-b79d-77beb2fecb05"))
+    (pin "17"
+      (uuid "fccb0c7b-4216-5635-bd81-2f96f9ba61eb"))
+    (pin "9"
+      (uuid "bc4bd5a3-94d5-5853-807d-3eeeb63194e3"))
+    (pin "2"
+      (uuid "731359ed-8c65-5055-8666-c53b3075b033"))
+    (pin "4"
+      (uuid "c3368b87-9291-5f23-8513-9b61e69fbf16"))
+    (pin "5"
+      (uuid "47ae0611-3046-51a2-838f-3a380d85f515"))
+    (pin "6"
+      (uuid "71333c30-315a-56d8-bb33-94a21f5cb00c"))
+    (pin "7"
+      (uuid "91ce0ed4-8f37-5e9e-9b18-c7e5209003fc"))
+    (pin "8"
+      (uuid "fc115d74-4b9b-5a77-b168-51e8d3d4fec2"))
+    (pin "10"
+      (uuid "3c9fabb0-6c71-50cf-a3bd-2fc01ac2568c"))
+    (pin "11"
+      (uuid "bc216b70-dcc4-5360-b80b-57f3256e1c5b"))
+    (pin "12"
+      (uuid "95fa4e68-2ac4-50e4-ac8b-c5afbcc25d03"))
+    (pin "13"
+      (uuid "03979e04-e50b-5c9a-ba0a-b31ffc456c85"))
+    (pin "14"
+      (uuid "53f471e7-2d7c-5165-bb54-acf76fc4413f"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "U1701")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "U1701")
+          (unit 1))))
+    (property "MPN" "TPIC8101DWR"
+      (at 80.01 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Texas Instruments"
+      (at 80.01 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-5034de544a46"
+      (at 80.01 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CONDITIONAL"
+      (at 80.01 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_STRESS_AND_LAYOUT_REVIEW_REQUIRED"
+      (at 80.01 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Catalog family limits verified; exact order suffix and circuit stress/thermal margin remain board qualification.\"]"
+      (at 80.01 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"channels\": 2, \"interface\": \"SPI\", \"supported_clock_mhz\": [4, 5, 6, 8, 10, 12, 16, 20, 24], \"temperature_max_c\": 125, \"temperature_min_c\": -40}"
+      (at 80.01 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.ti.com/product/TPIC8101"
+      (at 80.01 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 80.01 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 62.23 77.47)
+      (xy 54.61 77.47))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "e8e17e41-50f8-588a-8f00-94d419b073b7"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 54.61 77.47 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "7e7c8042-b34a-5d72-923f-7edb5b415ca7"))
+  (wire
+    (pts
+      (xy 62.23 80.01)
+      (xy 54.61 80.01))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "5a7d021e-303c-5ff0-97c3-cacc6d8200d9"))
+  (global_label "KNOCK_VREF"
+    (shape bidirectional)
+    (at 54.61 80.01 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "0f96245e-9e07-5828-b92c-926968b9fb0f"))
+  (wire
+    (pts
+      (xy 62.23 82.55)
+      (xy 54.61 82.55))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "9d760f3b-fb75-540e-a9ba-7982b08f9844"))
+  (global_label "KNOCK_VREF"
+    (shape bidirectional)
+    (at 54.61 82.55 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "afa7162a-d77f-58be-a4d4-dc950f59578e"))
+  (wire
+    (pts
+      (xy 62.23 85.09)
+      (xy 54.61 85.09))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3f6f07a6-e45e-5710-bb4c-197766c96d22"))
+  (global_label "KNOCK1_INV"
+    (shape bidirectional)
+    (at 54.61 85.09 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "de0db9f6-ac94-5357-87f5-942f2bc142f9"))
+  (wire
+    (pts
+      (xy 62.23 87.63)
+      (xy 54.61 87.63))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "67f29a27-d8db-5efc-94d8-e864b5768bac"))
+  (global_label "KNOCK1_FB"
+    (shape bidirectional)
+    (at 54.61 87.63 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "3a59028e-1aa6-5a7f-84c5-7cb708ea074f"))
+  (wire
+    (pts
+      (xy 62.23 90.17)
+      (xy 54.61 90.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "09876428-1505-584a-9110-31fae64a005e"))
+  (global_label "KNOCK_VREF"
+    (shape bidirectional)
+    (at 54.61 90.17 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "7a1f1ddb-2098-5228-afc5-0429fef020e2"))
+  (wire
+    (pts
+      (xy 62.23 92.71)
+      (xy 54.61 92.71))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "8480edab-0b84-566c-8f8c-051b99cc5b84"))
+  (global_label "KNOCK2_INV"
+    (shape bidirectional)
+    (at 54.61 92.71 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "c124acc8-032b-5c15-8822-a996276bbe4e"))
+  (wire
+    (pts
+      (xy 62.23 95.25)
+      (xy 54.61 95.25))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "f014549f-af91-5054-9c20-733aa495df65"))
+  (global_label "KNOCK2_FB"
+    (shape bidirectional)
+    (at 54.61 95.25 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "461888e3-713d-5a25-8f51-e75c1e1402a0"))
+  (wire
+    (pts
+      (xy 62.23 97.79)
+      (xy 54.61 97.79))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3fd01f20-7460-5907-b062-a87d0f9795e3"))
+  (global_label "KNOCK_CLK_5V"
+    (shape bidirectional)
+    (at 54.61 97.79 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "d74c724c-ce25-5f24-9d44-22f75e4188d1"))
+  (wire
+    (pts
+      (xy 97.79 77.47)
+      (xy 105.41 77.47))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "7620a473-7631-5772-8b15-4cde23c1be74"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 105.41 77.47 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "3a841b23-7f76-579d-ac4c-91cc7a61dc2d"))
+  (no_connect
+    (at 97.79 80.01)
+    (uuid "9855f766-56c4-58b8-98b5-38724dd5d00c"))
+  (no_connect
+    (at 97.79 82.55)
+    (uuid "0180a533-9cca-5ca7-983d-aa5e77a160b3"))
+  (no_connect
+    (at 97.79 85.09)
+    (uuid "9bc38980-2698-5926-b8b6-8e10fb42b4f5"))
+  (wire
+    (pts
+      (xy 97.79 87.63)
+      (xy 105.41 87.63))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "c9739b83-4a3b-50ed-9a23-9e3555f41e49"))
+  (global_label "KNOCK_INT_HOLD_5V"
+    (shape bidirectional)
+    (at 105.41 87.63 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "17106933-a7ae-53d8-8c07-7eb32355dba6"))
+  (wire
+    (pts
+      (xy 97.79 90.17)
+      (xy 105.41 90.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "a79f9aa8-1c55-5a50-b1f4-1547bc4bcd86"))
+  (global_label "KNOCK_CS_N_5V"
+    (shape bidirectional)
+    (at 105.41 90.17 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "1d1d0a90-e773-51d8-9d60-b7b4667ffbdc"))
+  (no_connect
+    (at 97.79 92.71)
+    (uuid "d882e529-ee4d-54cb-a167-2be436283e04"))
+  (wire
+    (pts
+      (xy 97.79 95.25)
+      (xy 105.41 95.25))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3526326c-b7ca-571e-9311-fdf15be80755"))
+  (global_label "KNOCK_SDO_5V"
+    (shape bidirectional)
+    (at 105.41 95.25 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "e49f21f6-3f0a-5ca0-9e31-1e980ad8a4e1"))
+  (wire
+    (pts
+      (xy 97.79 97.79)
+      (xy 105.41 97.79))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "0329ca8f-8315-58d2-860b-e78eaa6d99a6"))
+  (global_label "AUX_SPI_MOSI_5V"
+    (shape bidirectional)
+    (at 105.41 97.79 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "8bf238bb-ad03-572b-b9f9-e5de6356526c"))
+  (wire
+    (pts
+      (xy 97.79 100.33)
+      (xy 105.41 100.33))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "dbcac700-9f37-57a3-ad47-72bc9f47166b"))
+  (global_label "AUX_SPI_SCK_5V"
+    (shape bidirectional)
+    (at 105.41 100.33 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "cda45d11-aa8d-5d95-81bb-9457ccf23e4c"))
+  (no_connect
+    (at 97.79 102.87)
+    (uuid "60ed1939-c17a-510b-9831-6599e191ddfb"))
+  (symbol
+    (lib_id "Power8GDI_Aux:SN74AHCT244QPWRQ1")
+    (at 234.95 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "aacfa0b0-12dd-59fe-9f32-04c07699d9ae")
+    (property "Reference" "U1702"
+      (at 234.95 72.39 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "SN74AHCT244QPWRQ1"
+      (at 234.95 107.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm"
+      (at 234.95 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "TTL VIH2V recognizes3.3V; five knock/SPI outputs used, unused inputs tied low. WBO now uses independent CAN nodes"
+      (at 234.95 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "20"
+      (uuid "01ef62b1-b08d-53ce-bed9-17b666beda78"))
+    (pin "1"
+      (uuid "445c5c48-c0d0-59a3-9194-429bd27ac741"))
+    (pin "19"
+      (uuid "d5a99e41-e693-58c0-92d5-f1ab8d477341"))
+    (pin "2"
+      (uuid "a030b877-e0a2-5afb-932a-29685fc7b323"))
+    (pin "4"
+      (uuid "ce55f1cb-62a6-5826-a6fe-82e3fa0d2b70"))
+    (pin "6"
+      (uuid "7277d43c-e542-5b0c-97e6-eff8934d2e6e"))
+    (pin "8"
+      (uuid "6149e810-d26a-5433-9804-b8cf5ef47be3"))
+    (pin "11"
+      (uuid "e736b5ba-2348-5afe-ba4a-48bd08b1ce80"))
+    (pin "13"
+      (uuid "9ee36f94-b59d-5c66-bfac-680baa866097"))
+    (pin "15"
+      (uuid "32948f23-65ee-51e8-a608-76575b06bac2"))
+    (pin "17"
+      (uuid "5bc5c2ca-70c0-5bdf-905b-8f96dd10b9a0"))
+    (pin "18"
+      (uuid "5b98daa2-81d2-5b08-8ad7-803db913ae7b"))
+    (pin "16"
+      (uuid "64e2e7b8-af74-5e2d-80aa-fb2bb393d1ac"))
+    (pin "14"
+      (uuid "9ed8af25-c27a-5335-b809-3b80a122c4d2"))
+    (pin "12"
+      (uuid "a7903269-b41f-5788-9779-dde339298ea6"))
+    (pin "9"
+      (uuid "15ba3828-d200-5879-a60f-221a091f5cbf"))
+    (pin "7"
+      (uuid "0cfb534d-041c-549f-b3f1-02e284e4ec1c"))
+    (pin "5"
+      (uuid "31332d56-e0d8-51c3-a675-89993c017a15"))
+    (pin "3"
+      (uuid "b66286e6-a4f2-5cad-88b4-48babc38e8ef"))
+    (pin "10"
+      (uuid "6802e869-da2b-5926-a505-9d0bb0e2fd94"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "U1702")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "U1702")
+          (unit 1))))
+    (property "MPN" "SN74AHCT244QPWRQ1"
+      (at 234.95 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Texas Instruments"
+      (at 234.95 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-dd1dda416e0b"
+      (at 234.95 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 234.95 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 234.95 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 234.95 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 234.95 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.ti.com/product/SN74AHCT244-Q1/part-details/SN74AHCT244QPWRQ1"
+      (at 234.95 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 234.95 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 217.17 77.47)
+      (xy 209.55 77.47))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "a16cab3c-8b80-549b-bed7-0182415218ed"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 209.55 77.47 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "cee1d872-baaf-526a-94ec-4f2c565c27aa"))
+  (wire
+    (pts
+      (xy 217.17 80.01)
+      (xy 209.55 80.01))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3761e607-66e0-5584-b4e4-816bdcd8b64e"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 209.55 80.01 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "1c4a6639-a670-53a9-84e0-f9984b01a749"))
+  (wire
+    (pts
+      (xy 217.17 82.55)
+      (xy 209.55 82.55))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "73e88c57-2330-5269-aa61-3f89eb750863"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 209.55 82.55 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "30f3ddbd-7c5a-5a9a-9bed-b04178dc29ba"))
+  (wire
+    (pts
+      (xy 217.17 85.09)
+      (xy 209.55 85.09))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "157c7310-c2b0-5c5a-af3a-c946e4680a50"))
+  (global_label "GDI_SPI2_MOSI"
+    (shape bidirectional)
+    (at 209.55 85.09 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "70e87a1c-2c73-5856-887f-61db49e3c66a"))
+  (wire
+    (pts
+      (xy 217.17 87.63)
+      (xy 209.55 87.63))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "32e78a85-93fd-5466-be51-76f30e750be2"))
+  (global_label "GDI_SPI2_SCK"
+    (shape bidirectional)
+    (at 209.55 87.63 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "65d5603b-91ef-5881-b469-6c482a108cb9"))
+  (wire
+    (pts
+      (xy 217.17 90.17)
+      (xy 209.55 90.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "d8837781-1ed2-5058-94c9-499509cf6997"))
+  (global_label "KNOCK_CS_N"
+    (shape bidirectional)
+    (at 209.55 90.17 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "aeac29c9-060c-57cc-b9a1-d1d997dba3b6"))
+  (wire
+    (pts
+      (xy 217.17 92.71)
+      (xy 209.55 92.71))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "cf86eb94-831a-5ce7-9a0c-3000a1fe9b02"))
+  (global_label "KNOCK_INT_HOLD"
+    (shape bidirectional)
+    (at 209.55 92.71 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "8c3beadb-4df3-56b6-968a-0a99765dc9b3"))
+  (wire
+    (pts
+      (xy 217.17 95.25)
+      (xy 209.55 95.25))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "64dc588c-8e56-5414-93a4-10855dba4ec2"))
+  (global_label "KNOCK_OSC_3V3"
+    (shape bidirectional)
+    (at 209.55 95.25 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "3bc9d206-8248-5a24-b8cb-18cb422fd078"))
+  (wire
+    (pts
+      (xy 217.17 97.79)
+      (xy 209.55 97.79))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "8c842c10-0eee-50e4-8555-d806b242f11e"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 209.55 97.79 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "35ad5fe4-da70-55df-8e12-1abc013712b8"))
+  (wire
+    (pts
+      (xy 217.17 100.33)
+      (xy 209.55 100.33))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "763b429c-2385-546d-bbb2-52d45b6cdc83"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 209.55 100.33 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "2388534e-c01c-5878-8ad0-a6ca38fbe6a9"))
+  (wire
+    (pts
+      (xy 217.17 102.87)
+      (xy 209.55 102.87))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "5aa25a66-0857-51a9-add5-dce3767a6fcb"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 209.55 102.87 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "afc5e704-c382-5584-a21a-d05cbe6c3633"))
+  (wire
+    (pts
+      (xy 252.73 77.47)
+      (xy 260.35 77.47))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "2825381b-9875-57f7-8a66-88259e798c8c"))
+  (global_label "AUX_SPI_MOSI_5V"
+    (shape bidirectional)
+    (at 260.35 77.47 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "7a770fc2-95fe-51fe-8ece-53a9aec0f66a"))
+  (wire
+    (pts
+      (xy 252.73 80.01)
+      (xy 260.35 80.01))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "19723d7b-0acc-5fa8-a9a5-8078469e8b10"))
+  (global_label "AUX_SPI_SCK_5V"
+    (shape bidirectional)
+    (at 260.35 80.01 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "53be723a-27d3-5802-bf9a-2df856f60591"))
+  (wire
+    (pts
+      (xy 252.73 82.55)
+      (xy 260.35 82.55))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "93ae3cd2-cc36-5fba-b76a-9c33b68a72bc"))
+  (global_label "KNOCK_CS_N_5V"
+    (shape bidirectional)
+    (at 260.35 82.55 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "27f4471b-a78f-50ea-9378-322ed01cfa0b"))
+  (wire
+    (pts
+      (xy 252.73 85.09)
+      (xy 260.35 85.09))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "d0a035cb-8f7f-5f73-94f6-a9ab40f4074e"))
+  (global_label "KNOCK_INT_HOLD_5V"
+    (shape bidirectional)
+    (at 260.35 85.09 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "4f9475a5-4fa9-55f3-9669-2f04bb160a03"))
+  (wire
+    (pts
+      (xy 252.73 87.63)
+      (xy 260.35 87.63))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "997b5f79-23d3-5cdc-80ba-a568237b77a5"))
+  (global_label "KNOCK_CLK_5V"
+    (shape bidirectional)
+    (at 260.35 87.63 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "e51f4d8a-317b-51d7-baff-f600e7479826"))
+  (no_connect
+    (at 252.73 90.17)
+    (uuid "251fce69-9dac-547c-86b1-c0acc1e1c23f"))
+  (no_connect
+    (at 252.73 92.71)
+    (uuid "1c412db2-d01d-5248-8dbd-4abb8234344e"))
+  (no_connect
+    (at 252.73 95.25)
+    (uuid "963eb324-6844-5398-ad12-7bfd5980df1e"))
+  (wire
+    (pts
+      (xy 252.73 97.79)
+      (xy 260.35 97.79))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "a6c158cc-506f-50f5-9791-fa38d8ade683"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 260.35 97.79 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "408e45e5-0a5f-5abc-8eba-c4a881fcf866"))
+  (symbol
+    (lib_id "Power8GDI_Aux:CLVC1G125QDBVRQ1")
+    (at 389.89 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "d1407435-0d1b-5e9e-ba58-4081e908c9b9")
+    (property "Reference" "U1703"
+      (at 389.89 82.55 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "CLVC1G125QDBVRQ1"
+      (at 389.89 97.79 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "CS disables return buffer; input5.5V tolerant; shared MISO arbitration required"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "5"
+      (uuid "28d3b796-335d-5496-8a87-c925dce3923f"))
+    (pin "1"
+      (uuid "bbd885a7-3670-5436-852e-5732cb8d0d61"))
+    (pin "2"
+      (uuid "49a7ee3e-d39e-5cde-a109-9feb24c7c6ef"))
+    (pin "4"
+      (uuid "121b5e42-c9d1-5449-8626-4252d6dfc849"))
+    (pin "3"
+      (uuid "af4d699d-bdad-5aba-b0f5-b2f52c1e1c48"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "U1703")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "U1703")
+          (unit 1))))
+    (property "MPN" "CLVC1G125QDBVRQ1"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Texas Instruments"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-19ec20a73a28"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.ti.com/product/SN74LVC1G125-Q1/part-details/CLVC1G125QDBVRQ1"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 372.11 87.63)
+      (xy 364.49 87.63))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "978d3ab3-eee9-5486-ae73-6db6f12c814a"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 364.49 87.63 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "f434a12e-b671-58da-8c3c-91f01fc2c5d7"))
+  (wire
+    (pts
+      (xy 372.11 90.17)
+      (xy 364.49 90.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "6f940523-abe7-5b60-82ac-99c01a7a0cdd"))
+  (global_label "KNOCK_CS_N"
+    (shape bidirectional)
+    (at 364.49 90.17 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "cc9cd86c-3852-5416-9df4-8b66c345d19a"))
+  (wire
+    (pts
+      (xy 372.11 92.71)
+      (xy 364.49 92.71))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "4e381de4-3035-5393-beb2-67bea5fd4d43"))
+  (global_label "KNOCK_SDO_5V"
+    (shape bidirectional)
+    (at 364.49 92.71 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "7eb59ead-def9-59d7-bb85-ba6105ce065d"))
+  (wire
+    (pts
+      (xy 407.67 87.63)
+      (xy 415.29 87.63))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "79ac0768-210e-5ca1-8735-147657040ac9"))
+  (global_label "GDI_SPI2_MISO"
+    (shape bidirectional)
+    (at 415.29 87.63 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "67b99fbc-b6a0-5504-8494-07e6e6843f8a"))
+  (wire
+    (pts
+      (xy 407.67 90.17)
+      (xy 415.29 90.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "4cdf51e6-9a77-5e7b-bfcf-286af3d6e982"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 415.29 90.17 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "4bb62a26-04a5-5ea9-ab68-154359954b9a"))
+  (symbol
+    (lib_id "Power8GDI_Aux:ASEM1_8MHz")
+    (at 389.89 144.78 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "f49eb4fa-3535-5c5f-ab0a-11a4ab20d69d")
+    (property "Reference" "Y1701"
+      (at 393.89 143.51 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "ASEM1-8.000MHZ-LC-T"
+      (at 393.89 146.05 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Power8GDI_Core:ASEM_3225"
+      (at 389.89 144.78 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Own oscillator; manufacturer15pF load ceiling; temp−40..85C is a release constraint"
+      (at 389.89 144.78 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "c950ba49-0c1b-57e9-a4ef-39a95d05e210"))
+    (pin "4"
+      (uuid "356e6a62-3055-544b-84b5-8671e48ef145"))
+    (pin "3"
+      (uuid "77f8b344-2f86-5d73-970d-c2801764dafc"))
+    (pin "2"
+      (uuid "c73e205b-521c-5f77-8160-4d7645c2a0df"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "Y1701")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "Y1701")
+          (unit 1))))
+    (property "MPN" "ASEM1-8.000MHZ-LC-T"
+      (at 389.89 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Abracon"
+      (at 389.89 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4a33baffd848"
+      (at 389.89 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 389.89 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 389.89 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 389.89 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 389.89 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://abracon.com/Oscillators/ASEM.pdf"
+      (at 389.89 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 389.89 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 372.11 143.51)
+      (xy 364.49 143.51))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3c3839a1-81f0-5037-a838-fbe4262d25ca"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 364.49 143.51 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "4330212d-c45a-5729-9f1e-8008649bd0ad"))
+  (wire
+    (pts
+      (xy 372.11 146.05)
+      (xy 364.49 146.05))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "efd9281d-7553-5eb0-917a-e5be9ff882a2"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 364.49 146.05 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "e91a4b9e-b73e-573f-aaf5-b7094118fd1c"))
+  (wire
+    (pts
+      (xy 407.67 143.51)
+      (xy 415.29 143.51))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "6d12d690-95c0-5e03-841c-f90366efe86d"))
+  (global_label "KNOCK_OSC_3V3"
+    (shape bidirectional)
+    (at 415.29 143.51 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "1e78d97e-fdec-514d-a645-d958d1f06dc9"))
+  (wire
+    (pts
+      (xy 407.67 146.05)
+      (xy 415.29 146.05))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "f0b91710-de02-511a-af6a-ae71e67bd1c1"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 415.29 146.05 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "935a0380-c796-51d6-8de5-70b66a54fca7"))
+  (symbol
+    (lib_id "Power8GDI_Aux:C")
+    (at 69.85 204.47 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "828a0198-37e8-539c-b5e4-98beedadac65")
+    (property "Reference" "C1701"
+      (at 73.85 203.2 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "4.7uF 16V X7R"
+      (at 73.85 205.74 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 69.85 204.47 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 69.85 204.47 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "a89caca8-a7f7-5402-8b9c-f01c50761583"))
+    (pin "2"
+      (uuid "b25bdb1c-42fa-5e58-9256-97523a872bb6"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "C1701")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "C1701")
+          (unit 1))))
+    (property "MPN" "GMC10X7R475K16NT"
+      (at 69.85 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Cal-Chip Electronics"
+      (at 69.85 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-541f7eb877a5"
+      (at 69.85 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 69.85 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 69.85 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 69.85 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 4700000, \"dc_bias_qualification\": \"PENDING_AT_ACTUAL_NODE_VOLTAGE\", \"dielectric\": \"X7R\", \"effective_capacitance_min_pf\": null, \"rated_voltage_v\": 16, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 69.85 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/GMC10X7R475K16NT/22471820"
+      (at 69.85 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 69.85 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 64.77 204.47)
+      (xy 57.15 204.47))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "19800c57-4daa-58ca-ab32-8002225373f6"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 57.15 204.47 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "a06722be-d496-5714-85e2-9e0c74c01700"))
+  (wire
+    (pts
+      (xy 74.93 204.47)
+      (xy 82.55 204.47))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "e1a58dc4-9e3e-5b0c-b113-3ac6176450a9"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 82.55 204.47 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "fcea6b68-116a-5782-9286-2458be0edb6b"))
+  (symbol
+    (lib_id "Power8GDI_Aux:C")
+    (at 204.47 204.47 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "a8085023-a3a7-5936-a75a-8ea60f3d2a7b")
+    (property "Reference" "C1702"
+      (at 208.47 203.2 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100nF 25V X7R"
+      (at 208.47 205.74 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 204.47 204.47 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 204.47 204.47 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "eca773f7-fa14-516c-974c-5889c5d01409"))
+    (pin "2"
+      (uuid "32584314-3ac2-5216-9f20-1bd65f2a59d1"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "C1702")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "C1702")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 204.47 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 204.47 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 204.47 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 204.47 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 204.47 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 204.47 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 204.47 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 204.47 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 204.47 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 199.39 204.47)
+      (xy 191.77 204.47))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "40bb4fb4-4562-5d63-9911-9b1aeee6d9cd"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 191.77 204.47 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "7f53ca60-e681-5950-8ed3-0dec64e4994e"))
+  (wire
+    (pts
+      (xy 209.55 204.47)
+      (xy 217.17 204.47))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "83ebf2fe-8ade-5cff-bb0a-d247e18db98b"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 217.17 204.47 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "19215b64-b268-5894-b6c3-b1af239cee33"))
+  (symbol
+    (lib_id "Power8GDI_Aux:C")
+    (at 340.36 204.47 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "2efd402f-e230-5774-9085-69919d29f6aa")
+    (property "Reference" "C1703"
+      (at 344.36 203.2 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100nF 25V X7R"
+      (at 344.36 205.74 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 340.36 204.47 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 340.36 204.47 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "4886d8af-d220-5507-9899-e8e74faf17aa"))
+    (pin "2"
+      (uuid "fb5e3228-d4bf-5327-ab14-5fdee7ec75ad"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "C1703")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "C1703")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 340.36 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 340.36 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 340.36 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 340.36 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 340.36 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 340.36 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 340.36 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 340.36 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 340.36 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 335.28 204.47)
+      (xy 327.66 204.47))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "2ebd1cc1-c716-5c86-9609-0afd1cb123e4"))
+  (global_label "KNOCK_VREF"
+    (shape bidirectional)
+    (at 327.66 204.47 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "83bb78df-2ea0-574a-ad1b-eb5f7b4b4be5"))
+  (wire
+    (pts
+      (xy 345.44 204.47)
+      (xy 353.06 204.47))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "6578a415-1a36-5479-b87b-9de64f817f81"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 353.06 204.47 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "7ac893af-9e16-5c6d-a1b1-e306df55692a"))
+  (symbol
+    (lib_id "Power8GDI_Aux:C")
+    (at 474.98 204.47 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "d02a7b5a-6ed6-589c-a354-d828707784a2")
+    (property "Reference" "C1704"
+      (at 478.98 203.2 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100nF 25V X7R"
+      (at 478.98 205.74 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 474.98 204.47 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 474.98 204.47 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "c4428ab1-e17a-5351-8e98-0e1d9b30cf29"))
+    (pin "2"
+      (uuid "8bfc4f2c-1187-56a3-969f-aef47fd7f3ae"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "C1704")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "C1704")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 474.98 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 474.98 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 474.98 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 474.98 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 474.98 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 474.98 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 474.98 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 474.98 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 474.98 204.47 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 469.9 204.47)
+      (xy 462.28 204.47))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "70ec6221-0a43-5d7a-84d4-a46469144a0f"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 462.28 204.47 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "8db3bc76-ce76-5500-be53-9d916bff8d3a"))
+  (wire
+    (pts
+      (xy 480.06 204.47)
+      (xy 487.68 204.47))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "a910dba2-8382-501f-ac9a-2108b39d5b77"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 487.68 204.47 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "47dcb260-f54b-58cf-a782-b20465a5502d"))
+  (symbol
+    (lib_id "Power8GDI_Aux:C")
+    (at 69.85 227.33 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "19b6ff7d-aee8-5bd9-a62d-810c6f4bc0a1")
+    (property "Reference" "C1705"
+      (at 73.85 226.06 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100nF 25V X7R"
+      (at 73.85 228.6 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 69.85 227.33 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 69.85 227.33 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "644d61a5-1b52-5d60-a650-2d4fcdabccf2"))
+    (pin "2"
+      (uuid "db47f386-99e7-5e66-8556-88a311ce3bee"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "C1705")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "C1705")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 69.85 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 69.85 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 69.85 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 69.85 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 69.85 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 69.85 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 69.85 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 69.85 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 69.85 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 64.77 227.33)
+      (xy 57.15 227.33))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "afc293f5-c65a-5769-a6f3-166f92514f60"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 57.15 227.33 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "be974bd1-5b52-58b7-99a7-4c20d68d83cf"))
+  (wire
+    (pts
+      (xy 74.93 227.33)
+      (xy 82.55 227.33))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "b9b2384f-c7a6-5766-9b14-24c13023848f"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 82.55 227.33 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "031fe85d-8240-5846-86ab-e5f7403c551e"))
+  (symbol
+    (lib_id "Power8GDI_Aux:C")
+    (at 204.47 227.33 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "1bd9cfba-ba90-502f-a1c6-66e334013fd3")
+    (property "Reference" "C1706"
+      (at 208.47 226.06 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100nF 25V X7R"
+      (at 208.47 228.6 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 204.47 227.33 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 204.47 227.33 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "a8257bc2-3ef6-5e6e-800d-1a1c32626812"))
+    (pin "2"
+      (uuid "3eaf6497-d230-5720-933a-d305e7cd1113"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "C1706")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "C1706")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 204.47 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 204.47 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 204.47 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 204.47 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 204.47 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 204.47 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 204.47 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 204.47 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 204.47 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 199.39 227.33)
+      (xy 191.77 227.33))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "4390d00e-2bbf-5f47-8b16-50d455b2c149"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 191.77 227.33 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "3545b6b0-6139-5ad9-a66c-44e4fc31c5c7"))
+  (wire
+    (pts
+      (xy 209.55 227.33)
+      (xy 217.17 227.33))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "f18a4f67-3be9-53b9-b0dc-f0d2d57d348c"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 217.17 227.33 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "60848bc0-08e9-5d64-aa56-a40ac54bd726"))
+  (symbol
+    (lib_id "Power8GDI_Aux:C")
+    (at 340.36 227.33 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "4c0d2761-8c88-50b1-915d-4a8f607d564d")
+    (property "Reference" "C1711"
+      (at 344.36 226.06 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "3.3nF 50V C0G"
+      (at 344.36 228.6 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 340.36 227.33 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 340.36 227.33 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "0960abc6-2a71-5f8b-895e-8fe314c172f5"))
+    (pin "2"
+      (uuid "f7a5d6ff-8e83-56eb-93a2-dea9677cf3eb"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "C1711")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "C1711")
+          (unit 1))))
+    (property "MPN" "C0603C332J5GACTU"
+      (at 340.36 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 340.36 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-9caf65fb5559"
+      (at 340.36 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 340.36 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 340.36 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 340.36 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 3300, \"dielectric\": \"C0G\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 5}"
+      (at 340.36 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.digikey.com/en/products/detail/kemet/C0603C332J5GACTU/2200552"
+      (at 340.36 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 340.36 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 335.28 227.33)
+      (xy 327.66 227.33))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "81e96b4a-a3fa-5a38-9a9e-20d473376fb8"))
+  (global_label "HARNESS_KNOCK1_SIG"
+    (shape bidirectional)
+    (at 327.66 227.33 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "d3082452-6ee4-52c3-b41b-4b4c80795357"))
+  (wire
+    (pts
+      (xy 345.44 227.33)
+      (xy 353.06 227.33))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "56d9015e-a4f5-55e4-b42b-de8222763c40"))
+  (global_label "KNOCK1_AC"
+    (shape bidirectional)
+    (at 353.06 227.33 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "f30101cd-f1cf-5a41-8c72-f408029f8a55"))
+  (symbol
+    (lib_id "Power8GDI_Aux:R")
+    (at 474.98 227.33 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "fce55428-a996-586d-87b3-ee21a9595d00")
+    (property "Reference" "R1711"
+      (at 478.98 226.06 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100k 1%"
+      (at 478.98 228.6 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 474.98 227.33 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 474.98 227.33 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "61b1a8a4-ef08-5df3-a2aa-3ae757f0f631"))
+    (pin "2"
+      (uuid "9efd8992-0c6a-579e-89d1-b4d7e5f7bac1"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "R1711")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "R1711")
+          (unit 1))))
+    (property "MPN" "CRCW0603100KFKEA"
+      (at 474.98 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 474.98 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4e3f06cba0aa"
+      (at 474.98 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 474.98 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 474.98 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 474.98 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 474.98 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 474.98 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 474.98 227.33 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 469.9 227.33)
+      (xy 462.28 227.33))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "a0950a25-8cad-5f46-acc2-7e8fc839dea4"))
+  (global_label "KNOCK1_AC"
+    (shape bidirectional)
+    (at 462.28 227.33 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "e1fe3be7-a861-5633-9cdb-fb49e5189b47"))
+  (wire
+    (pts
+      (xy 480.06 227.33)
+      (xy 487.68 227.33))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "49f333d6-5179-5445-bb59-988a48048155"))
+  (global_label "KNOCK1_INV"
+    (shape bidirectional)
+    (at 487.68 227.33 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "f9ae67ba-ad4b-532c-add9-1992d26add59"))
+  (symbol
+    (lib_id "Power8GDI_Aux:R")
+    (at 69.85 248.92 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "328a80d1-2d3a-58a3-9401-7352c23cadee")
+    (property "Reference" "R1712"
+      (at 73.85 247.65 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100k 1%"
+      (at 73.85 250.19 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 69.85 248.92 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 69.85 248.92 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "ac4dc2c0-dbd0-5fce-81ab-12122cead0d2"))
+    (pin "2"
+      (uuid "5bf7ee85-e106-592d-982f-66a61c7eeb1c"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "R1712")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "R1712")
+          (unit 1))))
+    (property "MPN" "CRCW0603100KFKEA"
+      (at 69.85 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 69.85 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4e3f06cba0aa"
+      (at 69.85 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 69.85 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 69.85 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 69.85 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 69.85 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 69.85 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 69.85 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 64.77 248.92)
+      (xy 57.15 248.92))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "26f51812-4df0-5d4e-8116-b1163c0d7fd1"))
+  (global_label "KNOCK1_FB"
+    (shape bidirectional)
+    (at 57.15 248.92 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "9e7a8e77-2acf-5a4f-8a26-a38c6c2a6c50"))
+  (wire
+    (pts
+      (xy 74.93 248.92)
+      (xy 82.55 248.92))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "354fc47f-d3fb-5e3f-a069-1b427848d090"))
+  (global_label "KNOCK1_INV"
+    (shape bidirectional)
+    (at 82.55 248.92 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "67274f6c-8228-5241-a59b-38e721e71980"))
+  (symbol
+    (lib_id "Power8GDI_Aux:R")
+    (at 204.47 248.92 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "943bcea0-acd7-52f4-a144-ec8fa19a2038")
+    (property "Reference" "R1713"
+      (at 208.47 247.65 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "0R"
+      (at 208.47 250.19 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 204.47 248.92 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Dedicated return routed to analogue ground entry; sensor cable/EMC review required"
+      (at 204.47 248.92 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "120a7826-1ddf-53ba-ab83-eda7e54fe2ee"))
+    (pin "2"
+      (uuid "899ad291-5818-547c-9eeb-aa918ed4ad56"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "R1713")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "R1713")
+          (unit 1))))
+    (property "MPN" "CRCW06030000Z0EA"
+      (at 204.47 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 204.47 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-8473f02313b2"
+      (at 204.47 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 204.47 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 204.47 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 204.47 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"current_a\": 2, \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 0.0, \"tcr_ppm_c\": null, \"technology\": \"jumper\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": null, \"working_voltage_v\": 75}"
+      (at 204.47 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 204.47 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 204.47 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 199.39 248.92)
+      (xy 191.77 248.92))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "463c09b2-642c-51a3-a2f7-e459f5124d5d"))
+  (global_label "HARNESS_KNOCK1_RETURN"
+    (shape bidirectional)
+    (at 191.77 248.92 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "e93eb637-3fbe-5714-b559-7e34a1f9812b"))
+  (wire
+    (pts
+      (xy 209.55 248.92)
+      (xy 217.17 248.92))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "db9324c6-543e-56cc-9bf6-c614fbc8efb3"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 217.17 248.92 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "f862d096-ecd5-5f20-b022-170fad7cde74"))
+  (symbol
+    (lib_id "Power8GDI_Aux:C")
+    (at 340.36 248.92 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "cc8339e2-411d-51dd-bbe3-de3002a412c0")
+    (property "Reference" "C1721"
+      (at 344.36 247.65 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "3.3nF 50V C0G"
+      (at 344.36 250.19 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 340.36 248.92 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 340.36 248.92 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "b4f8a614-1039-5891-b751-56fb754e4e3d"))
+    (pin "2"
+      (uuid "b5ce3ea6-3198-5950-9391-dfa1b5feb91f"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "C1721")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "C1721")
+          (unit 1))))
+    (property "MPN" "C0603C332J5GACTU"
+      (at 340.36 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 340.36 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-9caf65fb5559"
+      (at 340.36 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 340.36 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 340.36 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 340.36 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 3300, \"dielectric\": \"C0G\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 5}"
+      (at 340.36 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.digikey.com/en/products/detail/kemet/C0603C332J5GACTU/2200552"
+      (at 340.36 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 340.36 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 335.28 248.92)
+      (xy 327.66 248.92))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "1ab5064e-dcde-5b4d-b1cb-ef7917513236"))
+  (global_label "HARNESS_KNOCK2_SIG"
+    (shape bidirectional)
+    (at 327.66 248.92 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "9ba0063a-f2a1-5642-ba29-1a2e5c5d77ea"))
+  (wire
+    (pts
+      (xy 345.44 248.92)
+      (xy 353.06 248.92))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "b98d6a35-9f22-5e02-9cc4-a4cb8ae0a200"))
+  (global_label "KNOCK2_AC"
+    (shape bidirectional)
+    (at 353.06 248.92 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "6d9d79d4-cdc8-538a-ab79-53ef2b0a5bdb"))
+  (symbol
+    (lib_id "Power8GDI_Aux:R")
+    (at 474.98 248.92 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "24b0b13e-7eaa-5b41-9c44-40c0ee05465c")
+    (property "Reference" "R1721"
+      (at 478.98 247.65 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100k 1%"
+      (at 478.98 250.19 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 474.98 248.92 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 474.98 248.92 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "a1a5f2f1-0b10-5958-ae6e-a4fa97ed586f"))
+    (pin "2"
+      (uuid "3289f880-5610-5763-a173-5ed029e156e6"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "R1721")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "R1721")
+          (unit 1))))
+    (property "MPN" "CRCW0603100KFKEA"
+      (at 474.98 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 474.98 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4e3f06cba0aa"
+      (at 474.98 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 474.98 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 474.98 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 474.98 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 474.98 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 474.98 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 474.98 248.92 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 469.9 248.92)
+      (xy 462.28 248.92))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "cf9d6bd7-5674-5a76-8800-7180f9d8df63"))
+  (global_label "KNOCK2_AC"
+    (shape bidirectional)
+    (at 462.28 248.92 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "e5590ae8-fa21-52ad-8995-f40251a468fa"))
+  (wire
+    (pts
+      (xy 480.06 248.92)
+      (xy 487.68 248.92))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "6bd2024c-1535-5d6e-b41d-6cc4486eecb7"))
+  (global_label "KNOCK2_INV"
+    (shape bidirectional)
+    (at 487.68 248.92 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "06bb3adb-f19c-5ca3-9f45-ab05602179f9"))
+  (symbol
+    (lib_id "Power8GDI_Aux:R")
+    (at 69.85 270.51 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "7c90d579-e9ed-56c1-80d7-ded669bb2bb3")
+    (property "Reference" "R1722"
+      (at 73.85 269.24 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100k 1%"
+      (at 73.85 271.78 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 69.85 270.51 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 69.85 270.51 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "73e65b75-2205-5bce-b9a7-445b25b106fe"))
+    (pin "2"
+      (uuid "7548a71c-122a-52c1-9fb9-4eb24bafb3c3"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "R1722")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "R1722")
+          (unit 1))))
+    (property "MPN" "CRCW0603100KFKEA"
+      (at 69.85 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 69.85 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4e3f06cba0aa"
+      (at 69.85 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 69.85 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 69.85 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 69.85 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 69.85 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 69.85 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 69.85 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 64.77 270.51)
+      (xy 57.15 270.51))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "c4655123-c425-509d-bf04-07d0c9d191aa"))
+  (global_label "KNOCK2_FB"
+    (shape bidirectional)
+    (at 57.15 270.51 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "b7c1991e-3feb-591a-ad1c-f207ae93b8ee"))
+  (wire
+    (pts
+      (xy 74.93 270.51)
+      (xy 82.55 270.51))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "0ce3d42d-593c-5697-8673-5c7b6be8d68e"))
+  (global_label "KNOCK2_INV"
+    (shape bidirectional)
+    (at 82.55 270.51 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "e89a5516-c1af-5867-b231-c5118057e7c5"))
+  (symbol
+    (lib_id "Power8GDI_Aux:R")
+    (at 204.47 270.51 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "05244c28-b2f6-56ef-9cef-35411e35ddc8")
+    (property "Reference" "R1723"
+      (at 208.47 269.24 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "0R"
+      (at 208.47 271.78 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 204.47 270.51 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Dedicated return routed to analogue ground entry; sensor cable/EMC review required"
+      (at 204.47 270.51 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "b4c7ce4a-790b-5033-84d8-811d7ebd006b"))
+    (pin "2"
+      (uuid "e8290277-b9e2-5d2e-acd3-95a395fdf29d"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "R1723")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "R1723")
+          (unit 1))))
+    (property "MPN" "CRCW06030000Z0EA"
+      (at 204.47 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 204.47 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-8473f02313b2"
+      (at 204.47 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 204.47 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 204.47 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 204.47 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"current_a\": 2, \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 0.0, \"tcr_ppm_c\": null, \"technology\": \"jumper\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": null, \"working_voltage_v\": 75}"
+      (at 204.47 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 204.47 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 204.47 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 199.39 270.51)
+      (xy 191.77 270.51))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "6532b2db-475d-59fb-baa1-f9fc8a2ee5de"))
+  (global_label "HARNESS_KNOCK2_RETURN"
+    (shape bidirectional)
+    (at 191.77 270.51 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "6131e249-f394-50c1-94fc-c4c5bafdd9ad"))
+  (wire
+    (pts
+      (xy 209.55 270.51)
+      (xy 217.17 270.51))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "587598f4-da1a-55a3-9ab6-a1d50882e7f5"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 217.17 270.51 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "b2b8436b-c966-535f-aeda-c63af469dbb6"))
+  (symbol
+    (lib_id "Power8GDI_Aux:R")
+    (at 340.36 270.51 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "2d0facc8-f38b-5f10-88f7-1c100d75a7a1")
+    (property "Reference" "R1701"
+      (at 344.36 269.24 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10k 1%"
+      (at 344.36 271.78 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 340.36 270.51 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 340.36 270.51 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "04d1694b-3bb9-50a3-9f36-8ddd0fb85855"))
+    (pin "2"
+      (uuid "c15b5fe8-c6d9-5d80-a37b-b1d52bf6f5ea"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "R1701")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "R1701")
+          (unit 1))))
+    (property "MPN" "CRCW060310K0FKEA"
+      (at 340.36 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 340.36 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-9c0806476875"
+      (at 340.36 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 340.36 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 340.36 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 340.36 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 10000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 340.36 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 340.36 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 340.36 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 335.28 270.51)
+      (xy 327.66 270.51))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "bed8283f-4930-53e2-b219-b6b7333ca946"))
+  (global_label "KNOCK_CS_N"
+    (shape bidirectional)
+    (at 327.66 270.51 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "2677d817-e60d-56c3-a487-432fa9756a11"))
+  (wire
+    (pts
+      (xy 345.44 270.51)
+      (xy 353.06 270.51))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "c7007537-cc1a-55be-a246-0ee71b07aa67"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 353.06 270.51 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "3cd6dae4-1980-55e2-abc5-840b4462b219"))
+  (symbol
+    (lib_id "Power8GDI_Aux:R")
+    (at 474.98 270.51 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "6bfafdb5-a0d7-53ae-9d0a-1b368778c2a0")
+    (property "Reference" "R1702"
+      (at 478.98 269.24 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10k 1%"
+      (at 478.98 271.78 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 474.98 270.51 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 474.98 270.51 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "7978e53d-5c74-5e6d-9619-274770de215d"))
+    (pin "2"
+      (uuid "9629d0ce-73ea-5c65-82d0-62fee3af276c"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "R1702")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "R1702")
+          (unit 1))))
+    (property "MPN" "CRCW060310K0FKEA"
+      (at 474.98 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 474.98 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-9c0806476875"
+      (at 474.98 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 474.98 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 474.98 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 474.98 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 10000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 474.98 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 474.98 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 474.98 270.51 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 469.9 270.51)
+      (xy 462.28 270.51))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "646cceb0-4d83-5d0d-b826-8bd00227bca6"))
+  (global_label "KNOCK_INT_HOLD"
+    (shape bidirectional)
+    (at 462.28 270.51 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "a2135b45-fea9-5004-b7f9-b923d67e1475"))
+  (wire
+    (pts
+      (xy 480.06 270.51)
+      (xy 487.68 270.51))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "c266fa25-75a2-5708-99b0-068a0336cfd4"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 487.68 270.51 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "fc467c99-b200-57f6-8a48-fbe3ae7832c5"))
+  (symbol
+    (lib_id "Power8GDI_Aux:R")
+    (at 69.85 293.37 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "e688a84b-9995-5de8-8102-8496590b4b30")
+    (property "Reference" "R1703"
+      (at 73.85 292.1 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100k 1%"
+      (at 73.85 294.64 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 69.85 293.37 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 69.85 293.37 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "3bd55b37-d067-5d06-aed1-1eea6a0b4de4"))
+    (pin "2"
+      (uuid "ad6119c2-1415-54f2-bd3a-86f542f68db7"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/8965976b-faa0-5281-9f71-542877bfa52b"
+          (reference "R1703")
+          (unit 1)))
+      (project "knock_dual"
+        (path "/20465974-d3b0-5bf0-9403-bb1282024aae"
+          (reference "R1703")
+          (unit 1))))
+    (property "MPN" "CRCW0603100KFKEA"
+      (at 69.85 293.37 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 69.85 293.37 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4e3f06cba0aa"
+      (at 69.85 293.37 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 69.85 293.37 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 69.85 293.37 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 69.85 293.37 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 100000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 69.85 293.37 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 69.85 293.37 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 69.85 293.37 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 64.77 293.37)
+      (xy 57.15 293.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "5a0b0ee6-d4f8-5c4c-82fd-53e79ecd87a4"))
+  (global_label "KNOCK_SDO_5V"
+    (shape bidirectional)
+    (at 57.15 293.37 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "c5a833fd-4351-5feb-9d80-dd908629cc32"))
+  (wire
+    (pts
+      (xy 74.93 293.37)
+      (xy 82.55 293.37))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "efd29d78-40cf-5d7b-9aa7-2cbec8711a53"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 82.55 293.37 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "eba651ff-23fc-56b9-8465-4faf0d797179"))
+  (sheet_instances
+    (path "/"
+      (page "1"))))

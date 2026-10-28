@@ -213,6 +213,18 @@ def main():
                 child(node, 'lib_id')[1] = Q(lib_ids[child(node, 'lib_id')[1]])
                 fpname = 'REF_' + ref
                 prop(node, 'Footprint')[2] = Q('Power8GDI_GDI:' + fpname)
+                if ref in {'C14','C15'}:
+                    prop(node,'Value')[2]=Q('1300uF 50V')
+                    for field in children(node,'property'):
+                        if field[1]=='LCSC':field[1]=Q('Source_LCSC_previous_value')
+                if str(prop(node,'Value')[2]).startswith('BUK9230-100B'):
+                    prop(node,'Value')[2]=Q('IPD60N10S4L12ATMA1')
+                    prop(node,'Datasheet')[2]=Q('https://www.infineon.com/assets/row/public/documents/10/49/infineon-ipd60n10s4l-12-ds-en.pdf')
+                    for field in children(node,'property'):
+                        if field[1]=='LCSC': field[1]=Q('Source_LCSC_obsolete_BUK')
+                    at=child(node,'at')
+                    for key,value in [('MPN','IPD60N10S4L12ATMA1'),('Manufacturer','Infineon'),('Hardware_Qualification','CONDITIONAL_REVIEW_NOT_LOAD_QUALIFIED')]:
+                        node.append(['property',Q(key),Q(value),['at',*at[1:]],['effects',['font',['size','1','1']],['hide','yes']]])
                 if prop(node, 'Value')[2] == 'DNP':
                     if child(node, 'dnp'):
                         child(node, 'dnp')[1] = 'yes'

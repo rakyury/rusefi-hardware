@@ -1,172 +1,2835 @@
-(kicad_sch (version 20250114) (generator "eeschema") (uuid "70a9690b-a781-5e0b-a649-2c12c6cd0d4f") (paper "A2") (title_block (title "Ignition permission and three dual gate drivers") (rev "Engineering draft 0.1") (comment 1 "UNQUALIFIED: no manufacturing or engine approval"))
-(lib_symbols
-(symbol "Power8GDI_Core:IGN_SN74LVC1G17_Q1" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-(property "Reference" "U" (at 0 8.89 0) (effects (font (size 1.27 1.27))))
-(property "Value" "IGN_SN74LVC1G17_Q1" (at 0 -8.89 0) (effects (font (size 1.27 1.27))))
-(property "Footprint" "Package_TO_SOT_SMD:SOT-23-5" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
-(symbol "IGN_SN74LVC1G17_Q1_0_1" (rectangle (start -17.78 6.35) (end 17.78 -6.35) (stroke (width 0.254) (type default)) (fill (type background))))
-(symbol "IGN_SN74LVC1G17_Q1_1_1"
-(pin no_connect line (at -20.32 5.08 0) (length 2.54) (name "NC" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
-(pin input line (at -20.32 0 0) (length 2.54) (name "A" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at -20.32 -5.08 0) (length 2.54) (name "GND" (effects (font (size 1.016 1.016)))) (number "3" (effects (font (size 1.016 1.016)))))
-(pin output line (at 20.32 5.08 180) (length 2.54) (name "Y" (effects (font (size 1.016 1.016)))) (number "4" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at 20.32 0 180) (length 2.54) (name "VCC" (effects (font (size 1.016 1.016)))) (number "5" (effects (font (size 1.016 1.016)))))
-))
-(symbol "Power8GDI_Core:SN74LVC1G11B_Q1" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-(property "Reference" "U" (at 0 8.89 0) (effects (font (size 1.27 1.27))))
-(property "Value" "SN74LVC1G11B_Q1" (at 0 -8.89 0) (effects (font (size 1.27 1.27))))
-(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
-(symbol "SN74LVC1G11B_Q1_0_1" (rectangle (start -17.78 6.35) (end 17.78 -6.35) (stroke (width 0.254) (type default)) (fill (type background))))
-(symbol "SN74LVC1G11B_Q1_1_1"
-(pin input line (at -20.32 5.08 0) (length 2.54) (name "A" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at -20.32 0 0) (length 2.54) (name "GND" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
-(pin input line (at -20.32 -5.08 0) (length 2.54) (name "B" (effects (font (size 1.016 1.016)))) (number "3" (effects (font (size 1.016 1.016)))))
-(pin output line (at 20.32 5.08 180) (length 2.54) (name "Y" (effects (font (size 1.016 1.016)))) (number "4" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at 20.32 0 180) (length 2.54) (name "VCC" (effects (font (size 1.016 1.016)))) (number "5" (effects (font (size 1.016 1.016)))))
-(pin input line (at 20.32 -5.08 180) (length 2.54) (name "C" (effects (font (size 1.016 1.016)))) (number "6" (effects (font (size 1.016 1.016)))))
-))
-(symbol "Power8GDI_Core:R" (pin_numbers (hide yes)) (pin_names (offset 0)) (exclude_from_sim no) (in_bom yes) (on_board yes) (property "Reference" "R" (at 2.032 0 90) (effects (font (size 1.27 1.27)))) (property "Value" "R" (at 0 0 90) (effects (font (size 1.27 1.27)))) (property "Footprint" "" (at -1.778 0 90) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Description" "Resistor" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "ki_keywords" "R res resistor" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "ki_fp_filters" "R_*" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (symbol "R_0_1" (rectangle (start -1.016 -2.54) (end 1.016 2.54) (stroke (width 0.254) (type default)) (fill (type none)))) (symbol "R_1_1" (pin passive line (at 0 3.81 270) (length 1.27) (name "~" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 0 -3.81 90) (length 1.27) (name "~" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no))
-(symbol "Power8GDI_Core:C" (pin_numbers (hide yes)) (pin_names (offset 0.254)) (exclude_from_sim no) (in_bom yes) (on_board yes) (property "Reference" "C" (at 0.635 2.54 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "C" (at 0.635 -2.54 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "" (at 0.9652 -3.81 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Description" "Unpolarized capacitor" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "ki_keywords" "cap capacitor" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "ki_fp_filters" "C_*" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (symbol "C_0_1" (polyline (pts (xy -2.032 0.762) (xy 2.032 0.762)) (stroke (width 0.508) (type default)) (fill (type none))) (polyline (pts (xy -2.032 -0.762) (xy 2.032 -0.762)) (stroke (width 0.508) (type default)) (fill (type none)))) (symbol "C_1_1" (pin passive line (at 0 3.81 270) (length 2.794) (name "~" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 0 -3.81 90) (length 2.794) (name "~" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no))
-(symbol "Power8GDI_Core:UCC27524AQDRQ1" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-(property "Reference" "U" (at 0 11.43 0) (effects (font (size 1.27 1.27))))
-(property "Value" "UCC27524AQDRQ1" (at 0 -11.43 0) (effects (font (size 1.27 1.27))))
-(property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
-(symbol "UCC27524AQDRQ1_0_1" (rectangle (start -17.78 8.89) (end 17.78 -8.89) (stroke (width 0.254) (type default)) (fill (type background))))
-(symbol "UCC27524AQDRQ1_1_1"
-(pin input line (at -20.32 7.62 0) (length 2.54) (name "ENA" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
-(pin input line (at -20.32 2.54 0) (length 2.54) (name "INA" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at -20.32 -2.54 0) (length 2.54) (name "GND" (effects (font (size 1.016 1.016)))) (number "3" (effects (font (size 1.016 1.016)))))
-(pin input line (at -20.32 -7.62 0) (length 2.54) (name "INB" (effects (font (size 1.016 1.016)))) (number "4" (effects (font (size 1.016 1.016)))))
-(pin output line (at 20.32 7.62 180) (length 2.54) (name "OUTB" (effects (font (size 1.016 1.016)))) (number "5" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at 20.32 2.54 180) (length 2.54) (name "VDD" (effects (font (size 1.016 1.016)))) (number "6" (effects (font (size 1.016 1.016)))))
-(pin output line (at 20.32 -2.54 180) (length 2.54) (name "OUTA" (effects (font (size 1.016 1.016)))) (number "7" (effects (font (size 1.016 1.016)))))
-(pin input line (at 20.32 -7.62 180) (length 2.54) (name "ENB" (effects (font (size 1.016 1.016)))) (number "8" (effects (font (size 1.016 1.016)))))
-))
-)
-(text "PASSIVE PRIMARY OUTPUT ASSEMBLY" (at 25 20 0) (effects (font (size 2 2)) (justify left top)) (uuid "5e96d00b-f8bc-5994-9eab-ff8b8a4fe4d1"))
-(text "IGN_OC_OK is open drain, healthy high. Parent connects to HW_KILL_N.\nNo firmware-only current limit. Fault turn-off can cause an unintended spark.\nCoil +12V feed must be removed on fault; see HW_IGNITION_B58.md." (at 25 35 0) (effects (font (size 1.27 1.27)) (justify left top)) (uuid "a91dc38f-5eaa-518b-9ac7-b74c3880abb6"))
-(symbol (lib_id "Power8GDI_Core:IGN_SN74LVC1G17_Q1") (at 100.33 90.17 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "f5525a20-f8b8-5560-a0a5-3b0369f0ec2d") (property "Reference" "U5400" (at 100.33 82.55 0) (effects (font (size 1.27 1.27)))) (property "Value" "SN74LVC1G17QDBVRQ1" (at 100.33 97.79 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "Package_TO_SOT_SMD:SOT-23-5" (at 100.33 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 100.33 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "e92a6056-7972-57fe-afad-86dd7040d007")) (pin "2" (uuid "4cbbd2e2-3429-5946-bd73-b213fe4c9ab8")) (pin "3" (uuid "5c86352c-2136-5987-bb40-687b36b90cfe")) (pin "4" (uuid "25723570-a6d3-5112-9c17-c548a613d1ca")) (pin "5" (uuid "94722745-e7ea-5bfa-bcef-c8f87f9c79ef")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "U5400") (unit 1)))))
-(no_connect (at 80.01 85.09) (uuid "91c9c7cd-a63a-502f-b48c-50daf3a2a92d"))
-(wire (pts (xy 80.01 90.17) (xy 72.39 90.17)) (stroke (width 0) (type default)) (uuid "7fb33c66-4c6f-5b6f-a4b6-03d1bffe2233"))
-(global_label "IGN_OC_OK" (shape bidirectional) (at 72.39 90.17 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "1458b214-fe10-504f-a19b-8455a2887d32"))
-(wire (pts (xy 80.01 95.25) (xy 72.39 95.25)) (stroke (width 0) (type default)) (uuid "fdb8794a-9383-5f58-8ec5-00c92a6b039f"))
-(global_label "GND" (shape bidirectional) (at 72.39 95.25 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "aab4c2ce-559f-5b58-9214-b40f41b048d1"))
-(wire (pts (xy 120.65 85.09) (xy 128.27 85.09)) (stroke (width 0) (type default)) (uuid "51d30a57-e465-513c-9912-74c6037b8214"))
-(global_label "IGN_OC_OK_CLEAN" (shape bidirectional) (at 128.27 85.09 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "36055138-6292-5f5c-8a72-32ce6dae8040"))
-(wire (pts (xy 120.65 90.17) (xy 128.27 90.17)) (stroke (width 0) (type default)) (uuid "65390b2b-fdce-5303-bd5f-82c9a1026948"))
-(global_label "+3V3" (shape bidirectional) (at 128.27 90.17 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "a06a8792-a7c5-5475-b010-b6f1e3cf7b05"))
-(symbol (lib_id "Power8GDI_Core:SN74LVC1G11B_Q1") (at 270.51 90.17 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "59f780a0-48d0-5d52-a09e-e6613556755d") (property "Reference" "U5401" (at 270.51 82.55 0) (effects (font (size 1.27 1.27)))) (property "Value" "SN74LVC1G11BDCKRQ1" (at 270.51 97.79 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6" (at 270.51 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 270.51 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "d262f9d9-f101-5316-8af0-61b14e3cdb51")) (pin "2" (uuid "6eeffb94-dbec-5cf9-b040-4dbcccae38b7")) (pin "3" (uuid "03012e8d-2fd7-51d0-8c7b-50cfa1b72742")) (pin "4" (uuid "23acd33b-505f-5062-b232-83344571fcdc")) (pin "5" (uuid "cc3c487c-15a7-572d-8212-067cf189a9d3")) (pin "6" (uuid "9baa9529-cfdc-5f19-9457-c0320fe7b20c")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "U5401") (unit 1)))))
-(wire (pts (xy 250.19 85.09) (xy 242.57 85.09)) (stroke (width 0) (type default)) (uuid "3bb553f9-f66c-5b52-a134-1aef9add573b"))
-(global_label "HW_ACTUATOR_ENABLE" (shape bidirectional) (at 242.57 85.09 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "5d089ef3-b111-51b8-80f6-3e46c24cc4b9"))
-(wire (pts (xy 250.19 90.17) (xy 242.57 90.17)) (stroke (width 0) (type default)) (uuid "a000a751-c77a-516b-8e7d-ef7bc6ec69cc"))
-(global_label "GND" (shape bidirectional) (at 242.57 90.17 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "75dd4c57-985b-5cf6-805d-fe0b25808ffe"))
-(wire (pts (xy 250.19 95.25) (xy 242.57 95.25)) (stroke (width 0) (type default)) (uuid "592294b1-f32e-5084-badc-1e91be86c65c"))
-(global_label "IGN_OC_OK_CLEAN" (shape bidirectional) (at 242.57 95.25 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "b9178cf9-b4a1-5322-bed9-55f86a2fac81"))
-(wire (pts (xy 290.83 85.09) (xy 298.45 85.09)) (stroke (width 0) (type default)) (uuid "0575a3f9-a800-560d-9caa-47fa94823859"))
-(global_label "IGN_SAFE_EN" (shape bidirectional) (at 298.45 85.09 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "b65442b6-0a7b-5095-8337-1590cacf15d0"))
-(wire (pts (xy 290.83 90.17) (xy 298.45 90.17)) (stroke (width 0) (type default)) (uuid "1c356f9c-0170-5357-bac8-e4ff4eed3990"))
-(global_label "+3V3" (shape bidirectional) (at 298.45 90.17 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "ff4732db-c9ef-54b6-a523-c170723c6419"))
-(wire (pts (xy 290.83 95.25) (xy 298.45 95.25)) (stroke (width 0) (type default)) (uuid "aec66e5d-25f4-586a-ba6c-b8d496d99a9b"))
-(global_label "+3V3" (shape bidirectional) (at 298.45 95.25 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "a8603a2e-74ba-56f5-a9f0-d5821cf45a1a"))
-(symbol (lib_id "Power8GDI_Core:R") (at 420.37 69.85 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "b60aab24-a4b7-52db-a6ee-b7b33f70655d") (property "Reference" "R5400" (at 424.37 68.58 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "10k 1%" (at 424.37 71.12 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 420.37 69.85 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 420.37 69.85 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "8eafa2f1-b759-5854-ac25-b3afb5d3c338")) (pin "2" (uuid "860a2e88-16b6-51c1-845c-02c5e1dbe5c5")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "R5400") (unit 1)))))
-(wire (pts (xy 420.37 66.04) (xy 420.37 58.42)) (stroke (width 0) (type default)) (uuid "36789dcb-bb34-5008-a919-44e600d7ab77"))
-(global_label "+3V3" (shape bidirectional) (at 420.37 58.42 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "0363856c-487a-5d54-8aeb-b3659acbbb34"))
-(wire (pts (xy 420.37 73.66) (xy 420.37 81.28)) (stroke (width 0) (type default)) (uuid "a3bcd945-c1d2-5989-b02c-670543093dee"))
-(global_label "IGN_OC_OK" (shape bidirectional) (at 420.37 81.28 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "97aec23f-78f4-55ef-89b9-30319067b060"))
-(symbol (lib_id "Power8GDI_Core:R") (at 480.06 69.85 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "78fea79c-84f6-55b1-936c-881aa6792865") (property "Reference" "R5401" (at 484.06 68.58 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "1k" (at 484.06 71.12 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0603_1608Metric" (at 480.06 69.85 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "3.3mA load; holds driver EN below threshold against internal 200k typical pullups when logic is unpowered." (at 480.06 69.85 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "abeaf7bd-e9c9-5171-ac71-55b64f7da964")) (pin "2" (uuid "b466aec9-4351-5dbb-ab62-1fedb098ac41")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "R5401") (unit 1)))))
-(wire (pts (xy 480.06 66.04) (xy 480.06 58.42)) (stroke (width 0) (type default)) (uuid "677c0d51-107f-564e-8db7-056f3761bfd6"))
-(global_label "IGN_SAFE_EN" (shape bidirectional) (at 480.06 58.42 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "6e445f7d-49bf-5b8a-9d03-96ad69f93e67"))
-(wire (pts (xy 480.06 73.66) (xy 480.06 81.28)) (stroke (width 0) (type default)) (uuid "78c34a2b-2a26-56ae-aa83-bffaff85bba5"))
-(global_label "GND" (shape bidirectional) (at 480.06 81.28 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "41e355e5-bfef-5f72-a45a-16abd3203ea8"))
-(symbol (lib_id "Power8GDI_Core:C") (at 420.37 129.54 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "47b9512b-42b8-5d2b-b27f-b3d98a0eacee") (property "Reference" "C5400" (at 424.37 128.27 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100n 25V X7R" (at 424.37 130.81 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 420.37 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 420.37 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "3c6e0768-cce3-5731-a45f-619e2b8d1b13")) (pin "2" (uuid "c6afb9a0-d1b1-531b-bb4b-e36b278850f1")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "C5400") (unit 1)))))
-(wire (pts (xy 420.37 125.73) (xy 420.37 118.11)) (stroke (width 0) (type default)) (uuid "65bc842b-425a-58ef-9db9-68368ca7c59a"))
-(global_label "+3V3" (shape bidirectional) (at 420.37 118.11 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "320e5edb-a813-5a60-baf6-84ff7c41c873"))
-(wire (pts (xy 420.37 133.35) (xy 420.37 140.97)) (stroke (width 0) (type default)) (uuid "a84f8f94-a23d-5986-9dc4-673d7abef471"))
-(global_label "GND" (shape bidirectional) (at 420.37 140.97 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "13b3f0c4-c95b-5497-9c57-4908c2b18fb7"))
-(symbol (lib_id "Power8GDI_Core:C") (at 480.06 129.54 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "c02c97d7-31d0-505d-b846-bde5aa8e2b38") (property "Reference" "C5401" (at 484.06 128.27 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100n 25V X7R" (at 484.06 130.81 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 480.06 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 480.06 129.54 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "113941d0-0318-5f60-a95c-01e281295c29")) (pin "2" (uuid "46542379-3e56-5df4-8bd8-a1493871c941")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "C5401") (unit 1)))))
-(wire (pts (xy 480.06 125.73) (xy 480.06 118.11)) (stroke (width 0) (type default)) (uuid "61d215d2-62a3-5653-9b90-af1bec88988c"))
-(global_label "+3V3" (shape bidirectional) (at 480.06 118.11 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "7176307c-a8ed-5495-9c13-2333069c1479"))
-(wire (pts (xy 480.06 133.35) (xy 480.06 140.97)) (stroke (width 0) (type default)) (uuid "cd195fa3-9a86-57a0-b85e-c00189477981"))
-(global_label "GND" (shape bidirectional) (at 480.06 140.97 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "cb82dbdc-e27d-51a2-990e-0ac16d01f6da"))
-(symbol (lib_id "Power8GDI_Core:UCC27524AQDRQ1") (at 110.49 209.55 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "9959a3a8-4982-5053-804d-31f8222a69a8") (property "Reference" "U5402" (at 110.49 199.39 0) (effects (font (size 1.27 1.27)))) (property "Value" "UCC27524AQDRQ1" (at 110.49 219.71 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" (at 110.49 209.55 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current." (at 110.49 209.55 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "850a4752-dcac-5e3a-9cd7-72699754f64e")) (pin "2" (uuid "f2e8d5a2-7c1f-5a17-a5e3-a48dd98cac62")) (pin "3" (uuid "5bb51d23-5679-5217-bd7b-6d997ee9564e")) (pin "4" (uuid "fc63220c-f848-533c-b9c0-9ff297af03f9")) (pin "5" (uuid "3d25181d-10a5-5b66-a416-9389f67a02b1")) (pin "6" (uuid "d5c72c09-8ea8-5beb-b4f7-d7667c6aac3c")) (pin "7" (uuid "81472c4c-2907-508c-8623-046b8cc8ea84")) (pin "8" (uuid "2845edc4-b25e-5fbb-8654-03a90737107f")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "U5402") (unit 1)))))
-(wire (pts (xy 90.17 201.93) (xy 82.55 201.93)) (stroke (width 0) (type default)) (uuid "75384454-f731-5e9c-ba77-873ab07572f1"))
-(global_label "IGN_SAFE_EN" (shape bidirectional) (at 82.55 201.93 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "d35a07cb-e531-5ce5-a663-5d8a0f6526c3"))
-(wire (pts (xy 90.17 207.01) (xy 82.55 207.01)) (stroke (width 0) (type default)) (uuid "a16dd72b-7a1b-52a2-8757-6088dcb12110"))
-(global_label "IGN1_GUARDED" (shape bidirectional) (at 82.55 207.01 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "69d6c274-2537-537d-a96a-140a586fdaed"))
-(wire (pts (xy 90.17 212.09) (xy 82.55 212.09)) (stroke (width 0) (type default)) (uuid "bf5f7b57-8f55-5feb-bff4-a2193debdb88"))
-(global_label "GND" (shape bidirectional) (at 82.55 212.09 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "ca6d26a2-e2b7-5cc0-9c34-c6ca0f235078"))
-(wire (pts (xy 90.17 217.17) (xy 82.55 217.17)) (stroke (width 0) (type default)) (uuid "e574f795-7044-579f-9573-db50ee0d91d4"))
-(global_label "IGN2_GUARDED" (shape bidirectional) (at 82.55 217.17 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "a1c47d27-31dd-5793-863a-49196f82d65a"))
-(wire (pts (xy 130.81 201.93) (xy 138.43 201.93)) (stroke (width 0) (type default)) (uuid "b6c6890f-02fb-53c4-b01b-94c3360bf70b"))
-(global_label "IGN2_DRIVE" (shape bidirectional) (at 138.43 201.93 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "972e810b-eb8f-5a6f-96a3-33f901ca53fe"))
-(wire (pts (xy 130.81 207.01) (xy 138.43 207.01)) (stroke (width 0) (type default)) (uuid "531b485f-e680-5ea7-927a-b7f8ac713d12"))
-(global_label "+5V_CORE" (shape bidirectional) (at 138.43 207.01 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "cb41f103-dbc9-5ac0-b410-f43aa0ac2873"))
-(wire (pts (xy 130.81 212.09) (xy 138.43 212.09)) (stroke (width 0) (type default)) (uuid "707b913d-196d-59f6-b120-01b5500fce8f"))
-(global_label "IGN1_DRIVE" (shape bidirectional) (at 138.43 212.09 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "c0fc4883-3c3e-5815-866d-cd38e05d178d"))
-(wire (pts (xy 130.81 217.17) (xy 138.43 217.17)) (stroke (width 0) (type default)) (uuid "bcd3c10a-0b1f-5130-a839-38982852ed69"))
-(global_label "IGN_SAFE_EN" (shape bidirectional) (at 138.43 217.17 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "f4f895fe-77bc-5588-87ae-b95dd6cd86ed"))
-(symbol (lib_id "Power8GDI_Core:C") (at 195.58 190.5 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "478fd9bf-7fa3-552d-bd18-623bf40dfb0a") (property "Reference" "C5402" (at 199.58 189.23 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100n 25V X7R" (at 199.58 191.77 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 195.58 190.5 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 195.58 190.5 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "a6abc2c1-0680-587d-b6cb-7da0b0501bb5")) (pin "2" (uuid "8a068329-c265-569b-ab01-d9f29202e9ae")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "C5402") (unit 1)))))
-(wire (pts (xy 195.58 186.69) (xy 195.58 179.07)) (stroke (width 0) (type default)) (uuid "6dcc39f5-d747-5741-8a8b-f288adfa8f78"))
-(global_label "+5V_CORE" (shape bidirectional) (at 195.58 179.07 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "c457ab19-cf96-51de-9d24-cc868e7f11d7"))
-(wire (pts (xy 195.58 194.31) (xy 195.58 201.93)) (stroke (width 0) (type default)) (uuid "1b9d5af9-2011-5181-8711-01c919a8f3ff"))
-(global_label "GND" (shape bidirectional) (at 195.58 201.93 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "db05dc7c-294a-5c02-a049-e66e511a6bfa"))
-(symbol (lib_id "Power8GDI_Core:C") (at 195.58 229.87 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "5585279c-9ac3-5056-b73f-e6955faa9d0b") (property "Reference" "C5403" (at 199.58 228.6 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "1u 25V X7R" (at 199.58 231.14 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 195.58 229.87 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 195.58 229.87 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "d0f6f825-5144-53a3-a656-2b951f86e5b5")) (pin "2" (uuid "f54a5b64-bcab-5072-abda-e146c5c30441")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "C5403") (unit 1)))))
-(wire (pts (xy 195.58 226.06) (xy 195.58 218.44)) (stroke (width 0) (type default)) (uuid "8c0a1636-6a85-5748-92a0-0944bdd1b9ab"))
-(global_label "+5V_CORE" (shape bidirectional) (at 195.58 218.44 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "74d59bd0-6a78-580d-b8c9-4abf76897d0d"))
-(wire (pts (xy 195.58 233.68) (xy 195.58 241.3)) (stroke (width 0) (type default)) (uuid "3485cccb-23b6-5ad6-a74d-9179e246d7f2"))
-(global_label "GND" (shape bidirectional) (at 195.58 241.3 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "64c08237-8637-5c48-a8f2-95493d2f55fa"))
-(symbol (lib_id "Power8GDI_Core:UCC27524AQDRQ1") (at 379.73 209.55 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "8285d670-6882-54a8-ae15-a4292ce01c9f") (property "Reference" "U5403" (at 379.73 199.39 0) (effects (font (size 1.27 1.27)))) (property "Value" "UCC27524AQDRQ1" (at 379.73 219.71 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" (at 379.73 209.55 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current." (at 379.73 209.55 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "6dd6b543-c612-55eb-9b3d-2e0e2ce98936")) (pin "2" (uuid "9616135a-8353-585e-83f4-dd4c7cbc2738")) (pin "3" (uuid "3f6f2275-8805-55fd-80a4-bc332805cbaa")) (pin "4" (uuid "c34de9c8-c3b8-56b2-8612-443ef357b8dc")) (pin "5" (uuid "2a13bb1f-3bd4-5135-8fb6-a72bdefd61d7")) (pin "6" (uuid "9a8d9804-c0ed-5c6f-9164-5c1938a66c6b")) (pin "7" (uuid "2ff57819-a165-5f54-be84-862680be70fb")) (pin "8" (uuid "8f8fc4d4-9e59-5162-ac84-0b5c0b2c2de0")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "U5403") (unit 1)))))
-(wire (pts (xy 359.41 201.93) (xy 351.79 201.93)) (stroke (width 0) (type default)) (uuid "56f0e091-e0c1-59f7-a476-c7d682e08e1b"))
-(global_label "IGN_SAFE_EN" (shape bidirectional) (at 351.79 201.93 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "f0244049-9f8b-5e4f-b3d3-19895b68fa8b"))
-(wire (pts (xy 359.41 207.01) (xy 351.79 207.01)) (stroke (width 0) (type default)) (uuid "e4936ef3-35d9-569d-a14d-57fa691779d7"))
-(global_label "IGN3_GUARDED" (shape bidirectional) (at 351.79 207.01 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "2241bec0-8a7f-508d-9778-1b0f1a9a4386"))
-(wire (pts (xy 359.41 212.09) (xy 351.79 212.09)) (stroke (width 0) (type default)) (uuid "bfdef483-4b1f-5880-96ed-9a1aabfcf2c2"))
-(global_label "GND" (shape bidirectional) (at 351.79 212.09 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "ca549e63-3a55-53d2-9abc-91448a0d548f"))
-(wire (pts (xy 359.41 217.17) (xy 351.79 217.17)) (stroke (width 0) (type default)) (uuid "3fb20d1c-049f-577c-bbb9-744f0317479a"))
-(global_label "IGN4_GUARDED" (shape bidirectional) (at 351.79 217.17 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "447f1a69-36fa-5b31-ab3d-68916724574b"))
-(wire (pts (xy 400.05 201.93) (xy 407.67 201.93)) (stroke (width 0) (type default)) (uuid "29b0e2e7-89e1-53b2-9e1a-85bdb1201416"))
-(global_label "IGN4_DRIVE" (shape bidirectional) (at 407.67 201.93 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "92cca786-afc0-578a-931e-8ebbf95e7df6"))
-(wire (pts (xy 400.05 207.01) (xy 407.67 207.01)) (stroke (width 0) (type default)) (uuid "45422818-411c-50d3-ab1e-c2db2f0bf4be"))
-(global_label "+5V_CORE" (shape bidirectional) (at 407.67 207.01 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "21dcc904-c9e7-5bf5-81d3-35e0cd9908ca"))
-(wire (pts (xy 400.05 212.09) (xy 407.67 212.09)) (stroke (width 0) (type default)) (uuid "7dfefc04-9be9-515e-a196-1e20dfbef7f4"))
-(global_label "IGN3_DRIVE" (shape bidirectional) (at 407.67 212.09 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "92e80a4c-9f9a-58c2-a2df-ae0ac905efe0"))
-(wire (pts (xy 400.05 217.17) (xy 407.67 217.17)) (stroke (width 0) (type default)) (uuid "6da47bec-d495-5575-a77e-47043be4557c"))
-(global_label "IGN_SAFE_EN" (shape bidirectional) (at 407.67 217.17 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "6e63231f-c8fa-5160-899c-1fcb2960adb8"))
-(symbol (lib_id "Power8GDI_Core:C") (at 464.82 190.5 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "21603158-ff5f-5ab1-860c-1836de37a573") (property "Reference" "C5404" (at 468.82 189.23 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100n 25V X7R" (at 468.82 191.77 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 464.82 190.5 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 464.82 190.5 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "811f3ba1-f2cf-589d-b648-03dc93ceafc0")) (pin "2" (uuid "08b31853-d2c1-523b-8d51-0c9347817111")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "C5404") (unit 1)))))
-(wire (pts (xy 464.82 186.69) (xy 464.82 179.07)) (stroke (width 0) (type default)) (uuid "def82e40-430e-5a09-824d-afa01888a62f"))
-(global_label "+5V_CORE" (shape bidirectional) (at 464.82 179.07 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "897523df-4495-52eb-a73e-3990f7231be7"))
-(wire (pts (xy 464.82 194.31) (xy 464.82 201.93)) (stroke (width 0) (type default)) (uuid "1456b754-d0f5-58ca-9049-605b5b6c456d"))
-(global_label "GND" (shape bidirectional) (at 464.82 201.93 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "4cf85438-d048-542f-ae5c-43e914cca3f4"))
-(symbol (lib_id "Power8GDI_Core:C") (at 464.82 229.87 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "2e2dad11-be8a-5105-815f-4f8a9b37c74d") (property "Reference" "C5405" (at 468.82 228.6 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "1u 25V X7R" (at 468.82 231.14 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 464.82 229.87 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 464.82 229.87 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "31f02b59-b5f9-599e-af27-e3338cf76f2a")) (pin "2" (uuid "c28c961d-76f9-5677-99b8-fd2e2fb0eee7")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "C5405") (unit 1)))))
-(wire (pts (xy 464.82 226.06) (xy 464.82 218.44)) (stroke (width 0) (type default)) (uuid "bd4f8434-d3b2-53ff-b633-7ee5d9cef1dd"))
-(global_label "+5V_CORE" (shape bidirectional) (at 464.82 218.44 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "ea33f7fe-1b9d-5c3c-8d1f-f20779c6815a"))
-(wire (pts (xy 464.82 233.68) (xy 464.82 241.3)) (stroke (width 0) (type default)) (uuid "d221ffa8-2c66-54a0-9208-75c00ce13c3b"))
-(global_label "GND" (shape bidirectional) (at 464.82 241.3 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "5e56d602-4141-5283-8687-d67094a0626d"))
-(symbol (lib_id "Power8GDI_Core:UCC27524AQDRQ1") (at 110.49 309.88 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "36001ce4-e037-5c63-8803-cc0c7bbfc162") (property "Reference" "U5404" (at 110.49 299.72 0) (effects (font (size 1.27 1.27)))) (property "Value" "UCC27524AQDRQ1" (at 110.49 320.04 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" (at 110.49 309.88 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current." (at 110.49 309.88 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "0c8a1597-e3b8-5f1c-83cf-890975baf157")) (pin "2" (uuid "1e3a5eca-1ad9-5af2-83ed-61386558c749")) (pin "3" (uuid "fe6ce88d-7fe3-5951-b430-e994a9277086")) (pin "4" (uuid "a478a6a5-1d6c-507d-94d6-dad831b86d98")) (pin "5" (uuid "3c681b45-444a-5cfa-bbb7-f36488269599")) (pin "6" (uuid "cacb6f28-4a23-5f55-a217-f61b62013689")) (pin "7" (uuid "5f752169-aa1f-5413-acc7-eab94115d5ba")) (pin "8" (uuid "415839f8-c483-578d-825e-b6081d3fa7de")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "U5404") (unit 1)))))
-(wire (pts (xy 90.17 302.26) (xy 82.55 302.26)) (stroke (width 0) (type default)) (uuid "92096c6c-4823-5b58-b71f-7efec84b83e2"))
-(global_label "IGN_SAFE_EN" (shape bidirectional) (at 82.55 302.26 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "bc0b1fe0-9cef-52f2-b6cb-72bbdbb97a23"))
-(wire (pts (xy 90.17 307.34) (xy 82.55 307.34)) (stroke (width 0) (type default)) (uuid "9d020fff-ee77-5a67-a352-9cf3fd54660e"))
-(global_label "IGN5_GUARDED" (shape bidirectional) (at 82.55 307.34 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "3e84e132-ff0e-5ba7-9011-540e240e8a1d"))
-(wire (pts (xy 90.17 312.42) (xy 82.55 312.42)) (stroke (width 0) (type default)) (uuid "54688a85-44eb-5271-a1c5-5418f1dfa951"))
-(global_label "GND" (shape bidirectional) (at 82.55 312.42 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "133bd954-2a46-59ba-9bb9-3f8e9f6c3c58"))
-(wire (pts (xy 90.17 317.5) (xy 82.55 317.5)) (stroke (width 0) (type default)) (uuid "beb05fa2-7852-5077-98fc-6f26fd833c2b"))
-(global_label "IGN6_GUARDED" (shape bidirectional) (at 82.55 317.5 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "7cd9ebf7-2b57-5c20-b991-6f8a94d3cd5c"))
-(wire (pts (xy 130.81 302.26) (xy 138.43 302.26)) (stroke (width 0) (type default)) (uuid "b7c8c26e-6f71-56b1-8f9f-5cd9fb97488e"))
-(global_label "IGN6_DRIVE" (shape bidirectional) (at 138.43 302.26 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "570885e1-3609-5d67-93b8-723c1328b87c"))
-(wire (pts (xy 130.81 307.34) (xy 138.43 307.34)) (stroke (width 0) (type default)) (uuid "69c35ba8-49e2-5144-9862-c410a36ab3eb"))
-(global_label "+5V_CORE" (shape bidirectional) (at 138.43 307.34 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "0eadb0ff-db68-5306-ad69-3bfe915cee49"))
-(wire (pts (xy 130.81 312.42) (xy 138.43 312.42)) (stroke (width 0) (type default)) (uuid "7ba56da5-fe4e-5390-a28e-a11cbb6d7e57"))
-(global_label "IGN5_DRIVE" (shape bidirectional) (at 138.43 312.42 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "d0f9689a-a0f5-5ea9-a0b6-50b5e4dc20cd"))
-(wire (pts (xy 130.81 317.5) (xy 138.43 317.5)) (stroke (width 0) (type default)) (uuid "25c6c335-1e4a-5d76-841d-f8f5ad61da15"))
-(global_label "IGN_SAFE_EN" (shape bidirectional) (at 138.43 317.5 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "05268682-80e2-5583-a94b-45e23ababd24"))
-(symbol (lib_id "Power8GDI_Core:C") (at 195.58 289.56 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "89272308-cd15-5680-a5e6-ab26f1fd271d") (property "Reference" "C5406" (at 199.58 288.29 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100n 25V X7R" (at 199.58 290.83 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 195.58 289.56 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 195.58 289.56 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "6cd4f7cc-b86a-5418-8673-442d2b7d3741")) (pin "2" (uuid "28874aaf-4d9d-53ba-8130-f429ecf9a2fc")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "C5406") (unit 1)))))
-(wire (pts (xy 195.58 285.75) (xy 195.58 278.13)) (stroke (width 0) (type default)) (uuid "f81d45a2-4f08-51c4-a729-3c09584cc64d"))
-(global_label "+5V_CORE" (shape bidirectional) (at 195.58 278.13 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "c6fddfcd-81e7-566f-b6ed-64666f93501c"))
-(wire (pts (xy 195.58 293.37) (xy 195.58 300.99)) (stroke (width 0) (type default)) (uuid "5dcd9d6b-f172-552d-825a-5c2b750f5f52"))
-(global_label "GND" (shape bidirectional) (at 195.58 300.99 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "a42c7f1a-f738-592b-ba56-ccf3c6d04a7e"))
-(symbol (lib_id "Power8GDI_Core:C") (at 195.58 330.2 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "37b205e9-11b7-56ef-b46f-d3b8fe59501b") (property "Reference" "C5407" (at 199.58 328.93 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "1u 25V X7R" (at 199.58 331.47 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 195.58 330.2 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 195.58 330.2 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "733b9272-aede-53d6-ab59-d4e7e20321d6")) (pin "2" (uuid "7feca13b-550a-568f-94b4-5c561411f9f4")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8" (reference "C5407") (unit 1)))))
-(wire (pts (xy 195.58 326.39) (xy 195.58 318.77)) (stroke (width 0) (type default)) (uuid "381dd199-f10b-5ee9-a233-586a60465140"))
-(global_label "+5V_CORE" (shape bidirectional) (at 195.58 318.77 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "a4fe27d7-cdfe-5d81-908c-f6e9320b9281"))
-(wire (pts (xy 195.58 334.01) (xy 195.58 341.63)) (stroke (width 0) (type default)) (uuid "63801f33-4d89-5af9-9cf1-2ad702721210"))
-(global_label "GND" (shape bidirectional) (at 195.58 341.63 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "c7006ce7-12ff-5263-9911-aebeb3cf1cfc"))
-(sheet_instances (path "/" (page "1"))))
+(kicad_sch
+  (version 20250114)
+  (generator "eeschema")
+  (uuid "70a9690b-a781-5e0b-a649-2c12c6cd0d4f")
+  (paper "A2")
+  (title_block
+    (title "Ignition permission and three dual gate drivers")
+    (rev "Engineering draft 0.1")
+    (comment 1 "UNQUALIFIED: no manufacturing or engine approval"))
+  (lib_symbols
+    (symbol "Power8GDI_Core:IGN_SN74LVC1G17_Q1"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 0 8.89 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "IGN_SN74LVC1G17_Q1"
+        (at 0 -8.89 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "IGN_SN74LVC1G17_Q1_0_1"
+        (rectangle
+          (start -17.78 6.35)
+          (end 17.78 -6.35)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "IGN_SN74LVC1G17_Q1_1_1"
+        (pin no_connect line
+          (at -20.32 5.08 0)
+          (length 2.54)
+          (name "NC"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -20.32 0 0)
+          (length 2.54)
+          (name "A"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at -20.32 -5.08 0)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "3"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at 20.32 5.08 180)
+          (length 2.54)
+          (name "Y"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "4"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 20.32 0 180)
+          (length 2.54)
+          (name "VCC"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "5"
+            (effects
+              (font
+                (size 1.016 1.016)))))))
+    (symbol "Power8GDI_Core:SN74LVC1G11B_Q1"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 0 8.89 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "SN74LVC1G11B_Q1"
+        (at 0 -8.89 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "SN74LVC1G11B_Q1_0_1"
+        (rectangle
+          (start -17.78 6.35)
+          (end 17.78 -6.35)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "SN74LVC1G11B_Q1_1_1"
+        (pin input line
+          (at -20.32 5.08 0)
+          (length 2.54)
+          (name "A"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at -20.32 0 0)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -20.32 -5.08 0)
+          (length 2.54)
+          (name "B"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "3"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at 20.32 5.08 180)
+          (length 2.54)
+          (name "Y"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "4"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 20.32 0 180)
+          (length 2.54)
+          (name "VCC"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "5"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at 20.32 -5.08 180)
+          (length 2.54)
+          (name "C"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "6"
+            (effects
+              (font
+                (size 1.016 1.016)))))))
+    (symbol "Power8GDI_Core:R"
+      (pin_numbers
+        (hide yes))
+      (pin_names
+        (offset 0))
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "R"
+        (at 2.032 0 90)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "R"
+        (at 0 0 90)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" ""
+        (at -1.778 0 90)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Description" "Resistor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_keywords" "R res resistor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_fp_filters" "R_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "R_0_1"
+        (rectangle
+          (start -1.016 -2.54)
+          (end 1.016 2.54)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type none))))
+      (symbol "R_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 1.27)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 1.27)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27))))))
+      (embedded_fonts no))
+    (symbol "Power8GDI_Core:C"
+      (pin_numbers
+        (hide yes))
+      (pin_names
+        (offset 0.254))
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "C"
+        (at 0.635 2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (justify left)))
+      (property "Value" "C"
+        (at 0.635 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (justify left)))
+      (property "Footprint" ""
+        (at 0.9652 -3.81 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Description" "Unpolarized capacitor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_keywords" "cap capacitor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_fp_filters" "C_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "C_0_1"
+        (polyline
+          (pts
+            (xy -2.032 0.762)
+            (xy 2.032 0.762))
+          (stroke
+            (width 0.508)
+            (type default))
+          (fill
+            (type none)))
+        (polyline
+          (pts
+            (xy -2.032 -0.762)
+            (xy 2.032 -0.762))
+          (stroke
+            (width 0.508)
+            (type default))
+          (fill
+            (type none))))
+      (symbol "C_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 2.794)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 2.794)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27))))))
+      (embedded_fonts no))
+    (symbol "Power8GDI_Core:UCC27524AQDRQ1"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 0 11.43 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "UCC27524AQDRQ1"
+        (at 0 -11.43 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "UCC27524AQDRQ1_0_1"
+        (rectangle
+          (start -17.78 8.89)
+          (end 17.78 -8.89)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "UCC27524AQDRQ1_1_1"
+        (pin input line
+          (at -20.32 7.62 0)
+          (length 2.54)
+          (name "ENA"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -20.32 2.54 0)
+          (length 2.54)
+          (name "INA"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at -20.32 -2.54 0)
+          (length 2.54)
+          (name "GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "3"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -20.32 -7.62 0)
+          (length 2.54)
+          (name "INB"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "4"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at 20.32 7.62 180)
+          (length 2.54)
+          (name "OUTB"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "5"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 20.32 2.54 180)
+          (length 2.54)
+          (name "VDD"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "6"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin output line
+          (at 20.32 -2.54 180)
+          (length 2.54)
+          (name "OUTA"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "7"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at 20.32 -7.62 180)
+          (length 2.54)
+          (name "ENB"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "8"
+            (effects
+              (font
+                (size 1.016 1.016))))))))
+  (text "PASSIVE PRIMARY OUTPUT ASSEMBLY"
+    (at 25 20 0)
+    (effects
+      (font
+        (size 2 2))
+      (justify left top))
+    (uuid "5e96d00b-f8bc-5994-9eab-ff8b8a4fe4d1"))
+  (text "IGN_OC_OK is open drain, healthy high. Parent connects to HW_KILL_N.\nNo firmware-only current limit. Fault turn-off can cause an unintended spark.\nCoil +12V feed must be removed on fault; see HW_IGNITION_B58.md."
+    (at 25 35 0)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left top))
+    (uuid "a91dc38f-5eaa-518b-9ac7-b74c3880abb6"))
+  (symbol
+    (lib_id "Power8GDI_Core:IGN_SN74LVC1G17_Q1")
+    (at 100.33 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "f5525a20-f8b8-5560-a0a5-3b0369f0ec2d")
+    (property "Reference" "U5400"
+      (at 100.33 82.55 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "SN74LVC1G17QDBVRQ1"
+      (at 100.33 97.79 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Package_TO_SOT_SMD:SOT-23-5"
+      (at 100.33 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 100.33 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "e92a6056-7972-57fe-afad-86dd7040d007"))
+    (pin "2"
+      (uuid "4cbbd2e2-3429-5946-bd73-b213fe4c9ab8"))
+    (pin "3"
+      (uuid "5c86352c-2136-5987-bb40-687b36b90cfe"))
+    (pin "4"
+      (uuid "25723570-a6d3-5112-9c17-c548a613d1ca"))
+    (pin "5"
+      (uuid "94722745-e7ea-5bfa-bcef-c8f87f9c79ef"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "U5400")
+          (unit 1))))
+    (property "MPN" "SN74LVC1G17QDBVRQ1"
+      (at 100.33 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Texas Instruments"
+      (at 100.33 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-ecf3e6662afb"
+      (at 100.33 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 100.33 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 100.33 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 100.33 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 100.33 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.ti.com/product/SN74LVC1G17-Q1/part-details/SN74LVC1G17QDBVRQ1"
+      (at 100.33 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 100.33 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (no_connect
+    (at 80.01 85.09)
+    (uuid "91c9c7cd-a63a-502f-b48c-50daf3a2a92d"))
+  (wire
+    (pts
+      (xy 80.01 90.17)
+      (xy 72.39 90.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "7fb33c66-4c6f-5b6f-a4b6-03d1bffe2233"))
+  (global_label "IGN_OC_OK"
+    (shape bidirectional)
+    (at 72.39 90.17 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "1458b214-fe10-504f-a19b-8455a2887d32"))
+  (wire
+    (pts
+      (xy 80.01 95.25)
+      (xy 72.39 95.25))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "fdb8794a-9383-5f58-8ec5-00c92a6b039f"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 72.39 95.25 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "aab4c2ce-559f-5b58-9214-b40f41b048d1"))
+  (wire
+    (pts
+      (xy 120.65 85.09)
+      (xy 128.27 85.09))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "51d30a57-e465-513c-9912-74c6037b8214"))
+  (global_label "IGN_OC_OK_CLEAN"
+    (shape bidirectional)
+    (at 128.27 85.09 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "36055138-6292-5f5c-8a72-32ce6dae8040"))
+  (wire
+    (pts
+      (xy 120.65 90.17)
+      (xy 128.27 90.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "65390b2b-fdce-5303-bd5f-82c9a1026948"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 128.27 90.17 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "a06a8792-a7c5-5475-b010-b6f1e3cf7b05"))
+  (symbol
+    (lib_id "Power8GDI_Core:SN74LVC1G11B_Q1")
+    (at 270.51 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "59f780a0-48d0-5d52-a09e-e6613556755d")
+    (property "Reference" "U5401"
+      (at 270.51 82.55 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "SN74LVC1G11BDCKRQ1"
+      (at 270.51 97.79 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
+      (at 270.51 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 270.51 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "d262f9d9-f101-5316-8af0-61b14e3cdb51"))
+    (pin "2"
+      (uuid "6eeffb94-dbec-5cf9-b040-4dbcccae38b7"))
+    (pin "3"
+      (uuid "03012e8d-2fd7-51d0-8c7b-50cfa1b72742"))
+    (pin "4"
+      (uuid "23acd33b-505f-5062-b232-83344571fcdc"))
+    (pin "5"
+      (uuid "cc3c487c-15a7-572d-8212-067cf189a9d3"))
+    (pin "6"
+      (uuid "9baa9529-cfdc-5f19-9457-c0320fe7b20c"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "U5401")
+          (unit 1))))
+    (property "MPN" "SN74LVC1G11BDCKRQ1"
+      (at 270.51 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Texas Instruments"
+      (at 270.51 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-af3da1e13ada"
+      (at 270.51 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 270.51 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 270.51 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 270.51 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 270.51 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.ti.com/product/SN74LVC1G11B-Q1/part-details/SN74LVC1G11BDCKRQ1"
+      (at 270.51 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 270.51 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 250.19 85.09)
+      (xy 242.57 85.09))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3bb553f9-f66c-5b52-a134-1aef9add573b"))
+  (global_label "HW_ACTUATOR_ENABLE"
+    (shape bidirectional)
+    (at 242.57 85.09 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "5d089ef3-b111-51b8-80f6-3e46c24cc4b9"))
+  (wire
+    (pts
+      (xy 250.19 90.17)
+      (xy 242.57 90.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "a000a751-c77a-516b-8e7d-ef7bc6ec69cc"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 242.57 90.17 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "75dd4c57-985b-5cf6-805d-fe0b25808ffe"))
+  (wire
+    (pts
+      (xy 250.19 95.25)
+      (xy 242.57 95.25))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "592294b1-f32e-5084-badc-1e91be86c65c"))
+  (global_label "IGN_OC_OK_CLEAN"
+    (shape bidirectional)
+    (at 242.57 95.25 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "b9178cf9-b4a1-5322-bed9-55f86a2fac81"))
+  (wire
+    (pts
+      (xy 290.83 85.09)
+      (xy 298.45 85.09))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "0575a3f9-a800-560d-9caa-47fa94823859"))
+  (global_label "IGN_SAFE_EN"
+    (shape bidirectional)
+    (at 298.45 85.09 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "b65442b6-0a7b-5095-8337-1590cacf15d0"))
+  (wire
+    (pts
+      (xy 290.83 90.17)
+      (xy 298.45 90.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "1c356f9c-0170-5357-bac8-e4ff4eed3990"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 298.45 90.17 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "ff4732db-c9ef-54b6-a523-c170723c6419"))
+  (wire
+    (pts
+      (xy 290.83 95.25)
+      (xy 298.45 95.25))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "aec66e5d-25f4-586a-ba6c-b8d496d99a9b"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 298.45 95.25 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "a8603a2e-74ba-56f5-a9f0-d5821cf45a1a"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 420.37 69.85 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "b60aab24-a4b7-52db-a6ee-b7b33f70655d")
+    (property "Reference" "R5400"
+      (at 424.37 68.58 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "10k 1%"
+      (at 424.37 71.12 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 420.37 69.85 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 420.37 69.85 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "8eafa2f1-b759-5854-ac25-b3afb5d3c338"))
+    (pin "2"
+      (uuid "860a2e88-16b6-51c1-845c-02c5e1dbe5c5"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "R5400")
+          (unit 1))))
+    (property "MPN" "CRCW060310K0FKEA"
+      (at 420.37 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 420.37 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-9c0806476875"
+      (at 420.37 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 420.37 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 420.37 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 420.37 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 10000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 420.37 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 420.37 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 420.37 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 420.37 66.04)
+      (xy 420.37 58.42))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "36789dcb-bb34-5008-a919-44e600d7ab77"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 420.37 58.42 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "0363856c-487a-5d54-8aeb-b3659acbbb34"))
+  (wire
+    (pts
+      (xy 420.37 73.66)
+      (xy 420.37 81.28))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "a3bcd945-c1d2-5989-b02c-670543093dee"))
+  (global_label "IGN_OC_OK"
+    (shape bidirectional)
+    (at 420.37 81.28 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "97aec23f-78f4-55ef-89b9-30319067b060"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 480.06 69.85 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "78fea79c-84f6-55b1-936c-881aa6792865")
+    (property "Reference" "R5401"
+      (at 484.06 68.58 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "1k"
+      (at 484.06 71.12 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+      (at 480.06 69.85 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "3.3mA load; holds driver EN below threshold against internal 200k typical pullups when logic is unpowered."
+      (at 480.06 69.85 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "abeaf7bd-e9c9-5171-ac71-55b64f7da964"))
+    (pin "2"
+      (uuid "b466aec9-4351-5dbb-ab62-1fedb098ac41"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "R5401")
+          (unit 1))))
+    (property "MPN" "CRCW06031K00FKEA"
+      (at 480.06 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 480.06 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-38197231a947"
+      (at 480.06 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 480.06 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 480.06 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 480.06 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"derating\": \"Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.\", \"power_reference_temperature_c\": 70, \"power_w\": 0.1, \"resistance_ohm\": 1000.0, \"tcr_ppm_c\": 100, \"technology\": \"thick film\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": 1, \"working_voltage_v\": 75}"
+      (at 480.06 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 480.06 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 480.06 69.85 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 480.06 66.04)
+      (xy 480.06 58.42))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "677c0d51-107f-564e-8db7-056f3761bfd6"))
+  (global_label "IGN_SAFE_EN"
+    (shape bidirectional)
+    (at 480.06 58.42 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "6e445f7d-49bf-5b8a-9d03-96ad69f93e67"))
+  (wire
+    (pts
+      (xy 480.06 73.66)
+      (xy 480.06 81.28))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "78c34a2b-2a26-56ae-aa83-bffaff85bba5"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 480.06 81.28 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "41e355e5-bfef-5f72-a45a-16abd3203ea8"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 420.37 129.54 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "47b9512b-42b8-5d2b-b27f-b3d98a0eacee")
+    (property "Reference" "C5400"
+      (at 424.37 128.27 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 25V X7R"
+      (at 424.37 130.81 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 420.37 129.54 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 420.37 129.54 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "3c6e0768-cce3-5731-a45f-619e2b8d1b13"))
+    (pin "2"
+      (uuid "c6afb9a0-d1b1-531b-bb4b-e36b278850f1"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "C5400")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 420.37 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 420.37 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 420.37 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 420.37 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 420.37 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 420.37 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 420.37 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 420.37 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 420.37 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 420.37 125.73)
+      (xy 420.37 118.11))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "65bc842b-425a-58ef-9db9-68368ca7c59a"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 420.37 118.11 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "320e5edb-a813-5a60-baf6-84ff7c41c873"))
+  (wire
+    (pts
+      (xy 420.37 133.35)
+      (xy 420.37 140.97))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "a84f8f94-a23d-5986-9dc4-673d7abef471"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 420.37 140.97 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "13b3f0c4-c95b-5497-9c57-4908c2b18fb7"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 480.06 129.54 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "c02c97d7-31d0-505d-b846-bde5aa8e2b38")
+    (property "Reference" "C5401"
+      (at 484.06 128.27 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 25V X7R"
+      (at 484.06 130.81 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 480.06 129.54 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 480.06 129.54 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "113941d0-0318-5f60-a95c-01e281295c29"))
+    (pin "2"
+      (uuid "46542379-3e56-5df4-8bd8-a1493871c941"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "C5401")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 480.06 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 480.06 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 480.06 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 480.06 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 480.06 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 480.06 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 480.06 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 480.06 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 480.06 129.54 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 480.06 125.73)
+      (xy 480.06 118.11))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "61d215d2-62a3-5653-9b90-af1bec88988c"))
+  (global_label "+3V3"
+    (shape bidirectional)
+    (at 480.06 118.11 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "7176307c-a8ed-5495-9c13-2333069c1479"))
+  (wire
+    (pts
+      (xy 480.06 133.35)
+      (xy 480.06 140.97))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "cd195fa3-9a86-57a0-b85e-c00189477981"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 480.06 140.97 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "cb82dbdc-e27d-51a2-990e-0ac16d01f6da"))
+  (symbol
+    (lib_id "Power8GDI_Core:UCC27524AQDRQ1")
+    (at 110.49 209.55 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "9959a3a8-4982-5053-804d-31f8222a69a8")
+    (property "Reference" "U5402"
+      (at 110.49 199.39 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "UCC27524AQDRQ1"
+      (at 110.49 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+      (at 110.49 209.55 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current."
+      (at 110.49 209.55 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "850a4752-dcac-5e3a-9cd7-72699754f64e"))
+    (pin "2"
+      (uuid "f2e8d5a2-7c1f-5a17-a5e3-a48dd98cac62"))
+    (pin "3"
+      (uuid "5bb51d23-5679-5217-bd7b-6d997ee9564e"))
+    (pin "4"
+      (uuid "fc63220c-f848-533c-b9c0-9ff297af03f9"))
+    (pin "5"
+      (uuid "3d25181d-10a5-5b66-a416-9389f67a02b1"))
+    (pin "6"
+      (uuid "d5c72c09-8ea8-5beb-b4f7-d7667c6aac3c"))
+    (pin "7"
+      (uuid "81472c4c-2907-508c-8623-046b8cc8ea84"))
+    (pin "8"
+      (uuid "2845edc4-b25e-5fbb-8654-03a90737107f"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "U5402")
+          (unit 1))))
+    (property "MPN" "UCC27524AQDRQ1"
+      (at 110.49 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Texas Instruments"
+      (at 110.49 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-cf9971f5fc4e"
+      (at 110.49 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 110.49 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 110.49 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 110.49 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 110.49 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.ti.com/product/UCC27524A-Q1/part-details/UCC27524AQDRQ1"
+      (at 110.49 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 110.49 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 90.17 201.93)
+      (xy 82.55 201.93))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "75384454-f731-5e9c-ba77-873ab07572f1"))
+  (global_label "IGN_SAFE_EN"
+    (shape bidirectional)
+    (at 82.55 201.93 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "d35a07cb-e531-5ce5-a663-5d8a0f6526c3"))
+  (wire
+    (pts
+      (xy 90.17 207.01)
+      (xy 82.55 207.01))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "a16dd72b-7a1b-52a2-8757-6088dcb12110"))
+  (global_label "IGN1_GUARDED"
+    (shape bidirectional)
+    (at 82.55 207.01 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "69d6c274-2537-537d-a96a-140a586fdaed"))
+  (wire
+    (pts
+      (xy 90.17 212.09)
+      (xy 82.55 212.09))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "bf5f7b57-8f55-5feb-bff4-a2193debdb88"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 82.55 212.09 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "ca6d26a2-e2b7-5cc0-9c34-c6ca0f235078"))
+  (wire
+    (pts
+      (xy 90.17 217.17)
+      (xy 82.55 217.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "e574f795-7044-579f-9573-db50ee0d91d4"))
+  (global_label "IGN2_GUARDED"
+    (shape bidirectional)
+    (at 82.55 217.17 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "a1c47d27-31dd-5793-863a-49196f82d65a"))
+  (wire
+    (pts
+      (xy 130.81 201.93)
+      (xy 138.43 201.93))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "b6c6890f-02fb-53c4-b01b-94c3360bf70b"))
+  (global_label "IGN2_DRIVE"
+    (shape bidirectional)
+    (at 138.43 201.93 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "972e810b-eb8f-5a6f-96a3-33f901ca53fe"))
+  (wire
+    (pts
+      (xy 130.81 207.01)
+      (xy 138.43 207.01))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "531b485f-e680-5ea7-927a-b7f8ac713d12"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 138.43 207.01 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "cb41f103-dbc9-5ac0-b410-f43aa0ac2873"))
+  (wire
+    (pts
+      (xy 130.81 212.09)
+      (xy 138.43 212.09))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "707b913d-196d-59f6-b120-01b5500fce8f"))
+  (global_label "IGN1_DRIVE"
+    (shape bidirectional)
+    (at 138.43 212.09 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "c0fc4883-3c3e-5815-866d-cd38e05d178d"))
+  (wire
+    (pts
+      (xy 130.81 217.17)
+      (xy 138.43 217.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "bcd3c10a-0b1f-5130-a839-38982852ed69"))
+  (global_label "IGN_SAFE_EN"
+    (shape bidirectional)
+    (at 138.43 217.17 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "f4f895fe-77bc-5588-87ae-b95dd6cd86ed"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 195.58 190.5 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "478fd9bf-7fa3-552d-bd18-623bf40dfb0a")
+    (property "Reference" "C5402"
+      (at 199.58 189.23 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 25V X7R"
+      (at 199.58 191.77 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 195.58 190.5 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 195.58 190.5 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "a6abc2c1-0680-587d-b6cb-7da0b0501bb5"))
+    (pin "2"
+      (uuid "8a068329-c265-569b-ab01-d9f29202e9ae"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "C5402")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 195.58 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 195.58 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 195.58 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 195.58 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 195.58 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 195.58 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 195.58 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 195.58 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 195.58 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 195.58 186.69)
+      (xy 195.58 179.07))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "6dcc39f5-d747-5741-8a8b-f288adfa8f78"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 195.58 179.07 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "c457ab19-cf96-51de-9d24-cc868e7f11d7"))
+  (wire
+    (pts
+      (xy 195.58 194.31)
+      (xy 195.58 201.93))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "1b9d5af9-2011-5181-8711-01c919a8f3ff"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 195.58 201.93 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "db05dc7c-294a-5c02-a049-e66e511a6bfa"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 195.58 229.87 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "5585279c-9ac3-5056-b73f-e6955faa9d0b")
+    (property "Reference" "C5403"
+      (at 199.58 228.6 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "1u 25V X7R"
+      (at 199.58 231.14 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 195.58 229.87 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 195.58 229.87 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "d0f6f825-5144-53a3-a656-2b951f86e5b5"))
+    (pin "2"
+      (uuid "f54a5b64-bcab-5072-abda-e146c5c30441"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "C5403")
+          (unit 1))))
+    (property "MPN" "C0603C105K3RACTU"
+      (at 195.58 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 195.58 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4bca20b134b8"
+      (at 195.58 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 195.58 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 195.58 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 195.58 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 1000000, \"dc_bias_qualification\": \"PENDING_AT_ACTUAL_NODE_VOLTAGE\", \"dielectric\": \"X7R\", \"effective_capacitance_min_pf\": null, \"rated_voltage_v\": 25, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 195.58 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C105K3RACTU"
+      (at 195.58 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 195.58 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 195.58 226.06)
+      (xy 195.58 218.44))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "8c0a1636-6a85-5748-92a0-0944bdd1b9ab"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 195.58 218.44 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "74d59bd0-6a78-580d-b8c9-4abf76897d0d"))
+  (wire
+    (pts
+      (xy 195.58 233.68)
+      (xy 195.58 241.3))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3485cccb-23b6-5ad6-a74d-9179e246d7f2"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 195.58 241.3 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "64c08237-8637-5c48-a8f2-95493d2f55fa"))
+  (symbol
+    (lib_id "Power8GDI_Core:UCC27524AQDRQ1")
+    (at 379.73 209.55 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "8285d670-6882-54a8-ae15-a4292ce01c9f")
+    (property "Reference" "U5403"
+      (at 379.73 199.39 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "UCC27524AQDRQ1"
+      (at 379.73 219.71 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+      (at 379.73 209.55 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current."
+      (at 379.73 209.55 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "6dd6b543-c612-55eb-9b3d-2e0e2ce98936"))
+    (pin "2"
+      (uuid "9616135a-8353-585e-83f4-dd4c7cbc2738"))
+    (pin "3"
+      (uuid "3f6f2275-8805-55fd-80a4-bc332805cbaa"))
+    (pin "4"
+      (uuid "c34de9c8-c3b8-56b2-8612-443ef357b8dc"))
+    (pin "5"
+      (uuid "2a13bb1f-3bd4-5135-8fb6-a72bdefd61d7"))
+    (pin "6"
+      (uuid "9a8d9804-c0ed-5c6f-9164-5c1938a66c6b"))
+    (pin "7"
+      (uuid "2ff57819-a165-5f54-be84-862680be70fb"))
+    (pin "8"
+      (uuid "8f8fc4d4-9e59-5162-ac84-0b5c0b2c2de0"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "U5403")
+          (unit 1))))
+    (property "MPN" "UCC27524AQDRQ1"
+      (at 379.73 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Texas Instruments"
+      (at 379.73 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-cf9971f5fc4e"
+      (at 379.73 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 379.73 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 379.73 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 379.73 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 379.73 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.ti.com/product/UCC27524A-Q1/part-details/UCC27524AQDRQ1"
+      (at 379.73 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 379.73 209.55 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 359.41 201.93)
+      (xy 351.79 201.93))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "56f0e091-e0c1-59f7-a476-c7d682e08e1b"))
+  (global_label "IGN_SAFE_EN"
+    (shape bidirectional)
+    (at 351.79 201.93 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "f0244049-9f8b-5e4f-b3d3-19895b68fa8b"))
+  (wire
+    (pts
+      (xy 359.41 207.01)
+      (xy 351.79 207.01))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "e4936ef3-35d9-569d-a14d-57fa691779d7"))
+  (global_label "IGN3_GUARDED"
+    (shape bidirectional)
+    (at 351.79 207.01 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "2241bec0-8a7f-508d-9778-1b0f1a9a4386"))
+  (wire
+    (pts
+      (xy 359.41 212.09)
+      (xy 351.79 212.09))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "bfdef483-4b1f-5880-96ed-9a1aabfcf2c2"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 351.79 212.09 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "ca549e63-3a55-53d2-9abc-91448a0d548f"))
+  (wire
+    (pts
+      (xy 359.41 217.17)
+      (xy 351.79 217.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3fb20d1c-049f-577c-bbb9-744f0317479a"))
+  (global_label "IGN4_GUARDED"
+    (shape bidirectional)
+    (at 351.79 217.17 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "447f1a69-36fa-5b31-ab3d-68916724574b"))
+  (wire
+    (pts
+      (xy 400.05 201.93)
+      (xy 407.67 201.93))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "29b0e2e7-89e1-53b2-9e1a-85bdb1201416"))
+  (global_label "IGN4_DRIVE"
+    (shape bidirectional)
+    (at 407.67 201.93 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "92cca786-afc0-578a-931e-8ebbf95e7df6"))
+  (wire
+    (pts
+      (xy 400.05 207.01)
+      (xy 407.67 207.01))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "45422818-411c-50d3-ab1e-c2db2f0bf4be"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 407.67 207.01 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "21dcc904-c9e7-5bf5-81d3-35e0cd9908ca"))
+  (wire
+    (pts
+      (xy 400.05 212.09)
+      (xy 407.67 212.09))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "7dfefc04-9be9-515e-a196-1e20dfbef7f4"))
+  (global_label "IGN3_DRIVE"
+    (shape bidirectional)
+    (at 407.67 212.09 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "92e80a4c-9f9a-58c2-a2df-ae0ac905efe0"))
+  (wire
+    (pts
+      (xy 400.05 217.17)
+      (xy 407.67 217.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "6da47bec-d495-5575-a77e-47043be4557c"))
+  (global_label "IGN_SAFE_EN"
+    (shape bidirectional)
+    (at 407.67 217.17 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "6e63231f-c8fa-5160-899c-1fcb2960adb8"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 464.82 190.5 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "21603158-ff5f-5ab1-860c-1836de37a573")
+    (property "Reference" "C5404"
+      (at 468.82 189.23 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 25V X7R"
+      (at 468.82 191.77 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 464.82 190.5 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 464.82 190.5 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "811f3ba1-f2cf-589d-b648-03dc93ceafc0"))
+    (pin "2"
+      (uuid "08b31853-d2c1-523b-8d51-0c9347817111"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "C5404")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 464.82 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 464.82 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 464.82 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 464.82 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 464.82 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 464.82 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 464.82 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 464.82 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 464.82 190.5 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 464.82 186.69)
+      (xy 464.82 179.07))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "def82e40-430e-5a09-824d-afa01888a62f"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 464.82 179.07 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "897523df-4495-52eb-a73e-3990f7231be7"))
+  (wire
+    (pts
+      (xy 464.82 194.31)
+      (xy 464.82 201.93))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "1456b754-d0f5-58ca-9049-605b5b6c456d"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 464.82 201.93 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "4cf85438-d048-542f-ae5c-43e914cca3f4"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 464.82 229.87 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "2e2dad11-be8a-5105-815f-4f8a9b37c74d")
+    (property "Reference" "C5405"
+      (at 468.82 228.6 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "1u 25V X7R"
+      (at 468.82 231.14 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 464.82 229.87 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 464.82 229.87 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "31f02b59-b5f9-599e-af27-e3338cf76f2a"))
+    (pin "2"
+      (uuid "c28c961d-76f9-5677-99b8-fd2e2fb0eee7"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "C5405")
+          (unit 1))))
+    (property "MPN" "C0603C105K3RACTU"
+      (at 464.82 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 464.82 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4bca20b134b8"
+      (at 464.82 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 464.82 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 464.82 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 464.82 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 1000000, \"dc_bias_qualification\": \"PENDING_AT_ACTUAL_NODE_VOLTAGE\", \"dielectric\": \"X7R\", \"effective_capacitance_min_pf\": null, \"rated_voltage_v\": 25, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 464.82 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C105K3RACTU"
+      (at 464.82 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 464.82 229.87 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 464.82 226.06)
+      (xy 464.82 218.44))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "bd4f8434-d3b2-53ff-b633-7ee5d9cef1dd"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 464.82 218.44 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "ea33f7fe-1b9d-5c3c-8d1f-f20779c6815a"))
+  (wire
+    (pts
+      (xy 464.82 233.68)
+      (xy 464.82 241.3))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "d221ffa8-2c66-54a0-9208-75c00ce13c3b"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 464.82 241.3 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "5e56d602-4141-5283-8687-d67094a0626d"))
+  (symbol
+    (lib_id "Power8GDI_Core:UCC27524AQDRQ1")
+    (at 110.49 309.88 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "36001ce4-e037-5c63-8803-cc0c7bbfc162")
+    (property "Reference" "U5404"
+      (at 110.49 299.72 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "UCC27524AQDRQ1"
+      (at 110.49 320.04 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm"
+      (at 110.49 309.88 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Automotive grade 1; SOIC-8 D package (not PowerPAD DGN). UVLO holds outputs low. 5A is peak gate drive, not coil current."
+      (at 110.49 309.88 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "0c8a1597-e3b8-5f1c-83cf-890975baf157"))
+    (pin "2"
+      (uuid "1e3a5eca-1ad9-5af2-83ed-61386558c749"))
+    (pin "3"
+      (uuid "fe6ce88d-7fe3-5951-b430-e994a9277086"))
+    (pin "4"
+      (uuid "a478a6a5-1d6c-507d-94d6-dad831b86d98"))
+    (pin "5"
+      (uuid "3c681b45-444a-5cfa-bbb7-f36488269599"))
+    (pin "6"
+      (uuid "cacb6f28-4a23-5f55-a217-f61b62013689"))
+    (pin "7"
+      (uuid "5f752169-aa1f-5413-acc7-eab94115d5ba"))
+    (pin "8"
+      (uuid "415839f8-c483-578d-825e-b6081d3fa7de"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "U5404")
+          (unit 1))))
+    (property "MPN" "UCC27524AQDRQ1"
+      (at 110.49 309.88 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Texas Instruments"
+      (at 110.49 309.88 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-cf9971f5fc4e"
+      (at 110.49 309.88 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 110.49 309.88 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 110.49 309.88 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 110.49 309.88 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 110.49 309.88 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.ti.com/product/UCC27524A-Q1/part-details/UCC27524AQDRQ1"
+      (at 110.49 309.88 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 110.49 309.88 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 90.17 302.26)
+      (xy 82.55 302.26))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "92096c6c-4823-5b58-b71f-7efec84b83e2"))
+  (global_label "IGN_SAFE_EN"
+    (shape bidirectional)
+    (at 82.55 302.26 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "bc0b1fe0-9cef-52f2-b6cb-72bbdbb97a23"))
+  (wire
+    (pts
+      (xy 90.17 307.34)
+      (xy 82.55 307.34))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "9d020fff-ee77-5a67-a352-9cf3fd54660e"))
+  (global_label "IGN5_GUARDED"
+    (shape bidirectional)
+    (at 82.55 307.34 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "3e84e132-ff0e-5ba7-9011-540e240e8a1d"))
+  (wire
+    (pts
+      (xy 90.17 312.42)
+      (xy 82.55 312.42))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "54688a85-44eb-5271-a1c5-5418f1dfa951"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 82.55 312.42 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "133bd954-2a46-59ba-9bb9-3f8e9f6c3c58"))
+  (wire
+    (pts
+      (xy 90.17 317.5)
+      (xy 82.55 317.5))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "beb05fa2-7852-5077-98fc-6f26fd833c2b"))
+  (global_label "IGN6_GUARDED"
+    (shape bidirectional)
+    (at 82.55 317.5 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "7cd9ebf7-2b57-5c20-b991-6f8a94d3cd5c"))
+  (wire
+    (pts
+      (xy 130.81 302.26)
+      (xy 138.43 302.26))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "b7c8c26e-6f71-56b1-8f9f-5cd9fb97488e"))
+  (global_label "IGN6_DRIVE"
+    (shape bidirectional)
+    (at 138.43 302.26 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "570885e1-3609-5d67-93b8-723c1328b87c"))
+  (wire
+    (pts
+      (xy 130.81 307.34)
+      (xy 138.43 307.34))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "69c35ba8-49e2-5144-9862-c410a36ab3eb"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 138.43 307.34 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "0eadb0ff-db68-5306-ad69-3bfe915cee49"))
+  (wire
+    (pts
+      (xy 130.81 312.42)
+      (xy 138.43 312.42))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "7ba56da5-fe4e-5390-a28e-a11cbb6d7e57"))
+  (global_label "IGN5_DRIVE"
+    (shape bidirectional)
+    (at 138.43 312.42 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "d0f9689a-a0f5-5ea9-a0b6-50b5e4dc20cd"))
+  (wire
+    (pts
+      (xy 130.81 317.5)
+      (xy 138.43 317.5))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "25c6c335-1e4a-5d76-841d-f8f5ad61da15"))
+  (global_label "IGN_SAFE_EN"
+    (shape bidirectional)
+    (at 138.43 317.5 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "05268682-80e2-5583-a94b-45e23ababd24"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 195.58 289.56 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "89272308-cd15-5680-a5e6-ab26f1fd271d")
+    (property "Reference" "C5406"
+      (at 199.58 288.29 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 25V X7R"
+      (at 199.58 290.83 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 195.58 289.56 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 195.58 289.56 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "6cd4f7cc-b86a-5418-8673-442d2b7d3741"))
+    (pin "2"
+      (uuid "28874aaf-4d9d-53ba-8130-f429ecf9a2fc"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "C5406")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 195.58 289.56 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 195.58 289.56 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 195.58 289.56 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 195.58 289.56 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 195.58 289.56 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 195.58 289.56 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 195.58 289.56 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 195.58 289.56 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 195.58 289.56 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 195.58 285.75)
+      (xy 195.58 278.13))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "f81d45a2-4f08-51c4-a729-3c09584cc64d"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 195.58 278.13 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "c6fddfcd-81e7-566f-b6ed-64666f93501c"))
+  (wire
+    (pts
+      (xy 195.58 293.37)
+      (xy 195.58 300.99))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "5dcd9d6b-f172-552d-825a-5c2b750f5f52"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 195.58 300.99 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "a42c7f1a-f738-592b-ba56-ccf3c6d04a7e"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 195.58 330.2 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "37b205e9-11b7-56ef-b46f-d3b8fe59501b")
+    (property "Reference" "C5407"
+      (at 199.58 328.93 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "1u 25V X7R"
+      (at 199.58 331.47 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 195.58 330.2 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 195.58 330.2 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "733b9272-aede-53d6-ab59-d4e7e20321d6"))
+    (pin "2"
+      (uuid "7feca13b-550a-568f-94b4-5c561411f9f4"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/3f8231a8-69f9-55dc-b640-4840d30367f8"
+          (reference "C5407")
+          (unit 1))))
+    (property "MPN" "C0603C105K3RACTU"
+      (at 195.58 330.2 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 195.58 330.2 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-4bca20b134b8"
+      (at 195.58 330.2 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 195.58 330.2 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 195.58 330.2 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 195.58 330.2 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 1000000, \"dc_bias_qualification\": \"PENDING_AT_ACTUAL_NODE_VOLTAGE\", \"dielectric\": \"X7R\", \"effective_capacitance_min_pf\": null, \"rated_voltage_v\": 25, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 195.58 330.2 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C105K3RACTU"
+      (at 195.58 330.2 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 195.58 330.2 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 195.58 326.39)
+      (xy 195.58 318.77))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "381dd199-f10b-5ee9-a233-586a60465140"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 195.58 318.77 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "a4fe27d7-cdfe-5d81-908c-f6e9320b9281"))
+  (wire
+    (pts
+      (xy 195.58 334.01)
+      (xy 195.58 341.63))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "63801f33-4d89-5af9-9cf1-2ad702721210"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 195.58 341.63 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "c7006ce7-12ff-5263-9911-aebeb3cf1cfc"))
+  (sheet_instances
+    (path "/"
+      (page "1"))))

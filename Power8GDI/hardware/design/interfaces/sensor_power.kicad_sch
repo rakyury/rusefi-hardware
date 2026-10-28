@@ -1,133 +1,2784 @@
-(kicad_sch (version 20250114) (generator "eeschema") (uuid "0628253c-feb7-570d-b2c5-29acdc8006ec") (paper "A2") (title_block (title "Dual sensor trackers and star returns") (rev "Engineering draft 0.1") (comment 1 "UNQUALIFIED: no manufacturing or engine approval"))
-(lib_symbols
-(symbol "Power8GDI_Core:D_Schottky" (pin_numbers (hide yes)) (pin_names (offset 1.016) (hide yes)) (exclude_from_sim no) (in_bom yes) (on_board yes) (property "Reference" "D" (at 0 2.54 0) (effects (font (size 1.27 1.27)))) (property "Value" "D_Schottky" (at 0 -2.54 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Description" "Schottky diode" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "ki_keywords" "diode Schottky" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (symbol "D_Schottky_0_1" (polyline (pts (xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)) (stroke (width 0.254) (type default)) (fill (type none))) (polyline (pts (xy 1.27 1.27) (xy 1.27 -1.27) (xy -1.27 0) (xy 1.27 1.27)) (stroke (width 0.254) (type default)) (fill (type none))) (polyline (pts (xy 1.27 0) (xy -1.27 0)) (stroke (width 0) (type default)) (fill (type none)))) (symbol "D_Schottky_1_1" (pin passive line (at -3.81 0 0) (length 2.54) (name "K" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 3.81 0 180) (length 2.54) (name "A" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no))
-(symbol "Power8GDI_Core:Interface_TPS7B4253DDA" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
-(property "Reference" "U" (at 0 25.4 0) (effects (font (size 1.27 1.27))))
-(property "Value" "Interface_TPS7B4253DDA" (at 0 -25.4 0) (effects (font (size 1.27 1.27))))
-(property "Footprint" "Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes)))
-(symbol "Interface_TPS7B4253DDA_0_1" (rectangle (start -12.7 22.86) (end 12.7 -22.86) (stroke (width 0.254) (type default)) (fill (type background))))
-(symbol "Interface_TPS7B4253DDA_1_1"
-(pin power_in line (at -15.24 10.16 0) (length 2.54) (name "IN" (effects (font (size 1.016 1.016)))) (number "8" (effects (font (size 1.016 1.016)))))
-(pin input line (at -15.24 0 0) (length 2.54) (name "ADJ" (effects (font (size 1.016 1.016)))) (number "5" (effects (font (size 1.016 1.016)))))
-(pin power_out line (at 15.24 10.16 180) (length 2.54) (name "OUT" (effects (font (size 1.016 1.016)))) (number "1" (effects (font (size 1.016 1.016)))))
-(pin input line (at 15.24 0 180) (length 2.54) (name "FB" (effects (font (size 1.016 1.016)))) (number "4" (effects (font (size 1.016 1.016)))))
-(pin no_connect line (at 15.24 -10.16 180) (length 2.54) (name "NC" (effects (font (size 1.016 1.016)))) (number "2" (effects (font (size 1.016 1.016)))))
-(pin no_connect line (at 15.24 -17.78 180) (length 2.54) (name "NC" (effects (font (size 1.016 1.016)))) (number "7" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at -5.08 -25.4 90) (length 2.54) (name "GND3" (effects (font (size 1.016 1.016)))) (number "3" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at 0 -25.4 90) (length 2.54) (name "GND6" (effects (font (size 1.016 1.016)))) (number "6" (effects (font (size 1.016 1.016)))))
-(pin power_in line (at 5.08 -25.4 90) (length 2.54) (name "EP_GND" (effects (font (size 1.016 1.016)))) (number "9" (effects (font (size 1.016 1.016)))))
-))
-(symbol "Power8GDI_Core:C" (pin_numbers (hide yes)) (pin_names (offset 0.254)) (exclude_from_sim no) (in_bom yes) (on_board yes) (property "Reference" "C" (at 0.635 2.54 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "C" (at 0.635 -2.54 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "" (at 0.9652 -3.81 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Description" "Unpolarized capacitor" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "ki_keywords" "cap capacitor" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "ki_fp_filters" "C_*" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (symbol "C_0_1" (polyline (pts (xy -2.032 0.762) (xy 2.032 0.762)) (stroke (width 0.508) (type default)) (fill (type none))) (polyline (pts (xy -2.032 -0.762) (xy 2.032 -0.762)) (stroke (width 0.508) (type default)) (fill (type none)))) (symbol "C_1_1" (pin passive line (at 0 3.81 270) (length 2.794) (name "~" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 0 -3.81 90) (length 2.794) (name "~" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no))
-(symbol "Power8GDI_Core:R" (pin_numbers (hide yes)) (pin_names (offset 0)) (exclude_from_sim no) (in_bom yes) (on_board yes) (property "Reference" "R" (at 2.032 0 90) (effects (font (size 1.27 1.27)))) (property "Value" "R" (at 0 0 90) (effects (font (size 1.27 1.27)))) (property "Footprint" "" (at -1.778 0 90) (effects (font (size 1.27 1.27)) (hide yes))) (property "Datasheet" "~" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Description" "Resistor" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "ki_keywords" "R res resistor" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "ki_fp_filters" "R_*" (at 0 0 0) (effects (font (size 1.27 1.27)) (hide yes))) (symbol "R_0_1" (rectangle (start -1.016 -2.54) (end 1.016 2.54) (stroke (width 0.254) (type default)) (fill (type none)))) (symbol "R_1_1" (pin passive line (at 0 3.81 270) (length 1.27) (name "~" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27))))) (pin passive line (at 0 -3.81 90) (length 1.27) (name "~" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))) (embedded_fonts no))
-)
-(symbol (lib_id "Power8GDI_Core:D_Schottky") (at 85.09 90.17 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "e414d6de-4799-5a60-bb87-22e46c4c92b9") (property "Reference" "D1530" (at 85.09 85.09 0) (effects (font (size 1.27 1.27)))) (property "Value" "STPS2H100UY" (at 85.09 95.25 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "Diode_SMD:D_SMB" (at 85.09 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "Anode shared protected battery, cathode trackerIN. Isolates shared rail during TPS7B4253 short-to-battery detection latency" (at 85.09 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "b5df7ccd-d51e-5f88-a894-1f5f1a70b58a")) (pin "2" (uuid "639ebb3a-ffb4-5ebe-a4ab-e6833c7ec28b")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "D1530") (unit 1)))))
-(wire (pts (xy 81.28 90.17) (xy 73.66 90.17)) (stroke (width 0) (type default)) (uuid "3ca34595-6e5a-5cc5-b17b-f98a4b80b9b3"))
-(global_label "SENSOR_A_IN" (shape bidirectional) (at 73.66 90.17 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "506c33e0-4a77-5e72-ac2b-f8ebabb4f666"))
-(wire (pts (xy 88.9 90.17) (xy 96.52 90.17)) (stroke (width 0) (type default)) (uuid "3812fe3f-3627-5fd1-9cd8-193c9a091697"))
-(global_label "VBAT_LOGIC_PROTECTED" (shape bidirectional) (at 96.52 90.17 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "3e50f372-f4cd-519f-bd46-1e388ceea6fb"))
-(symbol (lib_id "Power8GDI_Core:Interface_TPS7B4253DDA") (at 279.4 90.17 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "c397ac81-197c-52e0-b098-56d403cd75cb") (property "Reference" "U1530" (at 279.4 62.23 0) (effects (font (size 1.27 1.27)))) (property "Value" "TPS7B4253QDDARQ1" (at 299.71999999999997 118.11 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02" (at 279.4 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "TI SLVSCP3D unity tracking. 300mA silicon rating is NOT permitted harness load. FB=OUT; ADJ draws <=5.5uA. EP copper+thermal vias review required" (at 279.4 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "8" (uuid "45666f92-aef1-5f40-bdc8-c3f68df45d50")) (pin "5" (uuid "b4af6084-6f6b-5f2f-940a-9f687bb5609e")) (pin "1" (uuid "a8bcb444-a4c8-5f33-a78f-f13d791ef623")) (pin "4" (uuid "26b3e421-9d0e-5429-8601-fde2aba086fb")) (pin "2" (uuid "e2fc84f1-f208-505d-9a4e-30fd36b97fb7")) (pin "7" (uuid "90981efc-07ff-56a5-b8d1-1774c41072a4")) (pin "3" (uuid "ad1d8087-b00f-56a2-a5c5-9d1bddd48c77")) (pin "6" (uuid "459e3644-edbe-5876-9f3f-52a868e703e0")) (pin "9" (uuid "8b4bed02-44f4-56a7-823f-704bc12b55c4")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "U1530") (unit 1)))))
-(wire (pts (xy 264.16 80.01) (xy 256.54 80.01)) (stroke (width 0) (type default)) (uuid "e9a0acc6-9d7d-5305-bce3-91c40751b722"))
-(global_label "SENSOR_A_IN" (shape bidirectional) (at 256.54 80.01 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "b847d4cf-5f57-59ca-8be1-2aceb32e8ad5"))
-(wire (pts (xy 264.16 90.17) (xy 256.54 90.17)) (stroke (width 0) (type default)) (uuid "bcc1eb34-d717-5764-9ae0-8ebb9d41b6f0"))
-(global_label "+5V_CORE" (shape bidirectional) (at 256.54 90.17 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "b81df354-a85c-5599-9e77-b25a29f9c7f7"))
-(wire (pts (xy 294.64 80.01) (xy 302.26 80.01)) (stroke (width 0) (type default)) (uuid "42c0fafe-7324-5223-b14e-9c713f94a629"))
-(global_label "SENSOR_5V_A" (shape bidirectional) (at 302.26 80.01 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "cbb89afa-0d6f-5445-94fb-a630c05bb71a"))
-(wire (pts (xy 294.64 90.17) (xy 302.26 90.17)) (stroke (width 0) (type default)) (uuid "fbb96406-f3c8-50c8-a0fc-bbc5e5a2c51e"))
-(global_label "SENSOR_5V_A" (shape bidirectional) (at 302.26 90.17 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "1525ef46-6871-52a7-bbb9-eb33538acac3"))
-(no_connect (at 294.64 100.33) (uuid "ff53cb3b-f223-535b-9685-f88415202904"))
-(no_connect (at 294.64 107.95) (uuid "1e16878e-92cd-5b19-9110-1cb9815e9d49"))
-(wire (pts (xy 274.32 115.57) (xy 274.32 123.19)) (stroke (width 0) (type default)) (uuid "90c2acb3-f20c-501b-8650-0e51ba80be22"))
-(global_label "GND" (shape bidirectional) (at 274.32 123.19 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "e8d7baf6-a572-561b-958c-6321fa44d016"))
-(wire (pts (xy 279.4 115.57) (xy 279.4 123.19)) (stroke (width 0) (type default)) (uuid "5f6c508a-cf53-520f-970f-352fa6bae86f"))
-(global_label "GND" (shape bidirectional) (at 279.4 123.19 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "97640b53-87ce-501e-9dc8-6767333d0862"))
-(wire (pts (xy 284.48 115.57) (xy 284.48 123.19)) (stroke (width 0) (type default)) (uuid "fc33b3c4-6980-501f-bf25-ea1235367167"))
-(global_label "GND" (shape bidirectional) (at 284.48 123.19 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "459f2752-8f4f-5090-8e54-783efb8d6f14"))
-(symbol (lib_id "Power8GDI_Core:C") (at 144.78 90.17 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "26095127-3e80-57a6-a6bb-f8328b587953") (property "Reference" "C1530" (at 148.78 88.9 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "1u 50V X7R" (at 148.78 91.44 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 144.78 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 144.78 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "7f0cb47b-3144-5db7-8f28-b21368cec2a3")) (pin "2" (uuid "444fcbd5-32b4-5ebf-8ed2-0f058bd9ac8b")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "C1530") (unit 1)))))
-(wire (pts (xy 144.78 86.36) (xy 144.78 78.74)) (stroke (width 0) (type default)) (uuid "bdcfb8ab-d0e1-5278-a3fa-8bccb4b26531"))
-(global_label "SENSOR_A_IN" (shape bidirectional) (at 144.78 78.74 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "dfa1af07-43ff-591e-943f-00cb1c139484"))
-(wire (pts (xy 144.78 93.98) (xy 144.78 101.6)) (stroke (width 0) (type default)) (uuid "de8b60a9-1c04-5434-9f18-6731f1437e88"))
-(global_label "GND" (shape bidirectional) (at 144.78 101.6 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "c8c4510d-39f6-59b9-9687-1a4e3b3cc220"))
-(symbol (lib_id "Power8GDI_Core:C") (at 204.47 90.17 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "bf6ab7f0-c415-5265-894c-088e8748e4dc") (property "Reference" "C1531" (at 208.47 88.9 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100n 50V X7R" (at 208.47 91.44 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 204.47 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 204.47 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "83fc3065-4ee9-5a25-b6c2-f8955a2822eb")) (pin "2" (uuid "9d4aeaa9-21db-5ff6-8fb9-460c121499cd")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "C1531") (unit 1)))))
-(wire (pts (xy 204.47 86.36) (xy 204.47 78.74)) (stroke (width 0) (type default)) (uuid "1052f392-d35c-596e-b612-b88ee28cb9bb"))
-(global_label "SENSOR_A_IN" (shape bidirectional) (at 204.47 78.74 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "ef8694d8-4f62-5a91-9d61-b8d8f8b19756"))
-(wire (pts (xy 204.47 93.98) (xy 204.47 101.6)) (stroke (width 0) (type default)) (uuid "b9c88a53-407b-54c0-8131-f04828316d86"))
-(global_label "GND" (shape bidirectional) (at 204.47 101.6 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "b2f4a32f-e561-54c3-9e25-5c9237491589"))
-(symbol (lib_id "Power8GDI_Core:C") (at 204.47 149.86 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "5e0a6ff1-d592-5d34-a4d0-ab4a46a9424d") (property "Reference" "C1532" (at 208.47 148.59 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100n 16V X7R" (at 208.47 151.13 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 204.47 149.86 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "ADJ reference bypass close to pin5" (at 204.47 149.86 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "7cdf61de-dc50-5ac9-b473-dcc3ec4a4aa8")) (pin "2" (uuid "3bf25425-c237-586a-9e62-3102d4ad7867")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "C1532") (unit 1)))))
-(wire (pts (xy 204.47 146.05) (xy 204.47 138.43)) (stroke (width 0) (type default)) (uuid "80a6c331-1b4b-5413-b02d-b234845612a8"))
-(global_label "+5V_CORE" (shape bidirectional) (at 204.47 138.43 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "c8277269-4b04-5a65-b994-c02233c675fe"))
-(wire (pts (xy 204.47 153.67) (xy 204.47 161.29)) (stroke (width 0) (type default)) (uuid "9153656c-b210-511f-8a9a-fa04a3568ee4"))
-(global_label "GND" (shape bidirectional) (at 204.47 161.29 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "85978500-cf51-5da4-be55-fb9346983b72"))
-(symbol (lib_id "Power8GDI_Core:C") (at 389.89 90.17 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "c0ba9efe-749f-5336-8ffe-7db20af8b4a4") (property "Reference" "C1533" (at 393.89 88.9 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "22u 50V X7R" (at 393.89 91.44 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_1210_3225Metric" (at 389.89 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "Require effective >=10uF at voltage/temp/tolerance, ESR1mohm..20ohm; 50V withstands output short-to-battery. Exact MPN not frozen" (at 389.89 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "424c8b40-4c64-5c5b-8d01-7c79e78970a2")) (pin "2" (uuid "eb2ed13f-b13a-55a3-8437-364d9661201a")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "C1533") (unit 1)))))
-(wire (pts (xy 389.89 86.36) (xy 389.89 78.74)) (stroke (width 0) (type default)) (uuid "080bc1d1-bd5e-5786-84ca-9ff892e6732b"))
-(global_label "SENSOR_5V_A" (shape bidirectional) (at 389.89 78.74 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "b84b5af7-83b1-52e2-a720-54b07ab96bd5"))
-(wire (pts (xy 389.89 93.98) (xy 389.89 101.6)) (stroke (width 0) (type default)) (uuid "1e70e0d4-786b-5ce0-8ee2-b70b69f5b166"))
-(global_label "GND" (shape bidirectional) (at 389.89 101.6 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "648a35f8-fac2-5d86-ab47-faf3e70dd125"))
-(symbol (lib_id "Power8GDI_Core:C") (at 464.82 90.17 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "28026025-3e91-5e77-a4e3-132857dc468a") (property "Reference" "C1534" (at 468.82 88.9 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100n 50V X7R" (at 468.82 91.44 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 464.82 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 464.82 90.17 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "145ccdae-ba59-556e-b3ce-8269701ab1d0")) (pin "2" (uuid "f649952c-772a-53fc-9144-668c26dc12a4")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "C1534") (unit 1)))))
-(wire (pts (xy 464.82 86.36) (xy 464.82 78.74)) (stroke (width 0) (type default)) (uuid "ae03d6ea-cc8e-5c26-a202-73d1c48f941c"))
-(global_label "SENSOR_5V_A" (shape bidirectional) (at 464.82 78.74 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "c8c1756f-0a32-5bbb-b074-8d8d49762edd"))
-(wire (pts (xy 464.82 93.98) (xy 464.82 101.6)) (stroke (width 0) (type default)) (uuid "8579f08f-21db-5152-aff0-a76f63fd058b"))
-(global_label "GND" (shape bidirectional) (at 464.82 101.6 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "9c8e2afb-273a-5cec-81b6-bc900474795d"))
-(symbol (lib_id "Power8GDI_Core:D_Schottky") (at 85.09 234.95 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "6739ea6a-25cf-56f1-b08f-93e3e1d20f61") (property "Reference" "D1531" (at 85.09 229.86999999999998 0) (effects (font (size 1.27 1.27)))) (property "Value" "STPS2H100UY" (at 85.09 240.03 0) (effects (font (size 1.27 1.27)))) (property "Footprint" "Diode_SMD:D_SMB" (at 85.09 234.95 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "Anode shared protected battery, cathode trackerIN. Isolates shared rail during TPS7B4253 short-to-battery detection latency" (at 85.09 234.95 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "5558e558-153b-5403-9b16-a46a5f3b2553")) (pin "2" (uuid "bb966f63-82f0-531f-af9e-43fc23a7da47")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "D1531") (unit 1)))))
-(wire (pts (xy 81.28 234.95) (xy 73.66 234.95)) (stroke (width 0) (type default)) (uuid "7f1ba0f4-1de9-5195-8594-d961899e2a83"))
-(global_label "SENSOR_B_IN" (shape bidirectional) (at 73.66 234.95 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "b2d1abed-7c8b-5c6b-8a60-46324fb6f355"))
-(wire (pts (xy 88.9 234.95) (xy 96.52 234.95)) (stroke (width 0) (type default)) (uuid "bdbaca2d-1fb2-55d4-8ab8-8730e26a87ab"))
-(global_label "VBAT_LOGIC_PROTECTED" (shape bidirectional) (at 96.52 234.95 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "74dac5eb-6e38-555a-a942-63494e292699"))
-(symbol (lib_id "Power8GDI_Core:Interface_TPS7B4253DDA") (at 279.4 234.95 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "250e7222-24e0-5d7b-98a0-74655ac30b4b") (property "Reference" "U1531" (at 279.4 207.01 0) (effects (font (size 1.27 1.27)))) (property "Value" "TPS7B4253QDDARQ1" (at 299.71999999999997 262.89 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02" (at 279.4 234.95 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "TI SLVSCP3D unity tracking. 300mA silicon rating is NOT permitted harness load. FB=OUT; ADJ draws <=5.5uA. EP copper+thermal vias review required" (at 279.4 234.95 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "8" (uuid "158279e7-9f7a-5b6b-a88d-bb08384a2223")) (pin "5" (uuid "ce6fcbf2-384e-5dd8-914c-8bacc9c2dada")) (pin "1" (uuid "bfdaeb3d-d517-5204-97c2-e0f288c05e92")) (pin "4" (uuid "3e940eb2-9aa4-578e-9133-a16f4633027e")) (pin "2" (uuid "9a9056db-7733-5d9a-9c59-25ab34aa04df")) (pin "7" (uuid "0f8324bd-12ae-5bc2-b4d4-69096bf99393")) (pin "3" (uuid "63a04d79-a8a7-5ef5-aa1e-b5cba971fa65")) (pin "6" (uuid "6f9b984a-ae6a-544d-a4a7-51a4e42494da")) (pin "9" (uuid "80ef72ea-7087-5fe6-b176-d20557079619")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "U1531") (unit 1)))))
-(wire (pts (xy 264.16 224.79) (xy 256.54 224.79)) (stroke (width 0) (type default)) (uuid "b79730c1-7c4f-5556-8024-ece194a233e2"))
-(global_label "SENSOR_B_IN" (shape bidirectional) (at 256.54 224.79 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "94d0543e-2ee1-5605-8efc-4e8844ac7ca5"))
-(wire (pts (xy 264.16 234.95) (xy 256.54 234.95)) (stroke (width 0) (type default)) (uuid "0203872f-c01e-5018-8c8e-fa2a1fe1034c"))
-(global_label "+5V_CORE" (shape bidirectional) (at 256.54 234.95 0) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "3366011f-a079-5fa3-9492-3cad1c4b1c20"))
-(wire (pts (xy 294.64 224.79) (xy 302.26 224.79)) (stroke (width 0) (type default)) (uuid "d32c69b0-217a-5cfa-8afc-5c2e805b3456"))
-(global_label "SENSOR_5V_B" (shape bidirectional) (at 302.26 224.79 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "7d682a23-b991-5d49-8052-ed34967bcd2e"))
-(wire (pts (xy 294.64 234.95) (xy 302.26 234.95)) (stroke (width 0) (type default)) (uuid "6996db3d-2574-5cf6-a9fb-041671e8dcd4"))
-(global_label "SENSOR_5V_B" (shape bidirectional) (at 302.26 234.95 180) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "f77ea10e-189e-5bb9-a3a5-053bde0eea04"))
-(no_connect (at 294.64 245.11) (uuid "d5ceb9d1-3d2b-5199-862a-5a2f16c75bbe"))
-(no_connect (at 294.64 252.73) (uuid "433b8e12-f6e3-52c0-87dc-809e29abb571"))
-(wire (pts (xy 274.32 260.35) (xy 274.32 267.97)) (stroke (width 0) (type default)) (uuid "bebe82fa-c1fd-5f2b-a5de-15f7f120277b"))
-(global_label "GND" (shape bidirectional) (at 274.32 267.97 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "f879fb1a-b600-5498-87e1-0b1c28e01ab8"))
-(wire (pts (xy 279.4 260.35) (xy 279.4 267.97)) (stroke (width 0) (type default)) (uuid "5b0090f6-1255-541a-980a-5c3c5e25a088"))
-(global_label "GND" (shape bidirectional) (at 279.4 267.97 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "753e6ead-79e2-54a2-90c8-07dcb90c4d39"))
-(wire (pts (xy 284.48 260.35) (xy 284.48 267.97)) (stroke (width 0) (type default)) (uuid "1cddb696-dfed-50a7-b848-85c3f9f36f4d"))
-(global_label "GND" (shape bidirectional) (at 284.48 267.97 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "c644725a-8396-503c-9a82-75a534000c9e"))
-(symbol (lib_id "Power8GDI_Core:C") (at 144.78 234.95 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "f436261d-dc1b-587d-82c6-edf999f7a584") (property "Reference" "C1535" (at 148.78 233.68 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "1u 50V X7R" (at 148.78 236.22 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0805_2012Metric" (at 144.78 234.95 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 144.78 234.95 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "1e9d51f9-5991-5ae4-bea9-ee64d40de43b")) (pin "2" (uuid "5b987838-9828-5ee4-b4f0-2b69c1027918")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "C1535") (unit 1)))))
-(wire (pts (xy 144.78 231.14) (xy 144.78 223.52)) (stroke (width 0) (type default)) (uuid "8decb128-6cbc-5c71-997a-19257ab8373c"))
-(global_label "SENSOR_B_IN" (shape bidirectional) (at 144.78 223.52 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "aab312bc-3a14-5fa7-a63c-0d53c6c8e823"))
-(wire (pts (xy 144.78 238.76) (xy 144.78 246.38)) (stroke (width 0) (type default)) (uuid "04c13091-1c5e-56d2-8121-228e1dbb8724"))
-(global_label "GND" (shape bidirectional) (at 144.78 246.38 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "889c511f-49b9-593d-b9aa-eb1389febaa4"))
-(symbol (lib_id "Power8GDI_Core:C") (at 204.47 234.95 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "f2f20306-741f-5925-9bfd-8bf4317e4034") (property "Reference" "C1536" (at 208.47 233.68 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100n 50V X7R" (at 208.47 236.22 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 204.47 234.95 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 204.47 234.95 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "8dad956c-6b70-5220-9b48-d16266b20001")) (pin "2" (uuid "92e740f6-887f-511b-9918-da9a38ea5ce5")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "C1536") (unit 1)))))
-(wire (pts (xy 204.47 231.14) (xy 204.47 223.52)) (stroke (width 0) (type default)) (uuid "2de5047c-6ef8-5a2f-a8d7-c7b5e2e0cb8a"))
-(global_label "SENSOR_B_IN" (shape bidirectional) (at 204.47 223.52 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "ad088752-7d23-5f55-994e-f12390397505"))
-(wire (pts (xy 204.47 238.76) (xy 204.47 246.38)) (stroke (width 0) (type default)) (uuid "3dea7117-f712-5e87-83c4-92b13d9953a7"))
-(global_label "GND" (shape bidirectional) (at 204.47 246.38 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "64344521-557f-545c-8421-e3dbc7660b2b"))
-(symbol (lib_id "Power8GDI_Core:C") (at 204.47 294.64 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "1adb7b6c-8afb-51b0-8874-3300a0c2ec2b") (property "Reference" "C1537" (at 208.47 293.37 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100n 16V X7R" (at 208.47 295.91 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 204.47 294.64 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "ADJ reference bypass close to pin5" (at 204.47 294.64 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "ecbf780b-f736-5443-bdd5-7fc132cc4552")) (pin "2" (uuid "010a8bc6-63ff-5e39-85e0-260de92b76da")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "C1537") (unit 1)))))
-(wire (pts (xy 204.47 290.83) (xy 204.47 283.21)) (stroke (width 0) (type default)) (uuid "aad24f12-d86b-54f0-9c85-ba75da753224"))
-(global_label "+5V_CORE" (shape bidirectional) (at 204.47 283.21 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "6d6fb15b-edf0-5808-a62d-fe6a5831c558"))
-(wire (pts (xy 204.47 298.45) (xy 204.47 306.07)) (stroke (width 0) (type default)) (uuid "0cca0fcc-37ac-5a7e-9156-9fce755d2d50"))
-(global_label "GND" (shape bidirectional) (at 204.47 306.07 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "d3ff7f9d-a3e8-50a5-8edf-af95b5ee3095"))
-(symbol (lib_id "Power8GDI_Core:C") (at 389.89 234.95 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "9afe2604-4767-54d8-8784-9200cb453ab6") (property "Reference" "C1538" (at 393.89 233.68 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "22u 50V X7R" (at 393.89 236.22 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_1210_3225Metric" (at 389.89 234.95 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "Require effective >=10uF at voltage/temp/tolerance, ESR1mohm..20ohm; 50V withstands output short-to-battery. Exact MPN not frozen" (at 389.89 234.95 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "7c054d84-b6b5-558f-854d-c04060ca9667")) (pin "2" (uuid "c3cff560-3867-5006-b16d-dc8e291a9252")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "C1538") (unit 1)))))
-(wire (pts (xy 389.89 231.14) (xy 389.89 223.52)) (stroke (width 0) (type default)) (uuid "91c282c4-accc-57d6-8fdd-bc1e2b41a67d"))
-(global_label "SENSOR_5V_B" (shape bidirectional) (at 389.89 223.52 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "d37ca9e0-838f-5ce5-ad06-06c584a34ab1"))
-(wire (pts (xy 389.89 238.76) (xy 389.89 246.38)) (stroke (width 0) (type default)) (uuid "519b0b49-9609-59e6-9433-7ac21f249863"))
-(global_label "GND" (shape bidirectional) (at 389.89 246.38 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "829789ab-c608-579e-953b-8c147f3dff94"))
-(symbol (lib_id "Power8GDI_Core:C") (at 464.82 234.95 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "17b51c5a-af05-572a-86e3-db502000a189") (property "Reference" "C1539" (at 468.82 233.68 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "100n 50V X7R" (at 468.82 236.22 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Capacitor_SMD:C_0603_1608Metric" (at 464.82 234.95 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "" (at 464.82 234.95 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "d9993073-a966-51f2-82be-2c7147c18733")) (pin "2" (uuid "82af766e-565d-53a1-93e8-b990973e4fe7")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "C1539") (unit 1)))))
-(wire (pts (xy 464.82 231.14) (xy 464.82 223.52)) (stroke (width 0) (type default)) (uuid "a2092153-a96b-56ed-93d9-edd4fdf86e4e"))
-(global_label "SENSOR_5V_B" (shape bidirectional) (at 464.82 223.52 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "87761c98-09f2-58f0-9117-5b6a06a3f00b"))
-(wire (pts (xy 464.82 238.76) (xy 464.82 246.38)) (stroke (width 0) (type default)) (uuid "84997bf1-fb91-55a1-8f9c-4b62ce0f3e3e"))
-(global_label "GND" (shape bidirectional) (at 464.82 246.38 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "1fab9d44-4e8f-5001-b472-646cfafa268b"))
-(symbol (lib_id "Power8GDI_Core:R") (at 100.33 314.96 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "0613166d-5e95-54ab-8bdf-9994daa6d88f") (property "Reference" "R1530" (at 104.33 313.69 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "0R star return" (at 104.33 316.23 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 100.33 314.96 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse" (at 100.33 314.96 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "0345bff3-9de6-5982-bd51-dc27931ec372")) (pin "2" (uuid "346f838e-6d13-5d03-a429-e175715fd385")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "R1530") (unit 1)))))
-(wire (pts (xy 100.33 311.15) (xy 100.33 303.53)) (stroke (width 0) (type default)) (uuid "e6369b41-0e72-585a-bd8a-97979a80c44f"))
-(global_label "HARNESS_SENSOR_GND_A" (shape bidirectional) (at 100.33 303.53 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "5ddd3ef0-eb20-5783-bbfe-5cbab168cc5a"))
-(wire (pts (xy 100.33 318.77) (xy 100.33 326.39)) (stroke (width 0) (type default)) (uuid "b457df4a-9783-5d93-9816-a66c738b1f07"))
-(global_label "GND" (shape bidirectional) (at 100.33 326.39 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "5a12572a-860a-5969-abce-8c2f1590af54"))
-(symbol (lib_id "Power8GDI_Core:R") (at 260.35 314.96 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "c1b56996-d733-5d67-b8a9-bdb57754729f") (property "Reference" "R1531" (at 264.35 313.69 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "0R star return" (at 264.35 316.23 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 260.35 314.96 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse" (at 260.35 314.96 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "08075ea3-fe40-5e84-8275-35e3bcedbad4")) (pin "2" (uuid "3f8f0eea-816c-5bee-a61e-8dfd5364fde4")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "R1531") (unit 1)))))
-(wire (pts (xy 260.35 311.15) (xy 260.35 303.53)) (stroke (width 0) (type default)) (uuid "d0ac3aac-5873-56de-92c3-97afd6b04266"))
-(global_label "HARNESS_SENSOR_GND_B" (shape bidirectional) (at 260.35 303.53 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "0cf8f67d-acc7-5254-89be-bd90953b22ec"))
-(wire (pts (xy 260.35 318.77) (xy 260.35 326.39)) (stroke (width 0) (type default)) (uuid "0100c14a-d9d5-5ba4-a90c-f447a918b021"))
-(global_label "GND" (shape bidirectional) (at 260.35 326.39 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "1cf1d87f-1f69-5912-93bc-01f5c98a442d"))
-(symbol (lib_id "Power8GDI_Core:R") (at 420.37 314.96 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid "ea6bd20c-693c-5e8c-af2f-9ba0ac190f51") (property "Reference" "R1532" (at 424.37 313.69 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Value" "0R star return" (at 424.37 316.23 0) (effects (font (size 1.27 1.27)) (justify left))) (property "Footprint" "Resistor_SMD:R_0805_2012Metric" (at 420.37 314.96 0) (effects (font (size 1.27 1.27)) (hide yes))) (property "Design note" "Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse" (at 420.37 314.96 0) (effects (font (size 1.27 1.27)) (hide yes))) (pin "1" (uuid "bd2bf682-b32b-580d-9f72-bdb60b59f9da")) (pin "2" (uuid "214e6cc4-fa45-5632-946e-eb0003ca228f")) (instances (project "Power8GDI_Core" (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f" (reference "R1532") (unit 1)))))
-(wire (pts (xy 420.37 311.15) (xy 420.37 303.53)) (stroke (width 0) (type default)) (uuid "edd376b7-a97f-51af-af97-127d6c53573b"))
-(global_label "HARNESS_SENSOR_GND_C" (shape bidirectional) (at 420.37 303.53 270) (effects (font (size 1.016 1.016)) (justify left bottom)) (uuid "316e3123-e3ad-5ca3-8dd8-547eb7f923dc"))
-(wire (pts (xy 420.37 318.77) (xy 420.37 326.39)) (stroke (width 0) (type default)) (uuid "3695c407-2d84-5559-9f8e-40f913580181"))
-(global_label "GND" (shape bidirectional) (at 420.37 326.39 90) (effects (font (size 1.016 1.016)) (justify right bottom)) (uuid "8c4febbe-30cb-576c-ac55-921dd23f125f"))
-(text "OUT=FB: unity tracking. ADJ reference+enable; no fault GPIO exists.\nInput/output abs45V: upstream clamp and cable-inductance overshoot tests required.\nAt14V/5V,100mA dissipates about0.9W per tracker;300mA about2.7W. Neither is a qualified load budget.\nGround return links are NOT fuses. Star placement, ground offset, thermal, cold crank and fault tests block release." (at 25.4 365 0) (effects (font (size 1.27 1.27)) (justify left top)) (uuid "bf8210b3-002b-524d-972a-bb2ef048e69d"))
-(sheet_instances (path "/" (page "1"))))
+(kicad_sch
+  (version 20250114)
+  (generator "eeschema")
+  (uuid "0628253c-feb7-570d-b2c5-29acdc8006ec")
+  (paper "A2")
+  (title_block
+    (title "Dual sensor trackers and star returns")
+    (rev "Engineering draft 0.1")
+    (comment 1 "UNQUALIFIED: no manufacturing or engine approval"))
+  (lib_symbols
+    (symbol "Power8GDI_Core:D_Schottky"
+      (pin_numbers
+        (hide yes))
+      (pin_names
+        (offset 1.016)
+        (hide yes))
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "D"
+        (at 0 2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "D_Schottky"
+        (at 0 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" ""
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Description" "Schottky diode"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_keywords" "diode Schottky"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_fp_filters" "TO-???* *_Diode_* *SingleDiode* D_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "D_Schottky_0_1"
+        (polyline
+          (pts
+            (xy -1.905 0.635)
+            (xy -1.905 1.27)
+            (xy -1.27 1.27)
+            (xy -1.27 -1.27)
+            (xy -0.635 -1.27)
+            (xy -0.635 -0.635))
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type none)))
+        (polyline
+          (pts
+            (xy 1.27 1.27)
+            (xy 1.27 -1.27)
+            (xy -1.27 0)
+            (xy 1.27 1.27))
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type none)))
+        (polyline
+          (pts
+            (xy 1.27 0)
+            (xy -1.27 0))
+          (stroke
+            (width 0)
+            (type default))
+          (fill
+            (type none))))
+      (symbol "D_Schottky_1_1"
+        (pin passive line
+          (at -3.81 0 0)
+          (length 2.54)
+          (name "K"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin passive line
+          (at 3.81 0 180)
+          (length 2.54)
+          (name "A"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27))))))
+      (embedded_fonts no))
+    (symbol "Power8GDI_Core:Interface_TPS7B4253DDA"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "U"
+        (at 0 25.4 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "Interface_TPS7B4253DDA"
+        (at 0 -25.4 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "Interface_TPS7B4253DDA_0_1"
+        (rectangle
+          (start -12.7 22.86)
+          (end 12.7 -22.86)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "Interface_TPS7B4253DDA_1_1"
+        (pin power_in line
+          (at -15.24 10.16 0)
+          (length 2.54)
+          (name "IN"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "8"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at -15.24 0 0)
+          (length 2.54)
+          (name "ADJ"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "5"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_out line
+          (at 15.24 10.16 180)
+          (length 2.54)
+          (name "OUT"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin input line
+          (at 15.24 0 180)
+          (length 2.54)
+          (name "FB"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "4"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin no_connect line
+          (at 15.24 -10.16 180)
+          (length 2.54)
+          (name "NC"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin no_connect line
+          (at 15.24 -17.78 180)
+          (length 2.54)
+          (name "NC"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "7"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at -5.08 -25.4 90)
+          (length 2.54)
+          (name "GND3"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "3"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 0 -25.4 90)
+          (length 2.54)
+          (name "GND6"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "6"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin power_in line
+          (at 5.08 -25.4 90)
+          (length 2.54)
+          (name "EP_GND"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "9"
+            (effects
+              (font
+                (size 1.016 1.016)))))))
+    (symbol "Power8GDI_Core:C"
+      (pin_numbers
+        (hide yes))
+      (pin_names
+        (offset 0.254))
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "C"
+        (at 0.635 2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (justify left)))
+      (property "Value" "C"
+        (at 0.635 -2.54 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (justify left)))
+      (property "Footprint" ""
+        (at 0.9652 -3.81 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Description" "Unpolarized capacitor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_keywords" "cap capacitor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_fp_filters" "C_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "C_0_1"
+        (polyline
+          (pts
+            (xy -2.032 0.762)
+            (xy 2.032 0.762))
+          (stroke
+            (width 0.508)
+            (type default))
+          (fill
+            (type none)))
+        (polyline
+          (pts
+            (xy -2.032 -0.762)
+            (xy 2.032 -0.762))
+          (stroke
+            (width 0.508)
+            (type default))
+          (fill
+            (type none))))
+      (symbol "C_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 2.794)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 2.794)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27))))))
+      (embedded_fonts no))
+    (symbol "Power8GDI_Core:R"
+      (pin_numbers
+        (hide yes))
+      (pin_names
+        (offset 0))
+      (exclude_from_sim no)
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "R"
+        (at 2.032 0 90)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "R"
+        (at 0 0 90)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" ""
+        (at -1.778 0 90)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Datasheet" "~"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "Description" "Resistor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_keywords" "R res resistor"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (property "ki_fp_filters" "R_*"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "R_0_1"
+        (rectangle
+          (start -1.016 -2.54)
+          (end 1.016 2.54)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type none))))
+      (symbol "R_1_1"
+        (pin passive line
+          (at 0 3.81 270)
+          (length 1.27)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "1"
+            (effects
+              (font
+                (size 1.27 1.27)))))
+        (pin passive line
+          (at 0 -3.81 90)
+          (length 1.27)
+          (name "~"
+            (effects
+              (font
+                (size 1.27 1.27))))
+          (number "2"
+            (effects
+              (font
+                (size 1.27 1.27))))))
+      (embedded_fonts no)))
+  (symbol
+    (lib_id "Power8GDI_Core:D_Schottky")
+    (at 85.09 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "e414d6de-4799-5a60-bb87-22e46c4c92b9")
+    (property "Reference" "D1530"
+      (at 85.09 85.09 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "STPS2H100UY"
+      (at 85.09 95.25 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Diode_SMD:D_SMB"
+      (at 85.09 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Anode shared protected battery, cathode trackerIN. Isolates shared rail during TPS7B4253 short-to-battery detection latency"
+      (at 85.09 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "b5df7ccd-d51e-5f88-a894-1f5f1a70b58a"))
+    (pin "2"
+      (uuid "639ebb3a-ffb4-5ebe-a4ab-e6833c7ec28b"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "D1530")
+          (unit 1))))
+    (property "MPN" "STPS2H100UY"
+      (at 85.09 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "STMicroelectronics"
+      (at 85.09 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-2af9fd635e9e"
+      (at 85.09 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 85.09 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 85.09 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 85.09 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 85.09 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.st.com/en/search.html#q=STPS2H100UY"
+      (at 85.09 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 85.09 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 81.28 90.17)
+      (xy 73.66 90.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3ca34595-6e5a-5cc5-b17b-f98a4b80b9b3"))
+  (global_label "SENSOR_A_IN"
+    (shape bidirectional)
+    (at 73.66 90.17 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "506c33e0-4a77-5e72-ac2b-f8ebabb4f666"))
+  (wire
+    (pts
+      (xy 88.9 90.17)
+      (xy 96.52 90.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3812fe3f-3627-5fd1-9cd8-193c9a091697"))
+  (global_label "VBAT_LOGIC_PROTECTED"
+    (shape bidirectional)
+    (at 96.52 90.17 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "3e50f372-f4cd-519f-bd46-1e388ceea6fb"))
+  (symbol
+    (lib_id "Power8GDI_Core:Interface_TPS7B4253DDA")
+    (at 279.4 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "c397ac81-197c-52e0-b098-56d403cd75cb")
+    (property "Reference" "U1530"
+      (at 279.4 62.23 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "TPS7B4253QDDARQ1"
+      (at 299.71999999999997 118.11 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02"
+      (at 279.4 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "TI SLVSCP3D unity tracking. 300mA silicon rating is NOT permitted harness load. FB=OUT; ADJ draws <=5.5uA. EP copper+thermal vias review required"
+      (at 279.4 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "8"
+      (uuid "45666f92-aef1-5f40-bdc8-c3f68df45d50"))
+    (pin "5"
+      (uuid "b4af6084-6f6b-5f2f-940a-9f687bb5609e"))
+    (pin "1"
+      (uuid "a8bcb444-a4c8-5f33-a78f-f13d791ef623"))
+    (pin "4"
+      (uuid "26b3e421-9d0e-5429-8601-fde2aba086fb"))
+    (pin "2"
+      (uuid "e2fc84f1-f208-505d-9a4e-30fd36b97fb7"))
+    (pin "7"
+      (uuid "90981efc-07ff-56a5-b8d1-1774c41072a4"))
+    (pin "3"
+      (uuid "ad1d8087-b00f-56a2-a5c5-9d1bddd48c77"))
+    (pin "6"
+      (uuid "459e3644-edbe-5876-9f3f-52a868e703e0"))
+    (pin "9"
+      (uuid "8b4bed02-44f4-56a7-823f-704bc12b55c4"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "U1530")
+          (unit 1))))
+    (property "MPN" "TPS7B4253QDDARQ1"
+      (at 279.4 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Texas Instruments"
+      (at 279.4 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-009e4917c633"
+      (at 279.4 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 279.4 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 279.4 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 279.4 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 279.4 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.ti.com/product/TPS7B4253-Q1/part-details/TPS7B4253QDDARQ1"
+      (at 279.4 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 279.4 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 264.16 80.01)
+      (xy 256.54 80.01))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "e9a0acc6-9d7d-5305-bce3-91c40751b722"))
+  (global_label "SENSOR_A_IN"
+    (shape bidirectional)
+    (at 256.54 80.01 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "b847d4cf-5f57-59ca-8be1-2aceb32e8ad5"))
+  (wire
+    (pts
+      (xy 264.16 90.17)
+      (xy 256.54 90.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "bcc1eb34-d717-5764-9ae0-8ebb9d41b6f0"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 256.54 90.17 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "b81df354-a85c-5599-9e77-b25a29f9c7f7"))
+  (wire
+    (pts
+      (xy 294.64 80.01)
+      (xy 302.26 80.01))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "42c0fafe-7324-5223-b14e-9c713f94a629"))
+  (global_label "SENSOR_5V_A"
+    (shape bidirectional)
+    (at 302.26 80.01 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "cbb89afa-0d6f-5445-94fb-a630c05bb71a"))
+  (wire
+    (pts
+      (xy 294.64 90.17)
+      (xy 302.26 90.17))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "fbb96406-f3c8-50c8-a0fc-bbc5e5a2c51e"))
+  (global_label "SENSOR_5V_A"
+    (shape bidirectional)
+    (at 302.26 90.17 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "1525ef46-6871-52a7-bbb9-eb33538acac3"))
+  (no_connect
+    (at 294.64 100.33)
+    (uuid "ff53cb3b-f223-535b-9685-f88415202904"))
+  (no_connect
+    (at 294.64 107.95)
+    (uuid "1e16878e-92cd-5b19-9110-1cb9815e9d49"))
+  (wire
+    (pts
+      (xy 274.32 115.57)
+      (xy 274.32 123.19))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "90c2acb3-f20c-501b-8650-0e51ba80be22"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 274.32 123.19 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "e8d7baf6-a572-561b-958c-6321fa44d016"))
+  (wire
+    (pts
+      (xy 279.4 115.57)
+      (xy 279.4 123.19))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "5f6c508a-cf53-520f-970f-352fa6bae86f"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 279.4 123.19 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "97640b53-87ce-501e-9dc8-6767333d0862"))
+  (wire
+    (pts
+      (xy 284.48 115.57)
+      (xy 284.48 123.19))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "fc33b3c4-6980-501f-bf25-ea1235367167"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 284.48 123.19 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "459f2752-8f4f-5090-8e54-783efb8d6f14"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 144.78 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "26095127-3e80-57a6-a6bb-f8328b587953")
+    (property "Reference" "C1530"
+      (at 148.78 88.9 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "1u 50V X7R"
+      (at 148.78 91.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+      (at 144.78 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 144.78 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "7f0cb47b-3144-5db7-8f28-b21368cec2a3"))
+    (pin "2"
+      (uuid "444fcbd5-32b4-5ebf-8ed2-0f058bd9ac8b"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "C1530")
+          (unit 1))))
+    (property "MPN" "C0805C105K5RACTU"
+      (at 144.78 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 144.78 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-838906dbfe60"
+      (at 144.78 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 144.78 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 144.78 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 144.78 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 1000000, \"dc_bias_qualification\": \"PENDING_AT_ACTUAL_NODE_VOLTAGE\", \"dielectric\": \"X7R\", \"effective_capacitance_min_pf\": null, \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 144.78 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/component-documentation/download/specsheet/C0805C105K5RACTU"
+      (at 144.78 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 144.78 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 144.78 86.36)
+      (xy 144.78 78.74))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "bdcfb8ab-d0e1-5278-a3fa-8bccb4b26531"))
+  (global_label "SENSOR_A_IN"
+    (shape bidirectional)
+    (at 144.78 78.74 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "dfa1af07-43ff-591e-943f-00cb1c139484"))
+  (wire
+    (pts
+      (xy 144.78 93.98)
+      (xy 144.78 101.6))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "de8b60a9-1c04-5434-9f18-6731f1437e88"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 144.78 101.6 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "c8c4510d-39f6-59b9-9687-1a4e3b3cc220"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 204.47 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "bf6ab7f0-c415-5265-894c-088e8748e4dc")
+    (property "Reference" "C1531"
+      (at 208.47 88.9 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 50V X7R"
+      (at 208.47 91.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 204.47 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 204.47 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "83fc3065-4ee9-5a25-b6c2-f8955a2822eb"))
+    (pin "2"
+      (uuid "9d4aeaa9-21db-5ff6-8fb9-460c121499cd"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "C1531")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 204.47 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 204.47 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 204.47 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 204.47 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 204.47 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 204.47 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 204.47 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 204.47 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 204.47 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 204.47 86.36)
+      (xy 204.47 78.74))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "1052f392-d35c-596e-b612-b88ee28cb9bb"))
+  (global_label "SENSOR_A_IN"
+    (shape bidirectional)
+    (at 204.47 78.74 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "ef8694d8-4f62-5a91-9d61-b8d8f8b19756"))
+  (wire
+    (pts
+      (xy 204.47 93.98)
+      (xy 204.47 101.6))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "b9c88a53-407b-54c0-8131-f04828316d86"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 204.47 101.6 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "b2f4a32f-e561-54c3-9e25-5c9237491589"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 204.47 149.86 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "5e0a6ff1-d592-5d34-a4d0-ab4a46a9424d")
+    (property "Reference" "C1532"
+      (at 208.47 148.59 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 16V X7R"
+      (at 208.47 151.13 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 204.47 149.86 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "ADJ reference bypass close to pin5"
+      (at 204.47 149.86 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "7cdf61de-dc50-5ac9-b473-dcc3ec4a4aa8"))
+    (pin "2"
+      (uuid "3bf25425-c237-586a-9e62-3102d4ad7867"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "C1532")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 204.47 149.86 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 204.47 149.86 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 204.47 149.86 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 204.47 149.86 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 204.47 149.86 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 204.47 149.86 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 204.47 149.86 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 204.47 149.86 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 204.47 149.86 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 204.47 146.05)
+      (xy 204.47 138.43))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "80a6c331-1b4b-5413-b02d-b234845612a8"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 204.47 138.43 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "c8277269-4b04-5a65-b994-c02233c675fe"))
+  (wire
+    (pts
+      (xy 204.47 153.67)
+      (xy 204.47 161.29))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "9153656c-b210-511f-8a9a-fa04a3568ee4"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 204.47 161.29 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "85978500-cf51-5da4-be55-fb9346983b72"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 389.89 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "c0ba9efe-749f-5336-8ffe-7db20af8b4a4")
+    (property "Reference" "C1533"
+      (at 393.89 88.9 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "22u 50V X7R"
+      (at 393.89 91.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Power8GDI_Interfaces:CGA9P3_2220"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "CGA9P3X7R1H226M250KB candidate; effective >=10uF and ESR1mohm..20ohm remain qualification criteria;50V for short-to-battery"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "424c8b40-4c64-5c5b-8d01-7c79e78970a2"))
+    (pin "2"
+      (uuid "eb2ed13f-b13a-55a3-8437-364d9661201a"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "C1533")
+          (unit 1))))
+    (property "MPN" "CGA9P3X7R1H226M250KB"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "TDK"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-09e313605b32"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CONDITIONAL"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "LAND_PATTERN_AND_EFFECTIVE_CAPACITANCE_REVIEW_REQUIRED"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Source1210 footprint must become2220. Typical manufacturer DC-bias curve available; worst-case effective capacitance/ESR/ripple under actual WBO conditions remains unqualified.\", \"Required effective capacitance not yet verified with supplier bias, temperature, tolerance and aging envelope.\"]"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"capacitance_pf\": 22000000, \"dc_bias_qualification\": \"PENDING_AT_ACTUAL_NODE_VOLTAGE\", \"dielectric\": \"X7R\", \"effective_capacitance_min_pf\": null, \"height_max_mm\": 2.5, \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 20}"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=CGA9P3X7R1H226M250KB https://product.tdk.com/info/en/documents/chara_sheet/CGA9P3X7R1H226M250KB.pdf https://www.digikey.com/en/products/detail/tdk/CGA9P3X7R1H226M250KB/10240637"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 389.89 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 389.89 86.36)
+      (xy 389.89 78.74))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "080bc1d1-bd5e-5786-84ca-9ff892e6732b"))
+  (global_label "SENSOR_5V_A"
+    (shape bidirectional)
+    (at 389.89 78.74 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "b84b5af7-83b1-52e2-a720-54b07ab96bd5"))
+  (wire
+    (pts
+      (xy 389.89 93.98)
+      (xy 389.89 101.6))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "1e70e0d4-786b-5ce0-8ee2-b70b69f5b166"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 389.89 101.6 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "648a35f8-fac2-5d86-ab47-faf3e70dd125"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 464.82 90.17 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "28026025-3e91-5e77-a4e3-132857dc468a")
+    (property "Reference" "C1534"
+      (at 468.82 88.9 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 50V X7R"
+      (at 468.82 91.44 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 464.82 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 464.82 90.17 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "145ccdae-ba59-556e-b3ce-8269701ab1d0"))
+    (pin "2"
+      (uuid "f649952c-772a-53fc-9144-668c26dc12a4"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "C1534")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 464.82 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 464.82 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 464.82 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 464.82 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 464.82 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 464.82 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 464.82 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 464.82 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 464.82 90.17 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 464.82 86.36)
+      (xy 464.82 78.74))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "ae03d6ea-cc8e-5c26-a202-73d1c48f941c"))
+  (global_label "SENSOR_5V_A"
+    (shape bidirectional)
+    (at 464.82 78.74 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "c8c1756f-0a32-5bbb-b074-8d8d49762edd"))
+  (wire
+    (pts
+      (xy 464.82 93.98)
+      (xy 464.82 101.6))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "8579f08f-21db-5152-aff0-a76f63fd058b"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 464.82 101.6 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "9c8e2afb-273a-5cec-81b6-bc900474795d"))
+  (symbol
+    (lib_id "Power8GDI_Core:D_Schottky")
+    (at 85.09 234.95 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "6739ea6a-25cf-56f1-b08f-93e3e1d20f61")
+    (property "Reference" "D1531"
+      (at 85.09 229.86999999999998 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "STPS2H100UY"
+      (at 85.09 240.03 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Diode_SMD:D_SMB"
+      (at 85.09 234.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Anode shared protected battery, cathode trackerIN. Isolates shared rail during TPS7B4253 short-to-battery detection latency"
+      (at 85.09 234.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "5558e558-153b-5403-9b16-a46a5f3b2553"))
+    (pin "2"
+      (uuid "bb966f63-82f0-531f-af9e-43fc23a7da47"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "D1531")
+          (unit 1))))
+    (property "MPN" "STPS2H100UY"
+      (at 85.09 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "STMicroelectronics"
+      (at 85.09 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-2af9fd635e9e"
+      (at 85.09 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 85.09 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 85.09 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 85.09 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 85.09 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.st.com/en/search.html#q=STPS2H100UY"
+      (at 85.09 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 85.09 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 81.28 234.95)
+      (xy 73.66 234.95))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "7f1ba0f4-1de9-5195-8594-d961899e2a83"))
+  (global_label "SENSOR_B_IN"
+    (shape bidirectional)
+    (at 73.66 234.95 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "b2d1abed-7c8b-5c6b-8a60-46324fb6f355"))
+  (wire
+    (pts
+      (xy 88.9 234.95)
+      (xy 96.52 234.95))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "bdbaca2d-1fb2-55d4-8ab8-8730e26a87ab"))
+  (global_label "VBAT_LOGIC_PROTECTED"
+    (shape bidirectional)
+    (at 96.52 234.95 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "74dac5eb-6e38-555a-a942-63494e292699"))
+  (symbol
+    (lib_id "Power8GDI_Core:Interface_TPS7B4253DDA")
+    (at 279.4 234.95 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "250e7222-24e0-5d7b-98a0-74655ac30b4b")
+    (property "Reference" "U1531"
+      (at 279.4 207.01 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "TPS7B4253QDDARQ1"
+      (at 299.71999999999997 262.89 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02"
+      (at 279.4 234.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "TI SLVSCP3D unity tracking. 300mA silicon rating is NOT permitted harness load. FB=OUT; ADJ draws <=5.5uA. EP copper+thermal vias review required"
+      (at 279.4 234.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "8"
+      (uuid "158279e7-9f7a-5b6b-a88d-bb08384a2223"))
+    (pin "5"
+      (uuid "ce6fcbf2-384e-5dd8-914c-8bacc9c2dada"))
+    (pin "1"
+      (uuid "bfdaeb3d-d517-5204-97c2-e0f288c05e92"))
+    (pin "4"
+      (uuid "3e940eb2-9aa4-578e-9133-a16f4633027e"))
+    (pin "2"
+      (uuid "9a9056db-7733-5d9a-9c59-25ab34aa04df"))
+    (pin "7"
+      (uuid "0f8324bd-12ae-5bc2-b4d4-69096bf99393"))
+    (pin "3"
+      (uuid "63a04d79-a8a7-5ef5-aa1e-b5cba971fa65"))
+    (pin "6"
+      (uuid "6f9b984a-ae6a-544d-a4a7-51a4e42494da"))
+    (pin "9"
+      (uuid "80ef72ea-7087-5fe6-b176-d20557079619"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "U1531")
+          (unit 1))))
+    (property "MPN" "TPS7B4253QDDARQ1"
+      (at 279.4 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Texas Instruments"
+      (at 279.4 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-009e4917c633"
+      (at 279.4 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 279.4 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 279.4 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 279.4 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 279.4 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.ti.com/product/TPS7B4253-Q1/part-details/TPS7B4253QDDARQ1"
+      (at 279.4 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 279.4 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 264.16 224.79)
+      (xy 256.54 224.79))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "b79730c1-7c4f-5556-8024-ece194a233e2"))
+  (global_label "SENSOR_B_IN"
+    (shape bidirectional)
+    (at 256.54 224.79 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "94d0543e-2ee1-5605-8efc-4e8844ac7ca5"))
+  (wire
+    (pts
+      (xy 264.16 234.95)
+      (xy 256.54 234.95))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "0203872f-c01e-5018-8c8e-fa2a1fe1034c"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 256.54 234.95 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "3366011f-a079-5fa3-9492-3cad1c4b1c20"))
+  (wire
+    (pts
+      (xy 294.64 224.79)
+      (xy 302.26 224.79))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "d32c69b0-217a-5cfa-8afc-5c2e805b3456"))
+  (global_label "SENSOR_5V_B"
+    (shape bidirectional)
+    (at 302.26 224.79 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "7d682a23-b991-5d49-8052-ed34967bcd2e"))
+  (wire
+    (pts
+      (xy 294.64 234.95)
+      (xy 302.26 234.95))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "6996db3d-2574-5cf6-a9fb-041671e8dcd4"))
+  (global_label "SENSOR_5V_B"
+    (shape bidirectional)
+    (at 302.26 234.95 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "f77ea10e-189e-5bb9-a3a5-053bde0eea04"))
+  (no_connect
+    (at 294.64 245.11)
+    (uuid "d5ceb9d1-3d2b-5199-862a-5a2f16c75bbe"))
+  (no_connect
+    (at 294.64 252.73)
+    (uuid "433b8e12-f6e3-52c0-87dc-809e29abb571"))
+  (wire
+    (pts
+      (xy 274.32 260.35)
+      (xy 274.32 267.97))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "bebe82fa-c1fd-5f2b-a5de-15f7f120277b"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 274.32 267.97 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "f879fb1a-b600-5498-87e1-0b1c28e01ab8"))
+  (wire
+    (pts
+      (xy 279.4 260.35)
+      (xy 279.4 267.97))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "5b0090f6-1255-541a-980a-5c3c5e25a088"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 279.4 267.97 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "753e6ead-79e2-54a2-90c8-07dcb90c4d39"))
+  (wire
+    (pts
+      (xy 284.48 260.35)
+      (xy 284.48 267.97))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "1cddb696-dfed-50a7-b848-85c3f9f36f4d"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 284.48 267.97 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "c644725a-8396-503c-9a82-75a534000c9e"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 144.78 234.95 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "f436261d-dc1b-587d-82c6-edf999f7a584")
+    (property "Reference" "C1535"
+      (at 148.78 233.68 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "1u 50V X7R"
+      (at 148.78 236.22 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+      (at 144.78 234.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 144.78 234.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "1e9d51f9-5991-5ae4-bea9-ee64d40de43b"))
+    (pin "2"
+      (uuid "5b987838-9828-5ee4-b4f0-2b69c1027918"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "C1535")
+          (unit 1))))
+    (property "MPN" "C0805C105K5RACTU"
+      (at 144.78 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 144.78 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-838906dbfe60"
+      (at 144.78 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 144.78 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 144.78 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 144.78 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 1000000, \"dc_bias_qualification\": \"PENDING_AT_ACTUAL_NODE_VOLTAGE\", \"dielectric\": \"X7R\", \"effective_capacitance_min_pf\": null, \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 144.78 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/component-documentation/download/specsheet/C0805C105K5RACTU"
+      (at 144.78 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 144.78 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 144.78 231.14)
+      (xy 144.78 223.52))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "8decb128-6cbc-5c71-997a-19257ab8373c"))
+  (global_label "SENSOR_B_IN"
+    (shape bidirectional)
+    (at 144.78 223.52 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "aab312bc-3a14-5fa7-a63c-0d53c6c8e823"))
+  (wire
+    (pts
+      (xy 144.78 238.76)
+      (xy 144.78 246.38))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "04c13091-1c5e-56d2-8121-228e1dbb8724"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 144.78 246.38 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "889c511f-49b9-593d-b9aa-eb1389febaa4"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 204.47 234.95 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "f2f20306-741f-5925-9bfd-8bf4317e4034")
+    (property "Reference" "C1536"
+      (at 208.47 233.68 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 50V X7R"
+      (at 208.47 236.22 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 204.47 234.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 204.47 234.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "8dad956c-6b70-5220-9b48-d16266b20001"))
+    (pin "2"
+      (uuid "92e740f6-887f-511b-9918-da9a38ea5ce5"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "C1536")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 204.47 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 204.47 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 204.47 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 204.47 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 204.47 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 204.47 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 204.47 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 204.47 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 204.47 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 204.47 231.14)
+      (xy 204.47 223.52))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "2de5047c-6ef8-5a2f-a8d7-c7b5e2e0cb8a"))
+  (global_label "SENSOR_B_IN"
+    (shape bidirectional)
+    (at 204.47 223.52 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "ad088752-7d23-5f55-994e-f12390397505"))
+  (wire
+    (pts
+      (xy 204.47 238.76)
+      (xy 204.47 246.38))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3dea7117-f712-5e87-83c4-92b13d9953a7"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 204.47 246.38 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "64344521-557f-545c-8421-e3dbc7660b2b"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 204.47 294.64 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "1adb7b6c-8afb-51b0-8874-3300a0c2ec2b")
+    (property "Reference" "C1537"
+      (at 208.47 293.37 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 16V X7R"
+      (at 208.47 295.91 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 204.47 294.64 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "ADJ reference bypass close to pin5"
+      (at 204.47 294.64 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "ecbf780b-f736-5443-bdd5-7fc132cc4552"))
+    (pin "2"
+      (uuid "010a8bc6-63ff-5e39-85e0-260de92b76da"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "C1537")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 204.47 294.64 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 204.47 294.64 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 204.47 294.64 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 204.47 294.64 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 204.47 294.64 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 204.47 294.64 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 204.47 294.64 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 204.47 294.64 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 204.47 294.64 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 204.47 290.83)
+      (xy 204.47 283.21))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "aad24f12-d86b-54f0-9c85-ba75da753224"))
+  (global_label "+5V_CORE"
+    (shape bidirectional)
+    (at 204.47 283.21 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "6d6fb15b-edf0-5808-a62d-fe6a5831c558"))
+  (wire
+    (pts
+      (xy 204.47 298.45)
+      (xy 204.47 306.07))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "0cca0fcc-37ac-5a7e-9156-9fce755d2d50"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 204.47 306.07 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "d3ff7f9d-a3e8-50a5-8edf-af95b5ee3095"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 389.89 234.95 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "9afe2604-4767-54d8-8784-9200cb453ab6")
+    (property "Reference" "C1538"
+      (at 393.89 233.68 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "22u 50V X7R"
+      (at 393.89 236.22 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Power8GDI_Interfaces:CGA9P3_2220"
+      (at 389.89 234.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "CGA9P3X7R1H226M250KB candidate; effective >=10uF and ESR1mohm..20ohm remain qualification criteria;50V for short-to-battery"
+      (at 389.89 234.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "7c054d84-b6b5-558f-854d-c04060ca9667"))
+    (pin "2"
+      (uuid "c3cff560-3867-5006-b16d-dc8e291a9252"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "C1538")
+          (unit 1))))
+    (property "MPN" "CGA9P3X7R1H226M250KB"
+      (at 389.89 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "TDK"
+      (at 389.89 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-09e313605b32"
+      (at 389.89 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CONDITIONAL"
+      (at 389.89 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "LAND_PATTERN_AND_EFFECTIVE_CAPACITANCE_REVIEW_REQUIRED"
+      (at 389.89 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Source1210 footprint must become2220. Typical manufacturer DC-bias curve available; worst-case effective capacitance/ESR/ripple under actual WBO conditions remains unqualified.\", \"Required effective capacitance not yet verified with supplier bias, temperature, tolerance and aging envelope.\"]"
+      (at 389.89 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"capacitance_pf\": 22000000, \"dc_bias_qualification\": \"PENDING_AT_ACTUAL_NODE_VOLTAGE\", \"dielectric\": \"X7R\", \"effective_capacitance_min_pf\": null, \"height_max_mm\": 2.5, \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 20}"
+      (at 389.89 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=CGA9P3X7R1H226M250KB https://product.tdk.com/info/en/documents/chara_sheet/CGA9P3X7R1H226M250KB.pdf https://www.digikey.com/en/products/detail/tdk/CGA9P3X7R1H226M250KB/10240637"
+      (at 389.89 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 389.89 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 389.89 231.14)
+      (xy 389.89 223.52))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "91c282c4-accc-57d6-8fdd-bc1e2b41a67d"))
+  (global_label "SENSOR_5V_B"
+    (shape bidirectional)
+    (at 389.89 223.52 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "d37ca9e0-838f-5ce5-ad06-06c584a34ab1"))
+  (wire
+    (pts
+      (xy 389.89 238.76)
+      (xy 389.89 246.38))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "519b0b49-9609-59e6-9433-7ac21f249863"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 389.89 246.38 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "829789ab-c608-579e-953b-8c147f3dff94"))
+  (symbol
+    (lib_id "Power8GDI_Core:C")
+    (at 464.82 234.95 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "17b51c5a-af05-572a-86e3-db502000a189")
+    (property "Reference" "C1539"
+      (at 468.82 233.68 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 50V X7R"
+      (at 468.82 236.22 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+      (at 464.82 234.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 464.82 234.95 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "d9993073-a966-51f2-82be-2c7147c18733"))
+    (pin "2"
+      (uuid "82af766e-565d-53a1-93e8-b990973e4fe7"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "C1539")
+          (unit 1))))
+    (property "MPN" "C0603C104K5RACTU"
+      (at 464.82 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 464.82 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-6bf9727c4e40"
+      (at 464.82 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 464.82 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 464.82 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 464.82 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 50, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 464.82 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://search.kemet.com/download/specsheet/C0603C104K5RACTU"
+      (at 464.82 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 464.82 234.95 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 464.82 231.14)
+      (xy 464.82 223.52))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "a2092153-a96b-56ed-93d9-edd4fdf86e4e"))
+  (global_label "SENSOR_5V_B"
+    (shape bidirectional)
+    (at 464.82 223.52 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "87761c98-09f2-58f0-9117-5b6a06a3f00b"))
+  (wire
+    (pts
+      (xy 464.82 238.76)
+      (xy 464.82 246.38))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "84997bf1-fb91-55a1-8f9c-4b62ce0f3e3e"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 464.82 246.38 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "1fab9d44-4e8f-5001-b472-646cfafa268b"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 100.33 314.96 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "0613166d-5e95-54ab-8bdf-9994daa6d88f")
+    (property "Reference" "R1530"
+      (at 104.33 313.69 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "0R star return"
+      (at 104.33 316.23 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+      (at 100.33 314.96 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse"
+      (at 100.33 314.96 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "0345bff3-9de6-5982-bd51-dc27931ec372"))
+    (pin "2"
+      (uuid "346f838e-6d13-5d03-a429-e175715fd385"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "R1530")
+          (unit 1))))
+    (property "MPN" "CRCW08050000Z0EA"
+      (at 100.33 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 100.33 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-49a75d3b142a"
+      (at 100.33 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 100.33 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 100.33 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 100.33 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"current_a\": 2.5, \"power_reference_temperature_c\": 70, \"power_w\": 0.125, \"resistance_ohm\": 0.0, \"tcr_ppm_c\": null, \"technology\": \"jumper\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": null, \"working_voltage_v\": 150}"
+      (at 100.33 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 100.33 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 100.33 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 100.33 311.15)
+      (xy 100.33 303.53))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "e6369b41-0e72-585a-bd8a-97979a80c44f"))
+  (global_label "HARNESS_SENSOR_GND_A"
+    (shape bidirectional)
+    (at 100.33 303.53 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "5ddd3ef0-eb20-5783-bbfe-5cbab168cc5a"))
+  (wire
+    (pts
+      (xy 100.33 318.77)
+      (xy 100.33 326.39))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "b457df4a-9783-5d93-9816-a66c738b1f07"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 100.33 326.39 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "5a12572a-860a-5969-abce-8c2f1590af54"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 260.35 314.96 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "c1b56996-d733-5d67-b8a9-bdb57754729f")
+    (property "Reference" "R1531"
+      (at 264.35 313.69 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "0R star return"
+      (at 264.35 316.23 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+      (at 260.35 314.96 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse"
+      (at 260.35 314.96 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "08075ea3-fe40-5e84-8275-35e3bcedbad4"))
+    (pin "2"
+      (uuid "3f8f0eea-816c-5bee-a61e-8dfd5364fde4"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "R1531")
+          (unit 1))))
+    (property "MPN" "CRCW08050000Z0EA"
+      (at 260.35 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 260.35 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-49a75d3b142a"
+      (at 260.35 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 260.35 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 260.35 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 260.35 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"current_a\": 2.5, \"power_reference_temperature_c\": 70, \"power_w\": 0.125, \"resistance_ohm\": 0.0, \"tcr_ppm_c\": null, \"technology\": \"jumper\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": null, \"working_voltage_v\": 150}"
+      (at 260.35 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 260.35 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 260.35 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 260.35 311.15)
+      (xy 260.35 303.53))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "d0ac3aac-5873-56de-92c3-97afd6b04266"))
+  (global_label "HARNESS_SENSOR_GND_B"
+    (shape bidirectional)
+    (at 260.35 303.53 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "0cf8f67d-acc7-5254-89be-bd90953b22ec"))
+  (wire
+    (pts
+      (xy 260.35 318.77)
+      (xy 260.35 326.39))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "0100c14a-d9d5-5ba4-a90c-f447a918b021"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 260.35 326.39 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "1cf1d87f-1f69-5912-93bc-01f5c98a442d"))
+  (symbol
+    (lib_id "Power8GDI_Core:R")
+    (at 420.37 314.96 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "ea6bd20c-693c-5e8c-af2f-9ba0ac190f51")
+    (property "Reference" "R1532"
+      (at 424.37 313.69 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "0R star return"
+      (at 424.37 316.23 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+      (at 420.37 314.96 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse"
+      (at 420.37 314.96 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "bd2bf682-b32b-580d-9f72-bdb60b59f9da"))
+    (pin "2"
+      (uuid "214e6cc4-fa45-5632-946e-eb0003ca228f"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/a76efd39-56e0-5aff-a4f2-5fc6a417bf3f"
+          (reference "R1532")
+          (unit 1))))
+    (property "MPN" "CRCW08050000Z0EA"
+      (at 420.37 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Vishay"
+      (at 420.37 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-49a75d3b142a"
+      (at 420.37 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_FAMILY_CODE"
+      (at 420.37 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 420.37 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 420.37 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"current_a\": 2.5, \"power_reference_temperature_c\": 70, \"power_w\": 0.125, \"resistance_ohm\": 0.0, \"tcr_ppm_c\": null, \"technology\": \"jumper\", \"temperature_max_c\": 155, \"temperature_min_c\": -55, \"tolerance_pct\": null, \"working_voltage_v\": 150}"
+      (at 420.37 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.vishay.com/docs/20035/dcrcwe3.pdf"
+      (at 420.37 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 420.37 314.96 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 420.37 311.15)
+      (xy 420.37 303.53))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "edd376b7-a97f-51af-af97-127d6c53573b"))
+  (global_label "HARNESS_SENSOR_GND_C"
+    (shape bidirectional)
+    (at 420.37 303.53 270)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "316e3123-e3ad-5ca3-8dd8-547eb7f923dc"))
+  (wire
+    (pts
+      (xy 420.37 318.77)
+      (xy 420.37 326.39))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3695c407-2d84-5559-9f8e-40f913580181"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 420.37 326.39 90)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "8c4febbe-30cb-576c-ac55-921dd23f125f"))
+  (text "OUT=FB: unity tracking. ADJ reference+enable; no fault GPIO exists.\nInput/output abs45V: upstream clamp and cable-inductance overshoot tests required.\nAt14V/5V,100mA dissipates about0.9W per tracker;300mA about2.7W. Neither is a qualified load budget.\nGround return links are NOT fuses. Star placement, ground offset, thermal, cold crank and fault tests block release."
+    (at 25.4 365 0)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left top))
+    (uuid "bf8210b3-002b-524d-972a-bb2ef048e69d"))
+  (sheet_instances
+    (path "/"
+      (page "1"))))

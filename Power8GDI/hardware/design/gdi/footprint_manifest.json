@@ -1,23 +1,4 @@
 {
-  "S4": {
-    "source_footprint": "TestPoint:TestPoint_Pad_D1.5mm",
-    "derived_footprint": "Power8GDI_GDI:REF_S4",
-    "pad_numbers": [
-      "1"
-    ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
-    "derived_footprint_sha256": "c2e39428faa5b996c992cb2a9856c2f1a3561002c7e2a6ec8daac79b490e0f56"
-  },
-  "D14": {
-    "source_footprint": "Diode_SMD:D_SMB",
-    "derived_footprint": "Power8GDI_GDI:REF_D14",
-    "pad_numbers": [
-      "1",
-      "2"
-    ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
-    "derived_footprint_sha256": "c4125cd067e474d8b9865be9b9fe482d290f4e632d874e693b5219354d273a0f"
-  },
   "C42": {
     "source_footprint": "Capacitor_SMD:C_0603_1608Metric",
     "derived_footprint": "Power8GDI_GDI:REF_C42",
@@ -25,7 +6,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "356cbaaaf57633c3efb3641083fda2fca29ecf287f8525f0f731800cca3844bc"
   },
   "R26": {
@@ -37,8 +19,12 @@
       "3",
       "4"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
-    "derived_footprint_sha256": "86e9487cd1f254a09e20d24e0a91e0d7430ad347fa95ad1ab61474da5f0492f3"
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [
+      "Restrict Kelvin net ties to same-terminal pairs 1/2 and 3/4",
+      "WSLP1206 10mohm manufacturer land pattern1.65x1.93mm gap1.80mm; thermal qualification pending"
+    ],
+    "derived_footprint_sha256": "1384086da76a8d8d86b4ee1d0e53a25809dd6b48e529df62d7f6a2ccf33b508c"
   },
   "R20": {
     "source_footprint": "Resistor_SMD:R_0603_1608Metric",
@@ -47,7 +33,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "49add6a0ecc3bddc4372434195018f5bd58d2aa7868d592cac7890540cd90500"
   },
   "S3": {
@@ -56,7 +43,8 @@
     "pad_numbers": [
       "1"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "96558db2ccc78aae11e304960d32cebb311cb479e00373f6ebb2cb27ab0b5373"
   },
   "R24": {
@@ -66,7 +54,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "22343b7f333e4e68fdd36ef6025981fc7b8caf82187530f6fa7bb0110e6de80c"
   },
   "C60": {
@@ -76,7 +65,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "5caf680a504faedba4854aaefb43f08095449947fca5a5d71a6d5fe21941d16a"
   },
   "S6": {
@@ -85,7 +75,8 @@
     "pad_numbers": [
       "1"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "b3b8647f2e5dc18346f94f2ea221a2d29808c78e3c07fb3dd5a17cf9afedf15e"
   },
   "D19": {
@@ -95,7 +86,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "f7ae18bfed30ddeaee498feb59d71cda476fa82728e53346fb2ab892fdb21e2c"
   },
   "C86": {
@@ -105,7 +97,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "8d83e87f2d8ba95f5350e112e7bf38d48e70c4681bc45ca78e264f86938373f5"
   },
   "D15": {
@@ -115,7 +108,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "f9ef820c757d3e863372117f18d4f92a8e71a8b4f00c17b533183d81fab0d5b2"
   },
   "C32": {
@@ -125,7 +119,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "61ac57aa063af9aa8560853fad67a1928029d7e57f492f3b64e808e01e00b2bd"
   },
   "R124": {
@@ -135,7 +130,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "c657ac281449e471ee03276adf4302ce8524fc6e3e73f6828a09acf4ddb03add"
   },
   "C21": {
@@ -145,7 +141,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "049d3102a4fa181bd270f736fb442e046dae977b36fac25a13298364c24b2a47"
   },
   "R15": {
@@ -155,7 +152,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "0c76c69b94cb3f257a90e51a11b22a10090a7dc1cdca1bd40a5e2900a133fd07"
   },
   "R130": {
@@ -165,7 +163,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "1f93e05211372efdb0a59a7d8195a2e5609ab0a61ba3b2d8abf280984d0b5991"
   },
   "C23": {
@@ -175,7 +174,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "89d796a6963047cc2c6fda817f87d846a6f1071620f7493acddefe61b29040ed"
   },
   "R123": {
@@ -185,7 +185,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "b72aa1a13c6c01eb7acb4d83941ae78a4efaec2c1da3c2283f0df7eee11d25a4"
   },
   "R128": {
@@ -195,7 +196,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "6c9ccb4afdace5c9f9f2bc548810ebe1a3e5c85660429f778ec7edd404aa35b5"
   },
   "D11": {
@@ -206,7 +208,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "8b1aabbc502d8c4b84c6640238874e9959896b86fe4f776b0b4b835c609862d8"
   },
   "R83": {
@@ -216,7 +219,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "1515bfb1408602772dab94a4ba1b20d12e546a93483ab41553efd8892ab7622f"
   },
   "R16": {
@@ -226,7 +230,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "8d9a262f9e961a1fb353a3c9ded4ed6fae3813d21ec43b0c6e47df8070e60004"
   },
   "Q9": {
@@ -237,7 +242,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "9f501867dbae47150c248cfa4ec0d1e6e0333dc660f6f352a6dd8eefe12b91ff"
   },
   "U3": {
@@ -248,7 +254,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "1aca5633abe50dd91150148993eb2ba49ae0ca12ad519680a1221b83b7c35519"
   },
   "Y2": {
@@ -260,8 +267,11 @@
       "3",
       "4"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
-    "derived_footprint_sha256": "a52864888147d807e79ae5382b13a58ffc5fc541689ec0eb4e57d09a79c5d9c3"
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [
+      "SiT8924B7x5mm manufacturer land pattern span3.81x5.08mm, pads2.0x2.2mm"
+    ],
+    "derived_footprint_sha256": "890546c31c7303da392e5669a34a8dc3fe7086e148672cae0e570dc25333051e"
   },
   "C74": {
     "source_footprint": "hellen-one-common:C0603",
@@ -270,7 +280,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "4bafc7eff44e91b5098606e38ffb83a5b9310a2a9e2c36d89d010f06932fe30f"
   },
   "D9": {
@@ -280,7 +291,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "f0eebee64c83546b56a70582cd30868fb9e0859f67b676d524b68cc57d760770"
   },
   "U1": {
@@ -354,7 +366,8 @@
       "8",
       "9"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "48decc7ae3ad6bb4dfc51b0e4c4e0f12746a6731009f374b5e2b8e2dd096ea92"
   },
   "L1": {
@@ -364,7 +377,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "f1d856565279b757b2bddf230bdf01c21494a8324200479b84095cd4161f736f"
   },
   "C63": {
@@ -374,7 +388,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "d38b273b12603a456b96d599c8554ea84a095191470354602cc48a22ae157c60"
   },
   "C80": {
@@ -384,19 +399,9 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "2a67d9cbf47de5f3f11b21f837783ed91048775ce0d75316ba76890eb094d26f"
-  },
-  "Q10": {
-    "source_footprint": "Package_TO_SOT_SMD:TO-252-2",
-    "derived_footprint": "Power8GDI_GDI:REF_Q10",
-    "pad_numbers": [
-      "1",
-      "2",
-      "3"
-    ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
-    "derived_footprint_sha256": "d6aef285c98ebacb59c958e8f67effdb9243826659ac8333cbcbb16c4fec7dfe"
   },
   "C17": {
     "source_footprint": "Capacitor_SMD:C_0805_2012Metric",
@@ -405,7 +410,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "001dfdd12c15c93d75e0a85512ccc7d0722c091f02ee2f4b39c064610736d35e"
   },
   "D10": {
@@ -416,7 +422,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "30774b6bf714c2734f042d671bf57130fc869da2314950b2a402f3bbaf340334"
   },
   "S1": {
@@ -425,7 +432,8 @@
     "pad_numbers": [
       "1"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "1c7ed50afae3aeaa46a7860c46be2170924aaf2c6de50e0978fa4db100d18fde"
   },
   "R133": {
@@ -435,7 +443,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "a81ab8dca93105296cb129cbc5e4b7352c28664b8e2c505ba5ee7522a793cfa0"
   },
   "R80": {
@@ -445,7 +454,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "bd4036bb4978c8bbf88414d69680438ee5cd83a540eac0674b19e20357582206"
   },
   "R81": {
@@ -455,7 +465,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "9612397cb273ede41de42c3306314a7f928cca1bcecb4766096b91ee68250249"
   },
   "R17": {
@@ -465,7 +476,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "fdf8ff0922a2941a777324a8b79e5cb2c1faed7b2bef253ece0762212b2f0e13"
   },
   "C58": {
@@ -475,7 +487,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "81a3ee4c9d99f16c5654ac05c9374f99a577a32ab6d0fcb03c692d5f1469ea57"
   },
   "C73": {
@@ -485,7 +498,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "25998ca2abe7eb24a2a11a8080ecd64f8884fddf95d1ba2a72993beca8e4a455"
   },
   "R13": {
@@ -495,7 +509,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "084bab0531730d7799bc3eeb523d3c02aa7ad63aa12b04135ef3e5b24ee2d83b"
   },
   "S5": {
@@ -504,7 +519,8 @@
     "pad_numbers": [
       "1"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "0faefa4931d8457494f8d82067bdc453d3f7c7a55a88ac0b4b66a6a7338bd068"
   },
   "C24": {
@@ -514,7 +530,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "6e2a0d81bab3a856ece1d9ec6a72aa62f7d2df01e13e7026fa453e2ae4d41287"
   },
   "R22": {
@@ -526,8 +543,12 @@
       "3",
       "4"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
-    "derived_footprint_sha256": "79915a1876fe4bc7be1c175bcec95d7705ebb4459aafad5d95de813faf74fa83"
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [
+      "Restrict Kelvin net ties to same-terminal pairs 1/2 and 3/4",
+      "WSLP1206 10mohm manufacturer land pattern1.65x1.93mm gap1.80mm; thermal qualification pending"
+    ],
+    "derived_footprint_sha256": "80126669726c3b06bc20e3ef8d2a6748133888ed29e18b41fddfd1e408ce0211"
   },
   "R38": {
     "source_footprint": "Resistor_SMD:R_0603_1608Metric",
@@ -536,7 +557,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "351ed2d1a70c985ce27229f00938eb61010477c0403dadf1aa22b9ea97b084ed"
   },
   "R41": {
@@ -546,7 +568,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "6a4ef027131f0e56b01bc021be1e7afa9e594c911637db14060b47f8a64e5490"
   },
   "C67": {
@@ -556,7 +579,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "e1edb3eba8740acda18289c96540c4848a22678b8d77f8b5d1e8f2cf4f0ec544"
   },
   "C47": {
@@ -566,7 +590,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "4e25761c153849fc3986cbfc827a2ef210761142f507c7311b47587cc3f80bed"
   },
   "D34": {
@@ -577,7 +602,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "dd3c93983a568aeb7b6b8d895a70fe2581d7c2aa9a3f05e982ef1b2a72e01113"
   },
   "C53": {
@@ -587,7 +613,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "9fba428128468d9eaeb089fd39d868744c9a662af99270e3c79ba4f612ad18a8"
   },
   "C48": {
@@ -597,7 +624,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "e154bafd0b10d0d2e0077fda0a0e84cbc2cf77ea7782c23539cbddd2d04e2c89"
   },
   "C81": {
@@ -607,7 +635,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "f39742e09f53b1609c3ad4b4877e364fbf29da8c8522ae1c4605187844e7136c"
   },
   "R136": {
@@ -617,7 +646,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "c3e60d245d937a118e5c4521937e90109cc349d0d7151a02c6b46c72b43bfc85"
   },
   "C88": {
@@ -627,7 +657,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "e6be3270a262eda7b924fdcecbc4f259cc49b76626084aaaa3cd409def339ff4"
   },
   "R14": {
@@ -637,7 +668,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "3208b709a7533e28c8a9697a624099b1f764a242cd4b6cefcd18ab1c566cadb9"
   },
   "C26": {
@@ -647,7 +679,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "f4988597a6064246b7c26a02996351dadc88e0cae1236ca382bbaf1153cb844d"
   },
   "C34": {
@@ -657,7 +690,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "4806585ed29b96d9e3ef766725d34ce01aa224463f64c054d0251cbbf9e2fae0"
   },
   "D16": {
@@ -667,7 +701,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "10dcfc82b498df8d24a650fba65604805745e80a92e867477dd7c518643465e4"
   },
   "R125": {
@@ -677,7 +712,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "38d703eadbe28610ca3351bd3032326b3db5e67ff323a729a038992a035bae57"
   },
   "R131": {
@@ -687,7 +723,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "ca305d9318006a6409cf883ee806331da07ea07051c416b3d9f873966f7a7d77"
   },
   "C11": {
@@ -697,18 +734,9 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "219576884329abf8b082915d5ae23b8c3a510793226ccb11e04bf6ed274d2f31"
-  },
-  "C50": {
-    "source_footprint": "hellen-one-common:C0603",
-    "derived_footprint": "Power8GDI_GDI:REF_C50",
-    "pad_numbers": [
-      "1",
-      "2"
-    ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
-    "derived_footprint_sha256": "7cc1b8c3c89f3bed3a0ecb247944f9da3008be8d679010851020d08cd97c1db4"
   },
   "Q5": {
     "source_footprint": "Package_TO_SOT_SMD:TO-252-2",
@@ -718,7 +746,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "2b883746a6e97d5ab19a1caa2c182c764a68e0df70a2a856d4d02dbe4dfbfcf4"
   },
   "C10": {
@@ -728,7 +757,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "310f5fe775f872c44ca5e2a8169e0be90909d49194b332c1803c603cf84614f7"
   },
   "R132": {
@@ -738,7 +768,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "d3cf4bf3e97f3d12d18aa9e0061e6fbb1b6b8390c8d9157127150f5c67714dc2"
   },
   "C62": {
@@ -748,7 +779,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "1c805170016a284c09ce462a3af8f9280fa1ae300fc5e5bad0d215741564b0be"
   },
   "R19": {
@@ -758,7 +790,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "7f630b7985b46b4c4caf8b99a74b06b4c5948266da3c1e230f4338839d276e20"
   },
   "C43": {
@@ -768,7 +801,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "a395554339a3fa886f83991dbc8ad9edd0f201e5cc87747f5fe35752b14f3646"
   },
   "C87": {
@@ -778,7 +812,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "931db0b5b60a9e8c3c288462ec2ecffc758413e1eb8d455000c63b194779f7a6"
   },
   "R82": {
@@ -788,7 +823,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "a2a12079b675abcc2acde4d7aa0a3bebd5b9ac06432ffedf1384e5dbd17f1620"
   },
   "R43": {
@@ -798,7 +834,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "527495de997a1c65534e58614cdd0fe0709e604c201d9dc7ecc17da9285eb3d4"
   },
   "D31": {
@@ -808,7 +845,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "fe7f6c43fa65190408e49faa7bccefb0a121d287530031fbced7136e4b62263f"
   },
   "Q12": {
@@ -819,7 +857,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "ee08479403746136fdaa0972a68d16747482bee1818c5a9d5e9cab462f875af3"
   },
   "R37": {
@@ -829,7 +868,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "f2466a64f6344772dbf5c8373bfaceedde3411b0b78fc83652811b466dfcdf71"
   },
   "C41": {
@@ -839,7 +879,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "e0a6d29267b58a0d62359e362cdab775b6c597075a8d0e201bdcd457c68016b6"
   },
   "C59": {
@@ -849,7 +890,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "ff9ef2a41079c91d6534262a653830c99c514333297a9e642ee018db71d58f84"
   },
   "R127": {
@@ -859,7 +901,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "958c9f43e87d7f8bf6f143a8da9380d016aa17f1c5327fb2581c5c7bff9a6685"
   },
   "C71": {
@@ -869,7 +912,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "56a0c7d3cdcee5f348bb9d91918f7c919ff0fd43449b5aad625af1929f1397c7"
   },
   "Q1": {
@@ -880,7 +924,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "83687dfd4130a82700c76a5cdb5d8a4964bc57800e97d6604044c1740f4bb6fa"
   },
   "L2": {
@@ -890,7 +935,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "ae2181cf229c3b8614766891d74cb92deee64cfd60d2a3127d129bce6ace99ea"
   },
   "Q3": {
@@ -901,7 +947,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "dd7c3f683933948cc8ef24424f9a8a6948a9ba3cb1bd2b2676d3ae730a737815"
   },
   "C85": {
@@ -911,18 +958,9 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "8920322e213ae82f9e9dca3c38feb811d6a4ab29107ce12c55fcd836311f5630"
-  },
-  "R18": {
-    "source_footprint": "Resistor_SMD:R_0603_1608Metric",
-    "derived_footprint": "Power8GDI_GDI:REF_R18",
-    "pad_numbers": [
-      "1",
-      "2"
-    ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
-    "derived_footprint_sha256": "db9c4bbd39dd81481330e623e236b3abfece9ce78d0797225e754a399e3d1b70"
   },
   "C13": {
     "source_footprint": "hellen-one-common:C0603",
@@ -931,7 +969,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "6c5e1588f0b734a7d2e23ee0e530bf60dbfd991aec5d5e89a54217e186ee0df1"
   },
   "C9": {
@@ -941,7 +980,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "aabef9dcddbd44185f749ea849752fb967794c9dcfe975ac885bfc1a1eb3974c"
   },
   "D12": {
@@ -951,7 +991,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "c6c17220e56ec82166cf1026f36b843706324ac52272175d41343f798a8a0b24"
   },
   "Q8": {
@@ -962,7 +1003,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "690a00d1bbf5ee1d25a048ea269cad12a4ce4cf74b4860bc4804df15a614535e"
   },
   "R12": {
@@ -974,8 +1016,12 @@
       "3",
       "4"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
-    "derived_footprint_sha256": "b224c8cef53556a39a9d2f0bb51aa5caed7fa2d512ab0fa46601955564a2e397"
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [
+      "Restrict Kelvin net ties to same-terminal pairs 1/2 and 3/4",
+      "WSLP1206 10mohm manufacturer land pattern1.65x1.93mm gap1.80mm; thermal qualification pending"
+    ],
+    "derived_footprint_sha256": "39281bed10e23928cefee6207f46fee44f6720536436139d8c157d91d7b97200"
   },
   "C15": {
     "source_footprint": "Capacitor_THT:C_Radial_D16.0mm_H25.0mm_P7.50mm",
@@ -984,7 +1030,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "bac1a73e323898fca961525660c575876d3883c3ff57da0efaf61446ae93b528"
   },
   "R45": {
@@ -996,8 +1043,12 @@
       "3",
       "4"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
-    "derived_footprint_sha256": "06fa2825a9d8558e277c2d88a5dbc91d8d4c91f7964abbb8cd67d5ad50aeaa3e"
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [
+      "Restrict Kelvin net ties to same-terminal pairs 1/2 and 3/4",
+      "WSLP1206 10mohm manufacturer land pattern1.65x1.93mm gap1.80mm; thermal qualification pending"
+    ],
+    "derived_footprint_sha256": "8f083b6c5850135b1f60db2d57b03615a87acfb20d78140141c4a7f55bf725f3"
   },
   "C65": {
     "source_footprint": "hellen-one-common:C0603",
@@ -1006,7 +1057,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "63b61fe178351e8b103884748583abad5a4b02f6b60ca37bcbf2e9a7a36adc96"
   },
   "C82": {
@@ -1016,7 +1068,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "b395a9229209217d60a9d4d5e1c7c3a4194335985906b1670a3aef73415f6af1"
   },
   "Q16": {
@@ -1027,7 +1080,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "334ae3132f4da6fa051918a7dd25f283bce662a9301d89e59d4c9e823edd3666"
   },
   "C28": {
@@ -1037,7 +1091,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "ee8339c1019b8e309d2e7698920c73fdbf5a41f5fc96e51ca6e90909bef24d70"
   },
   "C54": {
@@ -1047,18 +1102,9 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "e614700427456bfc3d4a33b221689919eb7eaa6e8c507c7762c76cdb01c3c746"
-  },
-  "C61": {
-    "source_footprint": "Capacitor_SMD:C_0603_1608Metric",
-    "derived_footprint": "Power8GDI_GDI:REF_C61",
-    "pad_numbers": [
-      "1",
-      "2"
-    ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
-    "derived_footprint_sha256": "463a4aa7b8300cf8b38af3e65cafb40658e96445c9e8cb9bc48acb2879eb0c23"
   },
   "C56": {
     "source_footprint": "Capacitor_SMD:C_0603_1608Metric",
@@ -1067,7 +1113,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "f750b05f052a69acc9007661babad31f15617279792e5d693c99de1add1ef593"
   },
   "S2": {
@@ -1076,7 +1123,8 @@
     "pad_numbers": [
       "1"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "308feaf840155f16f1984a0aa2bfa53269a164861651a4223ff463c5eb328a6d"
   },
   "C44": {
@@ -1086,7 +1134,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "7aa382faf3e9ccb08e1205a47fa8449493839b535b692964e7d0e4df02e43aa7"
   },
   "R11": {
@@ -1096,7 +1145,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "9925577b47750054db0fb90eca5bdd45ede6f84786c328f9498f2ec422063037"
   },
   "C84": {
@@ -1106,7 +1156,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "adeaae687b34c6c152c0d5bf49ba148625759ff19528e2e7a630154676d26727"
   },
   "C64": {
@@ -1116,7 +1167,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "138b28de13d422391e27bd3727934d3c080f0422a2c0aa379a4b195ad47bd45a"
   },
   "R10": {
@@ -1126,7 +1178,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "c1ca80ae83f2fd1452aacff12d08f8279b5ec455ce1172fc68cf0ab6e44e7259"
   },
   "C46": {
@@ -1136,7 +1189,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "8442ac3b6bf166aa9c9a8f2aba35018611f8b040e3ad1e94919ae9a0b0252991"
   },
   "C16": {
@@ -1146,7 +1200,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "a679042d8dc0cb5a4aae71b9c014efc4ef41b151bbd4381cee92cfc4d6447f11"
   },
   "C45": {
@@ -1156,7 +1211,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "ac5db9b7d67200023f75e63e63ae4b6f554688f65b745d1a388884086294d495"
   },
   "Q2": {
@@ -1167,7 +1223,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "53606dae68a4c2823f4c82691a0294d981cd40d2002a1f7fd96ff9bca18337f6"
   },
   "Q4": {
@@ -1178,7 +1235,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "06eeb2facdd3a451f7d244ca8177f6911efbf8afff6e8dacf348de20accb174a"
   },
   "C57": {
@@ -1188,7 +1246,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "dadfa8aa340e0bedbca86ceb06180d6ff738192a2795a11d12c3b7e277d0a56c"
   },
   "C89": {
@@ -1198,7 +1257,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "dc93e845cc11f3a69d71db318b825c6bbb6ec733bf33d8f15f1d2b97509f7400"
   },
   "C52": {
@@ -1208,7 +1268,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "0aca00e1c84c2fa2a313faaf13580bf9067b63413b28da437739b32af9db5726"
   },
   "R135": {
@@ -1218,7 +1279,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "41c0d68abea136e59779a14e0ba669956a3243498cc7dc16babb4eb68a6385b7"
   },
   "R126": {
@@ -1228,7 +1290,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "f0a7d2b19a78f827a8731ffda6a480ab1465260490b1f9e28e8013e3118701ca"
   },
   "D17": {
@@ -1238,7 +1301,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "ffe25675be5f7b7834445ebf4cfe338c4193e3daa6e3f3419e520f377b3d9061"
   },
   "Q6": {
@@ -1249,7 +1313,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "397cab1ea4c816bd7dee2386cb8e7d95ae2ee6f2e8f76ca036b2c117a819ce5c"
   },
   "Q7": {
@@ -1260,7 +1325,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "d3d9135588f1b725bf0fb49c253d4f52fb769623132c8549e840be274f3fee7e"
   },
   "R129": {
@@ -1270,7 +1336,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "265973c9953031de939766ef818fa5bbfc310f853f067ff24089de978665d278"
   },
   "C55": {
@@ -1280,7 +1347,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "085d779f529204cd586d8bdf0c2c29bd586cf39fa5d5da27ecf3318aff0e517a"
   },
   "R134": {
@@ -1290,7 +1358,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "9ab1873fbefc615a040ad083864df142e584624cacccc4d9dca4da738ed7fdcd"
   },
   "C40": {
@@ -1300,7 +1369,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "432fd6b77427b72333a9fffdb26de12e525566aa175baef2594f61d499d8036b"
   },
   "R21": {
@@ -1312,8 +1382,12 @@
       "3",
       "4"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
-    "derived_footprint_sha256": "3c724f95aa68be3e98ecc43d65eace2268cf291950317dd8e9f3be0fa4762efa"
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [
+      "Restrict Kelvin net ties to same-terminal pairs 1/2 and 3/4",
+      "WSLP1206 10mohm manufacturer land pattern1.65x1.93mm gap1.80mm; thermal qualification pending"
+    ],
+    "derived_footprint_sha256": "88d140cf2326de20512a192dfdb8fe3105dbf367898a65f4ff3129b7f4b5bd7b"
   },
   "R94": {
     "source_footprint": "Resistor_SMD:R_0603_1608Metric",
@@ -1322,7 +1396,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "bed8e6eafbad44b46458854a09689b69059714cb9987d65a96e6b740ef003eaa"
   },
   "C39": {
@@ -1332,7 +1407,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "62c4cfa330bc2e7d3b90ba419c65e2db73086090594b97cb1467474a194c8d2d"
   },
   "Q11": {
@@ -1343,7 +1419,8 @@
       "2",
       "3"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "983cc2d2b40152e2b4df5802a80b6cf06fef99492d3bcb4bfdc1e134f394358a"
   },
   "C49": {
@@ -1353,7 +1430,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "52ba58ea969c8c1bfd3c7d37042d7123b446addbe3e64e32f72ec4a089be9c6b"
   },
   "R42": {
@@ -1363,7 +1441,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "d48d030888d819b1ab647520e9fa25d04c4b422f8bff426fc56249c250dbaaa7"
   },
   "C14": {
@@ -1373,7 +1452,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "130b28b460be4359a092819a57e8a08fb4fb74cd32ef8ce8e403e207c7b92241"
   },
   "D13": {
@@ -1383,7 +1463,8 @@
       "1",
       "2"
     ],
-    "qualification": "SOURCE_GEOMETRY_ONLY_NOT_LAND_PATTERN_APPROVAL",
+    "qualification": "SOURCE_GEOMETRY_WITH_EXPLICIT_REVIEW_CORRECTIONS_NOT_LOAD_APPROVAL",
+    "review_changes": [],
     "derived_footprint_sha256": "2ee22c08a3d3bfe79f5e9a43e1e41ec189d852f65c3625471c2250f4aa6c2207"
   }
 }

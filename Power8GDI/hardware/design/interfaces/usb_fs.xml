@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/src/Power8GDI/hardware/design/interfaces/usb_fs.kicad_sch</source>
-    <date>2026-10-25T20:56:42+0000</date>
+    <date>2026-10-28T09:48:14+0000</date>
     <tool>Eeschema 9.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -29,12 +29,30 @@
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <fields>
         <field name="Design note"/>
+        <field name="MPN">C0603C104K5RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-6bf9727c4e40</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 50, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C104K5RACTU</field>
+        <field name="Purchase_Released">false</field>
         <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
       <property name="Design note" value=""/>
+      <property name="MPN" value="C0603C104K5RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-6bf9727c4e40"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 50, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C104K5RACTU"/>
+      <property name="Purchase_Released" value="false"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="usb_fs.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -44,15 +62,33 @@
     </comp>
     <comp ref="C1511">
       <value>1n 2kV C0G</value>
-      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <footprint>Capacitor_SMD:C_1812_4532Metric</footprint>
       <fields>
-        <field name="Design note">Candidate shield HF return, not isolation barrier; shield bonding must be reviewed with enclosure</field>
-        <field name="Footprint">Capacitor_SMD:C_1206_3216Metric</field>
+        <field name="Design note">C1812X102JGGACAUTO candidate; shield HF return, not isolation barrier; enclosure bonding review required</field>
+        <field name="MPN">C1812X102JGGACAUTO</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-1546ba8145b2</field>
+        <field name="Procurement_Status">SELECTED_CONDITIONAL</field>
+        <field name="Hardware_Qualification">LAND_PATTERN_AND_EFFECTIVE_CAPACITANCE_REVIEW_REQUIRED</field>
+        <field name="Selection_Gaps">["Source1206 footprint must become1812. Verify chassis coupling safety, clearances and actual voltage stress;2kV rating alone does not establish insulation safety."]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "capacitance_pf": 1000, "dielectric": "C0G", "rated_voltage_v": 2000, "temperature_max_c": 125, "temperature_min_c": -55, "termination": "flexible", "tolerance_pct": 5}</field>
+        <field name="Selection_Source_URLs">https://www.digikey.com/en/products/detail/kemet/C1812X102JGGACAUTO/16524894 https://yageogroup.com/content/datasheet/asset/file/KEM_C1081_C0G_HV_FT_AUTO_SMD</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_1812_4532Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_Core" part="C" description="Unpolarized capacitor"/>
-      <property name="Design note" value="Candidate shield HF return, not isolation barrier; shield bonding must be reviewed with enclosure"/>
+      <property name="Design note" value="C1812X102JGGACAUTO candidate; shield HF return, not isolation barrier; enclosure bonding review required"/>
+      <property name="MPN" value="C1812X102JGGACAUTO"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-1546ba8145b2"/>
+      <property name="Procurement_Status" value="SELECTED_CONDITIONAL"/>
+      <property name="Hardware_Qualification" value="LAND_PATTERN_AND_EFFECTIVE_CAPACITANCE_REVIEW_REQUIRED"/>
+      <property name="Selection_Gaps" value="[&quot;Source1206 footprint must become1812. Verify chassis coupling safety, clearances and actual voltage stress;2kV rating alone does not establish insulation safety.&quot;]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;capacitance_pf&quot;: 1000, &quot;dielectric&quot;: &quot;C0G&quot;, &quot;rated_voltage_v&quot;: 2000, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;termination&quot;: &quot;flexible&quot;, &quot;tolerance_pct&quot;: 5}"/>
+      <property name="Selection_Source_URLs" value="https://www.digikey.com/en/products/detail/kemet/C1812X102JGGACAUTO/16524894 https://yageogroup.com/content/datasheet/asset/file/KEM_C1081_C0G_HV_FT_AUTO_SMD"/>
+      <property name="Purchase_Released" value="false"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="usb_fs.kicad_sch"/>
       <property name="ki_keywords" value="cap capacitor"/>
@@ -65,12 +101,30 @@
       <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
       <fields>
         <field name="Design note">ST DS4260 Fig1: pins1/6 IO1,3/4 IO2,2GND,5VBUS. Close to connector with continuous GND return</field>
+        <field name="MPN">USBLC6-2SC6</field>
+        <field name="Manufacturer">STMicroelectronics</field>
+        <field name="Selection_ID">SEL-ceeac0a83c9b</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.st.com/en/search.html#q=USBLC6-2SC6</field>
+        <field name="Purchase_Released">false</field>
         <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_Core" part="Interface_USBLC6_2SC6" description=""/>
       <property name="Design note" value="ST DS4260 Fig1: pins1/6 IO1,3/4 IO2,2GND,5VBUS. Close to connector with continuous GND return"/>
+      <property name="MPN" value="USBLC6-2SC6"/>
+      <property name="Manufacturer" value="STMicroelectronics"/>
+      <property name="Selection_ID" value="SEL-ceeac0a83c9b"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.st.com/en/search.html#q=USBLC6-2SC6"/>
+      <property name="Purchase_Released" value="false"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="usb_fs.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -81,12 +135,30 @@
       <footprint>Connector_USB:USB_Micro-B_Molex-105017-0001</footprint>
       <fields>
         <field name="Design note">Micro-B device-only; ID NC. Molex SD-105017-001 and official KiCad9 footprint; shell pads6. Not automotive/environmentally qualified</field>
+        <field name="MPN">1050170001</field>
+        <field name="Manufacturer">Molex</field>
+        <field name="Selection_ID">SEL-951054bf502e</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.molex.com/en-us/products/part-detail/1050170001</field>
+        <field name="Purchase_Released">false</field>
         <field name="Footprint">Connector_USB:USB_Micro-B_Molex-105017-0001</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_Core" part="Interface_USB_MicroB" description=""/>
       <property name="Design note" value="Micro-B device-only; ID NC. Molex SD-105017-001 and official KiCad9 footprint; shell pads6. Not automotive/environmentally qualified"/>
+      <property name="MPN" value="1050170001"/>
+      <property name="Manufacturer" value="Molex"/>
+      <property name="Selection_ID" value="SEL-951054bf502e"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.molex.com/en-us/products/part-detail/1050170001"/>
+      <property name="Purchase_Released" value="false"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="usb_fs.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -97,12 +169,30 @@
       <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
       <fields>
         <field name="Design note">AN4879 MOSFET VBUS detector. MCU PA9 regular GPIO active-low; disables native OTG VBUS sensing; no5V on unpowered MCU</field>
+        <field name="MPN">2N7002,215</field>
+        <field name="Manufacturer">Nexperia</field>
+        <field name="Selection_ID">SEL-4f0492efb74f</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.nexperia.com/product/2N7002</field>
+        <field name="Purchase_Released">false</field>
         <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_Core" part="Interface_2N7002" description=""/>
       <property name="Design note" value="AN4879 MOSFET VBUS detector. MCU PA9 regular GPIO active-low; disables native OTG VBUS sensing; no5V on unpowered MCU"/>
+      <property name="MPN" value="2N7002,215"/>
+      <property name="Manufacturer" value="Nexperia"/>
+      <property name="Selection_ID" value="SEL-4f0492efb74f"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.nexperia.com/product/2N7002"/>
+      <property name="Purchase_Released" value="false"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="usb_fs.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
@@ -113,12 +203,30 @@
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <fields>
         <field name="Design note"/>
+        <field name="MPN">CRCW06031K00FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-38197231a947</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 1000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
         <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
       <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW06031K00FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-38197231a947"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 1000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="usb_fs.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -131,12 +239,30 @@
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <fields>
         <field name="Design note"/>
+        <field name="MPN">CRCW0603100KFKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-4e3f06cba0aa</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 100000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
         <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
       <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW0603100KFKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-4e3f06cba0aa"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 100000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="usb_fs.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>
@@ -149,12 +275,30 @@
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <fields>
         <field name="Design note"/>
+        <field name="MPN">CRCW060310K0FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-9c0806476875</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 10000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
         <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
         <field name="Datasheet"/>
         <field name="Description"/>
       </fields>
       <libsource lib="Power8GDI_Core" part="R" description="Resistor"/>
       <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW060310K0FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-9c0806476875"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 10000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="usb_fs.kicad_sch"/>
       <property name="ki_keywords" value="R res resistor"/>

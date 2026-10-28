@@ -34,6 +34,9 @@ def pad_of(fp, number): return next(q for q in fp.Pads() if q.GetNumber() == str
 def apply_attributes(fp,component):
     fp.SetDNP(component['dnp'])
     fp.SetExcludedFromBOM(component['exclude_from_bom'])
+    for field in fp.GetFields():
+        if field.GetName() in ('LCSC','MFG,MFG#','VEND1,VEND1#','VEND2,VEND2#'):
+            field.SetName('Source_'+field.GetName())
     # An on-board exclusion is not permission to create a physical pad anyway.
     if component['exclude_from_board']:
         raise ValueError(f"Off-board component unexpectedly included: {fp.GetReference()}")
@@ -350,7 +353,11 @@ def build(args):
         print(f'Stage {stage}: {len(tracks)} audited copper items',flush=True)
         group=[];group_fps=[]
         for oldref,newref in refmap.items():
-            fp=oldfps[oldref].Duplicate();fp.SetReference(newref);fp.SetValue(components[newref]['value'])
+            # Use reviewed derived geometry; original placement is retained.
+            # Cloning the source footprint would silently undo shunt/clock fixes.
+            fp=load_footprint(components[newref]['footprint'],design)
+            fp.SetPosition(oldfps[oldref].GetPosition());fp.SetOrientation(oldfps[oldref].GetOrientation())
+            fp.SetReference(newref);fp.SetValue(components[newref]['value'])
             apply_attributes(fp,components[newref])
             lib,name=components[newref]['footprint'].split(':',1);fp.SetFPID(p.LIB_ID(lib,name))
             # Remove source-specific absolute model paths; exact models are a separate verified input.

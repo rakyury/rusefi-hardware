@@ -23,7 +23,7 @@ R1510,1k,Resistor_SMD:R_0603_1608Metric,False,interfaces/usb_fs,
 R1511,100k,Resistor_SMD:R_0603_1608Metric,False,interfaces/usb_fs,
 R1512,10k,Resistor_SMD:R_0603_1608Metric,False,interfaces/usb_fs,
 R1513,0R DNP,Resistor_SMD:R_0603_1608Metric,True,interfaces/usb_fs,Chassis/shield strategy and ground-loop/EMC review required before fit
-C1511,1n 2kV C0G,Capacitor_SMD:C_1206_3216Metric,False,interfaces/usb_fs,"Candidate shield HF return, not isolation barrier; shield bonding must be reviewed with enclosure"
+C1511,1n 2kV C0G,Capacitor_SMD:C_1812_4532Metric,False,interfaces/usb_fs,"C1812X102JGGACAUTO candidate; shield HF return, not isolation barrier; enclosure bonding review required"
 J1502,Molex 1040310811,Connector_Card:microSD_HC_Molex_104031-0811,False,interfaces/sd_spi,Molex SD-104031-001: CD switch closes with card; official footprint numbers9/10 switch and11 shell. Card choice/load unspecified
 R1520,0R,Resistor_SMD:R_0603_1608Metric,False,interfaces/sd_spi,Current measurement link; no power switching or hot-plug inrush limit
 C1520,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sd_spi,
@@ -44,14 +44,14 @@ U1530,TPS7B4253QDDARQ1,Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02,False,interfa
 C1530,1u 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,interfaces/sensor_power,
 C1531,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sensor_power,
 C1532,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sensor_power,ADJ reference bypass close to pin5
-C1533,22u 50V X7R,Capacitor_SMD:C_1210_3225Metric,False,interfaces/sensor_power,"Require effective >=10uF at voltage/temp/tolerance, ESR1mohm..20ohm; 50V withstands output short-to-battery. Exact MPN not frozen"
+C1533,22u 50V X7R,Power8GDI_Interfaces:CGA9P3_2220,False,interfaces/sensor_power,CGA9P3X7R1H226M250KB candidate; effective >=10uF and ESR1mohm..20ohm remain qualification criteria;50V for short-to-battery
 C1534,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sensor_power,
 D1531,STPS2H100UY,Diode_SMD:D_SMB,False,interfaces/sensor_power,"Anode shared protected battery, cathode trackerIN. Isolates shared rail during TPS7B4253 short-to-battery detection latency"
 U1531,TPS7B4253QDDARQ1,Power8GDI_Interfaces:TPS7B4253_DDA0008J_C02,False,interfaces/sensor_power,TI SLVSCP3D unity tracking. 300mA silicon rating is NOT permitted harness load. FB=OUT; ADJ draws <=5.5uA. EP copper+thermal vias review required
 C1535,1u 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,interfaces/sensor_power,
 C1536,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sensor_power,
 C1537,100n 16V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sensor_power,ADJ reference bypass close to pin5
-C1538,22u 50V X7R,Capacitor_SMD:C_1210_3225Metric,False,interfaces/sensor_power,"Require effective >=10uF at voltage/temp/tolerance, ESR1mohm..20ohm; 50V withstands output short-to-battery. Exact MPN not frozen"
+C1538,22u 50V X7R,Power8GDI_Interfaces:CGA9P3_2220,False,interfaces/sensor_power,CGA9P3X7R1H226M250KB candidate; effective >=10uF and ESR1mohm..20ohm remain qualification criteria;50V for short-to-battery
 C1539,100n 50V X7R,Capacitor_SMD:C_0603_1608Metric,False,interfaces/sensor_power,
 R1530,0R star return,Resistor_SMD:R_0805_2012Metric,False,interfaces/sensor_power,"Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse"
 R1531,0R star return,Resistor_SMD:R_0805_2012Metric,False,interfaces/sensor_power,"Dedicated sensor return link, local quiet-ground star. Current rating, ground offset and fault current/thermal coordination require review; not a fuse"

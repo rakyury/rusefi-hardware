@@ -41,6 +41,7 @@ def main():
         for script in ['logic_power/build_logic_power.py','logic_power/calculate.py','motor4/build_motor4.py','safety/generate.py','board/build_connector_schematic.py','interfaces/build_interfaces.py','interfaces_aux/build_aux.py','gdi/generate.py','gdi/build_protection.py','wbo/build_wbo.py','build_core_schematic.py']:
             host(BASE+script)
         (HERE/'logic_power/work').mkdir(exist_ok=True)
+        host(BASE+'apply_selection.py')
         # GDI reference sources remain unchanged; re-export their actual leaves.
         leaves=['safety/safety_gate','board/connectors','gdi/stage_a','gdi/stage_b','Power8GDI_Core']
         leaves=leaves[:-1]+[s['name'] for s in json.loads((HERE/'interfaces/interfaces_manifest.json').read_text())['sheets']]+['interfaces_aux/'+s['name'] for s in json.loads((HERE/'interfaces_aux/interface.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'gdi/protection_manifest.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'wbo/interface.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'logic_power/interface.json').read_text())['sheets']]+[s['name'] for s in json.loads((HERE/'motor4/interface.json').read_text())['sheets']]+['Power8GDI_Core']
@@ -52,6 +53,7 @@ def main():
         # runs in order and fails immediately with its original command/output.
         batch="import json,subprocess,sys\nfor cmd in json.loads(sys.argv[1]):\n print(json.dumps(cmd),flush=True)\n subprocess.run(cmd,check=True)\n"
         cad('python3','-c',batch,json.dumps(exports),label=f'Export {len(exports)} schematic netlists')
+        host(BASE+'apply_selection.py','--verify')
         from export_integrated_bom import export as export_bom
         summary['bom']=export_bom()
         summary['erc_native_exit']=cad('kicad-cli','sch','erc','--format','json','--exit-code-violations','-o',BASE+'core_erc.json',BASE+'Power8GDI_Core.kicad_sch',allowed=(0,5))
@@ -59,6 +61,7 @@ def main():
         host(BASE+'verify_integration.py')
         host(BASE+'check_sport_profile.py')
         host(BASE+'power_sources.py')
+        host(BASE+'gdi/load_review.py')
         host('-m','unittest','discover','-s',BASE+'core_tests','-v')
         cad('python3','-m','unittest','discover','-s',BASE+'board/tests','-v')
         for script in ['outputs/check_outputs.py','interfaces/check_interfaces.py','interfaces_aux/test_aux.py','safety/test_safety.py','gdi/test_schematic.py']:

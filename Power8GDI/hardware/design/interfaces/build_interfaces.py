@@ -77,6 +77,17 @@ def tracker_footprint():
 
 
 def generate():
+    # TDK CGA9P3 2220 recommended a4.1..4.8 gap / b1.2..1.4 land /
+    # c4.0..5.0 width. Generic KiCad2220 is wider and has too small a gap.
+    directory=HERE/'Power8GDI_Interfaces.pretty';directory.mkdir(exist_ok=True)
+    (directory/'CGA9P3_2220.kicad_mod').write_text('''(footprint "CGA9P3_2220" (version 20241229) (generator "pcbnew") (layer "F.Cu")
+      (descr "TDK CGA9P3X7R1H226M250KB recommended range: gap4.5mm, lands1.3x4.5mm; assembly validation pending") (attr smd)
+      (property "Reference" "REF**" (at 0 -3.4) (layer "F.SilkS") (effects (font (size 1 1) (thickness 0.15))))
+      (property "Value" "22u 50V X7R" (at 0 3.4) (layer "F.Fab") (effects (font (size 1 1) (thickness 0.15))))
+      (fp_rect (start -2.85 -2.5) (end 2.85 2.5) (stroke (width 0.1) (type default)) (fill none) (layer "F.Fab"))
+      (fp_rect (start -3.8 -2.75) (end 3.8 2.75) (stroke (width 0.05) (type default)) (fill none) (layer "F.CrtYd"))
+      (pad "1" smd roundrect (at -2.9 0) (size 1.3 4.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1))
+      (pad "2" smd roundrect (at 2.9 0) (size 1.3 4.5) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.1)))\n''',encoding='utf8')
     syms = load_library(DESIGN / "Power8GDI_Core.kicad_sym")
     syms.update(load_library(DESIGN / "power_input/power_input.kicad_sym"))
     sheets = []
@@ -130,7 +141,7 @@ def generate():
     r(usb,1511,"100k",170,220,"USB_VBUS_GATE","GND")
     r(usb,1512,"10k",350,220,"+3V3","USB_VBUS_PRESENT_N")
     r(usb,1513,"0R DNP",425,90,"USB_SHIELD","GND",dnp=True,note="Chassis/shield strategy and ground-loop/EMC review required before fit")
-    c(usb,1511,"1n 2kV C0G",425,220,"USB_SHIELD",footprint="Capacitor_SMD:C_1206_3216Metric",note="Candidate shield HF return, not isolation barrier; shield bonding must be reviewed with enclosure")
+    c(usb,1511,"1n 2kV C0G",425,220,"USB_SHIELD",footprint="Capacitor_SMD:C_1812_4532Metric",note="C1812X102JGGACAUTO candidate; shield HF return, not isolation barrier; enclosure bonding review required")
     usb.text("Firmware: device-only mode, PA11/PA12 AF10, PA9 GPIO low=VBUS present; native VBUS detect disabled.\nNo external D+ pullup or series termination is fitted: STM32F767 FS PHY includes the required functions.\nHost VBUS feeds ESD reference and MOSFET gate ONLY; it must never be merged with +5V_CORE.\nUSB 48MHz clock, descriptors, attach/detach with ECU off, EMC and connector sealing remain unqualified.",25.4,315)
 
     sd = sheet("sd_spi", "microSD SPI3 logging candidate")
@@ -169,8 +180,8 @@ def generate():
         c(sp,1530+5*i,"1u 50V X7R",145,y,vin,footprint="Capacitor_SMD:C_0805_2012Metric")
         c(sp,1531+5*i,"100n 50V X7R",205,y,vin)
         c(sp,1532+5*i,"100n 16V X7R",205,y+60,"+5V_CORE",note="ADJ reference bypass close to pin5")
-        c(sp,1533+5*i,"22u 50V X7R",390,y,rail,footprint="Capacitor_SMD:C_1210_3225Metric",
-            note="Require effective >=10uF at voltage/temp/tolerance, ESR1mohm..20ohm; 50V withstands output short-to-battery. Exact MPN not frozen")
+        c(sp,1533+5*i,"22u 50V X7R",390,y,rail,footprint="Power8GDI_Interfaces:CGA9P3_2220",
+            note="CGA9P3X7R1H226M250KB candidate; effective >=10uF and ESR1mohm..20ohm remain qualification criteria;50V for short-to-battery")
         c(sp,1534+5*i,"100n 50V X7R",465,y,rail)
     for i,bank in enumerate(["A","B","C"]):
         sp.component(syms["R"],f"R{1530+i}","0R star return",100+i*160,315,

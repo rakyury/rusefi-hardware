@@ -72,7 +72,7 @@ def generate():
         cap(mcu,ref,"100n 16V X7R",260+(i%6)*43.18,65+(i//6)*43.18,"+3V3",f"Place directly at U101 VDD pad {n}; short GND return")
         decoupling.append({"reference":ref,"mcu_pad":n,"rail":"+3V3"})
         mcu.text("U101 pad "+n,250+(i%6)*43.18,80+(i//6)*43.18,1.016)
-    cap(mcu,"C114","4.7u 16V X7R",260,195,"+3V3","Package bulk; effective capacitance >=4.7uF after bias/temp derating")
+    cap(mcu,"C114","10u 16V X7R",260,195,"+3V3","C1206C106K4RACTU candidate; >=4.7uF effective remains a qualification criterion, DC-bias/temp proof pending",footprint="Capacitor_SMD:C_1206_3216Metric")
     cap(mcu,"C115","2.2u 10V X7R",303.18,195,"MCU_VCAP_1","U101 pad81; effective2.2uF ESR<2ohm; no external load")
     cap(mcu,"C116","2.2u 10V X7R",346.36,195,"MCU_VCAP_2","U101 pad125; effective2.2uF ESR<2ohm; no external load")
     cap(mcu,"C117","100n 16V X7R",389.54,195,"+3V3_A","U101 VDDA39/VREF38")
