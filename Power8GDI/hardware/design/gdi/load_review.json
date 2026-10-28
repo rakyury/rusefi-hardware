@@ -2,6 +2,33 @@
   "status": "STRUCTURE_PASS_LOAD_QUALIFICATION_BLOCKED",
   "errors": [],
   "netlist_sha256": "40a7e18e334463119d4d387b05956dad5c26db4c65daa03aa1706900aad76cf2",
+  "shunt_stencil_review": {
+    "source_footprints": [
+      "REF_R12",
+      "REF_R21",
+      "REF_R22",
+      "REF_R26",
+      "REF_R45"
+    ],
+    "power_pad_numbers": [
+      "1",
+      "4"
+    ],
+    "power_layers": [
+      "F.Cu",
+      "F.Paste",
+      "F.Mask"
+    ],
+    "kelvin_pad_numbers": [
+      "2",
+      "3"
+    ],
+    "kelvin_layers": [
+      "F.Cu"
+    ],
+    "separate_paste_primitives_allowed": false,
+    "scope": "Derived library checked here; all ten saved PCB instances covered by test_actual_board_shunts_have_stencil"
+  },
   "requested_loads": {
     "DI": "B58B30 Gen2",
     "PI": "IDX1050"

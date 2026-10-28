@@ -53,6 +53,9 @@ for fp in board.GetFootprints():
             if pad[1] in ('1','4'):
                 child(pad,'at')[1:]=[str(-1.725 if pad[1]=='1' else 1.725),'0','90']
                 child(pad,'size')[1:]=['1.93','1.65']
+                child(pad,'layers')[1:]=[Q('F.Cu'),Q('F.Paste'),Q('F.Mask')]
+            elif pad[1] in ('2','3'):
+                child(pad,'layers')[1:]=[Q('F.Cu')]
         for line in children(data,'fp_line'):
             if child(line,'layer')[1]=='F.CrtYd':
                 for key in ('start','end'):
@@ -61,6 +64,7 @@ for fp in board.GetFootprints():
         content=(dump(data)+'\n').encode('utf8')
         changes.append('Restrict Kelvin net ties to same-terminal pairs 1/2 and 3/4')
         changes.append('WSLP1206 10mohm manufacturer land pattern1.65x1.93mm gap1.80mm; thermal qualification pending')
+        changes.append('Stencil openings on power lands1/4 only; Kelvin taps2/3 remain copper-only')
     if ref=='Y2':
         data=parse(content.decode('utf8'))
         # SiT8924B rev1.72 p12 rotated land pattern. Pin ordering retained;

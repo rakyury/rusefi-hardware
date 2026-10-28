@@ -33,6 +33,10 @@ def main():
     assert not pads['errors']
     paths=[DESIGN/p for p in ['core.net','sport_gdi6_schematic.pdf','integrated_bom.csv','integrated_bom_manifest.json','selection_validation.json','gdi/load_review.json']]
     paths += [OUT/p for p in ['Power8GDI_Review.kicad_pcb','Power8GDI_Review.kicad_pro','Power8GDI_Review.kicad_dru','board_report.json','pad_validation.json','drc.json','drc.provenance.json','net_coverage.json','assembly_joints.json','front.svg','back.svg','front.png','back.png']]
+    stencil_delta=OUT/'shunt_stencil_delta.json'
+    if stencil_delta.exists():
+        assert json.loads(stencil_delta.read_text())['current_board_sha256']==digest(OUT/'Power8GDI_Review.kicad_pcb')
+        paths.append(stencil_delta)
     result={'profile':'2026-10-25-sport-gdi6','updated':'2026-10-28',
       'qualification':'INCOMPLETE_ENGINEERING_REVIEW_DO_NOT_FABRICATE',
       'source_base_commit':'013f467','selection_source_commit':'deb0afa',
@@ -43,6 +47,7 @@ def main():
       'schematic_pdf_pages':49,'pdf_visual_review':{'all_pages_contact_sheet':True,'larger_scale_pages':[27]},
       'pad_comparison':'PASS','physical_positions':pads['components'],
       'pad_net_assignments':pads['component_pin_assignments'],
+      'shunt_stencil':pads.get('shunt_stencil'),
       'manufacturing_gate':'BLOCKED','erc_counts':review['erc_counts'],
       'connectivity_unconnected_count':coverage['connectivity_unconnected_count'],
       'reported_drc_violations':coverage['total_violations'],

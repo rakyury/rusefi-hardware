@@ -20,15 +20,35 @@
   "pad_comparison": "PASS",
   "physical_positions": 1092,
   "pad_net_assignments": 3464,
+  "shunt_stencil": {
+    "actual_references": [
+      "R203",
+      "R212",
+      "R213",
+      "R215",
+      "R221",
+      "R303",
+      "R312",
+      "R313",
+      "R315",
+      "R321"
+    ],
+    "power_apertures": 20,
+    "power_pad_numbers": [
+      "1",
+      "4"
+    ],
+    "sense_pads_copper_only": true
+  },
   "manufacturing_gate": "BLOCKED",
   "erc_counts": {
     "global_label_dangling": 12
   },
   "connectivity_unconnected_count": 2101,
-  "reported_drc_violations": 740,
+  "reported_drc_violations": 732,
   "drc_report_may_be_truncated": true,
   "drc_categories": {
-    "clearance": 509,
+    "clearance": 501,
     "track_width": 199,
     "via_dangling": 16,
     "track_dangling": 4,
@@ -72,12 +92,12 @@
       "bytes": 496864
     },
     "gdi/load_review.json": {
-      "sha256": "adefc2fe0e603692bcf49c369b63d2db75906571214db0d5fc7c673b3ac22dc0",
-      "bytes": 2062
+      "sha256": "1561d52db114d8939e50cfbd4ba8b0fc7c1ee3be4394ae302e25c88b5ecceeae",
+      "bytes": 2639
     },
     "board/gdi6_candidate/Power8GDI_Review.kicad_pcb": {
-      "sha256": "3d1a64d1bb783f57161f65aab5fa8819ccc23ba525de4d95ff3d8f3089b2d419",
-      "bytes": 5176726
+      "sha256": "fd6eac9f2f58decc4784a1798c5549be44b5b30f6b08d3ae6b5db59f9506fd1a",
+      "bytes": 5176926
     },
     "board/gdi6_candidate/Power8GDI_Review.kicad_pro": {
       "sha256": "e153a914608b366089817c7aadf84b03e1ca04ef461e0a4ed1fc27788eae4874",
@@ -92,23 +112,23 @@
       "bytes": 526091
     },
     "board/gdi6_candidate/pad_validation.json": {
-      "sha256": "69f9c516ce68111f3bd82976261e6f43b1da652e3e529f5a170eeca8bd17a20a",
-      "bytes": 96
+      "sha256": "78990731ba3f2ee54a63adfdd10bbcdb1561ed5e05f0267b2648568ac2eb27f8",
+      "bytes": 413
     },
     "board/gdi6_candidate/drc.json": {
-      "sha256": "5d4979982eb382cc526a4e8c6e76cb03d19d5d90450895416f8ac8f650c82a9b",
-      "bytes": 970505
+      "sha256": "625ba3f746381f7adcd09f2cb65e6b1c1030e7a50adcaea037173227245be369",
+      "bytes": 963446
     },
     "board/gdi6_candidate/drc.provenance.json": {
-      "sha256": "2a2d7db88d58dbd013b4efedd6f144b0bec5b26f3e4f681fe058b60c01501b0d",
+      "sha256": "e5122673bd4db7978552816a843ada8d56c0a19c6d212545d30d3defaa0b9eca",
       "bytes": 627
     },
     "board/gdi6_candidate/net_coverage.json": {
-      "sha256": "bb863549bbe03147cbbf342895b5499b0b1decfeda291afbe8045f2def084586",
+      "sha256": "69c490a7e7c1f778e42ab66b7eeaaf2d6d9bff5853c3815191cced74d95729bb",
       "bytes": 134938
     },
     "board/gdi6_candidate/assembly_joints.json": {
-      "sha256": "e877e0e5e574e7e50515200a7a93a553688dcd9c7ec1cea8d22994c947aed725",
+      "sha256": "a0e3ee9567b4e3b17aabf43cfce8bc0d4b997f63d508dc2dff10b39ab0017d76",
       "bytes": 357432
     },
     "board/gdi6_candidate/front.svg": {
@@ -126,6 +146,10 @@
     "board/gdi6_candidate/back.png": {
       "sha256": "4658b9f5528f90645646f51c70ea5e950687ef549a484b3f446344557ef0e39b",
       "bytes": 965083
+    },
+    "board/gdi6_candidate/shunt_stencil_delta.json": {
+      "sha256": "d91cf889b149fe742d721b97614b4fe8fcca99aba76513e9c1460f49ce99bf6e",
+      "bytes": 1228
     }
   }
 }

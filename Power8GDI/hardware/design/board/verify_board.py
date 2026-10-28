@@ -33,7 +33,28 @@ def verify(boardpath,netlists):
     if board.GetCopperLayerCount()!=4:errors.append('Wrong layer count')
     if len(list(board.GetTracks()))<100:errors.append('No substantive copper routing')
     if len(list(board.Zones()))<1:errors.append('No ground zone')
-    result={'components':len(parts),'component_pin_assignments':len(expected),'dnp_count':sum(c['dnp'] for c in parts.values()),'errors':errors}
+    # Inspect the saved PCB through KiCad, not just the footprint libraries.
+    shunts={f'R{base+n}' for base in (200,300) for n in (3,12,13,15,21)}
+    aperture_count=0
+    for ref in sorted(shunts):
+        fp=footprints.get(ref)
+        if fp is None:errors.append(ref+': missing shunt');continue
+        pads=list(fp.Pads())
+        if len(pads)!=4 or {q.GetNumber() for q in pads}!={'1','2','3','4'}:
+            errors.append(ref+': unexpected shunt pads')
+        for pad in pads:
+            power=pad.GetNumber() in ('1','4')
+            wanted={p.F_Cu,p.F_Paste,p.F_Mask} if power else {p.F_Cu}
+            if set(pad.GetLayerSet().Seq())!=wanted:errors.append(ref+'.'+pad.GetNumber()+': stencil layers')
+            if pad.IsOnLayer(p.F_Paste):
+                aperture_count+=1
+                if pad.GetSize().x<=0 or pad.GetSize().y<=0:errors.append(ref+': empty stencil aperture')
+        if any(g.GetLayer() in (p.F_Paste,p.B_Paste) for g in fp.GraphicalItems()):
+            errors.append(ref+': unexpected separate paste primitive')
+    if aperture_count!=20:errors.append('Expected twenty actual shunt paste apertures')
+    result={'components':len(parts),'component_pin_assignments':len(expected),'dnp_count':sum(c['dnp'] for c in parts.values()),
+            'shunt_stencil':{'actual_references':sorted(shunts),'power_apertures':aperture_count,
+                'power_pad_numbers':['1','4'],'sense_pads_copper_only':not any('stencil' in e or 'paste' in e for e in errors)},'errors':errors}
     print(json.dumps(result,indent=2))
     if errors:raise SystemExit(1)
     return result

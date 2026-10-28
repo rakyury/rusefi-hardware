@@ -9,6 +9,22 @@ HERE=Path(__file__).resolve().parent
 MOSFET='IPD60N10S4L12ATMA1'
 SHUNT_SOURCE_REFS={'R12','R21','R22','R26','R45'}
 
+def stencil_errors(fp):
+    errors=[]
+    pads=children(fp,'pad')
+    if len(pads)!=4 or {str(p[1]) for p in pads}!={'1','2','3','4'}:
+        errors.append('Shunt must have exactly four electrical pads and no separate paste pads')
+    for pad in pads:
+        expected={'F.Cu','F.Paste','F.Mask'} if str(pad[1]) in ('1','4') else {'F.Cu'}
+        if set(child(pad,'layers')[1:])!=expected:
+            errors.append('Shunt stencil/mask layers '+str(pad[1]))
+    for shape in fp:
+        if isinstance(shape,list) and str(shape[0]).startswith('fp_'):
+            layer=child(shape,'layer')
+            if layer and str(layer[1]) in ('F.Paste','B.Paste'):
+                errors.append('Unexpected separate shunt stencil primitive')
+    return errors
+
 def validate(root, contract):
     errors=[]
     pins={(n.get('ref'),n.get('pin')):net.get('name') for net in root.findall('./nets/net') for n in net.findall('node')}
@@ -51,7 +67,7 @@ def footprint_errors(fp, kelvin=False):
         for num,x in [('1',-1.725),('4',1.725)]:
             pad=pads[num]
             if child(pad,'at')[1:]!=[str(x),'0','90'] or child(pad,'size')[1:]!=['1.93','1.65']:errors.append('Shunt manufacturer land pattern '+num)
-        return errors
+        return errors+stencil_errors(fp)
     # Infineon PG-TO252-3-313 recommended land pattern, rotated 90deg.
     pads={str(p[1]):p for p in children(fp,'pad') if p[1] and 'F.Cu' in child(p,'layers') and 'F.Mask' in child(p,'layers')}
     errors=[]
@@ -71,6 +87,11 @@ def report():
             errors += [f'{ref}: {e}' for e in footprint_errors(parse((HERE/'Power8GDI_GDI.pretty'/f'REF_{ref}.kicad_mod').read_text()), ref in SHUNT_SOURCE_REFS)]
     result={'status':'STRUCTURE_PASS_LOAD_QUALIFICATION_BLOCKED' if not errors else 'FAIL','errors':errors,
       'netlist_sha256':hashlib.sha256(net.read_bytes()).hexdigest(),
+      'shunt_stencil_review':{'source_footprints':sorted('REF_'+r for r in SHUNT_SOURCE_REFS),
+        'power_pad_numbers':['1','4'],'power_layers':['F.Cu','F.Paste','F.Mask'],
+        'kelvin_pad_numbers':['2','3'],'kelvin_layers':['F.Cu'],
+        'separate_paste_primitives_allowed':False,
+        'scope':'Derived library checked here; all ten saved PCB instances covered by test_actual_board_shunts_have_stencil'},
       'requested_loads':{'DI':'B58B30 Gen2','PI':'IDX1050'},
       'family_reference_only':{'family':'Bosch HDEV6 solenoid','boost_V':65,'boost_A_range':[12,13],'pickup_A':5.3,'pickup_duration_us':600,'hold_A_range':[2.6,3.6],'coil_ohm_ambient':1.83,'boost_duration_us':None,'injector_inductance_H':None,'exact_OEM_current_profile_verified':False},
       'pt2001':{'device':'MC33PT2001AE','nominal_gate_V':7,'ordering_table_VBOOST_max_V':72,'recommended_operating_VBOOST_max_V':None,'absolute_max_VBOOST_V':None,'HAE_ordering_table_max_V':80,'HAE_drop_in_qualification':False},
