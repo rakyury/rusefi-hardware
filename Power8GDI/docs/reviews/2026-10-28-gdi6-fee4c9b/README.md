@@ -6,6 +6,16 @@ a separate Git archive and pinned KiCad 9.0.9 with networking disabled.
 
 ## Finding: missing paste apertures on ten fitted shunts
 
+**Closed in `4659d88ff8ec5dd94638e35c550a4f8599e992f4`.** Independent
+comparison of Git blobs confirms exactly 20 F.Paste additions to power pads
+1/4, with sense pads 2/3 remaining Cu-only. Removing those 20 flags makes the
+parsed PCB identical to the audited baseline; the netlist is byte-identical.
+The new normalized PCB SHA256 is
+`fd6eac9f2f58decc4784a1798c5549be44b5b30f6b08d3ae6b5db59f9506fd1a`.
+See `stencil_fix_independent.json`. Full DRC was not repeated for this paste-only
+change. This closes the missing-aperture finding, not routing or manufacturing
+qualification. The original finding below is retained as historical evidence.
+
 The updated derived footprints and actual PCB have no F.Paste apertures for
 the two physical solder lands of each of these resistors:
 
