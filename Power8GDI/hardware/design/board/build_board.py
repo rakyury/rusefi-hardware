@@ -430,6 +430,8 @@ def build(args):
     wbo_logic_grounds_routes=route_wbo_logic_grounds(board,root_path) if args.functional_layout else []
     from route_wbo_mcu_supply import route as route_wbo_mcu_supply
     wbo_mcu_supply_routes=route_wbo_mcu_supply(board,root_path) if args.functional_layout else []
+    from route_wbo_regulator_feed import route as route_wbo_regulator_feed
+    wbo_regulator_feed_routes=route_wbo_regulator_feed(board,root_path) if args.functional_layout else []
     update_wbo_can_report(bank_placements,wbo_can_routes)
     local_copper_ids={t.m_Uuid.AsString() for t in board.GetTracks()}-donor_copper_ids
     add_plane(board,nets)
@@ -472,7 +474,7 @@ def build(args):
             'dnp_references':sorted(ref for ref,comp in components.items() if comp['dnp']),
             'staged_unreviewed_placements':unplaced,'reference_copper':audit,
             'silkscreen_geometry':silk_report,'copper_cleanup':cleanup_report,'output_bank_placement':bank_placements,
-            'ignition_local_routes':ignition_routes,'reviewed_shunt_return_repairs':return_repairs,'reviewed_wbo_can_routes':wbo_can_routes,'reviewed_wbo_vio_routes':wbo_vio_routes,'reviewed_wbo_reset_routes':wbo_reset_routes,'reviewed_wbo_gate_ground_routes':wbo_gate_ground_routes,'reviewed_wbo_logic_grounds_routes':wbo_logic_grounds_routes,'reviewed_wbo_mcu_supply_routes':wbo_mcu_supply_routes}
+            'ignition_local_routes':ignition_routes,'reviewed_shunt_return_repairs':return_repairs,'reviewed_wbo_can_routes':wbo_can_routes,'reviewed_wbo_vio_routes':wbo_vio_routes,'reviewed_wbo_reset_routes':wbo_reset_routes,'reviewed_wbo_gate_ground_routes':wbo_gate_ground_routes,'reviewed_wbo_logic_grounds_routes':wbo_logic_grounds_routes,'reviewed_wbo_mcu_supply_routes':wbo_mcu_supply_routes,'reviewed_wbo_regulator_feed_routes':wbo_regulator_feed_routes}
     report['voltage_domains']=voltage_domains.provenance()
     (out/'board_report.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({k:report[k] for k in ['kicad_version','qualification','outline_mm','copper_layers','thickness_mm','components','assigned_component_pins','pad_net_mismatches','tracks_vias','zones','unconnected_count']},indent=2))

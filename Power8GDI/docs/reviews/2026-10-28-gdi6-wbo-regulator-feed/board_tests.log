@@ -1,0 +1,716 @@
+test_connected_floating_exposed_pad_is_rejected (test_battery_domains.BatteryDomainTests.test_connected_floating_exposed_pad_is_rejected) ... ok
+test_renamed_motor_power_net_keeps_domain (test_battery_domains.BatteryDomainTests.test_renamed_motor_power_net_keeps_domain) ... ok
+test_wrong_pin_function_is_rejected (test_battery_domains.BatteryDomainTests.test_wrong_pin_function_is_rejected) ... ok
+test_connector_silk_stays_inside_edge (test_board_geometry.BoardGeometryTests.test_connector_silk_stays_inside_edge) ... ok
+test_rules_survive_kicad_roundtrip (test_board_geometry.BoardGeometryTests.test_rules_survive_kicad_roundtrip) ... ok
+test_thermal_changes_only_six_ep_holes (test_board_geometry.BoardGeometryTests.test_thermal_changes_only_six_ep_holes) ... ok
+test_explicit_local_breakout_is_kept_while_unprotected_tail_is_removed (test_cleanup_contract.CleanupContract.test_explicit_local_breakout_is_kept_while_unprotected_tail_is_removed) ... ok
+test_existing_repair_is_idempotent (test_layout_repairs.Repairs.test_existing_repair_is_idempotent) ... ok
+test_unknown_silk_is_not_silently_overwritten (test_layout_repairs.Repairs.test_unknown_silk_is_not_silently_overwritten) ... ok
+test_wbo_changed_placement_is_rejected (test_layout_repairs.Repairs.test_wbo_changed_placement_is_rejected) ... ok
+test_wbo_silk_repair_is_idempotent (test_layout_repairs.Repairs.test_wbo_silk_repair_is_idempotent) ... ok
+test_wrong_return_net_fails_without_adding_copper (test_layout_repairs.Repairs.test_wrong_return_net_fails_without_adding_copper) ... ok
+test_wrong_shunt_land_size_is_rejected (test_layout_repairs.Repairs.test_wrong_shunt_land_size_is_rejected) ... ok
+test_conflicting_pin_nets_fail (test_net_contract.NetContractTests.test_conflicting_pin_nets_fail) ... ok
+test_connector_aliases_do_not_short_gpio_or_unreviewed_power (test_net_contract.NetContractTests.test_connector_aliases_do_not_short_gpio_or_unreviewed_power) ... ok
+test_dnp_and_bom_flags_survive_xml (test_net_contract.NetContractTests.test_dnp_and_bom_flags_survive_xml) ... ok
+test_duplicates_fail_instead_of_silently_overwrite (test_net_contract.NetContractTests.test_duplicates_fail_instead_of_silently_overwrite) ... ok
+test_missing_and_unexpected_connections_are_detected (test_net_contract.NetContractTests.test_missing_and_unexpected_connections_are_detected) ... ok
+test_repeated_thermal_pads_must_all_match (test_net_contract.NetContractTests.test_repeated_thermal_pads_must_all_match) ... ok
+19:54:25: Debug: Adding duplicate image handler for 'PNG file'
+19:54:25: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:25: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:25: Debug: Adding duplicate image handler for 'GIF file'
+19:54:25: Debug: Adding duplicate image handler for 'PNM file'
+19:54:25: Debug: Adding duplicate image handler for 'PCX file'
+19:54:25: Debug: Adding duplicate image handler for 'IFF file'
+19:54:25: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:25: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:25: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:25: Debug: Adding duplicate image handler for 'TGA file'
+19:54:25: Debug: Adding duplicate image handler for 'XPM file'
+test_changed_endpoint_is_rejected (test_wbo_can.WboCan.test_changed_endpoint_is_rejected) ... ok
+test_changed_supply_is_rejected (test_wbo_can.WboCan.test_changed_supply_is_rejected) ... ok
+test_idempotent (test_wbo_can.WboCan.test_idempotent) ... ok
+test_unreviewed_existing_route_is_rejected (test_wbo_can.WboCan.test_unreviewed_existing_route_is_rejected) ... ok
+test_all_layer_obstacle_atomic (test_wbo_gate_ground.GateGround.test_all_layer_obstacle_atomic) ... 19:54:27: Debug: Adding duplicate image handler for 'PNG file'
+19:54:27: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:27: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:27: Debug: Adding duplicate image handler for 'GIF file'
+19:54:27: Debug: Adding duplicate image handler for 'PNM file'
+19:54:27: Debug: Adding duplicate image handler for 'PCX file'
+19:54:27: Debug: Adding duplicate image handler for 'IFF file'
+19:54:27: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:27: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:27: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:27: Debug: Adding duplicate image handler for 'TGA file'
+19:54:27: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+ok
+test_moved_endpoint (test_wbo_gate_ground.GateGround.test_moved_endpoint) ... 19:54:28: Debug: Adding duplicate image handler for 'PNG file'
+19:54:28: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:28: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:28: Debug: Adding duplicate image handler for 'GIF file'
+19:54:28: Debug: Adding duplicate image handler for 'PNM file'
+19:54:28: Debug: Adding duplicate image handler for 'PCX file'
+19:54:28: Debug: Adding duplicate image handler for 'IFF file'
+19:54:28: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:28: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:28: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:28: Debug: Adding duplicate image handler for 'TGA file'
+19:54:28: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+ok
+test_native_contact_and_idempotence (test_wbo_gate_ground.GateGround.test_native_contact_and_idempotence) ... 19:54:29: Debug: Adding duplicate image handler for 'PNG file'
+19:54:29: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:29: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:29: Debug: Adding duplicate image handler for 'GIF file'
+19:54:29: Debug: Adding duplicate image handler for 'PNM file'
+19:54:29: Debug: Adding duplicate image handler for 'PCX file'
+19:54:29: Debug: Adding duplicate image handler for 'IFF file'
+19:54:29: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:29: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:29: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:29: Debug: Adding duplicate image handler for 'TGA file'
+19:54:29: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+ok
+test_partial_and_changed_width (test_wbo_gate_ground.GateGround.test_partial_and_changed_width) ... 19:54:31: Debug: Adding duplicate image handler for 'PNG file'
+19:54:31: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:31: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:31: Debug: Adding duplicate image handler for 'GIF file'
+19:54:31: Debug: Adding duplicate image handler for 'PNM file'
+19:54:31: Debug: Adding duplicate image handler for 'PCX file'
+19:54:31: Debug: Adding duplicate image handler for 'IFF file'
+19:54:31: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:31: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:31: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:31: Debug: Adding duplicate image handler for 'TGA file'
+19:54:31: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+ok
+test_same_net_hole_atomic (test_wbo_gate_ground.GateGround.test_same_net_hole_atomic) ... 19:54:32: Debug: Adding duplicate image handler for 'PNG file'
+19:54:32: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:32: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:32: Debug: Adding duplicate image handler for 'GIF file'
+19:54:32: Debug: Adding duplicate image handler for 'PNM file'
+19:54:32: Debug: Adding duplicate image handler for 'PCX file'
+19:54:32: Debug: Adding duplicate image handler for 'IFF file'
+19:54:32: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:32: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:32: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:32: Debug: Adding duplicate image handler for 'TGA file'
+19:54:32: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+ok
+test_wrong_supply_and_device (test_wbo_gate_ground.GateGround.test_wrong_supply_and_device) ... 19:54:33: Debug: Adding duplicate image handler for 'PNG file'
+19:54:33: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:33: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:33: Debug: Adding duplicate image handler for 'GIF file'
+19:54:33: Debug: Adding duplicate image handler for 'PNM file'
+19:54:33: Debug: Adding duplicate image handler for 'PCX file'
+19:54:33: Debug: Adding duplicate image handler for 'IFF file'
+19:54:33: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:33: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:33: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:33: Debug: Adding duplicate image handler for 'TGA file'
+19:54:33: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+19:54:34: Debug: Adding duplicate image handler for 'PNG file'
+19:54:34: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:34: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:34: Debug: Adding duplicate image handler for 'GIF file'
+19:54:34: Debug: Adding duplicate image handler for 'PNM file'
+19:54:34: Debug: Adding duplicate image handler for 'PCX file'
+19:54:34: Debug: Adding duplicate image handler for 'IFF file'
+19:54:34: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:34: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:34: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:34: Debug: Adding duplicate image handler for 'TGA file'
+19:54:34: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+ok
+test_changed_and_partial_geometry (test_wbo_logic_grounds.LogicGrounds.test_changed_and_partial_geometry) ... 19:54:35: Debug: Adding duplicate image handler for 'PNG file'
+19:54:35: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:35: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:35: Debug: Adding duplicate image handler for 'GIF file'
+19:54:35: Debug: Adding duplicate image handler for 'PNM file'
+19:54:35: Debug: Adding duplicate image handler for 'PCX file'
+19:54:35: Debug: Adding duplicate image handler for 'IFF file'
+19:54:35: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:35: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:35: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:35: Debug: Adding duplicate image handler for 'TGA file'
+19:54:35: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+ok
+test_last_branch_obstacle_is_atomic (test_wbo_logic_grounds.LogicGrounds.test_last_branch_obstacle_is_atomic) ... 19:54:37: Debug: Adding duplicate image handler for 'PNG file'
+19:54:37: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:37: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:37: Debug: Adding duplicate image handler for 'GIF file'
+19:54:37: Debug: Adding duplicate image handler for 'PNM file'
+19:54:37: Debug: Adding duplicate image handler for 'PCX file'
+19:54:37: Debug: Adding duplicate image handler for 'IFF file'
+19:54:37: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:37: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:37: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:37: Debug: Adding duplicate image handler for 'TGA file'
+19:54:37: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+ok
+test_native_contact_preservation_idempotence (test_wbo_logic_grounds.LogicGrounds.test_native_contact_preservation_idempotence) ... 19:54:38: Debug: Adding duplicate image handler for 'PNG file'
+19:54:38: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:38: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:38: Debug: Adding duplicate image handler for 'GIF file'
+19:54:38: Debug: Adding duplicate image handler for 'PNM file'
+19:54:38: Debug: Adding duplicate image handler for 'PCX file'
+19:54:38: Debug: Adding duplicate image handler for 'IFF file'
+19:54:38: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:38: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:38: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:38: Debug: Adding duplicate image handler for 'TGA file'
+19:54:38: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+ok
+test_same_net_hole_is_atomic (test_wbo_logic_grounds.LogicGrounds.test_same_net_hole_is_atomic) ... 19:54:39: Debug: Adding duplicate image handler for 'PNG file'
+19:54:39: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:39: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:39: Debug: Adding duplicate image handler for 'GIF file'
+19:54:39: Debug: Adding duplicate image handler for 'PNM file'
+19:54:39: Debug: Adding duplicate image handler for 'PCX file'
+19:54:39: Debug: Adding duplicate image handler for 'IFF file'
+19:54:39: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:39: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:39: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:39: Debug: Adding duplicate image handler for 'TGA file'
+19:54:39: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+ok
+test_wrong_device_supply_and_position (test_wbo_logic_grounds.LogicGrounds.test_wrong_device_supply_and_position) ... 19:54:40: Debug: Adding duplicate image handler for 'PNG file'
+19:54:40: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:40: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:40: Debug: Adding duplicate image handler for 'GIF file'
+19:54:40: Debug: Adding duplicate image handler for 'PNM file'
+19:54:40: Debug: Adding duplicate image handler for 'PCX file'
+19:54:40: Debug: Adding duplicate image handler for 'IFF file'
+19:54:40: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:40: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:40: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:40: Debug: Adding duplicate image handler for 'TGA file'
+19:54:40: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+19:54:41: Debug: Adding duplicate image handler for 'PNG file'
+19:54:41: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:41: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:41: Debug: Adding duplicate image handler for 'GIF file'
+19:54:41: Debug: Adding duplicate image handler for 'PNM file'
+19:54:41: Debug: Adding duplicate image handler for 'PCX file'
+19:54:41: Debug: Adding duplicate image handler for 'IFF file'
+19:54:41: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:41: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:41: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:41: Debug: Adding duplicate image handler for 'TGA file'
+19:54:41: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+19:54:42: Debug: Adding duplicate image handler for 'PNG file'
+19:54:42: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:42: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:42: Debug: Adding duplicate image handler for 'GIF file'
+19:54:42: Debug: Adding duplicate image handler for 'PNM file'
+19:54:42: Debug: Adding duplicate image handler for 'PCX file'
+19:54:42: Debug: Adding duplicate image handler for 'IFF file'
+19:54:42: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:42: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:42: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:42: Debug: Adding duplicate image handler for 'TGA file'
+19:54:42: Debug: Adding duplicate image handler for 'XPM file'
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+/src/kicad/pcbnew/pcb_track.cpp(381): assert ""false"" failed in GetWidth(): Warning: PCB_VIA::GetWidth called without a layer argument
+ok
+test_altered_existing_route_rejected (test_wbo_mcu_supply.McuSupply.test_altered_existing_route_rejected) ... 19:54:43: Debug: Adding duplicate image handler for 'PNG file'
+19:54:43: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:43: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:43: Debug: Adding duplicate image handler for 'GIF file'
+19:54:43: Debug: Adding duplicate image handler for 'PNM file'
+19:54:43: Debug: Adding duplicate image handler for 'PCX file'
+19:54:43: Debug: Adding duplicate image handler for 'IFF file'
+19:54:43: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:43: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:43: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:43: Debug: Adding duplicate image handler for 'TGA file'
+19:54:43: Debug: Adding duplicate image handler for 'XPM file'
+ok
+test_connectivity_preservation_and_idempotence (test_wbo_mcu_supply.McuSupply.test_connectivity_preservation_and_idempotence) ... 19:54:44: Debug: Adding duplicate image handler for 'PNG file'
+19:54:44: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:44: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:44: Debug: Adding duplicate image handler for 'GIF file'
+19:54:44: Debug: Adding duplicate image handler for 'PNM file'
+19:54:44: Debug: Adding duplicate image handler for 'PCX file'
+19:54:44: Debug: Adding duplicate image handler for 'IFF file'
+19:54:44: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:44: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:44: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:44: Debug: Adding duplicate image handler for 'TGA file'
+19:54:44: Debug: Adding duplicate image handler for 'XPM file'
+ok
+test_copper_obstacle_atomic (test_wbo_mcu_supply.McuSupply.test_copper_obstacle_atomic) ... 19:54:46: Debug: Adding duplicate image handler for 'PNG file'
+19:54:46: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:46: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:46: Debug: Adding duplicate image handler for 'GIF file'
+19:54:46: Debug: Adding duplicate image handler for 'PNM file'
+19:54:46: Debug: Adding duplicate image handler for 'PCX file'
+19:54:46: Debug: Adding duplicate image handler for 'IFF file'
+19:54:46: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:46: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:46: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:46: Debug: Adding duplicate image handler for 'TGA file'
+19:54:46: Debug: Adding duplicate image handler for 'XPM file'
+ok
+test_device_supply_ground_and_placement_guards (test_wbo_mcu_supply.McuSupply.test_device_supply_ground_and_placement_guards) ... 19:54:47: Debug: Adding duplicate image handler for 'PNG file'
+19:54:47: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:47: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:47: Debug: Adding duplicate image handler for 'GIF file'
+19:54:47: Debug: Adding duplicate image handler for 'PNM file'
+19:54:47: Debug: Adding duplicate image handler for 'PCX file'
+19:54:47: Debug: Adding duplicate image handler for 'IFF file'
+19:54:47: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:47: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:47: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:47: Debug: Adding duplicate image handler for 'TGA file'
+19:54:47: Debug: Adding duplicate image handler for 'XPM file'
+19:54:48: Debug: Adding duplicate image handler for 'PNG file'
+19:54:48: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:48: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:48: Debug: Adding duplicate image handler for 'GIF file'
+19:54:48: Debug: Adding duplicate image handler for 'PNM file'
+19:54:48: Debug: Adding duplicate image handler for 'PCX file'
+19:54:48: Debug: Adding duplicate image handler for 'IFF file'
+19:54:48: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:48: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:48: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:48: Debug: Adding duplicate image handler for 'TGA file'
+19:54:48: Debug: Adding duplicate image handler for 'XPM file'
+19:54:49: Debug: Adding duplicate image handler for 'PNG file'
+19:54:49: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:49: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:49: Debug: Adding duplicate image handler for 'GIF file'
+19:54:49: Debug: Adding duplicate image handler for 'PNM file'
+19:54:49: Debug: Adding duplicate image handler for 'PCX file'
+19:54:49: Debug: Adding duplicate image handler for 'IFF file'
+19:54:49: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:49: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:49: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:49: Debug: Adding duplicate image handler for 'TGA file'
+19:54:49: Debug: Adding duplicate image handler for 'XPM file'
+19:54:50: Debug: Adding duplicate image handler for 'PNG file'
+19:54:50: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:50: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:50: Debug: Adding duplicate image handler for 'GIF file'
+19:54:50: Debug: Adding duplicate image handler for 'PNM file'
+19:54:50: Debug: Adding duplicate image handler for 'PCX file'
+19:54:50: Debug: Adding duplicate image handler for 'IFF file'
+19:54:50: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:50: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:50: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:50: Debug: Adding duplicate image handler for 'TGA file'
+19:54:50: Debug: Adding duplicate image handler for 'XPM file'
+ok
+test_same_net_hole_atomic (test_wbo_mcu_supply.McuSupply.test_same_net_hole_atomic) ... 19:54:51: Debug: Adding duplicate image handler for 'PNG file'
+19:54:51: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:51: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:51: Debug: Adding duplicate image handler for 'GIF file'
+19:54:51: Debug: Adding duplicate image handler for 'PNM file'
+19:54:51: Debug: Adding duplicate image handler for 'PCX file'
+19:54:51: Debug: Adding duplicate image handler for 'IFF file'
+19:54:51: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:51: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:51: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:51: Debug: Adding duplicate image handler for 'TGA file'
+19:54:51: Debug: Adding duplicate image handler for 'XPM file'
+ok
+test_truncated_branch_rejected (test_wbo_mcu_supply.McuSupply.test_truncated_branch_rejected) ... 19:54:52: Debug: Adding duplicate image handler for 'PNG file'
+19:54:52: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:52: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:52: Debug: Adding duplicate image handler for 'GIF file'
+19:54:52: Debug: Adding duplicate image handler for 'PNM file'
+19:54:52: Debug: Adding duplicate image handler for 'PCX file'
+19:54:52: Debug: Adding duplicate image handler for 'IFF file'
+19:54:52: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:52: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:52: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:52: Debug: Adding duplicate image handler for 'TGA file'
+19:54:52: Debug: Adding duplicate image handler for 'XPM file'
+ok
+test_device_ground_contracts (test_wbo_regulator_feed.RegulatorFeed.test_device_ground_contracts) ... 19:54:53: Debug: Adding duplicate image handler for 'PNG file'
+19:54:53: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:53: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:53: Debug: Adding duplicate image handler for 'GIF file'
+19:54:53: Debug: Adding duplicate image handler for 'PNM file'
+19:54:53: Debug: Adding duplicate image handler for 'PCX file'
+19:54:53: Debug: Adding duplicate image handler for 'IFF file'
+19:54:53: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:53: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:53: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:53: Debug: Adding duplicate image handler for 'TGA file'
+19:54:53: Debug: Adding duplicate image handler for 'XPM file'
+19:54:54: Debug: Adding duplicate image handler for 'PNG file'
+19:54:54: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:54: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:54: Debug: Adding duplicate image handler for 'GIF file'
+19:54:54: Debug: Adding duplicate image handler for 'PNM file'
+19:54:54: Debug: Adding duplicate image handler for 'PCX file'
+19:54:54: Debug: Adding duplicate image handler for 'IFF file'
+19:54:54: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:54: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:54: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:54: Debug: Adding duplicate image handler for 'TGA file'
+19:54:54: Debug: Adding duplicate image handler for 'XPM file'
+19:54:55: Debug: Adding duplicate image handler for 'PNG file'
+19:54:55: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:55: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:55: Debug: Adding duplicate image handler for 'GIF file'
+19:54:55: Debug: Adding duplicate image handler for 'PNM file'
+19:54:55: Debug: Adding duplicate image handler for 'PCX file'
+19:54:55: Debug: Adding duplicate image handler for 'IFF file'
+19:54:55: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:55: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:55: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:55: Debug: Adding duplicate image handler for 'TGA file'
+19:54:55: Debug: Adding duplicate image handler for 'XPM file'
+ok
+test_kelvin_join_outside_cap_rejected (test_wbo_regulator_feed.RegulatorFeed.test_kelvin_join_outside_cap_rejected) ... 19:54:56: Debug: Adding duplicate image handler for 'PNG file'
+19:54:56: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:56: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:56: Debug: Adding duplicate image handler for 'GIF file'
+19:54:56: Debug: Adding duplicate image handler for 'PNM file'
+19:54:56: Debug: Adding duplicate image handler for 'PCX file'
+19:54:56: Debug: Adding duplicate image handler for 'IFF file'
+19:54:56: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:56: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:56: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:56: Debug: Adding duplicate image handler for 'TGA file'
+19:54:56: Debug: Adding duplicate image handler for 'XPM file'
+ok
+test_last_branch_obstacle_preserves_shortcut (test_wbo_regulator_feed.RegulatorFeed.test_last_branch_obstacle_preserves_shortcut) ... 19:54:57: Debug: Adding duplicate image handler for 'PNG file'
+19:54:57: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:57: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:57: Debug: Adding duplicate image handler for 'GIF file'
+19:54:57: Debug: Adding duplicate image handler for 'PNM file'
+19:54:57: Debug: Adding duplicate image handler for 'PCX file'
+19:54:57: Debug: Adding duplicate image handler for 'IFF file'
+19:54:57: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:57: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:57: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:57: Debug: Adding duplicate image handler for 'TGA file'
+19:54:57: Debug: Adding duplicate image handler for 'XPM file'
+ok
+test_partial_route_and_duplicate_rejected (test_wbo_regulator_feed.RegulatorFeed.test_partial_route_and_duplicate_rejected) ... 19:54:58: Debug: Adding duplicate image handler for 'PNG file'
+19:54:58: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:58: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:58: Debug: Adding duplicate image handler for 'GIF file'
+19:54:58: Debug: Adding duplicate image handler for 'PNM file'
+19:54:58: Debug: Adding duplicate image handler for 'PCX file'
+19:54:58: Debug: Adding duplicate image handler for 'IFF file'
+19:54:58: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:58: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:58: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:58: Debug: Adding duplicate image handler for 'TGA file'
+19:54:58: Debug: Adding duplicate image handler for 'XPM file'
+19:54:59: Debug: Adding duplicate image handler for 'PNG file'
+19:54:59: Debug: Adding duplicate image handler for 'JPEG file'
+19:54:59: Debug: Adding duplicate image handler for 'TIFF file'
+19:54:59: Debug: Adding duplicate image handler for 'GIF file'
+19:54:59: Debug: Adding duplicate image handler for 'PNM file'
+19:54:59: Debug: Adding duplicate image handler for 'PCX file'
+19:54:59: Debug: Adding duplicate image handler for 'IFF file'
+19:54:59: Debug: Adding duplicate image handler for 'Windows icon file'
+19:54:59: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:54:59: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:54:59: Debug: Adding duplicate image handler for 'TGA file'
+19:54:59: Debug: Adding duplicate image handler for 'XPM file'
+ok
+test_power_kelvin_connectivity_old_preservation_and_idempotence (test_wbo_regulator_feed.RegulatorFeed.test_power_kelvin_connectivity_old_preservation_and_idempotence) ... 19:55:00: Debug: Adding duplicate image handler for 'PNG file'
+19:55:00: Debug: Adding duplicate image handler for 'JPEG file'
+19:55:00: Debug: Adding duplicate image handler for 'TIFF file'
+19:55:00: Debug: Adding duplicate image handler for 'GIF file'
+19:55:00: Debug: Adding duplicate image handler for 'PNM file'
+19:55:00: Debug: Adding duplicate image handler for 'PCX file'
+19:55:00: Debug: Adding duplicate image handler for 'IFF file'
+19:55:00: Debug: Adding duplicate image handler for 'Windows icon file'
+19:55:00: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:55:00: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:55:00: Debug: Adding duplicate image handler for 'TGA file'
+19:55:00: Debug: Adding duplicate image handler for 'XPM file'
+ok
+test_same_net_drill_atomic (test_wbo_regulator_feed.RegulatorFeed.test_same_net_drill_atomic) ... 19:55:02: Debug: Adding duplicate image handler for 'PNG file'
+19:55:02: Debug: Adding duplicate image handler for 'JPEG file'
+19:55:02: Debug: Adding duplicate image handler for 'TIFF file'
+19:55:02: Debug: Adding duplicate image handler for 'GIF file'
+19:55:02: Debug: Adding duplicate image handler for 'PNM file'
+19:55:02: Debug: Adding duplicate image handler for 'PCX file'
+19:55:02: Debug: Adding duplicate image handler for 'IFF file'
+19:55:02: Debug: Adding duplicate image handler for 'Windows icon file'
+19:55:02: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:55:02: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:55:02: Debug: Adding duplicate image handler for 'TGA file'
+19:55:02: Debug: Adding duplicate image handler for 'XPM file'
+ok
+test_shortcut_modified_duplicate_missing (test_wbo_regulator_feed.RegulatorFeed.test_shortcut_modified_duplicate_missing) ... 19:55:03: Debug: Adding duplicate image handler for 'PNG file'
+19:55:03: Debug: Adding duplicate image handler for 'JPEG file'
+19:55:03: Debug: Adding duplicate image handler for 'TIFF file'
+19:55:03: Debug: Adding duplicate image handler for 'GIF file'
+19:55:03: Debug: Adding duplicate image handler for 'PNM file'
+19:55:03: Debug: Adding duplicate image handler for 'PCX file'
+19:55:03: Debug: Adding duplicate image handler for 'IFF file'
+19:55:03: Debug: Adding duplicate image handler for 'Windows icon file'
+19:55:03: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:55:03: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:55:03: Debug: Adding duplicate image handler for 'TGA file'
+19:55:03: Debug: Adding duplicate image handler for 'XPM file'
+19:55:04: Debug: Adding duplicate image handler for 'PNG file'
+19:55:04: Debug: Adding duplicate image handler for 'JPEG file'
+19:55:04: Debug: Adding duplicate image handler for 'TIFF file'
+19:55:04: Debug: Adding duplicate image handler for 'GIF file'
+19:55:04: Debug: Adding duplicate image handler for 'PNM file'
+19:55:04: Debug: Adding duplicate image handler for 'PCX file'
+19:55:04: Debug: Adding duplicate image handler for 'IFF file'
+19:55:04: Debug: Adding duplicate image handler for 'Windows icon file'
+19:55:04: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:55:04: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:55:04: Debug: Adding duplicate image handler for 'TGA file'
+19:55:04: Debug: Adding duplicate image handler for 'XPM file'
+19:55:05: Debug: Adding duplicate image handler for 'PNG file'
+19:55:05: Debug: Adding duplicate image handler for 'JPEG file'
+19:55:05: Debug: Adding duplicate image handler for 'TIFF file'
+19:55:05: Debug: Adding duplicate image handler for 'GIF file'
+19:55:05: Debug: Adding duplicate image handler for 'PNM file'
+19:55:05: Debug: Adding duplicate image handler for 'PCX file'
+19:55:05: Debug: Adding duplicate image handler for 'IFF file'
+19:55:05: Debug: Adding duplicate image handler for 'Windows icon file'
+19:55:05: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:55:05: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:55:05: Debug: Adding duplicate image handler for 'TGA file'
+19:55:05: Debug: Adding duplicate image handler for 'XPM file'
+ok
+19:55:06: Debug: Adding duplicate image handler for 'PNG file'
+19:55:06: Debug: Adding duplicate image handler for 'JPEG file'
+19:55:06: Debug: Adding duplicate image handler for 'TIFF file'
+19:55:06: Debug: Adding duplicate image handler for 'GIF file'
+19:55:06: Debug: Adding duplicate image handler for 'PNM file'
+19:55:06: Debug: Adding duplicate image handler for 'PCX file'
+19:55:06: Debug: Adding duplicate image handler for 'IFF file'
+19:55:06: Debug: Adding duplicate image handler for 'Windows icon file'
+19:55:06: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:55:06: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:55:06: Debug: Adding duplicate image handler for 'TGA file'
+19:55:06: Debug: Adding duplicate image handler for 'XPM file'
+test_endpoint_motion_rejected (test_wbo_reset.WboReset.test_endpoint_motion_rejected) ... ok
+test_idempotent_and_connected (test_wbo_reset.WboReset.test_idempotent_and_connected) ... ok
+test_late_obstacle_rejects_whole_plan (test_wbo_reset.WboReset.test_late_obstacle_rejects_whole_plan) ... 19:55:08: Debug: Adding duplicate image handler for 'PNG file'
+19:55:08: Debug: Adding duplicate image handler for 'JPEG file'
+19:55:08: Debug: Adding duplicate image handler for 'TIFF file'
+19:55:08: Debug: Adding duplicate image handler for 'GIF file'
+19:55:08: Debug: Adding duplicate image handler for 'PNM file'
+19:55:08: Debug: Adding duplicate image handler for 'PCX file'
+19:55:08: Debug: Adding duplicate image handler for 'IFF file'
+19:55:08: Debug: Adding duplicate image handler for 'Windows icon file'
+19:55:08: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:55:08: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:55:08: Debug: Adding duplicate image handler for 'TGA file'
+19:55:08: Debug: Adding duplicate image handler for 'XPM file'
+ok
+test_modified_existing_width_rejected (test_wbo_reset.WboReset.test_modified_existing_width_rejected) ... ok
+test_wrong_device_rejected (test_wbo_reset.WboReset.test_wrong_device_rejected) ... ok
+test_wrong_pullup_net_rejected (test_wbo_reset.WboReset.test_wrong_pullup_net_rejected) ... ok
+19:55:09: Debug: Adding duplicate image handler for 'PNG file'
+19:55:09: Debug: Adding duplicate image handler for 'JPEG file'
+19:55:09: Debug: Adding duplicate image handler for 'TIFF file'
+19:55:09: Debug: Adding duplicate image handler for 'GIF file'
+19:55:09: Debug: Adding duplicate image handler for 'PNM file'
+19:55:09: Debug: Adding duplicate image handler for 'PCX file'
+19:55:09: Debug: Adding duplicate image handler for 'IFF file'
+19:55:09: Debug: Adding duplicate image handler for 'Windows icon file'
+19:55:09: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:55:09: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:55:09: Debug: Adding duplicate image handler for 'TGA file'
+19:55:09: Debug: Adding duplicate image handler for 'XPM file'
+test_changed_existing_branch_width_is_rejected (test_wbo_vio.WboVio.test_changed_existing_branch_width_is_rejected) ... ok
+test_changed_ground_pad_location_is_rejected (test_wbo_vio.WboVio.test_changed_ground_pad_location_is_rejected) ... ok
+test_idempotent (test_wbo_vio.WboVio.test_idempotent) ... ok
+test_wrong_vio_net_is_rejected_without_mutation (test_wbo_vio.WboVio.test_wrong_vio_net_is_rejected_without_mutation) ... ok
+
+----------------------------------------------------------------------
+Ran 57 tests in 48.276s
+
+OK
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
