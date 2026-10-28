@@ -1,7 +1,7 @@
 {
   "baseline_commit": "2f4a527f3ff661de522f60de78b059fae9a89f07",
   "baseline_board_sha256": "fd6eac9f2f58decc4784a1798c5549be44b5b30f6b08d3ae6b5db59f9506fd1a",
-  "current_board_sha256": "e1887db8720d0945f611a9e5fe935d72f429a886bd382a77690af20472098e17",
+  "current_board_sha256": "5c1f064233a1a4ba51e6c8f209de365f30a4cd411869d71b7ece4dd3e51703e0",
   "return_tracks": [
     {
       "reference": "R215",
@@ -156,7 +156,7 @@
       ]
     }
   ],
-  "full_connectivity_residual": 2089,
+  "full_connectivity_residual": 2088,
   "native_drc": "VERIFIED_SCOPED_AND_FULL_INCOMPLETE_BOARD",
   "idempotence": "PASS",
   "structural_delta_check": "SEE_FOLLOW_UP_JOURNALS_FOR_INCREMENTAL_COPPER_AND_FILLED_ZONE_DELTAS",
@@ -516,6 +516,38 @@
     ],
     "unconnected_before": 2092,
     "unconnected_after": 2089,
+    "full_board_zones_refilled": true,
+    "new_objects_native_drc_findings": 0,
+    "scoped_new_violation_signatures": 0
+  },
+  "follow_up_wbo_mcu_supply": {
+    "baseline_commit": "bc8b1f55dbf7c164b2dc26a3c03a47085a1e7705",
+    "baseline_board_sha256": "e1887db8720d0945f611a9e5fe935d72f429a886bd382a77690af20472098e17",
+    "current_board_sha256": "5c1f064233a1a4ba51e6c8f209de365f30a4cd411869d71b7ece4dd3e51703e0",
+    "routes": [
+      {
+        "branch": "mcu_vdd",
+        "net": "WBO1_3V3",
+        "points_mm": [
+          [
+            176.35295,
+            66.975
+          ],
+          [
+            178.60295,
+            66.975
+          ]
+        ],
+        "via_mm": null,
+        "width_mm": 0.25,
+        "added_uuids": [
+          "18dc4056-6782-451b-8216-2fc3edba0a23"
+        ],
+        "length_mm": 2.25
+      }
+    ],
+    "unconnected_before": 2089,
+    "unconnected_after": 2088,
     "full_board_zones_refilled": true,
     "new_objects_native_drc_findings": 0,
     "scoped_new_violation_signatures": 0

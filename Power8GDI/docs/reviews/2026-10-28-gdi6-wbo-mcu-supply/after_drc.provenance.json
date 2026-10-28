@@ -1,0 +1,20 @@
+{
+  "board_sha256": "60c353b151ba3d0d1d1c975509705fcfd3a6023a55b99d94b8ba7fc8e31ec683",
+  "project_sha256": "e153a914608b366089817c7aadf84b03e1ca04ef461e0a4ed1fc27788eae4874",
+  "custom_rules_sha256": "6128ef830ead67cecd92204bba3396ba984702051ce6e4436c15dcf0f788641b",
+  "command": [
+    "kicad-cli",
+    "pcb",
+    "drc",
+    "--format",
+    "json",
+    "--all-track-errors",
+    "--severity-all",
+    "--exit-code-violations",
+    "-o",
+    "/audit/after_drc.json",
+    "/tmp/power8gdi-drc-0ux3e7b8/after.kicad_pcb"
+  ],
+  "returncode": 5,
+  "rule_exclusions_added": false
+}
