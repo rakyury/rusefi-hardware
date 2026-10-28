@@ -5,6 +5,7 @@ import hashlib
 import tempfile
 import pcbnew
 from sexpr import parse, dump, child, children, Quoted as Q
+from oscillator_silk import SILK_EDITS
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
@@ -74,6 +75,13 @@ for fp in board.GetFootprints():
             child(pad,'size')[1:]=['2.0','2.2']
         content=(dump(data)+'\n').encode('utf8')
         changes.append('SiT8924B7x5mm manufacturer land pattern span3.81x5.08mm, pads2.0x2.2mm')
+        silk=[line for line in children(data,'fp_line') if child(line,'layer')[1]=='F.SilkS']
+        if len(silk)!=5:raise ValueError('Unexpected REF_Y2 silk geometry')
+        for old,new in SILK_EDITS:
+            line=next(line for line in silk if tuple(map(float,child(line,'start')[1:]+child(line,'end')[1:]))==old)
+            child(line,'start')[1:]=list(map(str,new[:2]));child(line,'end')[1:]=list(map(str,new[2:]))
+        content=(dump(data)+'\n').encode('utf8')
+        changes.append('Silk clears enlarged oscillator mask and R223/R323; pin1 stub retained')
     if not target.exists() or target.read_bytes()!=content:
         target.write_bytes(content)
     manifest[ref] = {'source_footprint':source_id,'derived_footprint':'Power8GDI_GDI:'+name,

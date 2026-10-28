@@ -415,6 +415,8 @@ def build(args):
         bank_refs,bank_placements=place_output_banks(board,footprints) if args.grouped_outputs else (set(),[])
         placed|=bank_refs
         unplaced=place_candidate_domains(board,footprints,set(components)-placed)
+    from layout_repairs import repair_returns
+    return_repairs=repair_returns(board)
     local_copper_ids={t.m_Uuid.AsString() for t in board.GetTracks()}-donor_copper_ids
     add_plane(board,nets)
     title=board.GetTitleBlock();title.SetTitle('Power8GDI routed subdomains / INCOMPLETE ENGINEERING REVIEW');title.SetRevision('A engineering candidate')
@@ -456,7 +458,7 @@ def build(args):
             'dnp_references':sorted(ref for ref,comp in components.items() if comp['dnp']),
             'staged_unreviewed_placements':unplaced,'reference_copper':audit,
             'silkscreen_geometry':silk_report,'copper_cleanup':cleanup_report,'output_bank_placement':bank_placements,
-            'ignition_local_routes':ignition_routes}
+            'ignition_local_routes':ignition_routes,'reviewed_shunt_return_repairs':return_repairs}
     report['voltage_domains']=voltage_domains.provenance()
     (out/'board_report.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({k:report[k] for k in ['kicad_version','qualification','outline_mm','copper_layers','thickness_mm','components','assigned_component_pins','pad_net_mismatches','tracks_vias','zones','unconnected_count']},indent=2))

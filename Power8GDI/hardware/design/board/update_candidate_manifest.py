@@ -34,8 +34,16 @@ def main():
     paths=[DESIGN/p for p in ['core.net','sport_gdi6_schematic.pdf','integrated_bom.csv','integrated_bom_manifest.json','selection_validation.json','gdi/load_review.json']]
     paths += [OUT/p for p in ['Power8GDI_Review.kicad_pcb','Power8GDI_Review.kicad_pro','Power8GDI_Review.kicad_dru','board_report.json','pad_validation.json','drc.json','drc.provenance.json','net_coverage.json','assembly_joints.json','front.svg','back.svg','front.png','back.png']]
     stencil_delta=OUT/'shunt_stencil_delta.json'
+    layout_repairs=OUT/'pcb_layout_repairs.json'
     if stencil_delta.exists():
-        assert json.loads(stencil_delta.read_text())['current_board_sha256']==digest(OUT/'Power8GDI_Review.kicad_pcb')
+        previous=json.loads(stencil_delta.read_text())['current_board_sha256']
+        if layout_repairs.exists():
+            repair=json.loads(layout_repairs.read_text())
+            assert previous==repair['baseline_board_sha256']
+            assert repair['current_board_sha256']==digest(OUT/'Power8GDI_Review.kicad_pcb')
+            assert repair['native_drc']=='VERIFIED_SCOPED_AND_FULL_INCOMPLETE_BOARD'
+            paths.append(layout_repairs)
+        else:assert previous==digest(OUT/'Power8GDI_Review.kicad_pcb')
         paths.append(stencil_delta)
     result={'profile':'2026-10-25-sport-gdi6','updated':'2026-10-28',
       'qualification':'INCOMPLETE_ENGINEERING_REVIEW_DO_NOT_FABRICATE',
