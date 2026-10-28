@@ -4,7 +4,7 @@ from pathlib import Path
 import pcbnew as p
 HERE=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(HERE))
-from layout_repairs import repair_returns,repair_silk,point,same,xy
+from layout_repairs import repair_returns,repair_silk,repair_wbo_silk,point,same,xy
 
 class Repairs(unittest.TestCase):
     @classmethod
@@ -16,6 +16,14 @@ class Repairs(unittest.TestCase):
         self.assertEqual(repair_returns(self.board),[])
         self.assertEqual(repair_silk(self.board),[])
         self.assertEqual(len(list(self.board.GetTracks())),count)
+    def test_wbo_silk_repair_is_idempotent(self):
+        self.assertEqual(repair_wbo_silk(self.board),[])
+    def test_wbo_changed_placement_is_rejected(self):
+        f=self.fps['D5604'];position=f.GetPosition()
+        try:
+            f.SetPosition(position+p.VECTOR2I(p.FromMM(.01),0))
+            with self.assertRaises(ValueError):repair_wbo_silk(self.board)
+        finally:f.SetPosition(position)
     def test_wrong_return_net_fails_without_adding_copper(self):
         expected=point(self.fps['R315'],(.8,-1.1))
         via=next(t for t in self.board.GetTracks() if isinstance(t,p.PCB_VIA) and same(xy(t.GetPosition()),expected))

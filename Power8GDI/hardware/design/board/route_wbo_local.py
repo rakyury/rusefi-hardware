@@ -418,20 +418,9 @@ def place_and_route(board, fps, nets, fixed_references, regions=None):
             if not candidates:report['ground_drops_pending'].append(ref+'.'+str(pin));continue
             point,segments=candidates[0];emit(segments,fps[ref].GetLayer(),'GND');add_via(point,'GND')
             report['ground_drops'].append({'pad':ref+'.'+str(pin),'via_mm':point,'stub_length_mm':round(sum(math.dist(u,v) for u,v in segments),3),'ground_plane_refill_required':True})
-    # Two native-DRC findings in the integrated board. The capacitor line is
-    # HALF OF A POLARITY PLUS: relocate both strokes together, never erase it.
-    report['silk_repairs']=[]
-    visible=[fps[r] for r in refs|set(fixed_references)]
-    def silk_clear(shape,layer,ignore):
-        copper_layer=p.B_Cu if layer==p.B_SilkS else p.F_Cu
-        mask=p.B_Mask if layer==p.B_SilkS else p.F_Mask
-        for f in visible:
-            for q in f.Pads():
-                if q.IsOnLayer(mask) and q.GetEffectiveShape(copper_layer).Collide(shape,p.FromMM(.16)+max(0,q.GetSolderMaskExpansion(mask))):return False
-            for g in f.GraphicalItems():
-                if isinstance(g,p.PCB_SHAPE) and g.m_Uuid.AsString() not in ignore and g.GetLayer()==layer:
-                    if g.GetEffectiveShape().Collide(shape,p.FromMM(.16)):return False
-        return True
+    # First-node outline crosses the adjacent J5600 mask opening.
+    from layout_repairs import repair_wbo_silk
+    report['silk_repairs']=repair_wbo_silk(board)
     # Former second-node silk repairs are inapplicable: WBO2 is absent.
     assert all(fingerprint(fps[r])==state for r,state in originals.items()), 'Non-WBO footprint mutated'
     assert old_ids <= {t.m_Uuid.AsString() for t in board.GetTracks()}, 'Original copper removed'

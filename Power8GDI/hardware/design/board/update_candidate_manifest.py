@@ -32,6 +32,7 @@ def main():
     assert joints['bom_sha256']==digest(DESIGN/'integrated_bom.csv')
     assert not pads['errors']
     paths=[DESIGN/p for p in ['core.net','sport_gdi6_schematic.pdf','integrated_bom.csv','integrated_bom_manifest.json','selection_validation.json','gdi/load_review.json']]
+    paths.append(HERE/'Power8GDI_Board.pretty/SOT-23_D5604_J5600_Clearance.kicad_mod')
     paths += [OUT/p for p in ['Power8GDI_Review.kicad_pcb','Power8GDI_Review.kicad_pro','Power8GDI_Review.kicad_dru','board_report.json','pad_validation.json','drc.json','drc.provenance.json','net_coverage.json','assembly_joints.json','front.svg','back.svg','front.png','back.png']]
     stencil_delta=OUT/'shunt_stencil_delta.json'
     layout_repairs=OUT/'pcb_layout_repairs.json'
@@ -52,7 +53,7 @@ def main():
       'hash_normalization':'CRLF_TO_LF_TEXT_ONLY; PDF/PNG raw bytes',
       'kicad_version':'9.0.9','kicad_image':review['image'],
       'source_netlist_sha256':net,'selection_map_sha256':selection['map_sha256'],
-      'schematic_pdf_pages':49,'pdf_visual_review':{'all_pages_contact_sheet':True,'larger_scale_pages':[27]},
+      'schematic_pdf_pages':49,'pdf_visual_review':{'all_pages_contact_sheet':True,'larger_scale_pages':[41]},
       'pad_comparison':'PASS','physical_positions':pads['components'],
       'pad_net_assignments':pads['component_pin_assignments'],
       'shunt_stencil':pads.get('shunt_stencil'),

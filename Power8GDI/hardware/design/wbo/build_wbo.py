@@ -100,7 +100,9 @@ def build():
             if old=='U605':
                 pins=[(p,n,'bidirectional' if p in ('6','7') else t) for p,n,t in pins]
                 fp='Package_SO:SOIC-8_3.9x4.9mm_P1.27mm'
-            if old=='D604': pins=[('1','CANH','passive'),('2','CANL','passive'),('3','GND','passive')]
+            if old=='D604':
+                pins=[('1','CANH','passive'),('2','CANL','passive'),('3','GND','passive')]
+                fp='Power8GDI_Board:SOT-23_D5604_J5600_Clearance'
             exact={'U600':'MCP6004T-E/ST','U601':'AD8628ARTZ-REEL7','U602':'STM32F042K6T6','U603':'REF3033AIDBZR','U604':'LT3042IMSE#WTRPBF'}
             value=exact.get(old,value)
             if old in main_positions:s,x,y=main_positions[old]

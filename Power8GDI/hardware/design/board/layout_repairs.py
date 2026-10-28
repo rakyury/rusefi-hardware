@@ -58,3 +58,42 @@ def repair_silk(board):
             plans.append((f.GetReference(),matches[0],newa,newb))
     for ref,g,a,b in plans:g.SetStart(vec(a));g.SetEnd(vec(b))
     return [{'reference':ref,'uuid':g.m_Uuid.AsString(),'start_mm':a,'end_mm':b} for ref,g,a,b in plans]
+
+
+def repair_wbo_silk(board):
+    """Clear J5600 mask while preserving the D5604 pin-1 triangle."""
+    f=next(f for f in board.GetFootprints() if f.GetReference()=='D5604')
+    if ((str(f.GetFPID().GetLibNickname()),str(f.GetFPID().GetLibItemName())) not in (('Package_TO_SOT_SMD','SOT-23'),('Power8GDI_Board','SOT-23_D5604_J5600_Clearance')) or f.GetValue()!='PESD1CAN'
+        or f.GetLayer()!=p.B_Cu or abs(f.GetOrientationDegrees())>1e-6
+        or not same(xy(f.GetPosition()),(160.59045,73.2))):
+        raise ValueError('Unexpected D5604 placement')
+    shapes=[g for g in f.GraphicalItems() if isinstance(g,p.PCB_SHAPE)]
+    tiny_old=((159.83045,71.64),(159.83045,71.69))
+    tiny_new=((160.91045,71.64),(160.91045,71.69))
+    tiny_candidates=[g for g in shapes if g.GetShape()==p.SHAPE_T_SEGMENT and g.GetLayer()==p.B_SilkS
+                     and any(same(xy(g.GetStart()),a) and same(xy(g.GetEnd()),b) for a,b in (tiny_old,tiny_new))]
+    if len(tiny_candidates)!=1:raise ValueError('Unexpected D5604 outline stub')
+    tiny=tiny_candidates[0]
+    start=(161.35045,71.64);old=(159.83045,71.64);new=(160.91045,71.64)
+    candidates=[g for g in shapes if g.GetShape()==p.SHAPE_T_SEGMENT and g.GetLayer()==p.B_SilkS
+                and same(xy(g.GetStart()),start) and (same(xy(g.GetEnd()),old) or same(xy(g.GetEnd()),new))]
+    if len(candidates)!=1:raise ValueError('Unexpected D5604 top outline')
+    top=candidates[0]
+    if abs(p.ToMM(top.GetWidth())-.12)>1e-6:raise ValueError('Unexpected D5604 stroke width')
+    # Check the proposed stroke against mask openings across the whole board.
+    probe=p.PCB_SHAPE(f);probe.SetShape(p.SHAPE_T_SEGMENT);probe.SetLayer(p.B_SilkS)
+    probe.SetWidth(top.GetWidth());probe.SetStart(vec(start));probe.SetEnd(vec(new))
+    for a,b in ((start,new),tiny_new):
+        probe.SetStart(vec(a));probe.SetEnd(vec(b))
+        for fp in board.GetFootprints():
+            for pad in fp.Pads():
+                if pad.IsOnLayer(p.B_Mask) and pad.GetEffectiveShape(p.B_Cu).Collide(
+                    probe.GetEffectiveShape(),p.FromMM(.20)+max(0,pad.GetSolderMaskExpansion(p.B_Mask))):
+                    raise ValueError('D5604 proposed silk intersects mask: '+fp.GetReference())
+    changes=[]
+    if not same(xy(tiny.GetStart()),tiny_new[0]):
+        tiny.SetStart(vec(tiny_new[0]));tiny.SetEnd(vec(tiny_new[1]))
+        changes.append({'uuid':tiny.m_Uuid.AsString(),'change':'move non-orientation stub to shortened outline end'})
+    if not same(xy(top.GetEnd()),new):
+        top.SetEnd(vec(new));changes.append({'uuid':top.m_Uuid.AsString(),'change':'shorten outline','end_mm':new})
+    return changes
