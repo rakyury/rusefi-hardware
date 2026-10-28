@@ -1,0 +1,31 @@
+{
+  "assumptions": "Nominal copper resistivity at20C; PCB-declared outer copper70um. Trace-only, excluding via, pad and solder resistance; not thermal/EMC qualification.200mA is LDO rating envelope, not measured load.",
+  "pieces": [
+    {
+      "name": "new B.Cu feed",
+      "length_mm": 25.441809,
+      "width_mm": 0.4,
+      "resistance_ohm": 0.015664885255714286
+    },
+    {
+      "name": "new F.Cu feed",
+      "length_mm": 2.5,
+      "width_mm": 0.25,
+      "resistance_ohm": 0.0024628571428571434
+    },
+    {
+      "name": "existing OUT10 to Cout",
+      "length_mm": 2.250000153974438,
+      "width_mm": 0.2,
+      "resistance_ohm": 0.0027707144753228085
+    },
+    {
+      "name": "existing C5612 to MCU",
+      "length_mm": 2.25,
+      "width_mm": 0.25,
+      "resistance_ohm": 0.0022165714285714284
+    }
+  ],
+  "total_trace_resistance_ohm": 0.023115028302465666,
+  "drop_at_200mA_mV": 4.623005660493134
+}
