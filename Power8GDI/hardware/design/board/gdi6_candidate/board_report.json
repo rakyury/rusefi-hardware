@@ -72,9 +72,9 @@
   "components": 1092,
   "assigned_component_pins": 3464,
   "pad_net_mismatches": [],
-  "tracks_vias": 2671,
+  "tracks_vias": 2678,
   "zones": 16,
-  "unconnected_count": 2094,
+  "unconnected_count": 2093,
   "dnp_references": [
     "R105",
     "R106",
@@ -22627,6 +22627,60 @@
             "segments": 5,
             "length_mm": 8.799658,
             "layer": "F.Cu/B.Cu"
+          },
+          {
+            "net": "WBO1_nRESET",
+            "from": "U5612.1",
+            "to": "R5662.1",
+            "distance_mm": 4.639,
+            "layer": "B.Cu",
+            "points_mm": [
+              [
+                171.3625,
+                84.95
+              ],
+              [
+                172.3625,
+                84.45
+              ],
+              [
+                172.6125,
+                82.7
+              ],
+              [
+                173.1125,
+                82.2
+              ],
+              [
+                174.3625,
+                82.45
+              ],
+              [
+                175.1125,
+                83.2
+              ],
+              [
+                175.3625,
+                83.95
+              ],
+              [
+                176.0,
+                84.825
+              ]
+            ],
+            "width_mm": 0.2,
+            "segments": 7,
+            "vias": 0,
+            "length_mm": 7.801496,
+            "added_uuids": [
+              "9e651ac9-d3ae-470b-940b-92e68b7a1d44",
+              "59f114e1-14da-4a97-baed-07837c9110df",
+              "2b9e7ab4-a8f3-4638-921e-c2ebb80b17e5",
+              "8e63bc51-fa8a-46bb-b872-abda1ff54097",
+              "30b03c2b-ba55-4466-a435-c64fc7ca1f78",
+              "ffe0f8e7-57b7-4344-b484-dccc87ac19f2",
+              "253d345b-04db-4cb4-a372-af70bbb9f01c"
+            ]
           }
         ],
         "unrouted_local_pairs": [
@@ -22670,13 +22724,6 @@
             "from": "U5600.6",
             "to": "R5623.1",
             "distance_mm": 4.295,
-            "reason": "all short candidate paths obstructed"
-          },
-          {
-            "net": "WBO1_nRESET",
-            "from": "U5612.1",
-            "to": "R5662.1",
-            "distance_mm": 4.639,
             "reason": "all short candidate paths obstructed"
           },
           {
@@ -25689,6 +25736,61 @@
         "d0e23836-f7e4-4f0d-91e2-c1bfa8f6d907"
       ],
       "length_mm": 3.25
+    }
+  ],
+  "reviewed_wbo_reset_routes": [
+    {
+      "net": "WBO1_nRESET",
+      "from": "U5612.1",
+      "to": "R5662.1",
+      "layer": "B.Cu",
+      "points_mm": [
+        [
+          171.3625,
+          84.95
+        ],
+        [
+          172.3625,
+          84.45
+        ],
+        [
+          172.6125,
+          82.7
+        ],
+        [
+          173.1125,
+          82.2
+        ],
+        [
+          174.3625,
+          82.45
+        ],
+        [
+          175.1125,
+          83.2
+        ],
+        [
+          175.3625,
+          83.95
+        ],
+        [
+          176.0,
+          84.825
+        ]
+      ],
+      "width_mm": 0.2,
+      "segments": 7,
+      "vias": 0,
+      "length_mm": 7.801496,
+      "added_uuids": [
+        "9e651ac9-d3ae-470b-940b-92e68b7a1d44",
+        "59f114e1-14da-4a97-baed-07837c9110df",
+        "2b9e7ab4-a8f3-4638-921e-c2ebb80b17e5",
+        "8e63bc51-fa8a-46bb-b872-abda1ff54097",
+        "30b03c2b-ba55-4466-a435-c64fc7ca1f78",
+        "ffe0f8e7-57b7-4344-b484-dccc87ac19f2",
+        "253d345b-04db-4cb4-a372-af70bbb9f01c"
+      ]
     }
   ]
 }
