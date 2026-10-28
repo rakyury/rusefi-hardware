@@ -503,3 +503,11 @@
 
 - Removed uaBrain-gm-e38/production/README.txt. Production now contains only BOM.csv, positions.csv and uaBrain-gm-e38-PCB.zip. Manufacturing files were not edited. No commit or push.
 
+
+## 2026-10-29 - Power6GDI compact floorplan study (no pcbnew)
+
+- Added Power8GDI/hardware/design/board/compact/: pcb_sexpr.py (s-expression footprint reader), compact_floorplan.py (block demand, envelope evaluation, height budget, zone plan check, SVG), body_overrides.json (bodies/heights for pad-only donor footprints, incl. GDI electrolytics D16 x H25), floorplan_190x160.json and tests (10 pass). Runs on the gdi6_candidate PCB at 6a308e0 and core.net; no pcbnew needed. The existing board/tests still require pcbnew (13 import errors here, expected).
+- Findings: fitted body demand 10494 mm2 top / 8501 mm2 bottom plus a 186 x 37.5 mm connector strip. EMU PRO-8/16 depth (board 190 x 88) is overfull at any density (118 % top); 190 x 130 needs 60 %+; 190 x 160 fits at 50 % (47 % top / 32 % bottom). Two-face connector arrangement (100 x 180) loses. Height: 45 mm outer as placed (25 mm GDI cans on top, 10.5 mm cans on bottom), 38 mm if everything above 4 mm moves to the top side. TE34 header height not yet taken from STEP.
+- Zone plan 190 x 160 passes containment/overlap/utilization checks at 55 %. Open: ignition stage lands behind J604 while outputs are on J602; analog zone sits under the ignition zone; USB/SD need an enclosure opening; GDI capacitor count/size (direct GDI-4ch carry-over) is the main lever for depth and height.
+- Wrote docs/PCB_COMPACT_FLOORPLAN_2026_10_29.md with EMU PRO reference figures (165 x 95 x 38 / 197 x 95 x 38, Superseal 34/26/34) and three decisions for the owner: GDI capacitor rework, single vs stacked board, connector group re-sequencing before the harness pinout freezes.
+- No PCB, schematic, netlist, mechanical manifest or production files changed. No commit yet.

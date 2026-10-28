@@ -1,0 +1,174 @@
+{
+  "name": "single board 190 x 160, four TE34 on the south face, current pinout groups",
+  "status": "SCREENING_ZONE_PLAN_NOT_A_PLACEMENT",
+  "board_w": 190,
+  "board_d": 160,
+  "density_target": 0.55,
+  "origin": "top-left, y grows toward the connector face",
+  "connectors": [
+    {
+      "name": "J601 A: GDI HV, HPFP, power",
+      "rect": [
+        0.5,
+        122.5,
+        47.0,
+        160
+      ]
+    },
+    {
+      "name": "J602 B: IGN, PI, LS, VVT",
+      "rect": [
+        47.5,
+        122.5,
+        94.0,
+        160
+      ]
+    },
+    {
+      "name": "J603 C: analog, trigger, knock",
+      "rect": [
+        95.0,
+        122.5,
+        141.5,
+        160
+      ]
+    },
+    {
+      "name": "J604 D: CAN/LIN, motors, WBO, SENT",
+      "rect": [
+        142.5,
+        122.5,
+        189.0,
+        160
+      ]
+    }
+  ],
+  "zones": [
+    {
+      "name": "GDI bank A (PT2001 A, boost, caps)",
+      "side": "F",
+      "rect": [
+        2.5,
+        2.5,
+        72,
+        122
+      ],
+      "blocks": [
+        "GDI power stage/A"
+      ]
+    },
+    {
+      "name": "GDI bank B (PT2001 B, boost, caps)",
+      "side": "F",
+      "rect": [
+        72,
+        2.5,
+        141.5,
+        122
+      ],
+      "blocks": [
+        "GDI power stage/B"
+      ]
+    },
+    {
+      "name": "Ignition D2PAK + drivers",
+      "side": "F",
+      "rect": [
+        141.5,
+        62,
+        187.5,
+        122
+      ],
+      "blocks": [
+        "Ignition"
+      ]
+    },
+    {
+      "name": "WBO front parts",
+      "side": "F",
+      "rect": [
+        141.5,
+        2.5,
+        187.5,
+        62
+      ],
+      "blocks": [
+        "WBO",
+        "MCU core"
+      ]
+    },
+    {
+      "name": "Low sides + motor bridges",
+      "side": "B",
+      "rect": [
+        2.5,
+        14.5,
+        62,
+        145.5
+      ],
+      "blocks": [
+        "Low-side outputs",
+        "Motor bridges",
+        "GDI power stage/A",
+        "GDI power stage/B"
+      ]
+    },
+    {
+      "name": "GDI protection + logic power",
+      "side": "B",
+      "rect": [
+        62,
+        14.5,
+        112,
+        72
+      ],
+      "blocks": [
+        "GDI protection",
+        "Logic power"
+      ]
+    },
+    {
+      "name": "MCU core, USB, SD, permission",
+      "side": "B",
+      "rect": [
+        62,
+        72,
+        112,
+        145.5
+      ],
+      "blocks": [
+        "MCU core"
+      ]
+    },
+    {
+      "name": "Analog, VR, SENT, knock",
+      "side": "B",
+      "rect": [
+        112,
+        72,
+        187.5,
+        145.5
+      ],
+      "blocks": [
+        "Analog inputs",
+        "Digital/SENT/VR inputs",
+        "Knock"
+      ]
+    },
+    {
+      "name": "WBO back, CAN/LIN, ignition drivers",
+      "side": "B",
+      "rect": [
+        112,
+        14.5,
+        187.5,
+        72
+      ],
+      "blocks": [
+        "WBO",
+        "CAN/LIN",
+        "Ignition"
+      ]
+    }
+  ]
+}

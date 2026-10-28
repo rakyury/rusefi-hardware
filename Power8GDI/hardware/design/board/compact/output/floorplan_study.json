@@ -1,0 +1,463 @@
+{
+ "source_pcb": "/home/claude/rusefi-hardware/Power8GDI/hardware/design/board/gdi6_candidate/Power8GDI_Review.kicad_pcb",
+ "source_outline": [
+  0.0,
+  0.0,
+  245.0,
+  165.0
+ ],
+ "footprints_fitted": 1058,
+ "block_demand": {
+  "Connectors": {
+   "count": 4,
+   "F": 6975.0,
+   "B": 0.0,
+   "max_z_F": 0.0,
+   "max_z_B": 0.0
+  },
+  "GDI power stage/A": {
+   "count": 123,
+   "F": 4049.1,
+   "B": 99.7,
+   "max_z_F": 25.0,
+   "max_z_B": 2.4
+  },
+  "GDI power stage/B": {
+   "count": 123,
+   "F": 4049.1,
+   "B": 99.7,
+   "max_z_F": 25.0,
+   "max_z_B": 2.4
+  },
+  "Ignition": {
+   "count": 111,
+   "F": 1358.1,
+   "B": 690.5,
+   "max_z_F": 4.6,
+   "max_z_B": 1.8
+  },
+  "Motor bridges": {
+   "count": 74,
+   "F": 0.0,
+   "B": 1455.3,
+   "max_z_F": 0.0,
+   "max_z_B": 10.5
+  },
+  "MCU core": {
+   "count": 75,
+   "F": 806.9,
+   "B": 635.9,
+   "max_z_F": 1.8,
+   "max_z_B": 3.0
+  },
+  "Low-side outputs": {
+   "count": 138,
+   "F": 0.0,
+   "B": 1385.7,
+   "max_z_F": 0.0,
+   "max_z_B": 1.8
+  },
+  "Analog inputs": {
+   "count": 134,
+   "F": 0.0,
+   "B": 1133.4,
+   "max_z_F": 0.0,
+   "max_z_B": 1.8
+  },
+  "WBO": {
+   "count": 86,
+   "F": 230.4,
+   "B": 702.2,
+   "max_z_F": 1.8,
+   "max_z_B": 10.0
+  },
+  "GDI protection": {
+   "count": 42,
+   "F": 0.0,
+   "B": 653.2,
+   "max_z_F": 0.0,
+   "max_z_B": 2.5
+  },
+  "Digital/SENT/VR inputs": {
+   "count": 65,
+   "F": 0.0,
+   "B": 527.2,
+   "max_z_F": 0.0,
+   "max_z_B": 1.8
+  },
+  "Logic power": {
+   "count": 32,
+   "F": 0.0,
+   "B": 482.0,
+   "max_z_F": 0.0,
+   "max_z_B": 7.0
+  },
+  "CAN/LIN": {
+   "count": 30,
+   "F": 0.0,
+   "B": 324.0,
+   "max_z_F": 0.0,
+   "max_z_B": 1.8
+  },
+  "Knock": {
+   "count": 21,
+   "F": 0.0,
+   "B": 311.9,
+   "max_z_F": 0.0,
+   "max_z_B": 1.8
+  }
+ },
+ "envelopes": {
+  "current_245x165": {
+   "board_w": 245,
+   "board_d": 165,
+   "connector_faces": 1,
+   "note": "GDI6 candidate as of 2026-10-28; abandoned for compact redesign",
+   "front_avail_mm2": 30000,
+   "back_avail_mm2": 35520,
+   "front_demand_mm2": 10494,
+   "back_demand_mm2": 8501,
+   "front_util": 0.35,
+   "back_util": 0.239,
+   "gdi_front_share_of_front_avail": 0.27,
+   "connector_strip_fits": true,
+   "verdict": {
+    "at_40pct": "fits",
+    "at_50pct": "fits",
+    "at_60pct": "fits"
+   }
+  },
+  "pro8_like_190x88": {
+   "board_w": 190,
+   "board_d": 88,
+   "connector_faces": 1,
+   "note": "EMU PRO-8/16 depth (outer 95 mm); 4 x TE34 need 186 mm width",
+   "front_avail_mm2": 8880,
+   "back_avail_mm2": 13135,
+   "front_demand_mm2": 10494,
+   "back_demand_mm2": 8501,
+   "front_util": 1.182,
+   "back_util": 0.647,
+   "gdi_front_share_of_front_avail": 0.912,
+   "connector_strip_fits": true,
+   "verdict": {
+    "at_40pct": "overfull",
+    "at_50pct": "overfull",
+    "at_60pct": "overfull"
+   }
+  },
+  "single_190x130": {
+   "board_w": 190,
+   "board_d": 130,
+   "connector_faces": 1,
+   "note": "outer about 197 x 137",
+   "front_avail_mm2": 16650,
+   "back_avail_mm2": 20905,
+   "front_demand_mm2": 10494,
+   "back_demand_mm2": 8501,
+   "front_util": 0.63,
+   "back_util": 0.407,
+   "gdi_front_share_of_front_avail": 0.486,
+   "connector_strip_fits": true,
+   "verdict": {
+    "at_40pct": "overfull",
+    "at_50pct": "overfull",
+    "at_60pct": "overfull"
+   }
+  },
+  "single_190x150": {
+   "board_w": 190,
+   "board_d": 150,
+   "connector_faces": 1,
+   "note": "outer about 197 x 157",
+   "front_avail_mm2": 20350,
+   "back_avail_mm2": 24605,
+   "front_demand_mm2": 10494,
+   "back_demand_mm2": 8501,
+   "front_util": 0.516,
+   "back_util": 0.345,
+   "gdi_front_share_of_front_avail": 0.398,
+   "connector_strip_fits": true,
+   "verdict": {
+    "at_40pct": "overfull",
+    "at_50pct": "overfull",
+    "at_60pct": "fits"
+   }
+  },
+  "single_190x160": {
+   "board_w": 190,
+   "board_d": 160,
+   "connector_faces": 1,
+   "note": "outer about 197 x 167; study baseline",
+   "front_avail_mm2": 22200,
+   "back_avail_mm2": 26455,
+   "front_demand_mm2": 10494,
+   "back_demand_mm2": 8501,
+   "front_util": 0.473,
+   "back_util": 0.321,
+   "gdi_front_share_of_front_avail": 0.365,
+   "connector_strip_fits": true,
+   "verdict": {
+    "at_40pct": "overfull",
+    "at_50pct": "fits",
+    "at_60pct": "fits"
+   }
+  },
+  "two_faces_100x180": {
+   "board_w": 100,
+   "board_d": 180,
+   "connector_faces": 2,
+   "note": "2 + 2 connectors on opposite faces",
+   "front_avail_mm2": 9975,
+   "back_avail_mm2": 14345,
+   "front_demand_mm2": 10494,
+   "back_demand_mm2": 8501,
+   "front_util": 1.052,
+   "back_util": 0.593,
+   "gdi_front_share_of_front_avail": 0.812,
+   "connector_strip_fits": true,
+   "verdict": {
+    "at_40pct": "overfull",
+    "at_50pct": "overfull",
+    "at_60pct": "overfull"
+   }
+  }
+ },
+ "height_budget": {
+  "front_max": {
+   "ref": "C306",
+   "z": 25.0,
+   "value": "1300uF 50V"
+  },
+  "back_max": {
+   "ref": "C6054",
+   "z": 10.5,
+   "value": "100u 50V low ESR"
+  },
+  "back_tall_parts": [
+   {
+    "ref": "L5200",
+    "z": 7.0,
+    "value": "XAL7070-682MEC 6.8uH"
+   },
+   {
+    "ref": "C6054",
+    "z": 10.5,
+    "value": "100u 50V low ESR"
+   },
+   {
+    "ref": "C6004",
+    "z": 10.5,
+    "value": "100u 50V low ESR"
+   },
+   {
+    "ref": "C5651",
+    "z": 10.0,
+    "value": "47u 63V lowESR"
+   }
+  ],
+  "outer_height_mm": 45.1,
+  "outer_height_if_back_le_4mm": 37.7,
+  "assumptions": {
+   "wall_mm": 3.0,
+   "clearance_mm": 1.0,
+   "pcb_mm": 1.6
+  },
+  "unknown_height_footprints": [
+   "Package_QFP:LQFP-32_7x7mm_P0.8mm",
+   "Package_SO:Infineon_PG-DSO-12-11_ThermalVias",
+   "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm",
+   "Power8GDI_Board:TE_6437288-1_34way",
+   "Power8GDI_Core:TLE9104SH_PG-DSO-20-88"
+  ]
+ },
+ "zone_plan": "single board 190 x 160, four TE34 on the south face, current pinout groups",
+ "zone_report": {
+  "zones": [
+   {
+    "name": "GDI bank A (PT2001 A, boost, caps)",
+    "side": "F",
+    "rect": [
+     2.5,
+     2.5,
+     72,
+     122
+    ],
+    "blocks": [
+     "GDI power stage/A"
+    ],
+    "area_mm2": 8305,
+    "demand_mm2": 4049,
+    "utilization": 0.488,
+    "inside_board": true,
+    "target": 0.55,
+    "ok": true
+   },
+   {
+    "name": "GDI bank B (PT2001 B, boost, caps)",
+    "side": "F",
+    "rect": [
+     72,
+     2.5,
+     141.5,
+     122
+    ],
+    "blocks": [
+     "GDI power stage/B"
+    ],
+    "area_mm2": 8305,
+    "demand_mm2": 4049,
+    "utilization": 0.488,
+    "inside_board": true,
+    "target": 0.55,
+    "ok": true
+   },
+   {
+    "name": "Ignition D2PAK + drivers",
+    "side": "F",
+    "rect": [
+     141.5,
+     62,
+     187.5,
+     122
+    ],
+    "blocks": [
+     "Ignition"
+    ],
+    "area_mm2": 2760,
+    "demand_mm2": 1358,
+    "utilization": 0.492,
+    "inside_board": true,
+    "target": 0.55,
+    "ok": true
+   },
+   {
+    "name": "WBO front parts",
+    "side": "F",
+    "rect": [
+     141.5,
+     2.5,
+     187.5,
+     62
+    ],
+    "blocks": [
+     "WBO",
+     "MCU core"
+    ],
+    "area_mm2": 2737,
+    "demand_mm2": 1037,
+    "utilization": 0.379,
+    "inside_board": true,
+    "target": 0.55,
+    "ok": true
+   },
+   {
+    "name": "Low sides + motor bridges",
+    "side": "B",
+    "rect": [
+     2.5,
+     14.5,
+     62,
+     145.5
+    ],
+    "blocks": [
+     "Low-side outputs",
+     "Motor bridges",
+     "GDI power stage/A",
+     "GDI power stage/B"
+    ],
+    "area_mm2": 7794,
+    "demand_mm2": 3040,
+    "utilization": 0.39,
+    "inside_board": true,
+    "target": 0.55,
+    "ok": true
+   },
+   {
+    "name": "GDI protection + logic power",
+    "side": "B",
+    "rect": [
+     62,
+     14.5,
+     112,
+     72
+    ],
+    "blocks": [
+     "GDI protection",
+     "Logic power"
+    ],
+    "area_mm2": 2875,
+    "demand_mm2": 1135,
+    "utilization": 0.395,
+    "inside_board": true,
+    "target": 0.55,
+    "ok": true
+   },
+   {
+    "name": "MCU core, USB, SD, permission",
+    "side": "B",
+    "rect": [
+     62,
+     72,
+     112,
+     145.5
+    ],
+    "blocks": [
+     "MCU core"
+    ],
+    "area_mm2": 3675,
+    "demand_mm2": 636,
+    "utilization": 0.173,
+    "inside_board": true,
+    "target": 0.55,
+    "ok": true
+   },
+   {
+    "name": "Analog, VR, SENT, knock",
+    "side": "B",
+    "rect": [
+     112,
+     72,
+     187.5,
+     145.5
+    ],
+    "blocks": [
+     "Analog inputs",
+     "Digital/SENT/VR inputs",
+     "Knock"
+    ],
+    "area_mm2": 5549,
+    "demand_mm2": 1972,
+    "utilization": 0.355,
+    "inside_board": true,
+    "target": 0.55,
+    "ok": true
+   },
+   {
+    "name": "WBO back, CAN/LIN, ignition drivers",
+    "side": "B",
+    "rect": [
+     112,
+     14.5,
+     187.5,
+     72
+    ],
+    "blocks": [
+     "WBO",
+     "CAN/LIN",
+     "Ignition"
+    ],
+    "area_mm2": 4341,
+    "demand_mm2": 1717,
+    "utilization": 0.395,
+    "inside_board": true,
+    "target": 0.55,
+    "ok": true
+   }
+  ],
+  "overlaps": [],
+  "uncovered_block_sides": [],
+  "all_ok": true
+ },
+ "warning": "Bounding-box screening only; no routing, thermal, EMC or manufacturing claim."
+}
