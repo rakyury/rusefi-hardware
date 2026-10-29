@@ -107,3 +107,36 @@ class CandidateStudyTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+@unittest.skipUnless(CANDIDATE.exists() and NETLIST.exists(), 'candidate PCB or netlist missing')
+class ExportTests(unittest.TestCase):
+    def test_constraints_and_manifest_derive_from_plan(self):
+        import export_constraints as ex
+        parts, _ = cf.load_parts(CANDIDATE, NETLIST, COMPACT / 'body_overrides.json')
+        plan = json.loads((COMPACT / 'floorplan_190x160.json').read_text())
+        previous = json.loads((COMPACT.parents[3] / 'mechanical' / 'assembly_manifest_245x165_superseded.json').read_text())
+        lc = ex.layout_constraints(plan, parts)
+        self.assertEqual(lc['outline_mm'], [190, 160])
+        self.assertEqual(len(lc['connectors']), 4)
+        self.assertEqual(len(lc['zones']), len(plan['zones']))
+        m = ex.mechanical_manifest(plan, parts, previous)
+        p = m['parameters']
+        self.assertEqual((p['pcb_x'], p['pcb_y']), (190.0, 160.0))
+        self.assertEqual(len(p['connector_x']), 4)
+        self.assertGreater(p['base_z'], p['pcb_bottom_z'] + p['pcb_thickness'] + 25.0)
+        self.assertEqual(set(m['solids']), {'Base', 'Lid', 'PCB', *m['component_envelopes'], *[f'J_{k}_34PIN_ENVELOPE' for k in 'ABCD']})
+        sys.path.insert(0, str(COMPACT.parents[3] / 'mechanical'))
+        import build_assembly
+        build_assembly.validate_parameters(m)
+
+    def test_committed_mechanical_manifest_matches_plan(self):
+        import export_constraints as ex
+        parts, _ = cf.load_parts(CANDIDATE, NETLIST, COMPACT / 'body_overrides.json')
+        plan = json.loads((COMPACT / 'floorplan_190x160.json').read_text())
+        mech = COMPACT.parents[3] / 'mechanical'
+        previous = json.loads((mech / 'assembly_manifest_245x165_superseded.json').read_text())
+        committed = json.loads((mech / 'assembly_manifest.json').read_text())
+        derived = ex.mechanical_manifest(plan, parts, previous)
+        self.assertEqual(committed['parameters'], derived['parameters'])
+        self.assertEqual(committed['component_envelopes'], derived['component_envelopes'])

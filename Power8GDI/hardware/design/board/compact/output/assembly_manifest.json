@@ -1,0 +1,141 @@
+{
+  "status": "PRELIMINARY_CLEARANCE_ENVELOPE_ONLY",
+  "warning": "Connector representations are NOT manufacturer STEP, and PCB has no copper or finished components.",
+  "units": "mm",
+  "parameters": {
+    "pcb_x": 190.0,
+    "pcb_y": 160.0,
+    "pcb_thickness": 1.6,
+    "housing_x": 204.0,
+    "housing_y": 174.0,
+    "base_z": 44.0,
+    "lid_z": 6.0,
+    "wall": 3.0,
+    "floor": 4.0,
+    "pcb_bottom_z": 15.5,
+    "connector_width": 40.0,
+    "connector_depth": 44.0,
+    "connector_bottom_z": 18.1,
+    "connector_height": 25.0,
+    "connector_x": [
+      -71.25,
+      -23.75,
+      23.75,
+      71.25
+    ],
+    "connector_y": -65.5,
+    "screw_x": 99.0,
+    "screw_y": 84.0,
+    "m3_clearance": 3.4,
+    "perimeter_boss_radius": 3.0,
+    "pilot_radius": 1.25,
+    "base_pilot_bottom_z": 10.0,
+    "pcb_standoff_radius": 3.0,
+    "pcb_hole_diameter": 3.4,
+    "connector_opening_clearance": 1.0,
+    "boolean_overlap": 0.1,
+    "concept_only": true
+  },
+  "pcb_mounts": [
+    [
+      -89.0,
+      -74.0
+    ],
+    [
+      -89.0,
+      74.0
+    ],
+    [
+      89.0,
+      -74.0
+    ],
+    [
+      89.0,
+      74.0
+    ]
+  ],
+  "component_envelopes": {
+    "GDI_BANK_A__PT2001_A__BOOST_": [
+      68.5,
+      118.5,
+      25.0,
+      -57.75,
+      17.75
+    ],
+    "GDI_BANK_B__PT2001_B__BOOST_": [
+      68.5,
+      118.5,
+      25.0,
+      11.75,
+      17.75
+    ],
+    "IGNITION_D2PAK___DRIVERS": [
+      45.0,
+      59,
+      4.6,
+      69.5,
+      -12.0
+    ],
+    "WBO_FRONT_PARTS": [
+      45.0,
+      58.5,
+      1.8,
+      69.5,
+      47.75
+    ]
+  },
+  "connector_face_cavities": {
+    "columns": 17,
+    "rows": 2,
+    "width": 1.6,
+    "depth": 3.0,
+    "height": 2.5,
+    "pitch_x": 2.65,
+    "pitch_z": 8.2,
+    "offset_z": 6.2,
+    "front_offset_y": -0.01
+  },
+  "export": {
+    "stl_tolerance_mm": 0.1,
+    "stl_angular_tolerance_rad": 0.1
+  },
+  "validation": {
+    "volume_tolerance_mm3": 1e-06
+  },
+  "solids": [
+    "Base",
+    "Lid",
+    "PCB",
+    "GDI_BANK_A__PT2001_A__BOOST_",
+    "GDI_BANK_B__PT2001_B__BOOST_",
+    "IGNITION_D2PAK___DRIVERS",
+    "WBO_FRONT_PARTS",
+    "J_A_34PIN_ENVELOPE",
+    "J_B_34PIN_ENVELOPE",
+    "J_C_34PIN_ENVELOPE",
+    "J_D_34PIN_ENVELOPE"
+  ],
+  "geometry_fidelity": {
+    "Base": "concept CAD",
+    "Lid": "concept CAD",
+    "PCB": "envelope",
+    "GDI_BANK_A__PT2001_A__BOOST_": "envelope",
+    "GDI_BANK_B__PT2001_B__BOOST_": "envelope",
+    "IGNITION_D2PAK___DRIVERS": "envelope",
+    "WBO_FRONT_PARTS": "envelope",
+    "J_A_34PIN_ENVELOPE": "envelope",
+    "J_B_34PIN_ENVELOPE": "envelope",
+    "J_C_34PIN_ENVELOPE": "envelope",
+    "J_D_34PIN_ENVELOPE": "envelope"
+  },
+  "derived_from": {
+    "zone_plan": "single board 190 x 160, four TE34 on the south face, current pinout groups",
+    "generator": "hardware/design/board/compact/export_constraints.py",
+    "decision": "2026-10-29 single board, 190 mm width kept, enclosure height may grow",
+    "heights_mm": {
+      "front_max": 25.0,
+      "back_max": 10.5,
+      "te34_header": "not from STEP; envelope 23 mm"
+    }
+  }
+}

@@ -38,8 +38,8 @@
     "mcu": "STM32F767IIT6",
     "nominal_battery_v": 12,
     "pcb_layers": 4,
-    "pcb_width_mm": 245,
-    "pcb_height_mm": 165,
+    "pcb_width_mm": 190,
+    "pcb_height_mm": 160,
     "pcb_thickness_mm": 1.6,
     "gdi_command_map": {
       "PTA": {
@@ -57,7 +57,25 @@
         "START6": "HPFP2"
       }
     },
-    "pi_assembly": "Six high-impedance channels; application optional, shared ICs with auxiliary outputs remain fitted"
+    "pi_assembly": "Six high-impedance channels; application optional, shared ICs with auxiliary outputs remain fitted",
+    "pcb_form_decision_2026_10_29": {
+      "user_decision": "single board; keep the 190 mm width set by four TE34 headers on one face; enclosure height may grow",
+      "board_mm": [
+        190,
+        160
+      ],
+      "enclosure_outer_mm_concept": [
+        203,
+        173,
+        50
+      ],
+      "basis": "docs/PCB_COMPACT_FLOORPLAN_2026_10_29.md; bounding-box screening, not a routed proof",
+      "open": [
+        "GDI capacitor count/size (GDI-4ch carry-over)",
+        "connector group re-sequencing before harness pinout freeze",
+        "TE34 header height from STEP"
+      ]
+    }
   },
   "unfrozen": [
     "B58B30 Gen2 DI exact part number, current waveform and Vboost; IDX1050 PI exact variant/electrical data; HPFP valve profile",
@@ -65,8 +83,8 @@
     "SENT sensor list and electrical/protocol profiles",
     "LIN node models and message schedules",
     "Motor actuator loads and simultaneous current budget",
-    "PCB size, cooling, environmental and qualification limits",
-    "EGT external CAN is retained working assumption; final module/protocol pending"
+    "EGT external CAN is retained working assumption; final module/protocol pending",
+    "PCB cooling, environmental and qualification limits; 190 x 160 outline is a screening decision"
   ],
   "qualification": "development candidate; no hardware or manufacturing qualification"
 }
