@@ -1,0 +1,20 @@
+{
+  "board_sha256": "1be7af6e1ee1b9cbaa83a82b546397d794df142d0f1f54570ecd72bf63d6c80c",
+  "project_sha256": "e153a914608b366089817c7aadf84b03e1ca04ef461e0a4ed1fc27788eae4874",
+  "custom_rules_sha256": "620a6d1068a42427366375e1aed25e446c0e3ffc86ce1d7a81f9b8526dd480df",
+  "command": [
+    "kicad-cli",
+    "pcb",
+    "drc",
+    "--format",
+    "json",
+    "--all-track-errors",
+    "--severity-all",
+    "--exit-code-violations",
+    "-o",
+    "/src/Power8GDI/hardware/design/board/compact_wbo_power/candidate/drc.json",
+    "/tmp/power8gdi-drc-0r55ak4l/WBO_Power.kicad_pcb"
+  ],
+  "returncode": 0,
+  "rule_exclusions_added": false
+}
