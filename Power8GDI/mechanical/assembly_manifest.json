@@ -4,10 +4,10 @@
   "units": "mm",
   "parameters": {
     "pcb_x": 190.0,
-    "pcb_y": 160.0,
+    "pcb_y": 206.0,
     "pcb_thickness": 1.6,
     "housing_x": 204.0,
-    "housing_y": 174.0,
+    "housing_y": 220.0,
     "base_z": 44.0,
     "lid_z": 6.0,
     "wall": 3.0,
@@ -23,9 +23,9 @@
       23.75,
       71.25
     ],
-    "connector_y": -65.5,
+    "connector_y": -104.0,
     "screw_x": 99.0,
-    "screw_y": 84.0,
+    "screw_y": 107.0,
     "m3_clearance": 3.4,
     "perimeter_boss_radius": 3.0,
     "pilot_radius": 1.25,
@@ -39,49 +39,49 @@
   "pcb_mounts": [
     [
       -89.0,
-      -74.0
+      -97.0
     ],
     [
       -89.0,
-      74.0
+      97.0
     ],
     [
       89.0,
-      -74.0
+      -97.0
     ],
     [
       89.0,
-      74.0
+      97.0
     ]
   ],
   "component_envelopes": {
-    "GDI_BANK_A__PT2001_A__BOOST_": [
-      68.5,
-      118.5,
+    "GDI_BANK_A_DONOR_BLOCK__ROTA": [
+      82.5,
+      143.5,
       25.0,
-      -57.75,
-      17.75
+      -48.25,
+      25.75
     ],
-    "GDI_BANK_B__PT2001_B__BOOST_": [
-      68.5,
-      118.5,
+    "GDI_BANK_B_DONOR_BLOCK___WBO": [
+      82.5,
+      143.5,
       25.0,
-      11.75,
-      17.75
+      43.75,
+      26.75
     ],
-    "IGNITION_D2PAK___DRIVERS": [
-      45.0,
-      59,
+    "IGNITION_D2PAK_ROW": [
+      140.5,
+      17.5,
       4.6,
-      69.5,
-      -12.0
+      -23.75,
+      -60.25
     ],
-    "WBO_FRONT_PARTS": [
-      45.0,
-      58.5,
+    "MCU_AND_DECOUPLING": [
+      35,
+      34.5,
       1.8,
-      69.5,
-      47.75
+      73.0,
+      -63.75
     ]
   },
   "connector_face_cavities": {
@@ -106,10 +106,10 @@
     "Base",
     "Lid",
     "PCB",
-    "GDI_BANK_A__PT2001_A__BOOST_",
-    "GDI_BANK_B__PT2001_B__BOOST_",
-    "IGNITION_D2PAK___DRIVERS",
-    "WBO_FRONT_PARTS",
+    "GDI_BANK_A_DONOR_BLOCK__ROTA",
+    "GDI_BANK_B_DONOR_BLOCK___WBO",
+    "IGNITION_D2PAK_ROW",
+    "MCU_AND_DECOUPLING",
     "J_A_34PIN_ENVELOPE",
     "J_B_34PIN_ENVELOPE",
     "J_C_34PIN_ENVELOPE",
@@ -119,19 +119,19 @@
     "Base": "concept CAD",
     "Lid": "concept CAD",
     "PCB": "envelope",
-    "GDI_BANK_A__PT2001_A__BOOST_": "envelope",
-    "GDI_BANK_B__PT2001_B__BOOST_": "envelope",
-    "IGNITION_D2PAK___DRIVERS": "envelope",
-    "WBO_FRONT_PARTS": "envelope",
+    "GDI_BANK_A_DONOR_BLOCK__ROTA": "envelope",
+    "GDI_BANK_B_DONOR_BLOCK___WBO": "envelope",
+    "IGNITION_D2PAK_ROW": "envelope",
+    "MCU_AND_DECOUPLING": "envelope",
     "J_A_34PIN_ENVELOPE": "envelope",
     "J_B_34PIN_ENVELOPE": "envelope",
     "J_C_34PIN_ENVELOPE": "envelope",
     "J_D_34PIN_ENVELOPE": "envelope"
   },
   "derived_from": {
-    "zone_plan": "single board 190 x 160, four TE34 on the south face, current pinout groups",
+    "zone_plan": "single board 190 x 206, donor GDI copper (layout profile 190x206_donor)",
     "generator": "hardware/design/board/compact/export_constraints.py",
-    "decision": "2026-10-29 single board, 190 mm width kept, enclosure height may grow",
+    "decision": "2026-11-05 owner chose option (b): keep GDI-4ch donor copper, single 190 mm wide board, depth grows (190 x 206)",
     "heights_mm": {
       "front_max": 25.0,
       "back_max": 10.5,
