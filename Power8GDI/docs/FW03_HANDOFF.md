@@ -1,6 +1,8 @@
 # FW-03 handoff: intervention arbitration on rusEFI
 
-Updated 2026-10-23. Read this first, then `ARBITRATION.md` and `EMU_LESSONS.md`.
+Updated 2026-11-05. Read this first, then `ARBITRATION.md` and `EMU_LESSONS.md`.
+
+**What changed on 2026-11-05:** FW-03 (PRs #2 and #3) is merged into the Sport GDI6 integration (branch `power6gdi/fw-03-gdi6`, stacked on PR #4 `codex/sport-gdi6-20261025`). Fuel, lambda target and per-cylinder cut arbitration (`FuelArbiter`) is host-tested and wired into the rusEFI simulator through the fuel trim hook, in shadow and apply modes, with 6 and 4 cylinders. Active scope is six cylinders (`docs/SCOPE_2026_10_25_SPORT_GDI6.md`); the cylinder count is a parameter.
 
 ## 1. Goal and principle
 
@@ -19,9 +21,9 @@ Project rules (`Power8GDI/AGENTS.md`):
 | what | where |
 |---|---|
 | repository | `rakyury/rusefi-hardware` (fork), local sparse clone `C:\projects\rusefi-hardware` (only `Power8GDI/` + `.github`) |
-| host-testable modules | `Power8GDI/firmware/arbitration/` (accumulator, task cycle, ignition arbiter) |
-| host tests | `Power8GDI/firmware/tests/test_arbitration.cpp`, `run_arbitration_tests.sh`, `run_all_host_tests.sh` |
-| simulator glue | `Power8GDI/firmware/rusefi_sim/` (`board_common.mk`, `p8_arbitration_sim.cpp`, `run_sim_arbitration.sh`) |
+| host-testable modules | `Power8GDI/firmware/arbitration/` (accumulator, task cycle, ignition arbiter, fuel arbiter) |
+| host tests | `Power8GDI/firmware/tests/test_arbitration.cpp`, `test_fuel_arbitration.cpp`, `run_arbitration_tests.sh`, `run_all_host_tests.sh`; also `python Power8GDI/tools/run_checks.py --suite host` (entries `arbitration`, `fuel-arbitration`) |
+| simulator glue | `Power8GDI/firmware/rusefi_sim/` (`board_common.mk`, `p8_arbitration_sim.cpp` + `run_sim_arbitration.sh` for ignition, `p8_fuel_sim.cpp` + `run_sim_fuel.sh` for fuel / cylinder cut) |
 | design docs | `Power8GDI/docs/ARBITRATION.md`, `Power8GDI/docs/EMU_LESSONS.md` |
 | task card | `Power8GDI/workstreams/FW-03.md` |
 | rusEFI for the simulator | WSL Ubuntu-24.04, `~/rusefi` (ext4, not `/mnt/c`), master `f911562` |
@@ -33,8 +35,10 @@ Project rules (`Power8GDI/AGENTS.md`):
 | #2 | `power8gdi/fw-03-arbitration` | `power8gdi-rev-a` | host-tested arbitration; protective knock retard for every angle owner (`313b4f1`); `EMU_LESSONS.md` | open, not reviewed |
 | #3 | `power8gdi/fw-03-sim` | `power8gdi/fw-03-arbitration` (stacked) | simulator glue, shadow + apply modes, scenarios (`402e993`, `ed42a70`) | open, not reviewed |
 | #1 | `codex/power8gdi-resume-20261021` | — | earlier electrical/PCB/offline tools work by another agent | draft, not FW-03 |
+| #4 | `codex/sport-gdi6-20261025` | `power8gdi-rev-a` | Sport GDI6 integration (schematic, BOM, DI dispatch guard, configurator) | draft |
+| — | `power6gdi/fw-03-gdi6` | `codex/sport-gdi6-20261025` (stacked on #4) | merge of #3 (with #2) into the GDI6 integration; fuel / lambda / cylinder-cut arbitration; simulator fuel glue | local, not pushed |
 
-Merge order: #2 first, then retarget #3 to `power8gdi-rev-a`. Nothing is merged yet.
+Nothing is merged into `power8gdi-rev-a` yet. `power6gdi/fw-03-gdi6` already contains #2 and #3, so once #4 is merged, this branch can be proposed instead of #2/#3.
 
 ## 4. Environment setup (Windows server + WSL)
 
@@ -73,7 +77,17 @@ MSYS_NO_PATHCONV=1 wsl -d Ubuntu-24.04 -- bash /mnt/c/projects/rusefi-hardware/P
 
 Expected last line: `Power8GDI arbitration in rusEFI simulator: PASS`.
 
-Manual runs: `P8_SIM_SCENARIO=none|knock|owners`, `P8_SIM_APPLY=0|1`, `P8_SIM_DEBUG=1` (idle phase / TPS / rpm every 100 cycles), then `./build/rusefi_simulator <seconds>` in `~/rusefi/simulator`. The report line starts with `P8SHADOW`.
+Fuel / cylinder-cut check (same build, four runs: 6 and 4 cylinders, shadow and apply):
+
+```bash
+bash /mnt/c/projects/rusefi-hardware/Power8GDI/firmware/rusefi_sim/run_sim_fuel.sh ~/rusefi 12
+```
+
+Expected last line: `Power8GDI fuel arbitration in rusEFI simulator: PASS`.
+
+Manual runs: `P8_SIM_SCENARIO=none|knock|owners|fuelcut`, `P8_SIM_APPLY=0|1`, `P8_SIM_CYLINDERS=6`, `P8_SIM_DEBUG=1` (idle phase / TPS / rpm every 100 cycles), then `./build/rusefi_simulator <seconds>` in `~/rusefi/simulator`. Report lines start with `P8SHADOW` (ignition) and `P8FUEL` (fuel).
+
+If the build fails with `No rule to make target .../arbitration/...cpp`, the simulator's dependency files point at another checkout of the glue: delete `~/rusefi/simulator/.dep/{intervention_accumulator,task_cycle,ignition_arbiter,fuel_arbiter,p8_arbitration_sim,p8_fuel_sim}.o.d` and rebuild.
 
 ## 6. How the simulator integration works
 
@@ -82,6 +96,7 @@ Manual runs: `P8_SIM_SCENARIO=none|knock|owners`, `P8_SIM_APPLY=0|1`, `P8_SIM_DE
 - Cylinder 0 call: build the accumulator from rusEFI's knock retard (protective) and the limp/soft-limiter retard (strategy), pick the angle owner, run `IgnitionArbiter`. Cylinder 1 call (apply mode): check rusEFI's final `engineState.timingAdvance[0]`.
 - Owner order follows rusEFI `getRunningAdvance()`: cranking → launch (returns early) → idle / coasting table (replaces the angle) → ALS correction → table.
 - Shadow: mask = every owner (rusEFI semantics), so the arbiter must equal rusEFI. Apply: Power8GDI default config. The trim hook returns stock trim + (arbiter − rusEFI).
+- Fuel: hook `custom_board_getCylinderFuelTrim` (`fuel_math.cpp`, called per cylinder from `engine2.cpp`). It replaces rusEFI's trim table lookup, so the glue computes the stock trim with the same `interpolate3d`. Cylinder 0 call: knock fuel trim, `LimpManager::allowInjection()` reason and `fuelComputer.targetLambda` go into the accumulator and `FuelArbiter`. Shadow returns the stock trim; apply returns arbiter multiplier ÷ knock trim. The next cycle compares rusEFI's `injectionMass[]` with what was returned. Details and limits: `ARBITRATION.md`, section "rusEFI simulator: fuel and cylinder cut".
 
 ## 7. Results (rusEFI `f911562`, 12 s per run, emulated 1200 rpm)
 
@@ -96,6 +111,19 @@ Owner cycles below are table / overrun / idle / ALS / launch / cranking.
 
 Host tests: arbitration, Map4D, 4D blob, dual HPFP, dual PT2001: all PASS.
 
+Re-run 2026-11-05 on `power6gdi/fw-03-gdi6` (after merging into the GDI6 integration): identical numbers.
+
+Fuel / cylinder cut, scenario `fuelcut`, 2026-11-05, same rusEFI and speed:
+
+| cylinders / mode | mismatches | injectionMass checks / errors | full-cut cycles rusEFI = arbiter | soft cylinder cut |
+|---|---|---|---|---|
+| 6 / shadow | 0 | 2400 / 0 | 599 = 599 | not requested |
+| 6 / apply | 0 | 2400 / 0 | 599 = 599, mass 0 on every cylinder | 300 cycles, 900 cut events = 900.0 expected, 150 per cylinder |
+| 4 / shadow | 0 | 2400 / 0 | 599 = 599 | not requested |
+| 4 / apply | 0 | 2400 / 0 | 599 = 599, mass 0 on every cylinder | 300 cycles, 600 = 600.0, 150 per cylinder |
+
+Host tests 2026-11-05 (WSL, g++ 13.3, UBSan): `run_all_host_tests.sh` all PASS (now including `test_fuel_arbitration`), GDI6 dispatch guard PASS (16 scenario groups).
+
 ## 8. Decisions made (do not reopen without a reason)
 
 1. **Protective retard for every owner** (knock, coolant, charge temperature; retard only, never advance). EMU drops knock retard when launch/ALS/idle/overrun/cranking owns the angle (L1).
@@ -103,21 +131,29 @@ Host tests: arbitration, Map4D, 4D blob, dual HPFP, dual PT2001: all PASS.
 3. **Strategy offsets (limiters, traction, shift...) apply to the table only by default** (`correctionsApplyMask`), so they do not stack on a deliberate launch/ALS angle. This is configurable. It is a design choice, not a proven optimum; revisit with the tuner if needed.
 4. **Lambda: on a floor/ceiling conflict the richer limit wins.** EMU lets the "minimum" floor override the nitrous ceiling, which gives a lean mixture on nitrous (L2).
 5. Cylinder-cut tie-break = explicit registration order, all requesters logged in `cutCandidateMask()` (L3).
+6. **Fuel and spark cut winners are separate** (`CutMode`): a larger spark-only request cannot hide a fuel cut (L8).
+7. **Direct injection:** a spark cut from a source not allowed spark-only (default allowed: ALS, launch, rolling launch) is executed as a fuel+spark cut at the larger percentage.
+8. **Cut cylinders by debt**, not by a rotating walk: exact long-run share, every cylinder within one cut, equal shares spread in firing order.
+9. **Lambda sweep / test modulation is an offset**, ceilings last (L7).
+10. **Closed-loop freeze** during any cut plus a hold time.
 
 ## 9. Known limits
 
 - The simulator runs at one constant 1200 rpm, no load. TPS is a sensor mock (`Sensor::setMockValue`) and knock is synthetic (`KnockController::onKnockSenseCompleted`).
-- Only ignition is wired into rusEFI. Fuel, lambda, boost and cylinder cut exist only as host-tested accumulator logic.
+- Ignition and per-cylinder fuel (multipliers, fuel cylinder cut) are wired into rusEFI. Lambda target and closed-loop freeze are computed and compared but not applied (no rusEFI hook); in the scenario rusEFI's target stays 1.000, so that comparison is pass-through only. Spark-cut masks and boost are not wired.
+- The fuel cut is a zero trim. On a target it must move to the injection event: `wallFuel.adjust()` acts on the per-cylinder mass, and the HPFP feed-forward reads `injectionMass[0] × cylinders`, so a cut of cylinder 0 would zero the pump feed-forward.
 - Not mapped: flat-shift torque reduction owner, nitrous ignition retard.
 - No F7 target build, no TunerStudio config, no hardware, no engine.
 - `EMU_LESSONS.md` L6 (explicit rounding for float → int channels) is still open.
 
 ## 10. Next steps (owner has not chosen yet)
 
-1. **Fuel / cylinder cut via `custom_board_getCylinderFuelTrim`**: same shadow → apply pattern as ignition; scenarios with the rev limiter fuel cut and launch.
-2. **TunerStudio configuration** for the arbiter (owner priority, `correctionsApplyMask`, protective mask, limits).
-3. **F7 target build**: a Power8GDI board directory for the real STM32F7 instead of the simulator glue.
-4. Before fuel work, check `fuel_math.cpp`: `getCylinderFuelTrim` replaces the per-cylinder trim table when the hook is set, so the glue must call the stock trim itself (as the ignition glue does with `getInterpolatedIgnitionTrim`).
+1. **Cut at the injection event and spark cut**: per-cylinder fuel and spark masks applied where rusEFI schedules the events, so wall fuel and the HPFP feed-forward stay correct; then the GDI6 dispatch guard (`dual_gdi/gdi6_dispatch_guard`) sees the same masks.
+2. **Lambda target / closed-loop freeze**: needs a hook or a board-level replacement for the target lambda and STFT hold.
+3. **TunerStudio or own-client configuration** for the arbiter (owner priority, `correctionsApplyMask`, protective mask, `sparkOnlyAllowedMask`, limits).
+4. **F7 target build**: a Power6GDI board directory for the real STM32F7 instead of the simulator glue.
+
+Done 2026-11-05: fuel / cylinder cut via `custom_board_getCylinderFuelTrim` (the glue computes the stock trim itself).
 
 ## 11. Gotchas
 

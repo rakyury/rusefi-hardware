@@ -18,7 +18,7 @@ Many subsystems want to change fuel, ignition, lambda, boost or cut cylinders at
 | ignition | sum of offsets (deg, + = advance) | final sum clamped to `[ignitionOffsetMin, ignitionOffsetMax]` |
 | lambda target | base + sum of offsets, then max(floors), then min(ceilings) | on a floor/ceiling conflict the richer limit wins |
 | boost target | product of factors | clamped to `[0, boostFactorMax]` |
-| cylinder cut | the largest percent wins | on a tie the **earlier** request wins; every non-zero requester is recorded as a candidate |
+| cylinder cut | the largest percent wins | on a tie the **earlier** request wins; every non-zero requester is recorded as a candidate. Fuel and spark winners are also kept separately by `CutMode` (see `FuelArbiter`) |
 
 The accumulator rejects and counts non-finite or out-of-range requests (`rejectedRequests()`). A rejected request has no effect on the result.
 
@@ -66,8 +66,48 @@ Observed in rusEFI while mapping:
 - CLT/IAT timing corrections are skipped during cranking unless `useAdvanceCorrectionsForCranking` is set; knock retard is applied in all modes.
 - The idle table replaces the angle after the ALS correction is added, so at closed throttle with a separate idle table rusEFI idle silently wins over ALS. Power8GDI makes the owner priority explicit and configurable.
 
+## Fuel, lambda and cylinder cut (`FuelArbiter`)
+
+Source: `firmware/arbitration/fuel_arbiter.{h,cpp}`. Tests: `firmware/tests/test_fuel_arbitration.cpp` (run by `run_arbitration_tests.sh`). The cylinder count is a parameter (1..12, firing order validated as a permutation); the Power6GDI default is 6 with firing order 1-5-3-6-2-4. Tests use 4, 6 and 8.
+
+- **Fuel multiplier per cylinder** = accumulator fuel factor × stock per-cylinder trim; 0 for a fuel-cut cylinder; 0 everywhere on any accumulator fuel cut.
+- **Separate fuel and spark cut winners.** Each cut request names what it cuts (`CutMode::Fuel`, `Spark`, `FuelAndSpark`). The accumulator keeps the largest fuel request and the largest spark request separately (tie: earlier request). A larger spark-only request (ALS) therefore cannot hide a protective fuel cut (overboost). EMU keeps one winner with its type; see `EMU_LESSONS.md` L8.
+- **Direct injection rule.** A spark cut whose winner is not in `sparkOnlyAllowedMask` (default: ALS, launch, rolling launch) is executed as a fuel+spark cut at the larger of the fuel and spark percentages: no raw fuel into a cylinder that does not fire.
+- **Which cylinders.** An error accumulator gives the number of cylinders to cut this cycle, so the long-run fraction equals the request. Each cylinder carries a debt (its share minus its cuts); the largest debts are cut, so every cylinder takes its share within one cut. Equal debts prefer cylinders evenly spaced in firing order from a start that rotates every cycle (6 cylinders at 50 %: every other firing event, alternating halves). A plain rotating walk was tried first and aliased: 4 cylinders at 62.5 % cut two cylinders four times as often as the other two (`cutDistributionExactAndRotating` catches it).
+- **Lambda target** = accumulator rule (offsets, then floors, then ceilings; the richer limit wins), then clamped to `[lambdaMin, lambdaMax]`. A sweep or test modulation is an offset (`LambdaSource::Sweep`), so it cannot pass a ceiling. EMU replaces the final target with the sweep value after its limits; see L7.
+- **Closed-loop freeze** while any fuel or spark cut is active and for `closedLoopHoldCycles` afterwards: the sensor then sees air from cut cylinders or unburnt mixture.
+- Faults: invalid configuration → fuel cut on every cylinder; non-finite base lambda → `safeLambda`; non-finite or non-positive trim → 1.0 for that cylinder. Each sets `fault`.
+
+## rusEFI simulator: fuel and cylinder cut
+
+Source: `firmware/rusefi_sim/p8_fuel_sim.cpp`, check `run_sim_fuel.sh`.
+
+- Hook: `custom_board_getCylinderFuelTrim`, called per cylinder in `engine2.cpp`; rusEFI multiplies the result with the untrimmed mass, the bank trim and the knock fuel trim. Setting the hook replaces rusEFI's trim table lookup, so the glue computes the stock trim itself (same `interpolate3d` as `fuel_math.cpp`).
+- Inputs on cylinder 0: knock fuel trim (protective enrichment); rusEFI `LimpManager::allowInjection()` mapped by `ClearReason` (hard limit, boost, oil, lambda guard, stop, ETB, GDI → fuel-cut sources; launch and injector duty → 100 % fuel cylinder cut; anything else → `FuelCutSource::External`); `fuelComputer.targetLambda` as the base lambda.
+- **Shadow** (default): no Power8GDI strategy requests. The arbiter's per-cylinder multipliers must equal stock trim × knock trim, it must cut every cylinder exactly when rusEFI cuts injection, and its lambda target must equal rusEFI's. Stock trim is returned.
+- **Apply** (`P8_SIM_APPLY=1`, scenario `fuelcut` only): additionally a progressive soft rev-limit cylinder cut (Power8GDI strategy, fuel only, 0..100 % across rusEFI's soft window `[limit − hysteresis, limit]`). The hook returns arbiter multiplier ÷ knock trim, so the arbiter drives `injectionMass[]`. The next cycle checks that cut cylinders have mass exactly 0 and the others the arbiter ratio.
+- Scenario `fuelcut`, five phases of 300 cycles: knock fuel trim; soft window (limit 1300, hysteresis 200: 50 % at 1200 rpm); hard-limit fuel cut (limit 1100); launch fuel cut; table.
+- `P8_SIM_CYLINDERS=6` switches the simulator to six cylinders, firing order 1-5-3-6-2-4, through rusEFI's normal configuration-change path once rusEFI allows it (`hasRememberedConfiguration`). The check runs 6 and 4 cylinders.
+
+Result 2026-11-05, rusEFI master `f911562`, 12 s per run at the emulated 1200 rpm:
+
+| cylinders / mode | cycles | mismatches | mass checks / errors | rusEFI full-cut cycles = arbiter all-cut | cut reasons seen | soft-cut cycles | cut events / expected | per cylinder |
+|---|---|---|---|---|---|---|---|---|
+| 6 / shadow | 2401 | 0 | 2400 / 0 | 599 = 599 | hard limit, launch | 0 | — | — |
+| 6 / apply | 2401 | 0 | 2400 / 0 | 599 = 599 (599 cycles with mass 0 on every cylinder) | hard limit, launch | 300 | 900 / 900.0 | 150 each |
+| 4 / shadow | 2401 | 0 | 2400 / 0 | 599 = 599 | hard limit, launch | 0 | — | — |
+| 4 / apply | 2401 | 0 | 2400 / 0 | 599 = 599 (599 with mass 0) | hard limit, launch | 300 | 600 / 600.0 | 150 each |
+
+Knock fuel trim reached rusEFI's 1.30 limit in every run. The ignition check (`run_sim_arbitration.sh`) still passes unchanged with the fuel glue in the same build.
+
+Limits:
+- Lambda target and closed-loop freeze are computed and compared, not applied: rusEFI has no hook for them. In the scenario rusEFI's target stays 1.000, so the lambda comparison is a pass-through check only. Spark-cut masks are not applied.
+- A zero-trim cut relies on `getInjectionDuration(0) == 0`. On a target the cut must move to the injection event: `wallFuel.adjust()` runs on the per-cylinder mass before the duration, and the HPFP feed-forward reads `injectionMass[0] × cylinders`, so a cut of cylinder 0 would zero the pump feed-forward.
+- One constant speed, no load, synthetic knock. Simulator only.
+
 ## Not done yet
 
 - TunerStudio configuration for the arbiter; a real board target instead of the simulator glue.
-- Fuel, lambda, boost and cylinder-cut arbitration wired into rusEFI.
+- Boost arbitration wired into rusEFI; lambda target and closed-loop freeze applied; spark-cut masks applied.
+- Cylinder cut at the injection event instead of a zero trim (wall fuel, HPFP feed-forward).
 - Target build for the F7 board, timing measurements, engine validation.
