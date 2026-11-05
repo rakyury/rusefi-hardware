@@ -82,6 +82,8 @@ def main(argv=None):
             "gdi6-schedule": ["dual_gdi/gdi6_schedule_admission.cpp", "tests/test_gdi6_schedule.cpp"],
             "gdi6-dispatch": ["dual_gdi/dual_pt2001_safety.cpp", "dual_gdi/gdi6_schedule_admission.cpp",
                               "dual_gdi/gdi6_dispatch_guard.cpp", "tests/test_gdi6_dispatch_guard.cpp"],
+            "arbitration": ["arbitration/intervention_accumulator.cpp", "arbitration/task_cycle.cpp",
+                            "arbitration/ignition_arbiter.cpp", "tests/test_arbitration.cpp"],
         }
         with tempfile.TemporaryDirectory(prefix="power8gdi-host-") as build:
             for name, files in sources.items():
