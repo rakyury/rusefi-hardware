@@ -35,6 +35,7 @@ enum class FuelSource : std::uint8_t {
 enum class FuelCutSource : std::uint8_t {
     Cranking = 0, Overrun, HardRpmLimit, BoostLimit, DbwSafety, StopSwitch,
     OilPressure, LambdaGuard, HpfpCranking, HpfpDiagnostics, GdiDriverFault,
+    External,  // a cut from the host firmware (rusEFI) without its own source id
 };
 
 enum class IgnitionSource : std::uint8_t {
