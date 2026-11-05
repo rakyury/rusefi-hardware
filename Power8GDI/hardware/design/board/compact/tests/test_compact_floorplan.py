@@ -131,12 +131,26 @@ class ExportTests(unittest.TestCase):
         build_assembly.validate_parameters(m)
 
     def test_committed_mechanical_manifest_matches_plan(self):
+        # Active plan since 2026-11-05: donor GDI copper, 190 x 206 (owner option b).
         import export_constraints as ex
         parts, _ = cf.load_parts(CANDIDATE, NETLIST, COMPACT / 'body_overrides.json')
-        plan = json.loads((COMPACT / 'floorplan_190x160.json').read_text())
         mech = COMPACT.parents[3] / 'mechanical'
         previous = json.loads((mech / 'assembly_manifest_245x165_superseded.json').read_text())
-        committed = json.loads((mech / 'assembly_manifest.json').read_text())
-        derived = ex.mechanical_manifest(plan, parts, previous)
-        self.assertEqual(committed['parameters'], derived['parameters'])
-        self.assertEqual(committed['component_envelopes'], derived['component_envelopes'])
+        for plan_name, manifest_name in (('floorplan_190x206_donor.json', 'assembly_manifest.json'),
+                                         ('floorplan_190x160.json', 'assembly_manifest_190x160_superseded.json')):
+            with self.subTest(plan_name):
+                plan = json.loads((COMPACT / plan_name).read_text())
+                committed = json.loads((mech / manifest_name).read_text())
+                derived = ex.mechanical_manifest(plan, parts, previous)
+                self.assertEqual(committed['parameters'], derived['parameters'])
+                self.assertEqual(committed['component_envelopes'], derived['component_envelopes'])
+
+    def test_active_enclosure_uses_measured_connector_depth(self):
+        import export_constraints as ex
+        parts, _ = cf.load_parts(CANDIDATE, NETLIST, COMPACT / 'body_overrides.json')
+        plan = json.loads((COMPACT / 'floorplan_190x206_donor.json').read_text())
+        previous = json.loads((COMPACT.parents[3] / 'mechanical' / 'assembly_manifest_245x165_superseded.json').read_text())
+        p = ex.mechanical_manifest(plan, parts, previous)['parameters']
+        self.assertEqual((p['pcb_x'], p['pcb_y'], p['housing_x'], p['housing_y']), (190.0, 206.0, 204.0, 220.0))
+        # Header body 44 mm deep, 21 mm of it over the board.
+        self.assertEqual(p['connector_y'], round(-206 / 2 - 44 / 2 + 21, 2))

@@ -51,7 +51,9 @@ def layout_constraints(plan, parts):
 
 
 def mechanical_manifest(plan, parts, previous):
-    e = ENCLOSURE
+    e = dict(ENCLOSURE)
+    # A plan measured from a built placement states the header's real on-board depth.
+    e['connector_on_board_depth'] = plan.get('connector_on_board_depth_mm', e['connector_on_board_depth'])
     W, D = plan['board_w'], plan['board_d']
     back_z = max([p['z'] for p in parts if p['side'] == 'B' and p['z'] is not None] + [0.0])
     front_z = max([p['z'] for p in parts if p['side'] == 'F' and p['z'] is not None] + [0.0])
@@ -86,7 +88,7 @@ def mechanical_manifest(plan, parts, previous):
     m['solids'] = ['Base', 'Lid', 'PCB'] + list(envelopes) + [f'J_{k}_34PIN_ENVELOPE' for k in 'ABCD']
     m['geometry_fidelity'] = {s: ('concept CAD' if s in ('Base', 'Lid') else 'envelope') for s in m['solids']}
     m['derived_from'] = dict(zone_plan=plan['name'], generator='hardware/design/board/compact/export_constraints.py',
-                             decision='2026-10-29 single board, 190 mm width kept, enclosure height may grow',
+                             decision=plan.get('decision', '2026-10-29 single board, 190 mm width kept, enclosure height may grow'),
                              heights_mm=dict(front_max=front_z, back_max=back_z, te34_header='not from STEP; envelope 23 mm'))
     return m
 

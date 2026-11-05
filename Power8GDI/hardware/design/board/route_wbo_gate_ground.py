@@ -7,6 +7,7 @@ import math
 from collections import Counter
 import pcbnew as p
 import voltage_domains
+import layout_profile
 from route_wbo_local import Copper,LAYERS,vec,xy,bounds
 from route_wbo_can import signature
 
@@ -20,9 +21,9 @@ def route(board,netlist=None):
  fps={f.GetReference():f for f in board.GetFootprints()}
  if 'U5610' not in fps or fps['U5610'].GetValue()!='SN74LVC1G08QDBVRQ1':raise ValueError('Gate device changed')
  supply=next(q for q in fps['U5610'].Pads() if q.GetNumber()=='5')
- if supply.GetNetname()!='WBO1_3V3' or not supply.IsOnLayer(p.B_Cu) or math.dist(xy(supply),(181.1375,84.45))>1e-5:raise ValueError('Gate supply contract changed')
+ if supply.GetNetname()!='WBO1_3V3' or not supply.IsOnLayer(p.B_Cu) or math.dist(xy(supply),layout_profile.at(181.1375,84.45))>1e-5:raise ValueError('Gate supply contract changed')
  existing=list(board.GetTracks());existing_signatures=Counter(signature(t) for t in existing);plans=[]
- for label,name,endpoints,points,via in PLANS:
+ for label,name,endpoints,points,via in layout_profile.shifted(PLANS):
   for ref,pin,position in endpoints:
    pad=next(q for q in fps[ref].Pads() if q.GetNumber()==pin)
    if pad.GetNetname()!=name or not pad.IsOnLayer(p.B_Cu) or math.dist(xy(pad),position)>1e-5:raise ValueError('gate ground endpoint contract changed')

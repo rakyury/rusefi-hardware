@@ -4,21 +4,23 @@ from collections import Counter
 import math
 import pcbnew as p
 import voltage_domains
+import layout_profile
 from route_wbo_local import Copper,LAYERS,vec,xy,bounds
 from route_wbo_can import signature
 VIA=(159.,83.)
 PLANS=(('cout_return',((164.011038,91.028729),(161.,85.)),.25),('ic_ground',((163.15,85.),(161.,85.)),.25))
 def planned(board):
  result=[]
- for name,points,width in PLANS:
+ for name,points,width in layout_profile.shifted(PLANS):
   t=p.PCB_TRACK(board);t.SetStart(vec(*points[0]));t.SetEnd(vec(*points[1]));t.SetLayer(p.B_Cu);t.SetWidth(p.FromMM(width));t.SetNet(board.FindNet('GND'));result.append((name,points,width,t))
  return result
 
 def route(board,netlist=None):
  voltage_domains.configure(netlist or Path(__file__).resolve().parents[1]/'core.net')
  fps={f.GetReference():f for f in board.GetFootprints()}
+ at=layout_profile.at;VIA=at(*globals()['VIA'])
  if fps['U5604'].GetValue()!='LT3042IMSE#WTRPBF' or fps['C5662'].GetValue()!='10u 16V X7R effective>=4.7u':raise ValueError('LDO return device contract changed')
- for ref,pin,net,pos in [('U5604','8','GND',(163.15,85.)),('U5604','11','GND',(161.,85.)),('C5662','2','GND',(164.011038,91.028729)),('C5662','1','WBO1_3V3',(164.011038,88.078729))]:
+ for ref,pin,net,pos in [('U5604','8','GND',at(163.15,85.)),('U5604','11','GND',at(161.,85.)),('C5662','2','GND',at(164.011038,91.028729)),('C5662','1','WBO1_3V3',at(164.011038,88.078729))]:
   q=next(q for q in fps[ref].Pads() if q.GetNumber()==pin)
   if q.GetNetname()!=net or not q.IsOnLayer(p.B_Cu) or math.dist(xy(q),pos)>1e-5:raise ValueError('LDO return pad contract changed')
  existing=list(board.GetTracks());vias=[t for t in existing if isinstance(t,p.PCB_VIA) and xy(t)==VIA]
@@ -26,7 +28,7 @@ def route(board,netlist=None):
  via=vias[0]
  if via.GetViaType()!=p.VIATYPE_THROUGH:raise ValueError('Existing GND via type changed')
  if via.GetNetname()!='GND' or via.GetWidth(p.B_Cu)!=p.FromMM(.65) or via.GetDrillValue()!=p.FromMM(.3) or via.TopLayer()!=p.F_Cu or via.BottomLayer()!=p.B_Cu:raise ValueError('Existing GND via contract changed')
- ep=p.PCB_TRACK(board);ep.SetStart(vec(161.,85.));ep.SetEnd(vec(*VIA));ep.SetLayer(p.B_Cu);ep.SetWidth(p.FromMM(.2));ep.SetNet(board.FindNet('GND'))
+ ep=p.PCB_TRACK(board);ep.SetStart(vec(*at(161.,85.)));ep.SetEnd(vec(*VIA));ep.SetLayer(p.B_Cu);ep.SetWidth(p.FromMM(.2));ep.SetNet(board.FindNet('GND'))
  if sum(signature(t)==signature(ep) for t in existing)!=1:raise ValueError('Existing EP to via trace changed')
  plans=planned(board);counts=Counter(signature(t) for t in existing);wanted=[signature(t) for *_,t in plans]
  if any(counts[s]>1 for s in wanted):raise ValueError('Duplicate LDO return')

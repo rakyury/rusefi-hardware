@@ -7,6 +7,7 @@ import math
 from collections import Counter
 import pcbnew as p
 import voltage_domains
+import layout_profile
 from route_wbo_local import Copper,LAYERS,vec,xy,bounds
 from route_wbo_can import signature
 
@@ -20,9 +21,9 @@ def route(board,netlist=None):
  fps={f.GetReference():f for f in board.GetFootprints()}
  if 'U5602' not in fps or fps['U5602'].GetValue()!='STM32F042K6T6' or fps['C5612'].GetValue()!='100n':raise ValueError('MCU supply devices changed')
  ground=next(q for q in fps['C5612'].Pads() if q.GetNumber()=='2')
- if ground.GetNetname()!='GND' or not ground.IsOnLayer(p.F_Cu) or math.dist(xy(ground),(180.15295,66.975))>1e-5:raise ValueError('Bypass ground contract changed')
+ if ground.GetNetname()!='GND' or not ground.IsOnLayer(p.F_Cu) or math.dist(xy(ground),layout_profile.at(180.15295,66.975))>1e-5:raise ValueError('Bypass ground contract changed')
  existing=list(board.GetTracks());existing_signatures=Counter(signature(t) for t in existing);plans=[]
- for label,name,endpoints,points,via in PLANS:
+ for label,name,endpoints,points,via in layout_profile.shifted(PLANS):
   for ref,pin,position in endpoints:
    pad=next(q for q in fps[ref].Pads() if q.GetNumber()==pin)
    if pad.GetNetname()!=name or not pad.IsOnLayer(p.F_Cu) or math.dist(xy(pad),position)>1e-5:raise ValueError('MCU supply endpoint contract changed')

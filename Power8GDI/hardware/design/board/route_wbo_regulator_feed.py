@@ -7,6 +7,7 @@ from collections import Counter
 import math
 import pcbnew as p
 import voltage_domains
+import layout_profile
 from route_wbo_local import Copper,LAYERS,vec,xy,bounds
 from route_wbo_can import signature
 FEED=((164.011038,88.078729),(166.511038,85.578729),(167.511038,85.328729),(168.011038,84.828729),(168.011038,82.578729),(169.261038,81.078729),(169.261038,79.828729),(170.511038,78.328729),(170.511038,76.078729),(173.011038,73.578729),(173.761038,73.578729),(176.011038,72.578729),(177.10295,68.975))
@@ -16,10 +17,15 @@ SHORTCUT=((163.15,85.5),(163.15,86.0))
 POWER=((163.15,86.0),FEED[0])
 NET='WBO1_3V3'
 
+def frame():
+ """Route geometry translated with the configured stage B / WBO frame."""
+ return layout_profile.shifted((FEED,FRONT,SENSE,SHORTCUT,POWER))
+
 def track(board,a,b,width,layer):
  t=p.PCB_TRACK(board);t.SetStart(vec(*a));t.SetEnd(vec(*b));t.SetWidth(p.FromMM(width));t.SetLayer(layer);t.SetNet(board.FindNet(NET));return t
 
 def planned(board):
+ FEED,FRONT,SENSE,_,_=frame()
  groups=[]
  for name,points,width,layer in (('power_feed',FEED,.4,p.B_Cu),('digital_vdd',FRONT,.25,p.F_Cu),('kelvin_sense',SENSE,.2,p.B_Cu)):
   items=[track(board,a,b,width,layer) for a,b in zip(points,points[1:])]
@@ -40,11 +46,12 @@ def kelvin_guard(cap,sense,power):
 
 def route(board,netlist=None):
  voltage_domains.configure(netlist or Path(__file__).resolve().parents[1]/'core.net')
+ FEED,FRONT,SENSE,SHORTCUT,POWER=frame();at=layout_profile.at
  fps={f.GetReference():f for f in board.GetFootprints()}
  if fps['U5604'].GetValue()!='LT3042IMSE#WTRPBF' or fps['U5602'].GetValue()!='STM32F042K6T6' or fps['C5612'].GetValue()!='100n':raise ValueError('Regulator feed device contract changed')
  # Effective-capacitance-qualified replacement is an independent design review.
  if fps['C5662'].GetValue()!='10u 16V X7R effective>=4.7u':raise ValueError('Cout contract changed')
- contracts=(('U5604','10',NET,POWER[0],p.B_Cu),('U5604','9',NET,SENSE[0],p.B_Cu),('C5662','1',NET,FEED[0],p.B_Cu),('C5662','2','GND',(164.011038,91.028729),p.B_Cu),('U5602','1',NET,(176.35295,66.975),p.F_Cu),('C5612','1',NET,FRONT[-1],p.F_Cu),('C5612','2','GND',(180.15295,66.975),p.F_Cu))
+ contracts=(('U5604','10',NET,POWER[0],p.B_Cu),('U5604','9',NET,SENSE[0],p.B_Cu),('C5662','1',NET,FEED[0],p.B_Cu),('C5662','2','GND',at(164.011038,91.028729),p.B_Cu),('U5602','1',NET,at(176.35295,66.975),p.F_Cu),('C5612','1',NET,FRONT[-1],p.F_Cu),('C5612','2','GND',at(180.15295,66.975),p.F_Cu))
  pads_by_key={}
  for ref,pin,net,pos,layer in contracts:
   q=next(q for q in fps[ref].Pads() if q.GetNumber()==pin);pads_by_key[ref,pin]=q

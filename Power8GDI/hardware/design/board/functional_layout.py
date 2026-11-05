@@ -11,6 +11,7 @@ import pcbnew as p
 from build_connector import vec
 from board_cleanup import Spatial
 import voltage_domains
+import layout_profile
 
 
 def box(fp,margin=.25):
@@ -33,26 +34,28 @@ def place(board,fps,imported,netlist,manifest,nets,add_track,ground_pad,prepack_
         if name.startswith('motor4/'):name='motor4 complete bank'
         if name.startswith('logic power/'):name='logic power complete supply'
         if ref not in imported:groups[name].append(ref)
-    placed=set(imported);report=[]
-    for ref,x in [('J601',37),('J602',85),('J603',133),('J604',208)]:
-        move(fps[ref],x,161.5);placed.add(ref)
+    placed=set(imported);report=[];prof=layout_profile.profile()
+    for ref,(x,y) in prof['connectors_mm'].items():
+        move(fps[ref],x,y);placed.add(ref)
     # MCU on quiet left-front, leaving the remaining lower-front for ignition.
-    move(fps['U101'],28,116);placed.add('U101')
+    mx,my=prof['mcu_mm']
+    move(fps['U101'],mx,my);placed.add('U101')
     for entry in manifest['decoupling_placement']:
         ref=entry['reference'];cap=fps[ref]
         pad=next(q for q in fps['U101'].Pads() if q.GetNumber()==entry['mcu_pad'])
         x,y=p.ToMM(pad.GetPosition().x),p.ToMM(pad.GetPosition().y)
-        if abs(x-28)>abs(y-116):
-            sign=1 if x>28 else -1;move(cap,x+sign*3,y,0 if sign>0 else 180);out=(sign,0)
+        if abs(x-mx)>abs(y-my):
+            sign=1 if x>mx else -1;move(cap,x+sign*3,y,0 if sign>0 else 180);out=(sign,0)
         else:
-            sign=1 if y>116 else -1;move(cap,x,y+sign*3,270 if sign>0 else 90);out=(0,sign)
+            sign=1 if y>my else -1;move(cap,x,y+sign*3,270 if sign>0 else 90);out=(0,sign)
         a=next(q for q in cap.Pads() if q.GetNumber()=='1');g=next(q for q in cap.Pads() if q.GetNumber()=='2')
         add_track(board,nets[pad.GetNetname()],[(x,y),(p.ToMM(a.GetPosition().x),p.ToMM(a.GetPosition().y))],.25)
         ground_pad(board,g,nets,out);placed.add(ref)
     # Six D2PAK power cells, two rows. Gate at left, emitter below left;
     # shunt sits immediately below emitter, with sense comparator on reverse.
+    cells=prof['ignition_cells'];(ox,oy),(px,py),cols=cells['origin_mm'],cells['pitch_mm'],cells['columns']
     for ch in range(1,7):
-        n=5420+(ch-1)*20;x=61+24*((ch-1)%4);y=101+23*((ch-1)//4)
+        n=5420+(ch-1)*20;x=ox+px*((ch-1)%cols);y=oy+py*((ch-1)//cols)
         move(fps[f'Q{n}'],x,y);placed.add(f'Q{n}')
         move(fps[f'R{n+7}'],x-8,y+10,0);placed.add(f'R{n+7}')
         # TO-263 lead centres are -7.65 mm from package origin: putting a
@@ -66,12 +69,12 @@ def place(board,fps,imported,netlist,manifest,nets,add_track,ground_pad,prepack_
     # Switching supply geometry owns the first choice of free space. Generic
     # area packing cannot substitute for Cin/IC/L/Cout loop placement.
     from route_logic_power_local import place_and_route as logic_power
-    supply=logic_power(board,fps,nets,placed,region=(5,5,151,55))
+    supply=logic_power(board,fps,nets,placed,region=tuple(prof['logic_power_region_mm']))
     if any(c.get('anchor_mm') is None for c in supply['cells'].values()):
         raise ValueError('Compact logic supply placement failed: '+str(supply))
     placed.update(supply['placed_references']);report.append({'domain':'compact logic supply','local_module':supply})
     from route_wbo_local import place_and_route as wbo_local
-    wbo=wbo_local(board,fps,nets,placed,regions={1:(153,52,197,142)})
+    wbo=wbo_local(board,fps,nets,placed,regions={1:tuple(prof['wbo_regions_mm']['1'])})
     placed.update(wbo['placed_references']);report.append({'domain':'single WBO local circuit','local_module':wbo})
     # Register copper and component obstacles independently for each assembly side.
     occupied={p.F_Cu:Spatial(),p.B_Cu:Spatial()}
@@ -98,27 +101,7 @@ def place(board,fps,imported,netlist,manifest,nets,add_track,ground_pad,prepack_
                     if pad.GetAttribute() not in (p.PAD_ATTRIB_PTH,p.PAD_ATTRIB_NPTH):continue
                     b=pad.GetBoundingBox();occupied[layer].add((p.ToMM(b.GetX())-.3,p.ToMM(b.GetY())-.3,p.ToMM(b.GetRight())+.3,p.ToMM(b.GetBottom())+.3))
     # Named domains; future sheet titles match by function, not numeric ref hacks.
-    def region(name):
-        if name.startswith('Ignition ') and 'permission' not in name:
-            ch=int(name.split()[1]);x=49+24*((ch-1)%4);y=91+23*((ch-1)//4)
-            return (x,y,x+24,y+23),(x+12,y+11),0
-        if name.startswith('Ignition permission'):return (49,91,151,142),(99,113),1
-        if 'low-side' in name.lower():return (5,55,151,92),(75,75),2
-        if 'H-bridge' in name or name.startswith('motor4 '):return (5,5,151,55),(110,25),3
-        if 'battery' in name or '3V3 logic' in name or name.startswith('logic power'):return (5,5,58,52),(30,25),3
-        if name in ('gdi/protection b','GDI bank B reference candidate'):return (156,5,239,52),(190,24),4
-        if 'gdi/' in name or 'GDI bank' in name:return (5,5,151,55),(75,45),4
-        if 'wbo' in name.lower():
-            x=153 if 'wbo1' in name else 198
-            return (x,52,x+44,142),(x+22,108),5
-        if 'MCU' in name or 'permission' in name:return (5,94,48,142),(26,116),6
-        if 'USB' in name or 'microSD' in name:return (5,94,48,142),(12,103),0
-        if 'knock' in name.lower():return (156,5,239,82),(220,18),6
-        if 'sensor trackers' in name.lower():return (156,5,239,142),(216,45),6
-        if name=='Hall and SENT receiver bank 2':return (146,94,155,142),(151,116),7
-        # Quiet inputs may share unused space around the WBO analogue region;
-        # actual placed bodies/pads remain hard obstacles on that same side.
-        return (156,5,239,142),(195,28),7
+    region=layout_profile.region
     # Within each functional group, place packages first and place passives near
     # already placed pins on their own low-fanout nets. No fallback off-board.
     refs_by_net=defaultdict(set)

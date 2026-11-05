@@ -47,6 +47,8 @@ def arrange_references(board):
     for g in board.GetDrawings():
         if g.GetLayer() in obstacles:obstacles[g.GetLayer()].add(box(g,.15))
     moved=[];unplaced=[]
+    from layout_profile import outline
+    width,height=outline()
     for fp in sorted(footprints,key=lambda f:f.GetReference()):
         field=fp.Reference();layer=field.GetLayer()
         if layer not in obstacles or not field.IsVisible():continue
@@ -63,7 +65,7 @@ def arrange_references(board):
         found=False
         for x,y in candidates:
             field.SetPosition(p.VECTOR2I(p.FromMM(x),p.FromMM(y)));bounds=box(field,.15)
-            if bounds[0]<.3 or bounds[1]<.3 or bounds[2]>244.7 or bounds[3]>164.7:continue
+            if bounds[0]<.3 or bounds[1]<.3 or bounds[2]>width-.3 or bounds[3]>height-.3:continue
             if obstacles[layer].collides(bounds):continue
             obstacles[layer].add(bounds);found=True
             if (x,y)!=origin:moved.append({'reference':fp.GetReference(),'from_mm':origin,'to_mm':[x,y]})

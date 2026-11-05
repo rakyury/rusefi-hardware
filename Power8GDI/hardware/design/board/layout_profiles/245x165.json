@@ -1,0 +1,31 @@
+{
+  "name": "245x165 working outline (builder constants before 2026-11-05)",
+  "status": "Regression profile: must reproduce the sealed gdi6_candidate placement",
+  "outline_mm": [245, 165],
+  "ground_plane_inset_mm": 1,
+  "stages": {
+    "A": {"target_mm": [5, 5], "angle_deg": 0},
+    "B": {"target_mm": [157, 2], "angle_deg": 90}
+  },
+  "connectors_mm": {"J601": [37, 161.5], "J602": [85, 161.5], "J603": [133, 161.5], "J604": [208, 161.5]},
+  "mcu_mm": [28, 116],
+  "ignition_cells": {"origin_mm": [61, 101], "pitch_mm": [24, 23], "columns": 4},
+  "logic_power_region_mm": [5, 5, 151, 55],
+  "wbo_regions_mm": {"1": [153, 52, 197, 142]},
+  "label_mm": [70, 92],
+  "regions": {
+    "ignition_permission": {"rect_mm": [49, 91, 151, 142], "anchor_mm": [99, 113], "priority": 1},
+    "low_side": {"rect_mm": [5, 55, 151, 92], "anchor_mm": [75, 75], "priority": 2},
+    "motor": {"rect_mm": [5, 5, 151, 55], "anchor_mm": [110, 25], "priority": 3},
+    "logic_power": {"rect_mm": [5, 5, 58, 52], "anchor_mm": [30, 25], "priority": 3},
+    "gdi_protection_b": {"rect_mm": [156, 5, 239, 52], "anchor_mm": [190, 24], "priority": 4},
+    "gdi": {"rect_mm": [5, 5, 151, 55], "anchor_mm": [75, 45], "priority": 4},
+    "wbo_other": {"rect_mm": [198, 52, 242, 142], "anchor_mm": [220, 108], "priority": 5},
+    "mcu": {"rect_mm": [5, 94, 48, 142], "anchor_mm": [26, 116], "priority": 6},
+    "usb_sd": {"rect_mm": [5, 94, 48, 142], "anchor_mm": [12, 103], "priority": 0},
+    "knock": {"rect_mm": [156, 5, 239, 82], "anchor_mm": [220, 18], "priority": 6},
+    "sensor_trackers": {"rect_mm": [156, 5, 239, 142], "anchor_mm": [216, 45], "priority": 6},
+    "hall_sent_bank2": {"rect_mm": [146, 94, 155, 142], "anchor_mm": [151, 116], "priority": 7},
+    "default": {"rect_mm": [156, 5, 239, 142], "anchor_mm": [195, 28], "priority": 7}
+  }
+}
