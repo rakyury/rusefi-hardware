@@ -84,6 +84,8 @@ def main(argv=None):
                               "dual_gdi/gdi6_dispatch_guard.cpp", "tests/test_gdi6_dispatch_guard.cpp"],
             "arbitration": ["arbitration/intervention_accumulator.cpp", "arbitration/task_cycle.cpp",
                             "arbitration/ignition_arbiter.cpp", "tests/test_arbitration.cpp"],
+            "fuel-arbitration": ["arbitration/intervention_accumulator.cpp", "arbitration/fuel_arbiter.cpp",
+                                 "tests/test_fuel_arbitration.cpp"],
         }
         with tempfile.TemporaryDirectory(prefix="power8gdi-host-") as build:
             for name, files in sources.items():

@@ -31,6 +31,8 @@ void InterventionAccumulator::reset() {
     hasFloor_ = false;
     boostFactor_ = 1.0f;
     cut_ = CylinderCut{};
+    fuelCut_ = CylinderCut{};
+    sparkCut_ = CylinderCut{};
     fuelMask_ = fuelCutMask_ = ignitionMask_ = lambdaMask_ = boostMask_ = 0;
     cutCandidates_ = 0;
     rejected_ = 0;
@@ -120,7 +122,17 @@ bool InterventionAccumulator::multiplyBoost(BoostSource src, float factor) {
 
 bool InterventionAccumulator::requestCylinderCut(CylinderCutSource src, float percent,
                                                  std::uint8_t pattern) {
-    if (!std::isfinite(percent)) {
+    return cutRequest(src, percent, pattern, CutMode::FuelAndSpark);
+}
+
+bool InterventionAccumulator::requestCylinderCut(CylinderCutSource src, float percent, CutMode mode) {
+    return cutRequest(src, percent, static_cast<std::uint8_t>(mode), mode);
+}
+
+bool InterventionAccumulator::cutRequest(CylinderCutSource src, float percent, std::uint8_t pattern,
+                                         CutMode mode) {
+    const auto m = static_cast<unsigned>(mode);
+    if (!std::isfinite(percent) || m == 0 || m > 3) {
         return reject();
     }
     percent = clampf(percent, 0.0f, 100.0f);
@@ -128,8 +140,15 @@ bool InterventionAccumulator::requestCylinderCut(CylinderCutSource src, float pe
         return true;  // valid "no cut" request
     }
     cutCandidates_ |= bit(src);
-    if (percent > cut_.percent) {  // strict: on a tie the earlier request keeps priority
+    // Strict comparisons: on a tie the earlier request keeps priority.
+    if (percent > cut_.percent) {
         cut_ = CylinderCut{percent, src, pattern};
+    }
+    if ((m & 1u) && percent > fuelCut_.percent) {
+        fuelCut_ = CylinderCut{percent, src, pattern};
+    }
+    if ((m & 2u) && percent > sparkCut_.percent) {
+        sparkCut_ = CylinderCut{percent, src, pattern};
     }
     return true;
 }

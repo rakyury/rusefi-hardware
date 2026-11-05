@@ -12,7 +12,10 @@
 //   lambda target      sum of offsets, then max(all floors), then min(all ceilings):
 //                      on a conflict the richer (lower) limit wins, lean is the risky side
 //   boost target       product of all factors
-//   cylinder cut       the largest request wins; on a tie the EARLIER request wins
+//   cylinder cut       the largest request wins; on a tie the EARLIER request wins.
+//                      Each request also names what it cuts (fuel, spark or both);
+//                      the fuel and spark winners are kept separately, so a
+//                      spark-only request can never hide a fuel-cut request
 //
 // Every request carries a source id; the set of active sources is kept as a
 // bit mask for logging. Non-finite or out-of-range requests are rejected
@@ -40,7 +43,7 @@ enum class IgnitionSource : std::uint8_t {
 };
 
 enum class LambdaSource : std::uint8_t {
-    NitrousCeiling = 0, CoolantTemp, ChargeTemp, ExhaustTemp, Custom, Minimum,
+    NitrousCeiling = 0, CoolantTemp, ChargeTemp, ExhaustTemp, Custom, Minimum, Knock, Sweep,
 };
 
 enum class BoostSource : std::uint8_t {
@@ -66,6 +69,9 @@ struct AccumulatorLimits {
         (1u << static_cast<unsigned>(IgnitionSource::ChargeTemp));
 };
 
+// What a cylinder-cut request removes. Bit 0 = fuel, bit 1 = spark.
+enum class CutMode : std::uint8_t { Fuel = 1, Spark = 2, FuelAndSpark = 3 };
+
 struct CylinderCut {
     float percent = 0.0f;              // 0..100
     CylinderCutSource source = CylinderCutSource::None;
@@ -87,7 +93,9 @@ public:
     bool limitLambdaAbove(LambdaSource src, float ceiling);     // target <= ceiling
     bool limitLambdaBelow(LambdaSource src, float floor);       // target >= floor
     bool multiplyBoost(BoostSource src, float factor);
+    // Cuts fuel and spark. Kept for subsystems that only know one cut type.
     bool requestCylinderCut(CylinderCutSource src, float percent, std::uint8_t pattern);
+    bool requestCylinderCut(CylinderCutSource src, float percent, CutMode mode);
 
     // --- results ---
     float fuelFactor() const;                                  // 0 when any cut is active
@@ -96,7 +104,9 @@ public:
     float protectiveIgnitionOffset() const;                    // retard-only part of protective sources, <= 0
     float applyLambda(float baseLambda) const;                 // base + offsets, floor, ceiling
     float boostFactor() const;
-    CylinderCut cylinderCut() const { return cut_; }
+    CylinderCut cylinderCut() const { return cut_; }          // overall winner, any mode
+    CylinderCut fuelCylinderCut() const { return fuelCut_; }  // winner among requests that cut fuel
+    CylinderCut sparkCylinderCut() const { return sparkCut_; }// winner among requests that cut spark
 
     std::uint16_t fuelMask() const { return fuelMask_; }
     std::uint16_t fuelCutMask() const { return fuelCutMask_; }
@@ -108,6 +118,7 @@ public:
 
 private:
     bool reject();
+    bool cutRequest(CylinderCutSource src, float percent, std::uint8_t pattern, CutMode mode);
 
     AccumulatorLimits limits_;
     float fuelFactor_ = 1.0f;
@@ -120,6 +131,8 @@ private:
     bool hasFloor_ = false;
     float boostFactor_ = 1.0f;
     CylinderCut cut_{};
+    CylinderCut fuelCut_{};
+    CylinderCut sparkCut_{};
     std::uint16_t fuelMask_ = 0;
     std::uint16_t fuelCutMask_ = 0;
     std::uint16_t ignitionMask_ = 0;
