@@ -48,7 +48,9 @@ open. PCB pads/trace exports alone do not demonstrate electrical qualification.
 The outline, donor stage frames, connector/MCU/ignition anchors and functional
 regions come from `layout_profiles/<name>.json` (`--layout-profile`, default
 `layout_profiles/245x165.json`). `compare_boards.py A B` proves two builds are
-geometrically identical. See `docs/PCB_LAYOUT_PROFILE_2026_11_05.md`.
+geometrically identical. `ground_stitch.py <board>` adds guarded GND vias for
+islands on a saved, filled candidate (one per island; refused where copper,
+holes, mask or the edge leave no room). See `docs/PCB_LAYOUT_PROFILE_2026_11_05.md`.
 
 Run portable contract tests with:
 
