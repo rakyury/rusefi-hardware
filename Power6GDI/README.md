@@ -7,6 +7,17 @@ redesign: 6 DI + 6 PI, 2 HPFP, DBW + EWG, one wideband controller. Start with
 The eight-channel descriptions below are historical context until regenerated
 artifacts and their evidence are explicitly updated.
 
+**Renamed on 2026-11-05** from Power8GDI to Power6GDI (directory `Power8GDI/` →
+`Power6GDI/`). KiCad library, sheet and file identifiers (`Power8GDI_Core`,
+`Power8GDI_Review`, ...) keep the old prefix, and committed netlist exports still
+record their source as `/src/Power8GDI/...`: those files are hash-bound to the BOM
+and cost report, so they change together at the next schematic regeneration and
+re-seal, not by text substitution. Historical reviews and logs keep the old name.
+
+**Board outline since 2026-11-05:** 190 × 206 mm with the donor GDI-4ch copper,
+concept enclosure 204 × 220 × 50 mm; see
+[the layout profile record](docs/PCB_LAYOUT_PROFILE_2026_11_05.md).
+
 **Status: interface definition / floorplan only; NOT an electrically completed PCB or a fabrication deliverable.**
 
 ## Connector decision
