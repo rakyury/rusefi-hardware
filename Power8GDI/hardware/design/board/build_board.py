@@ -21,6 +21,7 @@ from copper_transfer import audited_copper
 from net_contract import read_netlists, compare_pad_assignments
 from board_cleanup import arrange_references, remove_dangling, Spatial
 import voltage_domains
+import layout_profile
 
 HERE = Path(__file__).resolve().parent
 _FOOTPRINT_CACHE = {}
@@ -114,7 +115,8 @@ def add_plane(board,nets):
     zone.SetLocalClearance(p.FromMM(.25));zone.SetThermalReliefGap(p.FromMM(.3));zone.SetThermalReliefSpokeWidth(p.FromMM(.4))
     zone.SetPadConnection(p.ZONE_CONNECTION_FULL)
     poly=zone.Outline();poly.NewOutline()
-    for x,y in [(1,1),(244,1),(244,164),(1,164)]: poly.Append(p.FromMM(x),p.FromMM(y))
+    (w,h),inset=layout_profile.outline(),layout_profile.profile()['ground_plane_inset_mm']
+    for x,y in [(inset,inset),(w-inset,inset),(w-inset,h-inset),(inset,h-inset)]: poly.Append(p.FromMM(x),p.FromMM(y))
     board.Add(zone)
 
 
@@ -321,6 +323,8 @@ def insert_stackup(path):
 def build(args):
     out=args.output_dir.resolve();out.mkdir(parents=True,exist_ok=True)
     design=args.design_root.resolve()
+    layout_profile.configure(args.layout_profile)
+    prof=layout_profile.profile();w,h=layout_profile.outline()
     library=HERE/'Power8GDI_Board.pretty';library.mkdir(exist_ok=True)
     p.PCB_IO_MGR.PluginFind(p.PCB_IO_MGR.KICAD_SEXP).FootprintSave(str(library),make_footprint())
     rows,aliases=connector_contract(args.pinout,out/'connector_contract.xml')
@@ -341,12 +345,13 @@ def build(args):
     nets={}
     for name in sorted(set(assignments.values())):
         net=p.NETINFO_ITEM(board,name);board.Add(net);nets[name]=net
-    for a,b in [((0,0),(245,0)),((245,0),(245,165)),((245,165),(0,165)),((0,165),(0,0))]:
+    for a,b in [((0,0),(w,0)),((w,0),(w,h)),((w,h),(0,h)),((0,h),(0,0))]:
         edge=p.PCB_SHAPE(board);edge.SetShape(p.SHAPE_T_SEGMENT);edge.SetStart(vec(*a));edge.SetEnd(vec(*b));edge.SetWidth(p.FromMM(.05));edge.SetLayer(p.Edge_Cuts);board.Add(edge)
     footprints={};source=p.LoadBoard(str(args.source_board));oldfps={f.GetReference():f for f in source.GetFootprints()}
     mapping=json.loads((design/'gdi/reference_mapping.json').read_text())
     audit={}; imported=set()
-    for stage,target,angle in [('A',(5,5),0),('B',(157,2),90)]:
+    for stage in 'AB':
+        target,angle=tuple(prof['stages'][stage]['target_mm']),prof['stages'][stage]['angle_deg']
         print(f'Auditing stage {stage} copper',flush=True)
         refmap=mapping[stage]['reference_map']
         netmap,tracks,report=audited_copper(source,refmap,assignments)
@@ -438,7 +443,7 @@ def build(args):
     local_copper_ids={t.m_Uuid.AsString() for t in board.GetTracks()}-donor_copper_ids
     add_plane(board,nets)
     title=board.GetTitleBlock();title.SetTitle('Power8GDI routed subdomains / INCOMPLETE ENGINEERING REVIEW');title.SetRevision('A engineering candidate')
-    label=p.PCB_TEXT(board);label.SetText('Power6GDI RevA - INCOMPLETE / DO NOT FABRICATE');label.SetPosition(vec(70,92));label.SetTextSize(vec(1.3,1.3));label.SetLayer(p.F_SilkS);board.Add(label)
+    label=p.PCB_TEXT(board);label.SetText('Power6GDI RevA - INCOMPLETE / DO NOT FABRICATE');label.SetPosition(vec(*prof['label_mm']));label.SetTextSize(vec(1.3,1.3));label.SetLayer(p.F_SilkS);board.Add(label)
     # Assign every source component and audit all pads before saving anything.
     actual=defaultdict(list)
     for fp in board.GetFootprints():
@@ -468,7 +473,7 @@ def build(args):
     # AFTER the final save; otherwise KiCad overwrites .2 mm with its 0 mm default.
     project_file(dest.with_suffix('.kicad_pro'),root_path,board)
     report={'kicad_version':p.GetBuildVersion(),'qualification':'INCOMPLETE_ENGINEERING_REVIEW_DO_NOT_FABRICATE',
-            'outline_mm':[245,165],'copper_layers':4,'thickness_mm':1.6,'source_netlists':sources,
+            'outline_mm':[w,h],'layout_profile':layout_profile.provenance(),'copper_layers':4,'thickness_mm':1.6,'source_netlists':sources,
             'source_reference_pcb_sha256':digest(args.source_board),'source_reference_mapping_sha256':digest(design/'gdi/reference_mapping.json'),
             'connector_pinout_sha256':digest(args.pinout),'connector_aliases':aliases,'components':len(components),
             'assigned_component_pins':len(assignments),'pad_net_mismatches':errors,'tracks_vias':len(list(board.GetTracks())),
@@ -489,7 +494,8 @@ if __name__=='__main__':
     parser.add_argument('--pinout',type=Path,default=HERE.parents[2]/'pinout/power8gdi_revA_pinout.csv')
     parser.add_argument('--output-dir',type=Path,default=HERE/'review')
     parser.add_argument('--grouped-outputs',action='store_true',help='Require four-channel LS banks to fit together; fail on current geometry conflicts')
-    parser.add_argument('--functional-layout',action='store_true',default=True,help='Use functional regions within the original245x165 outline (default)')
+    parser.add_argument('--layout-profile',type=Path,default=layout_profile.DEFAULT,help='Outline, stage frames and functional regions (default: 245x165 regression profile)')
+    parser.add_argument('--functional-layout',action='store_true',default=True,help='Use functional regions of the layout profile (default)')
     parser.add_argument('--legacy-placement',dest='functional_layout',action='store_false',help='Reproduce the obsolete staging placement for diagnosis only')
     parser.add_argument('--prepack-output',type=Path,help='Save unplaced diagnostic input and fixed-reference list for local module development')
     build(parser.parse_args())

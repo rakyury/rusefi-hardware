@@ -7,6 +7,7 @@ import math
 from collections import Counter
 import pcbnew as p
 import voltage_domains
+import layout_profile
 from route_wbo_local import Copper,LAYERS,vec,xy,bounds
 from route_wbo_can import signature
 
@@ -23,11 +24,11 @@ def route(board,netlist=None):
  voltage_domains.configure(netlist or Path(__file__).resolve().parents[1]/'core.net')
  fps={f.GetReference():f for f in board.GetFootprints()}
  if 'U5602' not in fps or fps['U5602'].GetValue()!='STM32F042K6T6' or fps['C5612'].GetValue()!='100n':raise ValueError('MCU ground devices changed')
- for ref,pin,position in (('U5602','1',(176.35295,66.975)),('C5612','1',(178.60295,66.975))):
+ for ref,pin,position in layout_profile.shifted((('U5602','1',(176.35295,66.975)),('C5612','1',(178.60295,66.975)))):
   supply=next(q for q in fps[ref].Pads() if q.GetNumber()==pin)
   if supply.GetNetname()!='WBO1_3V3' or not supply.IsOnLayer(p.F_Cu) or math.dist(xy(supply),position)>1e-5:raise ValueError('MCU supply contract changed')
  existing=list(board.GetTracks());existing_signatures=Counter(signature(t) for t in existing);plans=[]
- for label,name,endpoints,points,via in PLANS:
+ for label,name,endpoints,points,via in layout_profile.shifted(PLANS):
   for ref,pin,position in endpoints:
    pad=next(q for q in fps[ref].Pads() if q.GetNumber()==pin)
    if pad.GetNetname()!=name or not pad.IsOnLayer(p.F_Cu) or math.dist(xy(pad),position)>1e-5:raise ValueError('logic ground endpoint contract changed')

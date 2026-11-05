@@ -4,6 +4,7 @@ from pathlib import Path
 import math
 import pcbnew as p
 import voltage_domains
+import layout_profile
 from route_wbo_local import Copper, LAYERS, vec, xy, bounds
 from route_wbo_can import signature
 
@@ -15,6 +16,7 @@ POINTS = ((171.3625,84.95),(172.3625,84.45),(172.6125,82.7),
 
 def route(board, netlist=None):
     voltage_domains.configure(netlist or Path(__file__).resolve().parents[1]/'core.net')
+    POINTS = layout_profile.shifted(globals()['POINTS'])
     fps = {f.GetReference(): f for f in board.GetFootprints()}
     if (fps['U5612'].GetValue() != 'TPS3808G33QDBVRQ1'
             or fps['R5662'].GetValue() != '10k'):

@@ -6,6 +6,7 @@ from pathlib import Path
 import math
 import pcbnew as p
 import voltage_domains
+import layout_profile
 from route_wbo_local import Copper,LAYERS,vec,xy,bounds
 from route_wbo_can import signature
 
@@ -23,7 +24,7 @@ def route(board,netlist=None):
  fps={f.GetReference():f for f in board.GetFootprints()}
  if fps['U5605'].GetValue()!='TJA1051T/3/1J' or fps['C5618'].GetValue()!='100n':raise ValueError('VIO parts changed')
  existing=list(board.GetTracks());existing_signatures={signature(t) for t in existing};plans=[]
- for label,name,endpoints,points,via in PLANS:
+ for label,name,endpoints,points,via in layout_profile.shifted(PLANS):
   for ref,pin,position in endpoints:
    pad=next(q for q in fps[ref].Pads() if q.GetNumber()==pin)
    if pad.GetNetname()!=name or not pad.IsOnLayer(p.B_Cu) or math.dist(xy(pad),position)>1e-5:raise ValueError('VIO endpoint contract changed')

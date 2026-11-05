@@ -7,6 +7,7 @@ from pathlib import Path
 import math
 import pcbnew as p
 import voltage_domains
+import layout_profile
 from route_wbo_local import Copper, LAYERS, vec, xy, bounds
 
 PLANS=(
@@ -30,7 +31,8 @@ def route(board,netlist=None):
     for ref,pin,net in [('U5602','17','WBO1_3V3'),('U5605','5','WBO1_3V3'),('U5605','3','+5V_CORE')]:
         if pad(ref,pin).GetNetname()!=net:raise ValueError('WBO logic supply changed')
     plans=[]
-    for name,ap,bp,via,front,back in PLANS:
+    # PLANS are stated in the reviewed WBO frame; the profile may translate it.
+    for name,ap,bp,via,front,back in layout_profile.shifted(PLANS):
         a,b=pad('U5602',ap),pad('U5605',bp)
         if a.GetNetname()!=name or b.GetNetname()!=name or not a.IsOnLayer(p.F_Cu) or not b.IsOnLayer(p.B_Cu):raise ValueError('WBO endpoint contract changed')
         if math.dist(xy(a),front[0])>1e-5 or math.dist(xy(b),back[-1])>1e-5:raise ValueError('WBO placement changed')
