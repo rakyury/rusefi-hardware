@@ -1,31 +1,247 @@
 {
   "name": "190x222 donor-copper feasibility evidence (option b, ignition on top)",
   "status": "EVIDENCE ONLY - not a candidate; tests whether both GDI-4ch donor stages plus top-side ignition and MCU fit a 190 mm wide single board",
-  "outline_mm": [190, 222],
+  "outline_mm": [
+    190,
+    222
+  ],
   "ground_plane_inset_mm": 1,
   "stages": {
-    "A": {"target_mm": [5, 5], "angle_deg": 90},
-    "B": {"target_mm": [97, 5], "angle_deg": 90}
+    "A": {
+      "target_mm": [
+        5,
+        5
+      ],
+      "angle_deg": 90
+    },
+    "B": {
+      "target_mm": [
+        97,
+        5
+      ],
+      "angle_deg": 90
+    }
   },
-  "connectors_mm": {"J601": [23.75, 218.5], "J602": [71.25, 218.5], "J603": [118.75, 218.5], "J604": [166.25, 218.5]},
-  "mcu_mm": [168, 167],
-  "ignition_cells": {"origin_mm": [15, 162], "pitch_mm": [24, 23], "columns": 6},
-  "logic_power_region_mm": [5, 5, 88, 60],
-  "wbo_regions_mm": {"1": [93, 55, 137, 145]},
-  "label_mm": [40, 151],
+  "connectors_mm": {
+    "J601": [
+      23.75,
+      218.5
+    ],
+    "J602": [
+      71.25,
+      218.5
+    ],
+    "J603": [
+      118.75,
+      218.5
+    ],
+    "J604": [
+      166.25,
+      218.5
+    ]
+  },
+  "mcu_mm": [
+    168,
+    167
+  ],
+  "ignition_cells": {
+    "origin_mm": [
+      15,
+      162
+    ],
+    "pitch_mm": [
+      24,
+      23
+    ],
+    "columns": 6
+  },
+  "logic_power_region_mm": [
+    5,
+    5,
+    88,
+    60
+  ],
+  "wbo_regions_mm": {
+    "1": [
+      93,
+      55,
+      137,
+      145
+    ]
+  },
+  "label_mm": [
+    40,
+    151
+  ],
   "regions": {
-    "ignition_permission": {"rect_mm": [3, 150, 150, 184], "anchor_mm": [75, 168], "priority": 1},
-    "low_side": {"rect_mm": [5, 60, 88, 150], "anchor_mm": [45, 100], "priority": 2},
-    "motor": {"rect_mm": [5, 5, 88, 60], "anchor_mm": [45, 30], "priority": 3},
-    "logic_power": {"rect_mm": [5, 5, 60, 55], "anchor_mm": [30, 25], "priority": 3},
-    "gdi_protection_b": {"rect_mm": [97, 5, 185, 55], "anchor_mm": [140, 24], "priority": 4},
-    "gdi": {"rect_mm": [5, 5, 88, 60], "anchor_mm": [45, 45], "priority": 4},
-    "wbo_other": {"rect_mm": [140, 55, 185, 145], "anchor_mm": [162, 108], "priority": 5},
-    "mcu": {"rect_mm": [150, 150, 187, 184], "anchor_mm": [168, 167], "priority": 6},
-    "usb_sd": {"rect_mm": [150, 150, 187, 184], "anchor_mm": [180, 155], "priority": 0},
-    "knock": {"rect_mm": [137, 5, 185, 82], "anchor_mm": [165, 18], "priority": 6},
-    "sensor_trackers": {"rect_mm": [137, 5, 187, 150], "anchor_mm": [160, 45], "priority": 6},
-    "hall_sent_bank2": {"rect_mm": [137, 100, 150, 150], "anchor_mm": [143, 125], "priority": 7},
-    "default": {"rect_mm": [93, 5, 187, 150], "anchor_mm": [140, 28], "priority": 7}
+    "ignition_permission": {
+      "rect_mm": [
+        3,
+        150,
+        137,
+        199
+      ],
+      "anchor_mm": [
+        75,
+        168
+      ],
+      "priority": 1
+    },
+    "low_side": {
+      "rect_mm": [
+        5,
+        60,
+        88,
+        150
+      ],
+      "anchor_mm": [
+        45,
+        100
+      ],
+      "priority": 2
+    },
+    "motor": {
+      "rect_mm": [
+        5,
+        5,
+        88,
+        60
+      ],
+      "anchor_mm": [
+        45,
+        30
+      ],
+      "priority": 3
+    },
+    "logic_power": {
+      "rect_mm": [
+        5,
+        5,
+        60,
+        55
+      ],
+      "anchor_mm": [
+        30,
+        25
+      ],
+      "priority": 3
+    },
+    "gdi_protection_b": {
+      "rect_mm": [
+        97,
+        5,
+        185,
+        55
+      ],
+      "anchor_mm": [
+        140,
+        24
+      ],
+      "priority": 4
+    },
+    "gdi": {
+      "rect_mm": [
+        5,
+        5,
+        88,
+        60
+      ],
+      "anchor_mm": [
+        45,
+        45
+      ],
+      "priority": 4
+    },
+    "wbo_other": {
+      "rect_mm": [
+        140,
+        55,
+        185,
+        145
+      ],
+      "anchor_mm": [
+        162,
+        108
+      ],
+      "priority": 5
+    },
+    "mcu": {
+      "rect_mm": [
+        137,
+        148,
+        188,
+        199
+      ],
+      "anchor_mm": [
+        168,
+        167
+      ],
+      "priority": 6
+    },
+    "usb_sd": {
+      "rect_mm": [
+        137,
+        148,
+        188,
+        199
+      ],
+      "anchor_mm": [
+        180,
+        155
+      ],
+      "priority": 0
+    },
+    "knock": {
+      "rect_mm": [
+        137,
+        5,
+        185,
+        82
+      ],
+      "anchor_mm": [
+        165,
+        18
+      ],
+      "priority": 6
+    },
+    "sensor_trackers": {
+      "rect_mm": [
+        137,
+        5,
+        187,
+        150
+      ],
+      "anchor_mm": [
+        160,
+        45
+      ],
+      "priority": 6
+    },
+    "hall_sent_bank2": {
+      "rect_mm": [
+        137,
+        82,
+        188,
+        150
+      ],
+      "anchor_mm": [
+        160,
+        120
+      ],
+      "priority": 7
+    },
+    "default": {
+      "rect_mm": [
+        93,
+        5,
+        187,
+        150
+      ],
+      "anchor_mm": [
+        140,
+        28
+      ],
+      "priority": 7
+    }
   }
 }

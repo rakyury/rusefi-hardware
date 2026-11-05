@@ -45,6 +45,11 @@ dielectrics120/1130/120µm, soldermask10µm each side are an engineering proposa
 Current, thermal, impedance, transient, dielectric and assembly budgets remain
 open. PCB pads/trace exports alone do not demonstrate electrical qualification.
 
+The outline, donor stage frames, connector/MCU/ignition anchors and functional
+regions come from `layout_profiles/<name>.json` (`--layout-profile`, default
+`layout_profiles/245x165.json`). `compare_boards.py A B` proves two builds are
+geometrically identical. See `docs/PCB_LAYOUT_PROFILE_2026_11_05.md`.
+
 Run portable contract tests with:
 
 ```text
