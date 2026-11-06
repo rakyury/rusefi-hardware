@@ -15,10 +15,12 @@ The placement candidate itself is unchanged.
   the same release crashes in its routing thread on this board) on Temurin 25 in a
   container without network. Fanout pre-pass disabled: with it enabled the router
   spent all ten passes on fanout (about 1050 extra vias) and never reached routing.
-  Settings: `router.autorouter.max_passes = 10`, 6 optimizer threads.
-- The job stopped at its 12 h wall-clock limit during pass 4 and saved that state:
-  pass 1 left 840 unrouted (4.1 h), pass 2 1135, pass 3 1078 — the ripup passes
-  oscillated rather than converged.
+  Settings: `router.autorouter.max_passes = 1`, 6 optimizer threads.
+- Why one pass: a ten-pass run hit its 12 h job limit during pass 4 with pass 1 at
+  840 unrouted (4.1 h), pass 2 at 1135 and pass 3 at 1078 — the ripup passes
+  oscillated rather than converged, and its saved mid-pass-4 state imported to
+  878 unconnected with 4 copper-to-edge violations. The single pass reproduced
+  the 840 / score 602.66 result exactly (4 h 19 min) and imports better.
 - Import: `autoroute_candidate.py import` into a copy, zones refilled, title set to
   "AUTOROUTED CANDIDATE". Nothing was removed on HARNESS_IGN* because the router
   could not route those nets at all (2.5 mm rule against the 3 mm TE34 pitch).
@@ -27,12 +29,11 @@ The placement candidate itself is unchanged.
 
 | | before | after |
 |---|---|---|
-| unconnected items (KiCad) | 1553 | **878** |
-| router copper | – | 9164 tracks, 1572 vias |
+| unconnected items (KiCad) | 1553 | **675** |
+| router copper | – | 7890 tracks, 1397 vias |
 
-DRC (capped report, KiCad 9.0.9): clearance 502, track_width 199, via_dangling 11,
-track_dangling 4, **copper_edge_clearance 4** (new: the router kept 0.25 mm to the
-edge where the project rule is 0.5 mm). 3413 pre-existing violations in the donor
+DRC (capped report, KiCad 9.0.9): clearance 500, track_width 199, via_dangling 10,
+track_dangling 5 — the same categories as the placement candidate, no new ones. 3413 pre-existing violations in the donor
 copper were reported by the router before it started and are unchanged.
 
 Visible review items in `front.png` / `back.png` / `in2.png`: wide GDI_HV / boost
@@ -40,6 +41,6 @@ class traces routed on In2 under the donor power stages; long 45° runs across t
 analog and MCU regions; via count. These are reasons this is a candidate for
 reading, not a layout.
 
-Reproduce: `build/p6/autoroute/run_freerouting_nofanout.sh` then
+Reproduce: `build/p6/autoroute/run_freerouting_1pass.sh` then
 `review_autoroute.sh` (scripts in the ignored build directory of the working tree
 that produced this; the Python steps are in `../autoroute_candidate.py`).
