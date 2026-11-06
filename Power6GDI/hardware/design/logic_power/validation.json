@@ -1,0 +1,154 @@
+{
+  "image": "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
+  "checks": "8 independent electrical and mutation tests PASS;32 footprint pad checks PASS",
+  "erc_counts": {
+    "logic_5v": 3,
+    "logic_3v3": 4
+  },
+  "erc_disposition": "Visible standalone power-source / cross-sheet diagnostics. Not a clean full-board ERC or DRC report.",
+  "standalone_erc": {
+    "logic_5v": {
+      "$schema": "https://schemas.kicad.org/erc.v1.json",
+      "coordinate_units": "mm",
+      "date": "2026-10-23T17:49:46+0000",
+      "included_severities": [
+        "error",
+        "warning"
+      ],
+      "kicad_version": "9.0.9",
+      "sheets": [
+        {
+          "path": "/",
+          "uuid_path": "/8379ce42-6138-576f-bf7c-fe4a2574c587",
+          "violations": [
+            {
+              "description": "Input Power pin not driven by any Output Power pins",
+              "items": [
+                {
+                  "description": "Symbol U5200 Pin 9 [BIAS, Power input, Line]",
+                  "pos": {
+                    "x": 1.4478,
+                    "y": 1.6764
+                  },
+                  "uuid": "b67151c2-21b1-501f-a461-bd13345dfa4b"
+                }
+              ],
+              "severity": "error",
+              "type": "power_pin_not_driven"
+            },
+            {
+              "description": "Input Power pin not driven by any Output Power pins",
+              "items": [
+                {
+                  "description": "Symbol U5200 Pin 13 [AGND1, Power input, Line]",
+                  "pos": {
+                    "x": 1.4478,
+                    "y": 1.8796
+                  },
+                  "uuid": "217f8a01-46b6-5ce2-80fc-83567e0f4ed6"
+                }
+              ],
+              "severity": "error",
+              "type": "power_pin_not_driven"
+            },
+            {
+              "description": "Input Power pin not driven by any Output Power pins",
+              "items": [
+                {
+                  "description": "Symbol U5200 Pin 20 [PVIN1, Power input, Line]",
+                  "pos": {
+                    "x": 1.9558,
+                    "y": 1.4224
+                  },
+                  "uuid": "440275ae-aace-5f64-8e33-f93294385e4c"
+                }
+              ],
+              "severity": "error",
+              "type": "power_pin_not_driven"
+            }
+          ]
+        }
+      ],
+      "source": "logic_5v.kicad_sch"
+    },
+    "logic_3v3": {
+      "$schema": "https://schemas.kicad.org/erc.v1.json",
+      "coordinate_units": "mm",
+      "date": "2026-10-23T17:49:50+0000",
+      "included_severities": [
+        "error",
+        "warning"
+      ],
+      "kicad_version": "9.0.9",
+      "sheets": [
+        {
+          "path": "/",
+          "uuid_path": "/3c2130f9-9b23-5c7b-bec3-d8183297abbf",
+          "violations": [
+            {
+              "description": "Input Power pin not driven by any Output Power pins",
+              "items": [
+                {
+                  "description": "Symbol U5300 Pin 6 [AGND, Power input, Line]",
+                  "pos": {
+                    "x": 1.2446,
+                    "y": 1.0541
+                  },
+                  "uuid": "536f6b45-662a-591b-81ec-2d847b9b4f68"
+                }
+              ],
+              "severity": "error",
+              "type": "power_pin_not_driven"
+            },
+            {
+              "description": "Input Power pin not driven by any Output Power pins",
+              "items": [
+                {
+                  "description": "Symbol U5300 Pin 10 [AVIN, Power input, Line]",
+                  "pos": {
+                    "x": 1.7526,
+                    "y": 0.8001
+                  },
+                  "uuid": "c2e2b476-928d-5969-bd40-5444111df1f9"
+                }
+              ],
+              "severity": "error",
+              "type": "power_pin_not_driven"
+            },
+            {
+              "description": "Input pin not driven by any Output pins",
+              "items": [
+                {
+                  "description": "Symbol U5300 Pin 13 [EN, Input, Line]",
+                  "pos": {
+                    "x": 1.7526,
+                    "y": 0.9525
+                  },
+                  "uuid": "98ca7dd1-b522-5470-bba6-6a42fab51a0d"
+                }
+              ],
+              "severity": "error",
+              "type": "pin_not_driven"
+            },
+            {
+              "description": "Global label not connected anywhere else in the schematic",
+              "items": [
+                {
+                  "description": "Global Label 'LP5_PG_RAW'",
+                  "pos": {
+                    "x": 1.8288,
+                    "y": 0.9525
+                  },
+                  "uuid": "59dcf791-5be6-5334-93d6-eb19d4a7c639"
+                }
+              ],
+              "severity": "warning",
+              "type": "global_label_dangling"
+            }
+          ]
+        }
+      ],
+      "source": "logic_3v3.kicad_sch"
+    }
+  }
+}

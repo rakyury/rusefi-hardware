@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-21T05:54:48+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/995a4dbf-5d9b-59c7-af90-9f01a8e1434f",
+            "violations": [
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label '+3V3'",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 2.1336
+                            },
+                            "uuid": "4aca521d-077d-5758-a8ff-cf7b4aa704ba"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'SD_SPI3_SCK'",
+                            "pos": {
+                                "x": 2.7559,
+                                "y": 0.6858
+                            },
+                            "uuid": "7ef76352-7ccf-55de-aaca-2d1ad81e9de6"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'SD_SPI3_MOSI'",
+                            "pos": {
+                                "x": 3.3528,
+                                "y": 0.6858
+                            },
+                            "uuid": "eb17dc98-6c97-5a9c-ad26-fea361bc166d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "sd_spi.kicad_sch"
+}

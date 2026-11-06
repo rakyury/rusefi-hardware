@@ -1,0 +1,139 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T17:22:34+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/73a8af16-0669-5b86-9557-39b951c36023",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U6190 Pin 3 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 1.7907,
+                                "y": 0.7493
+                            },
+                            "uuid": "1616f044-a973-5664-8c33-3e000b7d9c2a"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U6190 Pin 5 [VCC, Power input, Line]",
+                            "pos": {
+                                "x": 2.1971,
+                                "y": 0.6477
+                            },
+                            "uuid": "733944f5-9e20-53a8-ba81-e8febf43ea9e"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'GDI_SPI2_MOSI'",
+                            "pos": {
+                                "x": 0.6223,
+                                "y": 1.397
+                            },
+                            "uuid": "da85b52d-0d07-59e4-bf48-60aeffb2bcb1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'MOTOR_SPI_SI'",
+                            "pos": {
+                                "x": 0.8763,
+                                "y": 1.397
+                            },
+                            "uuid": "72a0e379-7a56-5963-8823-8b99706bf567"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'GDI_SPI2_SCK'",
+                            "pos": {
+                                "x": 1.9177,
+                                "y": 1.397
+                            },
+                            "uuid": "ff506c07-60e6-56d9-b2fd-4260de76581e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HW_ACTUATOR_ENABLE_N'",
+                            "pos": {
+                                "x": 1.9177,
+                                "y": 1.7018
+                            },
+                            "uuid": "4306880b-db18-5f62-822b-82363e51444d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'MOTOR_SPI_SCK'",
+                            "pos": {
+                                "x": 2.1717,
+                                "y": 1.397
+                            },
+                            "uuid": "8c8ad993-7ef7-5a12-ada6-b28cffd453cf"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'GDI_SPI2_MISO'",
+                            "pos": {
+                                "x": 3.4798,
+                                "y": 1.397
+                            },
+                            "uuid": "e5c29fb6-a920-543f-81fe-5240afaa9cd5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "spi.kicad_sch"
+}

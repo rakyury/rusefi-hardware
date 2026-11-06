@@ -1,0 +1,75 @@
+ref,value,footprint,sheet,dnp,note
+U6000,TLE9201SG,Package_SO:Infineon_PG-DSO-12-11_ThermalVias,motor4/dbw,False,Infineon Rev1.0 p4: pin13 here denotes exposed ground slug. PG-DSO-12-17 dimensions checked against KiCad PG-DSO-12-11 land pattern; see checks.
+U6001,SN74LVC1G32QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,motor4/dbw,False,High means DISABLE. Either global latch or per-channel command forces both bridge outputs off; reset defaults are high.
+R6000,100R,Resistor_SMD:R_0603_1608Metric,motor4/dbw,False,
+R6001,100R,Resistor_SMD:R_0603_1608Metric,motor4/dbw,False,
+R6002,10k,Resistor_SMD:R_0603_1608Metric,motor4/dbw,False,
+R6003,10k,Resistor_SMD:R_0603_1608Metric,motor4/dbw,False,
+R6004,10k,Resistor_SMD:R_0603_1608Metric,motor4/dbw,False,
+R6005,10k,Resistor_SMD:R_0603_1608Metric,motor4/dbw,False,
+C6000,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/dbw,False,
+C6001,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/dbw,False,
+C6002,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/dbw,False,
+C6003,1u 50V X7R,Capacitor_SMD:C_1206_3216Metric,motor4/dbw,False,
+C6004,100u 50V low ESR,Capacitor_SMD:CP_Elec_10x10.5,motor4/dbw,False,"Bulk capacitor exact MPN, cold ESR/ripple and height not qualified."
+C6005,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,motor4/dbw,False,Place output EMI capacitor at IC; Infineon application limit <33nF.
+C6006,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,motor4/dbw,False,Place output EMI capacitor at IC; Infineon application limit <33nF.
+D6000,SMCJ18CA,Diode_SMD:D_SMC,motor4/dbw,False,"18V standoff, 29.2V rated pulse clamp; input OV disconnect limits normal supply. Local regeneration/overshoot may exceed28V operating limit but must stay below40V ABSMAX. Energy/hot clamp not qualified."
+U6050,TLE9201SG,Package_SO:Infineon_PG-DSO-12-11_ThermalVias,motor4/ewg,False,Infineon Rev1.0 p4: pin13 here denotes exposed ground slug. PG-DSO-12-17 dimensions checked against KiCad PG-DSO-12-11 land pattern; see checks.
+U6051,SN74LVC1G32QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,motor4/ewg,False,High means DISABLE. Either global latch or per-channel command forces both bridge outputs off; reset defaults are high.
+R6050,100R,Resistor_SMD:R_0603_1608Metric,motor4/ewg,False,
+R6051,100R,Resistor_SMD:R_0603_1608Metric,motor4/ewg,False,
+R6052,10k,Resistor_SMD:R_0603_1608Metric,motor4/ewg,False,
+R6053,10k,Resistor_SMD:R_0603_1608Metric,motor4/ewg,False,
+R6054,10k,Resistor_SMD:R_0603_1608Metric,motor4/ewg,False,
+R6055,10k,Resistor_SMD:R_0603_1608Metric,motor4/ewg,False,
+C6050,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/ewg,False,
+C6051,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/ewg,False,
+C6052,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/ewg,False,
+C6053,1u 50V X7R,Capacitor_SMD:C_1206_3216Metric,motor4/ewg,False,
+C6054,100u 50V low ESR,Capacitor_SMD:CP_Elec_10x10.5,motor4/ewg,False,"Bulk capacitor exact MPN, cold ESR/ripple and height not qualified."
+C6055,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,motor4/ewg,False,Place output EMI capacitor at IC; Infineon application limit <33nF.
+C6056,1n 100V C0G,Capacitor_SMD:C_0805_2012Metric,motor4/ewg,False,Place output EMI capacitor at IC; Infineon application limit <33nF.
+D6050,SMCJ18CA,Diode_SMD:D_SMC,motor4/ewg,False,"18V standoff, 29.2V rated pulse clamp; input OV disconnect limits normal supply. Local regeneration/overshoot may exceed28V operating limit but must stay below40V ABSMAX. Energy/hot clamp not qualified."
+U6190,SN74LVC1G125QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,motor4/spi,False,"Extra explicit MISO isolation. TLE SO is tri-state at CSN high; asynchronous fault flag exists while CSN low before first clock, per Infineon4.12.1."
+R6190,47R,Resistor_SMD:R_0603_1608Metric,motor4/spi,False,
+R6191,47R,Resistor_SMD:R_0603_1608Metric,motor4/spi,False,
+R6192,47R,Resistor_SMD:R_0603_1608Metric,motor4/spi,False,
+R6193,10k,Resistor_SMD:R_0603_1608Metric,motor4/spi,False,
+R6194,10k,Resistor_SMD:R_0603_1608Metric,motor4/spi,False,
+R6195,100k,Resistor_SMD:R_0603_1608Metric,motor4/spi,False,
+C6190,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/spi,False,
+Q6200,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,motor4/motor13_power,False,"Common drain reverse blocking FET, source=input. Exact 100V variant as existing GDI protection."
+Q6201,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,motor4/motor13_power,False,Common drain output disconnect FET. Startup hot SOA and total motor bulk must be checked.
+U6200,LM74800QDRRRQ1,Power8GDI_Motor4:LM74800_DRR0012E,motor4/motor13_power,False,TI SNOSD95C common-drain reference; mirrored existing GDI protection22d5fff. EP is electrically floating.
+D6200,SMCJ33CA,Diode_SMD:D_SMC,motor4/motor13_power,False,"Input surge clamp53.3V at ratedpulse current, undercontroller65V limit. Hot clamp/pulseenergy/fuse coordination pending."
+C6200,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor13_power,False,
+R6200,140k 0.1%,Resistor_SMD:R_0805_2012Metric,motor4/motor13_power,False,
+R6201,10k 0.1%,Resistor_SMD:R_0603_1608Metric,motor4/motor13_power,False,
+R6202,1k,Resistor_SMD:R_0603_1608Metric,motor4/motor13_power,False,
+R6203,10k,Resistor_SMD:R_0603_1608Metric,motor4/motor13_power,False,
+R6204,1M,Resistor_SMD:R_0603_1608Metric,motor4/motor13_power,False,
+R6205,1M,Resistor_SMD:R_0603_1608Metric,motor4/motor13_power,False,
+C6201,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor13_power,False,
+C6202,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor13_power,False,
+C6203,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor13_power,False,
+R6206,1k,Resistor_SMD:R_0603_1608Metric,motor4/motor13_power,False,
+C6204,22n 100V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor13_power,False,
+R6207,10k,Resistor_SMD:R_0603_1608Metric,motor4/motor13_power,False,
+Q6250,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,motor4/motor24_power,False,"Common drain reverse blocking FET, source=input. Exact 100V variant as existing GDI protection."
+Q6251,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,motor4/motor24_power,False,Common drain output disconnect FET. Startup hot SOA and total motor bulk must be checked.
+U6250,LM74800QDRRRQ1,Power8GDI_Motor4:LM74800_DRR0012E,motor4/motor24_power,False,TI SNOSD95C common-drain reference; mirrored existing GDI protection22d5fff. EP is electrically floating.
+D6250,SMCJ33CA,Diode_SMD:D_SMC,motor4/motor24_power,False,"Input surge clamp53.3V at ratedpulse current, undercontroller65V limit. Hot clamp/pulseenergy/fuse coordination pending."
+C6250,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor24_power,False,
+R6250,140k 0.1%,Resistor_SMD:R_0805_2012Metric,motor4/motor24_power,False,
+R6251,10k 0.1%,Resistor_SMD:R_0603_1608Metric,motor4/motor24_power,False,
+R6252,1k,Resistor_SMD:R_0603_1608Metric,motor4/motor24_power,False,
+R6253,10k,Resistor_SMD:R_0603_1608Metric,motor4/motor24_power,False,
+R6254,1M,Resistor_SMD:R_0603_1608Metric,motor4/motor24_power,False,
+R6255,1M,Resistor_SMD:R_0603_1608Metric,motor4/motor24_power,False,
+C6251,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor24_power,False,
+C6252,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor24_power,False,
+C6253,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor24_power,False,
+R6256,1k,Resistor_SMD:R_0603_1608Metric,motor4/motor24_power,False,
+C6254,22n 100V X7R,Capacitor_SMD:C_0805_2012Metric,motor4/motor24_power,False,
+R6257,10k,Resistor_SMD:R_0603_1608Metric,motor4/motor24_power,False,

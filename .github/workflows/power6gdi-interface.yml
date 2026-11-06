@@ -1,0 +1,23 @@
+name: Power6GDI interface consistency
+
+on:
+  push:
+    branches: [power8gdi-rev-a]
+    paths:
+      - "Power6GDI/**"
+      - ".github/workflows/power6gdi-interface.yml"
+  pull_request:
+    paths:
+      - "Power6GDI/**"
+      - ".github/workflows/power6gdi-interface.yml"
+
+jobs:
+  pinout-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate provisional interface mapping
+        run: python -m unittest discover -s Power6GDI/tests -v

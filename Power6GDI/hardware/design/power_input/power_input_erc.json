@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-20T23:09:33+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/e6267e85-5739-5db4-bae6-386450eb0f98",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U501 Pin 2 [VIN, Power input, Line]",
+                            "pos": {
+                                "x": 2.413,
+                                "y": 0.6858
+                            },
+                            "uuid": "03b6231f-36f3-531c-a85d-ea3a6a792b95"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U501 Pin 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.5146,
+                                "y": 0.889
+                            },
+                            "uuid": "a274cef6-c456-5b87-91c5-19f88c2b10c1"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label '+3V3'",
+                            "pos": {
+                                "x": 3.048,
+                                "y": 1.9177
+                            },
+                            "uuid": "d692cc57-5e07-5161-b0eb-a22cd4a581c5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "power_input.kicad_sch"
+}

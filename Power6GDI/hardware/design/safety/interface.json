@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "release_status": "BLOCKED",
+  "sheet_file": "safety_gate.kicad_sch",
+  "sheet_uuid": "eded34d9-2614-5eea-9c99-f04c697d2107",
+  "root_instance_uuid": "d3688535-de83-5779-ad3b-0e54c99cc6b1",
+  "root_uuid": "f4d21065-0a5b-5086-a08e-1af9469f04bd",
+  "project": "Power8GDI_Core",
+  "power": "+3V3",
+  "ground": "GND",
+  "inputs": [
+    "SAFETY_HEARTBEAT",
+    "SAFETY_ARM_REQUEST",
+    "HW_KILL_N",
+    "IGN_OC_OK"
+  ],
+  "outputs": [
+    "SAFETY_FAULT_N",
+    "HW_ACTUATOR_ENABLE",
+    "HW_ACTUATOR_ENABLE_N"
+  ],
+  "pt_drven_connected": "via gdi/permission sheet, qualified device links remain DNP",
+  "watchdog_ms": {
+    "nominal": 64.288,
+    "ideal_cap_min": 58.18064,
+    "ideal_cap_max": 70.39536,
+    "with_cap_tolerance_min": 58.0965836,
+    "with_cap_tolerance_max": 70.4970636,
+    "capacitor_pf": 120,
+    "capacitor_tolerance_percent": 1
+  },
+  "part_count": 21,
+  "rail5v_monitor": {
+    "part": "TPS3808G01QDBVRQ1",
+    "supply": "+3V3",
+    "nominal_fall_V": 4.637581967213115,
+    "static_fall_bounds_V": [
+      4.513337160422334,
+      4.763219310529681
+    ],
+    "static_release_max_V": 4.906039122095572,
+    "sense_filter_tau_us": 8.907659269863995,
+    "recovery_ms": [
+      12,
+      28
+    ],
+    "source": "https://www.ti.com/lit/gpn/TPS3808-Q1",
+    "qualification": "Static budget only; fast collapse, partial power, noise and fault tests pending"
+  }
+}

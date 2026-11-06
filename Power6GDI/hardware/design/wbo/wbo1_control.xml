@@ -1,0 +1,2228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/src/Power8GDI/hardware/design/wbo/wbo1_control.kicad_sch</source>
+    <date>2026-10-28T18:47:48+0000</date>
+    <tool>Eeschema 9.0.9</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>WBO1: F042, CAN and hardware-inhibited heater</title>
+        <company/>
+        <rev>Engineering draft 0.1</rev>
+        <date/>
+        <source>wbo1_control.kicad_sch</source>
+        <comment number="1" value="UNQUALIFIED: no manufacturing or engine approval"/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C5602">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source C602; netlist-derived.</field>
+        <field name="MPN">C0603C104K5RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-6bf9727c4e40</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 50, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C104K5RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source C602; netlist-derived."/>
+      <property name="MPN" value="C0603C104K5RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-6bf9727c4e40"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 50, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C104K5RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>621f77b3-56c7-51e4-a5c2-dae4bada7079</tstamps>
+    </comp>
+    <comp ref="C5609">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source C609; netlist-derived.</field>
+        <field name="MPN">C0603C105K3RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-4bca20b134b8</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 1000000, "dc_bias_qualification": "PENDING_AT_ACTUAL_NODE_VOLTAGE", "dielectric": "X7R", "effective_capacitance_min_pf": null, "rated_voltage_v": 25, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C105K3RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source C609; netlist-derived."/>
+      <property name="MPN" value="C0603C105K3RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-4bca20b134b8"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 1000000, &quot;dc_bias_qualification&quot;: &quot;PENDING_AT_ACTUAL_NODE_VOLTAGE&quot;, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;effective_capacitance_min_pf&quot;: null, &quot;rated_voltage_v&quot;: 25, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C105K3RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>df54bcd4-5080-5da0-9cf6-c90f18888ed4</tstamps>
+    </comp>
+    <comp ref="C5610">
+      <value>1u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source C610; netlist-derived.</field>
+        <field name="MPN">C0603C105K3RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-4bca20b134b8</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 1000000, "dc_bias_qualification": "PENDING_AT_ACTUAL_NODE_VOLTAGE", "dielectric": "X7R", "effective_capacitance_min_pf": null, "rated_voltage_v": 25, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C105K3RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source C610; netlist-derived."/>
+      <property name="MPN" value="C0603C105K3RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-4bca20b134b8"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 1000000, &quot;dc_bias_qualification&quot;: &quot;PENDING_AT_ACTUAL_NODE_VOLTAGE&quot;, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;effective_capacitance_min_pf&quot;: null, &quot;rated_voltage_v&quot;: 25, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C105K3RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6d89f391-4021-58d0-9291-681ab1873239</tstamps>
+    </comp>
+    <comp ref="C5613">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source C613; netlist-derived.</field>
+        <field name="MPN">C0603C104K5RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-6bf9727c4e40</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 50, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C104K5RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source C613; netlist-derived."/>
+      <property name="MPN" value="C0603C104K5RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-6bf9727c4e40"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 50, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C104K5RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>43ccb178-aef5-5621-bdb7-41e38926e88f</tstamps>
+    </comp>
+    <comp ref="C5614">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source C614; netlist-derived.</field>
+        <field name="MPN">C0603C104K5RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-6bf9727c4e40</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 50, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C104K5RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source C614; netlist-derived."/>
+      <property name="MPN" value="C0603C104K5RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-6bf9727c4e40"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 50, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C104K5RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d4015dd7-2d4f-5cf9-b601-871c9192e146</tstamps>
+    </comp>
+    <comp ref="C5615">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source C615; netlist-derived.</field>
+        <field name="MPN">C0603C104K5RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-6bf9727c4e40</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 50, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C104K5RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source C615; netlist-derived."/>
+      <property name="MPN" value="C0603C104K5RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-6bf9727c4e40"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 50, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C104K5RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a3e443c9-1639-5fa3-a893-50d84e63ef44</tstamps>
+    </comp>
+    <comp ref="C5616">
+      <value>4.7u</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source C616; netlist-derived.</field>
+        <field name="MPN">GMC10X7R475K16NT</field>
+        <field name="Manufacturer">Cal-Chip Electronics</field>
+        <field name="Selection_ID">SEL-541f7eb877a5</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 4700000, "dc_bias_qualification": "PENDING_AT_ACTUAL_NODE_VOLTAGE", "dielectric": "X7R", "effective_capacitance_min_pf": null, "rated_voltage_v": 16, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/GMC10X7R475K16NT/22471820</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source C616; netlist-derived."/>
+      <property name="MPN" value="GMC10X7R475K16NT"/>
+      <property name="Manufacturer" value="Cal-Chip Electronics"/>
+      <property name="Selection_ID" value="SEL-541f7eb877a5"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 4700000, &quot;dc_bias_qualification&quot;: &quot;PENDING_AT_ACTUAL_NODE_VOLTAGE&quot;, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;effective_capacitance_min_pf&quot;: null, &quot;rated_voltage_v&quot;: 16, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://www.digikey.com/en/products/detail/cal-chip-electronics-inc/GMC10X7R475K16NT/22471820"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>42ca824d-ea9e-5b05-a70d-d96a89eff346</tstamps>
+    </comp>
+    <comp ref="C5617">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source C617; netlist-derived.</field>
+        <field name="MPN">C0603C104K5RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-6bf9727c4e40</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 50, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C104K5RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source C617; netlist-derived."/>
+      <property name="MPN" value="C0603C104K5RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-6bf9727c4e40"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 50, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C104K5RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>08e37f57-ff61-54a7-aba3-d7fbbc66370c</tstamps>
+    </comp>
+    <comp ref="C5618">
+      <value>100n</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source C618; netlist-derived.</field>
+        <field name="MPN">C0603C104K5RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-6bf9727c4e40</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 50, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C104K5RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source C618; netlist-derived."/>
+      <property name="MPN" value="C0603C104K5RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-6bf9727c4e40"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 50, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C104K5RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3c234f32-ca6a-584f-bc0f-ed519ce1467d</tstamps>
+    </comp>
+    <comp ref="C5640">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">C0603C104K5RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-6bf9727c4e40</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 50, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C104K5RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="C0603C104K5RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-6bf9727c4e40"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 50, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C104K5RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cb4ad8f6-cce8-5ad6-af9d-03d4a25040d6</tstamps>
+    </comp>
+    <comp ref="C5641">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">C0603C104K5RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-6bf9727c4e40</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 50, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C104K5RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="C0603C104K5RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-6bf9727c4e40"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 50, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C104K5RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>37736a16-b954-592f-acf1-0360c2dd8ea0</tstamps>
+    </comp>
+    <comp ref="C5660">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">C0603C104K5RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-6bf9727c4e40</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 50, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C104K5RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="C0603C104K5RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-6bf9727c4e40"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 50, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C104K5RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e60e8704-8631-5f91-ad3c-a603a1692a77</tstamps>
+    </comp>
+    <comp ref="C5661">
+      <value>10u 16V X7R effective&gt;=4.7u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <fields>
+        <field name="Design note">LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate.</field>
+        <field name="MPN">C1206C106K4RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-790f6da303d4</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">["Required effective capacitance not yet verified with supplier bias, temperature, tolerance and aging envelope."]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 10000000, "dc_bias_qualification": "PENDING_AT_ACTUAL_NODE_VOLTAGE", "dielectric": "X7R", "effective_capacitance_min_pf": null, "rated_voltage_v": 16, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/component-documentation/download/specsheet/C1206C106K4RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value="LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate."/>
+      <property name="MPN" value="C1206C106K4RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-790f6da303d4"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Required effective capacitance not yet verified with supplier bias, temperature, tolerance and aging envelope.&quot;]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 10000000, &quot;dc_bias_qualification&quot;: &quot;PENDING_AT_ACTUAL_NODE_VOLTAGE&quot;, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;effective_capacitance_min_pf&quot;: null, &quot;rated_voltage_v&quot;: 16, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/component-documentation/download/specsheet/C1206C106K4RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8216fa2e-9589-5317-be63-abfb4744e6b7</tstamps>
+    </comp>
+    <comp ref="C5662">
+      <value>10u 16V X7R effective&gt;=4.7u</value>
+      <footprint>Capacitor_SMD:C_1206_3216Metric</footprint>
+      <fields>
+        <field name="Design note">LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate.</field>
+        <field name="MPN">C1206C106K4RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-790f6da303d4</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">["Required effective capacitance not yet verified with supplier bias, temperature, tolerance and aging envelope."]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 10000000, "dc_bias_qualification": "PENDING_AT_ACTUAL_NODE_VOLTAGE", "dielectric": "X7R", "effective_capacitance_min_pf": null, "rated_voltage_v": 16, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/component-documentation/download/specsheet/C1206C106K4RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_1206_3216Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value="LT3042 CIN/COUT effective capacitance and ESR/ESL must meet datasheet at bias/temp; exact MPN release gate."/>
+      <property name="MPN" value="C1206C106K4RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-790f6da303d4"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Required effective capacitance not yet verified with supplier bias, temperature, tolerance and aging envelope.&quot;]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 10000000, &quot;dc_bias_qualification&quot;: &quot;PENDING_AT_ACTUAL_NODE_VOLTAGE&quot;, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;effective_capacitance_min_pf&quot;: null, &quot;rated_voltage_v&quot;: 16, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/component-documentation/download/specsheet/C1206C106K4RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ee86d46b-e4bf-5cfe-9a2e-aa0d351ef624</tstamps>
+    </comp>
+    <comp ref="C5663">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">C0603C104K5RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-6bf9727c4e40</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 50, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C104K5RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="C0603C104K5RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-6bf9727c4e40"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 50, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C104K5RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>15928ac3-f59c-5a52-bc58-4c9ac0fe87ec</tstamps>
+    </comp>
+    <comp ref="C5664">
+      <value>100n 16V X7R</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">C0603C104K5RACTU</field>
+        <field name="Manufacturer">KEMET</field>
+        <field name="Selection_ID">SEL-6bf9727c4e40</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"capacitance_pf": 100000, "dielectric": "X7R", "rated_voltage_v": 50, "temperature_max_c": 125, "temperature_min_c": -55, "tolerance_pct": 10}</field>
+        <field name="Selection_Source_URLs">https://search.kemet.com/download/specsheet/C0603C104K5RACTU</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_C" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="C0603C104K5RACTU"/>
+      <property name="Manufacturer" value="KEMET"/>
+      <property name="Selection_ID" value="SEL-6bf9727c4e40"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;capacitance_pf&quot;: 100000, &quot;dielectric&quot;: &quot;X7R&quot;, &quot;rated_voltage_v&quot;: 50, &quot;temperature_max_c&quot;: 125, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 10}"/>
+      <property name="Selection_Source_URLs" value="https://search.kemet.com/download/specsheet/C0603C104K5RACTU"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ffd457f2-0bd6-5141-a63b-58332886f5a9</tstamps>
+    </comp>
+    <comp ref="D5600">
+      <value>LED-RED-0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source D600; netlist-derived.</field>
+        <field name="MPN">APT1608SURCK</field>
+        <field name="Manufacturer">Kingbright</field>
+        <field name="Selection_ID">SEL-b0d3a57d6d36</field>
+        <field name="Procurement_Status">SELECTED_CONDITIONAL</field>
+        <field name="Hardware_Qualification">LED_CURRENT_AND_VISIBILITY_REVIEW_REQUIRED</field>
+        <field name="Selection_Gaps">["20mA is catalog test current, not a configured operating current. Verify resistor/current and polarity; blue LED headroom may be limited on3.3V."]</field>
+        <field name="Selection_Ratings">{"body_mm": [1.6, 0.8, 0.75], "color": "red", "test_current_ma": 20}</field>
+        <field name="Selection_Source_URLs">https://www.kingbrightusa.com/product.asp?catalog_name=LED&amp;product_id=APT1608SURCK</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">LED_SMD:LED_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_D600_mapped" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source D600; netlist-derived."/>
+      <property name="MPN" value="APT1608SURCK"/>
+      <property name="Manufacturer" value="Kingbright"/>
+      <property name="Selection_ID" value="SEL-b0d3a57d6d36"/>
+      <property name="Procurement_Status" value="SELECTED_CONDITIONAL"/>
+      <property name="Hardware_Qualification" value="LED_CURRENT_AND_VISIBILITY_REVIEW_REQUIRED"/>
+      <property name="Selection_Gaps" value="[&quot;20mA is catalog test current, not a configured operating current. Verify resistor/current and polarity; blue LED headroom may be limited on3.3V.&quot;]"/>
+      <property name="Selection_Ratings" value="{&quot;body_mm&quot;: [1.6, 0.8, 0.75], &quot;color&quot;: &quot;red&quot;, &quot;test_current_ma&quot;: 20}"/>
+      <property name="Selection_Source_URLs" value="https://www.kingbrightusa.com/product.asp?catalog_name=LED&amp;product_id=APT1608SURCK"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>beb4d063-1fff-5733-afc1-5ac81f9d316e</tstamps>
+    </comp>
+    <comp ref="D5601">
+      <value>LED-GREEN-0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source D601; netlist-derived.</field>
+        <field name="MPN">APT1608SGC</field>
+        <field name="Manufacturer">Kingbright</field>
+        <field name="Selection_ID">SEL-3fb09a4358af</field>
+        <field name="Procurement_Status">SELECTED_CONDITIONAL</field>
+        <field name="Hardware_Qualification">LED_CURRENT_AND_VISIBILITY_REVIEW_REQUIRED</field>
+        <field name="Selection_Gaps">["20mA is catalog test current, not a configured operating current. Verify resistor/current and polarity; blue LED headroom may be limited on3.3V."]</field>
+        <field name="Selection_Ratings">{"body_mm": [1.6, 0.8, 0.75], "color": "green", "test_current_ma": 20}</field>
+        <field name="Selection_Source_URLs">https://www.digikey.com/en/products/detail/kingbright/APT1608SGC/1747519</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">LED_SMD:LED_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_D601_mapped" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source D601; netlist-derived."/>
+      <property name="MPN" value="APT1608SGC"/>
+      <property name="Manufacturer" value="Kingbright"/>
+      <property name="Selection_ID" value="SEL-3fb09a4358af"/>
+      <property name="Procurement_Status" value="SELECTED_CONDITIONAL"/>
+      <property name="Hardware_Qualification" value="LED_CURRENT_AND_VISIBILITY_REVIEW_REQUIRED"/>
+      <property name="Selection_Gaps" value="[&quot;20mA is catalog test current, not a configured operating current. Verify resistor/current and polarity; blue LED headroom may be limited on3.3V.&quot;]"/>
+      <property name="Selection_Ratings" value="{&quot;body_mm&quot;: [1.6, 0.8, 0.75], &quot;color&quot;: &quot;green&quot;, &quot;test_current_ma&quot;: 20}"/>
+      <property name="Selection_Source_URLs" value="https://www.digikey.com/en/products/detail/kingbright/APT1608SGC/1747519"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>94f64641-280d-5186-816e-755efce20f6d</tstamps>
+    </comp>
+    <comp ref="D5602">
+      <value>LED-BLUE-0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source D602; netlist-derived.</field>
+        <field name="MPN">APT1608QBC/D</field>
+        <field name="Manufacturer">Kingbright</field>
+        <field name="Selection_ID">SEL-3cd22f0f3fe3</field>
+        <field name="Procurement_Status">SELECTED_CONDITIONAL</field>
+        <field name="Hardware_Qualification">LED_CURRENT_AND_VISIBILITY_REVIEW_REQUIRED</field>
+        <field name="Selection_Gaps">["20mA is catalog test current, not a configured operating current. Verify resistor/current and polarity; blue LED headroom may be limited on3.3V."]</field>
+        <field name="Selection_Ratings">{"body_mm": [1.6, 0.8, 0.75], "color": "blue", "test_current_ma": 20}</field>
+        <field name="Selection_Source_URLs">https://www.digikey.com/en/products/detail/kingbright/APT1608QBC-D/2163697</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">LED_SMD:LED_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_D602_mapped" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source D602; netlist-derived."/>
+      <property name="MPN" value="APT1608QBC/D"/>
+      <property name="Manufacturer" value="Kingbright"/>
+      <property name="Selection_ID" value="SEL-3cd22f0f3fe3"/>
+      <property name="Procurement_Status" value="SELECTED_CONDITIONAL"/>
+      <property name="Hardware_Qualification" value="LED_CURRENT_AND_VISIBILITY_REVIEW_REQUIRED"/>
+      <property name="Selection_Gaps" value="[&quot;20mA is catalog test current, not a configured operating current. Verify resistor/current and polarity; blue LED headroom may be limited on3.3V.&quot;]"/>
+      <property name="Selection_Ratings" value="{&quot;body_mm&quot;: [1.6, 0.8, 0.75], &quot;color&quot;: &quot;blue&quot;, &quot;test_current_ma&quot;: 20}"/>
+      <property name="Selection_Source_URLs" value="https://www.digikey.com/en/products/detail/kingbright/APT1608QBC-D/2163697"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cb5f0a05-add7-59d6-af9f-0d3f93c308fb</tstamps>
+    </comp>
+    <comp ref="D5603">
+      <value>LED-RED-0603</value>
+      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source D603; netlist-derived.</field>
+        <field name="MPN">APT1608SURCK</field>
+        <field name="Manufacturer">Kingbright</field>
+        <field name="Selection_ID">SEL-b0d3a57d6d36</field>
+        <field name="Procurement_Status">SELECTED_CONDITIONAL</field>
+        <field name="Hardware_Qualification">LED_CURRENT_AND_VISIBILITY_REVIEW_REQUIRED</field>
+        <field name="Selection_Gaps">["20mA is catalog test current, not a configured operating current. Verify resistor/current and polarity; blue LED headroom may be limited on3.3V."]</field>
+        <field name="Selection_Ratings">{"body_mm": [1.6, 0.8, 0.75], "color": "red", "test_current_ma": 20}</field>
+        <field name="Selection_Source_URLs">https://www.kingbrightusa.com/product.asp?catalog_name=LED&amp;product_id=APT1608SURCK</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">LED_SMD:LED_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_D603_mapped" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source D603; netlist-derived."/>
+      <property name="MPN" value="APT1608SURCK"/>
+      <property name="Manufacturer" value="Kingbright"/>
+      <property name="Selection_ID" value="SEL-b0d3a57d6d36"/>
+      <property name="Procurement_Status" value="SELECTED_CONDITIONAL"/>
+      <property name="Hardware_Qualification" value="LED_CURRENT_AND_VISIBILITY_REVIEW_REQUIRED"/>
+      <property name="Selection_Gaps" value="[&quot;20mA is catalog test current, not a configured operating current. Verify resistor/current and polarity; blue LED headroom may be limited on3.3V.&quot;]"/>
+      <property name="Selection_Ratings" value="{&quot;body_mm&quot;: [1.6, 0.8, 0.75], &quot;color&quot;: &quot;red&quot;, &quot;test_current_ma&quot;: 20}"/>
+      <property name="Selection_Source_URLs" value="https://www.kingbrightusa.com/product.asp?catalog_name=LED&amp;product_id=APT1608SURCK"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e414423e-80b5-5731-b1cc-7c213c77289b</tstamps>
+    </comp>
+    <comp ref="D5604">
+      <value>PESD1CAN</value>
+      <footprint>Power8GDI_Board:SOT-23_D5604_J5600_Clearance</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source D604; netlist-derived.</field>
+        <field name="MPN">PESD1CAN,215</field>
+        <field name="Manufacturer">Nexperia</field>
+        <field name="Selection_ID">SEL-3e2f1ed25b55</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.nexperia.com/product/PESD1CAN</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Power8GDI_Board:SOT-23_D5604_J5600_Clearance</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_D604_mapped" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source D604; netlist-derived."/>
+      <property name="MPN" value="PESD1CAN,215"/>
+      <property name="Manufacturer" value="Nexperia"/>
+      <property name="Selection_ID" value="SEL-3e2f1ed25b55"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.nexperia.com/product/PESD1CAN"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a752772a-05b6-51cd-ac68-7f2e2a6be70f</tstamps>
+    </comp>
+    <comp ref="J5600">
+      <value>Conn_02x03_Odd_Even</value>
+      <footprint>Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source J600; netlist-derived.</field>
+        <field name="Footprint">Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_J600_mapped" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source J600; netlist-derived."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>fa26505c-6979-580b-987f-6afa2ef86d3a</tstamps>
+    </comp>
+    <comp ref="Q5600">
+      <value>VND7NV04TR-E</value>
+      <footprint>Package_TO_SOT_SMD:TO-252-2</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source Q600; netlist-derived. Active DPAK variant replaces obsolete SOT223. Drain is HEATER NEGATIVE despite source net LSU_H+.</field>
+        <field name="MPN">VND7NV04TR-E</field>
+        <field name="Manufacturer">STMicroelectronics</field>
+        <field name="Selection_ID">SEL-8ffb4f1a4ad4</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.st.com/en/search.html#q=VND7NV04TR-E</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Package_TO_SOT_SMD:TO-252-2</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_Q600_mapped" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source Q600; netlist-derived. Active DPAK variant replaces obsolete SOT223. Drain is HEATER NEGATIVE despite source net LSU_H+."/>
+      <property name="MPN" value="VND7NV04TR-E"/>
+      <property name="Manufacturer" value="STMicroelectronics"/>
+      <property name="Selection_ID" value="SEL-8ffb4f1a4ad4"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.st.com/en/search.html#q=VND7NV04TR-E"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1824aaa1-7849-516f-a44b-fc056d53f1af</tstamps>
+    </comp>
+    <comp ref="Q5620">
+      <value>BC847B-QR</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <fields>
+        <field name="Design note">NexperiaBC847x-Q Rev2:1B2E3C. Main3V3 absent -&gt; base10k pull-down -&gt; OE rises to5V independent of main permission.</field>
+        <field name="MPN">BC847B-QR</field>
+        <field name="Manufacturer">Nexperia</field>
+        <field name="Selection_ID">SEL-5f4a29315a6b</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.nexperia.com/product/BC847B-QR</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_BC847B_Q" description=""/>
+      <property name="Design note" value="NexperiaBC847x-Q Rev2:1B2E3C. Main3V3 absent -&gt; base10k pull-down -&gt; OE rises to5V independent of main permission."/>
+      <property name="MPN" value="BC847B-QR"/>
+      <property name="Manufacturer" value="Nexperia"/>
+      <property name="Selection_ID" value="SEL-5f4a29315a6b"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.nexperia.com/product/BC847B-QR"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>20d45eb3-5d91-592a-92e5-66ed8a89ed75</tstamps>
+    </comp>
+    <comp ref="R5616">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source R616; netlist-derived.</field>
+        <field name="MPN">CRCW06031K00FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-38197231a947</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 1000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source R616; netlist-derived."/>
+      <property name="MPN" value="CRCW06031K00FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-38197231a947"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 1000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cb5deab7-3bea-5891-8ff6-4044da30affb</tstamps>
+    </comp>
+    <comp ref="R5617">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source R617; netlist-derived.</field>
+        <field name="MPN">CRCW06031K00FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-38197231a947</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 1000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source R617; netlist-derived."/>
+      <property name="MPN" value="CRCW06031K00FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-38197231a947"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 1000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>4556a34d-bc4c-5691-8961-d890056b94b2</tstamps>
+    </comp>
+    <comp ref="R5622">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source R622; netlist-derived.</field>
+        <field name="MPN">CRCW06031K00FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-38197231a947</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 1000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source R622; netlist-derived."/>
+      <property name="MPN" value="CRCW06031K00FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-38197231a947"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 1000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>506092b9-40b7-5b7e-a7d3-c679fbacd06e</tstamps>
+    </comp>
+    <comp ref="R5625">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source R625; netlist-derived.</field>
+        <field name="MPN">CRCW060310K0FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-9c0806476875</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 10000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source R625; netlist-derived."/>
+      <property name="MPN" value="CRCW060310K0FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-9c0806476875"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 10000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ebadb813-9c19-5c73-bf3d-9293c1bfc377</tstamps>
+    </comp>
+    <comp ref="R5626">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source R626; netlist-derived.</field>
+        <field name="MPN">CRCW06031K00FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-38197231a947</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 1000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source R626; netlist-derived."/>
+      <property name="MPN" value="CRCW06031K00FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-38197231a947"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 1000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>913b6000-da7c-5d70-ac6e-b0e03b6e266a</tstamps>
+    </comp>
+    <comp ref="R5627">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source R627; netlist-derived.</field>
+        <field name="MPN">CRCW06031K00FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-38197231a947</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 1000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source R627; netlist-derived."/>
+      <property name="MPN" value="CRCW06031K00FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-38197231a947"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 1000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3bf0d63e-fc8d-5fdd-9911-3873e6ccc20a</tstamps>
+    </comp>
+    <comp ref="R5628">
+      <value>1k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source R628; netlist-derived.</field>
+        <field name="MPN">CRCW06031K00FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-38197231a947</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 1000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source R628; netlist-derived."/>
+      <property name="MPN" value="CRCW06031K00FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-38197231a947"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 1000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a11e1f66-1317-50a3-85cd-a356b99b5334</tstamps>
+    </comp>
+    <comp ref="R5629">
+      <value>120R DNP</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source R629; netlist-derived. Do not fit: node on shared CAN2 bus, termination only at physical ends.</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source R629; netlist-derived. Do not fit: node on shared CAN2 bus, termination only at physical ends."/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <property name="dnp"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>78ca0747-dae0-5cef-a755-e3cb8953ff59</tstamps>
+    </comp>
+    <comp ref="R5640">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW060310K0FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-9c0806476875</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 10000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW060310K0FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-9c0806476875"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 10000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ad5a01ee-9d84-5935-bfa6-583079bfbf50</tstamps>
+    </comp>
+    <comp ref="R5641">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW060310K0FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-9c0806476875</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 10000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW060310K0FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-9c0806476875"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 10000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>db4bff91-1582-5fb6-90b7-6370b59281c4</tstamps>
+    </comp>
+    <comp ref="R5642">
+      <value>2.2k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW06032K20FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-77653d639f50</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 2200.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW06032K20FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-77653d639f50"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 2200.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3ae6c3d3-d9c6-5abb-8042-efd6cc4a0f68</tstamps>
+    </comp>
+    <comp ref="R5643">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW060310K0FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-9c0806476875</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 10000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW060310K0FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-9c0806476875"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 10000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d9f9be3a-e33c-5c6f-9090-ffcc4ef8494f</tstamps>
+    </comp>
+    <comp ref="R5644">
+      <value>0R</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW06030000Z0EA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-8473f02313b2</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "current_a": 2, "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 0.0, "tcr_ppm_c": null, "technology": "jumper", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": null, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW06030000Z0EA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-8473f02313b2"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;current_a&quot;: 2, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 0.0, &quot;tcr_ppm_c&quot;: null, &quot;technology&quot;: &quot;jumper&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: null, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e29403e0-6096-5d40-aede-763fe1ad398e</tstamps>
+    </comp>
+    <comp ref="R5645">
+      <value>100k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW0603100KFKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-4e3f06cba0aa</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 100000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW0603100KFKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-4e3f06cba0aa"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 100000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>aba75bc9-3958-5378-ba88-3d4c4f2636c2</tstamps>
+    </comp>
+    <comp ref="R5660">
+      <value>30k 0.1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note">SET bleed sinks &gt;102uA at nominal rail; 220R limits SET clamp fault current. Nominal buffered rail3.2978V.</field>
+        <field name="MPN">RNCF0603BTE30K0</field>
+        <field name="Manufacturer">Stackpole Electronics</field>
+        <field name="Selection_ID">SEL-f81c6e7cae8d</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.167, "resistance_ohm": 30000, "tcr_ppm_c": 25, "technology": "thin film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 0.1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNCF0603BTE30K0/16890249 https://www.seielect.com/Catalog/SEI-RNCF.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value="SET bleed sinks &gt;102uA at nominal rail; 220R limits SET clamp fault current. Nominal buffered rail3.2978V."/>
+      <property name="MPN" value="RNCF0603BTE30K0"/>
+      <property name="Manufacturer" value="Stackpole Electronics"/>
+      <property name="Selection_ID" value="SEL-f81c6e7cae8d"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.167, &quot;resistance_ohm&quot;: 30000, &quot;tcr_ppm_c&quot;: 25, &quot;technology&quot;: &quot;thin film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 0.1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNCF0603BTE30K0/16890249 https://www.seielect.com/Catalog/SEI-RNCF.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>939e070d-74a1-5f80-8a20-154f29f09a3a</tstamps>
+    </comp>
+    <comp ref="R5661">
+      <value>2.2k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW06032K20FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-77653d639f50</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 2200.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW06032K20FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-77653d639f50"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 2200.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>072a62e4-4f6c-587f-b24e-dd4c34d47a67</tstamps>
+    </comp>
+    <comp ref="R5662">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW060310K0FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-9c0806476875</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 10000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW060310K0FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-9c0806476875"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 10000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>90ac71f5-7b08-5a36-aca4-4d01fadf02c3</tstamps>
+    </comp>
+    <comp ref="R5663">
+      <value>220R 0.1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">RNCF0603BTE220R</field>
+        <field name="Manufacturer">Stackpole Electronics</field>
+        <field name="Selection_ID">SEL-b9ddc1a3febb</field>
+        <field name="Procurement_Status">SELECTED_CATALOG_ITEM</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.167, "resistance_ohm": 220, "tcr_ppm_c": 25, "technology": "thin film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 0.1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.mouser.ca/en/ProductDetail/SEI-Stackpole/RNCF0603BTE220R https://www.seielect.com/Catalog/SEI-RNCF.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="RNCF0603BTE220R"/>
+      <property name="Manufacturer" value="Stackpole Electronics"/>
+      <property name="Selection_ID" value="SEL-b9ddc1a3febb"/>
+      <property name="Procurement_Status" value="SELECTED_CATALOG_ITEM"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.167, &quot;resistance_ohm&quot;: 220, &quot;tcr_ppm_c&quot;: 25, &quot;technology&quot;: &quot;thin film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 0.1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.mouser.ca/en/ProductDetail/SEI-Stackpole/RNCF0603BTE220R https://www.seielect.com/Catalog/SEI-RNCF.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b0335aae-c601-59cd-8fa6-1e9d5b039a9b</tstamps>
+    </comp>
+    <comp ref="R5664">
+      <value>4.7k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW06034K70FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-1f010ac9622d</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 4700.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW06034K70FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-1f010ac9622d"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 4700.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5bc740c7-125d-5e7e-b496-6f27b9252f2d</tstamps>
+    </comp>
+    <comp ref="R5665">
+      <value>10k 1%</value>
+      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <fields>
+        <field name="Design note"/>
+        <field name="MPN">CRCW060310K0FKEA</field>
+        <field name="Manufacturer">Vishay</field>
+        <field name="Selection_ID">SEL-9c0806476875</field>
+        <field name="Procurement_Status">SELECTED_FAMILY_CODE</field>
+        <field name="Hardware_Qualification">BOARD_QUALIFICATION_PENDING</field>
+        <field name="Selection_Gaps">[]</field>
+        <field name="Selection_Ratings">{"aec_q200": true, "derating": "Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.", "power_reference_temperature_c": 70, "power_w": 0.1, "resistance_ohm": 10000.0, "tcr_ppm_c": 100, "technology": "thick film", "temperature_max_c": 155, "temperature_min_c": -55, "tolerance_pct": 1, "working_voltage_v": 75}</field>
+        <field name="Selection_Source_URLs">https://www.vishay.com/docs/20035/dcrcwe3.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_R" description=""/>
+      <property name="Design note" value=""/>
+      <property name="MPN" value="CRCW060310K0FKEA"/>
+      <property name="Manufacturer" value="Vishay"/>
+      <property name="Selection_ID" value="SEL-9c0806476875"/>
+      <property name="Procurement_Status" value="SELECTED_FAMILY_CODE"/>
+      <property name="Hardware_Qualification" value="BOARD_QUALIFICATION_PENDING"/>
+      <property name="Selection_Gaps" value="[]"/>
+      <property name="Selection_Ratings" value="{&quot;aec_q200&quot;: true, &quot;derating&quot;: &quot;Use manufacturer power versus ambient/terminal temperature curve; PCB thermal and fault pulse envelope not qualified.&quot;, &quot;power_reference_temperature_c&quot;: 70, &quot;power_w&quot;: 0.1, &quot;resistance_ohm&quot;: 10000.0, &quot;tcr_ppm_c&quot;: 100, &quot;technology&quot;: &quot;thick film&quot;, &quot;temperature_max_c&quot;: 155, &quot;temperature_min_c&quot;: -55, &quot;tolerance_pct&quot;: 1, &quot;working_voltage_v&quot;: 75}"/>
+      <property name="Selection_Source_URLs" value="https://www.vishay.com/docs/20035/dcrcwe3.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e81691b9-c129-5a28-85fd-f9c755694b0c</tstamps>
+    </comp>
+    <comp ref="U5602">
+      <value>STM32F042K6T6</value>
+      <footprint>Package_QFP:LQFP-32_7x7mm_P0.8mm</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source U602; netlist-derived.</field>
+        <field name="MPN">STM32F042K6T6</field>
+        <field name="Manufacturer">STMicroelectronics</field>
+        <field name="Selection_ID">SEL-819996afcb95</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.st.com/en/search.html#q=STM32F042K6T6</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Package_QFP:LQFP-32_7x7mm_P0.8mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_U602_mapped" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source U602; netlist-derived."/>
+      <property name="MPN" value="STM32F042K6T6"/>
+      <property name="Manufacturer" value="STMicroelectronics"/>
+      <property name="Selection_ID" value="SEL-819996afcb95"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.st.com/en/search.html#q=STM32F042K6T6"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>49c239a6-2c30-54fa-a067-6ccd7b86c292</tstamps>
+    </comp>
+    <comp ref="U5604">
+      <value>LT3042IMSE#WTRPBF</value>
+      <footprint>Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm</footprint>
+      <fields>
+        <field name="Design note">LT3042 RevC p15 external reference buffer; replaces XC6206. PGFB=IN disables fast start. OUTS Kelvin to output capacitor. EP grounded.</field>
+        <field name="MPN">LT3042IMSE#WTRPBF</field>
+        <field name="Manufacturer">Analog Devices</field>
+        <field name="Selection_ID">SEL-3841e4a3c00c</field>
+        <field name="Procurement_Status">SELECTED_CONDITIONAL</field>
+        <field name="Hardware_Qualification">OUTPUT_CAPACITY_AND_THERMAL_REVIEW_REQUIRED</field>
+        <field name="Selection_Gaps">["Automotive W order suffix retained; pricing must not silently use non-W version. Output minimum4.7uF needs effective capacitance review."]</field>
+        <field name="Selection_Ratings">{"output_current_catalog_a": 0.2, "output_max_v": 15, "output_min_v": 0, "required_output_effective_capacitance_uf": 4.7, "supply_max_v": 20, "supply_min_v": 1.8}</field>
+        <field name="Selection_Source_URLs">https://www.analog.com/en/products/lt3042.html</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_U604_mapped" description=""/>
+      <property name="Design note" value="LT3042 RevC p15 external reference buffer; replaces XC6206. PGFB=IN disables fast start. OUTS Kelvin to output capacitor. EP grounded."/>
+      <property name="MPN" value="LT3042IMSE#WTRPBF"/>
+      <property name="Manufacturer" value="Analog Devices"/>
+      <property name="Selection_ID" value="SEL-3841e4a3c00c"/>
+      <property name="Procurement_Status" value="SELECTED_CONDITIONAL"/>
+      <property name="Hardware_Qualification" value="OUTPUT_CAPACITY_AND_THERMAL_REVIEW_REQUIRED"/>
+      <property name="Selection_Gaps" value="[&quot;Automotive W order suffix retained; pricing must not silently use non-W version. Output minimum4.7uF needs effective capacitance review.&quot;]"/>
+      <property name="Selection_Ratings" value="{&quot;output_current_catalog_a&quot;: 0.2, &quot;output_max_v&quot;: 15, &quot;output_min_v&quot;: 0, &quot;required_output_effective_capacitance_uf&quot;: 4.7, &quot;supply_max_v&quot;: 20, &quot;supply_min_v&quot;: 1.8}"/>
+      <property name="Selection_Source_URLs" value="https://www.analog.com/en/products/lt3042.html"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>707640c8-4073-5f9e-8ee1-cbf60ca36066</tstamps>
+    </comp>
+    <comp ref="U5605">
+      <value>TJA1051T/3/1J</value>
+      <footprint>Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</footprint>
+      <fields>
+        <field name="Design note">Pinned Hellen 0.6 source U605; netlist-derived.</field>
+        <field name="MPN">TJA1051T/3/1J</field>
+        <field name="Manufacturer">NXP Semiconductors</field>
+        <field name="Selection_ID">SEL-ec8a3bf80ff2</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.nxp.com/docs/en/data-sheet/TJA1051.pdf</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_U605_mapped" description=""/>
+      <property name="Design note" value="Pinned Hellen 0.6 source U605; netlist-derived."/>
+      <property name="MPN" value="TJA1051T/3/1J"/>
+      <property name="Manufacturer" value="NXP Semiconductors"/>
+      <property name="Selection_ID" value="SEL-ec8a3bf80ff2"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.nxp.com/docs/en/data-sheet/TJA1051.pdf"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ec64b06f-7de8-5e14-b17f-cd5752ba7ce8</tstamps>
+    </comp>
+    <comp ref="U5610">
+      <value>SN74LVC1G08QDBVRQ1</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="Design note">Main F7 permission uses legacy WBOx_HEATER_PWM net name; static enable, not a second PWM.</field>
+        <field name="MPN">SN74LVC1G08QDBVRQ1</field>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="Selection_ID">SEL-617c05649839</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.ti.com/product/SN74LVC1G08-Q1/part-details/SN74LVC1G08QDBVRQ1</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_SN74LVC1G08" description=""/>
+      <property name="Design note" value="Main F7 permission uses legacy WBOx_HEATER_PWM net name; static enable, not a second PWM."/>
+      <property name="MPN" value="SN74LVC1G08QDBVRQ1"/>
+      <property name="Manufacturer" value="Texas Instruments"/>
+      <property name="Selection_ID" value="SEL-617c05649839"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.ti.com/product/SN74LVC1G08-Q1/part-details/SN74LVC1G08QDBVRQ1"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3844af1a-b997-5c4c-9271-9307affc496e</tstamps>
+    </comp>
+    <comp ref="U5611">
+      <value>SN74AHCT1G125QDBVRQ1</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <fields>
+        <field name="Design note">OE local5V pull-up defaults disabled; NPN level shift enables only when positive global HW enable is present. No5V pull-up on main3V3 output.</field>
+        <field name="MPN">SN74AHCT1G125QDBVRQ1</field>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="Selection_ID">SEL-209b18127c6b</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.ti.com/product/SN74AHCT1G125-Q1/part-details/SN74AHCT1G125QDBVRQ1</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_SN74AHCT1G125" description=""/>
+      <property name="Design note" value="OE local5V pull-up defaults disabled; NPN level shift enables only when positive global HW enable is present. No5V pull-up on main3V3 output."/>
+      <property name="MPN" value="SN74AHCT1G125QDBVRQ1"/>
+      <property name="Manufacturer" value="Texas Instruments"/>
+      <property name="Selection_ID" value="SEL-209b18127c6b"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.ti.com/product/SN74AHCT1G125-Q1/part-details/SN74AHCT1G125QDBVRQ1"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>05f94de3-5c79-55ab-8638-8ebad2076695</tstamps>
+    </comp>
+    <comp ref="U5612">
+      <value>TPS3808G33QDBVRQ1</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-6</footprint>
+      <fields>
+        <field name="Design note">Local rail monitor: ~3.07V threshold; CT open ~20ms recovery delay. NRST internal POR alone does not guarantee ADC supply validity.</field>
+        <field name="MPN">TPS3808G33QDBVRQ1</field>
+        <field name="Manufacturer">Texas Instruments</field>
+        <field name="Selection_ID">SEL-36c2480848bd</field>
+        <field name="Procurement_Status">REFERENCE_MPN_RETAINED</field>
+        <field name="Hardware_Qualification">PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING</field>
+        <field name="Selection_Gaps">["Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required."]</field>
+        <field name="Selection_Ratings">{}</field>
+        <field name="Selection_Source_URLs">https://www.ti.com/product/TPS3808-Q1/part-details/TPS3808G33QDBVRQ1</field>
+        <field name="Purchase_Released">false</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <libsource lib="Power8GDI_WBO" part="WBO_TPS3808G33" description=""/>
+      <property name="Design note" value="Local rail monitor: ~3.07V threshold; CT open ~20ms recovery delay. NRST internal POR alone does not guarantee ADC supply validity."/>
+      <property name="MPN" value="TPS3808G33QDBVRQ1"/>
+      <property name="Manufacturer" value="Texas Instruments"/>
+      <property name="Selection_ID" value="SEL-36c2480848bd"/>
+      <property name="Procurement_Status" value="REFERENCE_MPN_RETAINED"/>
+      <property name="Hardware_Qualification" value="PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"/>
+      <property name="Selection_Gaps" value="[&quot;Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.&quot;]"/>
+      <property name="Selection_Ratings" value="{}"/>
+      <property name="Selection_Source_URLs" value="https://www.ti.com/product/TPS3808-Q1/part-details/TPS3808G33QDBVRQ1"/>
+      <property name="Purchase_Released" value="false"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="wbo1_control.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1bc42a89-1909-5da1-ab4b-b38d2c310ce3</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Power8GDI_WBO" part="WBO_BC847B_Q">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">WBO_BC847B_Q</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="BASE" type="input"/>
+        <pin num="2" name="EMITTER" type="passive"/>
+        <pin num="3" name="COLLECTOR" type="open_collector"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_C">
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">WBO_C</field>
+        <field name="Footprint">Capacitor_SMD:C_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_D600_mapped">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">WBO_D600_mapped</field>
+        <field name="Footprint">LED_SMD:LED_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_D601_mapped">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">WBO_D601_mapped</field>
+        <field name="Footprint">LED_SMD:LED_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_D602_mapped">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">WBO_D602_mapped</field>
+        <field name="Footprint">LED_SMD:LED_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_D603_mapped">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">WBO_D603_mapped</field>
+        <field name="Footprint">LED_SMD:LED_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_D604_mapped">
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">WBO_D604_mapped</field>
+        <field name="Footprint">Power8GDI_Board:SOT-23_D5604_J5600_Clearance</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="CANH" type="passive"/>
+        <pin num="2" name="CANL" type="passive"/>
+        <pin num="3" name="GND" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_J600_mapped">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">WBO_J600_mapped</field>
+        <field name="Footprint">Connector:Tag-Connect_TC2030-IDC-NL_2x03_P1.27mm_Vertical</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_Q600_mapped">
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">WBO_Q600_mapped</field>
+        <field name="Footprint">Package_TO_SOT_SMD:TO-252-2</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="INPUT" type="input"/>
+        <pin num="2" name="DRAIN" type="passive"/>
+        <pin num="3" name="SOURCE" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_R">
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">WBO_R</field>
+        <field name="Footprint">Resistor_SMD:R_0603_1608Metric</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_SN74AHCT1G125">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">WBO_SN74AHCT1G125</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="~{OE}" type="input"/>
+        <pin num="2" name="A" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="Y" type="tri_state"/>
+        <pin num="5" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_SN74LVC1G08">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">WBO_SN74LVC1G08</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="input"/>
+        <pin num="2" name="B" type="input"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="Y" type="output"/>
+        <pin num="5" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_TPS3808G33">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">WBO_TPS3808G33</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-6</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="~{RESET}" type="open_collector"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="~{MR}" type="input"/>
+        <pin num="4" name="CT" type="passive"/>
+        <pin num="5" name="SENSE" type="input"/>
+        <pin num="6" name="VDD" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_U602_mapped">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">WBO_U602_mapped</field>
+        <field name="Footprint">Package_QFP:LQFP-32_7x7mm_P0.8mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD" type="power_in"/>
+        <pin num="2" name="PF0" type="input"/>
+        <pin num="3" name="PF1" type="input"/>
+        <pin num="4" name="NRST" type="input"/>
+        <pin num="5" name="VDDA" type="power_in"/>
+        <pin num="6" name="PA0" type="bidirectional"/>
+        <pin num="7" name="PA1" type="bidirectional"/>
+        <pin num="8" name="PA2" type="bidirectional"/>
+        <pin num="9" name="PA3" type="bidirectional"/>
+        <pin num="10" name="PA4" type="bidirectional"/>
+        <pin num="11" name="PA5" type="bidirectional"/>
+        <pin num="12" name="PA6" type="bidirectional"/>
+        <pin num="13" name="PA7" type="bidirectional"/>
+        <pin num="14" name="PB0" type="bidirectional"/>
+        <pin num="15" name="PB1" type="bidirectional"/>
+        <pin num="16" name="VSS" type="power_in"/>
+        <pin num="17" name="VDDIO2" type="power_in"/>
+        <pin num="18" name="PA8" type="bidirectional"/>
+        <pin num="19" name="PA9" type="bidirectional"/>
+        <pin num="20" name="PA10" type="bidirectional"/>
+        <pin num="21" name="PA11" type="bidirectional"/>
+        <pin num="22" name="PA12" type="bidirectional"/>
+        <pin num="23" name="PA13" type="bidirectional"/>
+        <pin num="24" name="PA14" type="bidirectional"/>
+        <pin num="25" name="PA15" type="bidirectional"/>
+        <pin num="26" name="PB3" type="bidirectional"/>
+        <pin num="27" name="PB4" type="bidirectional"/>
+        <pin num="28" name="PB5" type="bidirectional"/>
+        <pin num="29" name="PB6" type="bidirectional"/>
+        <pin num="30" name="PB7" type="bidirectional"/>
+        <pin num="31" name="PB8" type="bidirectional"/>
+        <pin num="32" name="VSSA" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_U604_mapped">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">WBO_U604_mapped</field>
+        <field name="Footprint">Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="IN" type="power_in"/>
+        <pin num="2" name="IN" type="power_in"/>
+        <pin num="3" name="EN_UV" type="input"/>
+        <pin num="4" name="PG" type="open_collector"/>
+        <pin num="5" name="ILIM" type="passive"/>
+        <pin num="6" name="PGFB" type="input"/>
+        <pin num="7" name="SET" type="passive"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="OUTS" type="input"/>
+        <pin num="10" name="OUT" type="power_out"/>
+        <pin num="11" name="EP_GND" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Power8GDI_WBO" part="WBO_U605_mapped">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">WBO_U605_mapped</field>
+        <field name="Footprint">Package_SO:SOIC-8_3.9x4.9mm_P1.27mm</field>
+        <field name="Datasheet"/>
+        <field name="Description"/>
+      </fields>
+      <pins>
+        <pin num="1" name="TXD" type="input"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="VCC" type="power_in"/>
+        <pin num="4" name="RXD" type="output"/>
+        <pin num="5" name="VIO" type="power_in"/>
+        <pin num="6" name="CANL" type="bidirectional"/>
+        <pin num="7" name="CANH" type="bidirectional"/>
+        <pin num="8" name="S" type="input"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Power8GDI_WBO">
+      <uri>/src/Power8GDI/hardware/design/wbo/Power8GDI_WBO.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+5V_CORE" class="Default">
+      <node ref="C5610" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5613" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5617" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5641" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5661" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5642" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U5604" pin="1" pinfunction="IN" pintype="power_in"/>
+      <node ref="U5604" pin="2" pinfunction="IN" pintype="power_in"/>
+      <node ref="U5604" pin="3" pinfunction="EN_UV" pintype="input"/>
+      <node ref="U5604" pin="6" pinfunction="PGFB" pintype="input"/>
+      <node ref="U5605" pin="3" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U5611" pin="5" pinfunction="VCC" pintype="power_in"/>
+    </net>
+    <net code="2" name="CAN2_H" class="Default">
+      <node ref="D5604" pin="1" pinfunction="CANH" pintype="passive"/>
+      <node ref="R5629" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U5605" pin="7" pinfunction="CANH" pintype="bidirectional"/>
+    </net>
+    <net code="3" name="CAN2_L" class="Default">
+      <node ref="D5604" pin="2" pinfunction="CANL" pintype="passive"/>
+      <node ref="R5629" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5605" pin="6" pinfunction="CANL" pintype="bidirectional"/>
+    </net>
+    <net code="4" name="GND" class="Default">
+      <node ref="C5602" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5609" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5610" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5613" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5614" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5615" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5616" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5617" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5618" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5640" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5641" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5660" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5661" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5662" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5663" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="C5664" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="D5600" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D5603" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="D5604" pin="3" pinfunction="GND" pintype="passive"/>
+      <node ref="J5600" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="Q5600" pin="3" pinfunction="SOURCE" pintype="passive"/>
+      <node ref="Q5620" pin="2" pinfunction="EMITTER" pintype="passive"/>
+      <node ref="R5617" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5625" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5626" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5627" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5640" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5641" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5643" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5644" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5645" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5660" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5661" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5665" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U5602" pin="16" pinfunction="VSS" pintype="power_in"/>
+      <node ref="U5602" pin="2" pinfunction="PF0" pintype="input"/>
+      <node ref="U5602" pin="3" pinfunction="PF1" pintype="input"/>
+      <node ref="U5602" pin="32" pinfunction="VSSA" pintype="power_in"/>
+      <node ref="U5604" pin="11" pinfunction="EP_GND" pintype="power_in"/>
+      <node ref="U5604" pin="5" pinfunction="ILIM" pintype="passive"/>
+      <node ref="U5604" pin="8" pinfunction="GND" pintype="power_in"/>
+      <node ref="U5605" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U5605" pin="8" pinfunction="S" pintype="input"/>
+      <node ref="U5610" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="U5611" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="U5612" pin="2" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="5" name="HARNESS_WBO1_CONTACT2" class="Default">
+      <node ref="U5602" pin="7" pinfunction="PA1" pintype="bidirectional"/>
+    </net>
+    <net code="6" name="HARNESS_WBO1_CONTACT3" class="Default">
+      <node ref="Q5600" pin="2" pinfunction="DRAIN" pintype="passive"/>
+    </net>
+    <net code="7" name="HW_ACTUATOR_ENABLE" class="Default">
+      <node ref="R5664" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="8" name="WBO1_3V3" class="Default">
+      <node ref="C5602" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5614" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5615" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5616" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5618" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5640" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5662" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="C5663" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="J5600" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="R5628" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5661" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5662" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U5602" pin="1" pinfunction="VDD" pintype="power_in"/>
+      <node ref="U5602" pin="17" pinfunction="VDDIO2" pintype="power_in"/>
+      <node ref="U5602" pin="5" pinfunction="VDDA" pintype="power_in"/>
+      <node ref="U5604" pin="10" pinfunction="OUT" pintype="power_out"/>
+      <node ref="U5604" pin="9" pinfunction="OUTS" pintype="input"/>
+      <node ref="U5605" pin="5" pinfunction="VIO" pintype="power_in"/>
+      <node ref="U5610" pin="5" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U5612" pin="3" pinfunction="~{MR}" pintype="input"/>
+      <node ref="U5612" pin="5" pinfunction="SENSE" pintype="input"/>
+      <node ref="U5612" pin="6" pinfunction="VDD" pintype="power_in"/>
+    </net>
+    <net code="9" name="WBO1_AUTO_Net_2D__28_D600_2D_A_29_" class="Default">
+      <node ref="D5600" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R5616" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="10" name="WBO1_AUTO_Net_2D__28_D601_2D_K_29_" class="Default">
+      <node ref="D5601" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R5626" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="11" name="WBO1_AUTO_Net_2D__28_D602_2D_K_29_" class="Default">
+      <node ref="D5602" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R5627" pin="2" pinfunction="2" pintype="passive"/>
+    </net>
+    <net code="12" name="WBO1_AUTO_Net_2D__28_D603_2D_A_29_" class="Default">
+      <node ref="D5603" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="R5628" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="13" name="WBO1_AUTO_Net_2D__28_Q600_2D_G_29_" class="Default">
+      <node ref="Q5600" pin="1" pinfunction="INPUT" pintype="input"/>
+      <node ref="R5622" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5645" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="14" name="WBO1_Boot0" class="Default">
+      <node ref="R5625" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U5602" pin="31" pinfunction="PB8" pintype="bidirectional"/>
+    </net>
+    <net code="15" name="WBO1_CAN_RX" class="Default">
+      <node ref="U5602" pin="21" pinfunction="PA11" pintype="bidirectional"/>
+      <node ref="U5605" pin="4" pinfunction="RXD" pintype="output"/>
+    </net>
+    <net code="16" name="WBO1_CAN_TX" class="Default">
+      <node ref="U5602" pin="22" pinfunction="PA12" pintype="bidirectional"/>
+      <node ref="U5605" pin="1" pinfunction="TXD" pintype="input"/>
+    </net>
+    <net code="17" name="WBO1_F042_HEATER_PWM" class="Default">
+      <node ref="R5616" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5617" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U5602" pin="13" pinfunction="PA7" pintype="bidirectional"/>
+      <node ref="U5610" pin="1" pinfunction="A" pintype="input"/>
+    </net>
+    <net code="18" name="WBO1_HEATER_ALLOWED_3V3" class="Default">
+      <node ref="R5643" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5610" pin="4" pinfunction="Y" pintype="output"/>
+      <node ref="U5611" pin="2" pinfunction="A" pintype="input"/>
+    </net>
+    <net code="19" name="WBO1_HEATER_DRIVE_5V" class="Default">
+      <node ref="R5622" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5641" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5611" pin="4" pinfunction="Y" pintype="tri_state"/>
+    </net>
+    <net code="20" name="WBO1_HEATER_OE_BASE" class="Default">
+      <node ref="Q5620" pin="1" pinfunction="BASE" pintype="input"/>
+      <node ref="R5664" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="R5665" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="21" name="WBO1_HEATER_OE_N" class="Default">
+      <node ref="Q5620" pin="3" pinfunction="COLLECTOR" pintype="open_collector"/>
+      <node ref="R5642" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5611" pin="1" pinfunction="~{OE}" pintype="input"/>
+    </net>
+    <net code="22" name="WBO1_HEATER_PWM" class="Default">
+      <node ref="R5640" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5610" pin="2" pinfunction="B" pintype="input"/>
+    </net>
+    <net code="23" name="WBO1_Ip_dac" class="Default">
+      <node ref="U5602" pin="12" pinfunction="PA6" pintype="bidirectional"/>
+    </net>
+    <net code="24" name="WBO1_Ip_sense" class="Default">
+      <node ref="U5602" pin="8" pinfunction="PA2" pintype="bidirectional"/>
+    </net>
+    <net code="25" name="WBO1_LED_BLUE" class="Default">
+      <node ref="D5602" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="U5602" pin="28" pinfunction="PB5" pintype="bidirectional"/>
+    </net>
+    <net code="26" name="WBO1_LED_GREEN" class="Default">
+      <node ref="D5601" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="U5602" pin="29" pinfunction="PB6" pintype="bidirectional"/>
+    </net>
+    <net code="27" name="WBO1_Nernst_esr_drive" class="Default">
+      <node ref="U5602" pin="30" pinfunction="PB7" pintype="bidirectional"/>
+    </net>
+    <net code="28" name="WBO1_REF3V3" class="Default">
+      <node ref="C5664" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5663" pin="1" pinfunction="1" pintype="passive"/>
+    </net>
+    <net code="29" name="WBO1_REF_SET" class="Default">
+      <node ref="C5660" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5660" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="R5663" pin="2" pinfunction="2" pintype="passive"/>
+      <node ref="U5604" pin="7" pinfunction="SET" pintype="passive"/>
+    </net>
+    <net code="30" name="WBO1_SEL1" class="Default">
+      <node ref="R5644" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5602" pin="15" pinfunction="PB1" pintype="bidirectional"/>
+    </net>
+    <net code="31" name="WBO1_SWCLK" class="Default">
+      <node ref="J5600" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="U5602" pin="24" pinfunction="PA14" pintype="bidirectional"/>
+    </net>
+    <net code="32" name="WBO1_SWDIO" class="Default">
+      <node ref="J5600" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="U5602" pin="23" pinfunction="PA13" pintype="bidirectional"/>
+    </net>
+    <net code="33" name="WBO1_Un_sense" class="Default">
+      <node ref="U5602" pin="6" pinfunction="PA0" pintype="bidirectional"/>
+    </net>
+    <net code="34" name="WBO1_Vm" class="Default">
+      <node ref="U5602" pin="9" pinfunction="PA3" pintype="bidirectional"/>
+    </net>
+    <net code="35" name="WBO1_nRESET" class="Default">
+      <node ref="C5609" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="J5600" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="R5662" pin="1" pinfunction="1" pintype="passive"/>
+      <node ref="U5602" pin="4" pinfunction="NRST" pintype="input"/>
+      <node ref="U5612" pin="1" pinfunction="~{RESET}" pintype="open_collector"/>
+    </net>
+    <net code="36" name="unconnected-(J5600-Pin_6-Pad6)" class="Default">
+      <node ref="J5600" pin="6" pinfunction="Pin_6" pintype="passive+no_connect"/>
+    </net>
+    <net code="37" name="unconnected-(U5602-PA4-Pad10)" class="Default">
+      <node ref="U5602" pin="10" pinfunction="PA4" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="38" name="unconnected-(U5602-PA5-Pad11)" class="Default">
+      <node ref="U5602" pin="11" pinfunction="PA5" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="39" name="unconnected-(U5602-PA8-Pad18)" class="Default">
+      <node ref="U5602" pin="18" pinfunction="PA8" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="40" name="unconnected-(U5602-PA9-Pad19)" class="Default">
+      <node ref="U5602" pin="19" pinfunction="PA9" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="41" name="unconnected-(U5602-PA10-Pad20)" class="Default">
+      <node ref="U5602" pin="20" pinfunction="PA10" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="42" name="unconnected-(U5602-PA15-Pad25)" class="Default">
+      <node ref="U5602" pin="25" pinfunction="PA15" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="43" name="unconnected-(U5602-PB0-Pad14)" class="Default">
+      <node ref="U5602" pin="14" pinfunction="PB0" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="44" name="unconnected-(U5602-PB3-Pad26)" class="Default">
+      <node ref="U5602" pin="26" pinfunction="PB3" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="45" name="unconnected-(U5602-PB4-Pad27)" class="Default">
+      <node ref="U5602" pin="27" pinfunction="PB4" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="46" name="unconnected-(U5604-PG-Pad4)" class="Default">
+      <node ref="U5604" pin="4" pinfunction="PG" pintype="open_collector+no_connect"/>
+    </net>
+    <net code="47" name="unconnected-(U5612-CT-Pad4)" class="Default">
+      <node ref="U5612" pin="4" pinfunction="CT" pintype="passive+no_connect"/>
+    </net>
+  </nets>
+</export>

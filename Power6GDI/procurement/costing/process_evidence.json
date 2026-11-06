@@ -1,0 +1,51 @@
+{
+  "schema_version":1,
+  "observed_on":"2026-10-25",
+  "currency":"USD",
+  "pcb_calculator": {
+    "supplier":"JLCPCB",
+    "url":"https://cart.jlcpcb.com/quote",
+    "evidence_kind":"live_public_browser_calculator_no_upload_no_order",
+    "specification":{"width_mm":245,"height_mm":165,"layers":4,"thickness_mm":1.6,"outer_copper_oz":2,"inner_copper_oz":1,"finish":"ENIG","gold_microinch":1,"material":"FR4 Tg155","soldermask":"green","silkscreen":"white","delivery":"single PCB","via_covering":"plugged","electrical_test":"flying probe fully test","lead_time_business_days":"3-4","shipping_included":false,"tax_included":false},
+    "quotes":[
+      {"fabricated_boards":5,"total_usd":140.32,"engineering_fee_usd":25,"surface_finish_usd":21.30,"material_type_usd":4.31,"outer_copper_usd":46.50,"inner_copper_usd":18.21,"board_usd":25,"via_covering_usd":0,"expedite_usd":0},
+      {"fabricated_boards":10,"total_usd":186.00,"engineering_fee_usd":25,"surface_finish_usd":26,"material_type_usd":5.31,"outer_copper_usd":59.90,"inner_copper_usd":19.89,"board_usd":49.90,"via_covering_usd":0,"expedite_usd":0}
+    ],
+    "notes":["No Gerber upload, RFQ, cart save, order or payment performed.","Five is the lowest standard quantity shown in the quote dropdown; custom one-board availability not verified. Cost model buys5 bare boards to assemble1 and accounts for4 unused blanks.","Tg155 is a conservative estimating material choice, not a released laminate stackup.","Assembly rails, final panel utilization, hole/routing exceptions and final Gerber review may change the price.","Default shipping quote used unspecified destination; excluded rather than represented as a Ukrainian delivery quote."]
+  },
+  "assembly_tariff": {
+    "supplier":"JLCPCB",
+    "url":"https://jlcpcb.com/help/article/pcb-assembly-price",
+    "published_updated_on":"2026-10-22",
+    "evidence_kind":"opened_primary_published_tariff",
+    "service":"Standard PCBA, double-sided",
+    "setup_per_order_usd":51.12,
+    "stencils_per_order_usd":16.42,
+    "feeder_per_unique_part_usd":1.53,
+    "smt_joint_tiers":[[1,0.0016],[50001,0.0013],[100001,0.0012]],
+    "manual_joint_tiers":[[1,0.0164],[10001,0.015],[30001,0.012]],
+    "hand_solder_labor_per_order_usd":3.58,
+    "rigid_fixture_for_1_to_29_boards_usd":16.42,
+    "packing_fixed_usd":0.50,
+    "packing_per_area_cm2_usd":0.00003,
+    "large_board_threshold_cm2":650,
+    "large_board_fee_usd":57.46,
+    "xray_component_tiers":[[1,1.64],[11,0.82],[51,0.49],[201,0.33],[501,0.25],[1001,0.16],[3001,0.082]],
+    "notes":["Tariff benchmark, not a binding PCBA quote; requires final BOM/CPL and supplier acceptance.","SMT fee is per solder joint, not per placement; solder joint count must be derived separately.","Handling adjustment applies only when both Economic and Standard are available; a double-sided design only qualifies for Standard, so not automatically added.","Pre-reflow soldering $0.016/joint is a separate optional process, not automatically applied to every ordinary reflow joint."]
+  },
+  "consignment": {
+    "url":"https://jlcpcb.com/help/article/consignment-part-terms-conditions",
+    "evidence_kind":"primary_published_terms",
+    "overseas_items_block":50,
+    "overseas_fee_per_block_usd":70,
+    "overseas_handling_usd":15,
+    "baking_48h_per_batch_usd":8,
+    "loose_piece_handling_usd":0.142,
+    "notes":["Overseas consignment handling is70USD per50 line items plus15USD; include only if that sourcing route is selected.","Parts require attrition but JLC does not publish a single universal allowance; per-part library and per-side rules govern actual orders.","Parts available in distributor catalog are not thereby present in JLC assembly stock."]
+  },
+  "attrition_references":[
+    {"url":"https://jlcpcb.com/help/article/pcb-assembly-faqs-part-2","fact":"Part-specific minimum assembly quantity and attrition can exceed fitted quantity."},
+    {"url":"https://jlcpcb.com/blog/reduce-pcb-assembly-cost-prototype","fact":"Attrition is calculated separately for each populated side; two-sided shared part can carry two allowances."},
+    {"url":"https://resources.academic.cadence.com/pcb-design-and-analysis-resources/parts-attrition-requirements-how-many-extra-parts-should-you-buy","fact":"Planning guidance gives10-20 percent for SMD, potentially50-100 percent for small packages; actual assembler rules differ."}
+  ]
+}

@@ -1,0 +1,4917 @@
+{
+  "manufacturing_gate": "FAIL",
+  "violations": {
+    "clearance": 511,
+    "drill_out_of_range": 18,
+    "track_dangling": 17,
+    "via_dangling": 7,
+    "silk_edge_clearance": 12,
+    "text_height": 24,
+    "silk_over_copper": 54,
+    "silk_overlap": 109
+  },
+  "total_violations": 752,
+  "unconnected_items": 499,
+  "multi_terminal_nets": 364,
+  "multi_terminal_nets_with_missing_connections": 100,
+  "multi_terminal_nets_without_reported_missing_connection": 264,
+  "singleton_harness_nets": [
+    "HARNESS_AUX_PWM1",
+    "HARNESS_AUX_PWM2",
+    "HARNESS_AUX_PWM3",
+    "HARNESS_AUX_PWM4",
+    "HARNESS_AUX_PWM5",
+    "HARNESS_AUX_PWM6",
+    "HARNESS_AUX_PWM7",
+    "HARNESS_AUX_PWM8",
+    "HARNESS_CAN2_H",
+    "HARNESS_CAN2_L",
+    "HARNESS_CHASSIS_GND",
+    "HARNESS_DI1_HIGH",
+    "HARNESS_DI1_LOW",
+    "HARNESS_DI2_HIGH",
+    "HARNESS_DI2_LOW",
+    "HARNESS_DI3_HIGH",
+    "HARNESS_DI3_LOW",
+    "HARNESS_DI4_HIGH",
+    "HARNESS_DI4_LOW",
+    "HARNESS_DI5_HIGH",
+    "HARNESS_DI5_LOW",
+    "HARNESS_DI6_HIGH",
+    "HARNESS_DI6_LOW",
+    "HARNESS_DI7_HIGH",
+    "HARNESS_DI7_LOW",
+    "HARNESS_DI8_HIGH",
+    "HARNESS_DI8_LOW",
+    "HARNESS_DIN5",
+    "HARNESS_DIN6",
+    "HARNESS_DIN7",
+    "HARNESS_DIN8",
+    "HARNESS_FLEX_FREQ",
+    "HARNESS_HALL1",
+    "HARNESS_HALL2",
+    "HARNESS_HALL3",
+    "HARNESS_HALL4",
+    "HARNESS_HPFP1_HIGH",
+    "HARNESS_HPFP1_LOW",
+    "HARNESS_HPFP2_HIGH",
+    "HARNESS_HPFP2_LOW",
+    "HARNESS_KNOCK1_RETURN",
+    "HARNESS_KNOCK1_SIG",
+    "HARNESS_KNOCK2_RETURN",
+    "HARNESS_KNOCK2_SIG",
+    "HARNESS_LIN2_BUS",
+    "HARNESS_LS_AUX1",
+    "HARNESS_LS_AUX2",
+    "HARNESS_LS_AUX3",
+    "HARNESS_LS_AUX4",
+    "HARNESS_PGND_GDI_A_1",
+    "HARNESS_PGND_GDI_A_2",
+    "HARNESS_PGND_GDI_B_1",
+    "HARNESS_PGND_GDI_B_2",
+    "HARNESS_PGND_MAIN_4",
+    "HARNESS_PGND_MAIN_B",
+    "HARNESS_PI1",
+    "HARNESS_PI2",
+    "HARNESS_PI3",
+    "HARNESS_PI4",
+    "HARNESS_PI5",
+    "HARNESS_PI6",
+    "HARNESS_PI7",
+    "HARNESS_PI8",
+    "HARNESS_SENSOR_5V_A",
+    "HARNESS_SENSOR_5V_B",
+    "HARNESS_SENSOR_GND_A",
+    "HARNESS_SENSOR_GND_B",
+    "HARNESS_SENSOR_GND_C",
+    "HARNESS_VBAT_GDI_A_1",
+    "HARNESS_VBAT_GDI_A_2",
+    "HARNESS_VBAT_GDI_B_1",
+    "HARNESS_VBAT_GDI_B_2",
+    "HARNESS_VVT1",
+    "HARNESS_VVT2",
+    "HARNESS_VVT3",
+    "HARNESS_VVT4",
+    "HARNESS_WBO1_CONTACT1",
+    "HARNESS_WBO1_CONTACT2",
+    "HARNESS_WBO1_CONTACT3",
+    "HARNESS_WBO1_CONTACT4",
+    "HARNESS_WBO1_CONTACT5",
+    "HARNESS_WBO1_CONTACT6",
+    "HARNESS_WBO2_CONTACT1",
+    "HARNESS_WBO2_CONTACT2",
+    "HARNESS_WBO2_CONTACT3",
+    "HARNESS_WBO2_CONTACT4",
+    "HARNESS_WBO2_CONTACT5",
+    "HARNESS_WBO2_CONTACT6"
+  ],
+  "nets": {
+    "+3V3": {
+      "pads": [
+        "C101.1",
+        "C102.1",
+        "C103.1",
+        "C104.1",
+        "C105.1",
+        "C106.1",
+        "C107.1",
+        "C108.1",
+        "C109.1",
+        "C110.1",
+        "C111.1",
+        "C112.1",
+        "C113.1",
+        "C114.1",
+        "C119.1",
+        "C120.1",
+        "C121.1",
+        "C122.1",
+        "C123.1",
+        "C126.1",
+        "C128.1",
+        "C129.1",
+        "C243.2",
+        "C343.2",
+        "C758.1",
+        "C759.1",
+        "C801.1",
+        "C802.1",
+        "C803.1",
+        "C804.1",
+        "C805.1",
+        "C910.1",
+        "C911.1",
+        "C912.1",
+        "C913.1",
+        "C914.1",
+        "C915.1",
+        "C960.1",
+        "C961.1",
+        "C962.1",
+        "C963.1",
+        "C964.1",
+        "C965.1",
+        "J101.1",
+        "R101.1",
+        "R102.1",
+        "R104.1",
+        "R107.1",
+        "R109.1",
+        "R110.1",
+        "R221.1",
+        "R321.1",
+        "R507.1",
+        "R792.1",
+        "R801.2",
+        "R802.2",
+        "R805.2",
+        "R904.1",
+        "R954.1",
+        "U101.103",
+        "U101.114",
+        "U101.127",
+        "U101.136",
+        "U101.149",
+        "U101.15",
+        "U101.159",
+        "U101.171",
+        "U101.172",
+        "U101.23",
+        "U101.36",
+        "U101.49",
+        "U101.6",
+        "U101.62",
+        "U101.72",
+        "U101.82",
+        "U101.91",
+        "U102.2",
+        "U103.5",
+        "U721.14",
+        "U722.14",
+        "U801.1",
+        "U801.3",
+        "U801.5",
+        "U802.5",
+        "U802.6",
+        "U803.5",
+        "U804.2",
+        "U804.7",
+        "U804.8",
+        "U805.20",
+        "U910.5",
+        "U911.5",
+        "U912.5",
+        "U913.5",
+        "U914.5",
+        "U915.5",
+        "U960.5",
+        "U961.5",
+        "U962.5",
+        "U963.5",
+        "U964.5",
+        "U965.5",
+        "Y101.1",
+        "Y101.4",
+        "Y201.4",
+        "Y301.4"
+      ],
+      "missing_connections": 91
+    },
+    "+3V3_A": {
+      "pads": [
+        "C117.1",
+        "C118.1",
+        "C740.1",
+        "C741.1",
+        "C742.1",
+        "C743.1",
+        "C744.1",
+        "C745.1",
+        "C746.1",
+        "C747.1",
+        "C748.1",
+        "C749.1",
+        "D701.2",
+        "D702.2",
+        "D703.2",
+        "D704.2",
+        "D705.2",
+        "D706.2",
+        "D707.2",
+        "D708.2",
+        "D709.2",
+        "D710.2",
+        "D711.2",
+        "D712.2",
+        "D713.2",
+        "D714.2",
+        "D715.2",
+        "D716.2",
+        "D717.2",
+        "R101.2",
+        "U101.38",
+        "U101.39",
+        "U701.4",
+        "U702.4",
+        "U703.4",
+        "U704.4",
+        "U705.4"
+      ],
+      "missing_connections": 36
+    },
+    "+5V_CORE": {
+      "pads": [
+        "C125.1",
+        "C127.1",
+        "C140.1",
+        "C141.1",
+        "C142.1",
+        "C143.1",
+        "C144.1",
+        "C145.1",
+        "C146.1",
+        "C147.1",
+        "C505.1",
+        "C506.1",
+        "C507.2",
+        "C761.1",
+        "C762.1",
+        "D730.2",
+        "D731.2",
+        "D732.2",
+        "D733.2",
+        "D734.2",
+        "D735.2",
+        "D736.2",
+        "D737.2",
+        "L501.2",
+        "R504.1",
+        "R751.1",
+        "R752.1",
+        "R753.1",
+        "R762.1",
+        "R765.1",
+        "R768.1",
+        "R771.1",
+        "R774.1",
+        "R777.1",
+        "R780.1",
+        "R783.1",
+        "U102.3",
+        "U103.3",
+        "U110.6",
+        "U111.6",
+        "U112.6",
+        "U113.6",
+        "U731.10"
+      ],
+      "missing_connections": 42
+    },
+    "+5V_GDI_A": {
+      "pads": [
+        "C215.2",
+        "C299.1",
+        "R298.1",
+        "U201.21",
+        "U249.3"
+      ],
+      "missing_connections": 3
+    },
+    "+5V_GDI_B": {
+      "pads": [
+        "C315.2",
+        "C399.1",
+        "R398.1",
+        "U301.21",
+        "U349.3"
+      ],
+      "missing_connections": 4
+    },
+    "ADC_AUX_ANALOG1": {
+      "pads": [
+        "C731.1",
+        "R747.2",
+        "U101.28"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_AUX_ANALOG2": {
+      "pads": [
+        "C733.1",
+        "R750.2",
+        "U101.26"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_BARO_EXT": {
+      "pads": [
+        "C711.1",
+        "R717.2",
+        "U101.52"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_CLT": {
+      "pads": [
+        "C713.1",
+        "R720.2",
+        "U101.53"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_EWG_POS": {
+      "pads": [
+        "C729.1",
+        "R744.2",
+        "U101.24"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_EXH_PRESS": {
+      "pads": [
+        "C727.1",
+        "R741.2",
+        "U101.55"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_FRP1": {
+      "pads": [
+        "C721.1",
+        "R732.2",
+        "U101.34"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_FRP2": {
+      "pads": [
+        "C723.1",
+        "R735.2",
+        "U101.35"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_IAT": {
+      "pads": [
+        "C715.1",
+        "R723.2",
+        "U101.56"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_LPFP_PRESS": {
+      "pads": [
+        "C725.1",
+        "R738.2",
+        "U101.54"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_MAP_MAIN": {
+      "pads": [
+        "C709.1",
+        "R714.2",
+        "U101.51"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_OIL_PRESS": {
+      "pads": [
+        "C717.1",
+        "R726.2",
+        "U101.32"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_OIL_TEMP": {
+      "pads": [
+        "C719.1",
+        "R729.2",
+        "U101.33"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_PPS1": {
+      "pads": [
+        "C705.1",
+        "R708.2",
+        "U101.47"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_PPS2": {
+      "pads": [
+        "C707.1",
+        "R711.2",
+        "U101.50"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_TPS1": {
+      "pads": [
+        "C701.1",
+        "R702.2",
+        "U101.40"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_TPS2": {
+      "pads": [
+        "C703.1",
+        "R705.2",
+        "U101.42"
+      ],
+      "missing_connections": 2
+    },
+    "ADC_UNUSED_18": {
+      "pads": [
+        "U705.6",
+        "U705.7"
+      ],
+      "missing_connections": 1
+    },
+    "ADC_UNUSED_19": {
+      "pads": [
+        "U705.8",
+        "U705.9"
+      ],
+      "missing_connections": 1
+    },
+    "ADC_UNUSED_20": {
+      "pads": [
+        "U705.13",
+        "U705.14"
+      ],
+      "missing_connections": 1
+    },
+    "AUX_ANALOG1_BUFFER": {
+      "pads": [
+        "R747.1",
+        "U704.13",
+        "U704.14"
+      ],
+      "missing_connections": 2
+    },
+    "AUX_ANALOG1_DIV": {
+      "pads": [
+        "C730.1",
+        "D716.3",
+        "R745.2",
+        "R746.1",
+        "U704.12"
+      ],
+      "missing_connections": 4
+    },
+    "AUX_ANALOG2_BUFFER": {
+      "pads": [
+        "R750.1",
+        "U705.1",
+        "U705.2"
+      ],
+      "missing_connections": 2
+    },
+    "AUX_ANALOG2_DIV": {
+      "pads": [
+        "C732.1",
+        "D717.3",
+        "R748.2",
+        "R749.1",
+        "U705.3"
+      ],
+      "missing_connections": 4
+    },
+    "BARO_EXT_BUFFER": {
+      "pads": [
+        "R717.1",
+        "U702.6",
+        "U702.7"
+      ],
+      "missing_connections": 2
+    },
+    "BARO_EXT_DIV": {
+      "pads": [
+        "C710.1",
+        "D706.3",
+        "R715.2",
+        "R716.1",
+        "U702.5"
+      ],
+      "missing_connections": 4
+    },
+    "BOOT0": {
+      "pads": [
+        "R103.1",
+        "U101.166"
+      ],
+      "missing_connections": 1
+    },
+    "BUCK_BST": {
+      "pads": [
+        "C504.1",
+        "U501.7"
+      ],
+      "missing_connections": 1
+    },
+    "BUCK_EN": {
+      "pads": [
+        "R501.2",
+        "R502.1",
+        "U501.3"
+      ],
+      "missing_connections": 2
+    },
+    "BUCK_FB": {
+      "pads": [
+        "C508.2",
+        "R504.2",
+        "R505.1",
+        "U501.5"
+      ],
+      "missing_connections": 3
+    },
+    "BUCK_RIPPLE": {
+      "pads": [
+        "C507.1",
+        "C508.1",
+        "R506.2"
+      ],
+      "missing_connections": 2
+    },
+    "BUCK_RON": {
+      "pads": [
+        "R503.1",
+        "U501.4"
+      ],
+      "missing_connections": 1
+    },
+    "BUCK_SW": {
+      "pads": [
+        "C504.2",
+        "L501.1",
+        "R506.1",
+        "U501.8"
+      ],
+      "missing_connections": 3
+    },
+    "CAM1": {
+      "pads": [
+        "U101.19",
+        "U721.2"
+      ],
+      "missing_connections": 1
+    },
+    "CAM1_FILTERED": {
+      "pads": [
+        "C750.1",
+        "D730.3",
+        "R760.2",
+        "R761.1",
+        "U721.1"
+      ],
+      "missing_connections": 4
+    },
+    "CAM2": {
+      "pads": [
+        "U101.20",
+        "U721.4"
+      ],
+      "missing_connections": 1
+    },
+    "CAM2_FILTERED": {
+      "pads": [
+        "C751.1",
+        "D731.3",
+        "R763.2",
+        "R764.1",
+        "U721.3"
+      ],
+      "missing_connections": 4
+    },
+    "CAM3": {
+      "pads": [
+        "U101.174",
+        "U721.6"
+      ],
+      "missing_connections": 1
+    },
+    "CAM3_FILTERED": {
+      "pads": [
+        "C752.1",
+        "D732.3",
+        "R766.2",
+        "R767.1",
+        "U721.5"
+      ],
+      "missing_connections": 4
+    },
+    "CAM4": {
+      "pads": [
+        "U101.175",
+        "U721.8"
+      ],
+      "missing_connections": 1
+    },
+    "CAM4_FILTERED": {
+      "pads": [
+        "C753.1",
+        "D733.3",
+        "R769.2",
+        "R770.1",
+        "U721.9"
+      ],
+      "missing_connections": 4
+    },
+    "CAN1_H": {
+      "pads": [
+        "D101.1",
+        "J604.11",
+        "R106.1",
+        "U103.7"
+      ],
+      "missing_connections": 3
+    },
+    "CAN1_L": {
+      "pads": [
+        "D101.2",
+        "J604.12",
+        "R106.2",
+        "U103.6"
+      ],
+      "missing_connections": 3
+    },
+    "CAN1_RX": {
+      "pads": [
+        "U101.142",
+        "U103.4"
+      ],
+      "missing_connections": 1
+    },
+    "CAN1_STB": {
+      "pads": [
+        "R104.2",
+        "R105.1",
+        "U101.43",
+        "U103.8"
+      ],
+      "missing_connections": 3
+    },
+    "CAN1_TX": {
+      "pads": [
+        "U101.143",
+        "U103.1"
+      ],
+      "missing_connections": 1
+    },
+    "CLT_BUFFER": {
+      "pads": [
+        "R720.1",
+        "U702.8",
+        "U702.9"
+      ],
+      "missing_connections": 2
+    },
+    "CLT_DIV": {
+      "pads": [
+        "C712.1",
+        "D707.3",
+        "R718.2",
+        "R719.1",
+        "U702.10"
+      ],
+      "missing_connections": 4
+    },
+    "CRANK": {
+      "pads": [
+        "R792.2",
+        "U101.57",
+        "U731.7"
+      ],
+      "missing_connections": 2
+    },
+    "DBW_DIR": {
+      "pads": [
+        "R903.1",
+        "U101.116",
+        "U913.2",
+        "U915.2"
+      ],
+      "missing_connections": 3
+    },
+    "DBW_DIR_N": {
+      "pads": [
+        "U912.2",
+        "U915.4"
+      ],
+      "missing_connections": 1
+    },
+    "DBW_DISABLE": {
+      "pads": [
+        "R904.2",
+        "U101.101",
+        "U914.2"
+      ],
+      "missing_connections": 2
+    },
+    "DBW_ENABLE": {
+      "pads": [
+        "U910.4",
+        "U911.2"
+      ],
+      "missing_connections": 1
+    },
+    "DBW_ILIM": {
+      "pads": [
+        "R901.1",
+        "U901.4"
+      ],
+      "missing_connections": 1
+    },
+    "DBW_IN1_GATED": {
+      "pads": [
+        "R906.1",
+        "U901.3",
+        "U912.4"
+      ],
+      "missing_connections": 2
+    },
+    "DBW_IN2_GATED": {
+      "pads": [
+        "R907.1",
+        "U901.2",
+        "U913.4"
+      ],
+      "missing_connections": 2
+    },
+    "DBW_MOTOR_A": {
+      "pads": [
+        "J604.1",
+        "U901.6"
+      ],
+      "missing_connections": 1
+    },
+    "DBW_MOTOR_B": {
+      "pads": [
+        "J604.2",
+        "U901.8"
+      ],
+      "missing_connections": 1
+    },
+    "DBW_NOT_DISABLED": {
+      "pads": [
+        "U910.2",
+        "U914.4"
+      ],
+      "missing_connections": 1
+    },
+    "DBW_PWM": {
+      "pads": [
+        "R902.1",
+        "U101.115",
+        "U911.1"
+      ],
+      "missing_connections": 2
+    },
+    "DBW_PWM_ENABLED": {
+      "pads": [
+        "U911.4",
+        "U912.1",
+        "U913.1"
+      ],
+      "missing_connections": 2
+    },
+    "DBW_VM": {
+      "pads": [
+        "C901.1",
+        "C902.1",
+        "C903.1",
+        "D901.1",
+        "D902.1",
+        "U901.5"
+      ],
+      "missing_connections": 5
+    },
+    "DI1": {
+      "pads": [
+        "TP201.1",
+        "U101.111",
+        "U201.4"
+      ],
+      "missing_connections": 1
+    },
+    "DI2": {
+      "pads": [
+        "TP202.1",
+        "U101.112",
+        "U201.5"
+      ],
+      "missing_connections": 1
+    },
+    "DI3": {
+      "pads": [
+        "TP203.1",
+        "U101.99",
+        "U201.6"
+      ],
+      "missing_connections": 2
+    },
+    "DI4": {
+      "pads": [
+        "TP204.1",
+        "U101.98",
+        "U201.7"
+      ],
+      "missing_connections": 1
+    },
+    "DI5": {
+      "pads": [
+        "TP301.1",
+        "U101.97",
+        "U301.4"
+      ],
+      "missing_connections": 1
+    },
+    "DI6": {
+      "pads": [
+        "TP302.1",
+        "U101.60",
+        "U301.5"
+      ],
+      "missing_connections": 1
+    },
+    "DI7": {
+      "pads": [
+        "TP303.1",
+        "U101.63",
+        "U301.6"
+      ],
+      "missing_connections": 2
+    },
+    "DI8": {
+      "pads": [
+        "TP304.1",
+        "U101.64",
+        "U301.7"
+      ],
+      "missing_connections": 1
+    },
+    "EWG_DIR": {
+      "pads": [
+        "R953.1",
+        "U101.104",
+        "U963.2",
+        "U965.2"
+      ],
+      "missing_connections": 3
+    },
+    "EWG_DIR_N": {
+      "pads": [
+        "U962.2",
+        "U965.4"
+      ],
+      "missing_connections": 1
+    },
+    "EWG_DISABLE": {
+      "pads": [
+        "R954.2",
+        "U101.105",
+        "U964.2"
+      ],
+      "missing_connections": 2
+    },
+    "EWG_ENABLE": {
+      "pads": [
+        "U960.4",
+        "U961.2"
+      ],
+      "missing_connections": 1
+    },
+    "EWG_ILIM": {
+      "pads": [
+        "R951.1",
+        "U951.4"
+      ],
+      "missing_connections": 1
+    },
+    "EWG_IN1_GATED": {
+      "pads": [
+        "R956.1",
+        "U951.3",
+        "U962.4"
+      ],
+      "missing_connections": 2
+    },
+    "EWG_IN2_GATED": {
+      "pads": [
+        "R957.1",
+        "U951.2",
+        "U963.4"
+      ],
+      "missing_connections": 2
+    },
+    "EWG_MOTOR_A": {
+      "pads": [
+        "J604.3",
+        "U951.6"
+      ],
+      "missing_connections": 1
+    },
+    "EWG_MOTOR_B": {
+      "pads": [
+        "J604.4",
+        "U951.8"
+      ],
+      "missing_connections": 1
+    },
+    "EWG_NOT_DISABLED": {
+      "pads": [
+        "U960.2",
+        "U964.4"
+      ],
+      "missing_connections": 1
+    },
+    "EWG_POS_BUFFER": {
+      "pads": [
+        "R744.1",
+        "U704.8",
+        "U704.9"
+      ],
+      "missing_connections": 2
+    },
+    "EWG_POS_DIV": {
+      "pads": [
+        "C728.1",
+        "D715.3",
+        "R742.2",
+        "R743.1",
+        "U704.10"
+      ],
+      "missing_connections": 4
+    },
+    "EWG_PWM": {
+      "pads": [
+        "R952.1",
+        "U101.117",
+        "U961.1"
+      ],
+      "missing_connections": 2
+    },
+    "EWG_PWM_ENABLED": {
+      "pads": [
+        "U961.4",
+        "U962.1",
+        "U963.1"
+      ],
+      "missing_connections": 2
+    },
+    "EWG_VM": {
+      "pads": [
+        "C951.1",
+        "C952.1",
+        "C953.1",
+        "D951.1",
+        "D952.1",
+        "U951.5"
+      ],
+      "missing_connections": 5
+    },
+    "EXH_PRESS_BUFFER": {
+      "pads": [
+        "R741.1",
+        "U704.6",
+        "U704.7"
+      ],
+      "missing_connections": 2
+    },
+    "EXH_PRESS_DIV": {
+      "pads": [
+        "C726.1",
+        "D714.3",
+        "R739.2",
+        "R740.1",
+        "U704.5"
+      ],
+      "missing_connections": 4
+    },
+    "FRP1_BUFFER": {
+      "pads": [
+        "R732.1",
+        "U703.8",
+        "U703.9"
+      ],
+      "missing_connections": 2
+    },
+    "FRP1_DIV": {
+      "pads": [
+        "C720.1",
+        "D711.3",
+        "R730.2",
+        "R731.1",
+        "U703.10"
+      ],
+      "missing_connections": 4
+    },
+    "FRP2_BUFFER": {
+      "pads": [
+        "R735.1",
+        "U703.13",
+        "U703.14"
+      ],
+      "missing_connections": 2
+    },
+    "FRP2_DIV": {
+      "pads": [
+        "C722.1",
+        "D712.3",
+        "R733.2",
+        "R734.1",
+        "U703.12"
+      ],
+      "missing_connections": 4
+    },
+    "GDI_SPI2_MISO": {
+      "pads": [
+        "U101.94",
+        "U201.15",
+        "U301.15"
+      ],
+      "missing_connections": 2
+    },
+    "GDI_SPI2_MOSI": {
+      "pads": [
+        "U101.95",
+        "U201.14",
+        "U301.14"
+      ],
+      "missing_connections": 2
+    },
+    "GDI_SPI2_SCK": {
+      "pads": [
+        "U101.93",
+        "U201.16",
+        "U301.16"
+      ],
+      "missing_connections": 2
+    },
+    "GND": {
+      "pads": [
+        "C101.2",
+        "C102.2",
+        "C103.2",
+        "C104.2",
+        "C105.2",
+        "C106.2",
+        "C107.2",
+        "C108.2",
+        "C109.2",
+        "C110.2",
+        "C111.2",
+        "C112.2",
+        "C113.2",
+        "C114.2",
+        "C115.2",
+        "C116.2",
+        "C117.2",
+        "C118.2",
+        "C119.2",
+        "C120.2",
+        "C121.2",
+        "C122.2",
+        "C123.2",
+        "C124.2",
+        "C125.2",
+        "C126.2",
+        "C127.2",
+        "C128.2",
+        "C129.2",
+        "C130.2",
+        "C131.2",
+        "C132.2",
+        "C140.2",
+        "C141.2",
+        "C142.2",
+        "C143.2",
+        "C144.2",
+        "C145.2",
+        "C146.2",
+        "C147.2",
+        "C201.1",
+        "C205.2",
+        "C206.2",
+        "C208.2",
+        "C210.1",
+        "C212.1",
+        "C213.1",
+        "C214.1",
+        "C215.1",
+        "C220.1",
+        "C221.1",
+        "C222.1",
+        "C223.1",
+        "C224.1",
+        "C225.1",
+        "C226.1",
+        "C227.1",
+        "C235.1",
+        "C241.1",
+        "C242.1",
+        "C243.1",
+        "C246.2",
+        "C249.1",
+        "C250.1",
+        "C251.1",
+        "C253.1",
+        "C298.2",
+        "C299.2",
+        "C301.1",
+        "C305.2",
+        "C306.2",
+        "C308.2",
+        "C310.1",
+        "C312.1",
+        "C313.1",
+        "C314.1",
+        "C315.1",
+        "C320.1",
+        "C321.1",
+        "C322.1",
+        "C323.1",
+        "C324.1",
+        "C325.1",
+        "C326.1",
+        "C327.1",
+        "C335.1",
+        "C341.1",
+        "C342.1",
+        "C343.1",
+        "C346.2",
+        "C349.1",
+        "C350.1",
+        "C351.1",
+        "C353.1",
+        "C398.2",
+        "C399.2",
+        "C501.2",
+        "C502.2",
+        "C503.2",
+        "C505.2",
+        "C506.2",
+        "C700.2",
+        "C701.2",
+        "C702.2",
+        "C703.2",
+        "C704.2",
+        "C705.2",
+        "C706.2",
+        "C707.2",
+        "C708.2",
+        "C709.2",
+        "C710.2",
+        "C711.2",
+        "C712.2",
+        "C713.2",
+        "C714.2",
+        "C715.2",
+        "C716.2",
+        "C717.2",
+        "C718.2",
+        "C719.2",
+        "C720.2",
+        "C721.2",
+        "C722.2",
+        "C723.2",
+        "C724.2",
+        "C725.2",
+        "C726.2",
+        "C727.2",
+        "C728.2",
+        "C729.2",
+        "C730.2",
+        "C731.2",
+        "C732.2",
+        "C733.2",
+        "C740.2",
+        "C741.2",
+        "C742.2",
+        "C743.2",
+        "C744.2",
+        "C745.2",
+        "C746.2",
+        "C747.2",
+        "C748.2",
+        "C749.2",
+        "C750.2",
+        "C751.2",
+        "C752.2",
+        "C753.2",
+        "C754.2",
+        "C755.2",
+        "C756.2",
+        "C757.2",
+        "C758.2",
+        "C759.2",
+        "C761.2",
+        "C762.2",
+        "C801.2",
+        "C802.2",
+        "C803.2",
+        "C804.2",
+        "C805.2",
+        "C806.2",
+        "C901.2",
+        "C902.2",
+        "C903.2",
+        "C910.2",
+        "C911.2",
+        "C912.2",
+        "C913.2",
+        "C914.2",
+        "C915.2",
+        "C951.2",
+        "C952.2",
+        "C953.2",
+        "C960.2",
+        "C961.2",
+        "C962.2",
+        "C963.2",
+        "C964.2",
+        "C965.2",
+        "D101.3",
+        "D202.1",
+        "D203.1",
+        "D207.2",
+        "D211.1",
+        "D302.1",
+        "D303.1",
+        "D307.2",
+        "D311.1",
+        "D502.2",
+        "D701.1",
+        "D702.1",
+        "D703.1",
+        "D704.1",
+        "D705.1",
+        "D706.1",
+        "D707.1",
+        "D708.1",
+        "D709.1",
+        "D710.1",
+        "D711.1",
+        "D712.1",
+        "D713.1",
+        "D714.1",
+        "D715.1",
+        "D716.1",
+        "D717.1",
+        "D730.1",
+        "D731.1",
+        "D732.1",
+        "D733.1",
+        "D734.1",
+        "D735.1",
+        "D736.1",
+        "D737.1",
+        "D902.2",
+        "D952.2",
+        "J101.3",
+        "J101.5",
+        "J101.9",
+        "J601.29",
+        "J601.30",
+        "J601.31",
+        "R103.2",
+        "R105.2",
+        "R108.2",
+        "R120.2",
+        "R121.2",
+        "R122.2",
+        "R123.2",
+        "R124.2",
+        "R125.2",
+        "R126.2",
+        "R127.2",
+        "R136.2",
+        "R137.2",
+        "R138.2",
+        "R139.2",
+        "R140.2",
+        "R141.2",
+        "R142.2",
+        "R143.2",
+        "R203.4",
+        "R212.4",
+        "R213.4",
+        "R215.4",
+        "R227.2",
+        "R228.2",
+        "R229.2",
+        "R230.2",
+        "R231.2",
+        "R298.2",
+        "R303.4",
+        "R312.4",
+        "R313.4",
+        "R315.4",
+        "R327.2",
+        "R328.2",
+        "R329.2",
+        "R330.2",
+        "R331.2",
+        "R398.2",
+        "R502.2",
+        "R503.2",
+        "R505.2",
+        "R701.2",
+        "R704.2",
+        "R707.2",
+        "R710.2",
+        "R713.2",
+        "R716.2",
+        "R719.2",
+        "R722.2",
+        "R725.2",
+        "R728.2",
+        "R731.2",
+        "R734.2",
+        "R737.2",
+        "R740.2",
+        "R743.2",
+        "R746.2",
+        "R749.2",
+        "R761.2",
+        "R764.2",
+        "R767.2",
+        "R770.2",
+        "R773.2",
+        "R776.2",
+        "R779.2",
+        "R782.2",
+        "R803.2",
+        "R804.2",
+        "R806.2",
+        "R811.2",
+        "R812.2",
+        "R813.2",
+        "R814.2",
+        "R815.2",
+        "R816.2",
+        "R817.2",
+        "R818.2",
+        "R821.2",
+        "R822.2",
+        "R823.2",
+        "R824.2",
+        "R825.2",
+        "R826.2",
+        "R827.2",
+        "R828.2",
+        "R901.2",
+        "R902.2",
+        "R903.2",
+        "R905.2",
+        "R906.2",
+        "R907.2",
+        "R951.2",
+        "R952.2",
+        "R953.2",
+        "R955.2",
+        "R956.2",
+        "R957.2",
+        "U101.102",
+        "U101.113",
+        "U101.126",
+        "U101.135",
+        "U101.14",
+        "U101.148",
+        "U101.158",
+        "U101.22",
+        "U101.37",
+        "U101.48",
+        "U101.61",
+        "U101.71",
+        "U101.90",
+        "U102.1",
+        "U103.2",
+        "U104.5",
+        "U110.3",
+        "U111.3",
+        "U112.3",
+        "U113.3",
+        "U201.19",
+        "U201.24",
+        "U201.65",
+        "U249.2",
+        "U301.19",
+        "U301.24",
+        "U301.65",
+        "U349.2",
+        "U501.1",
+        "U501.9",
+        "U701.11",
+        "U702.11",
+        "U703.11",
+        "U704.11",
+        "U705.10",
+        "U705.11",
+        "U705.12",
+        "U705.5",
+        "U721.7",
+        "U722.11",
+        "U722.13",
+        "U722.5",
+        "U722.7",
+        "U722.9",
+        "U731.4",
+        "U731.5",
+        "U731.6",
+        "U731.9",
+        "U801.4",
+        "U801.9",
+        "U802.2",
+        "U803.3",
+        "U804.4",
+        "U805.10",
+        "U901.1",
+        "U901.7",
+        "U901.9",
+        "U910.3",
+        "U911.3",
+        "U912.3",
+        "U913.3",
+        "U914.3",
+        "U915.3",
+        "U951.1",
+        "U951.7",
+        "U951.9",
+        "U960.3",
+        "U961.3",
+        "U962.3",
+        "U963.3",
+        "U964.3",
+        "U965.3",
+        "Y101.2",
+        "Y201.2",
+        "Y301.2"
+      ],
+      "missing_connections": 128
+    },
+    "HARNESS_AUX_ANALOG1": {
+      "pads": [
+        "J604.19",
+        "R745.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_AUX_ANALOG2": {
+      "pads": [
+        "J604.20",
+        "R748.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_AUX_PWM1": {
+      "pads": [
+        "J602.21"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_AUX_PWM2": {
+      "pads": [
+        "J602.22"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_AUX_PWM3": {
+      "pads": [
+        "J602.23"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_AUX_PWM4": {
+      "pads": [
+        "J602.24"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_AUX_PWM5": {
+      "pads": [
+        "J602.25"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_AUX_PWM6": {
+      "pads": [
+        "J602.26"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_AUX_PWM7": {
+      "pads": [
+        "J602.27"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_AUX_PWM8": {
+      "pads": [
+        "J602.28"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_BARO_EXT": {
+      "pads": [
+        "J603.20",
+        "R715.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_CAM1": {
+      "pads": [
+        "J603.3",
+        "R760.1",
+        "R762.2"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_CAM2": {
+      "pads": [
+        "J603.4",
+        "R763.1",
+        "R765.2"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_CAM3": {
+      "pads": [
+        "J603.5",
+        "R766.1",
+        "R768.2"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_CAM4": {
+      "pads": [
+        "J603.6",
+        "R769.1",
+        "R771.2"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_CAN2_H": {
+      "pads": [
+        "J604.13"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_CAN2_L": {
+      "pads": [
+        "J604.14"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_CHASSIS_GND": {
+      "pads": [
+        "J604.33"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_CLT": {
+      "pads": [
+        "J603.21",
+        "R718.1",
+        "R751.2"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_CRANK_VR_N": {
+      "pads": [
+        "J603.2",
+        "R791.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_CRANK_VR_P": {
+      "pads": [
+        "J603.1",
+        "R790.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI1_HIGH": {
+      "pads": [
+        "J601.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI1_LOW": {
+      "pads": [
+        "J601.2"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI2_HIGH": {
+      "pads": [
+        "J601.3"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI2_LOW": {
+      "pads": [
+        "J601.4"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI3_HIGH": {
+      "pads": [
+        "J601.5"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI3_LOW": {
+      "pads": [
+        "J601.6"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI4_HIGH": {
+      "pads": [
+        "J601.7"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI4_LOW": {
+      "pads": [
+        "J601.8"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI5_HIGH": {
+      "pads": [
+        "J601.9"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI5_LOW": {
+      "pads": [
+        "J601.10"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI6_HIGH": {
+      "pads": [
+        "J601.11"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI6_LOW": {
+      "pads": [
+        "J601.12"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI7_HIGH": {
+      "pads": [
+        "J601.13"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI7_LOW": {
+      "pads": [
+        "J601.14"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI8_HIGH": {
+      "pads": [
+        "J601.15"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DI8_LOW": {
+      "pads": [
+        "J601.16"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DIN5": {
+      "pads": [
+        "J604.15"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DIN6": {
+      "pads": [
+        "J604.16"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DIN7": {
+      "pads": [
+        "J604.17"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_DIN8": {
+      "pads": [
+        "J604.18"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_EWG_POS": {
+      "pads": [
+        "J603.29",
+        "R742.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_EXH_PRESS": {
+      "pads": [
+        "J603.28",
+        "R739.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_FLEX_FREQ": {
+      "pads": [
+        "J603.30"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_FRP1": {
+      "pads": [
+        "J603.25",
+        "R730.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_FRP2": {
+      "pads": [
+        "J603.26",
+        "R733.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_HALL1": {
+      "pads": [
+        "J603.7"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_HALL2": {
+      "pads": [
+        "J603.8"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_HALL3": {
+      "pads": [
+        "J603.9"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_HALL4": {
+      "pads": [
+        "J603.10"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_HPFP1_HIGH": {
+      "pads": [
+        "J601.17"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_HPFP1_LOW": {
+      "pads": [
+        "J601.18"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_HPFP2_HIGH": {
+      "pads": [
+        "J601.19"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_HPFP2_LOW": {
+      "pads": [
+        "J601.20"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_IAT": {
+      "pads": [
+        "J603.22",
+        "R721.1",
+        "R752.2"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_KNOCK1_RETURN": {
+      "pads": [
+        "J603.12"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_KNOCK1_SIG": {
+      "pads": [
+        "J603.11"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_KNOCK2_RETURN": {
+      "pads": [
+        "J603.14"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_KNOCK2_SIG": {
+      "pads": [
+        "J603.13"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_LIN2_BUS": {
+      "pads": [
+        "J604.10"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_LPFP_PRESS": {
+      "pads": [
+        "J603.27",
+        "R736.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_LS_AUX1": {
+      "pads": [
+        "J602.29"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_LS_AUX2": {
+      "pads": [
+        "J602.30"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_LS_AUX3": {
+      "pads": [
+        "J602.31"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_LS_AUX4": {
+      "pads": [
+        "J602.32"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_MAP_MAIN": {
+      "pads": [
+        "J603.19",
+        "R712.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_OIL_PRESS": {
+      "pads": [
+        "J603.23",
+        "R724.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_OIL_TEMP": {
+      "pads": [
+        "J603.24",
+        "R727.1",
+        "R753.2"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PGND_GDI_A_1": {
+      "pads": [
+        "J601.25"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PGND_GDI_A_2": {
+      "pads": [
+        "J601.26"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PGND_GDI_B_1": {
+      "pads": [
+        "J601.27"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PGND_GDI_B_2": {
+      "pads": [
+        "J601.28"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PGND_MAIN_4": {
+      "pads": [
+        "J601.32"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PGND_MAIN_B": {
+      "pads": [
+        "J602.34"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PI1": {
+      "pads": [
+        "J602.9"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PI2": {
+      "pads": [
+        "J602.10"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PI3": {
+      "pads": [
+        "J602.11"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PI4": {
+      "pads": [
+        "J602.12"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PI5": {
+      "pads": [
+        "J602.13"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PI6": {
+      "pads": [
+        "J602.14"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PI7": {
+      "pads": [
+        "J602.15"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PI8": {
+      "pads": [
+        "J602.16"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PPS1": {
+      "pads": [
+        "J603.17",
+        "R706.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_PPS2": {
+      "pads": [
+        "J603.18",
+        "R709.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_SENSOR_5V_A": {
+      "pads": [
+        "J603.31"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_SENSOR_5V_B": {
+      "pads": [
+        "J603.32"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_SENSOR_GND_A": {
+      "pads": [
+        "J603.33"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_SENSOR_GND_B": {
+      "pads": [
+        "J603.34"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_SENSOR_GND_C": {
+      "pads": [
+        "J604.34"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_SENT1": {
+      "pads": [
+        "J604.5",
+        "R772.1",
+        "R774.2"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_SENT2": {
+      "pads": [
+        "J604.6",
+        "R775.1",
+        "R777.2"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_SENT3": {
+      "pads": [
+        "J604.7",
+        "R778.1",
+        "R780.2"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_SENT4": {
+      "pads": [
+        "J604.8",
+        "R781.1",
+        "R783.2"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_TPS1": {
+      "pads": [
+        "J603.15",
+        "R700.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_TPS2": {
+      "pads": [
+        "J603.16",
+        "R703.1"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_VBAT_GDI_A_1": {
+      "pads": [
+        "J601.21"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_VBAT_GDI_A_2": {
+      "pads": [
+        "J601.22"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_VBAT_GDI_B_1": {
+      "pads": [
+        "J601.23"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_VBAT_GDI_B_2": {
+      "pads": [
+        "J601.24"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_VVT1": {
+      "pads": [
+        "J602.17"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_VVT2": {
+      "pads": [
+        "J602.18"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_VVT3": {
+      "pads": [
+        "J602.19"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_VVT4": {
+      "pads": [
+        "J602.20"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_WBO1_CONTACT1": {
+      "pads": [
+        "J604.21"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_WBO1_CONTACT2": {
+      "pads": [
+        "J604.22"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_WBO1_CONTACT3": {
+      "pads": [
+        "J604.23"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_WBO1_CONTACT4": {
+      "pads": [
+        "J604.24"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_WBO1_CONTACT5": {
+      "pads": [
+        "J604.25"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_WBO1_CONTACT6": {
+      "pads": [
+        "J604.26"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_WBO2_CONTACT1": {
+      "pads": [
+        "J604.27"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_WBO2_CONTACT2": {
+      "pads": [
+        "J604.28"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_WBO2_CONTACT3": {
+      "pads": [
+        "J604.29"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_WBO2_CONTACT4": {
+      "pads": [
+        "J604.30"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_WBO2_CONTACT5": {
+      "pads": [
+        "J604.31"
+      ],
+      "missing_connections": 0
+    },
+    "HARNESS_WBO2_CONTACT6": {
+      "pads": [
+        "J604.32"
+      ],
+      "missing_connections": 0
+    },
+    "HPFP1": {
+      "pads": [
+        "U101.118"
+      ],
+      "missing_connections": 0
+    },
+    "HPFP2": {
+      "pads": [
+        "U101.100"
+      ],
+      "missing_connections": 0
+    },
+    "HW_ACTUATOR_ENABLE": {
+      "pads": [
+        "R806.1",
+        "R905.1",
+        "R955.1",
+        "U804.5",
+        "U910.1",
+        "U960.1"
+      ],
+      "missing_connections": 0
+    },
+    "HW_ACTUATOR_ENABLE_N": {
+      "pads": [
+        "R805.1",
+        "U804.3",
+        "U805.1",
+        "U805.19"
+      ],
+      "missing_connections": 0
+    },
+    "HW_KILL_N": {
+      "pads": [
+        "R802.1",
+        "U802.3"
+      ],
+      "missing_connections": 0
+    },
+    "IAT_BUFFER": {
+      "pads": [
+        "R723.1",
+        "U702.13",
+        "U702.14"
+      ],
+      "missing_connections": 0
+    },
+    "IAT_DIV": {
+      "pads": [
+        "C714.1",
+        "D708.3",
+        "R721.2",
+        "R722.1",
+        "U702.12"
+      ],
+      "missing_connections": 0
+    },
+    "IGN1": {
+      "pads": [
+        "R811.1",
+        "U101.8",
+        "U805.2"
+      ],
+      "missing_connections": 0
+    },
+    "IGN1_BUFFER": {
+      "pads": [
+        "R128.1",
+        "U110.7"
+      ],
+      "missing_connections": 0
+    },
+    "IGN1_GATED": {
+      "pads": [
+        "R120.1",
+        "R821.1",
+        "U110.2",
+        "U805.18"
+      ],
+      "missing_connections": 0
+    },
+    "IGN1_LOGIC_OUT": {
+      "pads": [
+        "J602.1",
+        "R128.2",
+        "R136.1"
+      ],
+      "missing_connections": 0
+    },
+    "IGN2": {
+      "pads": [
+        "R812.1",
+        "U101.4",
+        "U805.4"
+      ],
+      "missing_connections": 0
+    },
+    "IGN2_BUFFER": {
+      "pads": [
+        "R129.1",
+        "U110.5"
+      ],
+      "missing_connections": 0
+    },
+    "IGN2_GATED": {
+      "pads": [
+        "R121.1",
+        "R822.1",
+        "U110.4",
+        "U805.16"
+      ],
+      "missing_connections": 0
+    },
+    "IGN2_LOGIC_OUT": {
+      "pads": [
+        "J602.2",
+        "R129.2",
+        "R137.1"
+      ],
+      "missing_connections": 0
+    },
+    "IGN3": {
+      "pads": [
+        "R813.1",
+        "U101.3",
+        "U805.6"
+      ],
+      "missing_connections": 0
+    },
+    "IGN3_BUFFER": {
+      "pads": [
+        "R130.1",
+        "U111.7"
+      ],
+      "missing_connections": 0
+    },
+    "IGN3_GATED": {
+      "pads": [
+        "R122.1",
+        "R823.1",
+        "U111.2",
+        "U805.14"
+      ],
+      "missing_connections": 0
+    },
+    "IGN3_LOGIC_OUT": {
+      "pads": [
+        "J602.3",
+        "R130.2",
+        "R138.1"
+      ],
+      "missing_connections": 0
+    },
+    "IGN4": {
+      "pads": [
+        "R814.1",
+        "U101.2",
+        "U805.8"
+      ],
+      "missing_connections": 0
+    },
+    "IGN4_BUFFER": {
+      "pads": [
+        "R131.1",
+        "U111.5"
+      ],
+      "missing_connections": 0
+    },
+    "IGN4_GATED": {
+      "pads": [
+        "R123.1",
+        "R824.1",
+        "U111.4",
+        "U805.12"
+      ],
+      "missing_connections": 0
+    },
+    "IGN4_LOGIC_OUT": {
+      "pads": [
+        "J602.4",
+        "R131.2",
+        "R139.1"
+      ],
+      "missing_connections": 0
+    },
+    "IGN5": {
+      "pads": [
+        "R815.1",
+        "U101.1",
+        "U805.11"
+      ],
+      "missing_connections": 0
+    },
+    "IGN5_BUFFER": {
+      "pads": [
+        "R132.1",
+        "U112.7"
+      ],
+      "missing_connections": 0
+    },
+    "IGN5_GATED": {
+      "pads": [
+        "R124.1",
+        "R825.1",
+        "U112.2",
+        "U805.9"
+      ],
+      "missing_connections": 0
+    },
+    "IGN5_LOGIC_OUT": {
+      "pads": [
+        "J602.5",
+        "R132.2",
+        "R140.1"
+      ],
+      "missing_connections": 0
+    },
+    "IGN6": {
+      "pads": [
+        "R816.1",
+        "U101.167",
+        "U805.13"
+      ],
+      "missing_connections": 0
+    },
+    "IGN6_BUFFER": {
+      "pads": [
+        "R133.1",
+        "U112.5"
+      ],
+      "missing_connections": 0
+    },
+    "IGN6_GATED": {
+      "pads": [
+        "R125.1",
+        "R826.1",
+        "U112.4",
+        "U805.7"
+      ],
+      "missing_connections": 0
+    },
+    "IGN6_LOGIC_OUT": {
+      "pads": [
+        "J602.6",
+        "R133.2",
+        "R141.1"
+      ],
+      "missing_connections": 0
+    },
+    "IGN7": {
+      "pads": [
+        "R817.1",
+        "U101.168",
+        "U805.15"
+      ],
+      "missing_connections": 0
+    },
+    "IGN7_BUFFER": {
+      "pads": [
+        "R134.1",
+        "U113.7"
+      ],
+      "missing_connections": 0
+    },
+    "IGN7_GATED": {
+      "pads": [
+        "R126.1",
+        "R827.1",
+        "U113.2",
+        "U805.5"
+      ],
+      "missing_connections": 0
+    },
+    "IGN7_LOGIC_OUT": {
+      "pads": [
+        "J602.7",
+        "R134.2",
+        "R142.1"
+      ],
+      "missing_connections": 0
+    },
+    "IGN8": {
+      "pads": [
+        "R818.1",
+        "U101.5",
+        "U805.17"
+      ],
+      "missing_connections": 0
+    },
+    "IGN8_BUFFER": {
+      "pads": [
+        "R135.1",
+        "U113.5"
+      ],
+      "missing_connections": 0
+    },
+    "IGN8_GATED": {
+      "pads": [
+        "R127.1",
+        "R828.1",
+        "U113.4",
+        "U805.3"
+      ],
+      "missing_connections": 0
+    },
+    "IGN8_LOGIC_OUT": {
+      "pads": [
+        "J602.8",
+        "R135.2",
+        "R143.1"
+      ],
+      "missing_connections": 0
+    },
+    "KNOCK1": {
+      "pads": [
+        "U101.25"
+      ],
+      "missing_connections": 0
+    },
+    "KNOCK2": {
+      "pads": [
+        "U101.21"
+      ],
+      "missing_connections": 0
+    },
+    "LIN1_BUS": {
+      "pads": [
+        "C132.1",
+        "J604.9",
+        "U104.6"
+      ],
+      "missing_connections": 0
+    },
+    "LIN1_EN": {
+      "pads": [
+        "R108.1",
+        "R109.2",
+        "U101.44",
+        "U104.2"
+      ],
+      "missing_connections": 0
+    },
+    "LIN1_RX": {
+      "pads": [
+        "R107.2",
+        "U101.150",
+        "U104.1"
+      ],
+      "missing_connections": 0
+    },
+    "LIN1_TX": {
+      "pads": [
+        "R110.2",
+        "U101.147",
+        "U104.4"
+      ],
+      "missing_connections": 0
+    },
+    "LIN1_VSUP": {
+      "pads": [
+        "C130.1",
+        "C131.1",
+        "R111.2",
+        "U104.7"
+      ],
+      "missing_connections": 0
+    },
+    "LPFP_PRESS_BUFFER": {
+      "pads": [
+        "R738.1",
+        "U704.1",
+        "U704.2"
+      ],
+      "missing_connections": 0
+    },
+    "LPFP_PRESS_DIV": {
+      "pads": [
+        "C724.1",
+        "D713.3",
+        "R736.2",
+        "R737.1",
+        "U704.3"
+      ],
+      "missing_connections": 0
+    },
+    "MAP_MAIN_BUFFER": {
+      "pads": [
+        "R714.1",
+        "U702.1",
+        "U702.2"
+      ],
+      "missing_connections": 0
+    },
+    "MAP_MAIN_DIV": {
+      "pads": [
+        "C708.1",
+        "D705.3",
+        "R712.2",
+        "R713.1",
+        "U702.3"
+      ],
+      "missing_connections": 0
+    },
+    "MCU_HSE_IN": {
+      "pads": [
+        "U101.29",
+        "Y101.3"
+      ],
+      "missing_connections": 0
+    },
+    "MCU_VCAP_1": {
+      "pads": [
+        "C115.1",
+        "U101.81"
+      ],
+      "missing_connections": 0
+    },
+    "MCU_VCAP_2": {
+      "pads": [
+        "C116.1",
+        "U101.125"
+      ],
+      "missing_connections": 0
+    },
+    "NRST": {
+      "pads": [
+        "C124.1",
+        "J101.10",
+        "R102.2",
+        "U101.31"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(C236-Pad2)": {
+      "pads": [
+        "C236.2",
+        "R217.1"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(C244-Pad2)": {
+      "pads": [
+        "C244.2",
+        "R219.1"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(C336-Pad2)": {
+      "pads": [
+        "C336.2",
+        "R317.1"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(C344-Pad2)": {
+      "pads": [
+        "C344.2",
+        "R319.1"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(D211-A)": {
+      "pads": [
+        "D211.2",
+        "R220.1"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(D311-A)": {
+      "pads": [
+        "D311.2",
+        "R320.1"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q201-G)": {
+      "pads": [
+        "C252.2",
+        "Q201.1",
+        "R226.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q202-G)": {
+      "pads": [
+        "C245.2",
+        "Q202.1",
+        "R214.1"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q203-G)": {
+      "pads": [
+        "C228.2",
+        "Q203.1",
+        "R201.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q203-S)": {
+      "pads": [
+        "C216.2",
+        "C228.1",
+        "D202.3",
+        "Q203.3",
+        "U201.63"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q204-G)": {
+      "pads": [
+        "C229.2",
+        "Q204.1",
+        "R202.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q205-G)": {
+      "pads": [
+        "C232.2",
+        "Q205.1",
+        "R206.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q205-S)": {
+      "pads": [
+        "C217.2",
+        "C232.1",
+        "D203.3",
+        "Q205.3",
+        "U201.57"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q206-G)": {
+      "pads": [
+        "C233.2",
+        "Q206.1",
+        "R207.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q207-G)": {
+      "pads": [
+        "C231.2",
+        "Q207.1",
+        "R205.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q208-G)": {
+      "pads": [
+        "C230.2",
+        "Q208.1",
+        "R204.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q209-G)": {
+      "pads": [
+        "C234.2",
+        "Q209.1",
+        "R208.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q210-G)": {
+      "pads": [
+        "C237.2",
+        "Q210.1",
+        "R209.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q211-G)": {
+      "pads": [
+        "C238.2",
+        "Q211.1",
+        "R210.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q212-G)": {
+      "pads": [
+        "C239.2",
+        "C254.2",
+        "Q212.1",
+        "Q213.1",
+        "R211.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q212-S)": {
+      "pads": [
+        "C239.1",
+        "Q212.3",
+        "R215.1"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q301-G)": {
+      "pads": [
+        "C352.2",
+        "Q301.1",
+        "R326.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q302-G)": {
+      "pads": [
+        "C345.2",
+        "Q302.1",
+        "R314.1"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q303-G)": {
+      "pads": [
+        "C328.2",
+        "Q303.1",
+        "R301.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q303-S)": {
+      "pads": [
+        "C316.2",
+        "C328.1",
+        "D302.3",
+        "Q303.3",
+        "U301.63"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q304-G)": {
+      "pads": [
+        "C329.2",
+        "Q304.1",
+        "R302.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q305-G)": {
+      "pads": [
+        "C332.2",
+        "Q305.1",
+        "R306.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q305-S)": {
+      "pads": [
+        "C317.2",
+        "C332.1",
+        "D303.3",
+        "Q305.3",
+        "U301.57"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q306-G)": {
+      "pads": [
+        "C333.2",
+        "Q306.1",
+        "R307.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q307-G)": {
+      "pads": [
+        "C331.2",
+        "Q307.1",
+        "R305.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q308-G)": {
+      "pads": [
+        "C330.2",
+        "Q308.1",
+        "R304.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q309-G)": {
+      "pads": [
+        "C334.2",
+        "Q309.1",
+        "R308.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q310-G)": {
+      "pads": [
+        "C337.2",
+        "Q310.1",
+        "R309.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q311-G)": {
+      "pads": [
+        "C338.2",
+        "Q311.1",
+        "R310.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q312-G)": {
+      "pads": [
+        "C339.2",
+        "C354.2",
+        "Q312.1",
+        "Q313.1",
+        "R311.2"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(Q312-S)": {
+      "pads": [
+        "C339.1",
+        "Q312.3",
+        "R315.1"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-B_HS1)": {
+      "pads": [
+        "C216.1",
+        "U201.61"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-B_HS2)": {
+      "pads": [
+        "C218.1",
+        "U201.58"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-B_HS3)": {
+      "pads": [
+        "C217.1",
+        "U201.55"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-B_HS4)": {
+      "pads": [
+        "C219.1",
+        "U201.52"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-B_HS5)": {
+      "pads": [
+        "C240.1",
+        "U201.49"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-DBG)": {
+      "pads": [
+        "R225.1",
+        "U201.18"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-D_LS6)": {
+      "pads": [
+        "R216.2",
+        "R218.2",
+        "U201.33"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-FLAG1)": {
+      "pads": [
+        "R223.1",
+        "U201.11"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-FLAG2)": {
+      "pads": [
+        "R224.1",
+        "U201.12"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-G_HS1)": {
+      "pads": [
+        "R201.1",
+        "U201.62"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-G_HS2)": {
+      "pads": [
+        "R202.1",
+        "U201.59"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-G_HS3)": {
+      "pads": [
+        "R206.1",
+        "U201.56"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-G_HS4)": {
+      "pads": [
+        "R207.1",
+        "U201.53"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-G_HS5)": {
+      "pads": [
+        "R210.1",
+        "U201.50"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-G_LS1)": {
+      "pads": [
+        "R204.1",
+        "U201.47"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-G_LS2)": {
+      "pads": [
+        "R205.1",
+        "U201.46"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-G_LS3)": {
+      "pads": [
+        "R208.1",
+        "U201.45"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-G_LS4)": {
+      "pads": [
+        "R209.1",
+        "U201.44"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-G_LS5)": {
+      "pads": [
+        "R226.1",
+        "U201.43"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-G_LS6)": {
+      "pads": [
+        "R211.1",
+        "U201.42"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-G_LS7)": {
+      "pads": [
+        "R214.2",
+        "U201.41"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-IRQ)": {
+      "pads": [
+        "R222.1",
+        "U201.64"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-VCCIO)": {
+      "pads": [
+        "C235.2",
+        "R221.4",
+        "U201.17"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-VSENSEN1)": {
+      "pads": [
+        "C202.1",
+        "R212.3",
+        "U201.25"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-VSENSEN2)": {
+      "pads": [
+        "C203.1",
+        "R213.3",
+        "U201.27"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-VSENSEN3)": {
+      "pads": [
+        "C204.1",
+        "R215.3",
+        "U201.29"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-VSENSEN4)": {
+      "pads": [
+        "C211.1",
+        "R203.3",
+        "U201.31"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-VSENSEP1)": {
+      "pads": [
+        "C202.2",
+        "R212.2",
+        "U201.26"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-VSENSEP2)": {
+      "pads": [
+        "C203.2",
+        "R213.2",
+        "U201.28"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-VSENSEP3)": {
+      "pads": [
+        "C204.2",
+        "R215.2",
+        "U201.30"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U201-VSENSEP4)": {
+      "pads": [
+        "C211.2",
+        "R203.2",
+        "U201.32"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-B_HS1)": {
+      "pads": [
+        "C316.1",
+        "U301.61"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-B_HS2)": {
+      "pads": [
+        "C318.1",
+        "U301.58"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-B_HS3)": {
+      "pads": [
+        "C317.1",
+        "U301.55"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-B_HS4)": {
+      "pads": [
+        "C319.1",
+        "U301.52"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-B_HS5)": {
+      "pads": [
+        "C340.1",
+        "U301.49"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-DBG)": {
+      "pads": [
+        "R325.1",
+        "U301.18"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-D_LS6)": {
+      "pads": [
+        "R316.2",
+        "R318.2",
+        "U301.33"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-FLAG1)": {
+      "pads": [
+        "R323.1",
+        "U301.11"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-FLAG2)": {
+      "pads": [
+        "R324.1",
+        "U301.12"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-G_HS1)": {
+      "pads": [
+        "R301.1",
+        "U301.62"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-G_HS2)": {
+      "pads": [
+        "R302.1",
+        "U301.59"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-G_HS3)": {
+      "pads": [
+        "R306.1",
+        "U301.56"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-G_HS4)": {
+      "pads": [
+        "R307.1",
+        "U301.53"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-G_HS5)": {
+      "pads": [
+        "R310.1",
+        "U301.50"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-G_LS1)": {
+      "pads": [
+        "R304.1",
+        "U301.47"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-G_LS2)": {
+      "pads": [
+        "R305.1",
+        "U301.46"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-G_LS3)": {
+      "pads": [
+        "R308.1",
+        "U301.45"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-G_LS4)": {
+      "pads": [
+        "R309.1",
+        "U301.44"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-G_LS5)": {
+      "pads": [
+        "R326.1",
+        "U301.43"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-G_LS6)": {
+      "pads": [
+        "R311.1",
+        "U301.42"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-G_LS7)": {
+      "pads": [
+        "R314.2",
+        "U301.41"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-IRQ)": {
+      "pads": [
+        "R322.1",
+        "U301.64"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-VCCIO)": {
+      "pads": [
+        "C335.2",
+        "R321.4",
+        "U301.17"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-VSENSEN1)": {
+      "pads": [
+        "C302.1",
+        "R312.3",
+        "U301.25"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-VSENSEN2)": {
+      "pads": [
+        "C303.1",
+        "R313.3",
+        "U301.27"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-VSENSEN3)": {
+      "pads": [
+        "C304.1",
+        "R315.3",
+        "U301.29"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-VSENSEN4)": {
+      "pads": [
+        "C311.1",
+        "R303.3",
+        "U301.31"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-VSENSEP1)": {
+      "pads": [
+        "C302.2",
+        "R312.2",
+        "U301.26"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-VSENSEP2)": {
+      "pads": [
+        "C303.2",
+        "R313.2",
+        "U301.28"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-VSENSEP3)": {
+      "pads": [
+        "C304.2",
+        "R315.2",
+        "U301.30"
+      ],
+      "missing_connections": 0
+    },
+    "Net-(U301-VSENSEP4)": {
+      "pads": [
+        "C311.2",
+        "R303.2",
+        "U301.32"
+      ],
+      "missing_connections": 0
+    },
+    "OIL_PRESS_BUFFER": {
+      "pads": [
+        "R726.1",
+        "U703.1",
+        "U703.2"
+      ],
+      "missing_connections": 0
+    },
+    "OIL_PRESS_DIV": {
+      "pads": [
+        "C716.1",
+        "D709.3",
+        "R724.2",
+        "R725.1",
+        "U703.3"
+      ],
+      "missing_connections": 0
+    },
+    "OIL_TEMP_BUFFER": {
+      "pads": [
+        "R729.1",
+        "U703.6",
+        "U703.7"
+      ],
+      "missing_connections": 0
+    },
+    "OIL_TEMP_DIV": {
+      "pads": [
+        "C718.1",
+        "D710.3",
+        "R727.2",
+        "R728.1",
+        "U703.5"
+      ],
+      "missing_connections": 0
+    },
+    "PGOOD_5V_CORE": {
+      "pads": [
+        "R507.2",
+        "U501.6"
+      ],
+      "missing_connections": 0
+    },
+    "PPS1_BUFFER": {
+      "pads": [
+        "R708.1",
+        "U701.8",
+        "U701.9"
+      ],
+      "missing_connections": 0
+    },
+    "PPS1_DIV": {
+      "pads": [
+        "C704.1",
+        "D703.3",
+        "R706.2",
+        "R707.1",
+        "U701.10"
+      ],
+      "missing_connections": 0
+    },
+    "PPS2_BUFFER": {
+      "pads": [
+        "R711.1",
+        "U701.13",
+        "U701.14"
+      ],
+      "missing_connections": 0
+    },
+    "PPS2_DIV": {
+      "pads": [
+        "C706.1",
+        "D704.3",
+        "R709.2",
+        "R710.1",
+        "U701.12"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_+Batt_filtered": {
+      "pads": [
+        "C206.1",
+        "C246.1",
+        "L201.2",
+        "L202.1",
+        "R230.1",
+        "R231.1"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_CLK": {
+      "pads": [
+        "U201.1",
+        "Y201.3"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_CS": {
+      "pads": [
+        "U101.92",
+        "U201.13"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_DBG": {
+      "pads": [
+        "R225.2"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_DEVICE_DRVEN": {
+      "pads": [
+        "R227.1",
+        "R299.2",
+        "U201.2"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_DRVEN": {
+      "pads": [
+        "R299.1",
+        "U101.76"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_FLAG": {
+      "pads": [
+        "R229.1",
+        "U101.153",
+        "U201.10"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_FLAG_1": {
+      "pads": [
+        "R223.2"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_FLAG_2": {
+      "pads": [
+        "R224.2"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_H1": {
+      "pads": [
+        "C218.2",
+        "C220.2",
+        "C221.2",
+        "C229.1",
+        "C249.2",
+        "D202.2",
+        "Q204.3",
+        "U201.60"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_H3": {
+      "pads": [
+        "C219.2",
+        "C224.2",
+        "C225.2",
+        "C233.1",
+        "C250.2",
+        "D203.2",
+        "Q206.3",
+        "U201.54"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_H5PUMP": {
+      "pads": [
+        "C238.1",
+        "C240.2",
+        "C241.2",
+        "D207.1",
+        "Q211.3",
+        "U201.51"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_IRQ": {
+      "pads": [
+        "R222.2"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_L1": {
+      "pads": [
+        "C222.2",
+        "D201.2",
+        "Q208.2",
+        "U201.38"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_L2": {
+      "pads": [
+        "C223.2",
+        "D204.2",
+        "Q207.2",
+        "U201.37"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_L3": {
+      "pads": [
+        "C226.2",
+        "D205.2",
+        "Q209.2",
+        "U201.36"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_L4": {
+      "pads": [
+        "C227.2",
+        "D206.2",
+        "Q210.2",
+        "U201.35"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_L5": {
+      "pads": [
+        "C251.2",
+        "D209.2",
+        "Q201.2",
+        "U201.34"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_L6": {
+      "pads": [
+        "C253.2",
+        "D210.2",
+        "Q213.2",
+        "R218.1"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_L6PUMP": {
+      "pads": [
+        "C242.2",
+        "D208.2",
+        "Q212.2",
+        "R216.1"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_OA_1": {
+      "pads": [
+        "U201.22"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_OA_2": {
+      "pads": [
+        "U201.23"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_RESET": {
+      "pads": [
+        "R228.1",
+        "U101.75",
+        "U201.3"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_START5": {
+      "pads": [
+        "TP205.1",
+        "U201.8"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_START6": {
+      "pads": [
+        "TP206.1",
+        "U201.9"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_VBOOST": {
+      "pads": [
+        "C207.1",
+        "C209.1",
+        "C247.1",
+        "C248.1",
+        "D201.1",
+        "D204.1",
+        "D205.1",
+        "D206.1",
+        "D209.1",
+        "D210.1",
+        "D212.2",
+        "Q204.2",
+        "Q206.2",
+        "R219.2",
+        "R220.2",
+        "R232.1",
+        "R233.1",
+        "R234.1",
+        "R235.1",
+        "R236.1",
+        "R237.1",
+        "R238.1",
+        "R239.1",
+        "R240.1",
+        "U201.48"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_VCC1P5": {
+      "pads": [
+        "C201.2",
+        "C214.2",
+        "U201.20"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_VCCP": {
+      "pads": [
+        "C212.2",
+        "C213.2",
+        "U201.40"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_VSENSE1": {
+      "pads": [
+        "C230.1",
+        "C231.1",
+        "C252.1",
+        "Q201.3",
+        "Q207.3",
+        "Q208.3",
+        "R212.1"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_VSENSE2": {
+      "pads": [
+        "C234.1",
+        "C237.1",
+        "C254.1",
+        "Q209.3",
+        "Q210.3",
+        "Q213.3",
+        "R213.1"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_Vdrive_coil": {
+      "pads": [
+        "D212.1",
+        "D212.3",
+        "L202.2",
+        "Q202.2",
+        "R217.2"
+      ],
+      "missing_connections": 0
+    },
+    "PTA_Vdrive_shunt": {
+      "pads": [
+        "C207.2",
+        "C209.2",
+        "C236.1",
+        "C244.1",
+        "C245.1",
+        "C247.2",
+        "C248.2",
+        "Q202.3",
+        "R203.1",
+        "R232.2",
+        "R233.2",
+        "R234.2",
+        "R235.2",
+        "R236.2",
+        "R237.2",
+        "R238.2",
+        "R239.2",
+        "R240.2"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_+Batt_filtered": {
+      "pads": [
+        "C306.1",
+        "C346.1",
+        "L301.2",
+        "L302.1",
+        "R330.1",
+        "R331.1"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_CLK": {
+      "pads": [
+        "U301.1",
+        "Y301.3"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_CS": {
+      "pads": [
+        "U101.138",
+        "U301.13"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_DBG": {
+      "pads": [
+        "R325.2"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_DEVICE_DRVEN": {
+      "pads": [
+        "R327.1",
+        "R399.2",
+        "U301.2"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_DRVEN": {
+      "pads": [
+        "R399.1",
+        "U101.78"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_FLAG": {
+      "pads": [
+        "R329.1",
+        "U101.152",
+        "U301.10"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_FLAG_1": {
+      "pads": [
+        "R323.2"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_FLAG_2": {
+      "pads": [
+        "R324.2"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_H1": {
+      "pads": [
+        "C318.2",
+        "C320.2",
+        "C321.2",
+        "C329.1",
+        "C349.2",
+        "D302.2",
+        "Q304.3",
+        "U301.60"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_H3": {
+      "pads": [
+        "C319.2",
+        "C324.2",
+        "C325.2",
+        "C333.1",
+        "C350.2",
+        "D303.2",
+        "Q306.3",
+        "U301.54"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_H5PUMP": {
+      "pads": [
+        "C338.1",
+        "C340.2",
+        "C341.2",
+        "D307.1",
+        "Q311.3",
+        "U301.51"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_IRQ": {
+      "pads": [
+        "R322.2"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_L1": {
+      "pads": [
+        "C322.2",
+        "D301.2",
+        "Q308.2",
+        "U301.38"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_L2": {
+      "pads": [
+        "C323.2",
+        "D304.2",
+        "Q307.2",
+        "U301.37"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_L3": {
+      "pads": [
+        "C326.2",
+        "D305.2",
+        "Q309.2",
+        "U301.36"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_L4": {
+      "pads": [
+        "C327.2",
+        "D306.2",
+        "Q310.2",
+        "U301.35"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_L5": {
+      "pads": [
+        "C351.2",
+        "D309.2",
+        "Q301.2",
+        "U301.34"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_L6": {
+      "pads": [
+        "C353.2",
+        "D310.2",
+        "Q313.2",
+        "R318.1"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_L6PUMP": {
+      "pads": [
+        "C342.2",
+        "D308.2",
+        "Q312.2",
+        "R316.1"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_OA_1": {
+      "pads": [
+        "U301.22"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_OA_2": {
+      "pads": [
+        "U301.23"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_RESET": {
+      "pads": [
+        "R328.1",
+        "U101.77",
+        "U301.3"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_START5": {
+      "pads": [
+        "TP305.1",
+        "U301.8"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_START6": {
+      "pads": [
+        "TP306.1",
+        "U301.9"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_VBOOST": {
+      "pads": [
+        "C307.1",
+        "C309.1",
+        "C347.1",
+        "C348.1",
+        "D301.1",
+        "D304.1",
+        "D305.1",
+        "D306.1",
+        "D309.1",
+        "D310.1",
+        "D312.2",
+        "Q304.2",
+        "Q306.2",
+        "R319.2",
+        "R320.2",
+        "R332.1",
+        "R333.1",
+        "R334.1",
+        "R335.1",
+        "R336.1",
+        "R337.1",
+        "R338.1",
+        "R339.1",
+        "R340.1",
+        "U301.48"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_VCC1P5": {
+      "pads": [
+        "C301.2",
+        "C314.2",
+        "U301.20"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_VCCP": {
+      "pads": [
+        "C312.2",
+        "C313.2",
+        "U301.40"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_VSENSE1": {
+      "pads": [
+        "C330.1",
+        "C331.1",
+        "C352.1",
+        "Q301.3",
+        "Q307.3",
+        "Q308.3",
+        "R312.1"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_VSENSE2": {
+      "pads": [
+        "C334.1",
+        "C337.1",
+        "C354.1",
+        "Q309.3",
+        "Q310.3",
+        "Q313.3",
+        "R313.1"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_Vdrive_coil": {
+      "pads": [
+        "D312.1",
+        "D312.3",
+        "L302.2",
+        "Q302.2",
+        "R317.2"
+      ],
+      "missing_connections": 0
+    },
+    "PTB_Vdrive_shunt": {
+      "pads": [
+        "C307.2",
+        "C309.2",
+        "C336.1",
+        "C344.1",
+        "C345.1",
+        "C347.2",
+        "C348.2",
+        "Q302.3",
+        "R303.1",
+        "R332.2",
+        "R333.2",
+        "R334.2",
+        "R335.2",
+        "R336.2",
+        "R337.2",
+        "R338.2",
+        "R339.2",
+        "R340.2"
+      ],
+      "missing_connections": 0
+    },
+    "SAFETY_ARM_REQUEST": {
+      "pads": [
+        "R804.1",
+        "U101.46",
+        "U804.1"
+      ],
+      "missing_connections": 0
+    },
+    "SAFETY_CLEAR_N": {
+      "pads": [
+        "U803.4",
+        "U804.6"
+      ],
+      "missing_connections": 0
+    },
+    "SAFETY_FAULT_N": {
+      "pads": [
+        "R801.1",
+        "U101.83",
+        "U801.7",
+        "U801.8",
+        "U802.1",
+        "U803.2"
+      ],
+      "missing_connections": 0
+    },
+    "SAFETY_HEARTBEAT": {
+      "pads": [
+        "R803.1",
+        "U101.45",
+        "U801.6"
+      ],
+      "missing_connections": 0
+    },
+    "SENT1": {
+      "pads": [
+        "U101.70",
+        "U721.10"
+      ],
+      "missing_connections": 0
+    },
+    "SENT1_FILTERED": {
+      "pads": [
+        "C754.1",
+        "D734.3",
+        "R772.2",
+        "R773.1",
+        "U721.11"
+      ],
+      "missing_connections": 0
+    },
+    "SENT2": {
+      "pads": [
+        "U101.41",
+        "U721.12"
+      ],
+      "missing_connections": 0
+    },
+    "SENT2_FILTERED": {
+      "pads": [
+        "C755.1",
+        "D735.3",
+        "R775.2",
+        "R776.1",
+        "U721.13"
+      ],
+      "missing_connections": 0
+    },
+    "SENT3": {
+      "pads": [
+        "U101.164",
+        "U722.2"
+      ],
+      "missing_connections": 0
+    },
+    "SENT3_FILTERED": {
+      "pads": [
+        "C756.1",
+        "D736.3",
+        "R778.2",
+        "R779.1",
+        "U722.1"
+      ],
+      "missing_connections": 0
+    },
+    "SENT4": {
+      "pads": [
+        "U101.165",
+        "U722.4"
+      ],
+      "missing_connections": 0
+    },
+    "SENT4_FILTERED": {
+      "pads": [
+        "C757.1",
+        "D737.3",
+        "R781.2",
+        "R782.1",
+        "U722.3"
+      ],
+      "missing_connections": 0
+    },
+    "SWCLK": {
+      "pads": [
+        "J101.4",
+        "U101.137"
+      ],
+      "missing_connections": 0
+    },
+    "SWDIO": {
+      "pads": [
+        "J101.2",
+        "U101.124"
+      ],
+      "missing_connections": 0
+    },
+    "SWO": {
+      "pads": [
+        "J101.6",
+        "U101.161"
+      ],
+      "missing_connections": 0
+    },
+    "TPS1_BUFFER": {
+      "pads": [
+        "R702.1",
+        "U701.1",
+        "U701.2"
+      ],
+      "missing_connections": 0
+    },
+    "TPS1_DIV": {
+      "pads": [
+        "C700.1",
+        "D701.3",
+        "R700.2",
+        "R701.1",
+        "U701.3"
+      ],
+      "missing_connections": 0
+    },
+    "TPS2_BUFFER": {
+      "pads": [
+        "R705.1",
+        "U701.6",
+        "U701.7"
+      ],
+      "missing_connections": 0
+    },
+    "TPS2_DIV": {
+      "pads": [
+        "C702.1",
+        "D702.3",
+        "R703.2",
+        "R704.1",
+        "U701.5"
+      ],
+      "missing_connections": 0
+    },
+    "VBAT_DBW_FUSED": {
+      "pads": [
+        "D901.2",
+        "J601.33"
+      ],
+      "missing_connections": 0
+    },
+    "VBAT_EWG_FUSED": {
+      "pads": [
+        "D951.2",
+        "J601.34"
+      ],
+      "missing_connections": 0
+    },
+    "VBAT_GDI_A": {
+      "pads": [
+        "C205.1",
+        "C208.1",
+        "C210.2",
+        "C298.1",
+        "D208.1",
+        "L201.1",
+        "Q203.2",
+        "Q205.2",
+        "Q211.2",
+        "U201.39",
+        "U249.1"
+      ],
+      "missing_connections": 0
+    },
+    "VBAT_GDI_B": {
+      "pads": [
+        "C305.1",
+        "C308.1",
+        "C310.2",
+        "C398.1",
+        "D308.1",
+        "L301.1",
+        "Q303.2",
+        "Q305.2",
+        "Q311.2",
+        "U301.39",
+        "U349.1"
+      ],
+      "missing_connections": 0
+    },
+    "VBAT_LOGIC_PROTECTED": {
+      "pads": [
+        "C501.1",
+        "C502.1",
+        "C503.1",
+        "D501.1",
+        "R111.1",
+        "R501.1",
+        "U501.2"
+      ],
+      "missing_connections": 0
+    },
+    "VBAT_MAIN_FUSED": {
+      "pads": [
+        "D501.2",
+        "D502.1",
+        "J602.33"
+      ],
+      "missing_connections": 0
+    },
+    "VR_CRANK_N_FILT": {
+      "pads": [
+        "C760.2",
+        "R791.2",
+        "U731.2"
+      ],
+      "missing_connections": 0
+    },
+    "VR_CRANK_P_FILT": {
+      "pads": [
+        "C760.1",
+        "R790.2",
+        "U731.1"
+      ],
+      "missing_connections": 0
+    },
+    "WD_CWD": {
+      "pads": [
+        "C806.1",
+        "U801.2"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(J101-KEY-Pad7)": {
+      "pads": [
+        "J101.7"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(J101-NC-Pad8)": {
+      "pads": [
+        "J101.8"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(R221-Pad2)": {
+      "pads": [
+        "R221.2"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(R221-Pad3)": {
+      "pads": [
+        "R221.3"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(R321-Pad2)": {
+      "pads": [
+        "R321.2"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(R321-Pad3)": {
+      "pads": [
+        "R321.3"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PA10-Pad121)": {
+      "pads": [
+        "U101.121"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PA11-Pad122)": {
+      "pads": [
+        "U101.122"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PA12-Pad123)": {
+      "pads": [
+        "U101.123"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PA8-Pad119)": {
+      "pads": [
+        "U101.119"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PA9-Pad120)": {
+      "pads": [
+        "U101.120"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PB10-Pad79)": {
+      "pads": [
+        "U101.79"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PB11-Pad80)": {
+      "pads": [
+        "U101.80"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PB2-Pad58)": {
+      "pads": [
+        "U101.58"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PB4-Pad162)": {
+      "pads": [
+        "U101.162"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PB5-Pad163)": {
+      "pads": [
+        "U101.163"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PC10-Pad139)": {
+      "pads": [
+        "U101.139"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PC11-Pad140)": {
+      "pads": [
+        "U101.140"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PC12-Pad141)": {
+      "pads": [
+        "U101.141"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PC14-Pad9)": {
+      "pads": [
+        "U101.9"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PC15-Pad10)": {
+      "pads": [
+        "U101.10"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PD2-Pad144)": {
+      "pads": [
+        "U101.144"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PD3-Pad145)": {
+      "pads": [
+        "U101.145"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PD4-Pad146)": {
+      "pads": [
+        "U101.146"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PD7-Pad151)": {
+      "pads": [
+        "U101.151"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PD8-Pad96)": {
+      "pads": [
+        "U101.96"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PE0-Pad169)": {
+      "pads": [
+        "U101.169"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PE1-Pad170)": {
+      "pads": [
+        "U101.170"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PE10-Pad73)": {
+      "pads": [
+        "U101.73"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PE11-Pad74)": {
+      "pads": [
+        "U101.74"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PE7-Pad68)": {
+      "pads": [
+        "U101.68"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PE8-Pad69)": {
+      "pads": [
+        "U101.69"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PF0-Pad16)": {
+      "pads": [
+        "U101.16"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PF1-Pad17)": {
+      "pads": [
+        "U101.17"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PF11-Pad59)": {
+      "pads": [
+        "U101.59"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PF15-Pad65)": {
+      "pads": [
+        "U101.65"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PF2-Pad18)": {
+      "pads": [
+        "U101.18"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PF9-Pad27)": {
+      "pads": [
+        "U101.27"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PG0-Pad66)": {
+      "pads": [
+        "U101.66"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PG1-Pad67)": {
+      "pads": [
+        "U101.67"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PG11-Pad154)": {
+      "pads": [
+        "U101.154"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PG12-Pad155)": {
+      "pads": [
+        "U101.155"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PG13-Pad156)": {
+      "pads": [
+        "U101.156"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PG14-Pad157)": {
+      "pads": [
+        "U101.157"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PG15-Pad160)": {
+      "pads": [
+        "U101.160"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PG2-Pad106)": {
+      "pads": [
+        "U101.106"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PG3-Pad107)": {
+      "pads": [
+        "U101.107"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PG4-Pad108)": {
+      "pads": [
+        "U101.108"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PG5-Pad109)": {
+      "pads": [
+        "U101.109"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PG6-Pad110)": {
+      "pads": [
+        "U101.110"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PH1-Pad30)": {
+      "pads": [
+        "U101.30"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PH10-Pad87)": {
+      "pads": [
+        "U101.87"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PH11-Pad88)": {
+      "pads": [
+        "U101.88"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PH12-Pad89)": {
+      "pads": [
+        "U101.89"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PH13-Pad128)": {
+      "pads": [
+        "U101.128"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PH14-Pad129)": {
+      "pads": [
+        "U101.129"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PH15-Pad130)": {
+      "pads": [
+        "U101.130"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PH7-Pad84)": {
+      "pads": [
+        "U101.84"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PH8-Pad85)": {
+      "pads": [
+        "U101.85"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PH9-Pad86)": {
+      "pads": [
+        "U101.86"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PI0-Pad131)": {
+      "pads": [
+        "U101.131"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PI1-Pad132)": {
+      "pads": [
+        "U101.132"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PI10-Pad12)": {
+      "pads": [
+        "U101.12"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PI11-Pad13)": {
+      "pads": [
+        "U101.13"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PI2-Pad133)": {
+      "pads": [
+        "U101.133"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PI3-Pad134)": {
+      "pads": [
+        "U101.134"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PI4-Pad173)": {
+      "pads": [
+        "U101.173"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PI7-Pad176)": {
+      "pads": [
+        "U101.176"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PI8-Pad7)": {
+      "pads": [
+        "U101.7"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U101-PI9-Pad11)": {
+      "pads": [
+        "U101.11"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U104-NC-Pad3)": {
+      "pads": [
+        "U104.3"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U104-NC-Pad8)": {
+      "pads": [
+        "U104.8"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U110-NC-Pad1)": {
+      "pads": [
+        "U110.1"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U110-NC-Pad8)": {
+      "pads": [
+        "U110.8"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U111-NC-Pad1)": {
+      "pads": [
+        "U111.1"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U111-NC-Pad8)": {
+      "pads": [
+        "U111.8"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U112-NC-Pad1)": {
+      "pads": [
+        "U112.1"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U112-NC-Pad8)": {
+      "pads": [
+        "U112.8"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U113-NC-Pad1)": {
+      "pads": [
+        "U113.1"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U113-NC-Pad8)": {
+      "pads": [
+        "U113.8"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U722-3Y_INV-Pad6)": {
+      "pads": [
+        "U722.6"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U722-4Y_INV-Pad8)": {
+      "pads": [
+        "U722.8"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U722-5Y_INV-Pad10)": {
+      "pads": [
+        "U722.10"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U722-6Y_INV-Pad12)": {
+      "pads": [
+        "U722.12"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U731-EXT-Pad8)": {
+      "pads": [
+        "U731.8"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U731-NC-Pad3)": {
+      "pads": [
+        "U731.3"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U802-CT-Pad4)": {
+      "pads": [
+        "U802.4"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U803-NC-Pad1)": {
+      "pads": [
+        "U803.1"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U914-NC-Pad1)": {
+      "pads": [
+        "U914.1"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U915-NC-Pad1)": {
+      "pads": [
+        "U915.1"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U964-NC-Pad1)": {
+      "pads": [
+        "U964.1"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(U965-NC-Pad1)": {
+      "pads": [
+        "U965.1"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(Y201-Vctrl-Pad1)": {
+      "pads": [
+        "Y201.1"
+      ],
+      "missing_connections": 0
+    },
+    "unconnected-(Y301-Vctrl-Pad1)": {
+      "pads": [
+        "Y301.1"
+      ],
+      "missing_connections": 0
+    }
+  },
+  "interpretation": "No missing connection in DRC does not prove correctness, safety, electrical ratings or absence of shorts. Singleton requested interfaces remain unimplemented."
+}

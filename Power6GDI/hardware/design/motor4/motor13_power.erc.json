@@ -1,0 +1,64 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T17:22:30+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/2d284011-6980-5169-8356-681db63b56d3",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U6200 Pin 10 [VS, Power input, Line]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 1.4986
+                            },
+                            "uuid": "03b031b5-e1a7-51e2-b7d0-b8087878134d"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U6200 Pin 7 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 2.4511,
+                                "y": 1.651
+                            },
+                            "uuid": "e7f4de93-d31c-599f-b934-b4d30f59a2ca"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HW_ACTUATOR_ENABLE'",
+                            "pos": {
+                                "x": 3.3782,
+                                "y": 2.4003
+                            },
+                            "uuid": "55fbb8a1-a167-5c30-8fd1-be701ec919f4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "motor13_power.kicad_sch"
+}

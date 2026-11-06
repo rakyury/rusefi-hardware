@@ -1,0 +1,555 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-10-28",
+  "currency": "USD",
+  "purchase_released": false,
+  "status": "ENGINEERING_ESTIMATE_NOT_FACTORY_QUOTATION",
+  "source_selection_sha256": "7e9d221aeb9504f4a88a13b53773fce778d71bfa90cf127fc0613dc7718d926a",
+  "coverage": {
+    "purchase_groups": 149,
+    "catalog_priced_groups": 44,
+    "catalog_priced_fitted_refs": 455,
+    "allowance_groups": 105,
+    "allowance_fitted_refs": 592,
+    "unresolved_mpn_refs": 0
+  },
+  "price_observation_dates": [
+    "2026-10-25",
+    "2026-10-27",
+    "2026-10-28"
+  ],
+  "batches": [
+    {
+      "assembled_boards": 1,
+      "fabricated_boards": 5,
+      "unused_blanks": 4,
+      "smt_placements": 1034,
+      "tht_components": 13,
+      "smt_solder_lands": 3210,
+      "tht_solder_lands": 162,
+      "feeder_count_estimate": 145,
+      "consignment_line_count": 149,
+      "line_items": [
+        {
+          "id": "component_catalog_subtotal",
+          "description": "Детали с опубликованной ценой, закупка с MOQ и запасом",
+          "low_usd": 1017.62,
+          "base_usd": 1017.62,
+          "high_usd": 1017.62,
+          "evidence_kind": "CATALOG_SNAPSHOT_NOT_FULL_BOM_PRICE",
+          "formula": "sum(purchase_qty * applicable_tier_price), exact MPN only",
+          "source_url": null
+        },
+        {
+          "id": "unknown_component_allowance",
+          "description": "Резерв на детали без подтверждённой цены / MPN",
+          "low_usd": 173.65,
+          "base_usd": 472.66,
+          "high_usd": 1231.74,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "sum(planned_purchase_qty * engineering_unit_budget); catalog prices remain null",
+          "source_url": null
+        },
+        {
+          "id": "pcb",
+          "description": "Пустые платы: 5 шт., сборка 1 шт.",
+          "low_usd": 140.32,
+          "base_usd": 140.32,
+          "high_usd": 140.32,
+          "evidence_kind": "PUBLIC_CALCULATOR_NO_GERBER_REVIEW",
+          "formula": "5 blanks at observed 245x165mm,4L,2oz/1oz,ENIG specification",
+          "source_url": "https://cart.jlcpcb.com/quote"
+        },
+        {
+          "id": "assembly_setup",
+          "description": "Подготовка двухстороннего монтажа",
+          "low_usd": 51.12,
+          "base_usd": 51.12,
+          "high_usd": 51.12,
+          "evidence_kind": "PUBLISHED_TARIFF_BENCHMARK",
+          "formula": "setup_per_order_usd",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "stencils",
+          "description": "Трафареты, двухсторонний Standard",
+          "low_usd": 16.42,
+          "base_usd": 16.42,
+          "high_usd": 16.42,
+          "evidence_kind": "PUBLISHED_TARIFF_BENCHMARK",
+          "formula": "stencils_per_order_usd",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "assembly_fixture",
+          "description": "Монтажная оснастка",
+          "low_usd": 16.42,
+          "base_usd": 16.42,
+          "high_usd": 16.42,
+          "evidence_kind": "PUBLISHED_TARIFF_BENCHMARK",
+          "formula": "rigid_fixture_for_1_to_29_boards_usd",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "hand_solder_setup",
+          "description": "Подготовка ручной пайки",
+          "low_usd": 3.58,
+          "base_usd": 3.58,
+          "high_usd": 3.58,
+          "evidence_kind": "PUBLISHED_TARIFF_BENCHMARK",
+          "formula": "hand_solder_labor_per_order_usd",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "feeders",
+          "description": "Загрузка питателей по уникальным SMT позициям",
+          "low_usd": 221.85,
+          "base_usd": 221.85,
+          "high_usd": 221.85,
+          "evidence_kind": "PUBLISHED_TARIFF_WITH_PLANNING_COUNT",
+          "formula": "145 unique SMT MPN/groups *1.53; unresolved groups provisional",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "smt",
+          "description": "SMT пайка по физическим паяным площадкам",
+          "low_usd": 5.14,
+          "base_usd": 5.14,
+          "high_usd": 5.14,
+          "evidence_kind": "PUBLISHED_TARIFF_WITH_PHYSICAL_LAND_COUNT",
+          "formula": "max(3210 joints *0.0016, 1 *0.48 minimum)",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "tht",
+          "description": "Ручная пайка выводных компонентов",
+          "low_usd": 2.66,
+          "base_usd": 2.66,
+          "high_usd": 2.66,
+          "evidence_kind": "PUBLISHED_TARIFF_WITH_PHYSICAL_LAND_COUNT",
+          "formula": "162 joints *0.0164",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "xray",
+          "description": "Рентген скрытых соединений",
+          "low_usd": 16.4,
+          "base_usd": 16.4,
+          "high_usd": 16.4,
+          "evidence_kind": "PUBLISHED_TARIFF_WITH_PLANNING_COUNT",
+          "formula": "20 packages *0.82",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "packing",
+          "description": "Упаковка и подтверждение размещения",
+          "low_usd": 0.96,
+          "base_usd": 0.96,
+          "high_usd": 0.96,
+          "evidence_kind": "PUBLISHED_TARIFF_WITH_PER_BOARD_PACKING_ASSUMPTION",
+          "formula": "1*(0.50+0.00003*404.25)+0.45",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "consignment",
+          "description": "Приём зарубежного комплекта деталей",
+          "low_usd": 225.0,
+          "base_usd": 225.0,
+          "high_usd": 225.0,
+          "evidence_kind": "PUBLISHED_TERMS_WITH_PLANNED_ROUTE",
+          "formula": "ceil(149/50)*70+15, one consolidated shipment; no second turnkey surcharge",
+          "source_url": "https://jlcpcb.com/help/article/consignment-part-terms-conditions"
+        },
+        {
+          "id": "panel_process",
+          "description": "Резерв на техполя/панель и уточнение процесса",
+          "low_usd": 0.0,
+          "base_usd": 40.0,
+          "high_usd": 100.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "panel_and_process_reserve_per_order_usd",
+          "source_url": null
+        },
+        {
+          "id": "part_handling",
+          "description": "Резерв на переупаковку лент и подготовку деталей",
+          "low_usd": 0.0,
+          "base_usd": 50.0,
+          "high_usd": 150.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "packing_reeling_and_handling_reserve_per_order_usd",
+          "source_url": null
+        },
+        {
+          "id": "programming_setup",
+          "description": "Подготовка программирования",
+          "low_usd": 25.0,
+          "base_usd": 50.0,
+          "high_usd": 100.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "programming_setup_per_order_usd",
+          "source_url": null
+        },
+        {
+          "id": "test_setup",
+          "description": "Подготовка электрической проверки партии",
+          "low_usd": 50.0,
+          "base_usd": 100.0,
+          "high_usd": 250.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "electrical_test_setup_per_order_usd",
+          "source_url": null
+        },
+        {
+          "id": "programming",
+          "description": "Программирование готовым тестовым образом",
+          "low_usd": 5.0,
+          "base_usd": 10.0,
+          "high_usd": 20.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "1 * per-board programming allowance",
+          "source_url": null
+        },
+        {
+          "id": "electrical_test",
+          "description": "Электрическая проверка и пробное включение",
+          "low_usd": 30.0,
+          "base_usd": 50.0,
+          "high_usd": 100.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "1 * per-board electrical test allowance",
+          "source_url": null
+        },
+        {
+          "id": "contingency",
+          "description": "Резерв неопределённости закупки и производства",
+          "low_usd": 100.06,
+          "base_usd": 373.52,
+          "high_usd": 1100.77,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "manufacturing subtotal before logistics/first fixture *5%/15%/30%",
+          "source_url": null
+        },
+        {
+          "id": "logistics",
+          "description": "Бюджет доставки деталей и готовых плат",
+          "low_usd": 60.0,
+          "base_usd": 120.0,
+          "high_usd": 220.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "engineering shipping allowance; taxes/duties/brokerage excluded",
+          "source_url": null
+        },
+        {
+          "id": "first_fixture_nre",
+          "description": "Разовая подготовка проверочного жгута и адаптеров",
+          "low_usd": 150.0,
+          "base_usd": 400.0,
+          "high_usd": 800.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "first-project NRE, excluded for repeat batch only if fixture reusable",
+          "source_url": null
+        }
+      ],
+      "totals": {
+        "low_usd": 2311.2,
+        "base_usd": 3383.67,
+        "high_usd": 5790.0,
+        "base_per_board_usd": 3383.67
+      },
+      "repeat_batch_without_fixture_nre": {
+        "low_usd": 2161.2,
+        "base_usd": 2983.67,
+        "high_usd": 4990.0
+      },
+      "catalog_inventory_and_attrition_value_usd": 515.22,
+      "catalog_stock_shortage_groups": [
+        "BAT54S,215",
+        "IPD60N10S4L12ATMA1",
+        "LM74800QDRRRQ1",
+        "LM76003QRNPRQ1",
+        "SN74LVC14AQPWRQ1",
+        "TPS3431SQDRBRQ1",
+        "TPS3808G01QDBVRQ1",
+        "TPS3808G33QDBVRQ1",
+        "TPS7B4253QDDARQ1"
+      ],
+      "catalog_factory_stock_groups": [
+        "SIT8924BM-81-33E-1.000000"
+      ],
+      "availability_status": "Cached source counts only; no stock reserved, no immediate delivery or complete kit availability confirmed.",
+      "cost_is_complete_factory_quote": false
+    },
+    {
+      "assembled_boards": 10,
+      "fabricated_boards": 10,
+      "unused_blanks": 0,
+      "smt_placements": 10340,
+      "tht_components": 130,
+      "smt_solder_lands": 32100,
+      "tht_solder_lands": 1620,
+      "feeder_count_estimate": 145,
+      "consignment_line_count": 149,
+      "line_items": [
+        {
+          "id": "component_catalog_subtotal",
+          "description": "Детали с опубликованной ценой, закупка с MOQ и запасом",
+          "low_usd": 4536.12,
+          "base_usd": 4536.12,
+          "high_usd": 4536.12,
+          "evidence_kind": "CATALOG_SNAPSHOT_NOT_FULL_BOM_PRICE",
+          "formula": "sum(purchase_qty * applicable_tier_price), exact MPN only",
+          "source_url": null
+        },
+        {
+          "id": "unknown_component_allowance",
+          "description": "Резерв на детали без подтверждённой цены / MPN",
+          "low_usd": 961.57,
+          "base_usd": 2598.74,
+          "high_usd": 6608.56,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "sum(planned_purchase_qty * engineering_unit_budget); catalog prices remain null",
+          "source_url": null
+        },
+        {
+          "id": "pcb",
+          "description": "Пустые платы: 10 шт., сборка 10 шт.",
+          "low_usd": 186.0,
+          "base_usd": 186.0,
+          "high_usd": 186.0,
+          "evidence_kind": "PUBLIC_CALCULATOR_NO_GERBER_REVIEW",
+          "formula": "10 blanks at observed 245x165mm,4L,2oz/1oz,ENIG specification",
+          "source_url": "https://cart.jlcpcb.com/quote"
+        },
+        {
+          "id": "assembly_setup",
+          "description": "Подготовка двухстороннего монтажа",
+          "low_usd": 51.12,
+          "base_usd": 51.12,
+          "high_usd": 51.12,
+          "evidence_kind": "PUBLISHED_TARIFF_BENCHMARK",
+          "formula": "setup_per_order_usd",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "stencils",
+          "description": "Трафареты, двухсторонний Standard",
+          "low_usd": 16.42,
+          "base_usd": 16.42,
+          "high_usd": 16.42,
+          "evidence_kind": "PUBLISHED_TARIFF_BENCHMARK",
+          "formula": "stencils_per_order_usd",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "assembly_fixture",
+          "description": "Монтажная оснастка",
+          "low_usd": 16.42,
+          "base_usd": 16.42,
+          "high_usd": 16.42,
+          "evidence_kind": "PUBLISHED_TARIFF_BENCHMARK",
+          "formula": "rigid_fixture_for_1_to_29_boards_usd",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "hand_solder_setup",
+          "description": "Подготовка ручной пайки",
+          "low_usd": 3.58,
+          "base_usd": 3.58,
+          "high_usd": 3.58,
+          "evidence_kind": "PUBLISHED_TARIFF_BENCHMARK",
+          "formula": "hand_solder_labor_per_order_usd",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "feeders",
+          "description": "Загрузка питателей по уникальным SMT позициям",
+          "low_usd": 221.85,
+          "base_usd": 221.85,
+          "high_usd": 221.85,
+          "evidence_kind": "PUBLISHED_TARIFF_WITH_PLANNING_COUNT",
+          "formula": "145 unique SMT MPN/groups *1.53; unresolved groups provisional",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "smt",
+          "description": "SMT пайка по физическим паяным площадкам",
+          "low_usd": 51.36,
+          "base_usd": 51.36,
+          "high_usd": 51.36,
+          "evidence_kind": "PUBLISHED_TARIFF_WITH_PHYSICAL_LAND_COUNT",
+          "formula": "max(32100 joints *0.0016, 10 *0.48 minimum)",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "tht",
+          "description": "Ручная пайка выводных компонентов",
+          "low_usd": 26.57,
+          "base_usd": 26.57,
+          "high_usd": 26.57,
+          "evidence_kind": "PUBLISHED_TARIFF_WITH_PHYSICAL_LAND_COUNT",
+          "formula": "1620 joints *0.0164",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "xray",
+          "description": "Рентген скрытых соединений",
+          "low_usd": 98.0,
+          "base_usd": 98.0,
+          "high_usd": 98.0,
+          "evidence_kind": "PUBLISHED_TARIFF_WITH_PLANNING_COUNT",
+          "formula": "200 packages *0.49",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "packing",
+          "description": "Упаковка и подтверждение размещения",
+          "low_usd": 5.57,
+          "base_usd": 5.57,
+          "high_usd": 5.57,
+          "evidence_kind": "PUBLISHED_TARIFF_WITH_PER_BOARD_PACKING_ASSUMPTION",
+          "formula": "10*(0.50+0.00003*404.25)+0.45",
+          "source_url": "https://jlcpcb.com/help/article/pcb-assembly-price"
+        },
+        {
+          "id": "consignment",
+          "description": "Приём зарубежного комплекта деталей",
+          "low_usd": 225.0,
+          "base_usd": 225.0,
+          "high_usd": 225.0,
+          "evidence_kind": "PUBLISHED_TERMS_WITH_PLANNED_ROUTE",
+          "formula": "ceil(149/50)*70+15, one consolidated shipment; no second turnkey surcharge",
+          "source_url": "https://jlcpcb.com/help/article/consignment-part-terms-conditions"
+        },
+        {
+          "id": "panel_process",
+          "description": "Резерв на техполя/панель и уточнение процесса",
+          "low_usd": 0.0,
+          "base_usd": 40.0,
+          "high_usd": 100.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "panel_and_process_reserve_per_order_usd",
+          "source_url": null
+        },
+        {
+          "id": "part_handling",
+          "description": "Резерв на переупаковку лент и подготовку деталей",
+          "low_usd": 0.0,
+          "base_usd": 50.0,
+          "high_usd": 150.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "packing_reeling_and_handling_reserve_per_order_usd",
+          "source_url": null
+        },
+        {
+          "id": "programming_setup",
+          "description": "Подготовка программирования",
+          "low_usd": 25.0,
+          "base_usd": 50.0,
+          "high_usd": 100.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "programming_setup_per_order_usd",
+          "source_url": null
+        },
+        {
+          "id": "test_setup",
+          "description": "Подготовка электрической проверки партии",
+          "low_usd": 50.0,
+          "base_usd": 100.0,
+          "high_usd": 250.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "electrical_test_setup_per_order_usd",
+          "source_url": null
+        },
+        {
+          "id": "programming",
+          "description": "Программирование готовым тестовым образом",
+          "low_usd": 50.0,
+          "base_usd": 100.0,
+          "high_usd": 200.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "10 * per-board programming allowance",
+          "source_url": null
+        },
+        {
+          "id": "electrical_test",
+          "description": "Электрическая проверка и пробное включение",
+          "low_usd": 300.0,
+          "base_usd": 500.0,
+          "high_usd": 1000.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "10 * per-board electrical test allowance",
+          "source_url": null
+        },
+        {
+          "id": "contingency",
+          "description": "Резерв неопределённости закупки и производства",
+          "low_usd": 341.23,
+          "base_usd": 1331.51,
+          "high_usd": 4153.97,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "manufacturing subtotal before logistics/first fixture *5%/15%/30%",
+          "source_url": null
+        },
+        {
+          "id": "logistics",
+          "description": "Бюджет доставки деталей и готовых плат",
+          "low_usd": 100.0,
+          "base_usd": 180.0,
+          "high_usd": 320.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "engineering shipping allowance; taxes/duties/brokerage excluded",
+          "source_url": null
+        },
+        {
+          "id": "first_fixture_nre",
+          "description": "Разовая подготовка проверочного жгута и адаптеров",
+          "low_usd": 150.0,
+          "base_usd": 400.0,
+          "high_usd": 800.0,
+          "evidence_kind": "ENGINEERING_ALLOWANCE",
+          "formula": "first-project NRE, excluded for repeat batch only if fixture reusable",
+          "source_url": null
+        }
+      ],
+      "totals": {
+        "low_usd": 7415.81,
+        "base_usd": 10788.26,
+        "high_usd": 19120.54,
+        "base_per_board_usd": 1078.83
+      },
+      "repeat_batch_without_fixture_nre": {
+        "low_usd": 7265.81,
+        "base_usd": 10388.26,
+        "high_usd": 18320.54
+      },
+      "catalog_inventory_and_attrition_value_usd": 646.69,
+      "catalog_stock_shortage_groups": [
+        "BAT54S,215",
+        "IPD60N10S4L12ATMA1",
+        "LM74800QDRRRQ1",
+        "LM76003QRNPRQ1",
+        "SN74LVC14AQPWRQ1",
+        "TPS3431SQDRBRQ1",
+        "TPS3808G01QDBVRQ1",
+        "TPS3808G33QDBVRQ1",
+        "TPS7B4253QDDARQ1"
+      ],
+      "catalog_factory_stock_groups": [
+        "SIT8924BM-81-33E-1.000000"
+      ],
+      "availability_status": "Cached source counts only; no stock reserved, no immediate delivery or complete kit availability confirmed.",
+      "cost_is_complete_factory_quote": false
+    }
+  ],
+  "exclusions": [
+    "VAT, import duties, brokerage and destination-specific taxes: unknown, not zero-rate assumptions",
+    "enclosure, harness, mating connector housings/contacts, injectors, HPFPs, sensors and other external engine hardware",
+    "PCB layout completion/rework, firmware/configurator engineering, EMC/thermal/vibration/engine certification",
+    "conformal coating, potting, burn-in and automotive production qualification",
+    "optional stencil storage4.93USD, fixture storage4.93USD, accelerated manufacture",
+    "unverified PCBA order acceptance: the public blank-board calculator is not a complete factory quotation"
+  ],
+  "assumptions_file": "estimate_inputs.json",
+  "process_evidence_file": "process_evidence.json"
+}

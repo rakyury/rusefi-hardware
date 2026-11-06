@@ -1,0 +1,732 @@
+(kicad_sch
+  (version 20250114)
+  (generator "eeschema")
+  (uuid "a54f5754-f64a-5b39-be6f-e9eea49aaacf")
+  (paper "A3")
+  (title_block
+    (title "WBO1: reverse protected heater supply")
+    (rev "Engineering draft 0.1")
+    (comment 1 "UNQUALIFIED: no manufacturing or engine approval"))
+  (lib_symbols
+    (symbol "Power8GDI_WBO:WBO_STPS5H100BY"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "D"
+        (at 0 7.62 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "WBO_STPS5H100BY"
+        (at 0 -7.62 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Package_TO_SOT_SMD:TO-252-2"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "WBO_STPS5H100BY_0_1"
+        (rectangle
+          (start -15.24 5.08)
+          (end 15.24 -5.08)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "WBO_STPS5H100BY_1_1"
+        (pin no_connect line
+          (at -17.78 1.27 0)
+          (length 2.54)
+          (name "NC"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin passive line
+          (at -17.78 -1.27 0)
+          (length 2.54)
+          (name "CATHODE_TAB"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin passive line
+          (at 17.78 1.27 180)
+          (length 2.54)
+          (name "ANODE"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "3"
+            (effects
+              (font
+                (size 1.016 1.016)))))))
+    (symbol "Power8GDI_WBO:WBO_SMBJ24CA"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "D"
+        (at 0 7.62 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "WBO_SMBJ24CA"
+        (at 0 -7.62 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Diode_SMD:D_SMB"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "WBO_SMBJ24CA_0_1"
+        (rectangle
+          (start -15.24 5.08)
+          (end 15.24 -5.08)
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type background))))
+      (symbol "WBO_SMBJ24CA_1_1"
+        (pin passive line
+          (at -17.78 0 0)
+          (length 2.54)
+          (name "1"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin passive line
+          (at 17.78 0 180)
+          (length 2.54)
+          (name "2"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016)))))))
+    (symbol "Power8GDI_WBO:WBO_C"
+      (pin_names
+        (offset 1.016))
+      (in_bom yes)
+      (on_board yes)
+      (property "Reference" "C"
+        (at 0 3.81 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Value" "WBO_C"
+        (at 0 -3.81 0)
+        (effects
+          (font
+            (size 1.27 1.27))))
+      (property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+        (at 0 0 0)
+        (effects
+          (font
+            (size 1.27 1.27))
+          (hide yes)))
+      (symbol "WBO_C_0_1"
+        (polyline
+          (pts
+            (xy -1.27 2.54)
+            (xy -1.27 -2.54))
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type none)))
+        (polyline
+          (pts
+            (xy 1.27 2.54)
+            (xy 1.27 -2.54))
+          (stroke
+            (width 0.254)
+            (type default))
+          (fill
+            (type none))))
+      (symbol "WBO_C_1_1"
+        (pin passive line
+          (at -5.08 0 0)
+          (length 3.81)
+          (name "1"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "1"
+            (effects
+              (font
+                (size 1.016 1.016)))))
+        (pin passive line
+          (at 5.08 0 180)
+          (length 3.81)
+          (name "2"
+            (effects
+              (font
+                (size 1.016 1.016))))
+          (number "2"
+            (effects
+              (font
+                (size 1.016 1.016))))))))
+  (text "Heater current uses VBAT_MAIN_FUSED and dedicated power return; never +5V_CORE or VBAT_LOGIC_PROTECTED."
+    (at 20 20 0)
+    (effects
+      (font
+        (size 1.5 1.5))
+      (justify left top))
+    (uuid "89d7fd25-e408-5c20-882d-56a4c0f66778"))
+  (symbol
+    (lib_id "Power8GDI_WBO:WBO_STPS5H100BY")
+    (at 90.17 74.93 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "d81bbe4a-52c1-5c05-b8de-ea2152c6fbd5")
+    (property "Reference" "D5610"
+      (at 90.17 67.31 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "STPS5H100BY-TR"
+      (at 90.17 82.55000000000001 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Package_TO_SOT_SMD:TO-252-2"
+      (at 90.17 74.93 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "ST DS6906 page1 package: leftlead1 NC, tab2 K, rightlead3 A. External branch fuse coordination and diode thermal validation required."
+      (at 90.17 74.93 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "c9684d33-7277-59e1-944d-4d1d859a58fa"))
+    (pin "2"
+      (uuid "465de829-8775-5aa4-9d0f-705505d0f6f6"))
+    (pin "3"
+      (uuid "3beb4eb6-a132-567c-bdc8-59de462fc8cf"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/30a46de9-e11a-54b6-8706-ae1bab93f93c"
+          (reference "D5610")
+          (unit 1)))
+      (project "wbo1_heater_feed"
+        (path "/a54f5754-f64a-5b39-be6f-e9eea49aaacf"
+          (reference "D5610")
+          (unit 1))))
+    (property "MPN" "STPS5H100BY-TR"
+      (at 90.17 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "STMicroelectronics"
+      (at 90.17 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-474c4e2ea71d"
+      (at 90.17 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 90.17 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 90.17 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 90.17 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 90.17 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.st.com/en/search.html#q=STPS5H100BY-TR"
+      (at 90.17 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 90.17 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (no_connect
+    (at 72.39 73.66)
+    (uuid "4ec27b4e-e9cf-527c-8fb0-69cf1caece2a"))
+  (wire
+    (pts
+      (xy 72.39 76.2)
+      (xy 64.77 76.2))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "f4053305-ca50-5381-8566-44bd56d8aea6"))
+  (global_label "HARNESS_WBO1_CONTACT4"
+    (shape bidirectional)
+    (at 64.77 76.2 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "d3bb293c-84b0-5503-9d16-3c4782e80411"))
+  (wire
+    (pts
+      (xy 107.95 73.66)
+      (xy 115.57 73.66))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "599f9a75-8e39-549d-9040-11c49730f50c"))
+  (global_label "VBAT_MAIN_FUSED"
+    (shape bidirectional)
+    (at 115.57 73.66 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "b8ef2fb2-8405-513d-90c5-cb604a8af1e2"))
+  (symbol
+    (lib_id "Power8GDI_WBO:WBO_SMBJ24CA")
+    (at 245.11 74.93 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "09606869-e738-5771-b74a-c52bb462db5b")
+    (property "Reference" "D5611"
+      (at 245.11 67.31 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Value" "SMBJ24CA"
+      (at 245.11 82.55000000000001 0)
+      (effects
+        (font
+          (size 1.27 1.27))))
+    (property "Footprint" "Diode_SMD:D_SMB"
+      (at 245.11 74.93 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "38.9V ratedclamp nominal <40V switch minimumclamp; overshoot/pulse energy still unqualified."
+      (at 245.11 74.93 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "1b79f4fc-6841-5bf6-acb6-bc023aba6f5f"))
+    (pin "2"
+      (uuid "12839df3-5df7-5ce2-bb58-c9cc59b21475"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/30a46de9-e11a-54b6-8706-ae1bab93f93c"
+          (reference "D5611")
+          (unit 1)))
+      (project "wbo1_heater_feed"
+        (path "/a54f5754-f64a-5b39-be6f-e9eea49aaacf"
+          (reference "D5611")
+          (unit 1))))
+    (property "MPN" "SMBJ24CA"
+      (at 245.11 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Littelfuse"
+      (at 245.11 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-9a26101f9da7"
+      (at 245.11 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "REFERENCE_MPN_RETAINED"
+      (at 245.11 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "PINOUT_RATINGS_AND_DELIVERY_SUFFIX_REVIEW_PENDING"
+      (at 245.11 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Existing schematic MPN retained. Complete circuit rating/temperature and package signoff is still required.\"]"
+      (at 245.11 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{}"
+      (at 245.11 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.littelfuse.com/products/tvs-diodes/surface-mount/smbj"
+      (at 245.11 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 245.11 74.93 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 227.33 74.93)
+      (xy 219.71 74.93))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "c349f888-574d-5a65-aac4-276702baf20c"))
+  (global_label "HARNESS_WBO1_CONTACT4"
+    (shape bidirectional)
+    (at 219.71 74.93 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "e67cc587-c5f0-5ae1-9d7b-1afcffca33d8"))
+  (wire
+    (pts
+      (xy 262.89 74.93)
+      (xy 270.51 74.93))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "4cfff507-e086-5047-9e95-936ef53a2694"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 270.51 74.93 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "8955dd54-da1d-5a33-ae3d-c5a167f5c147"))
+  (symbol
+    (lib_id "Power8GDI_WBO:WBO_C")
+    (at 90.17 144.78 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "57191a80-7468-50c1-a74d-c7de1c0b0967")
+    (property "Reference" "C5650"
+      (at 94.17 143.51 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "100n 100V X7R"
+      (at 94.17 146.05 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+      (at 90.17 144.78 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" ""
+      (at 90.17 144.78 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "321ea226-225e-525d-a4ce-17280f8d862d"))
+    (pin "2"
+      (uuid "e5075437-83f6-5b71-b7f6-6066fb9027ef"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/30a46de9-e11a-54b6-8706-ae1bab93f93c"
+          (reference "C5650")
+          (unit 1)))
+      (project "wbo1_heater_feed"
+        (path "/a54f5754-f64a-5b39-be6f-e9eea49aaacf"
+          (reference "C5650")
+          (unit 1))))
+    (property "MPN" "C0805C104K1RACTU"
+      (at 90.17 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "KEMET"
+      (at 90.17 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-50b208aec5b1"
+      (at 90.17 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CATALOG_ITEM"
+      (at 90.17 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "BOARD_QUALIFICATION_PENDING"
+      (at 90.17 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[]"
+      (at 90.17 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"capacitance_pf\": 100000, \"dielectric\": \"X7R\", \"rated_voltage_v\": 100, \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 10}"
+      (at 90.17 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.mouser.com/datasheet/3/72/1/C0805C104K1RACTU.pdf"
+      (at 90.17 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 90.17 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 85.09 144.78)
+      (xy 77.47 144.78))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "c976dc95-ff7b-5ee1-9eec-369936b2d71e"))
+  (global_label "HARNESS_WBO1_CONTACT4"
+    (shape bidirectional)
+    (at 77.47 144.78 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "8c8aa471-5ad2-5aa4-84aa-e827369b534e"))
+  (wire
+    (pts
+      (xy 95.25 144.78)
+      (xy 102.87 144.78))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "3e0c3b1a-4def-5e4a-aeb3-b884bb50b4e9"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 102.87 144.78 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "8a371810-38bd-5c41-ad05-6f1084c238eb"))
+  (symbol
+    (lib_id "Power8GDI_WBO:WBO_C")
+    (at 245.11 144.78 0)
+    (unit 1)
+    (in_bom yes)
+    (on_board yes)
+    (dnp no)
+    (uuid "c941a13c-0c20-5900-8aea-1b325d987e07")
+    (property "Reference" "C5651"
+      (at 249.11 143.51 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Value" "47u 63V lowESR"
+      (at 249.11 146.05 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (justify left)))
+    (property "Footprint" "Capacitor_SMD:CP_Elec_8x10"
+      (at 245.11 144.78 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (property "Design note" "Provisional bulk MPN/ripple and cold ESR pending."
+      (at 245.11 144.78 0)
+      (effects
+        (font
+          (size 1.27 1.27))
+        (hide yes)))
+    (pin "1"
+      (uuid "cd37fba1-637d-5495-974d-6a6bcb7ecb54"))
+    (pin "2"
+      (uuid "6f5e7f48-b7c6-53d5-9d78-93223fb60ea7"))
+    (instances
+      (project "Power8GDI_Core"
+        (path "/f4d21065-0a5b-5086-a08e-1af9469f04bd/30a46de9-e11a-54b6-8706-ae1bab93f93c"
+          (reference "C5651")
+          (unit 1)))
+      (project "wbo1_heater_feed"
+        (path "/a54f5754-f64a-5b39-be6f-e9eea49aaacf"
+          (reference "C5651")
+          (unit 1))))
+    (property "MPN" "EEH-ZC1J470P"
+      (at 245.11 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Manufacturer" "Panasonic Industry"
+      (at 245.11 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_ID" "SEL-43cb48863fb5"
+      (at 245.11 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Procurement_Status" "SELECTED_CONDITIONAL"
+      (at 245.11 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Hardware_Qualification" "LAND_PATTERN_AND_RIPPLE_REVIEW_REQUIRED"
+      (at 245.11 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Gaps" "[\"Source footprint CP_Elec_8x10; selected part maximum seated height10.5mm and8.3mm square land envelope require clearance verification.\"]"
+      (at 245.11 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Ratings" "{\"aec_q200\": true, \"capacitance_pf\": 47000000, \"diameter_mm\": 8, \"esr_max_mohm\": 40, \"height_max_mm\": 10.5, \"land_size_mm\": [8.3, 8.3], \"lifetime_h_at_max_temp\": 4000, \"rated_voltage_v\": 63, \"ripple_a_100hz\": 0.165, \"ripple_a_100khz\": 1.1, \"technology\": \"hybrid aluminum\", \"temperature_max_c\": 125, \"temperature_min_c\": -55, \"tolerance_pct\": 20}"
+      (at 245.11 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Selection_Source_URLs" "https://www.digikey.com/en/products/detail/panasonic-industry/EEH-ZC1J470P/9842041"
+      (at 245.11 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes)))
+    (property "Purchase_Released" "false"
+      (at 245.11 144.78 0)
+      (effects
+        (font
+          (size 1 1))
+        (hide yes))))
+  (wire
+    (pts
+      (xy 240.03 144.78)
+      (xy 232.41 144.78))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "98c6bcef-eff0-5f52-a599-7cde45c50dd6"))
+  (global_label "HARNESS_WBO1_CONTACT4"
+    (shape bidirectional)
+    (at 232.41 144.78 0)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify right bottom))
+    (uuid "ebafeace-4470-5adf-9686-11f5292aa7ba"))
+  (wire
+    (pts
+      (xy 250.19 144.78)
+      (xy 257.81 144.78))
+    (stroke
+      (width 0)
+      (type default))
+    (uuid "504437b8-e603-591c-a20d-8006d6c018aa"))
+  (global_label "GND"
+    (shape bidirectional)
+    (at 257.81 144.78 180)
+    (effects
+      (font
+        (size 1.016 1.016))
+      (justify left bottom))
+    (uuid "527e8538-ed0e-59ff-9b34-7012d39d4e9c"))
+  (text "Normal sensor supply10.8..16.5V after diode. Control receives measured voltage over CAN.\nDiode drop must be compensated in reported heater supply; current implementation has no local supply ADC.\nBosch LSU4.9 steady heater power7.5W/channel; cold start, fuse coordination and thermal tests pending."
+    (at 20 200 0)
+    (effects
+      (font
+        (size 1.27 1.27))
+      (justify left top))
+    (uuid "845c9d32-d3c8-5989-bb12-40feb360fd2e"))
+  (sheet_instances
+    (path "/"
+      (page "1"))))

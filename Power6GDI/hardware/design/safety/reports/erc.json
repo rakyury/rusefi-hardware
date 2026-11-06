@@ -1,0 +1,49 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-21T05:14:40+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/eded34d9-2614-5eea-9c99-f04c697d2107",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U801 Pin 1 [VDD, Power input, Line]",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 0.5969
+                            },
+                            "uuid": "4ef90b91-663b-52ef-907f-c8d4b935ee99"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U801 Pin 4 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 0.9525,
+                                "y": 0.6477
+                            },
+                            "uuid": "ccc9f8fa-7298-55ab-a011-6e5849418fef"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                }
+            ]
+        }
+    ],
+    "source": "safety_gate.kicad_sch"
+}

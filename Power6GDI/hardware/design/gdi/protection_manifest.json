@@ -1,0 +1,590 @@
+{
+  "schema_version": 1,
+  "root_uuid": "f4d21065-0a5b-5086-a08e-1af9469f04bd",
+  "sheets": [
+    {
+      "name": "gdi/protection_a",
+      "sheet_uuid": "98cbfaf1-39fa-5389-847e-8294d75141c7",
+      "root_instance_uuid": "60b7457e-0f05-55b9-96ab-6c0b4d8affa4",
+      "parts": 17
+    },
+    {
+      "name": "gdi/protection_b",
+      "sheet_uuid": "16e24b3b-c352-54d0-9474-1d0c91468cde",
+      "root_instance_uuid": "53820cc1-2a51-5440-8cbb-507f45b916cc",
+      "parts": 17
+    },
+    {
+      "name": "gdi/permission",
+      "sheet_uuid": "dae676c7-59f7-5713-9ba1-1568d3c6beca",
+      "root_instance_uuid": "f1648826-eb8b-541e-8f63-d27ae2864f75",
+      "parts": 8
+    }
+  ],
+  "parts": [
+    {
+      "ref": "Q5001",
+      "value": "IPD90N10S4-06",
+      "footprint": "Package_TO_SOT_SMD:TO-252-2",
+      "pins": {
+        "1": "GDI_A_DGATE",
+        "2": "GDI_A_MID",
+        "3": "VBAT_GDI_A_FUSED"
+      },
+      "dnp": false,
+      "note": "Input blocking FET. Source=input; drain/tab=common-drain midpoint. 100V, +/-20V VGS.",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "Q5002",
+      "value": "IPD90N10S4-06",
+      "footprint": "Package_TO_SOT_SMD:TO-252-2",
+      "pins": {
+        "1": "GDI_A_HGATE",
+        "2": "GDI_A_MID",
+        "3": "VBAT_GDI_A"
+      },
+      "dnp": false,
+      "note": "Output disconnect FET. Source=protected output; drain/tab=midpoint. Hot SOA remains a gate.",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "U5001",
+      "value": "LM74800QDRRRQ1",
+      "footprint": "Power8GDI_GDIProtection:LM74800_DRR0012E",
+      "pins": {
+        "1": "GDI_A_DGATE",
+        "2": "VBAT_GDI_A_FUSED",
+        "3": "VBAT_GDI_A_FUSED",
+        "4": "GDI_A_SW",
+        "5": "GDI_A_OV",
+        "6": "GDI_A_POWER_EN",
+        "7": "GND",
+        "8": "GDI_A_HGATE",
+        "9": "VBAT_GDI_A",
+        "10": "GDI_A_MID",
+        "11": "GDI_A_CAP",
+        "12": "GDI_A_MID",
+        "13": null
+      },
+      "dnp": false,
+      "note": "TI SNOSD95C table6-1: exposed thermal pad floating, not GND. Common-drain topology.",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "D5001",
+      "value": "SMCJ33CA",
+      "footprint": "Diode_SMD:D_SMC",
+      "pins": {
+        "1": "VBAT_GDI_A_FUSED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Bidirectional TVS candidate. Surge energy/hot clamp/fuse coordination must be qualified.",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "C5001",
+      "value": "100n 100V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "GDI_A_MID",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place adjacent to VS/GND pins.",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "R5001",
+      "value": "140k 0.1%",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "pins": {
+        "1": "GDI_A_SW",
+        "2": "GDI_A_OV"
+      },
+      "dnp": false,
+      "note": "OV upper divider; use >=75V rated 0805",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "R5002",
+      "value": "10k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_A_OV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "OV nominal18.465V; conservative static bound17.864..19.075V including R(SW),200nA bias and divider tolerance",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "R5003",
+      "value": "1k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "GDI_A_POWER_EN"
+      },
+      "dnp": false,
+      "note": "Hardware latch powers bank for configuration before per-bank DRVEN request",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "R5004",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_A_POWER_EN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default off; external enable low must meet <=0.3V shutdown requirement",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "R5005",
+      "value": "1M 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_A_DGATE",
+        "2": "VBAT_GDI_A_FUSED"
+      },
+      "dnp": false,
+      "note": "DGATE-source fallback; ~13uA when on",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "R5006",
+      "value": "1M 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_A_HGATE",
+        "2": "VBAT_GDI_A"
+      },
+      "dnp": false,
+      "note": "HGATE-source fallback; adds load to55uA nominal source",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "C5002",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "GDI_A_CAP",
+        "2": "GDI_A_MID"
+      },
+      "dnp": false,
+      "note": "Required charge-pump capacitor CAP-to-VS, never CAP-to-GND",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "C5003",
+      "value": "100n 100V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "VBAT_GDI_A_FUSED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Input bypass at protection entry",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "C5004",
+      "value": "100n 50V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "VBAT_GDI_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Protected output bypass; existing GDI bulk retained",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "R5007",
+      "value": "1k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_A_HGATE",
+        "2": "GDI_A_SLEW"
+      },
+      "dnp": false,
+      "note": "TI figure9-3 series resistor improves HGATE turnoff",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "C5005",
+      "value": "22n 100V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "GDI_A_SLEW",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Soft-start candidate: ramp and hot MOSFET SOA must use actual downstream capacitance",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "R5008",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VBAT_GDI_A",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Input-bulk bleed; does not discharge boosted rail or guarantee safe touch",
+      "sheet": "gdi/protection_a"
+    },
+    {
+      "ref": "Q5051",
+      "value": "IPD90N10S4-06",
+      "footprint": "Package_TO_SOT_SMD:TO-252-2",
+      "pins": {
+        "1": "GDI_B_DGATE",
+        "2": "GDI_B_MID",
+        "3": "VBAT_GDI_B_FUSED"
+      },
+      "dnp": false,
+      "note": "Input blocking FET. Source=input; drain/tab=common-drain midpoint. 100V, +/-20V VGS.",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "Q5052",
+      "value": "IPD90N10S4-06",
+      "footprint": "Package_TO_SOT_SMD:TO-252-2",
+      "pins": {
+        "1": "GDI_B_HGATE",
+        "2": "GDI_B_MID",
+        "3": "VBAT_GDI_B"
+      },
+      "dnp": false,
+      "note": "Output disconnect FET. Source=protected output; drain/tab=midpoint. Hot SOA remains a gate.",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "U5051",
+      "value": "LM74800QDRRRQ1",
+      "footprint": "Power8GDI_GDIProtection:LM74800_DRR0012E",
+      "pins": {
+        "1": "GDI_B_DGATE",
+        "2": "VBAT_GDI_B_FUSED",
+        "3": "VBAT_GDI_B_FUSED",
+        "4": "GDI_B_SW",
+        "5": "GDI_B_OV",
+        "6": "GDI_B_POWER_EN",
+        "7": "GND",
+        "8": "GDI_B_HGATE",
+        "9": "VBAT_GDI_B",
+        "10": "GDI_B_MID",
+        "11": "GDI_B_CAP",
+        "12": "GDI_B_MID",
+        "13": null
+      },
+      "dnp": false,
+      "note": "TI SNOSD95C table6-1: exposed thermal pad floating, not GND. Common-drain topology.",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "D5051",
+      "value": "SMCJ33CA",
+      "footprint": "Diode_SMD:D_SMC",
+      "pins": {
+        "1": "VBAT_GDI_B_FUSED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Bidirectional TVS candidate. Surge energy/hot clamp/fuse coordination must be qualified.",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "C5051",
+      "value": "100n 100V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "GDI_B_MID",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Place adjacent to VS/GND pins.",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "R5051",
+      "value": "140k 0.1%",
+      "footprint": "Resistor_SMD:R_0805_2012Metric",
+      "pins": {
+        "1": "GDI_B_SW",
+        "2": "GDI_B_OV"
+      },
+      "dnp": false,
+      "note": "OV upper divider; use >=75V rated 0805",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "R5052",
+      "value": "10k 0.1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_B_OV",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "OV nominal18.465V; conservative static bound17.864..19.075V including R(SW),200nA bias and divider tolerance",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "R5053",
+      "value": "1k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "HW_ACTUATOR_ENABLE",
+        "2": "GDI_B_POWER_EN"
+      },
+      "dnp": false,
+      "note": "Hardware latch powers bank for configuration before per-bank DRVEN request",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "R5054",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_B_POWER_EN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Default off; external enable low must meet <=0.3V shutdown requirement",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "R5055",
+      "value": "1M 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_B_DGATE",
+        "2": "VBAT_GDI_B_FUSED"
+      },
+      "dnp": false,
+      "note": "DGATE-source fallback; ~13uA when on",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "R5056",
+      "value": "1M 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_B_HGATE",
+        "2": "VBAT_GDI_B"
+      },
+      "dnp": false,
+      "note": "HGATE-source fallback; adds load to55uA nominal source",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "C5052",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "GDI_B_CAP",
+        "2": "GDI_B_MID"
+      },
+      "dnp": false,
+      "note": "Required charge-pump capacitor CAP-to-VS, never CAP-to-GND",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "C5053",
+      "value": "100n 100V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "VBAT_GDI_B_FUSED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Input bypass at protection entry",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "C5054",
+      "value": "100n 50V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "VBAT_GDI_B",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Protected output bypass; existing GDI bulk retained",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "R5057",
+      "value": "1k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "GDI_B_HGATE",
+        "2": "GDI_B_SLEW"
+      },
+      "dnp": false,
+      "note": "TI figure9-3 series resistor improves HGATE turnoff",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "C5055",
+      "value": "22n 100V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "GDI_B_SLEW",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Soft-start candidate: ramp and hot MOSFET SOA must use actual downstream capacitance",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "R5058",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "VBAT_GDI_B",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "Input-bulk bleed; does not discharge boosted rail or guarantee safe touch",
+      "sheet": "gdi/protection_b"
+    },
+    {
+      "ref": "U5101",
+      "value": "SN74LVC2G08QDCURQ1",
+      "footprint": "Package_SO:VSSOP-8_2.3x2mm_P0.5mm",
+      "pins": {
+        "1": "PTA_DRVEN",
+        "2": "HW_ACTUATOR_ENABLE",
+        "7": "PTA_DRVEN_GATED",
+        "5": "PTB_DRVEN",
+        "6": "HW_ACTUATOR_ENABLE",
+        "3": "PTB_DRVEN_GATED",
+        "8": "+3V3",
+        "4": "GND"
+      },
+      "dnp": false,
+      "note": "TI DCU8 pin table; Ioff when VCC=0. Gate output low unless both inputs high.",
+      "sheet": "gdi/permission"
+    },
+    {
+      "ref": "R5101",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PTA_DRVEN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "gdi/permission"
+    },
+    {
+      "ref": "R5102",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PTB_DRVEN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "gdi/permission"
+    },
+    {
+      "ref": "R5103",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PTA_DRVEN_GATED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "gdi/permission"
+    },
+    {
+      "ref": "R5104",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PTB_DRVEN_GATED",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "gdi/permission"
+    },
+    {
+      "ref": "R5105",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PTA_DEVICE_DRVEN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "gdi/permission"
+    },
+    {
+      "ref": "R5106",
+      "value": "10k 1%",
+      "footprint": "Resistor_SMD:R_0603_1608Metric",
+      "pins": {
+        "1": "PTB_DEVICE_DRVEN",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "gdi/permission"
+    },
+    {
+      "ref": "C5101",
+      "value": "100n 25V X7R",
+      "footprint": "Capacitor_SMD:C_0805_2012Metric",
+      "pins": {
+        "1": "+3V3",
+        "2": "GND"
+      },
+      "dnp": false,
+      "note": "",
+      "sheet": "gdi/permission"
+    }
+  ],
+  "ov_rising_v": {
+    "nominal": 18.465,
+    "min_static": 17.86353622657343,
+    "max_static": 19.07438274554554
+  },
+  "inputs": [
+    "VBAT_GDI_A_FUSED",
+    "VBAT_GDI_B_FUSED",
+    "HW_ACTUATOR_ENABLE",
+    "PTA_DRVEN",
+    "PTB_DRVEN",
+    "+3V3",
+    "GND"
+  ],
+  "outputs": [
+    "VBAT_GDI_A",
+    "VBAT_GDI_B",
+    "PTA_DRVEN_GATED",
+    "PTB_DRVEN_GATED"
+  ],
+  "release_status": "BLOCKED_LOAD_AND_TRANSIENT_VALIDATION",
+  "hardware_tested": false,
+  "unresolved": [
+    "Exact injector/pump profiles, energy, simultaneous scheduling and MCU microcode image",
+    "PT DRVEN electrical thresholds and complete configured shutdown path",
+    "Hot MOSFET SOA during startup and repeated OV recovery; fuse/TVS coordination",
+    "Measured protected-rail overshoot, ramp, partial-power/backfeed and thermal behavior"
+  ]
+}

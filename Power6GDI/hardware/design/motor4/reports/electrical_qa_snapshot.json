@@ -1,0 +1,554 @@
+{
+  "purpose": "Actual XML pin evidence for independent electrical review, not a manifest-derived expected-net test",
+  "source_documents": "sources.json",
+  "files": {
+    "dbw.xml": {
+      "sha256": "f9469381ec3e6303623af7760210d4eadb92638b325be48eb89591c5d1a265c8",
+      "reviewed_pins": {
+        "R6000": {
+          "value": "100R",
+          "pins": {
+            "1": "DBW_PWM",
+            "2": "DBW_PWM_FILTERED"
+          }
+        },
+        "R6001": {
+          "value": "100R",
+          "pins": {
+            "1": "DBW_DIR",
+            "2": "DBW_DIR_FILTERED"
+          }
+        },
+        "R6002": {
+          "value": "10k",
+          "pins": {
+            "1": "DBW_PWM_FILTERED",
+            "2": "GND"
+          }
+        },
+        "R6003": {
+          "value": "10k",
+          "pins": {
+            "1": "DBW_DIR_FILTERED",
+            "2": "GND"
+          }
+        },
+        "R6004": {
+          "value": "10k",
+          "pins": {
+            "2": "+3V3",
+            "1": "DBW_DISABLE"
+          }
+        },
+        "R6005": {
+          "value": "10k",
+          "pins": {
+            "2": "+3V3",
+            "1": "DBW_DIS_GATED"
+          }
+        },
+        "U6000": {
+          "value": "TLE9201SG",
+          "pins": {
+            "2": "+3V3",
+            "1": "DBW_DIR_FILTERED",
+            "11": "DBW_DIS_GATED",
+            "5": "DBW_MOTOR_A",
+            "7": "DBW_MOTOR_B",
+            "12": "DBW_PWM_FILTERED",
+            "3": "DBW_SPI_SO",
+            "13": "GND",
+            "6": "GND",
+            "4": "MOTOR13_VS",
+            "9": "MOTOR_CS_N",
+            "10": "MOTOR_SPI_SCK",
+            "8": "MOTOR_SPI_SI"
+          }
+        },
+        "U6001": {
+          "value": "SN74LVC1G32QDBVRQ1",
+          "pins": {
+            "5": "+3V3",
+            "2": "DBW_DISABLE",
+            "4": "DBW_DIS_GATED",
+            "3": "GND",
+            "1": "HW_ACTUATOR_ENABLE_N"
+          }
+        }
+      }
+    },
+    "ewg.xml": {
+      "sha256": "cc1e00de88b65ef676cec429991b2e32b3040acc8297511451c112db4803c254",
+      "reviewed_pins": {
+        "R6050": {
+          "value": "100R",
+          "pins": {
+            "1": "EWG_PWM",
+            "2": "EWG_PWM_FILTERED"
+          }
+        },
+        "R6051": {
+          "value": "100R",
+          "pins": {
+            "1": "EWG_DIR",
+            "2": "EWG_DIR_FILTERED"
+          }
+        },
+        "R6052": {
+          "value": "10k",
+          "pins": {
+            "1": "EWG_PWM_FILTERED",
+            "2": "GND"
+          }
+        },
+        "R6053": {
+          "value": "10k",
+          "pins": {
+            "1": "EWG_DIR_FILTERED",
+            "2": "GND"
+          }
+        },
+        "R6054": {
+          "value": "10k",
+          "pins": {
+            "2": "+3V3",
+            "1": "EWG_DISABLE"
+          }
+        },
+        "R6055": {
+          "value": "10k",
+          "pins": {
+            "2": "+3V3",
+            "1": "EWG_DIS_GATED"
+          }
+        },
+        "U6050": {
+          "value": "TLE9201SG",
+          "pins": {
+            "2": "+3V3",
+            "8": "DBW_SPI_SO",
+            "1": "EWG_DIR_FILTERED",
+            "11": "EWG_DIS_GATED",
+            "5": "EWG_MOTOR_A",
+            "7": "EWG_MOTOR_B",
+            "12": "EWG_PWM_FILTERED",
+            "3": "EWG_SPI_SO",
+            "13": "GND",
+            "6": "GND",
+            "4": "MOTOR24_VS",
+            "9": "MOTOR_CS_N",
+            "10": "MOTOR_SPI_SCK"
+          }
+        },
+        "U6051": {
+          "value": "SN74LVC1G32QDBVRQ1",
+          "pins": {
+            "5": "+3V3",
+            "2": "EWG_DISABLE",
+            "4": "EWG_DIS_GATED",
+            "3": "GND",
+            "1": "HW_ACTUATOR_ENABLE_N"
+          }
+        }
+      }
+    },
+    "motor13_power.xml": {
+      "sha256": "f29822d0a8c9af05561d7cbbdb3d7a291c8786201eb598ca35b3ca2f0ef3b011",
+      "reviewed_pins": {
+        "Q6200": {
+          "value": "IPD90N10S4-06",
+          "pins": {
+            "1": "MOTOR13_DGATE",
+            "2": "MOTOR13_MID",
+            "3": "VBAT_DBW_FUSED"
+          }
+        },
+        "Q6201": {
+          "value": "IPD90N10S4-06",
+          "pins": {
+            "1": "MOTOR13_HGATE",
+            "2": "MOTOR13_MID",
+            "3": "MOTOR13_VS"
+          }
+        },
+        "R6200": {
+          "value": "140k 0.1%",
+          "pins": {
+            "2": "MOTOR13_OV",
+            "1": "MOTOR13_SW"
+          }
+        },
+        "R6201": {
+          "value": "10k 0.1%",
+          "pins": {
+            "2": "GND",
+            "1": "MOTOR13_OV"
+          }
+        },
+        "R6202": {
+          "value": "1k",
+          "pins": {
+            "1": "HW_ACTUATOR_ENABLE",
+            "2": "MOTOR13_POWER_EN"
+          }
+        },
+        "R6203": {
+          "value": "10k",
+          "pins": {
+            "2": "GND",
+            "1": "MOTOR13_POWER_EN"
+          }
+        },
+        "R6204": {
+          "value": "1M",
+          "pins": {
+            "1": "MOTOR13_DGATE",
+            "2": "VBAT_DBW_FUSED"
+          }
+        },
+        "R6205": {
+          "value": "1M",
+          "pins": {
+            "1": "MOTOR13_HGATE",
+            "2": "MOTOR13_VS"
+          }
+        },
+        "R6206": {
+          "value": "1k",
+          "pins": {
+            "1": "MOTOR13_HGATE",
+            "2": "MOTOR13_SLEW"
+          }
+        },
+        "R6207": {
+          "value": "10k",
+          "pins": {
+            "2": "GND",
+            "1": "MOTOR13_VS"
+          }
+        },
+        "U6200": {
+          "value": "LM74800QDRRRQ1",
+          "pins": {
+            "7": "GND",
+            "11": "MOTOR13_CAP",
+            "1": "MOTOR13_DGATE",
+            "8": "MOTOR13_HGATE",
+            "10": "MOTOR13_MID",
+            "12": "MOTOR13_MID",
+            "5": "MOTOR13_OV",
+            "6": "MOTOR13_POWER_EN",
+            "4": "MOTOR13_SW",
+            "9": "MOTOR13_VS",
+            "2": "VBAT_DBW_FUSED",
+            "3": "VBAT_DBW_FUSED",
+            "13": "unconnected-(U6200-EP_FLOAT-Pad13)"
+          }
+        }
+      }
+    },
+    "motor24_power.xml": {
+      "sha256": "28e5f7d436337ea1eea462c22b2073f4b42b56de30ac3a59bde9523c182d9a4d",
+      "reviewed_pins": {
+        "Q6250": {
+          "value": "IPD90N10S4-06",
+          "pins": {
+            "1": "MOTOR24_DGATE",
+            "2": "MOTOR24_MID",
+            "3": "VBAT_EWG_FUSED"
+          }
+        },
+        "Q6251": {
+          "value": "IPD90N10S4-06",
+          "pins": {
+            "1": "MOTOR24_HGATE",
+            "2": "MOTOR24_MID",
+            "3": "MOTOR24_VS"
+          }
+        },
+        "R6250": {
+          "value": "140k 0.1%",
+          "pins": {
+            "2": "MOTOR24_OV",
+            "1": "MOTOR24_SW"
+          }
+        },
+        "R6251": {
+          "value": "10k 0.1%",
+          "pins": {
+            "2": "GND",
+            "1": "MOTOR24_OV"
+          }
+        },
+        "R6252": {
+          "value": "1k",
+          "pins": {
+            "1": "HW_ACTUATOR_ENABLE",
+            "2": "MOTOR24_POWER_EN"
+          }
+        },
+        "R6253": {
+          "value": "10k",
+          "pins": {
+            "2": "GND",
+            "1": "MOTOR24_POWER_EN"
+          }
+        },
+        "R6254": {
+          "value": "1M",
+          "pins": {
+            "1": "MOTOR24_DGATE",
+            "2": "VBAT_EWG_FUSED"
+          }
+        },
+        "R6255": {
+          "value": "1M",
+          "pins": {
+            "1": "MOTOR24_HGATE",
+            "2": "MOTOR24_VS"
+          }
+        },
+        "R6256": {
+          "value": "1k",
+          "pins": {
+            "1": "MOTOR24_HGATE",
+            "2": "MOTOR24_SLEW"
+          }
+        },
+        "R6257": {
+          "value": "10k",
+          "pins": {
+            "2": "GND",
+            "1": "MOTOR24_VS"
+          }
+        },
+        "U6250": {
+          "value": "LM74800QDRRRQ1",
+          "pins": {
+            "7": "GND",
+            "11": "MOTOR24_CAP",
+            "1": "MOTOR24_DGATE",
+            "8": "MOTOR24_HGATE",
+            "10": "MOTOR24_MID",
+            "12": "MOTOR24_MID",
+            "5": "MOTOR24_OV",
+            "6": "MOTOR24_POWER_EN",
+            "4": "MOTOR24_SW",
+            "9": "MOTOR24_VS",
+            "2": "VBAT_EWG_FUSED",
+            "3": "VBAT_EWG_FUSED",
+            "13": "unconnected-(U6250-EP_FLOAT-Pad13)"
+          }
+        }
+      }
+    },
+    "motor3.xml": {
+      "sha256": "8e633545282006955d6ca951ef8b7f5e903d223ff20dedeb98c0776187e1a89a",
+      "reviewed_pins": {
+        "R6100": {
+          "value": "100R",
+          "pins": {
+            "1": "MOTOR3_PWM",
+            "2": "MOTOR3_PWM_FILTERED"
+          }
+        },
+        "R6101": {
+          "value": "100R",
+          "pins": {
+            "1": "MOTOR3_DIR",
+            "2": "MOTOR3_DIR_FILTERED"
+          }
+        },
+        "R6102": {
+          "value": "10k",
+          "pins": {
+            "2": "GND",
+            "1": "MOTOR3_PWM_FILTERED"
+          }
+        },
+        "R6103": {
+          "value": "10k",
+          "pins": {
+            "2": "GND",
+            "1": "MOTOR3_DIR_FILTERED"
+          }
+        },
+        "R6104": {
+          "value": "10k",
+          "pins": {
+            "2": "+3V3",
+            "1": "MOTOR3_DISABLE"
+          }
+        },
+        "R6105": {
+          "value": "10k",
+          "pins": {
+            "2": "+3V3",
+            "1": "MOTOR3_DIS_GATED"
+          }
+        },
+        "U6100": {
+          "value": "TLE9201SG",
+          "pins": {
+            "2": "+3V3",
+            "8": "EWG_SPI_SO",
+            "13": "GND",
+            "6": "GND",
+            "1": "MOTOR3_DIR_FILTERED",
+            "11": "MOTOR3_DIS_GATED",
+            "5": "MOTOR3_MOTOR_A",
+            "7": "MOTOR3_MOTOR_B",
+            "12": "MOTOR3_PWM_FILTERED",
+            "3": "MOTOR3_SPI_SO",
+            "4": "MOTOR13_VS",
+            "9": "MOTOR_CS_N",
+            "10": "MOTOR_SPI_SCK"
+          }
+        },
+        "U6101": {
+          "value": "SN74LVC1G32QDBVRQ1",
+          "pins": {
+            "5": "+3V3",
+            "3": "GND",
+            "1": "HW_ACTUATOR_ENABLE_N",
+            "2": "MOTOR3_DISABLE",
+            "4": "MOTOR3_DIS_GATED"
+          }
+        }
+      }
+    },
+    "motor4.xml": {
+      "sha256": "0740c4c04fcff09bc90dcf1bf0b18acd1fb718507275925533459e61f5ccc16e",
+      "reviewed_pins": {
+        "R6150": {
+          "value": "100R",
+          "pins": {
+            "1": "MOTOR4_PWM",
+            "2": "MOTOR4_PWM_FILTERED"
+          }
+        },
+        "R6151": {
+          "value": "100R",
+          "pins": {
+            "1": "MOTOR4_DIR",
+            "2": "MOTOR4_DIR_FILTERED"
+          }
+        },
+        "R6152": {
+          "value": "10k",
+          "pins": {
+            "2": "GND",
+            "1": "MOTOR4_PWM_FILTERED"
+          }
+        },
+        "R6153": {
+          "value": "10k",
+          "pins": {
+            "2": "GND",
+            "1": "MOTOR4_DIR_FILTERED"
+          }
+        },
+        "R6154": {
+          "value": "10k",
+          "pins": {
+            "2": "+3V3",
+            "1": "MOTOR4_DISABLE"
+          }
+        },
+        "R6155": {
+          "value": "10k",
+          "pins": {
+            "2": "+3V3",
+            "1": "MOTOR4_DIS_GATED"
+          }
+        },
+        "U6150": {
+          "value": "TLE9201SG",
+          "pins": {
+            "2": "+3V3",
+            "13": "GND",
+            "6": "GND",
+            "8": "MOTOR3_SPI_SO",
+            "1": "MOTOR4_DIR_FILTERED",
+            "11": "MOTOR4_DIS_GATED",
+            "5": "MOTOR4_MOTOR_A",
+            "7": "MOTOR4_MOTOR_B",
+            "12": "MOTOR4_PWM_FILTERED",
+            "3": "MOTOR4_SPI_SO",
+            "4": "MOTOR24_VS",
+            "9": "MOTOR_CS_N",
+            "10": "MOTOR_SPI_SCK"
+          }
+        },
+        "U6151": {
+          "value": "SN74LVC1G32QDBVRQ1",
+          "pins": {
+            "5": "+3V3",
+            "3": "GND",
+            "1": "HW_ACTUATOR_ENABLE_N",
+            "2": "MOTOR4_DISABLE",
+            "4": "MOTOR4_DIS_GATED"
+          }
+        }
+      }
+    },
+    "spi.xml": {
+      "sha256": "1c16eef009bc640dfc666b3010197f1569702c9bdd9a013b1f82107be2039133",
+      "reviewed_pins": {
+        "R6190": {
+          "value": "47R",
+          "pins": {
+            "1": "GDI_SPI2_MOSI",
+            "2": "MOTOR_SPI_SI"
+          }
+        },
+        "R6191": {
+          "value": "47R",
+          "pins": {
+            "1": "GDI_SPI2_SCK",
+            "2": "MOTOR_SPI_SCK"
+          }
+        },
+        "R6192": {
+          "value": "47R",
+          "pins": {
+            "2": "GDI_SPI2_MISO",
+            "1": "MOTOR_MISO_BUFFERED"
+          }
+        },
+        "R6193": {
+          "value": "10k",
+          "pins": {
+            "2": "+3V3",
+            "1": "MOTOR_CS_N"
+          }
+        },
+        "R6194": {
+          "value": "10k",
+          "pins": {
+            "2": "+3V3",
+            "1": "HW_ACTUATOR_ENABLE_N"
+          }
+        },
+        "R6195": {
+          "value": "100k",
+          "pins": {
+            "2": "GND",
+            "1": "MOTOR4_SPI_SO"
+          }
+        },
+        "U6190": {
+          "value": "SN74LVC1G125QDBVRQ1",
+          "pins": {
+            "5": "+3V3",
+            "3": "GND",
+            "2": "MOTOR4_SPI_SO",
+            "1": "MOTOR_CS_N",
+            "4": "MOTOR_MISO_BUFFERED"
+          }
+        }
+      }
+    }
+  },
+  "bench_qualification": "NOT_PERFORMED"
+}

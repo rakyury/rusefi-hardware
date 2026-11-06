@@ -1,0 +1,112 @@
+{
+  "repro_245x165_previous_code": {
+    "outline_mm": [
+      245,
+      165
+    ],
+    "components": 1092,
+    "assigned_component_pins": 3464,
+    "pad_net_mismatches": [],
+    "tracks_vias": 2705,
+    "zones": 16,
+    "unconnected_count": 2085,
+    "layout_profile": null,
+    "local_routes_applied": {
+      "ignition_local_routes": 24,
+      "reviewed_shunt_return_repairs": 2,
+      "reviewed_wbo_can_routes": 2,
+      "reviewed_wbo_vio_routes": 3,
+      "reviewed_wbo_reset_routes": 1,
+      "reviewed_wbo_gate_ground_routes": 1,
+      "reviewed_wbo_logic_grounds_routes": 3,
+      "reviewed_wbo_mcu_supply_routes": 1,
+      "reviewed_wbo_regulator_feed_routes": 3,
+      "reviewed_wbo_regulator_returns_routes": 2
+    },
+    "board_sha256": "385d0a21c6f0cd54981486519da6e67e2238fe1dfa54712ab8bb19c0ce5fc2f1",
+    "drc_capped": {
+      "clearance": 502,
+      "track_width": 199,
+      "via_dangling": 14,
+      "track_dangling": 4
+    }
+  },
+  "refactor_245x165_default_profile": {
+    "outline_mm": [
+      245,
+      165
+    ],
+    "components": 1092,
+    "assigned_component_pins": 3464,
+    "pad_net_mismatches": [],
+    "tracks_vias": 2705,
+    "zones": 16,
+    "unconnected_count": 2085,
+    "layout_profile": {
+      "path": "/src/Power8GDI/hardware/design/board/layout_profiles/245x165.json",
+      "name": "245x165 working outline (builder constants before 2026-11-05)",
+      "outline_mm": [
+        245,
+        165
+      ]
+    },
+    "local_routes_applied": {
+      "ignition_local_routes": 24,
+      "reviewed_shunt_return_repairs": 2,
+      "reviewed_wbo_can_routes": 2,
+      "reviewed_wbo_vio_routes": 3,
+      "reviewed_wbo_reset_routes": 1,
+      "reviewed_wbo_gate_ground_routes": 1,
+      "reviewed_wbo_logic_grounds_routes": 3,
+      "reviewed_wbo_mcu_supply_routes": 1,
+      "reviewed_wbo_regulator_feed_routes": 3,
+      "reviewed_wbo_regulator_returns_routes": 2
+    },
+    "board_sha256": "6e9c66133ac9e550a0b86179f09afd6be1833d8dfdbd8f1d27879ac40a80d9c1"
+  },
+  "evidence_190x222_donor": {
+    "outline_mm": [
+      190,
+      222
+    ],
+    "components": 1092,
+    "assigned_component_pins": 3464,
+    "pad_net_mismatches": [],
+    "tracks_vias": 2699,
+    "zones": 16,
+    "unconnected_count": 2088,
+    "layout_profile": {
+      "path": "Power8GDI/hardware/design/board/layout_profiles/evidence_190x222_donor.json",
+      "name": "190x222 donor-copper feasibility evidence (option b, ignition on top)",
+      "outline_mm": [
+        190,
+        222
+      ]
+    },
+    "local_routes_applied": {
+      "ignition_local_routes": 24,
+      "reviewed_shunt_return_repairs": 2,
+      "reviewed_wbo_can_routes": 2,
+      "reviewed_wbo_vio_routes": 3,
+      "reviewed_wbo_reset_routes": 1,
+      "reviewed_wbo_gate_ground_routes": 1,
+      "reviewed_wbo_logic_grounds_routes": 3,
+      "reviewed_wbo_mcu_supply_routes": 1,
+      "reviewed_wbo_regulator_feed_routes": 3,
+      "reviewed_wbo_regulator_returns_routes": 2
+    },
+    "board_sha256": "9df4c0feb72671ec5a90583a08135c493961785c69c5c60184a2b955e7227e32",
+    "drc_capped": {
+      "clearance": 506,
+      "track_width": 199,
+      "via_dangling": 14,
+      "track_dangling": 5
+    }
+  },
+  "geometric_comparisons": {
+    "sealed gdi6_candidate vs repro_245x165_previous_code": "identical (compare_boards.py)",
+    "repro_245x165_previous_code vs refactor_245x165_default_profile": "identical (compare_boards.py)"
+  },
+  "kicad_image": "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
+  "qualification": "EVIDENCE ONLY: placement feasibility; no routing, thermal, EMC or manufacturing claim"
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "root_uuid": "f4d21065-0a5b-5086-a08e-1af9469f04bd",
+  "qualification": "ENGINEERING_CANDIDATE_UNMEASURED",
+  "sheets": [
+    {
+      "name": "logic_power/logic_5v",
+      "sheet_uuid": "8379ce42-6138-576f-bf7c-fe4a2574c587",
+      "root_instance_uuid": "61ce6944-66a3-57e1-9204-f75037bec847",
+      "parts": 22
+    },
+    {
+      "name": "logic_power/logic_3v3",
+      "sheet_uuid": "3c2130f9-9b23-5c7b-bec3-d8183297abbf",
+      "root_instance_uuid": "8693d79f-9e91-570e-9079-3a5aac066d8c",
+      "parts": 10
+    }
+  ],
+  "remove_root_sheets": [
+    "power_input/power_input",
+    "core_power"
+  ],
+  "required_absent_refs": [
+    "U102",
+    "C125",
+    "C126",
+    "U501",
+    "D501",
+    "D502"
+  ],
+  "inputs": [
+    "VBAT_MAIN_FUSED",
+    "GND"
+  ],
+  "outputs": [
+    "VBAT_LOGIC_PROTECTED",
+    "+5V_CORE",
+    "+3V3"
+  ],
+  "internal_cross_sheet": [
+    "LP5_PG_RAW"
+  ],
+  "optional_diagnostic": [
+    "PGOOD_3V3_CORE"
+  ],
+  "removed_unused_diagnostic": [
+    "PGOOD_5V_CORE"
+  ],
+  "rail_targets_A": {
+    "+5V_CORE": 2.0,
+    "+3V3": 1.0
+  },
+  "thermal_qualified": false
+}

@@ -1,0 +1,991 @@
+{
+  "MPN:BUK9230-100B": {
+    "manufacturer": "Infineon Technologies",
+    "orderable_mpn": "IPD60N10S4L12ATMA1",
+    "package": "TO-252-2",
+    "ratings": {
+      "vds_max_v": 100,
+      "rds_on_max_mohm": 15,
+      "rds_on_test_vgs_v": 4.5,
+      "tj_max_c": 175,
+      "rth_jc_k_w": 1.6,
+      "pinout": "1 Gate; 2 and tab Drain; 3 Source",
+      "manufacturer_package": "PG-TO252-3-313",
+      "minimum_gate_drive_v": null
+    },
+    "source_urls": [
+      "https://www.infineon.com/assets/row/public/documents/10/49/infineon-ipd60n10s4l-12-ds-en.pdf"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "CONDITIONAL_HW_REVIEW",
+    "gaps": [
+      "Hardware engineer approved candidate and matched DPAK geometry. Gate-drive minimum, avalanche, repetitive current and thermal bench qualification pending. RthJC 1.6K/W exceeds old 0.95K/W; Tj limit175C below old185C.",
+      "Observed distributor stock55 does not cover240 devices for10 boards; quantity sourcing gate."
+    ],
+    "approved_deviation": {
+      "type": "replacement",
+      "approved_by": "gdi6_hardware",
+      "date": "2026-10-27",
+      "reason": "Obsolete BUK replacement; same G-D-S and footprint, conditional thermal review"
+    }
+  },
+  "MPN:SDURB1020CT": {
+    "manufacturer": "SMC Diode Solutions",
+    "orderable_mpn": "SDURB1020CT",
+    "package": "TO-263-2",
+    "ratings": {
+      "vrrm_v": 200,
+      "if_average_total_a": 10,
+      "configuration": "dual common cathode",
+      "pinout": "1 anode;2 and tab common cathode;3 anode",
+      "ifsm_a": null,
+      "qrr_nc": null,
+      "tj_max_c": null
+    },
+    "source_urls": [
+      "https://www.digikey.com/en/products/detail/smc-diode-solutions/SDURB1020CT/6022622"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "PULSE_AND_THERMAL_REVIEW_REQUIRED",
+    "gaps": [
+      "DigiKey source only offered MOQ800 full reel in price review. Small-quantity procurement unresolved; do not substitute DPAK or single diode. IFSM/Qrr/thermal margin require manufacturer review."
+    ]
+  },
+  "LCSC:C135494": {
+    "manufacturer": "Diodes Incorporated",
+    "orderable_mpn": "SBR10200CTL-13",
+    "package": "TO-252-2",
+    "ratings": {
+      "vrrm_v": 200,
+      "if_average_total_a": 10,
+      "ifsm_a": 110,
+      "configuration": "dual common cathode",
+      "pinout": "1 anode;2 and tab common cathode;3 anode",
+      "qrr_nc": null,
+      "tj_max_c": 150
+    },
+    "source_urls": [
+      "https://www.diodes.com/part/view/SBR10200CTL",
+      "https://www.diodes.com/datasheet/download/SBR10200CTL.pdf"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "REPETITIVE_PULSE_REVIEW_REQUIRED",
+    "gaps": [
+      "Qrr/commutation and actual diode temperature at DI duty not qualified; IFSM is nonrepetitive catalog rating."
+    ]
+  },
+  "LCSC:C5110766": {
+    "manufacturer": "Nichicon",
+    "orderable_mpn": "UBY1K471MHL",
+    "package": "Radial_D16_H20_P7.5",
+    "ratings": {
+      "capacitance_pf": 470000000,
+      "rated_voltage_v": 80,
+      "tolerance_pct": 20,
+      "temperature_min_c": -40,
+      "temperature_max_c": 135,
+      "diameter_mm": 16,
+      "body_height_mm": 20,
+      "lead_pitch_mm": 7.5,
+      "esr_max_mohm_20c": 53,
+      "esr_max_mohm_minus40c": 340,
+      "ripple_a_100khz_125c": 2.14,
+      "ripple_a_100khz_135c": 1.91
+    },
+    "source_urls": [
+      "https://www.nichicon.com/getmedia/640b351d-ceef-400c-b016-39f8657ea779/e-uby-DB.pdf",
+      "https://www.lcsc.com/product-detail/C5110766.html"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "BOOST_RIPPLE_AND_VOLTAGE_MARGIN_REVIEW_REQUIRED",
+    "gaps": [
+      "80V rating on nominal65V boost requires measured overshoot and ripple/temperature qualification. Fits source16x25 envelope with shorter20mm body."
+    ]
+  },
+  "LCSC:C5111952": {
+    "manufacturer": "Nichicon",
+    "orderable_mpn": "UBY1H132MHL6",
+    "package": "Radial_D16_H25_P7.5",
+    "ratings": {
+      "capacitance_pf": 1300000000,
+      "rated_voltage_v": 50,
+      "tolerance_pct": 20,
+      "temperature_min_c": -40,
+      "temperature_max_c": 135,
+      "diameter_mm": 16,
+      "body_height_mm": 25,
+      "lead_pitch_mm": 7.5,
+      "esr_max_mohm_20c": 33,
+      "esr_max_mohm_minus40c": 220,
+      "ripple_a_100khz_125c": 4.04,
+      "ripple_a_100khz_135c": 2.5
+    },
+    "source_urls": [
+      "https://www.nichicon.com/getmedia/640b351d-ceef-400c-b016-39f8657ea779/e-uby-DB.pdf"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "INPUT_INRUSH_AND_TRANSIENT_REVIEW_REQUIRED",
+    "gaps": [
+      "1300uF replaces1200uF input bulk; +8.3% capacitance/inrush requires recheck. This is not the65V boost capacitor."
+    ],
+    "approved_deviation": {
+      "type": "capacitance",
+      "old_pf": 1200000000,
+      "new_pf": 1300000000,
+      "approved_by": "gdi6_hardware",
+      "date": "2026-10-27",
+      "reason": "Input bulk; verified16mm diameter25mm height7.5mm pitch"
+    }
+  },
+  "C114": {
+    "manufacturer": "KEMET",
+    "orderable_mpn": "C1206C106K4RACTU",
+    "package": "1206",
+    "ratings": {
+      "capacitance_pf": 10000000,
+      "rated_voltage_v": 16,
+      "dielectric": "X7R",
+      "tolerance_pct": 10,
+      "temperature_min_c": -55,
+      "temperature_max_c": 125,
+      "effective_capacitance_min_pf": null,
+      "required_effective_capacitance_min_pf": 4700000
+    },
+    "source_urls": [
+      "https://search.kemet.com/component-documentation/download/specsheet/C1206C106K4RACTU"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "EFFECTIVE_CAPACITANCE_VALIDATION_REQUIRED",
+    "gaps": [
+      "Nominal10uF alone does not establish required4.7uF effective minimum."
+    ],
+    "approved_deviation": {
+      "type": "capacitance_and_package",
+      "old_pf": 4700000,
+      "new_pf": 10000000,
+      "old_package": "0603",
+      "new_package": "1206",
+      "approved_by": "gdi6_hardware",
+      "date": "2026-10-27",
+      "reason": "MCU VDD stabilization effective-capacity requirement; schematic change approved"
+    }
+  },
+  "C5651": {
+    "manufacturer": "Panasonic Industry",
+    "orderable_mpn": "EEH-ZC1J470P",
+    "package": "Radial_SMD_D8_H10.5",
+    "ratings": {
+      "capacitance_pf": 47000000,
+      "rated_voltage_v": 63,
+      "tolerance_pct": 20,
+      "temperature_min_c": -55,
+      "temperature_max_c": 125,
+      "diameter_mm": 8,
+      "height_max_mm": 10.5,
+      "land_size_mm": [
+        8.3,
+        8.3
+      ],
+      "esr_max_mohm": 40,
+      "ripple_a_100khz": 1.1,
+      "ripple_a_100hz": 0.165,
+      "lifetime_h_at_max_temp": 4000,
+      "technology": "hybrid aluminum",
+      "aec_q200": true
+    },
+    "source_urls": [
+      "https://www.digikey.com/en/products/detail/panasonic-industry/EEH-ZC1J470P/9842041"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "LAND_PATTERN_AND_RIPPLE_REVIEW_REQUIRED",
+    "gaps": [
+      "Source footprint CP_Elec_8x10; selected part maximum seated height10.5mm and8.3mm square land envelope require clearance verification."
+    ]
+  },
+  "C6004": {
+    "manufacturer": "Panasonic Industry",
+    "orderable_mpn": "EEH-ZE1H101P",
+    "package": "Radial_SMD_D10_H10.5",
+    "ratings": {
+      "capacitance_pf": 100000000,
+      "rated_voltage_v": 50,
+      "tolerance_pct": 20,
+      "temperature_min_c": -55,
+      "temperature_max_c": 145,
+      "diameter_mm": 10,
+      "height_max_mm": 10.5,
+      "land_size_mm": [
+        10.3,
+        10.3
+      ],
+      "esr_max_mohm": 28,
+      "ripple_a_100khz": 0.8,
+      "ripple_a_100hz": 0.12,
+      "lifetime_h_at_max_temp": 2000,
+      "technology": "hybrid aluminum",
+      "aec_q200": true
+    },
+    "source_urls": [
+      "https://www.digikey.com/en/products/detail/panasonic-industry/EEH-ZE1H101P/7103634"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "RIPPLE_AND_THERMAL_REVIEW_REQUIRED",
+    "gaps": [
+      "EWG/DBW current ripple and thermal lifetime must be checked; catalog0.8A ripple is not circuit qualification."
+    ]
+  },
+  "C6054": {
+    "manufacturer": "Panasonic Industry",
+    "orderable_mpn": "EEH-ZE1H101P",
+    "package": "Radial_SMD_D10_H10.5",
+    "ratings": {
+      "capacitance_pf": 100000000,
+      "rated_voltage_v": 50,
+      "tolerance_pct": 20,
+      "temperature_min_c": -55,
+      "temperature_max_c": 145,
+      "diameter_mm": 10,
+      "height_max_mm": 10.5,
+      "land_size_mm": [
+        10.3,
+        10.3
+      ],
+      "esr_max_mohm": 28,
+      "ripple_a_100khz": 0.8,
+      "ripple_a_100hz": 0.12,
+      "lifetime_h_at_max_temp": 2000,
+      "technology": "hybrid aluminum",
+      "aec_q200": true
+    },
+    "source_urls": [
+      "https://www.digikey.com/en/products/detail/panasonic-industry/EEH-ZE1H101P/7103634"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "RIPPLE_AND_THERMAL_REVIEW_REQUIRED",
+    "gaps": [
+      "EWG/DBW current ripple and thermal lifetime must be checked; catalog0.8A ripple is not circuit qualification."
+    ]
+  },
+  "J101": {
+    "manufacturer": "Harwin",
+    "orderable_mpn": "M50-3500542",
+    "package": "PinHeader_2x05_P1.27mm_Vertical",
+    "ratings": {
+      "positions": 10,
+      "rows": 2,
+      "pitch_mm": 1.27,
+      "row_spacing_mm": 1.27,
+      "current_per_contact_a": 1,
+      "temperature_min_c": -40,
+      "temperature_max_c": 105,
+      "mounting": "through hole",
+      "post_length_mm": 2.3
+    },
+    "source_urls": [
+      "https://www.digikey.com/en/products/detail/harwin-inc/M50-3500542/2264364"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CATALOG_ITEM",
+    "qualification": "BOARD_QUALIFICATION_PENDING",
+    "gaps": []
+  },
+  "D5600": {
+    "manufacturer": "Kingbright",
+    "orderable_mpn": "APT1608SURCK",
+    "package": "0603",
+    "ratings": {
+      "color": "red",
+      "test_current_ma": 20,
+      "body_mm": [
+        1.6,
+        0.8,
+        0.75
+      ]
+    },
+    "source_urls": [
+      "https://www.kingbrightusa.com/product.asp?catalog_name=LED&product_id=APT1608SURCK"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "LED_CURRENT_AND_VISIBILITY_REVIEW_REQUIRED",
+    "gaps": [
+      "20mA is catalog test current, not a configured operating current. Verify resistor/current and polarity; blue LED headroom may be limited on3.3V."
+    ]
+  },
+  "D5603": {
+    "manufacturer": "Kingbright",
+    "orderable_mpn": "APT1608SURCK",
+    "package": "0603",
+    "ratings": {
+      "color": "red",
+      "test_current_ma": 20,
+      "body_mm": [
+        1.6,
+        0.8,
+        0.75
+      ]
+    },
+    "source_urls": [
+      "https://www.kingbrightusa.com/product.asp?catalog_name=LED&product_id=APT1608SURCK"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "LED_CURRENT_AND_VISIBILITY_REVIEW_REQUIRED",
+    "gaps": [
+      "20mA is catalog test current, not a configured operating current. Verify resistor/current and polarity; blue LED headroom may be limited on3.3V."
+    ]
+  },
+  "D5601": {
+    "manufacturer": "Kingbright",
+    "orderable_mpn": "APT1608SGC",
+    "package": "0603",
+    "ratings": {
+      "color": "green",
+      "test_current_ma": 20,
+      "body_mm": [
+        1.6,
+        0.8,
+        0.75
+      ]
+    },
+    "source_urls": [
+      "https://www.digikey.com/en/products/detail/kingbright/APT1608SGC/1747519"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "LED_CURRENT_AND_VISIBILITY_REVIEW_REQUIRED",
+    "gaps": [
+      "20mA is catalog test current, not a configured operating current. Verify resistor/current and polarity; blue LED headroom may be limited on3.3V."
+    ]
+  },
+  "D5602": {
+    "manufacturer": "Kingbright",
+    "orderable_mpn": "APT1608QBC/D",
+    "package": "0603",
+    "ratings": {
+      "color": "blue",
+      "test_current_ma": 20,
+      "body_mm": [
+        1.6,
+        0.8,
+        0.75
+      ]
+    },
+    "source_urls": [
+      "https://www.digikey.com/en/products/detail/kingbright/APT1608QBC-D/2163697"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "LED_CURRENT_AND_VISIBILITY_REVIEW_REQUIRED",
+    "gaps": [
+      "20mA is catalog test current, not a configured operating current. Verify resistor/current and polarity; blue LED headroom may be limited on3.3V."
+    ]
+  },
+  "LCSC:C2296": {
+    "manufacturer": "Hubei KENTO Electronics",
+    "orderable_mpn": "KT-0805Y",
+    "package": "0805",
+    "ratings": {
+      "color": "yellow",
+      "package": "0805"
+    },
+    "source_urls": [
+      "https://www.lcsc.com/product-detail/C2296.html"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "LED_CURRENT_AND_VISIBILITY_REVIEW_REQUIRED",
+    "gaps": [
+      "Source identity retained; forward current, temperature and polarity require datasheet check."
+    ]
+  },
+  "LCSC:C380073": {
+    "manufacturer": "COILMX",
+    "orderable_mpn": "MS1350-6R8M",
+    "package": "L_Wuerth_HCI-1350",
+    "ratings": {
+      "inductance_uh": 6.8,
+      "tolerance_pct": 20,
+      "dcr_mohm": 18,
+      "catalog_current_a": 10,
+      "catalog_saturation_current_a": 14,
+      "isat_definition": null,
+      "irms_thermal_definition": null,
+      "body_mm": [
+        13.8,
+        12.6
+      ]
+    },
+    "source_urls": [
+      "https://jlcpcb.com/partdetail/COILMX-MS13506R8M/C380073"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "MAGNETIC_THERMAL_AND_LAND_PATTERN_REVIEW_REQUIRED",
+    "gaps": [
+      "Original vendor identity recovered. Saturation drop percentage, minimum Isat, hot Irms and DCR max not confirmed; compare actual pads with vendor drawing before purchase."
+    ]
+  },
+  "LCSC:C237980": {
+    "manufacturer": "BaoCheng",
+    "orderable_mpn": "BCIHP1770-100M",
+    "package": "L_Vishay_IHLP-6767",
+    "ratings": {
+      "inductance_uh": 10,
+      "tolerance_pct": 20,
+      "dcr_mohm": 8.89,
+      "catalog_current_a": 17,
+      "catalog_saturation_current_a": 17,
+      "isat_definition": null,
+      "irms_thermal_definition": null
+    },
+    "source_urls": [
+      "https://www.lcsc.com/pt/product-detail/C237980.html"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "MAGNETIC_THERMAL_AND_LAND_PATTERN_REVIEW_REQUIRED",
+    "gaps": [
+      "Original vendor identity recovered. Saturation definition, guaranteed minimum, temperature rise, pad/height compatibility need manufacturer drawing and magnetic bench review."
+    ]
+  },
+  "Y201": {
+    "manufacturer": "SiTime",
+    "orderable_mpn": "SIT8924BM-81-33E-1.000000",
+    "package": "Oscillator_SMD_Diodes_FN-4Pin_7.0x5.0mm",
+    "ratings": {
+      "frequency_hz": 1000000,
+      "supply_nominal_v": 3.3,
+      "supply_tolerance_pct": 10,
+      "stability_ppm": 20,
+      "temperature_min_c": -55,
+      "temperature_max_c": 125,
+      "body_mm": [
+        7,
+        5,
+        1
+      ],
+      "current_supply_max_ma": 4.8,
+      "aec_q100": true,
+      "pinout": "1 OE;2 GND;3 OUT;4 VDD",
+      "oe_pullup_typ_kohm": 100
+    },
+    "source_urls": [
+      "https://www.sitime.com/support/resource-library/datasheets/sit8924-datasheet",
+      "https://www.digikey.com/en/products/detail/sitime/SIT8924BM-81-33E-1-000000/16053312"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "CLOCK_AND_LAND_PATTERN_REVIEW_REQUIRED",
+    "gaps": [
+      "Hardware found FN pad mismatch: source span5.08x4.4/pads1.8x2.0 versus selected recommended span5.08x3.81/pads2.2x2.0. Derived footprint update required; clock/OE/thermal bench still pending."
+    ],
+    "approved_deviation": {
+      "type": "land_pattern",
+      "approved_by": "gdi6_hardware",
+      "date": "2026-10-28",
+      "reason": "Adapt derived7x5 pads to SiTime recommended5.08x3.81 centers and2.2x2.0 lands"
+    }
+  },
+  "Y301": {
+    "manufacturer": "SiTime",
+    "orderable_mpn": "SIT8924BM-81-33E-1.000000",
+    "package": "Oscillator_SMD_Diodes_FN-4Pin_7.0x5.0mm",
+    "ratings": {
+      "frequency_hz": 1000000,
+      "supply_nominal_v": 3.3,
+      "supply_tolerance_pct": 10,
+      "stability_ppm": 20,
+      "temperature_min_c": -55,
+      "temperature_max_c": 125,
+      "body_mm": [
+        7,
+        5,
+        1
+      ],
+      "current_supply_max_ma": 4.8,
+      "aec_q100": true,
+      "pinout": "1 OE;2 GND;3 OUT;4 VDD",
+      "oe_pullup_typ_kohm": 100
+    },
+    "source_urls": [
+      "https://www.sitime.com/support/resource-library/datasheets/sit8924-datasheet",
+      "https://www.digikey.com/en/products/detail/sitime/SIT8924BM-81-33E-1-000000/16053312"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "CLOCK_AND_LAND_PATTERN_REVIEW_REQUIRED",
+    "gaps": [
+      "Hardware found FN pad mismatch: source span5.08x4.4/pads1.8x2.0 versus selected recommended span5.08x3.81/pads2.2x2.0. Derived footprint update required; clock/OE/thermal bench still pending."
+    ],
+    "approved_deviation": {
+      "type": "land_pattern",
+      "approved_by": "gdi6_hardware",
+      "date": "2026-10-28",
+      "reason": "Adapt derived7x5 pads to SiTime recommended5.08x3.81 centers and2.2x2.0 lands"
+    }
+  },
+  "MPN:LM76003QRNPRQ1": {
+    "ratings": {
+      "supply_min_v": 3.5,
+      "supply_max_v": 60,
+      "supply_absolute_max_v": 65,
+      "output_current_catalog_a": 3.5,
+      "temperature_min_c": -40,
+      "temperature_max_c": 125
+    },
+    "source_urls": [
+      "https://www.ti.com/product/LM76003-Q1"
+    ],
+    "confidence": "MANUFACTURER_FAMILY_RATINGS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "BOARD_STRESS_AND_LAYOUT_REVIEW_REQUIRED",
+    "gaps": [
+      "Catalog family limits verified; exact order suffix and circuit stress/thermal margin remain board qualification."
+    ]
+  },
+  "MPN:TPS62130AQRGTRQ1": {
+    "ratings": {
+      "supply_min_v": 3,
+      "supply_max_v": 17,
+      "output_current_catalog_a": 3,
+      "output_max_v": 6,
+      "temperature_min_c": -40,
+      "temperature_max_c": 125
+    },
+    "source_urls": [
+      "https://www.ti.com/product/TPS62130A-Q1"
+    ],
+    "confidence": "MANUFACTURER_FAMILY_RATINGS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "BOARD_STRESS_AND_LAYOUT_REVIEW_REQUIRED",
+    "gaps": [
+      "Catalog family limits verified; exact order suffix and circuit stress/thermal margin remain board qualification."
+    ]
+  },
+  "MPN:INA300AQDGSRQ1": {
+    "ratings": {
+      "supply_min_v": 2.7,
+      "supply_max_v": 5.5,
+      "common_mode_min_v": 0,
+      "common_mode_max_v": 36,
+      "response_options_us": [
+        10,
+        50,
+        100
+      ],
+      "temperature_min_c": -40,
+      "temperature_max_c": 125
+    },
+    "source_urls": [
+      "https://www.ti.com/product/INA300-Q1"
+    ],
+    "confidence": "MANUFACTURER_FAMILY_RATINGS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "BOARD_STRESS_AND_LAYOUT_REVIEW_REQUIRED",
+    "gaps": [
+      "Catalog family limits verified; exact order suffix and circuit stress/thermal margin remain board qualification."
+    ]
+  },
+  "MPN:LM74800QDRRRQ1": {
+    "ratings": {
+      "supply_min_v": 3,
+      "supply_max_v": 65,
+      "reverse_input_v": -65,
+      "temperature_min_c": -40,
+      "temperature_max_c": 125
+    },
+    "source_urls": [
+      "https://www.ti.com/product/LM7480-Q1"
+    ],
+    "confidence": "MANUFACTURER_FAMILY_RATINGS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "BOARD_STRESS_AND_LAYOUT_REVIEW_REQUIRED",
+    "gaps": [
+      "Catalog family limits verified; exact order suffix and circuit stress/thermal margin remain board qualification."
+    ]
+  },
+  "MPN:TPIC8101DWR": {
+    "ratings": {
+      "channels": 2,
+      "interface": "SPI",
+      "supported_clock_mhz": [
+        4,
+        5,
+        6,
+        8,
+        10,
+        12,
+        16,
+        20,
+        24
+      ],
+      "temperature_min_c": -40,
+      "temperature_max_c": 125
+    },
+    "source_urls": [
+      "https://www.ti.com/product/TPIC8101"
+    ],
+    "confidence": "MANUFACTURER_FAMILY_RATINGS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "BOARD_STRESS_AND_LAYOUT_REVIEW_REQUIRED",
+    "gaps": [
+      "Catalog family limits verified; exact order suffix and circuit stress/thermal margin remain board qualification."
+    ]
+  },
+  "MPN:LT3042IMSE#WTRPBF": {
+    "ratings": {
+      "supply_min_v": 1.8,
+      "supply_max_v": 20,
+      "output_current_catalog_a": 0.2,
+      "output_min_v": 0,
+      "output_max_v": 15,
+      "required_output_effective_capacitance_uf": 4.7
+    },
+    "source_urls": [
+      "https://www.analog.com/en/products/lt3042.html"
+    ],
+    "confidence": "MANUFACTURER_FAMILY_RATINGS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "OUTPUT_CAPACITY_AND_THERMAL_REVIEW_REQUIRED",
+    "gaps": [
+      "Automotive W order suffix retained; pricing must not silently use non-W version. Output minimum4.7uF needs effective capacitance review."
+    ]
+  },
+  "MPN:MC33PT2001AE": {
+    "ratings": {
+      "vboost_max_v": 72,
+      "end_of_injection_detection": false,
+      "manufacturer_package": "HLQFP64 SOT1510-1",
+      "body_mm": [
+        10,
+        10,
+        1.4
+      ],
+      "pitch_mm": 0.5,
+      "exposed_pad_mm": [
+        4.9,
+        4.9
+      ]
+    },
+    "source_urls": [
+      "https://www.nxp.com/docs/en/data-sheet/MC33PT2001_SDS.pdf"
+    ],
+    "confidence": "MANUFACTURER_FAMILY_RATINGS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "GATE_DRIVE_AND_HIGH_ENERGY_REVIEW_REQUIRED",
+    "gaps": [
+      "AE72V version retained. Do not infer HAE80V limits. Validate boost clamp overshoot and all gate/current timing on hardware."
+    ]
+  },
+  "MPN:TLE9201SG": {
+    "ratings": {
+      "supply_min_v": 5,
+      "supply_max_v": 28,
+      "supply_absolute_max_v": 40,
+      "overcurrent_detection_min_a": 6,
+      "manufacturer_package": "PG-DSO-12",
+      "rdson_high_typ_mohm": 100,
+      "rdson_low_typ_mohm": 100
+    },
+    "source_urls": [
+      "https://www.infineon.com/part/TLE9201SG"
+    ],
+    "confidence": "MANUFACTURER_FAMILY_RATINGS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "MOTOR_STALL_AND_THERMAL_REVIEW_REQUIRED",
+    "gaps": [
+      "6A is overcurrent detection minimum/catalog bridge class, not a proven continuous ECU current rating."
+    ]
+  },
+  "MPN:WSLP2512R0100FEA": {
+    "ratings": {
+      "resistance_ohm": 0.01,
+      "tolerance_pct": 1,
+      "power_w": 3,
+      "power_reference_temperature_c": 70,
+      "technology": "metal strip",
+      "terminals": 2,
+      "temperature_min_c": -65,
+      "temperature_max_c": 170,
+      "pulse_rating": "Manufacturer pulse curve; repetitive pulse duty unqualified"
+    },
+    "source_urls": [
+      "https://www.vishay.com/docs/30122/wslp.pdf"
+    ],
+    "confidence": "MANUFACTURER_FAMILY_RATINGS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "PULSE_AND_KELVIN_LAYOUT_REVIEW_REQUIRED",
+    "gaps": [
+      "Repetitive pulse current, board heat flow and Kelvin routing require qualification."
+    ]
+  },
+  "C1511": {
+    "manufacturer": "KEMET",
+    "orderable_mpn": "C1812X102JGGACAUTO",
+    "package": "1812",
+    "ratings": {
+      "capacitance_pf": 1000,
+      "rated_voltage_v": 2000,
+      "dielectric": "C0G",
+      "tolerance_pct": 5,
+      "temperature_min_c": -55,
+      "temperature_max_c": 125,
+      "aec_q200": true,
+      "termination": "flexible"
+    },
+    "source_urls": [
+      "https://www.digikey.com/en/products/detail/kemet/C1812X102JGGACAUTO/16524894",
+      "https://yageogroup.com/content/datasheet/asset/file/KEM_C1081_C0G_HV_FT_AUTO_SMD"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "LAND_PATTERN_AND_EFFECTIVE_CAPACITANCE_REVIEW_REQUIRED",
+    "gaps": [
+      "Source1206 footprint must become1812. Verify chassis coupling safety, clearances and actual voltage stress;2kV rating alone does not establish insulation safety."
+    ],
+    "approved_deviation": {
+      "approved_by": "gdi6_hardware",
+      "date": "2026-10-28",
+      "type": "package",
+      "old_package": "1206",
+      "new_package": "1812",
+      "reason": "Confirmed2kV1nF C0G automotive soft termination requires1812"
+    }
+  },
+  "C1533": {
+    "manufacturer": "TDK",
+    "orderable_mpn": "CGA9P3X7R1H226M250KB",
+    "package": "2220",
+    "ratings": {
+      "capacitance_pf": 22000000,
+      "rated_voltage_v": 50,
+      "dielectric": "X7R",
+      "tolerance_pct": 20,
+      "temperature_min_c": -55,
+      "temperature_max_c": 125,
+      "aec_q200": true,
+      "height_max_mm": 2.5
+    },
+    "source_urls": [
+      "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=CGA9P3X7R1H226M250KB",
+      "https://product.tdk.com/info/en/documents/chara_sheet/CGA9P3X7R1H226M250KB.pdf",
+      "https://www.digikey.com/en/products/detail/tdk/CGA9P3X7R1H226M250KB/10240637"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "LAND_PATTERN_AND_EFFECTIVE_CAPACITANCE_REVIEW_REQUIRED",
+    "gaps": [
+      "Source1210 footprint must become2220. Typical manufacturer DC-bias curve available; worst-case effective capacitance/ESR/ripple under actual WBO conditions remains unqualified."
+    ],
+    "approved_deviation": {
+      "approved_by": "gdi6_hardware",
+      "date": "2026-10-28",
+      "type": "package",
+      "old_package": "1210",
+      "new_package": "2220",
+      "reason": "Confirmed 22 uF 50 V X7R automotive part requires 2220 with manufacturer land geometry (1.3 x 4.5 mm pads, 4.5 mm gap).",
+      "new_footprint": "Power8GDI_Interfaces:CGA9P3_2220"
+    }
+  },
+  "C1538": {
+    "manufacturer": "TDK",
+    "orderable_mpn": "CGA9P3X7R1H226M250KB",
+    "package": "2220",
+    "ratings": {
+      "capacitance_pf": 22000000,
+      "rated_voltage_v": 50,
+      "dielectric": "X7R",
+      "tolerance_pct": 20,
+      "temperature_min_c": -55,
+      "temperature_max_c": 125,
+      "aec_q200": true,
+      "height_max_mm": 2.5
+    },
+    "source_urls": [
+      "https://product.tdk.com/en/search/capacitor/ceramic/mlcc/info?part_no=CGA9P3X7R1H226M250KB",
+      "https://product.tdk.com/info/en/documents/chara_sheet/CGA9P3X7R1H226M250KB.pdf",
+      "https://www.digikey.com/en/products/detail/tdk/CGA9P3X7R1H226M250KB/10240637"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "LAND_PATTERN_AND_EFFECTIVE_CAPACITANCE_REVIEW_REQUIRED",
+    "gaps": [
+      "Source1210 footprint must become2220. Typical manufacturer DC-bias curve available; worst-case effective capacitance/ESR/ripple under actual WBO conditions remains unqualified."
+    ],
+    "approved_deviation": {
+      "approved_by": "gdi6_hardware",
+      "date": "2026-10-28",
+      "type": "package",
+      "old_package": "1210",
+      "new_package": "2220",
+      "reason": "Confirmed 22 uF 50 V X7R automotive part requires 2220 with manufacturer land geometry (1.3 x 4.5 mm pads, 4.5 mm gap).",
+      "new_footprint": "Power8GDI_Interfaces:CGA9P3_2220"
+    }
+  },
+  "C5208": {
+    "manufacturer": "Samwha Capacitor",
+    "orderable_mpn": "CS3225X7R476K160NRL",
+    "package": "1210",
+    "ratings": {
+      "capacitance_pf": 47000000,
+      "rated_voltage_v": 16,
+      "dielectric": "X7R",
+      "tolerance_pct": 10,
+      "temperature_min_c": -55,
+      "temperature_max_c": 125,
+      "required_bank_effective_capacitance_min_pf": 100000000,
+      "bank_refs": [
+        "C5208",
+        "C5209",
+        "C5210",
+        "C5211"
+      ],
+      "working_node_nominal_v": 5
+    },
+    "source_urls": [
+      "https://jlcpcb.com/partdetail/6321105-CS3225X7R476K160NRL/C5440143",
+      "https://www.tme.com/Document/15a3409220a9cd1969199d6f4e29e942/CS.pdf"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "LAND_PATTERN_AND_EFFECTIVE_CAPACITANCE_REVIEW_REQUIRED",
+    "gaps": [
+      "Four capacitors must jointly retain>=100uF effective at5V including tolerance, temperature, bias and aging. Individual supplier bias envelope not obtained; loop/transient validation still required."
+    ],
+    "approved_deviation": {
+      "approved_by": "gdi6_hardware",
+      "date": "2026-10-28",
+      "type": "rated_voltage",
+      "old_voltage_v": 25,
+      "new_voltage_v": 16,
+      "reason": "Hardware approved16V rating on5V buck output only; not on input/boost"
+    }
+  },
+  "C5209": {
+    "manufacturer": "Samwha Capacitor",
+    "orderable_mpn": "CS3225X7R476K160NRL",
+    "package": "1210",
+    "ratings": {
+      "capacitance_pf": 47000000,
+      "rated_voltage_v": 16,
+      "dielectric": "X7R",
+      "tolerance_pct": 10,
+      "temperature_min_c": -55,
+      "temperature_max_c": 125,
+      "required_bank_effective_capacitance_min_pf": 100000000,
+      "bank_refs": [
+        "C5208",
+        "C5209",
+        "C5210",
+        "C5211"
+      ],
+      "working_node_nominal_v": 5
+    },
+    "source_urls": [
+      "https://jlcpcb.com/partdetail/6321105-CS3225X7R476K160NRL/C5440143",
+      "https://www.tme.com/Document/15a3409220a9cd1969199d6f4e29e942/CS.pdf"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "LAND_PATTERN_AND_EFFECTIVE_CAPACITANCE_REVIEW_REQUIRED",
+    "gaps": [
+      "Four capacitors must jointly retain>=100uF effective at5V including tolerance, temperature, bias and aging. Individual supplier bias envelope not obtained; loop/transient validation still required."
+    ],
+    "approved_deviation": {
+      "approved_by": "gdi6_hardware",
+      "date": "2026-10-28",
+      "type": "rated_voltage",
+      "old_voltage_v": 25,
+      "new_voltage_v": 16,
+      "reason": "Hardware approved16V rating on5V buck output only; not on input/boost"
+    }
+  },
+  "C5210": {
+    "manufacturer": "Samwha Capacitor",
+    "orderable_mpn": "CS3225X7R476K160NRL",
+    "package": "1210",
+    "ratings": {
+      "capacitance_pf": 47000000,
+      "rated_voltage_v": 16,
+      "dielectric": "X7R",
+      "tolerance_pct": 10,
+      "temperature_min_c": -55,
+      "temperature_max_c": 125,
+      "required_bank_effective_capacitance_min_pf": 100000000,
+      "bank_refs": [
+        "C5208",
+        "C5209",
+        "C5210",
+        "C5211"
+      ],
+      "working_node_nominal_v": 5
+    },
+    "source_urls": [
+      "https://jlcpcb.com/partdetail/6321105-CS3225X7R476K160NRL/C5440143",
+      "https://www.tme.com/Document/15a3409220a9cd1969199d6f4e29e942/CS.pdf"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "LAND_PATTERN_AND_EFFECTIVE_CAPACITANCE_REVIEW_REQUIRED",
+    "gaps": [
+      "Four capacitors must jointly retain>=100uF effective at5V including tolerance, temperature, bias and aging. Individual supplier bias envelope not obtained; loop/transient validation still required."
+    ],
+    "approved_deviation": {
+      "approved_by": "gdi6_hardware",
+      "date": "2026-10-28",
+      "type": "rated_voltage",
+      "old_voltage_v": 25,
+      "new_voltage_v": 16,
+      "reason": "Hardware approved16V rating on5V buck output only; not on input/boost"
+    }
+  },
+  "C5211": {
+    "manufacturer": "Samwha Capacitor",
+    "orderable_mpn": "CS3225X7R476K160NRL",
+    "package": "1210",
+    "ratings": {
+      "capacitance_pf": 47000000,
+      "rated_voltage_v": 16,
+      "dielectric": "X7R",
+      "tolerance_pct": 10,
+      "temperature_min_c": -55,
+      "temperature_max_c": 125,
+      "required_bank_effective_capacitance_min_pf": 100000000,
+      "bank_refs": [
+        "C5208",
+        "C5209",
+        "C5210",
+        "C5211"
+      ],
+      "working_node_nominal_v": 5
+    },
+    "source_urls": [
+      "https://jlcpcb.com/partdetail/6321105-CS3225X7R476K160NRL/C5440143",
+      "https://www.tme.com/Document/15a3409220a9cd1969199d6f4e29e942/CS.pdf"
+    ],
+    "confidence": "CATALOG_IDENTITY_AND_NOMINALS",
+    "status": "SELECTED_CONDITIONAL",
+    "qualification": "LAND_PATTERN_AND_EFFECTIVE_CAPACITANCE_REVIEW_REQUIRED",
+    "gaps": [
+      "Four capacitors must jointly retain>=100uF effective at5V including tolerance, temperature, bias and aging. Individual supplier bias envelope not obtained; loop/transient validation still required."
+    ],
+    "approved_deviation": {
+      "approved_by": "gdi6_hardware",
+      "date": "2026-10-28",
+      "type": "rated_voltage",
+      "old_voltage_v": 25,
+      "new_voltage_v": 16,
+      "reason": "Hardware approved16V rating on5V buck output only; not on input/boost"
+    }
+  }
+}

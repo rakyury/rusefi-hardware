@@ -1,0 +1,23 @@
+{
+  "name": "single board 190 x 206, donor GDI copper (layout profile 190x206_donor)",
+  "status": "MEASURED_FROM_BUILT_PLACEMENT_NOT_ROUTED",
+  "source": "rects measured on the pinned KiCad 9.0.9 build of layout_profiles/190x206_donor.json, 2026-11-05",
+  "board_w": 190,
+  "board_d": 206,
+  "density_target": 0.55,
+  "origin": "top-left, y grows toward the connector face",
+  "connector_on_board_depth_mm": 21.0,
+  "decision": "2026-11-05 owner chose option (b): keep GDI-4ch donor copper, single 190 mm wide board, depth grows (190 x 206)",
+  "connectors": [
+    {"name": "J601 A: GDI HV, HPFP, power", "rect": [0.5, 185.0, 47.0, 206.0]},
+    {"name": "J602 B: IGN, PI, LS, VVT", "rect": [48.0, 185.0, 94.5, 206.0]},
+    {"name": "J603 C: analog, trigger, knock", "rect": [95.5, 185.0, 142.0, 206.0]},
+    {"name": "J604 D: CAN/LIN, motors, WBO, SENT", "rect": [143.0, 185.0, 189.5, 206.0]}
+  ],
+  "zones": [
+    {"name": "GDI bank A donor block (rotated 90)", "side": "F", "rect": [5, 5, 88.5, 149.5], "blocks": ["GDI power stage/A"]},
+    {"name": "GDI bank B donor block + WBO front parts", "side": "F", "rect": [97, 4, 180.5, 148.5], "blocks": ["GDI power stage/B", "WBO"]},
+    {"name": "Ignition D2PAK row", "side": "F", "rect": [0.5, 154, 142, 172.5], "blocks": ["Ignition"]},
+    {"name": "MCU and decoupling", "side": "F", "rect": [150, 149, 186, 184.5], "blocks": ["MCU core"]}
+  ]
+}

@@ -1,0 +1,821 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-28T18:29:20+0000",
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "9.0.9",
+    "schematic_parity": [],
+    "source": "R215.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] of C5004 on B.Cu",
+                    "pos": {
+                        "x": 75.425,
+                        "y": 29.255
+                    },
+                    "uuid": "94a22217-fc55-449e-ac21-e48150062b36"
+                },
+                {
+                    "description": "Track [GND] on F.Cu, length 1.4372 mm",
+                    "pos": {
+                        "x": 80.175,
+                        "y": 32.06498
+                    },
+                    "uuid": "95f26883-25d7-4d83-b28a-8a237f374a02"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] of C5003 on B.Cu",
+                    "pos": {
+                        "x": 81.755,
+                        "y": 30.025
+                    },
+                    "uuid": "64f4a8cf-58e4-42af-b601-92c514c2d105"
+                },
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 80.175,
+                        "y": 32.06498
+                    },
+                    "uuid": "b3e99865-72ff-412e-8fc7-9f3de20ce6f8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] of C5101 on B.Cu",
+                    "pos": {
+                        "x": 82.425,
+                        "y": 34.255
+                    },
+                    "uuid": "d952b221-b5ce-4a0a-891f-44ebf806a122"
+                },
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 80.175,
+                        "y": 32.06498
+                    },
+                    "uuid": "b3e99865-72ff-412e-8fc7-9f3de20ce6f8"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [VBAT_GDI_A] of C5004 on B.Cu",
+                    "pos": {
+                        "x": 73.525,
+                        "y": 29.255
+                    },
+                    "uuid": "1f70d69b-8753-4234-9c30-c43f4fa0ad37"
+                },
+                {
+                    "description": "Track [VBAT_GDI_A] on In2.Cu, length 3.6770 mm",
+                    "pos": {
+                        "x": 73.175,
+                        "y": 36.56498
+                    },
+                    "uuid": "72a84675-3392-4818-a54f-22fcf9bc32aa"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1495 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN2)] on B.Cu, length 45.3000 mm",
+                    "pos": {
+                        "x": 76.629645,
+                        "y": 77.610335
+                    },
+                    "uuid": "9b31f44c-b7fc-4bd6-af38-34c169f3ed5e"
+                },
+                {
+                    "description": "Track [Net-(U201-VSENSEP2)] on B.Cu, length 45.2736 mm",
+                    "pos": {
+                        "x": 76.929165,
+                        "y": 77.734401
+                    },
+                    "uuid": "dde2ce16-777f-4486-b0af-b83e166cc769"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1495 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN3)] on B.Cu, length 3.5573 mm",
+                    "pos": {
+                        "x": 78.3005,
+                        "y": 36.840479
+                    },
+                    "uuid": "1378457b-7bad-46f8-b37a-00675ae9092a"
+                },
+                {
+                    "description": "Track [Net-(U201-VSENSEP3)] on B.Cu, length 3.3092 mm",
+                    "pos": {
+                        "x": 78.60002,
+                        "y": 36.716414
+                    },
+                    "uuid": "700f5e21-06c9-4d17-80f8-d19ad523cd96"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1682 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN2)] on B.Cu, length 1.4790 mm",
+                    "pos": {
+                        "x": 76.629645,
+                        "y": 32.310335
+                    },
+                    "uuid": "a2a6192d-da3d-4f7b-b9f4-43293916c436"
+                },
+                {
+                    "description": "Track [Net-(U201-VSENSEP2)] on B.Cu, length 45.2736 mm",
+                    "pos": {
+                        "x": 76.929165,
+                        "y": 77.734401
+                    },
+                    "uuid": "dde2ce16-777f-4486-b0af-b83e166cc769"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1495 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN3)] on B.Cu, length 1.0953 mm",
+                    "pos": {
+                        "x": 78.3005,
+                        "y": 33.283166
+                    },
+                    "uuid": "64b410c6-925c-4453-8ed1-d743fd5ceeaf"
+                },
+                {
+                    "description": "Track [Net-(U201-VSENSEP3)] on B.Cu, length 3.3092 mm",
+                    "pos": {
+                        "x": 78.60002,
+                        "y": 36.716414
+                    },
+                    "uuid": "700f5e21-06c9-4d17-80f8-d19ad523cd96"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1682 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN2)] on B.Cu, length 6.3255 mm",
+                    "pos": {
+                        "x": 77.67548,
+                        "y": 31.2645
+                    },
+                    "uuid": "b989698f-575a-46f6-a22e-cb1f6ce5df7a"
+                },
+                {
+                    "description": "Track [Net-(U201-VSENSEP2)] on B.Cu, length 1.4790 mm",
+                    "pos": {
+                        "x": 76.929165,
+                        "y": 32.460815
+                    },
+                    "uuid": "cfd690ec-c938-44d4-9ad4-0bc77c23035c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1495 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN2)] on B.Cu, length 45.3000 mm",
+                    "pos": {
+                        "x": 76.629645,
+                        "y": 77.610335
+                    },
+                    "uuid": "9b31f44c-b7fc-4bd6-af38-34c169f3ed5e"
+                },
+                {
+                    "description": "Track [Net-(U201-VSENSEP2)] on B.Cu, length 1.4790 mm",
+                    "pos": {
+                        "x": 76.929165,
+                        "y": 32.460815
+                    },
+                    "uuid": "cfd690ec-c938-44d4-9ad4-0bc77c23035c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1682 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN2)] on B.Cu, length 1.4790 mm",
+                    "pos": {
+                        "x": 76.629645,
+                        "y": 32.310335
+                    },
+                    "uuid": "a2a6192d-da3d-4f7b-b9f4-43293916c436"
+                },
+                {
+                    "description": "Track [Net-(U201-VSENSEP2)] on B.Cu, length 1.4790 mm",
+                    "pos": {
+                        "x": 76.929165,
+                        "y": 32.460815
+                    },
+                    "uuid": "cfd690ec-c938-44d4-9ad4-0bc77c23035c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1495 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEP2)] on B.Cu, length 6.6000 mm",
+                    "pos": {
+                        "x": 77.975,
+                        "y": 31.41498
+                    },
+                    "uuid": "ab3c20a0-4552-4e28-b0aa-7fee3f771a67"
+                },
+                {
+                    "description": "Track [Net-(U201-VSENSEN2)] on B.Cu, length 6.3255 mm",
+                    "pos": {
+                        "x": 77.67548,
+                        "y": 31.2645
+                    },
+                    "uuid": "b989698f-575a-46f6-a22e-cb1f6ce5df7a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1495 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEP3)] on B.Cu, length 1.4135 mm",
+                    "pos": {
+                        "x": 78.60002,
+                        "y": 33.407232
+                    },
+                    "uuid": "3c204e32-8478-437e-973f-3f377144d053"
+                },
+                {
+                    "description": "Track [Net-(U201-VSENSEN3)] on B.Cu, length 1.0953 mm",
+                    "pos": {
+                        "x": 78.3005,
+                        "y": 33.283166
+                    },
+                    "uuid": "64b410c6-925c-4453-8ed1-d743fd5ceeaf"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1495 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN2)] on B.Cu, length 1.4790 mm",
+                    "pos": {
+                        "x": 76.629645,
+                        "y": 32.310335
+                    },
+                    "uuid": "a2a6192d-da3d-4f7b-b9f4-43293916c436"
+                },
+                {
+                    "description": "Track [Net-(U201-VSENSEP2)] on B.Cu, length 6.6000 mm",
+                    "pos": {
+                        "x": 77.975,
+                        "y": 31.41498
+                    },
+                    "uuid": "ab3c20a0-4552-4e28-b0aa-7fee3f771a67"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1495 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEP3)] on B.Cu, length 1.4135 mm",
+                    "pos": {
+                        "x": 78.60002,
+                        "y": 33.407232
+                    },
+                    "uuid": "3c204e32-8478-437e-973f-3f377144d053"
+                },
+                {
+                    "description": "Track [Net-(U201-VSENSEN3)] on B.Cu, length 0.9437 mm",
+                    "pos": {
+                        "x": 79.075,
+                        "y": 32.508666
+                    },
+                    "uuid": "707a1da3-c1a3-4113-a9c5-f1e056afbe1d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1495 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN3)] on B.Cu, length 3.5573 mm",
+                    "pos": {
+                        "x": 78.3005,
+                        "y": 36.840479
+                    },
+                    "uuid": "1378457b-7bad-46f8-b37a-00675ae9092a"
+                },
+                {
+                    "description": "Track [Net-(U201-VSENSEP3)] on B.Cu, length 1.4135 mm",
+                    "pos": {
+                        "x": 78.60002,
+                        "y": 33.407232
+                    },
+                    "uuid": "3c204e32-8478-437e-973f-3f377144d053"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (rule 'Audited PT switching domains' clearance 0.6000 mm; actual 0.3005 mm)",
+            "items": [
+                {
+                    "description": "Track [PTA_L6PUMP] on F.Cu, length 12.0000 mm",
+                    "pos": {
+                        "x": 76.19952,
+                        "y": 21.74046
+                    },
+                    "uuid": "1f92bed7-3467-49de-ae9e-b75c346201d3"
+                },
+                {
+                    "description": "Pad 1 [Net-(Q212-S)] of C239 on F.Cu",
+                    "pos": {
+                        "x": 77.05,
+                        "y": 29.76498
+                    },
+                    "uuid": "9491aa0c-0ceb-4419-a96a-d1b0a1e70e97"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (rule 'Audited PT switching domains' clearance 0.6000 mm; actual 0.1495 mm)",
+            "items": [
+                {
+                    "description": "Track [PTA_L6PUMP] on F.Cu, length 12.0000 mm",
+                    "pos": {
+                        "x": 76.19952,
+                        "y": 21.74046
+                    },
+                    "uuid": "1f92bed7-3467-49de-ae9e-b75c346201d3"
+                },
+                {
+                    "description": "Pad 2 [Net-(Q212-G)] of C239 on F.Cu",
+                    "pos": {
+                        "x": 75.5,
+                        "y": 29.76498
+                    },
+                    "uuid": "2f6abe04-f332-4a06-864e-22bd1507169b"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN2)] on B.Cu, length 45.3000 mm",
+                    "pos": {
+                        "x": 76.629645,
+                        "y": 77.610335
+                    },
+                    "uuid": "9b31f44c-b7fc-4bd6-af38-34c169f3ed5e"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN2)] on B.Cu, length 1.4790 mm",
+                    "pos": {
+                        "x": 76.629645,
+                        "y": 32.310335
+                    },
+                    "uuid": "a2a6192d-da3d-4f7b-b9f4-43293916c436"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN2)] on B.Cu, length 6.3255 mm",
+                    "pos": {
+                        "x": 77.67548,
+                        "y": 31.2645
+                    },
+                    "uuid": "b989698f-575a-46f6-a22e-cb1f6ce5df7a"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN3)] on B.Cu, length 0.2828 mm",
+                    "pos": {
+                        "x": 79.075,
+                        "y": 31.56498
+                    },
+                    "uuid": "09964c0d-3d1c-4d76-8db3-419e456e0646"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN3)] on B.Cu, length 3.5573 mm",
+                    "pos": {
+                        "x": 78.3005,
+                        "y": 36.840479
+                    },
+                    "uuid": "1378457b-7bad-46f8-b37a-00675ae9092a"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN3)] on B.Cu, length 1.0953 mm",
+                    "pos": {
+                        "x": 78.3005,
+                        "y": 33.283166
+                    },
+                    "uuid": "64b410c6-925c-4453-8ed1-d743fd5ceeaf"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN3)] on B.Cu, length 0.9437 mm",
+                    "pos": {
+                        "x": 79.075,
+                        "y": 32.508666
+                    },
+                    "uuid": "707a1da3-c1a3-4113-a9c5-f1e056afbe1d"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEP2)] on B.Cu, length 6.6000 mm",
+                    "pos": {
+                        "x": 77.975,
+                        "y": 31.41498
+                    },
+                    "uuid": "ab3c20a0-4552-4e28-b0aa-7fee3f771a67"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEP2)] on B.Cu, length 1.4790 mm",
+                    "pos": {
+                        "x": 76.929165,
+                        "y": 32.460815
+                    },
+                    "uuid": "cfd690ec-c938-44d4-9ad4-0bc77c23035c"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEP2)] on B.Cu, length 45.2736 mm",
+                    "pos": {
+                        "x": 76.929165,
+                        "y": 77.734401
+                    },
+                    "uuid": "dde2ce16-777f-4486-b0af-b83e166cc769"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEP3)] on B.Cu, length 1.4135 mm",
+                    "pos": {
+                        "x": 78.60002,
+                        "y": 33.407232
+                    },
+                    "uuid": "3c204e32-8478-437e-973f-3f377144d053"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEP3)] on B.Cu, length 0.7673 mm",
+                    "pos": {
+                        "x": 79.599511,
+                        "y": 32.407741
+                    },
+                    "uuid": "443d11b9-a6df-4d87-aeb0-861ffa4df752"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEP3)] on B.Cu, length 3.3092 mm",
+                    "pos": {
+                        "x": 78.60002,
+                        "y": 36.716414
+                    },
+                    "uuid": "700f5e21-06c9-4d17-80f8-d19ad523cd96"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track width (board setup constraints min width 0.2000 mm; actual 0.1500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEP3)] on B.Cu, length 0.6724 mm",
+                    "pos": {
+                        "x": 79.599511,
+                        "y": 31.640469
+                    },
+                    "uuid": "b0b3fbd5-dc60-4ec0-a0de-6f139897721f"
+                }
+            ],
+            "severity": "error",
+            "type": "track_width"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [+5V_CORE] on B.Cu, length 2.0000 mm",
+                    "pos": {
+                        "x": 79.175,
+                        "y": 29.5
+                    },
+                    "uuid": "09e15bde-c8a2-4597-849a-0b13204ad810"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN2)] on B.Cu, length 45.3000 mm",
+                    "pos": {
+                        "x": 76.629645,
+                        "y": 77.610335
+                    },
+                    "uuid": "9b31f44c-b7fc-4bd6-af38-34c169f3ed5e"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN2)] on B.Cu, length 6.3255 mm",
+                    "pos": {
+                        "x": 77.67548,
+                        "y": 31.2645
+                    },
+                    "uuid": "b989698f-575a-46f6-a22e-cb1f6ce5df7a"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEN3)] on B.Cu, length 3.5573 mm",
+                    "pos": {
+                        "x": 78.3005,
+                        "y": 36.840479
+                    },
+                    "uuid": "1378457b-7bad-46f8-b37a-00675ae9092a"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEP2)] on B.Cu, length 6.6000 mm",
+                    "pos": {
+                        "x": 77.975,
+                        "y": 31.41498
+                    },
+                    "uuid": "ab3c20a0-4552-4e28-b0aa-7fee3f771a67"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEP2)] on B.Cu, length 45.2736 mm",
+                    "pos": {
+                        "x": 76.929165,
+                        "y": 77.734401
+                    },
+                    "uuid": "dde2ce16-777f-4486-b0af-b83e166cc769"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [Net-(U201-VSENSEP3)] on B.Cu, length 3.3092 mm",
+                    "pos": {
+                        "x": 78.60002,
+                        "y": 36.716414
+                    },
+                    "uuid": "700f5e21-06c9-4d17-80f8-d19ad523cd96"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [PTA_L3] on B.Cu, length 3.2526 mm",
+                    "pos": {
+                        "x": 74.449569,
+                        "y": 33.055417
+                    },
+                    "uuid": "300c03ba-ea0b-48bb-9a89-636826806548"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [PTA_L3] on B.Cu, length 5.3160 mm",
+                    "pos": {
+                        "x": 76.749511,
+                        "y": 30.755475
+                    },
+                    "uuid": "3d00fc5c-e450-4733-9097-f7609d749c03"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [PTA_L6PUMP] on F.Cu, length 12.0000 mm",
+                    "pos": {
+                        "x": 76.19952,
+                        "y": 21.74046
+                    },
+                    "uuid": "1f92bed7-3467-49de-ae9e-b75c346201d3"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [PTA_L6PUMP] on F.Cu, length 8.5200 mm",
+                    "pos": {
+                        "x": 76.19952,
+                        "y": 33.74046
+                    },
+                    "uuid": "27e99118-3bb8-45b6-935d-bcb3f608c7f4"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [VBAT_GDI_A] on In2.Cu, length 3.6770 mm",
+                    "pos": {
+                        "x": 73.175,
+                        "y": 36.56498
+                    },
+                    "uuid": "72a84675-3392-4818-a54f-22fcf9bc32aa"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        }
+    ]
+}

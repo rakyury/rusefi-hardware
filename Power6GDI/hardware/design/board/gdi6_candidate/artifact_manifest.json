@@ -1,0 +1,162 @@
+{
+  "profile": "2026-10-25-sport-gdi6",
+  "updated": "2026-10-28",
+  "qualification": "INCOMPLETE_ENGINEERING_REVIEW_DO_NOT_FABRICATE",
+  "source_base_commit": "013f467",
+  "selection_source_commit": "deb0afa",
+  "hardware_revision": "same Git revision as this manifest; exact file hashes below",
+  "hash_normalization": "CRLF_TO_LF_TEXT_ONLY; PDF/PNG raw bytes",
+  "kicad_version": "9.0.9",
+  "kicad_image": "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
+  "source_netlist_sha256": "abd9c0533019b9811a75fa73c46c1a9d9b97511d5f858edb2b88ae1e98a87462",
+  "selection_map_sha256": "7e9d221aeb9504f4a88a13b53773fce778d71bfa90cf127fc0613dc7718d926a",
+  "schematic_pdf_pages": 49,
+  "pdf_visual_review": {
+    "all_pages_contact_sheet": true,
+    "larger_scale_pages": [
+      41
+    ]
+  },
+  "pad_comparison": "PASS",
+  "physical_positions": 1092,
+  "pad_net_assignments": 3464,
+  "shunt_stencil": {
+    "actual_references": [
+      "R203",
+      "R212",
+      "R213",
+      "R215",
+      "R221",
+      "R303",
+      "R312",
+      "R313",
+      "R315",
+      "R321"
+    ],
+    "power_apertures": 20,
+    "power_pad_numbers": [
+      "1",
+      "4"
+    ],
+    "sense_pads_copper_only": true
+  },
+  "manufacturing_gate": "BLOCKED",
+  "erc_counts": {
+    "global_label_dangling": 12
+  },
+  "connectivity_unconnected_count": 2085,
+  "reported_drc_violations": 721,
+  "drc_report_may_be_truncated": true,
+  "drc_categories": {
+    "clearance": 504,
+    "track_width": 199,
+    "via_dangling": 14,
+    "track_dangling": 4
+  },
+  "design_rule_exclusions_added": false,
+  "assembly_bom_after_classification_fix": {
+    "installed": 1047,
+    "smt": 1034,
+    "through_hole": 13,
+    "bare_pcb_features": 11,
+    "dnp": 34,
+    "unclassified": 0,
+    "smt_solder_lands": 3210,
+    "tht_solder_lands": 162
+  },
+  "selection_binding": {
+    "status": "PASS",
+    "actual_references": 1047,
+    "missing_order_codes": 0
+  },
+  "files": {
+    "core.net": {
+      "sha256": "abd9c0533019b9811a75fa73c46c1a9d9b97511d5f858edb2b88ae1e98a87462",
+      "bytes": 3321748
+    },
+    "sport_gdi6_schematic.pdf": {
+      "sha256": "2b537c37f1466c9f46baceae1c3116110e9229d2213006a2b3685d14c109ff2c",
+      "bytes": 9383875
+    },
+    "integrated_bom.csv": {
+      "sha256": "2b792d6d6b4d1a75c388338357e849ad686927715af1d52ba0e110a63c34591b",
+      "bytes": 1662506
+    },
+    "integrated_bom_manifest.json": {
+      "sha256": "b9da23fa47e433036893414f803a07baf6d531080b7e724c718db87eb9f2d731",
+      "bytes": 5901
+    },
+    "selection_validation.json": {
+      "sha256": "4cef54695f1c8c9c57ce849e380a45efbb7123c473f52824e85c13afafcc20a5",
+      "bytes": 496882
+    },
+    "gdi/load_review.json": {
+      "sha256": "70b55f31ac4bd5d5e02cf0808d11244d8527a4764be6d2246da3b6ebcc5ce69c",
+      "bytes": 2639
+    },
+    "board/Power8GDI_Board.pretty/SOT-23_D5604_J5600_Clearance.kicad_mod": {
+      "sha256": "73393279e45d21eda7ad59913cfeafd0dbbf5765c2a62db0d3f897a8435983d4",
+      "bytes": 4930
+    },
+    "board/gdi6_candidate/Power8GDI_Review.kicad_pcb": {
+      "sha256": "638900cd40914d65b20f752ccf2698f53bb84e6ac96d56a0a211c24fb287576f",
+      "bytes": 5187644
+    },
+    "board/gdi6_candidate/Power8GDI_Review.kicad_pro": {
+      "sha256": "e153a914608b366089817c7aadf84b03e1ca04ef461e0a4ed1fc27788eae4874",
+      "bytes": 10096
+    },
+    "board/gdi6_candidate/Power8GDI_Review.kicad_dru": {
+      "sha256": "620a6d1068a42427366375e1aed25e446c0e3ffc86ce1d7a81f9b8526dd480df",
+      "bytes": 5188
+    },
+    "board/gdi6_candidate/board_report.json": {
+      "sha256": "2345bf0266f3aae47004fe03ce3185eb63194aa0e1467d8bb23306bc3fb0534a",
+      "bytes": 567515
+    },
+    "board/gdi6_candidate/pad_validation.json": {
+      "sha256": "78990731ba3f2ee54a63adfdd10bbcdb1561ed5e05f0267b2648568ac2eb27f8",
+      "bytes": 413
+    },
+    "board/gdi6_candidate/drc.json": {
+      "sha256": "5f43d8eff49c897f39ec05780a26a0766f3880ec3f05995a65f4954af0e0ad75",
+      "bytes": 959257
+    },
+    "board/gdi6_candidate/drc.provenance.json": {
+      "sha256": "ae25766fce9f76bae8008f9287710b95f310c7806ca46637b78fc4a2c3f0abe8",
+      "bytes": 582
+    },
+    "board/gdi6_candidate/net_coverage.json": {
+      "sha256": "2b3c94f26d53cde6898ed178864f168f7299d12df9456ec8700a849e85973192",
+      "bytes": 134910
+    },
+    "board/gdi6_candidate/assembly_joints.json": {
+      "sha256": "4cf4fe68b165b5902d4183d44c865c9c31db533de39205c9a461556211d5b780",
+      "bytes": 357451
+    },
+    "board/gdi6_candidate/front.svg": {
+      "sha256": "6a5af776f64b546864138c47d99fd25dbe80e412dd53dfb479698db675b0c09a",
+      "bytes": 1655065
+    },
+    "board/gdi6_candidate/back.svg": {
+      "sha256": "d797df0e677a04c496789ac236c9929f916d0466e19454d8542e42900f1706e5",
+      "bytes": 2959593
+    },
+    "board/gdi6_candidate/front.png": {
+      "sha256": "63266e4dfa436ceb15d829317c1be9c8ef31bed61ec041fc5b8b87656c0136e7",
+      "bytes": 425801
+    },
+    "board/gdi6_candidate/back.png": {
+      "sha256": "e3eae7a1d7a6c72786ca4f9c06e8aecedcf8828f58f9931cf1a8554dcce6119d",
+      "bytes": 630342
+    },
+    "board/gdi6_candidate/pcb_layout_repairs.json": {
+      "sha256": "037047c459c4925ebf047e54a39ad1485ce226bc9199420dca9687db894b79ed",
+      "bytes": 19807
+    },
+    "board/gdi6_candidate/shunt_stencil_delta.json": {
+      "sha256": "d91cf889b149fe742d721b97614b4fe8fcca99aba76513e9c1460f49ce99bf6e",
+      "bytes": 1193
+    }
+  }
+}

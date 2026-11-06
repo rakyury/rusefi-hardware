@@ -503,3 +503,19 @@
 
 - Removed uaBrain-gm-e38/production/README.txt. Production now contains only BOM.csv, positions.csv and uaBrain-gm-e38-PCB.zip. Manufacturing files were not edited. No commit or push.
 
+
+## 2026-10-29 - Power6GDI compact floorplan study (no pcbnew)
+
+- Added Power8GDI/hardware/design/board/compact/: pcb_sexpr.py (s-expression footprint reader), compact_floorplan.py (block demand, envelope evaluation, height budget, zone plan check, SVG), body_overrides.json (bodies/heights for pad-only donor footprints, incl. GDI electrolytics D16 x H25), floorplan_190x160.json and tests (10 pass). Runs on the gdi6_candidate PCB at 6a308e0 and core.net; no pcbnew needed. The existing board/tests still require pcbnew (13 import errors here, expected).
+- Findings: fitted body demand 10494 mm2 top / 8501 mm2 bottom plus a 186 x 37.5 mm connector strip. EMU PRO-8/16 depth (board 190 x 88) is overfull at any density (118 % top); 190 x 130 needs 60 %+; 190 x 160 fits at 50 % (47 % top / 32 % bottom). Two-face connector arrangement (100 x 180) loses. Height: 45 mm outer as placed (25 mm GDI cans on top, 10.5 mm cans on bottom), 38 mm if everything above 4 mm moves to the top side. TE34 header height not yet taken from STEP.
+- Zone plan 190 x 160 passes containment/overlap/utilization checks at 55 %. Open: ignition stage lands behind J604 while outputs are on J602; analog zone sits under the ignition zone; USB/SD need an enclosure opening; GDI capacitor count/size (direct GDI-4ch carry-over) is the main lever for depth and height.
+- Wrote docs/PCB_COMPACT_FLOORPLAN_2026_10_29.md with EMU PRO reference figures (165 x 95 x 38 / 197 x 95 x 38, Superseal 34/26/34) and three decisions for the owner: GDI capacitor rework, single vs stacked board, connector group re-sequencing before the harness pinout freezes.
+- No PCB, schematic, netlist, mechanical manifest or production files changed. No commit yet.
+
+## 2026-10-29 - Apply the single-board 190 x 160 decision to the concept enclosure
+
+- Owner decision: one board, keep the 190 mm width set by four TE34 headers on one face, enclosure height may grow. Recorded in Power8GDI/hardware/target_profile.json (pcb 190 x 160, decision block) and appended to docs/SCOPE_2026_10_25_SPORT_GDI6.md.
+- compact/export_constraints.py derives from the zone plan: output/layout_constraints.json (outline, connector centres at 47.5 mm pitch, per-side zones with max heights, for the pcbnew builder) and mechanical/assembly_manifest.json (concept enclosure). The 245 x 165 manifest is kept as mechanical/assembly_manifest_245x165_superseded.json. Zone-plan connector rects were made symmetric (pitch 47.5, flange 46.5).
+- Concept enclosure now 204 x 174 x 50 mm (base 44 + lid 6): floor 4, bottom-side parts 10.5 + 1, PCB 1.6, GDI cans 25 + 1. Housing is 14 mm wider than the board because the four M3 lid bosses (R3) sit outside the board corners. Wall openings use the TE plug body width 40 mm (TE datasheet 4-1437290-0: 38.2 wide, 34.55 tall, 32.15 deep); the 45.5 mm header flange lies on the board inside the housing. Header height above board is still an envelope (25 mm), not from STEP.
+- Validation: CadQuery 2.8.0 / OCP 7.9.3.1.1 installed in the container (without trame/vtk viewers); build_assembly.py PASS, 11 solids, 16 exports, no collisions; mechanical tests 14 pass; compact tests 12 pass (incl. committed manifest == generator output). Generated STEP/STL stay in the ignored build directory.
+- Open: real TE header STEP, USB/SD access through an IP65 wall, connector group re-sequencing (ignition behind J604 while on J602), GDI capacitor rework, and the actual pcbnew re-placement from layout_constraints.json on a machine with KiCad.

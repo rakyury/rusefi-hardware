@@ -1,0 +1,169 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-23T18:12:14+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/28e175cd-f96b-5318-97c8-3451d37a0599",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U5602 Pin 16 [VSS, Power input, Line]",
+                            "pos": {
+                                "x": 0.7239,
+                                "y": 1.143
+                            },
+                            "uuid": "e64f4995-b33e-5a4a-b211-374c0887d24e"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U5604 Pin 1 [IN, Power input, Line]",
+                            "pos": {
+                                "x": 2.5781,
+                                "y": 0.5842
+                            },
+                            "uuid": "fad4a777-effa-5165-8443-43a188bfd519"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_Un_sense'",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 0.889
+                            },
+                            "uuid": "53592767-0fac-54dd-8fa2-ae136ada3727"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HARNESS_WBO1_CONTACT2'",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 0.9144
+                            },
+                            "uuid": "7231876d-ca36-586c-ac8a-0626f91f802b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_Ip_sense'",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 0.9398
+                            },
+                            "uuid": "3f6bd7fc-51a8-5353-944b-416cd4349d6b"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_Vm'",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 0.9652
+                            },
+                            "uuid": "c38805ac-47c8-5053-ba4f-a8d991ab03d5"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_Ip_dac'",
+                            "pos": {
+                                "x": 0.6477,
+                                "y": 1.0414
+                            },
+                            "uuid": "f006c2c4-cafd-5140-be36-43b24802c2fa"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'WBO1_Nernst_esr_drive'",
+                            "pos": {
+                                "x": 1.1557,
+                                "y": 1.0922
+                            },
+                            "uuid": "9e379724-611b-5de5-864a-144fbbf1b54e"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HARNESS_WBO1_CONTACT3'",
+                            "pos": {
+                                "x": 2.5019,
+                                "y": 1.3081
+                            },
+                            "uuid": "98bf093f-c0ab-5c5e-b46a-b6f1cd4ac76f"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'HW_ACTUATOR_ENABLE'",
+                            "pos": {
+                                "x": 3.2258,
+                                "y": 3.6957
+                            },
+                            "uuid": "e6f7d3cb-f6f2-5f4d-955f-232544fab9c3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "wbo1_control.kicad_sch"
+}
