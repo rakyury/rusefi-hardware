@@ -45,12 +45,16 @@ reading, not a layout.
 
 `../review_autoroute.py` measured this copper block by block
 (`docs/reviews/2026-11-10-autoroute-review/autoroute_review.json`, verdicts in
-`docs/PCB_AUTOROUTE_REVIEW_2026_11_10.md`). Headline: the router treated In1.Cu
-(the GND plane) as a signal layer — 626 tracks, 3 026 mm, main plane polygon
-36 624 → 33 557 mm² and five fragments — and the project's own clearance rule is
-violated by 2 328 of its 9 287 items (the DRC report is capped at 500 and cannot
-show this). `in1.png` shows the In1 tracks and holes; the export does not draw
-the fill. No block's copper is accepted as is.
+`docs/PCB_AUTOROUTE_REVIEW_2026_11_10.md`). Headlines: the SES import re-creates
+every unlocked wire, so the 9 287 "added" items counted by UUID in
+`autoroute_report.json` are really 5 968 new items plus 3 319 re-created ones,
+and 448 items of the placement candidate (donor power copper at 2–3 mm, stitched
+GND, 12 WBO items) came back altered or missing; the router treated In1.Cu (the
+GND plane) as a signal layer — 626 tracks, 3 026 mm, main plane polygon
+36 624 → 33 557 mm² and five fragments; 171 of the new items break the project's
+own clearance rule (the DRC report is capped at 500 and cannot show this).
+`in1.png` shows the In1 tracks and holes; the export does not draw the fill.
+No block's copper is accepted as is.
 
 Reproduce: `build/p6/autoroute/run_freerouting_1pass.sh` then
 `review_autoroute.sh` (scripts in the ignored build directory of the working tree

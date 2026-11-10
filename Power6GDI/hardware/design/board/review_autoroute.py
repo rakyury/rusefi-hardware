@@ -51,6 +51,38 @@ SENSITIVE=re.compile(r'ADC_.*|.*_DIV|.*_BUFFER|KNOCK.*|VR_CRANK.*|HARNESS_CRANK_
 AGGRESSOR_EXTRA=re.compile(r'VBAT.*|LP5_SW|LP5_BOOT|LP33_SW|GDI_[AB]_(SW|MID|CAP)|MOTOR\d\d_(SW|MID|VS|CAP)|DBW_MOTOR_[AB]|EWG_MOTOR_[AB]|DI\d|HPFP\d|IGN\d_(GATE|DRIVE)|HARNESS_IGN\d')
 PAIRS=[('CAN1_H','CAN1_L'),('CAN2_H','CAN2_L'),('USB_DP','USB_DM'),('HARNESS_CRANK_VR_P','HARNESS_CRANK_VR_N'),('VR_CRANK_P_FILT','VR_CRANK_N_FILT')]
 COUPLING_MM=1.0
+AUDIT_MARGIN_MM=.001
+MATCH_QUANTUM_NM=10000  # 10 um: SES import re-creates every wire; coordinates come back rounded
+
+
+def loose_key(t):
+    """Geometry key tolerant to SES rounding: net, layer, sorted endpoints at 10 um, width."""
+    q=MATCH_QUANTUM_NM;via=t.Type()==p.PCB_VIA_T
+    if via:pos=t.GetPosition();pts=((round(pos.x/q),round(pos.y/q)),)
+    else:s,e=t.GetStart(),t.GetEnd();pts=tuple(sorted(((round(s.x/q),round(s.y/q)),(round(e.x/q),round(e.y/q)))))
+    return (t.GetNetname(),'via' if via else t.GetLayer(),pts,t.GetWidth(p.F_Cu) if via else t.GetWidth())
+
+
+def split_router_items(base,board,hv_nets):
+    """Router items = autorouted copper with no counterpart in the placement candidate (exact, then 10 um).
+    Also reports placement copper that came back altered or missing - the SES import re-creates every
+    unlocked wire, so reviewed copper is only safe if it matches again."""
+    base_exact={track_fingerprint(t) for t in base.GetTracks()};base_loose=Counter(loose_key(t) for t in base.GetTracks())
+    auto_exact={track_fingerprint(t) for t in board.GetTracks()};auto_loose=Counter(loose_key(t) for t in board.GetTracks())
+    router=[];exact=rounded=0
+    for t in board.GetTracks():
+        if track_fingerprint(t) in base_exact:exact+=1
+        elif loose_key(t) in base_loose:rounded+=1
+        else:router.append(t)
+    lost=[t for t in base.GetTracks() if track_fingerprint(t) not in auto_exact and loose_key(t) not in auto_loose]
+    by_block=Counter(classify(t.GetNetname(),hv_nets) for t in lost);by_net=Counter(t.GetNetname() for t in lost)
+    widths=Counter(str(round(p.ToMM(t.GetWidth(p.F_Cu) if t.Type()==p.PCB_VIA_T else t.GetWidth()),3)) for t in lost)
+    return router,{'placement_items':len(list(base.GetTracks())),'autorouted_items':len(list(board.GetTracks())),
+                   'matched_exact':exact,'matched_within_10um':rounded,
+                   'placement_items_altered_or_removed':len(lost),'altered_by_block':dict(by_block.most_common()),
+                   'altered_by_net':by_net.most_common(30),'altered_widths_mm':dict(widths.most_common()),
+                   'altered_examples':[{'net':t.GetNetname(),'layer':LAYERS.get(t.GetLayer(),'via'),'at_mm':[round(v,2) for v in midpoint(t)],
+                                        'width_mm':round(p.ToMM(t.GetWidth(p.F_Cu) if t.Type()==p.PCB_VIA_T else t.GetWidth()),3)} for t in lost[:60]]}
 PAIR_GAP_MM=.5
 
 
@@ -218,9 +250,8 @@ def review(placement,autorouted,out,profile):
     layout_profile.configure(profile)
     voltage_domains.configure(HERE.parent/'core.net');hv=voltage_domains.gdi_high_voltage_nets()
     aggressor=lambda n:n in hv or bool(AGGRESSOR_EXTRA.fullmatch(n))
-    base=p.LoadBoard(str(placement));known={track_fingerprint(t) for t in base.GetTracks()}
-    board=p.LoadBoard(str(autorouted));board.BuildConnectivity()
-    router=[t for t in board.GetTracks() if track_fingerprint(t) not in known]
+    base=p.LoadBoard(str(placement));board=p.LoadBoard(str(autorouted));board.BuildConnectivity()
+    router,preexisting=split_router_items(base,board,hv)
     default_w,assigned=netclass_widths(Path(autorouted).with_suffix('.kicad_pro'))
     table=areas(donor_rects(board));copper=copper_index(board)
     blocks=defaultdict(lambda:{'nets':set(),'tracks':0,'vias':0,'length_mm':0.0,'length_by_layer_mm':Counter(),'items_by_area':Counter(),
@@ -239,7 +270,7 @@ def review(placement,autorouted,out,profile):
             if t.GetLayer()==p.In1_Cu:b['in1_items']+=1;in1.append({'net':net,'block':block,'length_mm':round(length,2),'at_mm':[round(v,2) for v in midpoint(t)]})
         for layer in item_layers(t):
             shape=shape_of(t,layer);bb=bounds(t,.01)
-            if not copper.clear(shape,bb,layer,net):
+            if not copper.clear(shape,bb,layer,net,margin=-AUDIT_MARGIN_MM):
                 b['clearance_violations']+=1
                 if len(violations)<200:violations.append({'net':net,'block':block,'layer':LAYERS[layer],'via':is_via,'at_mm':[round(v,2) for v in midpoint(t)]})
             if not is_via and SENSITIVE.fullmatch(net):
@@ -256,10 +287,10 @@ def review(placement,autorouted,out,profile):
     before=json.loads((Path(placement).parent/'ground_stitch.json').read_text())
     gnd_router=[t for t in router if t.GetNetname()=='GND']
     report={'qualification':'MEASUREMENT OF MACHINE COPPER; verdicts live in the review document',
-            'placement':str(placement),'autorouted':str(autorouted),'router_items':len(router),
+            'placement':str(placement),'autorouted':str(autorouted),'preexisting_copper':preexisting,'router_items':len(router),
             'router_tracks':sum(t.Type()!=p.PCB_VIA_T for t in router),'router_vias':sum(t.Type()==p.PCB_VIA_T for t in router),
             'areas_mm':table,'areas_note':'stage_A/stage_B are bounding boxes of the donor footprints (refs 2xx / 3xx); other areas come from the layout profile regions','netclass_default_width_mm':default_w,'fab_min_width_mm':MIN_FAB_WIDTH_MM,
-            'clearance_rule':'voltage_domains.clearance_mm per net pair (HARNESS_IGN 2.5 / GDI HV 0.6 / battery 0.3 / default 0.2), applied to every router item against all copper incl. zone fills',
+            'clearance_rule':'voltage_domains.clearance_mm per net pair (HARNESS_IGN 2.5 / GDI HV 0.6 / battery 0.3 / default 0.2) minus %g mm, applied to every router item against all copper incl. zone fills; copper at exactly the rule distance passes'%AUDIT_MARGIN_MM,
             'router_clearance_violations':sum(b['clearance_violations'] for b in blocks.values()),'clearance_examples':violations,
             'coupling_rule':'sensitive-net router segment within %g mm of GDI HV / ignition / battery / switching copper on the same layer'%COUPLING_MM,
             'coupling_examples':coupled,'in1_router_tracks':in1,
@@ -274,6 +305,7 @@ def review(placement,autorouted,out,profile):
     (out/'autoroute_review.json').write_text(json.dumps(report,indent=2,default=str)+'\n')
     for name,b in report['blocks'].items():
         print(f"{name:18s} nets {b['net_count']:3d} tracks {b['tracks']:5d} vias {b['vias']:4d} len {b['length_mm']:8.1f} in1 {b['in1_items']:3d} thin {b['width_below_class']:4d}/{b['width_below_fab_min']:4d} clr {b['clearance_violations']:4d} coupled {b['coupled_segments']:4d} areas {b['items_by_area']}")
+    print('preexisting',{k:v for k,v in preexisting.items() if not k.startswith('altered_')},'altered by block',preexisting['altered_by_block'])
     print('router clearance violations',report['router_clearance_violations'],'in1 tracks',len(in1))
     print('gnd',report['gnd']);print('pairs',json.dumps(report['pairs'],indent=1))
     print('unconnected kicad',report['unconnected_kicad'],'clusters',report['remaining_gap']['total'],report['remaining_gap']['by_block'])

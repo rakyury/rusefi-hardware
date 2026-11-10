@@ -78,7 +78,8 @@ class Copper:
         for cell in self.cells(entry[3]):
             self.bins[layer, cell].append(entry)
 
-    def clear(self, shape, b, layer, net):
+    def clear(self, shape, b, layer, net, margin=.01):
+        """margin > 0 keeps new copper a hair beyond the rule; a negative margin audits existing copper (fails only below the rule)."""
         seen = set()
         for cell in self.cells(b):
             for item, other, othernet, ob in self.bins[layer, cell]:
@@ -89,7 +90,7 @@ class Copper:
                 gap = max(voltage_domains.clearance_mm(net), voltage_domains.clearance_mm(othernet))
                 if isinstance(item, p.PAD) and item.GetAttribute() == p.PAD_ATTRIB_NPTH:
                     gap = max(gap, .25)  # board hole-to-copper rule
-                if overlap(b, ob) and other.Collide(shape, p.FromMM(gap+.01)):
+                if overlap(b, ob) and other.Collide(shape, p.FromMM(gap+margin)):
                     return False
         return True
 
