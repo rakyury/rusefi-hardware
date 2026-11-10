@@ -1,0 +1,558 @@
+{
+  "schema": "power8gdi.gdi-interface.v1",
+  "audit_date": "2026-10-21",
+  "status": "AUDIT_ONLY",
+  "hardware_ready": false,
+  "reference": {
+    "board": "GDI-4ch",
+    "schematic_revision": "rev. d",
+    "pcb_revision": "Rev. d",
+    "date": "2023-05-14",
+    "device": "MC33PT2001AE",
+    "reference_designator": "U1",
+    "bom_device": "MC33816",
+    "bom_consistency": "MISMATCH"
+  },
+  "sources": {
+    "gdi_schematic": {
+      "kind": "repository",
+      "path": "GDI-4ch/GDI-4ch.kicad_sch",
+      "git_blob_sha1": "b6c7a02ae8c1513f47a6b8b066cf17d0111ca283",
+      "sha256_lf": "2c013954ccf7937ab1be8406ce2e694b5e740ca175adf62fd661e39cb1304a12",
+      "revision": "1ff4b732c121a33e1f15e169df428c90be87b3c7",
+      "license_status": "UNKNOWN_NO_APPLICABLE_LICENSE_FOUND",
+      "url": "https://github.com/rakyury/rusefi-hardware/blob/1ff4b732c121a33e1f15e169df428c90be87b3c7/GDI-4ch/GDI-4ch.kicad_sch"
+    },
+    "gdi_pcb": {
+      "kind": "repository",
+      "path": "GDI-4ch/GDI-4ch.kicad_pcb",
+      "git_blob_sha1": "759fc74b628e92db94637ef4289b819db5376127",
+      "sha256_lf": "6a5f92d650679a784d155a8c58d4360e3893798f8d6191ea1f2d2354c4b2fc6e",
+      "revision": "1ff4b732c121a33e1f15e169df428c90be87b3c7",
+      "license_status": "UNKNOWN_NO_APPLICABLE_LICENSE_FOUND",
+      "url": "https://github.com/rakyury/rusefi-hardware/blob/1ff4b732c121a33e1f15e169df428c90be87b3c7/GDI-4ch/GDI-4ch.kicad_pcb"
+    },
+    "gdi_bom_d": {
+      "kind": "repository",
+      "path": "GDI-4ch/gerber/rev. d/bom.csv",
+      "git_blob_sha1": "0c60629f65b4c85d05ad6d98bdbf8006ebaccd2d",
+      "sha256_lf": "9f1b9d2928cbbd40c0db2aec2fe3ebfe9a61fc9883e3ff5b50ba07ac5c512eda",
+      "revision": "1ff4b732c121a33e1f15e169df428c90be87b3c7",
+      "license_status": "UNKNOWN_NO_APPLICABLE_LICENSE_FOUND",
+      "url": "https://github.com/rakyury/rusefi-hardware/blob/1ff4b732c121a33e1f15e169df428c90be87b3c7/GDI-4ch/gerber/rev.%20d/bom.csv"
+    },
+    "gdi_main": {
+      "kind": "repository",
+      "path": "GDI-4ch/firmware/main.cpp",
+      "git_blob_sha1": "2ef310fced087e8551ced139aa24549f62fa8d98",
+      "sha256_lf": "b8d386b7b24e10ae87f0b799871dad0ed3e975b0c874889a16b93b183f89db28",
+      "revision": "1ff4b732c121a33e1f15e169df428c90be87b3c7",
+      "license_status": "UNKNOWN_NO_APPLICABLE_LICENSE_FOUND",
+      "url": "https://github.com/rakyury/rusefi-hardware/blob/1ff4b732c121a33e1f15e169df428c90be87b3c7/GDI-4ch/firmware/main.cpp"
+    },
+    "gdi_driver": {
+      "kind": "repository",
+      "path": "GDI-4ch/firmware/pt2001impl.h",
+      "git_blob_sha1": "e627dbcce8e56fb231861a8f7aad890968891020",
+      "sha256_lf": "4b28d3d31edff3fc45ac5b3f9c6f4b2ff2fcd66defa085a822ae7939b24457ee",
+      "revision": "1ff4b732c121a33e1f15e169df428c90be87b3c7",
+      "license_status": "UNKNOWN_NO_APPLICABLE_LICENSE_FOUND",
+      "url": "https://github.com/rakyury/rusefi-hardware/blob/1ff4b732c121a33e1f15e169df428c90be87b3c7/GDI-4ch/firmware/pt2001impl.h"
+    },
+    "gdi_features": {
+      "kind": "repository",
+      "path": "GDI-4ch/firmware/efifeatures.h",
+      "git_blob_sha1": "beb9954653af651f24a4edb83d69915ec2959177",
+      "sha256_lf": "380d7b792c950bd1192a15bfd9de4087151d5c161d2244ad5ac06feca2bade4e",
+      "revision": "1ff4b732c121a33e1f15e169df428c90be87b3c7",
+      "license_status": "UNKNOWN_NO_APPLICABLE_LICENSE_FOUND",
+      "url": "https://github.com/rakyury/rusefi-hardware/blob/1ff4b732c121a33e1f15e169df428c90be87b3c7/GDI-4ch/firmware/efifeatures.h"
+    },
+    "gdi_connector": {
+      "kind": "repository",
+      "path": "GDI-4ch/connectors/gdi4.yaml",
+      "git_blob_sha1": "e25ab87888f79f5abb813cd70258424121087551",
+      "sha256_lf": "0c62996f0d0d9ee3c4087198b210e90f374598aadbebb15190bd6d59d47878d8",
+      "revision": "1ff4b732c121a33e1f15e169df428c90be87b3c7",
+      "license_status": "UNKNOWN_NO_APPLICABLE_LICENSE_FOUND",
+      "url": "https://github.com/rakyury/rusefi-hardware/blob/1ff4b732c121a33e1f15e169df428c90be87b3c7/GDI-4ch/connectors/gdi4.yaml"
+    },
+    "nxp_sds": {
+      "kind": "manufacturer",
+      "url": "https://www.nxp.com/docs/en/data-sheet/MC33PT2001_SDS.pdf",
+      "revision": "10.1 (2023-02-15)",
+      "retrieved": "2026-10-21",
+      "sha256": "f3ef5a029ddd1458432397d2eb070724f34e5ec21f4ef71522426349d346abf1",
+      "license_status": "NXP_COPYRIGHT_ALL_RIGHTS_RESERVED",
+      "locator": "Table 1 p3; Table 2 pp5-7"
+    }
+  },
+  "policy": {
+    "stage_count": 2,
+    "independent_disable_domains": true,
+    "shared_enable_allowed": false,
+    "engine_commands_over_can_allowed": false,
+    "shared_spi_wires": [
+      "SCLK",
+      "MOSI",
+      "MISO"
+    ]
+  },
+  "signal_definitions": {
+    "SPI_CSB": {
+      "device_pin": 13,
+      "device_signal": "CSB",
+      "assignment_status": "VERIFIED_DEVICE_PIN",
+      "active_level": "UNKNOWN",
+      "safe_boot_level": "UNKNOWN",
+      "polarity_evidence": [],
+      "evidence": [
+        {
+          "source": "nxp_sds",
+          "locator": "Table 2 pp5-6; package signal identity only"
+        }
+      ],
+      "evidence_required": "Full device data sheet plus approved circuit inversion/pulls and reset-state measurements"
+    },
+    "RESETB": {
+      "device_pin": 3,
+      "device_signal": "ResetB",
+      "assignment_status": "VERIFIED_DEVICE_PIN",
+      "active_level": "UNKNOWN",
+      "safe_boot_level": "UNKNOWN",
+      "polarity_evidence": [],
+      "evidence": [
+        {
+          "source": "nxp_sds",
+          "locator": "Table 2 pp5-6; package signal identity only"
+        }
+      ],
+      "evidence_required": "Full device data sheet plus approved circuit inversion/pulls and reset-state measurements"
+    },
+    "DRVEN": {
+      "device_pin": 2,
+      "device_signal": "DrvEn",
+      "assignment_status": "VERIFIED_DEVICE_PIN",
+      "active_level": "UNKNOWN",
+      "safe_boot_level": "UNKNOWN",
+      "polarity_evidence": [],
+      "evidence": [
+        {
+          "source": "nxp_sds",
+          "locator": "Table 2 pp5-6; package signal identity only"
+        }
+      ],
+      "evidence_required": "Full device data sheet plus approved circuit inversion/pulls and reset-state measurements"
+    },
+    "FLAG0": {
+      "device_pin": 10,
+      "device_signal": "Flag(0)",
+      "assignment_status": "VERIFIED_DEVICE_PIN",
+      "active_level": "UNKNOWN",
+      "safe_boot_level": "UNKNOWN",
+      "polarity_evidence": [],
+      "evidence": [
+        {
+          "source": "nxp_sds",
+          "locator": "Table 2 pp5-6; package signal identity only"
+        }
+      ],
+      "evidence_required": "Pinned microcode/register mapping must establish diagnostic semantics, direction and polarity"
+    },
+    "HPFP_CMD": {
+      "device_pin": null,
+      "device_signal": null,
+      "assignment_status": "UNKNOWN_MICROCODE_MAPPING",
+      "active_level": "UNKNOWN",
+      "safe_boot_level": "UNKNOWN",
+      "polarity_evidence": [],
+      "evidence": [
+        {
+          "source": "nxp_sds",
+          "locator": "Table 2 pp5-6; package signal identity only"
+        }
+      ],
+      "evidence_required": "Pinned microcode and board path must identify HPFP START input and polarity"
+    },
+    "INJ1": {
+      "device_pin": 4,
+      "device_signal": "Start1",
+      "assignment_status": "PROPOSED_START_ASSIGNMENT",
+      "active_level": "UNKNOWN",
+      "safe_boot_level": "UNKNOWN",
+      "polarity_evidence": [],
+      "evidence": [
+        {
+          "source": "nxp_sds",
+          "locator": "Table 2 pp5-6; package signal identity only"
+        }
+      ],
+      "evidence_required": "Full device data sheet plus approved circuit inversion/pulls and reset-state measurements"
+    },
+    "INJ2": {
+      "device_pin": 5,
+      "device_signal": "Start2",
+      "assignment_status": "PROPOSED_START_ASSIGNMENT",
+      "active_level": "UNKNOWN",
+      "safe_boot_level": "UNKNOWN",
+      "polarity_evidence": [],
+      "evidence": [
+        {
+          "source": "nxp_sds",
+          "locator": "Table 2 pp5-6; package signal identity only"
+        }
+      ],
+      "evidence_required": "Full device data sheet plus approved circuit inversion/pulls and reset-state measurements"
+    },
+    "INJ3": {
+      "device_pin": 6,
+      "device_signal": "Start3",
+      "assignment_status": "PROPOSED_START_ASSIGNMENT",
+      "active_level": "UNKNOWN",
+      "safe_boot_level": "UNKNOWN",
+      "polarity_evidence": [],
+      "evidence": [
+        {
+          "source": "nxp_sds",
+          "locator": "Table 2 pp5-6; package signal identity only"
+        }
+      ],
+      "evidence_required": "Full device data sheet plus approved circuit inversion/pulls and reset-state measurements"
+    },
+    "INJ4": {
+      "device_pin": 7,
+      "device_signal": "Start4",
+      "assignment_status": "PROPOSED_START_ASSIGNMENT",
+      "active_level": "UNKNOWN",
+      "safe_boot_level": "UNKNOWN",
+      "polarity_evidence": [],
+      "evidence": [
+        {
+          "source": "nxp_sds",
+          "locator": "Table 2 pp5-6; package signal identity only"
+        }
+      ],
+      "evidence_required": "Full device data sheet plus approved circuit inversion/pulls and reset-state measurements"
+    }
+  },
+  "stages": [
+    {
+      "id": "A",
+      "device_variant": "MC33PT2001AE",
+      "selection_status": "REFERENCE_ONLY",
+      "injector_count": 4,
+      "pump_count": 1,
+      "disable_domain": "GDI_A_DISABLE",
+      "signals": {
+        "SPI_CSB": {
+          "logical_net": "GDI_A_SPI_CSB",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "RESETB": {
+          "logical_net": "GDI_A_RESETB",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "DRVEN": {
+          "logical_net": "GDI_A_DRVEN",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "FLAG0": {
+          "logical_net": "GDI_A_FLAG0",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "HPFP_CMD": {
+          "logical_net": "GDI_A_HPFP_CMD",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "INJ1": {
+          "logical_net": "GDI_A_INJ1",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "INJ2": {
+          "logical_net": "GDI_A_INJ2",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "INJ3": {
+          "logical_net": "GDI_A_INJ3",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "INJ4": {
+          "logical_net": "GDI_A_INJ4",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "B",
+      "device_variant": "MC33PT2001AE",
+      "selection_status": "REFERENCE_ONLY",
+      "injector_count": 4,
+      "pump_count": 1,
+      "disable_domain": "GDI_B_DISABLE",
+      "signals": {
+        "SPI_CSB": {
+          "logical_net": "GDI_B_SPI_CSB",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "RESETB": {
+          "logical_net": "GDI_B_RESETB",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "DRVEN": {
+          "logical_net": "GDI_B_DRVEN",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "FLAG0": {
+          "logical_net": "GDI_B_FLAG0",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "HPFP_CMD": {
+          "logical_net": "GDI_B_HPFP_CMD",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "INJ1": {
+          "logical_net": "GDI_B_INJ1",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "INJ2": {
+          "logical_net": "GDI_B_INJ2",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "INJ3": {
+          "logical_net": "GDI_B_INJ3",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        },
+        "INJ4": {
+          "logical_net": "GDI_B_INJ4",
+          "mcu_pin": null,
+          "mapping_status": "UNASSIGNED",
+          "evidence": [
+            {
+              "source": "nxp_sds",
+              "locator": "Package signal definition only; no Power8GDI MCU mapping claimed"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "observed_reference_firmware": [
+    {
+      "id": "shared_control",
+      "finding": "EFI_PT2001_CHIPS>1 uses shared PB4 DRVEN/PB5 reset; per-instance setters become no-ops.",
+      "evidence": [
+        {
+          "source": "gdi_driver",
+          "locator": "setResetB and setDriveEN"
+        },
+        {
+          "source": "gdi_main",
+          "locator": "initPt2001Interface and main multi-chip branches"
+        }
+      ]
+    },
+    {
+      "id": "shared_diagnostic",
+      "finding": "readFlag0 always reads PB7 for every instance; unexpected flag checking disabled.",
+      "evidence": [
+        {
+          "source": "gdi_driver",
+          "locator": "readFlag0 and errorOnUnexpectedFlag"
+        }
+      ]
+    },
+    {
+      "id": "constant_supply",
+      "finding": "getVbatt returns constant 12; not a measured supply qualification.",
+      "evidence": [
+        {
+          "source": "gdi_driver",
+          "locator": "getVbatt"
+        }
+      ]
+    },
+    {
+      "id": "automatic_restart",
+      "finding": "Worker calls restart on faults each approximately 100ms loop; no explicit re-arm gate in this code.",
+      "evidence": [
+        {
+          "source": "gdi_main",
+          "locator": "PtWorkerThread"
+        }
+      ]
+    },
+    {
+      "id": "default_variant",
+      "finding": "EFI_PT2001_CHIPS defaults 1 and EFI_BOARD_E92 defaults 1; build-time variation must be pinned.",
+      "evidence": [
+        {
+          "source": "gdi_features",
+          "locator": "default macros"
+        }
+      ]
+    },
+    {
+      "id": "symbol_migration",
+      "finding": "Legacy MC33816 symbol labels pin20 VCC2P5 and MISO/FLAG as input; PT2001 device definitions differ.",
+      "evidence": [
+        {
+          "source": "gdi_pcb",
+          "locator": "U1 pads 10,15,20"
+        },
+        {
+          "source": "nxp_sds",
+          "locator": "Table 2 pp5-6"
+        }
+      ]
+    }
+  ],
+  "blockers": [
+    {
+      "id": "BOM_VARIANT",
+      "evidence_required": "Resolve U1 MC33816 versus MC33PT2001AE; regenerate BOM/positions/Gerbers from approved exact sources."
+    },
+    {
+      "id": "DEVICE_DOCUMENTS",
+      "evidence_required": "Obtain authorized full PT2001 datasheet/safety manual and AN4849/AN12336; public downloads redirected to NXP login."
+    },
+    {
+      "id": "SOURCE_LICENSE",
+      "evidence_required": "Confirm applicable license/permission for schematic, PCB and bespoke firmware before reuse; Apache headers in ChibiOS files do not cover the entire design."
+    },
+    {
+      "id": "F7_MAPPING",
+      "evidence_required": "Review exact F7 package/pinmux, independent stage signals, timing resources and reset states."
+    },
+    {
+      "id": "MICROCODE_POLARITY",
+      "evidence_required": "Pin device microcode/register images, HPFP mapping, input inversions and flag semantics; verify all active and safe levels."
+    },
+    {
+      "id": "ELECTRICAL_STAGE",
+      "evidence_required": "Create and review actual dual-stage circuit with independent physical inhibit, boost/sense/return/connector design."
+    },
+    {
+      "id": "MEASUREMENTS",
+      "evidence_required": "Measure startup/brownout/MCU halt, driver faults, gate disable latency, boost overshoot/discharge, injector and pump current, thermal and EMC."
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "manufacturing_gate": "FAIL",
+  "violations": {
+    "clearance": 504,
+    "track_width": 199,
+    "via_dangling": 16,
+    "track_dangling": 4,
+    "silk_over_copper": 12
+  },
+  "total_violations": 735,
+  "unconnected_items": 499,
+  "multi_terminal_nets": 661,
+  "connectivity_unconnected_count": 2101,
+  "drc_report_may_be_truncated": true,
+  "categories_at_kicad_reporting_limit": {
+    "clearance": 504,
+    "track_width": 199,
+    "unconnected_items": 499
+  },
+  "multi_terminal_nets_with_missing_connections": 82,
+  "multi_terminal_nets_without_reported_missing_connection": 579,
+  "interpretation": "KiCad9.0.9 has hard-coded per-category caps (199;499 for clearance/unconnected). Reported missing connections are a sample when capped; absence from this sample is NOT connectivity completion. Use connectivity_unconnected_count for the full connectivity residual. No routing percentage is claimed.",
+  "audited_commit": "fee4c9b7beda8ac3931d22d46c5a514cdb3cd8e0",
+  "netlist_sha256": "40a7e18e334463119d4d387b05956dad5c26db4c65daa03aa1706900aad76cf2",
+  "pcb_sha256": "3d1a64d1bb783f57161f65aab5fa8819ccc23ba525de4d95ff3d8f3089b2d419",
+  "pad_contract": {
+    "components": 1092,
+    "component_pin_assignments": 3464,
+    "dnp_count": 34,
+    "errors": []
+  },
+  "artifact_manifest_checks": 19,
+  "native_evidence_sha256": "6c237577f7a66e6453baab2cbc0b0ce43f4e0739a9eea950ec322be785037863"
+}

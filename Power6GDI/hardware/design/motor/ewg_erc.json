@@ -1,0 +1,109 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-20T23:17:30+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/ef355e57-d6b6-5f31-bc85-20207abd0013",
+            "violations": [
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U960 Pin 5 [VCC, Power input, Line]",
+                            "pos": {
+                                "x": 1.778,
+                                "y": 2.1844
+                            },
+                            "uuid": "dc2a4c4b-35fb-5e59-94f8-78fd1f90426c"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U951 Pin 5 [VM, Power input, Line]",
+                            "pos": {
+                                "x": 4.826,
+                                "y": 0.7112
+                            },
+                            "uuid": "b93896bf-fbd2-512b-86b7-8570d6642843"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U951 Pin 1 [GND, Power input, Line]",
+                            "pos": {
+                                "x": 4.7752,
+                                "y": 1.0668
+                            },
+                            "uuid": "93a33298-535e-5071-94ae-5c3297eabbb7"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'VBAT_EWG_FUSED'",
+                            "pos": {
+                                "x": 0.8763,
+                                "y": 0.762
+                            },
+                            "uuid": "39c81cc3-12bc-5261-8862-a2c13fbcaf07"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'EWG_MOTOR_A'",
+                            "pos": {
+                                "x": 5.08,
+                                "y": 0.8382
+                            },
+                            "uuid": "1ef89087-b735-517c-b7f9-b419d16408f1"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'EWG_MOTOR_B'",
+                            "pos": {
+                                "x": 5.08,
+                                "y": 0.9398
+                            },
+                            "uuid": "d05efb4a-852b-5e2a-abf5-e64f31fe10c3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "ewg_driver.kicad_sch"
+}

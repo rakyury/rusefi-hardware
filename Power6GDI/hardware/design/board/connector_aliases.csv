@@ -1,0 +1,52 @@
+pinout_net,board_net,review_basis
+VBAT_MAIN_1,VBAT_MAIN_FUSED,Integration lead explicitly approved single main fused feed
+PGND_MAIN_1,GND,Integration lead explicitly approved single main return
+CAN1_H,CAN1_H,Core TCAN1042HGVDRQ1 physical CANH pin7
+CAN1_L,CAN1_L,Core TCAN1042HGVDRQ1 physical CANL pin6
+LIN1_BUS,LIN1_BUS,Core TLIN1029A physical LIN bus output
+IGN1,HARNESS_IGN1,Passive coil IGBT collector; up to420V clamp. Never smart-coil logic input.
+IGN2,HARNESS_IGN2,Passive coil IGBT collector; up to420V clamp. Never smart-coil logic input.
+IGN3,HARNESS_IGN3,Passive coil IGBT collector; up to420V clamp. Never smart-coil logic input.
+IGN4,HARNESS_IGN4,Passive coil IGBT collector; up to420V clamp. Never smart-coil logic input.
+IGN5,HARNESS_IGN5,Passive coil IGBT collector; up to420V clamp. Never smart-coil logic input.
+IGN6,HARNESS_IGN6,Passive coil IGBT collector; up to420V clamp. Never smart-coil logic input.
+VBAT_MAIN_2,VBAT_DBW_FUSED,Separate fused motor feed candidate; contact and load rating pending
+VBAT_MAIN_3,VBAT_EWG_FUSED,Separate fused motor feed candidate; contact and load rating pending
+PGND_MAIN_2,GND,Motor ground return candidate; current and routing pending
+PGND_MAIN_3,GND,Motor ground return candidate; current and routing pending
+DBW_MOTOR_A,DBW_MOTOR_A,TLE9201 physical output; load and current budget unqualified
+DBW_MOTOR_B,DBW_MOTOR_B,TLE9201 physical output; load and current budget unqualified
+EWG_MOTOR_A,EWG_MOTOR_A,TLE9201 physical output; load and current budget unqualified
+EWG_MOTOR_B,EWG_MOTOR_B,TLE9201 physical output; load and current budget unqualified
+PGND_MAIN_4,GND,Explicit common power return; contact current sharing and copper thermal budget remain unqualified
+PGND_MAIN_B,GND,Explicit common power return; contact current sharing and copper thermal budget remain unqualified
+PGND_GDI_A_1,GND,Explicit common power return; contact current sharing and copper thermal budget remain unqualified
+PGND_GDI_A_2,GND,Explicit common power return; contact current sharing and copper thermal budget remain unqualified
+PGND_GDI_B_1,GND,Explicit common power return; contact current sharing and copper thermal budget remain unqualified
+PGND_GDI_B_2,GND,Explicit common power return; contact current sharing and copper thermal budget remain unqualified
+CAN2_H,CAN2_H,Source-checked physical interface; qualification pending
+CAN2_L,CAN2_L,Source-checked physical interface; qualification pending
+LIN2_BUS,LIN2_BUS,Source-checked physical interface; qualification pending
+SENSOR_5V_A,SENSOR_5V_A,Source-checked physical interface; qualification pending
+SENSOR_5V_B,SENSOR_5V_B,Source-checked physical interface; qualification pending
+CHASSIS_GND,USB_SHIELD,Source-checked physical interface; qualification pending
+DI1_HIGH,PTA_H1,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI1_LOW,PTA_L1,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI2_HIGH,PTA_H1,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI2_LOW,PTA_L2,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI3_HIGH,PTA_H3,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI3_LOW,PTA_L3,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+HPFP1_HIGH,PTA_H5PUMP,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+HPFP1_LOW,PTA_L6PUMP,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI4_HIGH,PTB_H1,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI4_LOW,PTB_L1,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI5_HIGH,PTB_H1,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI5_LOW,PTB_L2,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI6_HIGH,PTB_H3,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+DI6_LOW,PTB_L3,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+HPFP2_HIGH,PTB_H5PUMP,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+HPFP2_LOW,PTB_L6PUMP,GDI4 revision-matched source + libfirmware78cec274 microcode mapping; hardware/load qualification pending
+VBAT_GDI_A_1,VBAT_GDI_A_FUSED,Separate externally fused bank feed upstream of LM74800 reverse/OV disconnect
+VBAT_GDI_A_2,VBAT_GDI_A_FUSED,Separate externally fused bank feed upstream of LM74800 reverse/OV disconnect
+VBAT_GDI_B_1,VBAT_GDI_B_FUSED,Separate externally fused bank feed upstream of LM74800 reverse/OV disconnect
+VBAT_GDI_B_2,VBAT_GDI_B_FUSED,Separate externally fused bank feed upstream of LM74800 reverse/OV disconnect

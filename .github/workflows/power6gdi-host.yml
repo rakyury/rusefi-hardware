@@ -1,0 +1,60 @@
+name: Power6GDI offline validation
+on:
+  push:
+    branches: [power8gdi-rev-a]
+    paths:
+      - 'Power6GDI/**'
+      - 'GDI-4ch/**'
+      - '.github/workflows/power6gdi-host.yml'
+  pull_request:
+    paths:
+      - 'Power6GDI/**'
+      - 'GDI-4ch/**'
+      - '.github/workflows/power6gdi-host.yml'
+jobs:
+  host-contracts:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install offline editor and test dependencies
+        run: python -m pip install -e "./Power6GDI/configurator[dev]"
+      - name: Install Qt offscreen runtime on Linux
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libegl1
+      - name: C++, Python parity, Qt lifecycle, and static interface checks
+        run: python Power6GDI/tools/run_checks.py --suite host
+      - name: Undefined-behavior checks on Linux
+        if: runner.os == 'Linux'
+        run: python Power6GDI/tools/run_checks.py --suite host --sanitizers --output build/power8gdi-ubsan
+      - name: Preserve exact commands and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: power8gdi-host-${{ matrix.os }}
+          path: build/power8gdi-*
+  mechanical-concepts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install CAD dependencies
+        run: python -m pip install -r Power6GDI/mechanical/requirements-cad.txt
+      - name: Regenerate and check conceptual CAD from a clean checkout
+        run: python Power6GDI/tools/run_checks.py --suite cad
+      - name: Preserve CAD test logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: power8gdi-cad-checks
+          path: build/power8gdi-checks

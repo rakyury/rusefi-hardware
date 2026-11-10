@@ -1,0 +1,274 @@
+{
+  "schema_version": 1,
+  "scope": "Electrical node mapping from revision-matched GDI4 and upstream rusEFI microcode; not executable firmware or qualification",
+  "upstream": {
+    "repository": "rusefi/libfirmware",
+    "pinned_commit": "78cec274c6eec850d394c21770dc21267aa27d43",
+    "latest_reviewed_commit": "dffa2426620039f6711def5a794c41c5dd03194f",
+    "microcode_blobs_identical_at_latest": true,
+    "files": [
+      {
+        "path": "pt2001/project/rusefi/MicrocodeCh1/ch1.psc",
+        "git_blob": "4b087a9e90460a9e7220807987bc4683e4971b31",
+        "url": "https://github.com/rusefi/libfirmware/blob/78cec274c6eec850d394c21770dc21267aa27d43/pt2001/project/rusefi/MicrocodeCh1/ch1.psc"
+      },
+      {
+        "path": "pt2001/project/rusefi/MicrocodeCh2/ch2.psc",
+        "git_blob": "82360920afc2b42f1748970c86d19382d6a4e5a0",
+        "url": "https://github.com/rusefi/libfirmware/blob/78cec274c6eec850d394c21770dc21267aa27d43/pt2001/project/rusefi/MicrocodeCh2/ch2.psc"
+      },
+      {
+        "path": "pt2001/src/pt2001.cpp",
+        "git_blob": "86fcd1398ade67257500a3b2b70c0105e4fc17fb",
+        "url": "https://github.com/rusefi/libfirmware/blob/78cec274c6eec850d394c21770dc21267aa27d43/pt2001/src/pt2001.cpp"
+      }
+    ]
+  },
+  "source_schematic_lf_sha256": "2c013954ccf7937ab1be8406ce2e694b5e740ca175adf62fd661e39cb1304a12",
+  "banks": [
+    {
+      "stage": "A",
+      "ic_ref": "U201",
+      "injectors": [
+        {
+          "logical_channel": "DI1",
+          "start_pin": "4",
+          "start_net": "DI1",
+          "firmware_start": "start1",
+          "microcode_high_sides": [
+            "hs1",
+            "hs2"
+          ],
+          "microcode_low_side": "ls1",
+          "positive_net": "PTA_H1",
+          "positive_monitor_pin": "60",
+          "negative_net": "PTA_L1",
+          "negative_monitor_pin": "38"
+        },
+        {
+          "logical_channel": "DI2",
+          "start_pin": "5",
+          "start_net": "DI2",
+          "firmware_start": "start2",
+          "microcode_high_sides": [
+            "hs1",
+            "hs2"
+          ],
+          "microcode_low_side": "ls2",
+          "positive_net": "PTA_H1",
+          "positive_monitor_pin": "60",
+          "negative_net": "PTA_L2",
+          "negative_monitor_pin": "37"
+        },
+        {
+          "logical_channel": "DI3",
+          "start_pin": "6",
+          "start_net": "DI3",
+          "firmware_start": "start3",
+          "microcode_high_sides": [
+            "hs3",
+            "hs4"
+          ],
+          "microcode_low_side": "ls3",
+          "positive_net": "PTA_H3",
+          "positive_monitor_pin": "54",
+          "negative_net": "PTA_L3",
+          "negative_monitor_pin": "36"
+        },
+        {
+          "logical_channel": "DI4",
+          "start_pin": "7",
+          "start_net": "DI4",
+          "firmware_start": "start4",
+          "microcode_high_sides": [
+            "hs3",
+            "hs4"
+          ],
+          "microcode_low_side": "ls4",
+          "positive_net": "PTA_H3",
+          "positive_monitor_pin": "54",
+          "negative_net": "PTA_L4",
+          "negative_monitor_pin": "35"
+        }
+      ],
+      "pump": {
+        "logical_channel": "HPFP1",
+        "start_pin": "9",
+        "start_net": "HPFP1",
+        "firmware_start": "start6",
+        "high_side": "hs5",
+        "low_side": "ls6",
+        "positive_net": "PTA_H5PUMP",
+        "positive_monitor_pin": "51",
+        "negative_net": "PTA_L6PUMP",
+        "negative_fet_ref": "Q212",
+        "negative_fet_drain_pin": "2",
+        "drain_sense_ic_pin": "33",
+        "drain_sense_link_ref": "R216",
+        "drain_sense_link_must_be_fitted": true,
+        "alternate_injector6_link_ref": "R218",
+        "alternate_link_must_be_dnp": true
+      },
+      "unused_start5_pin": "8",
+      "unused_start5_net": "PTA_START5",
+      "enable_ic_pin": "2",
+      "enable_ic_net": "PTA_DEVICE_DRVEN",
+      "enable_isolation_ref": "R299",
+      "enable_isolation_must_be_dnp": true,
+      "battery_net": "VBAT_GDI_A",
+      "battery_ic_pin": "39",
+      "controls": {
+        "reset": {
+          "pin": "3",
+          "net": "PTA_RESET"
+        },
+        "chip_select": {
+          "pin": "13",
+          "net": "PTA_CS"
+        },
+        "flag0": {
+          "pin": "10",
+          "net": "PTA_FLAG"
+        },
+        "mosi": {
+          "pin": "14",
+          "net": "GDI_SPI2_MOSI"
+        },
+        "miso": {
+          "pin": "15",
+          "net": "GDI_SPI2_MISO"
+        },
+        "sclk": {
+          "pin": "16",
+          "net": "GDI_SPI2_SCK"
+        }
+      }
+    },
+    {
+      "stage": "B",
+      "ic_ref": "U301",
+      "injectors": [
+        {
+          "logical_channel": "DI5",
+          "start_pin": "4",
+          "start_net": "DI5",
+          "firmware_start": "start1",
+          "microcode_high_sides": [
+            "hs1",
+            "hs2"
+          ],
+          "microcode_low_side": "ls1",
+          "positive_net": "PTB_H1",
+          "positive_monitor_pin": "60",
+          "negative_net": "PTB_L1",
+          "negative_monitor_pin": "38"
+        },
+        {
+          "logical_channel": "DI6",
+          "start_pin": "5",
+          "start_net": "DI6",
+          "firmware_start": "start2",
+          "microcode_high_sides": [
+            "hs1",
+            "hs2"
+          ],
+          "microcode_low_side": "ls2",
+          "positive_net": "PTB_H1",
+          "positive_monitor_pin": "60",
+          "negative_net": "PTB_L2",
+          "negative_monitor_pin": "37"
+        },
+        {
+          "logical_channel": "DI7",
+          "start_pin": "6",
+          "start_net": "DI7",
+          "firmware_start": "start3",
+          "microcode_high_sides": [
+            "hs3",
+            "hs4"
+          ],
+          "microcode_low_side": "ls3",
+          "positive_net": "PTB_H3",
+          "positive_monitor_pin": "54",
+          "negative_net": "PTB_L3",
+          "negative_monitor_pin": "36"
+        },
+        {
+          "logical_channel": "DI8",
+          "start_pin": "7",
+          "start_net": "DI8",
+          "firmware_start": "start4",
+          "microcode_high_sides": [
+            "hs3",
+            "hs4"
+          ],
+          "microcode_low_side": "ls4",
+          "positive_net": "PTB_H3",
+          "positive_monitor_pin": "54",
+          "negative_net": "PTB_L4",
+          "negative_monitor_pin": "35"
+        }
+      ],
+      "pump": {
+        "logical_channel": "HPFP2",
+        "start_pin": "9",
+        "start_net": "HPFP2",
+        "firmware_start": "start6",
+        "high_side": "hs5",
+        "low_side": "ls6",
+        "positive_net": "PTB_H5PUMP",
+        "positive_monitor_pin": "51",
+        "negative_net": "PTB_L6PUMP",
+        "negative_fet_ref": "Q312",
+        "negative_fet_drain_pin": "2",
+        "drain_sense_ic_pin": "33",
+        "drain_sense_link_ref": "R316",
+        "drain_sense_link_must_be_fitted": true,
+        "alternate_injector6_link_ref": "R318",
+        "alternate_link_must_be_dnp": true
+      },
+      "unused_start5_pin": "8",
+      "unused_start5_net": "PTB_START5",
+      "enable_ic_pin": "2",
+      "enable_ic_net": "PTB_DEVICE_DRVEN",
+      "enable_isolation_ref": "R399",
+      "enable_isolation_must_be_dnp": true,
+      "battery_net": "VBAT_GDI_B",
+      "battery_ic_pin": "39",
+      "controls": {
+        "reset": {
+          "pin": "3",
+          "net": "PTB_RESET"
+        },
+        "chip_select": {
+          "pin": "13",
+          "net": "PTB_CS"
+        },
+        "flag0": {
+          "pin": "10",
+          "net": "PTB_FLAG"
+        },
+        "mosi": {
+          "pin": "14",
+          "net": "GDI_SPI2_MOSI"
+        },
+        "miso": {
+          "pin": "15",
+          "net": "GDI_SPI2_MISO"
+        },
+        "sclk": {
+          "pin": "16",
+          "net": "GDI_SPI2_SCK"
+        }
+      }
+    }
+  ],
+  "release_status": "BLOCKED",
+  "blockers": [
+    "PT full electrical/polarity and fault behavior validation absent; DRVEN isolation DNP must remain",
+    "START6 also appears in optional injector6 code: decode/start mask and assembled-image parity not demonstrated",
+    "Four injectors share two high-side/current-measurement banks; scheduling must prevent incompatible concurrent pulses",
+    "No physical connector current/thermal/fuse/transient qualification",
+    "GDI VBAT feed protection is not implemented by this mapping contract"
+  ]
+}

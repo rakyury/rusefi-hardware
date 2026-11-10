@@ -1,0 +1,3194 @@
+{
+  "status": "PARTIAL_LOCAL_ROUTING",
+  "input_sha256": "1f6d8918f18fa8f4c4a6bf7166e4b0b4e5ced781cb43eee97ad452f0b7ffd740",
+  "cells": {
+    "5v": {
+      "anchor_mm": [
+        88.5,
+        25.0
+      ],
+      "bounds_mm": [
+        78.275,
+        14.675,
+        108.125,
+        35.755
+      ],
+      "conflicts": 0
+    },
+    "3v3": {
+      "anchor_mm": [
+        28.0,
+        41.5
+      ],
+      "bounds_mm": [
+        15.575,
+        34.495,
+        35.005,
+        47.255
+      ],
+      "conflicts": 0
+    }
+  },
+  "checks": {
+    "status": "PASS_STRUCTURAL_AND_MUTATION_CHECKS",
+    "foreign_footprints_preserved": 1204,
+    "original_copper_items_preserved": 2538,
+    "new_tracks": 106,
+    "new_vias": 22,
+    "guard_rejects_existing_routes": true,
+    "failed_placement_restores_original_layers": true,
+    "voltage_domains": {
+      "path": "Power8GDI/hardware/design/board/work/logic_power_local/core.net",
+      "sha256": "d7fb0ddc652c735b1617ddce309dcb4ca93b4729c80044e7e9be3e5e50e74ae7",
+      "discovered_switching_nets": 60,
+      "gdi_target_mm": 0.6,
+      "ignition_target_mm": 2.5
+    },
+    "native_drc_required": true,
+    "qualified_for_hardware": false
+  },
+  "native_drc_scope": "prepack fixture, donor + fixed MCU/connectors + logic power; exact60 HV rules; --all-track-errors",
+  "baseline": {
+    "violations": 960,
+    "unconnected": 289,
+    "by_type": [
+      {
+        "Name": "clearance",
+        "Count": 505
+      },
+      {
+        "Name": "lib_footprint_issues",
+        "Count": 199
+      },
+      {
+        "Name": "silk_over_copper",
+        "Count": 7
+      },
+      {
+        "Name": "silk_overlap",
+        "Count": 10
+      },
+      {
+        "Name": "track_dangling",
+        "Count": 28
+      },
+      {
+        "Name": "track_width",
+        "Count": 199
+      },
+      {
+        "Name": "via_dangling",
+        "Count": 12
+      }
+    ]
+  },
+  "candidate": {
+    "violations": 996,
+    "unconnected": 226,
+    "by_type": [
+      {
+        "Name": "clearance",
+        "Count": 500
+      },
+      {
+        "Name": "lib_footprint_issues",
+        "Count": 199
+      },
+      {
+        "Name": "silk_over_copper",
+        "Count": 19
+      },
+      {
+        "Name": "silk_overlap",
+        "Count": 37
+      },
+      {
+        "Name": "track_dangling",
+        "Count": 30
+      },
+      {
+        "Name": "track_width",
+        "Count": 199
+      },
+      {
+        "Name": "via_dangling",
+        "Count": 12
+      }
+    ]
+  },
+  "rules_sha256": "cc5374f766d503ac7675c30160c217836b2ef0982153999bdc5f8c20f3931492",
+  "project_sha256": "39f349c46a3dac0109604e347238d1cef216be0cc6d7c4f0356676c076d6165c",
+  "blocked_routes": [
+    {
+      "label": "LM SS quiet AGND return",
+      "net": "GND",
+      "obstacles": [
+        "copper:Net-(U201-VSENSEN2):1e1f686e-c39b-442b-8ef3-aa486676cf1f",
+        "copper:Net-(U201-VSENSEN2):3b11c236-30fb-4ffb-ace1-b3ccd25d7bd8",
+        "copper:Net-(U201-VSENSEN2):8003ea5b-c73a-43e6-82be-7155abe32292",
+        "copper:Net-(U201-VSENSEN3):846974c8-9a29-4dd4-a26f-ad8ae39fb951",
+        "copper:Net-(U201-VSENSEN3):a1fe74ab-12d2-400d-8de7-867649126726",
+        "copper:Net-(U201-VSENSEP2):2749e805-1732-4fe5-8b41-1e1f56c46037",
+        "copper:Net-(U201-VSENSEP2):5937e81f-5b8e-4247-a51f-8357f2c593a2",
+        "copper:Net-(U201-VSENSEP3):7039bf4d-097a-4a8e-898e-8415741ffd6f",
+        "copper:Net-(U201-VSENSEP3):ff09f480-4760-4e3e-a086-0a10279a18c0"
+      ]
+    },
+    {
+      "label": "LM output sense away from SW",
+      "net": "+5V_CORE",
+      "obstacles": [
+        "copper:Net-(U201-VSENSEN2):1e1f686e-c39b-442b-8ef3-aa486676cf1f",
+        "copper:Net-(U201-VSENSEN2):3b11c236-30fb-4ffb-ace1-b3ccd25d7bd8",
+        "copper:Net-(U201-VSENSEN2):8003ea5b-c73a-43e6-82be-7155abe32292",
+        "copper:Net-(U201-VSENSEN2):80d139d8-81ca-4bec-a8dd-e7516241c415",
+        "copper:Net-(U201-VSENSEN3):7e330b9e-a6bf-4adc-9082-e8aae3c2447f",
+        "copper:Net-(U201-VSENSEN3):c4e95b9b-2007-4358-b50a-a18cdd3acdad",
+        "copper:Net-(U201-VSENSEP2):3a2ee435-2d7c-46b2-abcb-1c8e601c35cb",
+        "copper:Net-(U201-VSENSEP2):5937e81f-5b8e-4247-a51f-8357f2c593a2",
+        "copper:Net-(U201-VSENSEP2):b68471b3-11fe-4070-8340-680fbdb26968",
+        "copper:Net-(U201-VSENSEP3):4045080d-08d9-40e5-8380-5f4ade77662e",
+        "copper:Net-(U201-VSENSEP3):d237dce4-e88c-469e-a651-fbe6b244689d",
+        "copper:PTA_L3:47c26363-a9a0-4531-a575-75b24ac7df1d",
+        "copper:PTA_L3:9e0268ec-3af8-4a1a-a7e4-98f9be4d1192",
+        "copper:PTA_L3:ee52929f-61cb-4d90-84d2-ef7ebc759208",
+        "copper:PTA_L3:fb114f9b-6ac2-44f6-860e-532bf11f75d4"
+      ]
+    },
+    {
+      "label": "5v EP thermal candidate",
+      "net": "GND",
+      "obstacles": [
+        "copper:PTA_VBOOST:2ad854e5-e098-4cff-876c-4c638624f6ea",
+        "copper:PTA_VBOOST:ff38e9f7-510e-4547-8763-3999cba417c0"
+      ]
+    },
+    {
+      "label": "5v EP thermal candidate",
+      "net": "GND",
+      "obstacles": [
+        "copper:PTA_VBOOST:2ad854e5-e098-4cff-876c-4c638624f6ea",
+        "copper:PTA_VBOOST:ff38e9f7-510e-4547-8763-3999cba417c0"
+      ]
+    },
+    {
+      "label": "5v EP thermal candidate",
+      "net": "GND",
+      "obstacles": [
+        "copper:PTA_VBOOST:ff38e9f7-510e-4547-8763-3999cba417c0"
+      ]
+    }
+  ],
+  "local_related_findings": [
+    {
+      "description": "Clearance violation (rule 'Audited PT switching domains' clearance 0.6000 mm; actual 0.3100 mm)",
+      "items": [
+        {
+          "description": "Via [PTA_H1] on F.Cu - B.Cu",
+          "pos": {
+            "x": 24.975,
+            "y": 15.26498
+          },
+          "uuid": "07059c05-7414-4393-a2d1-0cc81b15df63"
+        },
+        {
+          "description": "Pad 1 [unconnected-(D5200-NC-Pad1)] of D5200 on B.Cu",
+          "pos": {
+            "x": 25.625,
+            "y": 14.055
+          },
+          "uuid": "65680a9f-3a1e-4628-9720-62838f52e35c"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Track has unconnected end",
+      "items": [
+        {
+          "description": "Track [+5V_CORE] on B.Cu, length 2.0000 mm",
+          "pos": {
+            "x": 83.675,
+            "y": 37.0
+          },
+          "uuid": "25b7c407-09a6-4f02-bde8-8b1afd60da38"
+        }
+      ],
+      "severity": "warning",
+      "type": "track_dangling"
+    },
+    {
+      "description": "Track has unconnected end",
+      "items": [
+        {
+          "description": "Track [LP5_PG_RAW] on B.Cu, length 1.2500 mm",
+          "pos": {
+            "x": 28.75,
+            "y": 45.3
+          },
+          "uuid": "5f969df1-2977-4679-97e7-7e08f21df797"
+        }
+      ],
+      "severity": "warning",
+      "type": "track_dangling"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of C5201",
+          "pos": {
+            "x": 83.3,
+            "y": 21.5
+          },
+          "uuid": "3d1a46a7-d39f-48b2-8bc9-dbddacd3746c"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of L5300",
+          "pos": {
+            "x": 22.5,
+            "y": 37.71
+          },
+          "uuid": "7c7cf177-c9ab-4d76-ac7f-fc18d090522b"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of R5203",
+          "pos": {
+            "x": 80.0,
+            "y": 22.63
+          },
+          "uuid": "cbd0ca3d-2424-4266-beb2-23a22da53f20"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of C5208",
+          "pos": {
+            "x": 104.8,
+            "y": 25.0
+          },
+          "uuid": "7a83d54c-77c0-4e78-a5f8-b4bd3c913d96"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of C5202",
+          "pos": {
+            "x": 91.5,
+            "y": 23.18
+          },
+          "uuid": "c5a50d11-1c1d-4816-94a9-87d38d7da5d3"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of C5203",
+          "pos": {
+            "x": 86.0,
+            "y": 27.18
+          },
+          "uuid": "27f25f17-2264-4983-b51b-00f07efd69c5"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of U5200",
+          "pos": {
+            "x": 92.83,
+            "y": 25.0
+          },
+          "uuid": "fc3909b2-2444-4014-984f-1d6f88f74cb6"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of R5302",
+          "pos": {
+            "x": 23.43,
+            "y": 36.0
+          },
+          "uuid": "0a43c7c8-fb8a-48e6-934a-09b8099c793f"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of R5301",
+          "pos": {
+            "x": 25.5,
+            "y": 41.43
+          },
+          "uuid": "75e7456d-c9f4-46a6-8d1a-a0050b8e84c5"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of C5302",
+          "pos": {
+            "x": 24.5,
+            "y": 37.0
+          },
+          "uuid": "c2776b61-1e53-4e61-b076-c2905493a7e5"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of C5204",
+          "pos": {
+            "x": 89.32,
+            "y": 26.5
+          },
+          "uuid": "286fece4-c888-4db0-b536-ab59933cd3b0"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of R5202",
+          "pos": {
+            "x": 89.0,
+            "y": 17.65
+          },
+          "uuid": "4a6f8a22-6d00-44ac-b9b6-cebecad9c9f7"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of C5210",
+          "pos": {
+            "x": 104.8,
+            "y": 30.5
+          },
+          "uuid": "7adc0c19-f279-4a83-b713-a0cae34caa6e"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen clipped by solder mask",
+      "items": [
+        {
+          "description": "Reference field of U5300",
+          "pos": {
+            "x": 32.5,
+            "y": 39.83
+          },
+          "uuid": "65aba8f6-1c74-49e3-b8e7-559392c9a6cc"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_over_copper"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of C5208",
+          "pos": {
+            "x": 104.8,
+            "y": 25.0
+          },
+          "uuid": "7a83d54c-77c0-4e78-a5f8-b4bd3c913d96"
+        },
+        {
+          "description": "Segment of C5209 on B.Silkscreen",
+          "pos": {
+            "x": 105.14,
+            "y": 25.711252
+          },
+          "uuid": "da73824f-6dea-4859-8fa8-dce98e59e401"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Segment of C5211 on B.Silkscreen",
+          "pos": {
+            "x": 105.14,
+            "y": 31.211252
+          },
+          "uuid": "370d926a-8af0-4efe-9a28-6d282c86cbaa"
+        },
+        {
+          "description": "Reference field of C5210",
+          "pos": {
+            "x": 104.8,
+            "y": 30.5
+          },
+          "uuid": "7adc0c19-f279-4a83-b713-a0cae34caa6e"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of U249",
+          "pos": {
+            "x": 78.425,
+            "y": 21.975
+          },
+          "uuid": "5ccfa0c9-581d-43c0-866d-942d45f9d81c"
+        },
+        {
+          "description": "Reference field of R5203",
+          "pos": {
+            "x": 80.0,
+            "y": 22.63
+          },
+          "uuid": "cbd0ca3d-2424-4266-beb2-23a22da53f20"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of R5200",
+          "pos": {
+            "x": 78.8,
+            "y": 31.23
+          },
+          "uuid": "2df7d35a-1f0d-4085-a7ca-f191c41df391"
+        },
+        {
+          "description": "Reference field of C5206",
+          "pos": {
+            "x": 80.0,
+            "y": 31.38
+          },
+          "uuid": "d2d150e1-dd6a-49d8-bbf2-f380f9ec1573"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of C5205",
+          "pos": {
+            "x": 79.32,
+            "y": 33.5
+          },
+          "uuid": "c7aa4683-06a5-4d65-88ec-480408b0a0ce"
+        },
+        {
+          "description": "Reference field of C5206",
+          "pos": {
+            "x": 80.0,
+            "y": 31.38
+          },
+          "uuid": "d2d150e1-dd6a-49d8-bbf2-f380f9ec1573"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of C5201",
+          "pos": {
+            "x": 83.3,
+            "y": 21.5
+          },
+          "uuid": "3d1a46a7-d39f-48b2-8bc9-dbddacd3746c"
+        },
+        {
+          "description": "Segment of R5202 on B.Silkscreen",
+          "pos": {
+            "x": 83.772936,
+            "y": 21.735
+          },
+          "uuid": "eadce057-cf13-4bbf-9116-bfa74cc57a73"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of C5201",
+          "pos": {
+            "x": 83.3,
+            "y": 21.5
+          },
+          "uuid": "3d1a46a7-d39f-48b2-8bc9-dbddacd3746c"
+        },
+        {
+          "description": "Segment of R5201 on B.Silkscreen",
+          "pos": {
+            "x": 82.562742,
+            "y": 22.7775
+          },
+          "uuid": "a018a132-c35e-4c1e-ac2a-05466308ca32"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Segment of C5200 on B.Silkscreen",
+          "pos": {
+            "x": 87.14,
+            "y": 17.711252
+          },
+          "uuid": "0d92be9b-2790-4130-87a6-08408ea0132a"
+        },
+        {
+          "description": "Reference field of R5202",
+          "pos": {
+            "x": 89.0,
+            "y": 17.65
+          },
+          "uuid": "4a6f8a22-6d00-44ac-b9b6-cebecad9c9f7"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of R5202",
+          "pos": {
+            "x": 89.0,
+            "y": 17.65
+          },
+          "uuid": "4a6f8a22-6d00-44ac-b9b6-cebecad9c9f7"
+        },
+        {
+          "description": "Reference field of C5200",
+          "pos": {
+            "x": 91.3,
+            "y": 16.5
+          },
+          "uuid": "76d33292-328f-431b-b23a-4e4b90558a09"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of R5202",
+          "pos": {
+            "x": 89.0,
+            "y": 17.65
+          },
+          "uuid": "4a6f8a22-6d00-44ac-b9b6-cebecad9c9f7"
+        },
+        {
+          "description": "Segment of C5200 on B.Silkscreen",
+          "pos": {
+            "x": 89.86,
+            "y": 17.711252
+          },
+          "uuid": "94e1fbb9-4e21-4a9d-b41b-23639cfa6bb1"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Segment of R5203 on B.Silkscreen",
+          "pos": {
+            "x": 79.762742,
+            "y": 21.7225
+          },
+          "uuid": "022ca0b4-2e7d-46ba-890d-39140a6256e2"
+        },
+        {
+          "description": "Reference field of U249",
+          "pos": {
+            "x": 78.425,
+            "y": 21.975
+          },
+          "uuid": "5ccfa0c9-581d-43c0-866d-942d45f9d81c"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of C5203",
+          "pos": {
+            "x": 86.0,
+            "y": 27.18
+          },
+          "uuid": "27f25f17-2264-4983-b51b-00f07efd69c5"
+        },
+        {
+          "description": "Segment of U5200 on B.Silkscreen",
+          "pos": {
+            "x": 85.39,
+            "y": 27.11
+          },
+          "uuid": "400732a7-b1ea-4a07-88ed-d9cad9cb7784"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of C5203",
+          "pos": {
+            "x": 86.0,
+            "y": 27.18
+          },
+          "uuid": "27f25f17-2264-4983-b51b-00f07efd69c5"
+        },
+        {
+          "description": "Segment of U5200 on B.Silkscreen",
+          "pos": {
+            "x": 85.39,
+            "y": 26.135
+          },
+          "uuid": "ba0b8f40-fb51-4121-9c8f-74b8863061b6"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Segment of L5200 on B.Silkscreen",
+          "pos": {
+            "x": 92.54,
+            "y": 22.89
+          },
+          "uuid": "7aafeb4e-3dfb-4b3a-bf1d-463c3afb854b"
+        },
+        {
+          "description": "Reference field of C5202",
+          "pos": {
+            "x": 91.5,
+            "y": 23.18
+          },
+          "uuid": "c5a50d11-1c1d-4816-94a9-87d38d7da5d3"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Segment of L5200 on B.Silkscreen",
+          "pos": {
+            "x": 92.54,
+            "y": 22.89
+          },
+          "uuid": "7aafeb4e-3dfb-4b3a-bf1d-463c3afb854b"
+        },
+        {
+          "description": "Reference field of U5200",
+          "pos": {
+            "x": 92.83,
+            "y": 25.0
+          },
+          "uuid": "fc3909b2-2444-4014-984f-1d6f88f74cb6"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Segment of L5200 on B.Silkscreen",
+          "pos": {
+            "x": 100.46,
+            "y": 22.89
+          },
+          "uuid": "979ceacc-b59a-455f-be3e-d7ddbd843585"
+        },
+        {
+          "description": "Reference field of C5202",
+          "pos": {
+            "x": 91.5,
+            "y": 23.18
+          },
+          "uuid": "c5a50d11-1c1d-4816-94a9-87d38d7da5d3"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of C5202",
+          "pos": {
+            "x": 91.5,
+            "y": 23.18
+          },
+          "uuid": "c5a50d11-1c1d-4816-94a9-87d38d7da5d3"
+        },
+        {
+          "description": "Reference field of U5200",
+          "pos": {
+            "x": 92.83,
+            "y": 25.0
+          },
+          "uuid": "fc3909b2-2444-4014-984f-1d6f88f74cb6"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Segment of U5200 on B.Silkscreen",
+          "pos": {
+            "x": 91.61,
+            "y": 22.89
+          },
+          "uuid": "8eed3cdf-92ac-40b6-be84-def3a1769b7c"
+        },
+        {
+          "description": "Reference field of C5202",
+          "pos": {
+            "x": 91.5,
+            "y": 23.18
+          },
+          "uuid": "c5a50d11-1c1d-4816-94a9-87d38d7da5d3"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Segment of U5200 on B.Silkscreen",
+          "pos": {
+            "x": 91.61,
+            "y": 23.865
+          },
+          "uuid": "50223c29-e4b3-42fd-867d-3b77607b195e"
+        },
+        {
+          "description": "Reference field of C5202",
+          "pos": {
+            "x": 91.5,
+            "y": 23.18
+          },
+          "uuid": "c5a50d11-1c1d-4816-94a9-87d38d7da5d3"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of L5300",
+          "pos": {
+            "x": 22.5,
+            "y": 37.71
+          },
+          "uuid": "7c7cf177-c9ab-4d76-ac7f-fc18d090522b"
+        },
+        {
+          "description": "Reference field of R5300",
+          "pos": {
+            "x": 24.8,
+            "y": 37.43
+          },
+          "uuid": "aea65670-3ac0-413a-a624-819e42f77771"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of R5302",
+          "pos": {
+            "x": 23.43,
+            "y": 36.0
+          },
+          "uuid": "0a43c7c8-fb8a-48e6-934a-09b8099c793f"
+        },
+        {
+          "description": "Reference field of L5300",
+          "pos": {
+            "x": 22.5,
+            "y": 37.71
+          },
+          "uuid": "7c7cf177-c9ab-4d76-ac7f-fc18d090522b"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of R5302",
+          "pos": {
+            "x": 23.43,
+            "y": 36.0
+          },
+          "uuid": "0a43c7c8-fb8a-48e6-934a-09b8099c793f"
+        },
+        {
+          "description": "Reference field of R5300",
+          "pos": {
+            "x": 24.8,
+            "y": 37.43
+          },
+          "uuid": "aea65670-3ac0-413a-a624-819e42f77771"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of R5300",
+          "pos": {
+            "x": 24.8,
+            "y": 37.43
+          },
+          "uuid": "aea65670-3ac0-413a-a624-819e42f77771"
+        },
+        {
+          "description": "Reference field of C5302",
+          "pos": {
+            "x": 24.5,
+            "y": 37.0
+          },
+          "uuid": "c2776b61-1e53-4e61-b076-c2905493a7e5"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of L5300",
+          "pos": {
+            "x": 22.5,
+            "y": 37.71
+          },
+          "uuid": "7c7cf177-c9ab-4d76-ac7f-fc18d090522b"
+        },
+        {
+          "description": "Reference field of C5302",
+          "pos": {
+            "x": 24.5,
+            "y": 37.0
+          },
+          "uuid": "c2776b61-1e53-4e61-b076-c2905493a7e5"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Segment of L5300 on B.Silkscreen",
+          "pos": {
+            "x": 24.85,
+            "y": 44.95
+          },
+          "uuid": "63a2e76f-8b15-4de6-a0a2-e910457151f1"
+        },
+        {
+          "description": "Reference field of R5301",
+          "pos": {
+            "x": 25.5,
+            "y": 41.43
+          },
+          "uuid": "75e7456d-c9f4-46a6-8d1a-a0050b8e84c5"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Segment of L5300 on B.Silkscreen",
+          "pos": {
+            "x": 19.15,
+            "y": 44.95
+          },
+          "uuid": "6b941c48-fb85-49b6-869b-820375e971f1"
+        },
+        {
+          "description": "Reference field of R5303",
+          "pos": {
+            "x": 20.200001,
+            "y": 44.93
+          },
+          "uuid": "e7acc493-dcd4-47c4-970b-afc4534e215f"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Reference field of R5303",
+          "pos": {
+            "x": 20.200001,
+            "y": 44.93
+          },
+          "uuid": "e7acc493-dcd4-47c4-970b-afc4534e215f"
+        },
+        {
+          "description": "Segment of L5300 on B.Silkscreen",
+          "pos": {
+            "x": 19.15,
+            "y": 39.05
+          },
+          "uuid": "f90318fd-7cbb-4926-8b5d-5f19becd4de7"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Segment of R5300 on B.Silkscreen",
+          "pos": {
+            "x": 24.562742,
+            "y": 36.5225
+          },
+          "uuid": "28d9a96b-20b3-417a-897d-708d0059afc2"
+        },
+        {
+          "description": "Reference field of C5302",
+          "pos": {
+            "x": 24.5,
+            "y": 37.0
+          },
+          "uuid": "c2776b61-1e53-4e61-b076-c2905493a7e5"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Segment of R5300 on B.Silkscreen",
+          "pos": {
+            "x": 24.562742,
+            "y": 35.4775
+          },
+          "uuid": "245c03fd-80e8-4bd1-9c60-c8f6a47133db"
+        },
+        {
+          "description": "Reference field of C5302",
+          "pos": {
+            "x": 24.5,
+            "y": 37.0
+          },
+          "uuid": "c2776b61-1e53-4e61-b076-c2905493a7e5"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    },
+    {
+      "description": "Silkscreen overlap",
+      "items": [
+        {
+          "description": "Segment of C5301 on B.Silkscreen",
+          "pos": {
+            "x": 33.265,
+            "y": 39.261252
+          },
+          "uuid": "08e18236-a702-4c0e-99c9-10f645285c58"
+        },
+        {
+          "description": "Reference field of U5300",
+          "pos": {
+            "x": 32.5,
+            "y": 39.83
+          },
+          "uuid": "65aba8f6-1c74-49e3-b8e7-559392c9a6cc"
+        }
+      ],
+      "severity": "warning",
+      "type": "silk_overlap"
+    }
+  ],
+  "local_related_unconnected": [
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [+3V3] on In2.Cu, length 0.1000 mm",
+          "pos": {
+            "x": 16.825,
+            "y": 46.91498
+          },
+          "uuid": "f2cd914d-907f-4a70-95a3-e4a52d23b984"
+        },
+        {
+          "description": "Pad 1 [+3V3] of R5303 on B.Cu",
+          "pos": {
+            "x": 16.375,
+            "y": 46.5
+          },
+          "uuid": "38d275c9-42cc-4b3d-9820-b919f1d37909"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 2 [+3V3] of L5300 on B.Cu",
+          "pos": {
+            "x": 20.345,
+            "y": 42.0
+          },
+          "uuid": "a704d39f-9100-48b8-9e95-1b084a38ffd9"
+        },
+        {
+          "description": "Pad 1 [+3V3] of R5302 on B.Cu",
+          "pos": {
+            "x": 22.0,
+            "y": 36.825
+          },
+          "uuid": "a8aba086-d734-4279-a994-1a22566523b7"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 1 [+3V3] of R5300 on B.Cu",
+          "pos": {
+            "x": 23.975,
+            "y": 36.0
+          },
+          "uuid": "91fa2a19-a373-44f1-b4d3-c3cee1c1c141"
+        },
+        {
+          "description": "Pad 1 [+3V3] of R5302 on B.Cu",
+          "pos": {
+            "x": 22.0,
+            "y": 36.825
+          },
+          "uuid": "a8aba086-d734-4279-a994-1a22566523b7"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [+5V_CORE] on B.Cu, length 1.5375 mm",
+          "pos": {
+            "x": 29.4625,
+            "y": 41.25
+          },
+          "uuid": "28637e11-b1eb-48f5-944f-f708c0f14fde"
+        },
+        {
+          "description": "Track [+5V_CORE] on B.Cu, length 0.7375 mm",
+          "pos": {
+            "x": 29.4625,
+            "y": 41.75
+          },
+          "uuid": "ecd1c9b2-8801-4cc2-9529-d19b4dd3cc35"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [+5V_CORE] on B.Cu, length 6.5000 mm",
+          "pos": {
+            "x": 29.0,
+            "y": 36.8
+          },
+          "uuid": "94cd1171-bfdc-40d0-96f7-4b9daac4dd89"
+        },
+        {
+          "description": "Track [+5V_CORE] on B.Cu, length 2.4996 mm",
+          "pos": {
+            "x": 79.5,
+            "y": 25.45
+          },
+          "uuid": "677501fc-0443-42f1-8658-5d5214814f8c"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [+5V_CORE] on B.Cu, length 3.0000 mm",
+          "pos": {
+            "x": 87.0,
+            "y": 28.3
+          },
+          "uuid": "4d27748a-ff10-4a65-a3cc-9720691f95dd"
+        },
+        {
+          "description": "Track [+5V_CORE] on B.Cu, length 2.4996 mm",
+          "pos": {
+            "x": 79.5,
+            "y": 25.45
+          },
+          "uuid": "677501fc-0443-42f1-8658-5d5214814f8c"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [+5V_CORE] on B.Cu, length 1.2500 mm",
+          "pos": {
+            "x": 84.0,
+            "y": 28.3
+          },
+          "uuid": "ed591650-d882-46b8-8918-fc6d4b285bc3"
+        },
+        {
+          "description": "Track [+5V_CORE] on B.Cu, length 2.0000 mm",
+          "pos": {
+            "x": 83.675,
+            "y": 37.0
+          },
+          "uuid": "25b7c407-09a6-4f02-bde8-8b1afd60da38"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [+5V_CORE] on B.Cu, length 1.5900 mm",
+          "pos": {
+            "x": 98.91,
+            "y": 27.0
+          },
+          "uuid": "cda7d44a-f36a-4d5d-bc6b-4dc8b24ac63e"
+        },
+        {
+          "description": "Track [+5V_CORE] on B.Cu, length 1.4375 mm",
+          "pos": {
+            "x": 87.0,
+            "y": 26.8625
+          },
+          "uuid": "8b62d8a8-c08c-4f6d-a177-a3f69ac25882"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Via [GND] on F.Cu - B.Cu",
+          "pos": {
+            "x": 18.4,
+            "y": 40.525
+          },
+          "uuid": "5dbb023e-0142-40bc-9a82-582bc6674db4"
+        },
+        {
+          "description": "Pad 2 [GND] of R5303 on B.Cu",
+          "pos": {
+            "x": 18.025,
+            "y": 46.5
+          },
+          "uuid": "1d252648-e3b8-445e-af32-bd8f20685635"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 2 [GND] of D5201 on B.Cu",
+          "pos": {
+            "x": 21.025,
+            "y": 24.775
+          },
+          "uuid": "da9fb8b4-62ff-4fcc-ab9a-191c14d9e290"
+        },
+        {
+          "description": "Pad 1 [GND] of D202 on F.Cu",
+          "pos": {
+            "x": 19.495,
+            "y": 18.06498
+          },
+          "uuid": "a9e59e5b-a157-4b8e-8f65-4fa207919b5d"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [GND] on B.Cu, length 1.2000 mm",
+          "pos": {
+            "x": 31.95,
+            "y": 38.0
+          },
+          "uuid": "c44f8468-49d1-4a79-ae67-99996c58b517"
+        },
+        {
+          "description": "Pad 2 [GND] of R5301 on B.Cu",
+          "pos": {
+            "x": 28.825,
+            "y": 36.0
+          },
+          "uuid": "30f18f4e-4453-4abc-b14d-446cd1aa024a"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [GND] on B.Cu, length 1.2000 mm",
+          "pos": {
+            "x": 34.0,
+            "y": 38.05
+          },
+          "uuid": "b09f4e8a-6c5e-4efa-a122-bdf89cbaea12"
+        },
+        {
+          "description": "Pad 4 [GND] of R212 on F.Cu",
+          "pos": {
+            "x": 36.725,
+            "y": 32.26498
+          },
+          "uuid": "a232ff67-b40e-4eb9-80e2-fb8f5041912b"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 2 [GND] of U349 on B.Cu",
+          "pos": {
+            "x": 78.6,
+            "y": 11.3
+          },
+          "uuid": "ae4f9472-12b9-4454-8d93-88962669c4a3"
+        },
+        {
+          "description": "Via [GND] on F.Cu - B.Cu",
+          "pos": {
+            "x": 82.7,
+            "y": 15.525
+          },
+          "uuid": "e4906f1f-65c4-44cc-a497-bdf5455af3e7"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Via [GND] on F.Cu - B.Cu",
+          "pos": {
+            "x": 80.175,
+            "y": 32.06498
+          },
+          "uuid": "4196e47f-9894-4102-848a-bf15e64085b3"
+        },
+        {
+          "description": "Pad 2 [GND] of C5206 on B.Cu",
+          "pos": {
+            "x": 80.95,
+            "y": 29.7
+          },
+          "uuid": "f73970dd-3709-446e-87f0-1ab04e6b93ba"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 2 [GND] of R5203 on B.Cu",
+          "pos": {
+            "x": 80.825,
+            "y": 21.2
+          },
+          "uuid": "a78efa2e-3a07-48df-a79e-ab4a60baabc9"
+        },
+        {
+          "description": "Track [GND] on B.Cu, length 0.8750 mm",
+          "pos": {
+            "x": 83.625,
+            "y": 23.3
+          },
+          "uuid": "15edb23f-59e9-4ff5-a75b-9aebb37c3e81"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 2 [GND] of R5203 on B.Cu",
+          "pos": {
+            "x": 80.825,
+            "y": 21.2
+          },
+          "uuid": "a78efa2e-3a07-48df-a79e-ab4a60baabc9"
+        },
+        {
+          "description": "Pad 2 [GND] of U249 on B.Cu",
+          "pos": {
+            "x": 75.1,
+            "y": 20.8
+          },
+          "uuid": "a30e4692-9313-4c52-8e28-44aeb150fbcb"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 17 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 86.5,
+            "y": 23.1375
+          },
+          "uuid": "8946e768-4390-4ef7-98be-6b84110679e2"
+        },
+        {
+          "description": "Pad 19 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 87.5,
+            "y": 23.1375
+          },
+          "uuid": "1deea129-0994-48a5-bbee-e3d9af64fe93"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [GND] on B.Cu, length 1.4875 mm",
+          "pos": {
+            "x": 85.5125,
+            "y": 24.25
+          },
+          "uuid": "34dd5249-c152-429d-ac52-b78d011a5959"
+        },
+        {
+          "description": "Pad 17 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 86.5,
+            "y": 23.1375
+          },
+          "uuid": "8946e768-4390-4ef7-98be-6b84110679e2"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 7 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 88.0,
+            "y": 26.8625
+          },
+          "uuid": "8c893780-4cbc-4652-9422-a9f0b81327e4"
+        },
+        {
+          "description": "Via [GND] on F.Cu - B.Cu",
+          "pos": {
+            "x": 89.0,
+            "y": 25.35
+          },
+          "uuid": "dd334aff-1f42-447f-8c6b-e6747f51245d"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 2 [GND] of R5205 on B.Cu",
+          "pos": {
+            "x": 88.825,
+            "y": 35.0
+          },
+          "uuid": "980d13d3-9137-4f82-b37c-c73b660d4e6a"
+        },
+        {
+          "description": "Track [GND] on B.Cu, length 1.2000 mm",
+          "pos": {
+            "x": 87.5,
+            "y": 31.45
+          },
+          "uuid": "fe4ddcb1-3c01-4887-bc40-f5c454d1b033"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [GND] on B.Cu, length 1.5125 mm",
+          "pos": {
+            "x": 90.0,
+            "y": 23.1375
+          },
+          "uuid": "aa48a709-88e8-4d09-b019-b16b77800254"
+        },
+        {
+          "description": "Pad 23 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 89.5,
+            "y": 23.1375
+          },
+          "uuid": "c4dea7a6-162c-4013-a110-64cd9fe48185"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 27 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 91.4875,
+            "y": 24.25
+          },
+          "uuid": "120f9fb6-64c9-4304-aadf-ad894a5db62e"
+        },
+        {
+          "description": "Pad 28 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 91.4875,
+            "y": 24.75
+          },
+          "uuid": "35d01142-2ad0-4a2a-9118-9e08499e0a10"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 27 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 91.4875,
+            "y": 24.25
+          },
+          "uuid": "120f9fb6-64c9-4304-aadf-ad894a5db62e"
+        },
+        {
+          "description": "Track [GND] on B.Cu, length 2.1375 mm",
+          "pos": {
+            "x": 91.0,
+            "y": 23.1375
+          },
+          "uuid": "953fbde5-75ec-4e25-8175-478ff91fea5d"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 28 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 91.4875,
+            "y": 24.75
+          },
+          "uuid": "35d01142-2ad0-4a2a-9118-9e08499e0a10"
+        },
+        {
+          "description": "Pad 29 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 91.4875,
+            "y": 25.25
+          },
+          "uuid": "10070ba1-fb96-4272-adca-ea6aa3f4d39b"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 29 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 91.4875,
+            "y": 25.25
+          },
+          "uuid": "10070ba1-fb96-4272-adca-ea6aa3f4d39b"
+        },
+        {
+          "description": "Pad 30 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 91.4875,
+            "y": 25.75
+          },
+          "uuid": "7f2db7c6-1da6-412d-b09b-51dae6df3fd8"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 1 [GND] of D211 on F.Cu",
+          "pos": {
+            "x": 95.65,
+            "y": 12.56498
+          },
+          "uuid": "1041aa96-bda1-4d68-8f87-7eae154c7632"
+        },
+        {
+          "description": "Track [GND] on B.Cu, length 4.0000 mm",
+          "pos": {
+            "x": 88.5,
+            "y": 15.525
+          },
+          "uuid": "27ed8abd-1249-4b4a-b217-437f12b6223a"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 2 [GND] of C208 on F.Cu",
+          "pos": {
+            "x": 110.025,
+            "y": 32.86498
+          },
+          "uuid": "6644a967-a462-4b34-a43d-a84188b7484a"
+        },
+        {
+          "description": "Via [GND] on F.Cu - B.Cu",
+          "pos": {
+            "x": 107.7,
+            "y": 29.025
+          },
+          "uuid": "77b9ba5a-1486-4c76-b43a-677cba05ab13"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 2 [LP5_EN] of R5202 on B.Cu",
+          "pos": {
+            "x": 84.9125,
+            "y": 21.0
+          },
+          "uuid": "8e930b39-e03a-4980-9a78-652055dd2399"
+        },
+        {
+          "description": "Pad 1 [LP5_EN] of R5203 on B.Cu",
+          "pos": {
+            "x": 79.175,
+            "y": 21.2
+          },
+          "uuid": "0a65b77d-660f-46b2-9ec6-8380b60208ca"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 18 [LP5_EN] of U5200 on B.Cu",
+          "pos": {
+            "x": 87.0,
+            "y": 23.1375
+          },
+          "uuid": "b9d1b815-11df-41cd-adbe-eec7eb0dde78"
+        },
+        {
+          "description": "Pad 2 [LP5_EN] of R5202 on B.Cu",
+          "pos": {
+            "x": 84.9125,
+            "y": 21.0
+          },
+          "uuid": "8e930b39-e03a-4980-9a78-652055dd2399"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Track [LP5_PG_RAW] on B.Cu, length 1.2500 mm",
+          "pos": {
+            "x": 28.75,
+            "y": 45.3
+          },
+          "uuid": "5f969df1-2977-4679-97e7-7e08f21df797"
+        },
+        {
+          "description": "Pad 2 [LP5_PG_RAW] of R5204 on B.Cu",
+          "pos": {
+            "x": 85.325,
+            "y": 35.0
+          },
+          "uuid": "a2ba1c27-70ba-4c7a-94fe-7b223d4719aa"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 16 [LP5_PG_RAW] of U5200 on B.Cu",
+          "pos": {
+            "x": 86.0,
+            "y": 23.1375
+          },
+          "uuid": "d15636b5-d732-45a0-be28-0e1c717af79f"
+        },
+        {
+          "description": "Pad 2 [LP5_PG_RAW] of R5204 on B.Cu",
+          "pos": {
+            "x": 85.325,
+            "y": 35.0
+          },
+          "uuid": "a2ba1c27-70ba-4c7a-94fe-7b223d4719aa"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 2 [PGOOD_3V3_CORE] of R5302 on B.Cu",
+          "pos": {
+            "x": 22.0,
+            "y": 35.175
+          },
+          "uuid": "870a8ac7-3356-4adb-9915-40f8ede29939"
+        },
+        {
+          "description": "Pad 4 [PGOOD_3V3_CORE] of U5300 on B.Cu",
+          "pos": {
+            "x": 26.5375,
+            "y": 40.75
+          },
+          "uuid": "b41a27ed-cd1c-4a06-9403-26a17c459dc0"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 2 [VBAT_LOGIC_PROTECTED] of D5200 on B.Cu",
+          "pos": {
+            "x": 31.925,
+            "y": 11.775
+          },
+          "uuid": "aaa0e96f-ef0f-4dfa-b6bc-78b8f6cc1d2b"
+        },
+        {
+          "description": "Pad 1 [VBAT_LOGIC_PROTECTED] of R5202 on B.Cu",
+          "pos": {
+            "x": 83.0875,
+            "y": 21.0
+          },
+          "uuid": "1a3f86c5-66a0-4d9c-a824-c569e008f0ef"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 1 [VBAT_LOGIC_PROTECTED] of R5202 on B.Cu",
+          "pos": {
+            "x": 83.0875,
+            "y": 21.0
+          },
+          "uuid": "1a3f86c5-66a0-4d9c-a824-c569e008f0ef"
+        },
+        {
+          "description": "Pad 1 [VBAT_LOGIC_PROTECTED] of C5201 on B.Cu",
+          "pos": {
+            "x": 84.5,
+            "y": 18.475
+          },
+          "uuid": "f0f1e229-2969-415f-8d58-74b74866f9ab"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 1 [VBAT_MAIN_FUSED] of D5201 on B.Cu",
+          "pos": {
+            "x": 21.025,
+            "y": 29.075
+          },
+          "uuid": "6ca6e9ed-fa38-42cd-92da-a24a708c570c"
+        },
+        {
+          "description": "PTH pad 33 [VBAT_MAIN_FUSED] of J602",
+          "pos": {
+            "x": 94.0,
+            "y": 155.0
+          },
+          "uuid": "139cfb45-6e44-4788-8b1d-efb00948e6bb"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    },
+    {
+      "description": "Missing connection between items",
+      "items": [
+        {
+          "description": "Pad 3 [VBAT_MAIN_FUSED] of D5200 on B.Cu",
+          "pos": {
+            "x": 25.625,
+            "y": 9.495
+          },
+          "uuid": "ead17410-cac7-4000-92af-db56f48cc145"
+        },
+        {
+          "description": "Pad 1 [VBAT_MAIN_FUSED] of D5201 on B.Cu",
+          "pos": {
+            "x": 21.025,
+            "y": 29.075
+          },
+          "uuid": "6ca6e9ed-fa38-42cd-92da-a24a708c570c"
+        }
+      ],
+      "severity": "error",
+      "type": "unconnected_items"
+    }
+  ],
+  "capped_report_warning": "Earlier whole fixture clearance count500 hit report cap; absence of a local item was not proof of zero local errors. Superseded by spatial reviews.",
+  "spatial_reviews": [
+    {
+      "domain": "5v",
+      "scope_mm": [
+        75,
+        12,
+        112,
+        40
+      ],
+      "violations": 120,
+      "unconnected": 27,
+      "by_type": [
+        {
+          "Name": "clearance",
+          "Count": 40
+        },
+        {
+          "Name": "lib_footprint_issues",
+          "Count": 8
+        },
+        {
+          "Name": "silk_over_copper",
+          "Count": 10
+        },
+        {
+          "Name": "silk_overlap",
+          "Count": 19
+        },
+        {
+          "Name": "track_dangling",
+          "Count": 21
+        },
+        {
+          "Name": "track_width",
+          "Count": 22
+        }
+      ],
+      "local_related_findings": [
+        {
+          "description": "Clearance violation (rule 'Audited battery aliases' clearance 0.3000 mm; actual 0.2750 mm)",
+          "items": [
+            {
+              "description": "Track [LP5_SW] on B.Cu, length 0.9375 mm",
+              "pos": {
+                "x": 89.0,
+                "y": 26.8625
+              },
+              "uuid": "0a793dc4-9abd-45d4-a0cf-b745348012ec"
+            },
+            {
+              "description": "Pad 6 [LP5_BOOT] of U5200 on B.Cu",
+              "pos": {
+                "x": 88.5,
+                "y": 26.8625
+              },
+              "uuid": "cb34f021-b47d-448c-9035-f7849df58ad0"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        },
+        {
+          "description": "Clearance violation (rule 'Audited battery aliases' clearance 0.3000 mm; actual 0.2750 mm)",
+          "items": [
+            {
+              "description": "Track [LP5_BOOT] on B.Cu, length 1.6375 mm",
+              "pos": {
+                "x": 88.5,
+                "y": 26.8625
+              },
+              "uuid": "1ca0fc62-972a-4ec9-88e9-4f3b6ee5014a"
+            },
+            {
+              "description": "Pad 5 [LP5_SW] of U5200 on B.Cu",
+              "pos": {
+                "x": 89.0,
+                "y": 26.8625
+              },
+              "uuid": "c6badabf-fbec-436a-b03f-5674081d4cdf"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        },
+        {
+          "description": "Clearance violation (rule 'Audited battery aliases' clearance 0.3000 mm; actual 0.2750 mm)",
+          "items": [
+            {
+              "description": "Track [LP5_BOOT] on B.Cu, length 1.6375 mm",
+              "pos": {
+                "x": 88.5,
+                "y": 26.8625
+              },
+              "uuid": "1ca0fc62-972a-4ec9-88e9-4f3b6ee5014a"
+            },
+            {
+              "description": "Pad 7 [GND] of U5200 on B.Cu",
+              "pos": {
+                "x": 88.0,
+                "y": 26.8625
+              },
+              "uuid": "8c893780-4cbc-4652-9422-a9f0b81327e4"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        },
+        {
+          "description": "Clearance violation (rule 'Power clearance' clearance 0.3000 mm; actual 0.2750 mm)",
+          "items": [
+            {
+              "description": "Pad 19 [GND] of U5200 on B.Cu",
+              "pos": {
+                "x": 87.5,
+                "y": 23.1375
+              },
+              "uuid": "1deea129-0994-48a5-bbee-e3d9af64fe93"
+            },
+            {
+              "description": "Track [VBAT_LOGIC_PROTECTED] on B.Cu, length 0.8375 mm",
+              "pos": {
+                "x": 88.0,
+                "y": 23.1375
+              },
+              "uuid": "313d5df1-0ea5-4aa2-9902-cb854db303e5"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        },
+        {
+          "description": "Clearance violation (rule 'Power clearance' clearance 0.3000 mm; actual 0.2750 mm)",
+          "items": [
+            {
+              "description": "Track [VBAT_LOGIC_PROTECTED] on B.Cu, length 0.8375 mm",
+              "pos": {
+                "x": 89.0,
+                "y": 22.3
+              },
+              "uuid": "6778f854-c742-4fc2-ba7a-8d7b924a07c3"
+            },
+            {
+              "description": "Pad 23 [GND] of U5200 on B.Cu",
+              "pos": {
+                "x": 89.5,
+                "y": 23.1375
+              },
+              "uuid": "c4dea7a6-162c-4013-a110-64cd9fe48185"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        },
+        {
+          "description": "Clearance violation (rule 'Audited battery aliases' clearance 0.3000 mm; actual 0.2500 mm)",
+          "items": [
+            {
+              "description": "Pad 5 [LP5_SW] of U5200 on B.Cu",
+              "pos": {
+                "x": 89.0,
+                "y": 26.8625
+              },
+              "uuid": "c6badabf-fbec-436a-b03f-5674081d4cdf"
+            },
+            {
+              "description": "Pad 6 [LP5_BOOT] of U5200 on B.Cu",
+              "pos": {
+                "x": 88.5,
+                "y": 26.8625
+              },
+              "uuid": "cb34f021-b47d-448c-9035-f7849df58ad0"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        },
+        {
+          "description": "Clearance violation (rule 'Audited battery aliases' clearance 0.3000 mm; actual 0.2500 mm)",
+          "items": [
+            {
+              "description": "Pad 6 [LP5_BOOT] of U5200 on B.Cu",
+              "pos": {
+                "x": 88.5,
+                "y": 26.8625
+              },
+              "uuid": "cb34f021-b47d-448c-9035-f7849df58ad0"
+            },
+            {
+              "description": "Pad 7 [GND] of U5200 on B.Cu",
+              "pos": {
+                "x": 88.0,
+                "y": 26.8625
+              },
+              "uuid": "8c893780-4cbc-4652-9422-a9f0b81327e4"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        },
+        {
+          "description": "Clearance violation (rule 'Power clearance' clearance 0.3000 mm; actual 0.2500 mm)",
+          "items": [
+            {
+              "description": "Pad 19 [GND] of U5200 on B.Cu",
+              "pos": {
+                "x": 87.5,
+                "y": 23.1375
+              },
+              "uuid": "1deea129-0994-48a5-bbee-e3d9af64fe93"
+            },
+            {
+              "description": "Pad 20 [VBAT_LOGIC_PROTECTED] of U5200 on B.Cu",
+              "pos": {
+                "x": 88.0,
+                "y": 23.1375
+              },
+              "uuid": "96a5ca38-14a2-4991-9954-73b8e255f410"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        },
+        {
+          "description": "Clearance violation (rule 'Power clearance' clearance 0.3000 mm; actual 0.2500 mm)",
+          "items": [
+            {
+              "description": "Pad 22 [VBAT_LOGIC_PROTECTED] of U5200 on B.Cu",
+              "pos": {
+                "x": 89.0,
+                "y": 23.1375
+              },
+              "uuid": "7b4aa259-16a4-4e89-b5b5-cfeda1ba14a1"
+            },
+            {
+              "description": "Pad 23 [GND] of U5200 on B.Cu",
+              "pos": {
+                "x": 89.5,
+                "y": 23.1375
+              },
+              "uuid": "c4dea7a6-162c-4013-a110-64cd9fe48185"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        },
+        {
+          "description": "Track has unconnected end",
+          "items": [
+            {
+              "description": "Track [+5V_CORE] on B.Cu, length 2.0000 mm",
+              "pos": {
+                "x": 83.675,
+                "y": 37.0
+              },
+              "uuid": "25b7c407-09a6-4f02-bde8-8b1afd60da38"
+            }
+          ],
+          "severity": "warning",
+          "type": "track_dangling"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of C5201",
+              "pos": {
+                "x": 83.3,
+                "y": 21.5
+              },
+              "uuid": "3d1a46a7-d39f-48b2-8bc9-dbddacd3746c"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of R5203",
+              "pos": {
+                "x": 80.0,
+                "y": 22.63
+              },
+              "uuid": "cbd0ca3d-2424-4266-beb2-23a22da53f20"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of C5208",
+              "pos": {
+                "x": 104.8,
+                "y": 25.0
+              },
+              "uuid": "7a83d54c-77c0-4e78-a5f8-b4bd3c913d96"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of C5202",
+              "pos": {
+                "x": 91.5,
+                "y": 23.18
+              },
+              "uuid": "c5a50d11-1c1d-4816-94a9-87d38d7da5d3"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of C5203",
+              "pos": {
+                "x": 86.0,
+                "y": 27.18
+              },
+              "uuid": "27f25f17-2264-4983-b51b-00f07efd69c5"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of U5200",
+              "pos": {
+                "x": 92.83,
+                "y": 25.0
+              },
+              "uuid": "fc3909b2-2444-4014-984f-1d6f88f74cb6"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of C5204",
+              "pos": {
+                "x": 89.32,
+                "y": 26.5
+              },
+              "uuid": "286fece4-c888-4db0-b536-ab59933cd3b0"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of R5202",
+              "pos": {
+                "x": 89.0,
+                "y": 17.65
+              },
+              "uuid": "4a6f8a22-6d00-44ac-b9b6-cebecad9c9f7"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of C5210",
+              "pos": {
+                "x": 104.8,
+                "y": 30.5
+              },
+              "uuid": "7adc0c19-f279-4a83-b713-a0cae34caa6e"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of C5201",
+              "pos": {
+                "x": 83.3,
+                "y": 21.5
+              },
+              "uuid": "3d1a46a7-d39f-48b2-8bc9-dbddacd3746c"
+            },
+            {
+              "description": "Segment of R5202 on B.Silkscreen",
+              "pos": {
+                "x": 83.772936,
+                "y": 21.735
+              },
+              "uuid": "eadce057-cf13-4bbf-9116-bfa74cc57a73"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Segment of C5200 on B.Silkscreen",
+              "pos": {
+                "x": 87.14,
+                "y": 17.711252
+              },
+              "uuid": "0d92be9b-2790-4130-87a6-08408ea0132a"
+            },
+            {
+              "description": "Reference field of R5202",
+              "pos": {
+                "x": 89.0,
+                "y": 17.65
+              },
+              "uuid": "4a6f8a22-6d00-44ac-b9b6-cebecad9c9f7"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of R5202",
+              "pos": {
+                "x": 89.0,
+                "y": 17.65
+              },
+              "uuid": "4a6f8a22-6d00-44ac-b9b6-cebecad9c9f7"
+            },
+            {
+              "description": "Segment of C5200 on B.Silkscreen",
+              "pos": {
+                "x": 89.86,
+                "y": 17.711252
+              },
+              "uuid": "94e1fbb9-4e21-4a9d-b41b-23639cfa6bb1"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of R5202",
+              "pos": {
+                "x": 89.0,
+                "y": 17.65
+              },
+              "uuid": "4a6f8a22-6d00-44ac-b9b6-cebecad9c9f7"
+            },
+            {
+              "description": "Reference field of C5200",
+              "pos": {
+                "x": 91.3,
+                "y": 16.5
+              },
+              "uuid": "76d33292-328f-431b-b23a-4e4b90558a09"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of C5201",
+              "pos": {
+                "x": 83.3,
+                "y": 21.5
+              },
+              "uuid": "3d1a46a7-d39f-48b2-8bc9-dbddacd3746c"
+            },
+            {
+              "description": "Segment of R5201 on B.Silkscreen",
+              "pos": {
+                "x": 82.562742,
+                "y": 22.7775
+              },
+              "uuid": "a018a132-c35e-4c1e-ac2a-05466308ca32"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of U249",
+              "pos": {
+                "x": 78.425,
+                "y": 21.975
+              },
+              "uuid": "5ccfa0c9-581d-43c0-866d-942d45f9d81c"
+            },
+            {
+              "description": "Reference field of R5203",
+              "pos": {
+                "x": 80.0,
+                "y": 22.63
+              },
+              "uuid": "cbd0ca3d-2424-4266-beb2-23a22da53f20"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Segment of R5203 on B.Silkscreen",
+              "pos": {
+                "x": 79.762742,
+                "y": 21.7225
+              },
+              "uuid": "022ca0b4-2e7d-46ba-890d-39140a6256e2"
+            },
+            {
+              "description": "Reference field of U249",
+              "pos": {
+                "x": 78.425,
+                "y": 21.975
+              },
+              "uuid": "5ccfa0c9-581d-43c0-866d-942d45f9d81c"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of R5200",
+              "pos": {
+                "x": 78.8,
+                "y": 31.23
+              },
+              "uuid": "2df7d35a-1f0d-4085-a7ca-f191c41df391"
+            },
+            {
+              "description": "Reference field of C5206",
+              "pos": {
+                "x": 80.0,
+                "y": 31.38
+              },
+              "uuid": "d2d150e1-dd6a-49d8-bbf2-f380f9ec1573"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of C5203",
+              "pos": {
+                "x": 86.0,
+                "y": 27.18
+              },
+              "uuid": "27f25f17-2264-4983-b51b-00f07efd69c5"
+            },
+            {
+              "description": "Segment of U5200 on B.Silkscreen",
+              "pos": {
+                "x": 85.39,
+                "y": 27.11
+              },
+              "uuid": "400732a7-b1ea-4a07-88ed-d9cad9cb7784"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of C5203",
+              "pos": {
+                "x": 86.0,
+                "y": 27.18
+              },
+              "uuid": "27f25f17-2264-4983-b51b-00f07efd69c5"
+            },
+            {
+              "description": "Segment of U5200 on B.Silkscreen",
+              "pos": {
+                "x": 85.39,
+                "y": 26.135
+              },
+              "uuid": "ba0b8f40-fb51-4121-9c8f-74b8863061b6"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of C5205",
+              "pos": {
+                "x": 79.32,
+                "y": 33.5
+              },
+              "uuid": "c7aa4683-06a5-4d65-88ec-480408b0a0ce"
+            },
+            {
+              "description": "Reference field of C5206",
+              "pos": {
+                "x": 80.0,
+                "y": 31.38
+              },
+              "uuid": "d2d150e1-dd6a-49d8-bbf2-f380f9ec1573"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Segment of L5200 on B.Silkscreen",
+              "pos": {
+                "x": 100.46,
+                "y": 22.89
+              },
+              "uuid": "979ceacc-b59a-455f-be3e-d7ddbd843585"
+            },
+            {
+              "description": "Reference field of C5202",
+              "pos": {
+                "x": 91.5,
+                "y": 23.18
+              },
+              "uuid": "c5a50d11-1c1d-4816-94a9-87d38d7da5d3"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Segment of L5200 on B.Silkscreen",
+              "pos": {
+                "x": 92.54,
+                "y": 22.89
+              },
+              "uuid": "7aafeb4e-3dfb-4b3a-bf1d-463c3afb854b"
+            },
+            {
+              "description": "Reference field of U5200",
+              "pos": {
+                "x": 92.83,
+                "y": 25.0
+              },
+              "uuid": "fc3909b2-2444-4014-984f-1d6f88f74cb6"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of C5202",
+              "pos": {
+                "x": 91.5,
+                "y": 23.18
+              },
+              "uuid": "c5a50d11-1c1d-4816-94a9-87d38d7da5d3"
+            },
+            {
+              "description": "Reference field of U5200",
+              "pos": {
+                "x": 92.83,
+                "y": 25.0
+              },
+              "uuid": "fc3909b2-2444-4014-984f-1d6f88f74cb6"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Segment of L5200 on B.Silkscreen",
+              "pos": {
+                "x": 92.54,
+                "y": 22.89
+              },
+              "uuid": "7aafeb4e-3dfb-4b3a-bf1d-463c3afb854b"
+            },
+            {
+              "description": "Reference field of C5202",
+              "pos": {
+                "x": 91.5,
+                "y": 23.18
+              },
+              "uuid": "c5a50d11-1c1d-4816-94a9-87d38d7da5d3"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Segment of U5200 on B.Silkscreen",
+              "pos": {
+                "x": 91.61,
+                "y": 22.89
+              },
+              "uuid": "8eed3cdf-92ac-40b6-be84-def3a1769b7c"
+            },
+            {
+              "description": "Reference field of C5202",
+              "pos": {
+                "x": 91.5,
+                "y": 23.18
+              },
+              "uuid": "c5a50d11-1c1d-4816-94a9-87d38d7da5d3"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Segment of U5200 on B.Silkscreen",
+              "pos": {
+                "x": 91.61,
+                "y": 23.865
+              },
+              "uuid": "50223c29-e4b3-42fd-867d-3b77607b195e"
+            },
+            {
+              "description": "Reference field of C5202",
+              "pos": {
+                "x": 91.5,
+                "y": 23.18
+              },
+              "uuid": "c5a50d11-1c1d-4816-94a9-87d38d7da5d3"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of C5208",
+              "pos": {
+                "x": 104.8,
+                "y": 25.0
+              },
+              "uuid": "7a83d54c-77c0-4e78-a5f8-b4bd3c913d96"
+            },
+            {
+              "description": "Segment of C5209 on B.Silkscreen",
+              "pos": {
+                "x": 105.14,
+                "y": 25.711252
+              },
+              "uuid": "da73824f-6dea-4859-8fa8-dce98e59e401"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Segment of C5211 on B.Silkscreen",
+              "pos": {
+                "x": 105.14,
+                "y": 31.211252
+              },
+              "uuid": "370d926a-8af0-4efe-9a28-6d282c86cbaa"
+            },
+            {
+              "description": "Reference field of C5210",
+              "pos": {
+                "x": 104.8,
+                "y": 30.5
+              },
+              "uuid": "7adc0c19-f279-4a83-b713-a0cae34caa6e"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        }
+      ],
+      "rules_sha256": "bd7b13ba5157277988af503299cac2fd2257b4f54c9d9a60b49e716e31b2e481",
+      "drc_sha256": "2e0873cab8b4c3a47c10759a49837cf3940069daa3ec10361d537053a7a2cf19"
+    },
+    {
+      "domain": "3v3",
+      "scope_mm": [
+        12,
+        31,
+        39,
+        51
+      ],
+      "violations": 130,
+      "unconnected": 9,
+      "by_type": [
+        {
+          "Name": "clearance",
+          "Count": 70
+        },
+        {
+          "Name": "lib_footprint_issues",
+          "Count": 5
+        },
+        {
+          "Name": "silk_over_copper",
+          "Count": 5
+        },
+        {
+          "Name": "silk_overlap",
+          "Count": 11
+        },
+        {
+          "Name": "track_dangling",
+          "Count": 21
+        },
+        {
+          "Name": "track_width",
+          "Count": 16
+        },
+        {
+          "Name": "via_dangling",
+          "Count": 2
+        }
+      ],
+      "local_related_findings": [
+        {
+          "description": "Track has unconnected end",
+          "items": [
+            {
+              "description": "Track [LP5_PG_RAW] on B.Cu, length 1.2500 mm",
+              "pos": {
+                "x": 28.75,
+                "y": 45.3
+              },
+              "uuid": "5f969df1-2977-4679-97e7-7e08f21df797"
+            }
+          ],
+          "severity": "warning",
+          "type": "track_dangling"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of L5300",
+              "pos": {
+                "x": 22.5,
+                "y": 37.71
+              },
+              "uuid": "7c7cf177-c9ab-4d76-ac7f-fc18d090522b"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of R5302",
+              "pos": {
+                "x": 23.43,
+                "y": 36.0
+              },
+              "uuid": "0a43c7c8-fb8a-48e6-934a-09b8099c793f"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of R5301",
+              "pos": {
+                "x": 25.5,
+                "y": 41.43
+              },
+              "uuid": "75e7456d-c9f4-46a6-8d1a-a0050b8e84c5"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of C5302",
+              "pos": {
+                "x": 24.5,
+                "y": 37.0
+              },
+              "uuid": "c2776b61-1e53-4e61-b076-c2905493a7e5"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen clipped by solder mask",
+          "items": [
+            {
+              "description": "Reference field of U5300",
+              "pos": {
+                "x": 32.5,
+                "y": 39.83
+              },
+              "uuid": "65aba8f6-1c74-49e3-b8e7-559392c9a6cc"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_over_copper"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of L5300",
+              "pos": {
+                "x": 22.5,
+                "y": 37.71
+              },
+              "uuid": "7c7cf177-c9ab-4d76-ac7f-fc18d090522b"
+            },
+            {
+              "description": "Reference field of R5300",
+              "pos": {
+                "x": 24.8,
+                "y": 37.43
+              },
+              "uuid": "aea65670-3ac0-413a-a624-819e42f77771"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of R5300",
+              "pos": {
+                "x": 24.8,
+                "y": 37.43
+              },
+              "uuid": "aea65670-3ac0-413a-a624-819e42f77771"
+            },
+            {
+              "description": "Reference field of C5302",
+              "pos": {
+                "x": 24.5,
+                "y": 37.0
+              },
+              "uuid": "c2776b61-1e53-4e61-b076-c2905493a7e5"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Segment of L5300 on B.Silkscreen",
+              "pos": {
+                "x": 19.15,
+                "y": 44.95
+              },
+              "uuid": "6b941c48-fb85-49b6-869b-820375e971f1"
+            },
+            {
+              "description": "Reference field of R5303",
+              "pos": {
+                "x": 20.200001,
+                "y": 44.93
+              },
+              "uuid": "e7acc493-dcd4-47c4-970b-afc4534e215f"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of R5303",
+              "pos": {
+                "x": 20.200001,
+                "y": 44.93
+              },
+              "uuid": "e7acc493-dcd4-47c4-970b-afc4534e215f"
+            },
+            {
+              "description": "Segment of L5300 on B.Silkscreen",
+              "pos": {
+                "x": 19.15,
+                "y": 39.05
+              },
+              "uuid": "f90318fd-7cbb-4926-8b5d-5f19becd4de7"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Segment of L5300 on B.Silkscreen",
+              "pos": {
+                "x": 24.85,
+                "y": 44.95
+              },
+              "uuid": "63a2e76f-8b15-4de6-a0a2-e910457151f1"
+            },
+            {
+              "description": "Reference field of R5301",
+              "pos": {
+                "x": 25.5,
+                "y": 41.43
+              },
+              "uuid": "75e7456d-c9f4-46a6-8d1a-a0050b8e84c5"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of L5300",
+              "pos": {
+                "x": 22.5,
+                "y": 37.71
+              },
+              "uuid": "7c7cf177-c9ab-4d76-ac7f-fc18d090522b"
+            },
+            {
+              "description": "Reference field of C5302",
+              "pos": {
+                "x": 24.5,
+                "y": 37.0
+              },
+              "uuid": "c2776b61-1e53-4e61-b076-c2905493a7e5"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Segment of C5301 on B.Silkscreen",
+              "pos": {
+                "x": 33.265,
+                "y": 39.261252
+              },
+              "uuid": "08e18236-a702-4c0e-99c9-10f645285c58"
+            },
+            {
+              "description": "Reference field of U5300",
+              "pos": {
+                "x": 32.5,
+                "y": 39.83
+              },
+              "uuid": "65aba8f6-1c74-49e3-b8e7-559392c9a6cc"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of R5302",
+              "pos": {
+                "x": 23.43,
+                "y": 36.0
+              },
+              "uuid": "0a43c7c8-fb8a-48e6-934a-09b8099c793f"
+            },
+            {
+              "description": "Reference field of L5300",
+              "pos": {
+                "x": 22.5,
+                "y": 37.71
+              },
+              "uuid": "7c7cf177-c9ab-4d76-ac7f-fc18d090522b"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Reference field of R5302",
+              "pos": {
+                "x": 23.43,
+                "y": 36.0
+              },
+              "uuid": "0a43c7c8-fb8a-48e6-934a-09b8099c793f"
+            },
+            {
+              "description": "Reference field of R5300",
+              "pos": {
+                "x": 24.8,
+                "y": 37.43
+              },
+              "uuid": "aea65670-3ac0-413a-a624-819e42f77771"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Segment of R5300 on B.Silkscreen",
+              "pos": {
+                "x": 24.562742,
+                "y": 36.5225
+              },
+              "uuid": "28d9a96b-20b3-417a-897d-708d0059afc2"
+            },
+            {
+              "description": "Reference field of C5302",
+              "pos": {
+                "x": 24.5,
+                "y": 37.0
+              },
+              "uuid": "c2776b61-1e53-4e61-b076-c2905493a7e5"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        },
+        {
+          "description": "Silkscreen overlap",
+          "items": [
+            {
+              "description": "Segment of R5300 on B.Silkscreen",
+              "pos": {
+                "x": 24.562742,
+                "y": 35.4775
+              },
+              "uuid": "245c03fd-80e8-4bd1-9c60-c8f6a47133db"
+            },
+            {
+              "description": "Reference field of C5302",
+              "pos": {
+                "x": 24.5,
+                "y": 37.0
+              },
+              "uuid": "c2776b61-1e53-4e61-b076-c2905493a7e5"
+            }
+          ],
+          "severity": "warning",
+          "type": "silk_overlap"
+        }
+      ],
+      "rules_sha256": "bd7b13ba5157277988af503299cac2fd2257b4f54c9d9a60b49e716e31b2e481",
+      "drc_sha256": "c1bf5d179ba3c222c75a0851cecf2e7378c0454d80f4ccdf5ada37a60faadf99"
+    }
+  ],
+  "current_local_electrical_status": "LM76003 nine clearance violations under0.3battery policy (four intrinsicpadpair0.25,fiveescape-to-pad0.275); TPS no local electrical findings; incomplete connectivity and silk remain."
+}

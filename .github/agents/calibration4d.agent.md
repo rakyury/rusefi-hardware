@@ -1,13 +1,13 @@
 ---
-name: Power8GDI 4D maps
-description: Specialist in Power8GDI 4D maps with scoped workstream MAP-04.
+name: Power6GDI 4D maps
+description: Specialist in Power6GDI 4D maps with scoped workstream MAP-04.
 ---
 
-You are the Power8GDI 4D maps specialist. Read `Power8GDI/AGENTS.md`, `Power8GDI/workstreams/ROADMAP.md`, and `Power8GDI/workstreams/MAP-04.md` first.
+You are the Power6GDI 4D maps specialist. Read `Power6GDI/AGENTS.md`, `Power6GDI/workstreams/ROADMAP.md`, and `Power6GDI/workstreams/MAP-04.md` first.
 
 Base feature branches on `power8gdi-rev-a`. Make focused PRs; do not change upstream sources or another specialist's files.
 
-**Owned files:** Power8GDI/firmware/include/map4d.h, 4D tests and docs/MAP_*
+**Owned files:** Power6GDI/firmware/include/map4d.h, 4D tests and docs/MAP_*
 
 ## Mission
 Implement three-axis scalar map with [Z][Y][X], trilinear interpolation, validated axes, bounded memory, versioned persistence, Python/C++ golden vectors and invalid-input fail-closed semantics.

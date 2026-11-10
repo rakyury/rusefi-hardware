@@ -1,0 +1,167 @@
+{
+  "_note": "Body outlines and heights for footprints whose candidate PCB box is pad-only or whose height matters for the enclosure. Heights are package nominals from generic datasheets; verify against the selected MPN and the TE STEP before trusting any clearance.",
+  "overrides": [
+    {
+      "match": "C_Radial_D16.0mm_H25.0mm",
+      "width_mm": 16.5,
+      "height_mm": 16.5,
+      "z_mm": 25.0,
+      "source": "footprint name D16 H25; GDI-4ch reference BOM REVIEW_REQUIRED"
+    },
+    {
+      "match": "REF_C21",
+      "width_mm": 16.5,
+      "height_mm": 16.5,
+      "z_mm": 25.0,
+      "source": "gdi/bom_reference.csv: Capacitor_THT:C_Radial_D16.0mm_H25.0mm_P7.50mm, REVIEW_REQUIRED"
+    },
+    {
+      "match": "REF_C16",
+      "width_mm": 16.5,
+      "height_mm": 16.5,
+      "z_mm": 25.0,
+      "source": "gdi/bom_reference.csv: Capacitor_THT:C_Radial_D16.0mm_H25.0mm_P7.50mm, REVIEW_REQUIRED"
+    },
+    {
+      "match": "REF_C15",
+      "width_mm": 16.5,
+      "height_mm": 16.5,
+      "z_mm": 25.0,
+      "source": "gdi/bom_reference.csv: Capacitor_THT:C_Radial_D16.0mm_H25.0mm_P7.50mm, REVIEW_REQUIRED"
+    },
+    {
+      "match": "REF_C14",
+      "width_mm": 16.5,
+      "height_mm": 16.5,
+      "z_mm": 25.0,
+      "source": "gdi/bom_reference.csv: Capacitor_THT:C_Radial_D16.0mm_H25.0mm_P7.50mm, REVIEW_REQUIRED"
+    },
+    {
+      "match": "TE_6437288-1_34way",
+      "width_mm": 46.5,
+      "height_mm": 37.5,
+      "z_mm": null,
+      "source": "PCB_CONNECTORS.md flange 45.5 x depth 36.5 plus margin; header height above board not yet taken from TE STEP RevC"
+    },
+    {
+      "match": "REF_L2",
+      "width_mm": 20.6,
+      "height_mm": 17.6,
+      "z_mm": 7.0,
+      "source": "Vishay IHLP-6767 family nominal 7.0 mm max"
+    },
+    {
+      "match": "REF_L1",
+      "width_mm": 13.4,
+      "height_mm": 15.6,
+      "z_mm": 7.0,
+      "source": "Wuerth HCI-1350 family nominal"
+    },
+    {
+      "match": "CP_Elec_10x10.5",
+      "width_mm": 11.0,
+      "height_mm": 13.3,
+      "z_mm": 10.5,
+      "source": "footprint name"
+    },
+    {
+      "match": "CP_Elec_8x10",
+      "width_mm": 10.5,
+      "height_mm": 8.8,
+      "z_mm": 10.0,
+      "source": "footprint name"
+    },
+    {
+      "match": "TO-263",
+      "width_mm": 16.65,
+      "height_mm": 11.3,
+      "z_mm": 4.6,
+      "source": "D2PAK nominal"
+    },
+    {
+      "match": "REF_D34",
+      "width_mm": 16.65,
+      "height_mm": 11.3,
+      "z_mm": 4.6,
+      "source": "D2PAK nominal"
+    },
+    {
+      "match": "TO-252",
+      "width_mm": 11.1,
+      "height_mm": 7.0,
+      "z_mm": 2.4,
+      "source": "DPAK nominal"
+    },
+    {
+      "match": "REF_Q",
+      "width_mm": 11.1,
+      "height_mm": 7.0,
+      "z_mm": 2.4,
+      "source": "DPAK nominal"
+    },
+    {
+      "match": "REF_D1",
+      "width_mm": 11.1,
+      "height_mm": 7.0,
+      "z_mm": 2.4,
+      "source": "DPAK nominal"
+    },
+    {
+      "match": "REF_U3",
+      "width_mm": 11.1,
+      "height_mm": 7.0,
+      "z_mm": 2.4,
+      "source": "DPAK nominal"
+    },
+    {
+      "match": "LQFP-176",
+      "width_mm": 27.4,
+      "height_mm": 27.4,
+      "z_mm": 1.6,
+      "source": "LQFP nominal"
+    },
+    {
+      "match": "REF_U1",
+      "width_mm": 13.4,
+      "height_mm": 13.4,
+      "z_mm": 1.0,
+      "source": "PT2001 LQFP-64 EP nominal"
+    },
+    {
+      "match": "microSD",
+      "width_mm": 13.7,
+      "height_mm": 13.1,
+      "z_mm": 2.0,
+      "source": "Molex 104031 nominal"
+    },
+    {
+      "match": "XAL7070",
+      "width_mm": 8.2,
+      "height_mm": 8.5,
+      "z_mm": 7.0,
+      "source": "Coilcraft XAL7070 nominal"
+    },
+    {
+      "match": "XAL5030",
+      "width_mm": 6.0,
+      "height_mm": 6.2,
+      "z_mm": 3.1,
+      "source": "Coilcraft XAL5030 nominal"
+    },
+    {
+      "match": "D_SMC",
+      "width_mm": 9.8,
+      "height_mm": 6.7,
+      "z_mm": 2.5,
+      "source": "SMC nominal"
+    },
+    {
+      "match": "USB_Micro-B",
+      "width_mm": 6.1,
+      "height_mm": 8.8,
+      "z_mm": 3.0,
+      "source": "Molex 105017 nominal"
+    }
+  ],
+  "default_z_mm": 1.8
+}

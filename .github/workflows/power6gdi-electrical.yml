@@ -1,0 +1,39 @@
+name: Power6GDI electrical review (not manufacturing approval)
+on:
+  pull_request:
+    paths:
+      - 'Power6GDI/hardware/**'
+      - 'Power6GDI/pinout/**'
+      - 'Power6GDI/procurement/**'
+      - '.github/workflows/power6gdi-electrical.yml'
+  workflow_dispatch:
+jobs:
+  electrical-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Regenerate connected schematics and review PCB with pinned KiCad
+        run: python Power6GDI/hardware/design/run_review.py
+      - name: Explain separate manufacturing gate
+        if: always()
+        run: |
+          echo 'Structural consistency is separate from manufacturing approval.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'This engineering candidate remains BLOCKED. Inspect full ERC/DRC and unresolved interface reports.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Preserve actual ERC, DRC, PCB and schematics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: power8gdi-electrical-review-unqualified
+          path: |
+            Power6GDI/hardware/design/review_validation.json
+            Power6GDI/hardware/design/core_preview.pdf
+            Power6GDI/hardware/design/core_erc.json
+            Power6GDI/hardware/design/integration_checks.json
+            Power6GDI/hardware/design/integrated_bom.csv
+            Power6GDI/hardware/design/integrated_bom_manifest.json
+            Power6GDI/hardware/design/selection_validation.json
+            Power6GDI/hardware/design/board/review/

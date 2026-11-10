@@ -1,0 +1,31 @@
+{
+  "name": "190x206 donor-copper working outline (option b, owner decision 2026-11-05)",
+  "status": "Working placement profile: both GDI-4ch donor stages rotated side by side, ignition row and MCU on top, four TE34 on one 190 mm face",
+  "outline_mm": [190, 206],
+  "ground_plane_inset_mm": 1,
+  "stages": {
+    "A": {"target_mm": [5, 5], "angle_deg": 90},
+    "B": {"target_mm": [97, 4], "angle_deg": 90}
+  },
+  "connectors_mm": {"J601": [23.75, 202.5], "J602": [71.25, 202.5], "J603": [118.75, 202.5], "J604": [166.25, 202.5]},
+  "mcu_mm": [168, 166.5],
+  "ignition_cells": {"origin_mm": [15, 160], "pitch_mm": [24, 23], "columns": 6},
+  "logic_power_region_mm": [5, 4, 88, 60],
+  "wbo_regions_mm": {"1": [93, 54, 137, 144]},
+  "label_mm": [40, 150.5],
+  "regions": {
+    "ignition_permission": {"rect_mm": [3, 149, 137, 183.5], "anchor_mm": [75, 166], "priority": 1},
+    "low_side": {"rect_mm": [5, 60, 88, 149], "anchor_mm": [45, 100], "priority": 2},
+    "motor": {"rect_mm": [5, 4, 88, 60], "anchor_mm": [45, 30], "priority": 3},
+    "logic_power": {"rect_mm": [5, 4, 60, 55], "anchor_mm": [30, 25], "priority": 3},
+    "gdi_protection_b": {"rect_mm": [97, 4, 185, 55], "anchor_mm": [140, 24], "priority": 4},
+    "gdi": {"rect_mm": [5, 4, 88, 60], "anchor_mm": [45, 45], "priority": 4},
+    "wbo_other": {"rect_mm": [140, 54, 185, 144], "anchor_mm": [162, 107], "priority": 5},
+    "mcu": {"rect_mm": [137, 147, 188, 183.5], "anchor_mm": [168, 166], "priority": 6},
+    "usb_sd": {"rect_mm": [137, 147, 188, 183.5], "anchor_mm": [180, 154], "priority": 0},
+    "knock": {"rect_mm": [137, 4, 185, 82], "anchor_mm": [165, 17], "priority": 6},
+    "sensor_trackers": {"rect_mm": [137, 4, 187, 149], "anchor_mm": [160, 44], "priority": 6},
+    "hall_sent_bank2": {"rect_mm": [137, 82, 188, 149], "anchor_mm": [160, 119], "priority": 7},
+    "default": {"rect_mm": [93, 4, 187, 149], "anchor_mm": [140, 27], "priority": 7}
+  }
+}

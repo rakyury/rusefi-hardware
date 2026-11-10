@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "root_uuid": "f4d21065-0a5b-5086-a08e-1af9469f04bd",
+  "project": "Power8GDI_Core",
+  "release_status": "BLOCKED",
+  "sheets": [
+    {
+      "name": "knock_dual",
+      "sheet_uuid": "20465974-d3b0-5bf0-9403-bb1282024aae",
+      "root_instance_uuid": "8965976b-faa0-5281-9f71-542877bfa52b",
+      "components": 21
+    }
+  ],
+  "gpio": [
+    "KNOCK_CS_N",
+    "KNOCK_INT_HOLD"
+  ],
+  "shared_spi": [
+    "GDI_SPI2_SCK",
+    "GDI_SPI2_MOSI",
+    "GDI_SPI2_MISO"
+  ],
+  "mcu_adc_required": 0,
+  "part_count": 21,
+  "blockers": [
+    "Sensor calibration and SPI scheduling untested",
+    "Oscillator temperature ceiling85C",
+    "Physical and EMC qualification pending"
+  ],
+  "superseded_sheets": [
+    "wbo1_analog",
+    "wbo2_analog",
+    "wbo_adc_control"
+  ],
+  "replacement": "../wbo/interface.json"
+}

@@ -1,0 +1,40 @@
+[
+  {
+    "command": [
+      "/usr/bin/python3",
+      "/src/Power8GDI/hardware/design/board/verify_board.py",
+      "/src/Power8GDI/hardware/design/board/gdi6_candidate/Power8GDI_Review.kicad_pcb",
+      "/src/Power8GDI/hardware/design/core.net"
+    ],
+    "returncode": 0,
+    "expected": [
+      0
+    ]
+  },
+  {
+    "command": [
+      "/usr/bin/python3",
+      "/src/Power8GDI/hardware/design/board/run_drc.py",
+      "/src/Power8GDI/hardware/design/board/gdi6_candidate/Power8GDI_Review.kicad_pcb",
+      "--output",
+      "/audit/native_drc.json"
+    ],
+    "returncode": 5,
+    "expected": [
+      5
+    ]
+  },
+  {
+    "command": [
+      "/usr/bin/python3",
+      "/src/Power8GDI/hardware/design/board/summarize_drc.py",
+      "/src/Power8GDI/hardware/design/board/gdi6_candidate/Power8GDI_Review.kicad_pcb",
+      "/audit/native_drc.json",
+      "/audit/net_coverage.json"
+    ],
+    "returncode": 0,
+    "expected": [
+      0
+    ]
+  }
+]

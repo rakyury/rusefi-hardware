@@ -1,0 +1,334 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-25T20:46:58+0000",
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "9.0.9",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/2aa9486d-083b-53a0-b9ea-735fb5a4b253",
+            "violations": [
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U301 Pin 13 [CSB, Input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.7239
+                            },
+                            "uuid": "9dfba45f-1bec-5bab-9fba-b1447a1e296b"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U301 Pin 14 [MOSI, Input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.7493
+                            },
+                            "uuid": "78bc8d6a-6375-56cf-9204-5ee4fdb0850c"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input pin not driven by any Output pins",
+                    "items": [
+                        {
+                            "description": "Symbol U301 Pin 16 [SCLK, Input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 0.8001
+                            },
+                            "uuid": "b3622b41-51b8-5c73-b071-aa90cf26b722"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U301 Pin 48 [VBOOST, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 1.3462
+                            },
+                            "uuid": "8f6d6140-ab77-542e-84fa-8b209893326f"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U301 Pin 39 [VBATT, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 1.397
+                            },
+                            "uuid": "430ecdf3-cf4e-5521-9237-6cb3b579bcb0"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol Y301 Pin 4 [VDD, Power input, Line]",
+                            "pos": {
+                                "x": 2.2987,
+                                "y": 0.2667
+                            },
+                            "uuid": "e2a98348-c5ab-56e8-bf51-835ecf9c17c3"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U301 Pin 17 [VCCIO, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 1.9939
+                            },
+                            "uuid": "00ada80a-afd1-569c-a77f-e92590ec023d"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Input Power pin not driven by any Output Power pins",
+                    "items": [
+                        {
+                            "description": "Symbol U301 Pin 19 [DGND, Power input, Line]",
+                            "pos": {
+                                "x": 1.6764,
+                                "y": 2.2225
+                            },
+                            "uuid": "75aa9a96-d488-5cff-b225-15bdc4f8dcf8"
+                        }
+                    ],
+                    "severity": "error",
+                    "type": "power_pin_not_driven"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'PTB_VBOOST'",
+                            "pos": {
+                                "x": 0.5588,
+                                "y": 1.4605
+                            },
+                            "uuid": "6b035495-6804-5781-935e-81fa4ee46bd4"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'GND'",
+                            "pos": {
+                                "x": 0.2667,
+                                "y": 1.6383
+                            },
+                            "uuid": "68a4d67d-a83b-5b30-9e75-9448ce760f29"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'PTB_IRQ'",
+                            "pos": {
+                                "x": 1.8669,
+                                "y": 0.3175
+                            },
+                            "uuid": "1aa35048-e34b-554e-9cb0-19c67d8891fc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'PTB_CS'",
+                            "pos": {
+                                "x": 1.8034,
+                                "y": 0.7239
+                            },
+                            "uuid": "cfc3490c-4efa-5b08-956d-d6722685fb0c"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'GDI_SPI2_MOSI'",
+                            "pos": {
+                                "x": 1.8034,
+                                "y": 0.7493
+                            },
+                            "uuid": "7244e443-e07a-5ad1-9ffc-2839f9e87a55"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'GDI_SPI2_MISO'",
+                            "pos": {
+                                "x": 1.8034,
+                                "y": 0.7747
+                            },
+                            "uuid": "2a1f7aaf-d946-590b-8df0-5e313802461a"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'GDI_SPI2_SCK'",
+                            "pos": {
+                                "x": 1.8034,
+                                "y": 0.8001
+                            },
+                            "uuid": "89287c67-a773-5cdd-8f92-573408601b2d"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'PTB_OA_1'",
+                            "pos": {
+                                "x": 1.8034,
+                                "y": 0.8763
+                            },
+                            "uuid": "0a8335e3-764d-5b20-941e-1c74c0ad2020"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'PTB_OA_2'",
+                            "pos": {
+                                "x": 1.8034,
+                                "y": 0.9017
+                            },
+                            "uuid": "cc1e6951-f781-5407-82a0-46f9759f4778"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'PTB_FLAG_1'",
+                            "pos": {
+                                "x": 1.9431,
+                                "y": 0.6477
+                            },
+                            "uuid": "a6f046e8-3265-5960-b098-e18808ade612"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'PTB_FLAG_2'",
+                            "pos": {
+                                "x": 1.9431,
+                                "y": 0.6731
+                            },
+                            "uuid": "26ac393a-c0af-58dd-9e47-20da6855a447"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'PTB_DBG'",
+                            "pos": {
+                                "x": 1.9431,
+                                "y": 0.8255
+                            },
+                            "uuid": "3f2ee982-25e0-53ca-9d9f-138a3f59f0d3"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                },
+                {
+                    "description": "Global label not connected anywhere else in the schematic",
+                    "items": [
+                        {
+                            "description": "Global Label 'PTB_DRVEN_GATED'",
+                            "pos": {
+                                "x": 2.1844,
+                                "y": 0.1524
+                            },
+                            "uuid": "ed8ed424-ca86-5bae-9258-92ec42ab33dc"
+                        }
+                    ],
+                    "severity": "warning",
+                    "type": "global_label_dangling"
+                }
+            ]
+        }
+    ],
+    "source": "stage_b.kicad_sch"
+}

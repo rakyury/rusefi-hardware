@@ -1,0 +1,43 @@
+ref,value,footprint,dnp,note
+Q5001,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,False,"Input blocking FET. Source=input; drain/tab=common-drain midpoint. 100V, +/-20V VGS."
+Q5002,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,False,Output disconnect FET. Source=protected output; drain/tab=midpoint. Hot SOA remains a gate.
+U5001,LM74800QDRRRQ1,Power8GDI_GDIProtection:LM74800_DRR0012E,False,"TI SNOSD95C table6-1: exposed thermal pad floating, not GND. Common-drain topology."
+D5001,SMCJ33CA,Diode_SMD:D_SMC,False,Bidirectional TVS candidate. Surge energy/hot clamp/fuse coordination must be qualified.
+C5001,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,Place adjacent to VS/GND pins.
+R5001,140k 0.1%,Resistor_SMD:R_0805_2012Metric,False,OV upper divider; use >=75V rated 0805
+R5002,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,"OV nominal18.465V; conservative static bound17.864..19.075V including R(SW),200nA bias and divider tolerance"
+R5003,1k 1%,Resistor_SMD:R_0603_1608Metric,False,Hardware latch powers bank for configuration before per-bank DRVEN request
+R5004,10k 1%,Resistor_SMD:R_0603_1608Metric,False,Default off; external enable low must meet <=0.3V shutdown requirement
+R5005,1M 1%,Resistor_SMD:R_0603_1608Metric,False,DGATE-source fallback; ~13uA when on
+R5006,1M 1%,Resistor_SMD:R_0603_1608Metric,False,HGATE-source fallback; adds load to55uA nominal source
+C5002,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,"Required charge-pump capacitor CAP-to-VS, never CAP-to-GND"
+C5003,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,Input bypass at protection entry
+C5004,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,Protected output bypass; existing GDI bulk retained
+R5007,1k 1%,Resistor_SMD:R_0603_1608Metric,False,TI figure9-3 series resistor improves HGATE turnoff
+C5005,22n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,Soft-start candidate: ramp and hot MOSFET SOA must use actual downstream capacitance
+R5008,10k 1%,Resistor_SMD:R_0603_1608Metric,False,Input-bulk bleed; does not discharge boosted rail or guarantee safe touch
+Q5051,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,False,"Input blocking FET. Source=input; drain/tab=common-drain midpoint. 100V, +/-20V VGS."
+Q5052,IPD90N10S4-06,Package_TO_SOT_SMD:TO-252-2,False,Output disconnect FET. Source=protected output; drain/tab=midpoint. Hot SOA remains a gate.
+U5051,LM74800QDRRRQ1,Power8GDI_GDIProtection:LM74800_DRR0012E,False,"TI SNOSD95C table6-1: exposed thermal pad floating, not GND. Common-drain topology."
+D5051,SMCJ33CA,Diode_SMD:D_SMC,False,Bidirectional TVS candidate. Surge energy/hot clamp/fuse coordination must be qualified.
+C5051,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,Place adjacent to VS/GND pins.
+R5051,140k 0.1%,Resistor_SMD:R_0805_2012Metric,False,OV upper divider; use >=75V rated 0805
+R5052,10k 0.1%,Resistor_SMD:R_0603_1608Metric,False,"OV nominal18.465V; conservative static bound17.864..19.075V including R(SW),200nA bias and divider tolerance"
+R5053,1k 1%,Resistor_SMD:R_0603_1608Metric,False,Hardware latch powers bank for configuration before per-bank DRVEN request
+R5054,10k 1%,Resistor_SMD:R_0603_1608Metric,False,Default off; external enable low must meet <=0.3V shutdown requirement
+R5055,1M 1%,Resistor_SMD:R_0603_1608Metric,False,DGATE-source fallback; ~13uA when on
+R5056,1M 1%,Resistor_SMD:R_0603_1608Metric,False,HGATE-source fallback; adds load to55uA nominal source
+C5052,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,"Required charge-pump capacitor CAP-to-VS, never CAP-to-GND"
+C5053,100n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,Input bypass at protection entry
+C5054,100n 50V X7R,Capacitor_SMD:C_0805_2012Metric,False,Protected output bypass; existing GDI bulk retained
+R5057,1k 1%,Resistor_SMD:R_0603_1608Metric,False,TI figure9-3 series resistor improves HGATE turnoff
+C5055,22n 100V X7R,Capacitor_SMD:C_0805_2012Metric,False,Soft-start candidate: ramp and hot MOSFET SOA must use actual downstream capacitance
+R5058,10k 1%,Resistor_SMD:R_0603_1608Metric,False,Input-bulk bleed; does not discharge boosted rail or guarantee safe touch
+U5101,SN74LVC2G08QDCURQ1,Package_SO:VSSOP-8_2.3x2mm_P0.5mm,False,TI DCU8 pin table; Ioff when VCC=0. Gate output low unless both inputs high.
+R5101,10k 1%,Resistor_SMD:R_0603_1608Metric,False,
+R5102,10k 1%,Resistor_SMD:R_0603_1608Metric,False,
+R5103,10k 1%,Resistor_SMD:R_0603_1608Metric,False,
+R5104,10k 1%,Resistor_SMD:R_0603_1608Metric,False,
+R5105,10k 1%,Resistor_SMD:R_0603_1608Metric,False,
+R5106,10k 1%,Resistor_SMD:R_0603_1608Metric,False,
+C5101,100n 25V X7R,Capacitor_SMD:C_0805_2012Metric,False,

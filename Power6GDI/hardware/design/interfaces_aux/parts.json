@@ -1,0 +1,295 @@
+[
+  {
+    "ref": "U1701",
+    "value": "TPIC8101DWR",
+    "footprint": "Package_SO:SOIC-20W_7.5x12.8mm_P1.27mm",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "GND",
+      "3": "KNOCK_VREF",
+      "4": null,
+      "5": null,
+      "6": null,
+      "7": "KNOCK_INT_HOLD_5V",
+      "8": "KNOCK_CS_N_5V",
+      "9": "KNOCK_CLK_5V",
+      "10": null,
+      "11": "KNOCK_SDO_5V",
+      "12": "AUX_SPI_MOSI_5V",
+      "13": "AUX_SPI_SCK_5V",
+      "14": null,
+      "15": "KNOCK_VREF",
+      "16": "KNOCK2_INV",
+      "17": "KNOCK2_FB",
+      "18": "KNOCK1_FB",
+      "19": "KNOCK1_INV",
+      "20": "KNOCK_VREF"
+    },
+    "dnp": false,
+    "note": "TI SLIS110C p3 exact pins; TEST open per datasheet, NC5/6 no traces; OUT unused digital-readout mode",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "U1702",
+    "value": "SN74AHCT244QPWRQ1",
+    "footprint": "Package_SO:Texas_PW0020A_TSSOP-20_4.4x6.5mm_P0.65mm",
+    "pins": {
+      "20": "+5V_CORE",
+      "10": "GND",
+      "1": "GND",
+      "19": "GND",
+      "2": "GDI_SPI2_MOSI",
+      "18": "AUX_SPI_MOSI_5V",
+      "4": "GDI_SPI2_SCK",
+      "16": "AUX_SPI_SCK_5V",
+      "6": "KNOCK_CS_N",
+      "14": "KNOCK_CS_N_5V",
+      "8": "KNOCK_INT_HOLD",
+      "12": "KNOCK_INT_HOLD_5V",
+      "11": "KNOCK_OSC_3V3",
+      "9": "KNOCK_CLK_5V",
+      "13": "GND",
+      "7": null,
+      "15": "GND",
+      "5": null,
+      "17": "GND",
+      "3": null
+    },
+    "dnp": false,
+    "note": "TTL VIH2V recognizes3.3V; five knock/SPI outputs used, unused inputs tied low. WBO now uses independent CAN nodes",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "U1703",
+    "value": "CLVC1G125QDBVRQ1",
+    "footprint": "Package_TO_SOT_SMD:SOT-23-5",
+    "pins": {
+      "5": "+3V3",
+      "1": "KNOCK_CS_N",
+      "2": "KNOCK_SDO_5V",
+      "4": "GDI_SPI2_MISO",
+      "3": "GND"
+    },
+    "dnp": false,
+    "note": "CS disables return buffer; input5.5V tolerant; shared MISO arbitration required",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "Y1701",
+    "value": "ASEM1-8.000MHZ-LC-T",
+    "footprint": "Power8GDI_Core:ASEM_3225",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND",
+      "3": "KNOCK_OSC_3V3",
+      "4": "+3V3"
+    },
+    "dnp": false,
+    "note": "Own oscillator; manufacturer15pF load ceiling; temp\u221240..85C is a release constraint",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "C1701",
+    "value": "4.7uF 16V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "C1702",
+    "value": "100nF 25V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "C1703",
+    "value": "100nF 25V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "KNOCK_VREF",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "C1704",
+    "value": "100nF 25V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "+5V_CORE",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "C1705",
+    "value": "100nF 25V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "C1706",
+    "value": "100nF 25V X7R",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "+3V3",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "C1711",
+    "value": "3.3nF 50V C0G",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "HARNESS_KNOCK1_SIG",
+      "2": "KNOCK1_AC"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "R1711",
+    "value": "100k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "KNOCK1_AC",
+      "2": "KNOCK1_INV"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "R1712",
+    "value": "100k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "KNOCK1_FB",
+      "2": "KNOCK1_INV"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "R1713",
+    "value": "0R",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "HARNESS_KNOCK1_RETURN",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Dedicated return routed to analogue ground entry; sensor cable/EMC review required",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "C1721",
+    "value": "3.3nF 50V C0G",
+    "footprint": "Capacitor_SMD:C_0603_1608Metric",
+    "pins": {
+      "1": "HARNESS_KNOCK2_SIG",
+      "2": "KNOCK2_AC"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "R1721",
+    "value": "100k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "KNOCK2_AC",
+      "2": "KNOCK2_INV"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "R1722",
+    "value": "100k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "KNOCK2_FB",
+      "2": "KNOCK2_INV"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "R1723",
+    "value": "0R",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "HARNESS_KNOCK2_RETURN",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "Dedicated return routed to analogue ground entry; sensor cable/EMC review required",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "R1701",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "KNOCK_CS_N",
+      "2": "+3V3"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "R1702",
+    "value": "10k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "KNOCK_INT_HOLD",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  },
+  {
+    "ref": "R1703",
+    "value": "100k 1%",
+    "footprint": "Resistor_SMD:R_0603_1608Metric",
+    "pins": {
+      "1": "KNOCK_SDO_5V",
+      "2": "GND"
+    },
+    "dnp": false,
+    "note": "",
+    "sheet": "knock_dual"
+  }
+]

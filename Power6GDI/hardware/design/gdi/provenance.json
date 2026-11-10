@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "design_status": "REFERENCE_DERIVED_CONNECTED_ENGINEERING_DRAFT",
+  "manufacturing_release": "BLOCKED",
+  "hardware_energization": "NOT_APPROVED",
+  "upstream_license_status": "UNKNOWN",
+  "authorship": "GDI power topology, component values, symbol geometry and embedded footprint geometry derived from local rusEFI GDI-4ch rev.d; corrected PT2001 pin metadata and independent rail/control naming, isolation boundaries and regulator candidates added in this work. Not an independently authored power design.",
+  "sources": [
+    {
+      "path": "GDI-4ch/GDI-4ch.kicad_sch",
+      "revision": "rev. d / 2023-05-14",
+      "git_blob": "b6c7a02ae8c1513f47a6b8b066cf17d0111ca283",
+      "lf_sha256": "2c013954ccf7937ab1be8406ce2e694b5e740ca175adf62fd661e39cb1304a12"
+    },
+    {
+      "path": "GDI-4ch/GDI-4ch.kicad_pcb",
+      "revision": "Rev. d / 2023-05-14",
+      "git_blob": "759fc74b628e92db94637ef4289b819db5376127",
+      "lf_sha256": "6a5f92d650679a784d155a8c58d4360e3893798f8d6191ea1f2d2354c4b2fc6e"
+    },
+    {
+      "path": "GDI-4ch/gerber/rev. d/bom.csv",
+      "git_blob": "0c60629f65b4c85d05ad6d98bdbf8006ebaccd2d",
+      "lf_sha256": "9f1b9d2928cbbd40c0db2aec2fe3ebfe9a61fc9883e3ff5b50ba07ac5c512eda",
+      "conflict": "U1 MC33816 conflicts with schematic/PCB MC33PT2001AE. New BOM selects MC33PT2001AE. Historic assembled device remains UNKNOWN; inherited LCSC U1 identifier removed."
+    }
+  ],
+  "manufacturer_sources": [
+    {
+      "url": "https://www.nxp.com/docs/en/data-sheet/MC33PT2001_SDS.pdf",
+      "revision": "10.1 / 2023-02-15",
+      "sha256": "f3ef5a029ddd1458432397d2eb070724f34e5ec21f4ef71522426349d346abf1",
+      "used_for": "AE variant, 65 electrical pin identities/directions, VCC1P5 pin20, VCCIO 3.3/5V, package body/pitch/exposed pad",
+      "limitations": "Short datasheet does not supply full operating limits/current consumption, reset timing or configuration-specific FLAG semantics."
+    },
+    {
+      "url": "https://assets.nexperia.com/documents/data-sheet/BUK9230-100B.pdf",
+      "revision": "02 / 2011-02-01",
+      "used_for": "DPAK pin1 gate, pin3 source, mounting base drain/pad2; no load qualification implied"
+    },
+    {
+      "url": "https://www.onsemi.com/pdf/datasheet/mc78m00-d.pdf",
+      "revision": "29 / 2021-11",
+      "used_for": "NCV78M05ABDTRKG orderable variant, pin1 input/pin2 ground/tab/pin3 output, local 5V regulator candidate and its electrical/thermal limits"
+    },
+    {
+      "url": "https://www.nxp.com/downloads/en/schematics/SPF-29357.pdf",
+      "revision": "SCH-29357 revD / 2017-10-10",
+      "used_for": "Read-only provenance crosscheck only. NO evaluation power circuit copied: the document restricts engineering/design/manufacture use without express written permission."
+    }
+  ],
+  "integration": {
+    "stage_a": {"device": "U201", "regulator": "U249", "enable_dnp": "R299", "input": "VBAT_GDI_A", "logic_5v": "+5V_GDI_A"},
+    "stage_b": {"device": "U301", "regulator": "U349", "enable_dnp": "R399", "input": "VBAT_GDI_B", "logic_5v": "+5V_GDI_B"},
+    "shared": ["GND", "+3V3", "GDI_SPI2_SCK", "GDI_SPI2_MOSI", "GDI_SPI2_MISO"],
+    "vccio_current_max_mA_per_device": "UNKNOWN",
+    "vcc5_current_max_mA_per_device": "UNKNOWN",
+    "pt2001_active_polarities": "UNKNOWN_FULL_DATASHEET_REQUIRED",
+    "hpfp_start_assignment": "UNKNOWN_MICROCODE_REQUIRED",
+    "regulator_capacity": "500mA device-family rating requires adequate heatsinking; actual available board current UNKNOWN"
+  },
+  "blockers": [
+    "GDI-4ch board/symbol/footprint redistribution license unresolved; no license grant inferred from public access.",
+    "Full MC33PT2001 electrical and safety documentation: current draw, voltage limits, sequencing, active polarity and reset timing unavailable.",
+    "Legacy MC33816 BOM versus PT2001 schematic is unresolved for old hardware; new PT2001 selection requires procurement verification.",
+    "PT2001 SOT1510-1 package EP4.9x4.9mm versus source inherited footprint EP5x5mm with ADV7611 description: land pattern/paste/thermal vias require NXP mechanical review.",
+    "Independent physical hardware kill/inhibit circuit missing. DNP R299/R399 are open design boundaries, not a fault-tolerant safety implementation.",
+    "Injector and HPFP part numbers, R/L/current/boost/peak/hold/demagnetization limits unknown. Reference high-current values are NOT approved.",
+    "Microcode and firing/output mapping not verified; DI-to-START proposed wiring is not validated firing semantics; HPFP1/2 intentionally unconnected.",
+    "VBAT_GDI_A/B require separate qualified fuse, reverse battery, load dump and energy discharge design; no high-current power protection provided here.",
+    "Local 5V regulator thermal/current budget and shared3V3 VCCIO budget unknown. Low crank regulation and shutdown/restart require review.",
+    "Source footprints are geometrically preserved, not manufacturer-qualified. Exact inductor saturation, diode variants, capacitor bias/ripple/voltage, MOSFET SOA and shunt ratings remain open.",
+    "Kelvin, ground topology, boost loops, creepage, copper thickness/current, thermal coupling, EMC and fault-injection measurements not performed.",
+    "Standalone ERC external input/power/label violations remain reported; full hierarchical ERC, PCB DRC and hardware tests still required."
+  ]
+}

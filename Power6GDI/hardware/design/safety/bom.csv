@@ -1,0 +1,22 @@
+ref,value,footprint,dnp,note
+U801,TPS3431SQDRBRQ1,Package_SON:VSON-8-1EP_3x3mm_P0.65mm_EP1.6x2.4mm,False,ENOUT tied to WDO as explicitly allowed by TI; SET1/EN hardwired enabled
+U802,TPS3808G33QDBVRQ1,Package_TO_SOT_SMD:SOT-23-6,False,CT intentionally open: 20 ms nominal reset delay; 3.07 V nominal monitor
+U803,SN74LVC1G17QDBVRQ1,Package_TO_SOT_SMD:SOT-23-5,False,Schmitt edge conditioning for asynchronous clear
+U804,SN74LVC2G74QDCURQ1,Package_SO:VSSOP-8_2.3x2mm_P0.5mm,False,"Fresh rising edge after fault release; D=1, PRE inactive high"
+U806,TPS3808G01QDBVRQ1,Package_TO_SOT_SMD:SOT-23-6,False,Independent 5V undervoltage fault while 3V3 remains alive; CT open 12..28ms recovery. TI SBVS085J.
+R801,10k 1%,Resistor_SMD:R_0603_1608Metric,False,
+R802,10k 1%,Resistor_SMD:R_0603_1608Metric,False,
+R803,10k 1%,Resistor_SMD:R_0603_1608Metric,False,
+R804,10k 1%,Resistor_SMD:R_0603_1608Metric,False,
+R805,10k 1%,Resistor_SMD:R_0603_1608Metric,False,
+R806,10k 1%,Resistor_SMD:R_0603_1608Metric,False,
+C801,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,
+C802,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,
+C803,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,
+C804,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,
+R6500,0R,Resistor_SMD:R_0603_1608Metric,False,
+C806,120pF 50V C0G 1%,Capacitor_SMD:C_0603_1608Metric,False,
+R807,102k 0.1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,
+R808,9.76k 0.1% 25ppm,Resistor_SMD:R_0603_1608Metric,False,
+C807,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,False,
+C808,1nF 50V C0G 5%,Capacitor_SMD:C_0603_1608Metric,False,

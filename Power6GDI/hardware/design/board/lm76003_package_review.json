@@ -1,0 +1,294 @@
+{
+  "source_board_sha256": "ee93cf1f847006d0ad829f3d4614442a27feab108897f248cee685247705f55e",
+  "scope_mm": [
+    68,
+    3.5,
+    109,
+    34.5
+  ],
+  "fixture_policy": "All intersecting footprints, entire crossing copper and intersecting zones on every layer retained; outside objects removed without clipping",
+  "native_counts": {
+    "before": {
+      "clearance": 70,
+      "track_width": 34,
+      "track_dangling": 29,
+      "lib_footprint_issues": 12
+    },
+    "after": {
+      "clearance": 66,
+      "track_width": 34,
+      "track_dangling": 29,
+      "lib_footprint_issues": 12
+    },
+    "mutant": {
+      "clearance": 68,
+      "track_width": 34,
+      "track_dangling": 29,
+      "lib_footprint_issues": 12,
+      "lib_footprint_mismatch": 1
+    }
+  },
+  "removed_only_four_intrinsic_pad_pairs": [
+    {
+      "description": "Clearance violation (rule 'Power clearance' clearance 0.3000 mm; actual 0.2500 mm)",
+      "items": [
+        {
+          "description": "Pad 6 [LP5_BOOT] of U5200 on B.Cu",
+          "pos": {
+            "x": 84.0,
+            "y": 19.3625
+          },
+          "uuid": "940ebc53-04f7-4bc1-9ebb-916e898cf482"
+        },
+        {
+          "description": "Pad 7 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 83.5,
+            "y": 19.3625
+          },
+          "uuid": "b86b7868-d23e-48c3-a871-ff6908e6e22a"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation (rule 'Power clearance' clearance 0.3000 mm; actual 0.2500 mm)",
+      "items": [
+        {
+          "description": "Pad 5 [LP5_SW] of U5200 on B.Cu",
+          "pos": {
+            "x": 84.5,
+            "y": 19.3625
+          },
+          "uuid": "26f8afc2-eb6a-4185-8ee4-25b9f4839b9b"
+        },
+        {
+          "description": "Pad 6 [LP5_BOOT] of U5200 on B.Cu",
+          "pos": {
+            "x": 84.0,
+            "y": 19.3625
+          },
+          "uuid": "940ebc53-04f7-4bc1-9ebb-916e898cf482"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation (rule 'Power clearance' clearance 0.3000 mm; actual 0.2500 mm)",
+      "items": [
+        {
+          "description": "Pad 19 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 83.0,
+            "y": 15.6375
+          },
+          "uuid": "eddc5501-3ab1-4598-947c-77e29e7664fd"
+        },
+        {
+          "description": "Pad 20 [VBAT_LOGIC_PROTECTED] of U5200 on B.Cu",
+          "pos": {
+            "x": 83.5,
+            "y": 15.6375
+          },
+          "uuid": "933f305b-6686-4756-84e7-230fc2d02545"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation (rule 'Power clearance' clearance 0.3000 mm; actual 0.2500 mm)",
+      "items": [
+        {
+          "description": "Pad 22 [VBAT_LOGIC_PROTECTED] of U5200 on B.Cu",
+          "pos": {
+            "x": 84.5,
+            "y": 15.6375
+          },
+          "uuid": "6f327408-bf31-49ab-867e-3de3d239fda5"
+        },
+        {
+          "description": "Pad 23 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 85.0,
+            "y": 15.6375
+          },
+          "uuid": "12a52569-e3e4-4ff2-ad66-34e2414d896b"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    }
+  ],
+  "five_track_escape_violations_retained": [
+    {
+      "description": "Clearance violation (rule 'Power clearance' clearance 0.3000 mm; actual 0.2750 mm)",
+      "items": [
+        {
+          "description": "Pad 23 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 85.0,
+            "y": 15.6375
+          },
+          "uuid": "12a52569-e3e4-4ff2-ad66-34e2414d896b"
+        },
+        {
+          "description": "Track [VBAT_LOGIC_PROTECTED] on B.Cu, length 0.8375 mm",
+          "pos": {
+            "x": 84.5,
+            "y": 14.8
+          },
+          "uuid": "542f050d-1d62-4abd-bad8-0cc06fe06901"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation (rule 'Power clearance' clearance 0.3000 mm; actual 0.2750 mm)",
+      "items": [
+        {
+          "description": "Pad 5 [LP5_SW] of U5200 on B.Cu",
+          "pos": {
+            "x": 84.5,
+            "y": 19.3625
+          },
+          "uuid": "26f8afc2-eb6a-4185-8ee4-25b9f4839b9b"
+        },
+        {
+          "description": "Track [LP5_BOOT] on B.Cu, length 1.6375 mm",
+          "pos": {
+            "x": 84.0,
+            "y": 19.3625
+          },
+          "uuid": "d4ff31f9-6908-4d93-81ca-1eeeb40f2883"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation (rule 'Power clearance' clearance 0.3000 mm; actual 0.2750 mm)",
+      "items": [
+        {
+          "description": "Pad 7 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 83.5,
+            "y": 19.3625
+          },
+          "uuid": "b86b7868-d23e-48c3-a871-ff6908e6e22a"
+        },
+        {
+          "description": "Track [LP5_BOOT] on B.Cu, length 1.6375 mm",
+          "pos": {
+            "x": 84.0,
+            "y": 19.3625
+          },
+          "uuid": "d4ff31f9-6908-4d93-81ca-1eeeb40f2883"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation (rule 'Power clearance' clearance 0.3000 mm; actual 0.2750 mm)",
+      "items": [
+        {
+          "description": "Track [LP5_SW] on B.Cu, length 0.9375 mm",
+          "pos": {
+            "x": 84.5,
+            "y": 19.3625
+          },
+          "uuid": "2c27ff5a-fbb2-4b47-8f90-f0915d3a73b3"
+        },
+        {
+          "description": "Pad 6 [LP5_BOOT] of U5200 on B.Cu",
+          "pos": {
+            "x": 84.0,
+            "y": 19.3625
+          },
+          "uuid": "940ebc53-04f7-4bc1-9ebb-916e898cf482"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation (rule 'Power clearance' clearance 0.3000 mm; actual 0.2750 mm)",
+      "items": [
+        {
+          "description": "Pad 19 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 83.0,
+            "y": 15.6375
+          },
+          "uuid": "eddc5501-3ab1-4598-947c-77e29e7664fd"
+        },
+        {
+          "description": "Track [VBAT_LOGIC_PROTECTED] on B.Cu, length 0.8375 mm",
+          "pos": {
+            "x": 83.5,
+            "y": 15.6375
+          },
+          "uuid": "f8b4c491-df8b-481c-b3e2-0d6edd992564"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    }
+  ],
+  "widened_pad6_native_rejections": [
+    {
+      "description": "Clearance violation (rule 'TI RNP0030 land pair 5-6' clearance 0.2500 mm; actual 0.2400 mm)",
+      "items": [
+        {
+          "description": "Pad 5 [LP5_SW] of U5200 on B.Cu",
+          "pos": {
+            "x": 84.5,
+            "y": 19.3625
+          },
+          "uuid": "26f8afc2-eb6a-4185-8ee4-25b9f4839b9b"
+        },
+        {
+          "description": "Pad 6 [LP5_BOOT] of U5200 on B.Cu",
+          "pos": {
+            "x": 84.0,
+            "y": 19.3625
+          },
+          "uuid": "940ebc53-04f7-4bc1-9ebb-916e898cf482"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    },
+    {
+      "description": "Clearance violation (rule 'TI RNP0030 land pair 6-7' clearance 0.2500 mm; actual 0.2400 mm)",
+      "items": [
+        {
+          "description": "Pad 6 [LP5_BOOT] of U5200 on B.Cu",
+          "pos": {
+            "x": 84.0,
+            "y": 19.3625
+          },
+          "uuid": "940ebc53-04f7-4bc1-9ebb-916e898cf482"
+        },
+        {
+          "description": "Pad 7 [GND] of U5200 on B.Cu",
+          "pos": {
+            "x": 83.5,
+            "y": 19.3625
+          },
+          "uuid": "b86b7868-d23e-48c3-a871-ff6908e6e22a"
+        }
+      ],
+      "severity": "error",
+      "type": "clearance"
+    }
+  ],
+  "geometry_guard_rejects_widened_pad": true,
+  "rule_source": "https://www.ti.com/lit/ds/symlink/lm76003-q1.pdf",
+  "runtime": "kicad/kicad@sha256:e638b79b0321f29395a5b783e94bb9f3c73303e8da15da27b8f5cb4b67a37729",
+  "scope_limit": "Intrinsic pad-to-pad policy only; no other clearance override; not fabrication qualification"
+}

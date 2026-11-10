@@ -1,0 +1,427 @@
+<?xml version='1.0' encoding='utf-8'?>
+<export version="E">
+  <components>
+    <comp ref="J601">
+      <value>6437288-1 (key1 candidate)</value>
+      <footprint>Power8GDI_Board:TE_6437288-1_34way</footprint>
+    </comp>
+    <comp ref="J602">
+      <value>6437288-1 (key1 candidate)</value>
+      <footprint>Power8GDI_Board:TE_6437288-1_34way</footprint>
+    </comp>
+    <comp ref="J603">
+      <value>6437288-1 (key1 candidate)</value>
+      <footprint>Power8GDI_Board:TE_6437288-1_34way</footprint>
+    </comp>
+    <comp ref="J604">
+      <value>6437288-1 (key1 candidate)</value>
+      <footprint>Power8GDI_Board:TE_6437288-1_34way</footprint>
+    </comp>
+  </components>
+  <nets>
+    <net code="1" name="CAN1_H">
+      <node ref="J604" pin="11" />
+    </net>
+    <net code="2" name="CAN1_L">
+      <node ref="J604" pin="12" />
+    </net>
+    <net code="3" name="DBW_MOTOR_A">
+      <node ref="J604" pin="1" />
+    </net>
+    <net code="4" name="DBW_MOTOR_B">
+      <node ref="J604" pin="2" />
+    </net>
+    <net code="5" name="EWG_MOTOR_A">
+      <node ref="J604" pin="3" />
+    </net>
+    <net code="6" name="EWG_MOTOR_B">
+      <node ref="J604" pin="4" />
+    </net>
+    <net code="7" name="GND">
+      <node ref="J601" pin="29" />
+      <node ref="J601" pin="30" />
+      <node ref="J601" pin="31" />
+    </net>
+    <net code="8" name="HARNESS_AUX_ANALOG1">
+      <node ref="J604" pin="19" />
+    </net>
+    <net code="9" name="HARNESS_AUX_ANALOG2">
+      <node ref="J604" pin="20" />
+    </net>
+    <net code="10" name="HARNESS_AUX_PWM1">
+      <node ref="J602" pin="21" />
+    </net>
+    <net code="11" name="HARNESS_AUX_PWM2">
+      <node ref="J602" pin="22" />
+    </net>
+    <net code="12" name="HARNESS_AUX_PWM3">
+      <node ref="J602" pin="23" />
+    </net>
+    <net code="13" name="HARNESS_AUX_PWM4">
+      <node ref="J602" pin="24" />
+    </net>
+    <net code="14" name="HARNESS_AUX_PWM5">
+      <node ref="J602" pin="25" />
+    </net>
+    <net code="15" name="HARNESS_AUX_PWM6">
+      <node ref="J602" pin="26" />
+    </net>
+    <net code="16" name="HARNESS_AUX_PWM7">
+      <node ref="J602" pin="27" />
+    </net>
+    <net code="17" name="HARNESS_AUX_PWM8">
+      <node ref="J602" pin="28" />
+    </net>
+    <net code="18" name="HARNESS_BARO_EXT">
+      <node ref="J603" pin="20" />
+    </net>
+    <net code="19" name="HARNESS_CAM1">
+      <node ref="J603" pin="3" />
+    </net>
+    <net code="20" name="HARNESS_CAM2">
+      <node ref="J603" pin="4" />
+    </net>
+    <net code="21" name="HARNESS_CAM3">
+      <node ref="J603" pin="5" />
+    </net>
+    <net code="22" name="HARNESS_CAM4">
+      <node ref="J603" pin="6" />
+    </net>
+    <net code="23" name="HARNESS_CAN2_H">
+      <node ref="J604" pin="13" />
+    </net>
+    <net code="24" name="HARNESS_CAN2_L">
+      <node ref="J604" pin="14" />
+    </net>
+    <net code="25" name="HARNESS_CHASSIS_GND">
+      <node ref="J604" pin="33" />
+    </net>
+    <net code="26" name="HARNESS_CLT">
+      <node ref="J603" pin="21" />
+    </net>
+    <net code="27" name="HARNESS_CRANK_VR_N">
+      <node ref="J603" pin="2" />
+    </net>
+    <net code="28" name="HARNESS_CRANK_VR_P">
+      <node ref="J603" pin="1" />
+    </net>
+    <net code="29" name="HARNESS_DI1_HIGH">
+      <node ref="J601" pin="1" />
+    </net>
+    <net code="30" name="HARNESS_DI1_LOW">
+      <node ref="J601" pin="2" />
+    </net>
+    <net code="31" name="HARNESS_DI2_HIGH">
+      <node ref="J601" pin="3" />
+    </net>
+    <net code="32" name="HARNESS_DI2_LOW">
+      <node ref="J601" pin="4" />
+    </net>
+    <net code="33" name="HARNESS_DI3_HIGH">
+      <node ref="J601" pin="5" />
+    </net>
+    <net code="34" name="HARNESS_DI3_LOW">
+      <node ref="J601" pin="6" />
+    </net>
+    <net code="35" name="HARNESS_DI4_HIGH">
+      <node ref="J601" pin="7" />
+    </net>
+    <net code="36" name="HARNESS_DI4_LOW">
+      <node ref="J601" pin="8" />
+    </net>
+    <net code="37" name="HARNESS_DI5_HIGH">
+      <node ref="J601" pin="9" />
+    </net>
+    <net code="38" name="HARNESS_DI5_LOW">
+      <node ref="J601" pin="10" />
+    </net>
+    <net code="39" name="HARNESS_DI6_HIGH">
+      <node ref="J601" pin="11" />
+    </net>
+    <net code="40" name="HARNESS_DI6_LOW">
+      <node ref="J601" pin="12" />
+    </net>
+    <net code="41" name="HARNESS_DI7_HIGH">
+      <node ref="J601" pin="13" />
+    </net>
+    <net code="42" name="HARNESS_DI7_LOW">
+      <node ref="J601" pin="14" />
+    </net>
+    <net code="43" name="HARNESS_DI8_HIGH">
+      <node ref="J601" pin="15" />
+    </net>
+    <net code="44" name="HARNESS_DI8_LOW">
+      <node ref="J601" pin="16" />
+    </net>
+    <net code="45" name="HARNESS_DIN5">
+      <node ref="J604" pin="15" />
+    </net>
+    <net code="46" name="HARNESS_DIN6">
+      <node ref="J604" pin="16" />
+    </net>
+    <net code="47" name="HARNESS_DIN7">
+      <node ref="J604" pin="17" />
+    </net>
+    <net code="48" name="HARNESS_DIN8">
+      <node ref="J604" pin="18" />
+    </net>
+    <net code="49" name="HARNESS_EWG_POS">
+      <node ref="J603" pin="29" />
+    </net>
+    <net code="50" name="HARNESS_EXH_PRESS">
+      <node ref="J603" pin="28" />
+    </net>
+    <net code="51" name="HARNESS_FLEX_FREQ">
+      <node ref="J603" pin="30" />
+    </net>
+    <net code="52" name="HARNESS_FRP1">
+      <node ref="J603" pin="25" />
+    </net>
+    <net code="53" name="HARNESS_FRP2">
+      <node ref="J603" pin="26" />
+    </net>
+    <net code="54" name="HARNESS_HALL1">
+      <node ref="J603" pin="7" />
+    </net>
+    <net code="55" name="HARNESS_HALL2">
+      <node ref="J603" pin="8" />
+    </net>
+    <net code="56" name="HARNESS_HALL3">
+      <node ref="J603" pin="9" />
+    </net>
+    <net code="57" name="HARNESS_HALL4">
+      <node ref="J603" pin="10" />
+    </net>
+    <net code="58" name="HARNESS_HPFP1_HIGH">
+      <node ref="J601" pin="17" />
+    </net>
+    <net code="59" name="HARNESS_HPFP1_LOW">
+      <node ref="J601" pin="18" />
+    </net>
+    <net code="60" name="HARNESS_HPFP2_HIGH">
+      <node ref="J601" pin="19" />
+    </net>
+    <net code="61" name="HARNESS_HPFP2_LOW">
+      <node ref="J601" pin="20" />
+    </net>
+    <net code="62" name="HARNESS_IAT">
+      <node ref="J603" pin="22" />
+    </net>
+    <net code="63" name="HARNESS_KNOCK1_RETURN">
+      <node ref="J603" pin="12" />
+    </net>
+    <net code="64" name="HARNESS_KNOCK1_SIG">
+      <node ref="J603" pin="11" />
+    </net>
+    <net code="65" name="HARNESS_KNOCK2_RETURN">
+      <node ref="J603" pin="14" />
+    </net>
+    <net code="66" name="HARNESS_KNOCK2_SIG">
+      <node ref="J603" pin="13" />
+    </net>
+    <net code="67" name="HARNESS_LIN2_BUS">
+      <node ref="J604" pin="10" />
+    </net>
+    <net code="68" name="HARNESS_LPFP_PRESS">
+      <node ref="J603" pin="27" />
+    </net>
+    <net code="69" name="HARNESS_LS_AUX1">
+      <node ref="J602" pin="29" />
+    </net>
+    <net code="70" name="HARNESS_LS_AUX2">
+      <node ref="J602" pin="30" />
+    </net>
+    <net code="71" name="HARNESS_LS_AUX3">
+      <node ref="J602" pin="31" />
+    </net>
+    <net code="72" name="HARNESS_LS_AUX4">
+      <node ref="J602" pin="32" />
+    </net>
+    <net code="73" name="HARNESS_MAP_MAIN">
+      <node ref="J603" pin="19" />
+    </net>
+    <net code="74" name="HARNESS_OIL_PRESS">
+      <node ref="J603" pin="23" />
+    </net>
+    <net code="75" name="HARNESS_OIL_TEMP">
+      <node ref="J603" pin="24" />
+    </net>
+    <net code="76" name="HARNESS_PGND_GDI_A_1">
+      <node ref="J601" pin="25" />
+    </net>
+    <net code="77" name="HARNESS_PGND_GDI_A_2">
+      <node ref="J601" pin="26" />
+    </net>
+    <net code="78" name="HARNESS_PGND_GDI_B_1">
+      <node ref="J601" pin="27" />
+    </net>
+    <net code="79" name="HARNESS_PGND_GDI_B_2">
+      <node ref="J601" pin="28" />
+    </net>
+    <net code="80" name="HARNESS_PGND_MAIN_4">
+      <node ref="J601" pin="32" />
+    </net>
+    <net code="81" name="HARNESS_PGND_MAIN_B">
+      <node ref="J602" pin="34" />
+    </net>
+    <net code="82" name="HARNESS_PI1">
+      <node ref="J602" pin="9" />
+    </net>
+    <net code="83" name="HARNESS_PI2">
+      <node ref="J602" pin="10" />
+    </net>
+    <net code="84" name="HARNESS_PI3">
+      <node ref="J602" pin="11" />
+    </net>
+    <net code="85" name="HARNESS_PI4">
+      <node ref="J602" pin="12" />
+    </net>
+    <net code="86" name="HARNESS_PI5">
+      <node ref="J602" pin="13" />
+    </net>
+    <net code="87" name="HARNESS_PI6">
+      <node ref="J602" pin="14" />
+    </net>
+    <net code="88" name="HARNESS_PI7">
+      <node ref="J602" pin="15" />
+    </net>
+    <net code="89" name="HARNESS_PI8">
+      <node ref="J602" pin="16" />
+    </net>
+    <net code="90" name="HARNESS_PPS1">
+      <node ref="J603" pin="17" />
+    </net>
+    <net code="91" name="HARNESS_PPS2">
+      <node ref="J603" pin="18" />
+    </net>
+    <net code="92" name="HARNESS_SENSOR_5V_A">
+      <node ref="J603" pin="31" />
+    </net>
+    <net code="93" name="HARNESS_SENSOR_5V_B">
+      <node ref="J603" pin="32" />
+    </net>
+    <net code="94" name="HARNESS_SENSOR_GND_A">
+      <node ref="J603" pin="33" />
+    </net>
+    <net code="95" name="HARNESS_SENSOR_GND_B">
+      <node ref="J603" pin="34" />
+    </net>
+    <net code="96" name="HARNESS_SENSOR_GND_C">
+      <node ref="J604" pin="34" />
+    </net>
+    <net code="97" name="HARNESS_SENT1">
+      <node ref="J604" pin="5" />
+    </net>
+    <net code="98" name="HARNESS_SENT2">
+      <node ref="J604" pin="6" />
+    </net>
+    <net code="99" name="HARNESS_SENT3">
+      <node ref="J604" pin="7" />
+    </net>
+    <net code="100" name="HARNESS_SENT4">
+      <node ref="J604" pin="8" />
+    </net>
+    <net code="101" name="HARNESS_TPS1">
+      <node ref="J603" pin="15" />
+    </net>
+    <net code="102" name="HARNESS_TPS2">
+      <node ref="J603" pin="16" />
+    </net>
+    <net code="103" name="HARNESS_VBAT_GDI_A_1">
+      <node ref="J601" pin="21" />
+    </net>
+    <net code="104" name="HARNESS_VBAT_GDI_A_2">
+      <node ref="J601" pin="22" />
+    </net>
+    <net code="105" name="HARNESS_VBAT_GDI_B_1">
+      <node ref="J601" pin="23" />
+    </net>
+    <net code="106" name="HARNESS_VBAT_GDI_B_2">
+      <node ref="J601" pin="24" />
+    </net>
+    <net code="107" name="HARNESS_VVT1">
+      <node ref="J602" pin="17" />
+    </net>
+    <net code="108" name="HARNESS_VVT2">
+      <node ref="J602" pin="18" />
+    </net>
+    <net code="109" name="HARNESS_VVT3">
+      <node ref="J602" pin="19" />
+    </net>
+    <net code="110" name="HARNESS_VVT4">
+      <node ref="J602" pin="20" />
+    </net>
+    <net code="111" name="HARNESS_WBO1_CONTACT1">
+      <node ref="J604" pin="21" />
+    </net>
+    <net code="112" name="HARNESS_WBO1_CONTACT2">
+      <node ref="J604" pin="22" />
+    </net>
+    <net code="113" name="HARNESS_WBO1_CONTACT3">
+      <node ref="J604" pin="23" />
+    </net>
+    <net code="114" name="HARNESS_WBO1_CONTACT4">
+      <node ref="J604" pin="24" />
+    </net>
+    <net code="115" name="HARNESS_WBO1_CONTACT5">
+      <node ref="J604" pin="25" />
+    </net>
+    <net code="116" name="HARNESS_WBO1_CONTACT6">
+      <node ref="J604" pin="26" />
+    </net>
+    <net code="117" name="HARNESS_WBO2_CONTACT1">
+      <node ref="J604" pin="27" />
+    </net>
+    <net code="118" name="HARNESS_WBO2_CONTACT2">
+      <node ref="J604" pin="28" />
+    </net>
+    <net code="119" name="HARNESS_WBO2_CONTACT3">
+      <node ref="J604" pin="29" />
+    </net>
+    <net code="120" name="HARNESS_WBO2_CONTACT4">
+      <node ref="J604" pin="30" />
+    </net>
+    <net code="121" name="HARNESS_WBO2_CONTACT5">
+      <node ref="J604" pin="31" />
+    </net>
+    <net code="122" name="HARNESS_WBO2_CONTACT6">
+      <node ref="J604" pin="32" />
+    </net>
+    <net code="123" name="IGN1_LOGIC_OUT">
+      <node ref="J602" pin="1" />
+    </net>
+    <net code="124" name="IGN2_LOGIC_OUT">
+      <node ref="J602" pin="2" />
+    </net>
+    <net code="125" name="IGN3_LOGIC_OUT">
+      <node ref="J602" pin="3" />
+    </net>
+    <net code="126" name="IGN4_LOGIC_OUT">
+      <node ref="J602" pin="4" />
+    </net>
+    <net code="127" name="IGN5_LOGIC_OUT">
+      <node ref="J602" pin="5" />
+    </net>
+    <net code="128" name="IGN6_LOGIC_OUT">
+      <node ref="J602" pin="6" />
+    </net>
+    <net code="129" name="IGN7_LOGIC_OUT">
+      <node ref="J602" pin="7" />
+    </net>
+    <net code="130" name="IGN8_LOGIC_OUT">
+      <node ref="J602" pin="8" />
+    </net>
+    <net code="131" name="LIN1_BUS">
+      <node ref="J604" pin="9" />
+    </net>
+    <net code="132" name="VBAT_DBW_FUSED">
+      <node ref="J601" pin="33" />
+    </net>
+    <net code="133" name="VBAT_EWG_FUSED">
+      <node ref="J601" pin="34" />
+    </net>
+    <net code="134" name="VBAT_MAIN_FUSED">
+      <node ref="J602" pin="33" />
+    </net>
+  </nets>
+</export>

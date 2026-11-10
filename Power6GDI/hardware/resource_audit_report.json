@@ -1,0 +1,619 @@
+{
+  "schema_version": 1,
+  "structure_status": "pass",
+  "release_eligible": false,
+  "qualification_status": "blocked",
+  "target": {
+    "family": "STM32F767xx",
+    "order_code": "STM32F767IIT6 (provisional)",
+    "package": "LQFP176 (provisional)",
+    "silicon_revision": null
+  },
+  "errors": [],
+  "summary": {
+    "gpio_rows": 118,
+    "assigned_pins": 118,
+    "required_functions": 120,
+    "missing_functions": 0,
+    "unassigned_functions": 0,
+    "collision_findings": 0,
+    "conditional_conflicts": 5,
+    "qualification_evidence_missing": 13
+  },
+  "missing_functions": [],
+  "unassigned_functions": [],
+  "indirect_functions": {
+    "KNOCK1": {
+      "component": "U1701",
+      "source": "TPIC8101",
+      "path": "design/interfaces_aux/knock_dual.kicad_sch",
+      "channel": 1,
+      "required_signals": [
+        "KNOCK_CS_N",
+        "KNOCK_INT_HOLD",
+        "GDI_SPI2_SCK",
+        "GDI_SPI2_MOSI",
+        "GDI_SPI2_MISO"
+      ],
+      "unresolved_signals": [],
+      "status": "allocated_not_qualified"
+    },
+    "KNOCK2": {
+      "component": "U1701",
+      "source": "TPIC8101",
+      "path": "design/interfaces_aux/knock_dual.kicad_sch",
+      "channel": 2,
+      "required_signals": [
+        "KNOCK_CS_N",
+        "KNOCK_INT_HOLD",
+        "GDI_SPI2_SCK",
+        "GDI_SPI2_MOSI",
+        "GDI_SPI2_MISO"
+      ],
+      "unresolved_signals": [],
+      "status": "allocated_not_qualified"
+    }
+  },
+  "connector_requirement_coverage": {
+    "Analog": {
+      "required": 14,
+      "missing": []
+    },
+    "Aux Low-side": {
+      "required": 4,
+      "missing": []
+    },
+    "Aux PWM": {
+      "required": 8,
+      "missing": []
+    },
+    "Digital": {
+      "required": 4,
+      "missing": []
+    },
+    "Frequency": {
+      "required": 1,
+      "missing": []
+    },
+    "Ignition": {
+      "required": 6,
+      "missing": []
+    },
+    "Port Injection": {
+      "required": 6,
+      "missing": []
+    },
+    "SENT": {
+      "required": 4,
+      "missing": []
+    },
+    "Temperature": {
+      "required": 3,
+      "missing": []
+    },
+    "VVT": {
+      "required": 4,
+      "missing": []
+    }
+  },
+  "verification": {
+    "package_pad": "unverified",
+    "alternate_function_numbers": "unverified",
+    "DMA_routes": "unverified",
+    "ADC_channels": "unverified",
+    "electrical": "unverified",
+    "reset_defaults": "unverified",
+    "schematic_ERC": "not_run",
+    "PCB_DRC": "not_run"
+  },
+  "interface_review": [
+    {
+      "mode": "SDMMC1_1bit",
+      "decision": "storage_interface",
+      "pins": [
+        "PC8",
+        "PC12",
+        "PD2"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 pp. 78,80",
+      "coverage": "data0, clock, command only",
+      "selected": false,
+      "overlaps": {
+        "PC8": [
+          "EWG_PWM"
+        ],
+        "PC12": [
+          "SD_SPI3_MOSI"
+        ],
+        "PD2": [
+          "LS_AUX1"
+        ]
+      },
+      "status": "conflict_if_selected"
+    },
+    {
+      "mode": "SDMMC1_4bit",
+      "decision": "storage_interface",
+      "pins": [
+        "PC8",
+        "PC9",
+        "PC10",
+        "PC11",
+        "PC12",
+        "PD2"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 pp. 78,80",
+      "coverage": "signal route only; supply/electrical/AF not qualified",
+      "selected": false,
+      "overlaps": {
+        "PC8": [
+          "EWG_PWM"
+        ],
+        "PC10": [
+          "SD_SPI3_SCK"
+        ],
+        "PC11": [
+          "SD_SPI3_MISO"
+        ],
+        "PC12": [
+          "SD_SPI3_MOSI"
+        ],
+        "PD2": [
+          "LS_AUX1"
+        ]
+      },
+      "status": "conflict_if_selected"
+    },
+    {
+      "mode": "SDMMC2_route_PB14_PB15_PD6",
+      "decision": "storage_interface",
+      "pins": [
+        "PB14",
+        "PB15",
+        "PD6"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 pp. 75,81",
+      "coverage": "partial route: D0/D1/clock only, no complete SDMMC2 pin plan",
+      "selected": false,
+      "overlaps": {
+        "PB14": [
+          "GDI_SPI2_MISO"
+        ],
+        "PB15": [
+          "GDI_SPI2_MOSI"
+        ],
+        "PD6": [
+          "LIN1_RX"
+        ]
+      },
+      "status": "conflict_if_selected"
+    },
+    {
+      "mode": "OTG_HS_embedded_PHY",
+      "decision": "usb_interface",
+      "pins": [
+        "PB14",
+        "PB15"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 p. 75",
+      "coverage": "DM/DP only; not an external ULPI high-speed route",
+      "selected": false,
+      "overlaps": {
+        "PB14": [
+          "GDI_SPI2_MISO"
+        ],
+        "PB15": [
+          "GDI_SPI2_MOSI"
+        ]
+      },
+      "status": "conflict_if_selected"
+    },
+    {
+      "mode": "OTG_FS",
+      "decision": "usb_interface",
+      "pins": [
+        "PA11",
+        "PA12"
+      ],
+      "source": "DS11532",
+      "locator": "Table 12 p. 90",
+      "coverage": "Device FS AF10; PA9 inverted GPIO VBUS sense; clock/firmware/electrical qualification pending",
+      "functions_by_pin": {
+        "PA11": "USB_DM",
+        "PA12": "USB_DP"
+      },
+      "selected": true,
+      "overlaps": {},
+      "status": "no_listed_pin_overlap_not_qualified"
+    },
+    {
+      "mode": "SWD",
+      "decision": "debug_interface",
+      "pins": [
+        "PA13",
+        "PA14"
+      ],
+      "source": "DS11532",
+      "locator": "Table 12 p. 90",
+      "coverage": "SWD signals; NRST/access/reset sequencing still require review",
+      "selected": true,
+      "overlaps": {},
+      "status": "no_listed_pin_overlap_not_qualified"
+    },
+    {
+      "mode": "JTAG_JTDI",
+      "decision": "debug_interface",
+      "pins": [
+        "PA15"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 p. 80",
+      "coverage": "JTDI subset only; reset-to-GPIO transition not verified",
+      "selected": false,
+      "overlaps": {
+        "PA15": [
+          "PTB_CS"
+        ]
+      },
+      "status": "conflict_if_selected"
+    },
+    {
+      "mode": "HSE_crystal",
+      "decision": "hse_clock",
+      "pins": [
+        "PH0",
+        "PH1"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11 pp. 68-69",
+      "coverage": "oscillator pins only; oscillator design not qualified",
+      "selected": false,
+      "overlaps": {},
+      "status": "no_listed_pin_overlap_not_qualified"
+    },
+    {
+      "mode": "LSE_crystal",
+      "decision": "lse_clock",
+      "pins": [
+        "PC14",
+        "PC15"
+      ],
+      "source": "DS11532",
+      "locator": "Table 11; footnote 2 p. 85",
+      "coverage": "oscillator pins only; RTC source undecided",
+      "selected": false,
+      "overlaps": {},
+      "status": "no_listed_pin_overlap_not_qualified"
+    },
+    {
+      "mode": "SPI3_SD",
+      "decision": "storage_interface",
+      "pins": [
+        "PC10",
+        "PC11",
+        "PC12",
+        "PA8",
+        "PG11"
+      ],
+      "functions_by_pin": {
+        "PC10": "SD_SPI3_SCK",
+        "PC11": "SD_SPI3_MISO",
+        "PC12": "SD_SPI3_MOSI",
+        "PA8": "SD_CS",
+        "PG11": "SD_CD"
+      },
+      "source": "DS11532",
+      "locator": "Table11/13; AF6 PC10/11/12; GPIO select and poll card detect",
+      "coverage": "SPI3 logging candidate; DMA/clock/inrush unqualified",
+      "selected": true,
+      "overlaps": {},
+      "status": "no_listed_pin_overlap_not_qualified"
+    }
+  ],
+  "findings": [
+    {
+      "code": "SHARED_TIMER_TIMEBASE",
+      "category": "unverified_resource",
+      "detail": "TIM1 channels share counter/prescaler/auto-reload; compatible periods/modes not proved",
+      "functions": [
+        "SENT1",
+        "SENT3"
+      ],
+      "source": "RM0410",
+      "blocks_release": true
+    },
+    {
+      "code": "SHARED_TIMER_TIMEBASE",
+      "category": "unverified_resource",
+      "detail": "TIM3 channels share counter/prescaler/auto-reload; compatible periods/modes not proved",
+      "functions": [
+        "DBW_PWM",
+        "EWG_PWM"
+      ],
+      "source": "RM0410",
+      "blocks_release": true
+    },
+    {
+      "code": "SHARED_TIMER_TIMEBASE",
+      "category": "unverified_resource",
+      "detail": "TIM8 channels share counter/prescaler/auto-reload; compatible periods/modes not proved",
+      "functions": [
+        "CAM3",
+        "CAM4"
+      ],
+      "source": "RM0410",
+      "blocks_release": true
+    },
+    {
+      "code": "INTERFACE_PIN_CONFLICT",
+      "category": "conditional_conflict",
+      "detail": "SDMMC1_1bit: PC8=EWG_PWM, PC12=SD_SPI3_MOSI, PD2=LS_AUX1",
+      "functions": [
+        "EWG_PWM",
+        "SD_SPI3_MOSI",
+        "LS_AUX1"
+      ],
+      "source": "DS11532",
+      "blocks_release": true
+    },
+    {
+      "code": "INTERFACE_PIN_CONFLICT",
+      "category": "conditional_conflict",
+      "detail": "SDMMC1_4bit: PC8=EWG_PWM, PC10=SD_SPI3_SCK, PC11=SD_SPI3_MISO, PC12=SD_SPI3_MOSI, PD2=LS_AUX1",
+      "functions": [
+        "EWG_PWM",
+        "SD_SPI3_SCK",
+        "SD_SPI3_MISO",
+        "SD_SPI3_MOSI",
+        "LS_AUX1"
+      ],
+      "source": "DS11532",
+      "blocks_release": true
+    },
+    {
+      "code": "INTERFACE_PIN_CONFLICT",
+      "category": "conditional_conflict",
+      "detail": "SDMMC2_route_PB14_PB15_PD6: PB14=GDI_SPI2_MISO, PB15=GDI_SPI2_MOSI, PD6=LIN1_RX",
+      "functions": [
+        "GDI_SPI2_MISO",
+        "GDI_SPI2_MOSI",
+        "LIN1_RX"
+      ],
+      "source": "DS11532",
+      "blocks_release": true
+    },
+    {
+      "code": "INTERFACE_PIN_CONFLICT",
+      "category": "conditional_conflict",
+      "detail": "OTG_HS_embedded_PHY: PB14=GDI_SPI2_MISO, PB15=GDI_SPI2_MOSI",
+      "functions": [
+        "GDI_SPI2_MISO",
+        "GDI_SPI2_MOSI"
+      ],
+      "source": "DS11532",
+      "blocks_release": true
+    },
+    {
+      "code": "INTERFACE_PIN_CONFLICT",
+      "category": "conditional_conflict",
+      "detail": "JTAG_JTDI: PA15=PTB_CS",
+      "functions": [
+        "PTB_CS"
+      ],
+      "source": "DS11532",
+      "blocks_release": true
+    },
+    {
+      "code": "PC13_ELECTRICAL_REVIEW",
+      "category": "unverified_electrical",
+      "detail": "PC13 output restrictions require an external buffer/load/reset-state review; not proof of an invalid coil interface",
+      "functions": [
+        "IGN1"
+      ],
+      "source": "DS11532",
+      "blocks_release": true
+    },
+    {
+      "code": "MCU_SELECTION_OPEN",
+      "category": "unverified_target",
+      "detail": "MCU silicon_revision is unspecified",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MODE_SELECTION_UNREVIEWED",
+      "category": "unverified_resource",
+      "detail": "storage_interface=SPI3_SD: selection is not qualification evidence",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MODE_SELECTION_UNREVIEWED",
+      "category": "unverified_resource",
+      "detail": "usb_interface=OTG_FS: selection is not qualification evidence",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MODE_SELECTION_UNREVIEWED",
+      "category": "unverified_resource",
+      "detail": "debug_interface=SWD: selection is not qualification evidence",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MODE_SELECTION_UNREVIEWED",
+      "category": "unverified_resource",
+      "detail": "hse_clock=HSE_bypass_8MHz: selection is not qualification evidence",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MODE_DECISION_OPEN",
+      "category": "unverified_resource",
+      "detail": "lse_clock is undecided",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "MODE_SELECTION_UNREVIEWED",
+      "category": "unverified_resource",
+      "detail": "motor_pwm_timebase=TIM3_CH1_CH3_shared_frequency: selection is not qualification evidence",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    },
+    {
+      "code": "AUDIT_STAGE_ONLY",
+      "category": "qualification",
+      "detail": "No evidence acceptance/signoff mechanism exists in this audit stage",
+      "functions": [],
+      "source": "project_requirements",
+      "blocks_release": true
+    }
+  ],
+  "qualification_evidence": [
+    {
+      "requirement": "exact_order_code_package_pad_and_silicon_errata_review",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "per_signal_AF_number_and_package_pin_matrix",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "per_transfer_DMA_controller_stream_channel_priority_and_conflict_matrix",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "timer_timebase_capture_and_interrupt_latency_budget",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "ADC_channel_sample_time_trigger_DMA_reference_and_protection",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "input_output_voltage_current_and_load_limits",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "startup_reset_bootloader_brownout_and_external_default_states",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "HSE_LSE_USB_SD_clocks_supply_decoupling_VCAP_NRST_BOOT0_debug",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "port_injection_VVT_AUX_driver_capacity_and_diagnostic_bus_arbitration",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "dual_WBO_frontend_MCU_interface_and_heater_shutdown",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "complete_electrical_schematic_and_reviewed_ERC",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "routed_PCB_DRC_connector_and_power_qualification",
+      "status": "unverified",
+      "blocks_release": true
+    },
+    {
+      "requirement": "measured_fault_shutdown_thermal_EMC_and_engine_validation",
+      "status": "unverified",
+      "blocks_release": true
+    }
+  ],
+  "sources": {
+    "DS11532": {
+      "publisher": "STMicroelectronics",
+      "revision": "DS11532 Rev 9, July 2025",
+      "url": "https://www.st.com/resource/en/datasheet/stm32f767zi.pdf",
+      "reviewed_on": "2026-10-21",
+      "evidence": "Primary PDF viewed; source download hash unavailable",
+      "locators": [
+        "Table 11 pp. 68-69: oscillator pins",
+        "Table 11 p. 75: PB14/PB15 SPI2, SDMMC2, OTG_HS",
+        "Table 11 p. 78: PC8/PC9 SDMMC1",
+        "Table 11 pp. 79-80: SWD/JTAG and SDMMC1",
+        "Table 11 footnote 2 p. 85: PC13 output restrictions",
+        "Table11 pp68-84: 17 ADC package pads; PG9/PG10 GPIO; PI5/PI6 TIM8; PB6/PB7 TIM4",
+        "Table13 pp90,100: PB6/PB7 AF2 and PI5/PI6 AF3",
+        "Table11 p78 and Table13 PortC: PC6..PC9 AF2 TIM3_CH1..4"
+      ]
+    },
+    "RM0410": {
+      "publisher": "STMicroelectronics",
+      "revision": "RM0410 Rev 5",
+      "url": "https://www.st.com/resource/en/reference_manual/rm0410-stm32f76xxx-and-stm32f77xxx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
+      "reviewed_on": "2026-10-21",
+      "evidence": "Primary publisher indexed text; full PDF exceeds browser fetch limit",
+      "locators": [
+        "7.2.3-7.2.6: SYSCFG_EXTICR port selection per EXTI line",
+        "26.4.14-26.4.19 pp. 1016-1019: TIM2-5 PSC/ARR shared by CCR1-4"
+      ]
+    },
+    "project_requirements": {
+      "path": "docs/F7_RESOURCE_PLAN.md",
+      "locator": "Working requirements; TIM5/TIM6 reservations"
+    },
+    "connector_requirements": {
+      "path": "pinout/power8gdi_revA_pinout.csv",
+      "locator": "Planned connector functions; not MCU assignments"
+    },
+    "TPIC8101": {
+      "publisher": "Texas Instruments",
+      "url": "https://www.ti.com/lit/ds/symlink/tpic8101.pdf",
+      "locator": "SLIS110B; SPI digital readout; interfaces_aux/sources.json"
+    }
+  },
+  "limitations": [
+    "Listed interface pin facts are partial reviewed facts, not an exhaustive MCU alternate-function database.",
+    "No DMA route allocation exists; this audit does not claim to detect DMA conflicts.",
+    "GPIO_TIMED/TRIGGER_INPUT/CAM_INPUT do not specify a timer/EXTI backend; their conflicts remain unverified.",
+    "Connector signal coverage is not a direct-pin budget: external drivers and analog frontends remain unallocated.",
+    "No fabrication, flashing, powering or hardware tests were performed."
+  ],
+  "inputs": {
+    "gpio_csv": {
+      "name": "mcu_gpio_draft.csv",
+      "canonicalization": "UTF-8 without BOM; LF newlines",
+      "sha256": "fd2189af62129b9d2069485b6aaf60f438c0e7c4ea4232cbc0efad2befe63468"
+    },
+    "connector_csv": {
+      "name": "power8gdi_revA_pinout.csv",
+      "canonicalization": "UTF-8 without BOM; LF newlines",
+      "sha256": "9253ec456885ced7a99f414cb2fed466b4035002265d067090f1b24f7ac89f34"
+    },
+    "contract": {
+      "name": "resource_contract.json",
+      "canonicalization": "UTF-8 without BOM; LF newlines",
+      "sha256": "b1e56e1c8c0829caee725246850a62db0bf23461d30d85b97eae22c7f7d3c35a"
+    }
+  }
+}
