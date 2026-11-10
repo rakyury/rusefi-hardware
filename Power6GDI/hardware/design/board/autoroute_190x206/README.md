@@ -41,6 +41,17 @@ class traces routed on In2 under the donor power stages; long 45° runs across t
 analog and MCU regions; via count. These are reasons this is a candidate for
 reading, not a layout.
 
+## Measured on 2026-11-10
+
+`../review_autoroute.py` measured this copper block by block
+(`docs/reviews/2026-11-10-autoroute-review/autoroute_review.json`, verdicts in
+`docs/PCB_AUTOROUTE_REVIEW_2026_11_10.md`). Headline: the router treated In1.Cu
+(the GND plane) as a signal layer — 626 tracks, 3 026 mm, main plane polygon
+36 624 → 33 557 mm² and five fragments — and the project's own clearance rule is
+violated by 2 328 of its 9 287 items (the DRC report is capped at 500 and cannot
+show this). `in1.png` shows the In1 tracks and holes; the export does not draw
+the fill. No block's copper is accepted as is.
+
 Reproduce: `build/p6/autoroute/run_freerouting_1pass.sh` then
 `review_autoroute.sh` (scripts in the ignored build directory of the working tree
 that produced this; the Python steps are in `../autoroute_candidate.py`).

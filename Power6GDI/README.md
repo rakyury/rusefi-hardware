@@ -16,7 +16,10 @@ re-seal, not by text substitution. Historical reviews and logs keep the old name
 
 **Board outline since 2026-11-05:** 190 × 206 mm with the donor GDI-4ch copper,
 concept enclosure 204 × 220 × 50 mm; see
-[the layout profile record](docs/PCB_LAYOUT_PROFILE_2026_11_05.md).
+[the layout profile record](docs/PCB_LAYOUT_PROFILE_2026_11_05.md). The
+machine-routed candidate of 2026-11-06 was measured block by block on 2026-11-10
+([autoroute review](docs/PCB_AUTOROUTE_REVIEW_2026_11_10.md)): 3.0 m of router
+tracks sit on the GND plane layer, so none of its copper is accepted as is.
 
 **Status: interface definition / floorplan only; NOT an electrically completed PCB or a fabrication deliverable.**
 

@@ -51,6 +51,11 @@ regions come from `layout_profiles/<name>.json` (`--layout-profile`, default
 geometrically identical. `ground_stitch.py <board>` adds guarded GND vias for
 islands on a saved, filled candidate (one per island; refused where copper,
 holes, mask or the edge leave no room). See `docs/PCB_LAYOUT_PROFILE_2026_11_05.md`.
+`review_autoroute.py <placement> <autorouted> <out>` measures the machine copper
+of an autorouted candidate block by block (layers incl. In1, widths against the
+project netclasses, the project clearance rule on every router item, sensitive
+nets near switching copper, diff pairs, GND islands, remaining gap per block);
+verdicts are written by hand in `docs/PCB_AUTOROUTE_REVIEW_2026_11_10.md`.
 
 Run portable contract tests with:
 
